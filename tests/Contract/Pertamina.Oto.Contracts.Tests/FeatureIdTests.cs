@@ -15,7 +15,7 @@ public sealed class FeatureIdTests
         Assert.AreEqual("FEAT-PDF-005", featureId.ToString());
     }
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(null)]
     [DataRow("")]
     [DataRow("FEAT-pdf-005")]

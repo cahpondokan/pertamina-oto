@@ -15,7 +15,7 @@ public sealed class ContractVersionTests
         Assert.AreEqual("contract-2026.09", version.ToString());
     }
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow(null)]
     [DataRow("")]
     [DataRow("   ")]
