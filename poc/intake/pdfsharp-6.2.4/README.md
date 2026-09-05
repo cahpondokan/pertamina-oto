@@ -43,4 +43,3 @@ https://www.nuget.org/packages/PDFsharp/6.2.4
 Removal path: this intake introduces no PackageReference or product dependency. Preserve evidence according to approved retention; future deletion must target only exact owned evidence paths under Agent 0 authority.
 
 Next admission is PROPOSED, not approved: Agent 6 reviews signature revocation limitation, scanner gap and static/binary risks; Agent 7 reviews MIT notices, transitive obligations and no-cost disposition. Freeze exact dependency graph only under new acquisition authority. Then Agent 0 obtains APPROVED_FOR_POC_ONLY plus corpus/oracle/environment/execution authorization. PDF-001 trace FEAT-PDF-005; TECH-DEC-005 and TECH-DEC-006; PRE-004/PRE-005/PRE-006; P2-D01/P2-D03. No PDF-002/003 execution or product graph change.
-
