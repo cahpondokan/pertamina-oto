@@ -5,7 +5,7 @@ namespace Pertamina.Oto.Storage.Abstractions;
 public enum LocalHistoryStatus { Unknown, Completed, Cancelled, Failed }
 /// <summary>Safe metadata projection. Display names/locations require separately authorized local resolution.
 /// No document content, passwords, raw paths, or provider text fields.</summary>
-public sealed record LocalHistoryEntry(Guid EntryId, Guid WorkspaceId, Guid CorrelationId, FeatureId Feature,
+public sealed record LocalHistoryEntry(Guid EntryId, Guid WorkspaceId, CorrelationId CorrelationId, FeatureId Feature,
     LocalFileRef? Result, LocalHistoryStatus Status, DateTimeOffset RecordedAt, long SizeBytes, TimeSpan Duration);
 /// <summary>Draft is not final output. Revision/cursor/snapshot commit atomically.</summary>
 public sealed record LocalWorkspaceSnapshot(Guid WorkspaceId, long Revision,

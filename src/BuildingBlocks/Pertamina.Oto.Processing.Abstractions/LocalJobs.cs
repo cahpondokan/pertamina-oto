@@ -1,3 +1,5 @@
+using Pertamina.Oto.Contracts.Identifiers;
+
 namespace Pertamina.Oto.Processing.Abstractions;
 
 public enum LocalJobState { Queued, WaitingResource, Running, CancellationRequested, Completed, Cancelled, Failed }
@@ -30,17 +32,17 @@ public static class LocalJobTransitions
 /// <summary>No raw error text or provider/transport details.</summary>
 public sealed record LocalJobSnapshot
 {
-    public LocalJobSnapshot(Guid jobId, Guid correlationId, LocalJobState state, LocalFailureCode failure)
+    public LocalJobSnapshot(Guid jobId, CorrelationId correlationId, LocalJobState state, LocalFailureCode failure)
     {
         if (jobId == Guid.Empty) throw new ArgumentException("Empty job ID.", nameof(jobId));
-        if (correlationId == Guid.Empty) throw new ArgumentException("Empty correlation ID.", nameof(correlationId));
+        if (!correlationId.IsValid) throw new ArgumentException("Empty correlation ID.", nameof(correlationId));
         if (!Enum.IsDefined(state)) throw new ArgumentOutOfRangeException(nameof(state));
         if (!Enum.IsDefined(failure) || (state == LocalJobState.Failed) != (failure != LocalFailureCode.None))
             throw new ArgumentOutOfRangeException(nameof(failure));
         JobId = jobId; CorrelationId = correlationId; State = state; Failure = failure;
     }
     public Guid JobId { get; }
-    public Guid CorrelationId { get; }
+    public CorrelationId CorrelationId { get; }
     public LocalJobState State { get; }
     public LocalFailureCode Failure { get; }
 }

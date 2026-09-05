@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Storage.Abstractions;
 using Pertamina.Oto.Processing.Abstractions;
 
@@ -8,6 +9,7 @@ namespace Pertamina.Oto.OfflineFoundation.Tests;
 public sealed class OfflineContractTests
 {
     private static readonly Guid Id = new("aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
+    private static readonly CorrelationId Correlation = CorrelationId.Parse("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     [TestMethod]
     public void EmptyReferencesAreRejected()
     {
@@ -81,10 +83,10 @@ public sealed class OfflineContractTests
     [TestMethod]
     public void InvalidJobStateOrUnsafeFailureCombinationRejected()
     {
-        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Id, (LocalJobState)99, LocalFailureCode.None));
-        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Id, LocalJobState.Failed, LocalFailureCode.None));
-        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Id, LocalJobState.Completed, LocalFailureCode.WorkerLost));
-        Assert.ThrowsExactly<ArgumentException>(() => new LocalJobSnapshot(Id, Guid.Empty, LocalJobState.Queued, LocalFailureCode.None));
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Correlation, (LocalJobState)99, LocalFailureCode.None));
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Correlation, LocalJobState.Failed, LocalFailureCode.None));
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new LocalJobSnapshot(Id, Correlation, LocalJobState.Completed, LocalFailureCode.WorkerLost));
+        Assert.ThrowsExactly<ArgumentException>(() => new LocalJobSnapshot(Id, default, LocalJobState.Queued, LocalFailureCode.None));
     }
     [TestMethod]
     public void MissingLocalCapabilityNeverCreatesRemoteRoute()

@@ -1,9 +1,10 @@
+using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 namespace Pertamina.Oto.Modules.Pdf.Domain;
 
 public sealed class MergePlan
 {
-    private MergePlan(InputOccurrence[] orderedInputs, Guid targetId, Guid correlationId)
+    private MergePlan(InputOccurrence[] orderedInputs, Guid targetId, CorrelationId correlationId)
     {
         OrderedInputs = Array.AsReadOnly(orderedInputs);
         TargetId = targetId;
@@ -11,14 +12,14 @@ public sealed class MergePlan
     }
     public IReadOnlyList<InputOccurrence> OrderedInputs { get; }
     public Guid TargetId { get; }
-    public Guid CorrelationId { get; }
+    public CorrelationId CorrelationId { get; }
 
     // FileId may repeat intentionally; each occurrence has its own identity.
     // The order is the selected working set, so removing an input never deletes its source.
-    public static MergePlan? TryCreate(MergeCommand command, Guid correlationId)
+    public static MergePlan? TryCreate(MergeCommand command, CorrelationId correlationId)
     {
         ArgumentNullException.ThrowIfNull(command);
-        if (command.TargetId == Guid.Empty || correlationId == Guid.Empty ||
+        if (command.TargetId == Guid.Empty || !correlationId.IsValid ||
             command.OrderedOccurrenceIds.Count < 2) return null;
         var inputs = new Dictionary<Guid, InputOccurrence>();
         foreach (var input in command.Inputs)

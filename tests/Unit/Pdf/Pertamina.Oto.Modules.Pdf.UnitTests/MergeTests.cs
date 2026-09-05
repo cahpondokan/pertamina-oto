@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 using Pertamina.Oto.Modules.Pdf.Domain;
 using Pertamina.Oto.Modules.Pdf.Application;
@@ -13,7 +14,7 @@ public sealed class MergeTests
     private static InputOccurrence[] Inputs(int count) => Enumerable.Range(0, count)
         .Select(_ => new InputOccurrence(Guid.NewGuid(), Guid.NewGuid())).ToArray();
     private static MergeCommand Command(InputOccurrence[] inputs, Guid[]? order = null, Guid? target = null) =>
-        new(inputs, order ?? inputs.Select(i => i.OccurrenceId), target ?? Guid.NewGuid(), Guid.NewGuid());
+        new(inputs, order ?? inputs.Select(i => i.OccurrenceId), target ?? Guid.NewGuid(), CorrelationId.New());
 
     [TestMethod]
     [DataRow(0)]
@@ -67,7 +68,7 @@ public sealed class MergeTests
         CollectionAssert.AreEqual(new[] { inputs[2], inputs[0] }, first.OrderedInputs.ToArray());
         CollectionAssert.AreEqual(first.OrderedInputs.ToArray(), second.OrderedInputs.ToArray());
         Assert.AreEqual(3, command.Inputs.Count);
-        Assert.IsNull(MergePlan.TryCreate(Command(inputs, [inputs[0].OccurrenceId]), Guid.NewGuid()));
+        Assert.IsNull(MergePlan.TryCreate(Command(inputs, [inputs[0].OccurrenceId]), CorrelationId.New()));
     }
 
     [TestMethod]
@@ -204,7 +205,7 @@ public sealed class MergeTests
         var inputs = Inputs(2);
         var fake = new Boundary();
         var result = await fake.Service.ExecuteAsync(new MergeCommand(inputs, inputs.Select(i => i.OccurrenceId), Guid.NewGuid()));
-        Assert.AreNotEqual(Guid.Empty, result.CorrelationId);
+        Assert.IsTrue(result.CorrelationId.IsValid);
         Assert.IsNotNull(fake.Plan);
         Assert.AreEqual(result.CorrelationId, fake.Plan.CorrelationId);
     }

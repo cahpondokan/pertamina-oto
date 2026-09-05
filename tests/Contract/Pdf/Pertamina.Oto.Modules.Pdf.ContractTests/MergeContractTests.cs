@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 namespace Pertamina.Oto.Modules.Pdf.ContractTests;
 
@@ -22,7 +23,7 @@ public sealed class MergeContractTests
     [TestMethod]
     public void Outcome_NonFinalStates_ContainNoResultOrMutableState()
     {
-        var correlation = Guid.NewGuid();
+        var correlation = CorrelationId.New();
         Assert.IsNull(MergeOutcome.Cancelled(correlation).ResultId);
         Assert.IsNull(MergeOutcome.Failure(MergeIssue.ProcessingFailed, correlation).ResultId);
         Assert.IsTrue(typeof(MergeOutcome).GetProperties().All(p => p.SetMethod is null));

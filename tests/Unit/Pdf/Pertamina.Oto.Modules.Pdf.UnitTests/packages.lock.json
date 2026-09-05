@@ -100,6 +100,9 @@
         "resolved": "4.4.0",
         "contentHash": "8g2KL2LjsXXVywvQb0uWQBANOONVnRf6cTSbON9ar6gIw08oSBY7Z3PJlC8sHbqOVvCr7srrcWiKzb12SUoV2w=="
       },
+      "pertamina.oto.contracts": {
+        "type": "Project"
+      },
       "pertamina.oto.modules.pdf.application": {
         "type": "Project",
         "dependencies": {
@@ -107,7 +110,10 @@
         }
       },
       "pertamina.oto.modules.pdf.contracts": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Contracts": "[1.0.0, )"
+        }
       },
       "pertamina.oto.modules.pdf.domain": {
         "type": "Project",

@@ -1,3 +1,4 @@
+using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 using Pertamina.Oto.Modules.Pdf.Domain;
 namespace Pertamina.Oto.Modules.Pdf.Application;
@@ -8,7 +9,7 @@ public sealed class MergeService(IMergePreflight preflight, ILocalMergeProcessor
     public async Task<MergeOutcome> ExecuteAsync(MergeCommand command, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(command);
-        var correlation = command.CorrelationId == Guid.Empty ? Guid.NewGuid() : command.CorrelationId;
+        var correlation = command.CorrelationId.IsValid ? command.CorrelationId : CorrelationId.New();
         Guid stage = default;
         var publishing = false;
         MergeOutcome outcome;
@@ -62,6 +63,6 @@ public sealed class MergeService(IMergePreflight preflight, ILocalMergeProcessor
         }
         return outcome;
     }
-    private static MergeOutcome Failure(MergeIssue issue, Guid correlation) =>
+    private static MergeOutcome Failure(MergeIssue issue, CorrelationId correlation) =>
         MergeOutcome.Failure(Enum.IsDefined(issue) ? issue : MergeIssue.InputRejected, correlation);
 }
