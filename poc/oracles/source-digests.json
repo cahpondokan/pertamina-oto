@@ -1,0 +1,50 @@
+[
+  {
+    "path": "poc/corpus/.gitattributes",
+    "sha256": "cb7343d8ccc169881c6cc3ac19178335576351b06faedab70c14e7b1b5eefe15"
+  },
+  {
+    "path": "poc/corpus/.gitignore",
+    "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+  },
+  {
+    "path": "poc/corpus/expected.v1.json",
+    "sha256": "a4d4bc86598404ab00863ed2d77d3a77e1ec47118980d3e710e2b29a3d111d7a"
+  },
+  {
+    "path": "poc/corpus/generate.py",
+    "sha256": "74ddea116fd20b1d770ebc682e0ce7ca3abc1e238f05ad0f9aac8cea009ba845"
+  },
+  {
+    "path": "poc/corpus/manifest.v1.json",
+    "sha256": "0233c4c6960c16c1e7dba20febd14cfec40b7f3e5daa45f8fd9ece1f5e15b102"
+  },
+  {
+    "path": "poc/corpus/README.md",
+    "sha256": "c10015b5914c0d4ec6c5a598b70716427c14a6da210f6020f1554ce6549d8c2e"
+  },
+  {
+    "path": "poc/oracles/.gitattributes",
+    "sha256": "cb7343d8ccc169881c6cc3ac19178335576351b06faedab70c14e7b1b5eefe15"
+  },
+  {
+    "path": "poc/oracles/.gitignore",
+    "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+  },
+  {
+    "path": "poc/oracles/contract.py",
+    "sha256": "83e788b340d835cd35f03f4fe80f81c4d85dcb13488f858215ef923897ff6b94"
+  },
+  {
+    "path": "poc/oracles/generator-evidence.json",
+    "sha256": "44f8423eb9c562644118d0006844050cbc8977281d580da6fbbf0e5a0b123aaa"
+  },
+  {
+    "path": "poc/oracles/schemas.py",
+    "sha256": "ba949f88feeb57f61268aeaf67dae20e3df214d0b50b8d1af35a89369ba131b8"
+  },
+  {
+    "path": "poc/oracles/test_foundation.py",
+    "sha256": "a7cfe59aad6b09251ab86e053b7c4efd6f1d94163d83928c2013967317f23530"
+  }
+]
