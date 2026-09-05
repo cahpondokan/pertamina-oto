@@ -1,0 +1,18 @@
+<!-- PREPARATION_ONLY. NO_RESTART_WITHOUT_SEPARATE_APPROVAL. NOT_AUTHORIZED_TO_LAUNCH. -->
+<Configuration>
+  <Networking>Disable</Networking>
+  <vGPU>Disable</vGPU>
+  <AudioInput>Disable</AudioInput>
+  <VideoInput>Disable</VideoInput>
+  <PrinterRedirection>Disable</PrinterRedirection>
+  <ClipboardRedirection>Disable</ClipboardRedirection>
+  <ProtectedClient>Enable</ProtectedClient>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>__APPROVED_READONLY_INPUT_ROOT__</HostFolder>
+      <SandboxFolder>C:\PocInput</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+</Configuration>
+
