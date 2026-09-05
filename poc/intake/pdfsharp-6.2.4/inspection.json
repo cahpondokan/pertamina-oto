@@ -1,0 +1,11 @@
+{
+  "package": "PDFsharp",
+  "version": "6.2.4",
+  "sha256": "5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67",
+  "bytes": 4625326,
+  "entryCount": 111,
+  "archivePathSafety": "PASS",
+  "unexpectedNativeBuildScriptEntries": 0,
+  "assemblyExecution": false,
+  "dependenciesDownloaded": 0
+}

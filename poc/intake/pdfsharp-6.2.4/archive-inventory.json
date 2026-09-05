@@ -1,0 +1,557 @@
+[
+  {
+    "name": "_rels/.rels",
+    "length": 502,
+    "sha256": "01D6ADACFF4155D288CD3907BF0180AF82E786BD734338EB488AB0D5EC2F1DF3"
+  },
+  {
+    "name": "PDFsharp.nuspec",
+    "length": 3189,
+    "sha256": "49E089D9D155C7FEF3A413BCF150AED53476C3C1AB60696DF86EBF2A3AECAE77"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.BarCodes.dll",
+    "length": 35840,
+    "sha256": "5416B543494682E49E42FB02130CF6FF21C1509129F74BA94146E6DF2FB202B1"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.BarCodes.pdb",
+    "length": 23176,
+    "sha256": "D07E0FD085B19397635FA051327C3AC35E86602CCBB622B6EF1A26C7A3BEA9F9"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.BarCodes.xml",
+    "length": 32689,
+    "sha256": "6C48E7B659DD6C6ABFD2517E24830983FA43A1F983623BED688AA4C27A5DE5EE"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Charting.pdb",
+    "length": 58068,
+    "sha256": "56CA909AB24BE67BE4DD5C35BBCB1989D83E5BFD01FDF0114D04BAB85DF80F82"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Cryptography.dll",
+    "length": 15360,
+    "sha256": "F6579034356BAC7AA6589741285BD2C025DF5954414280943EA214826461F08B"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Cryptography.xml",
+    "length": 2511,
+    "sha256": "88A89A3B075A12E6B410ED7D35A5673995627E8FE1907A9669AAFCC1D9A28883"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Quality.dll",
+    "length": 40448,
+    "sha256": "F5FBF9773DA5DCB756859145AC5AFBD44A5246B57CC33F0C4B69A7F283DEE097"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Quality.xml",
+    "length": 44154,
+    "sha256": "FD9207E3A4DDAC496C2CE145ABD268190F3515C24B8ADD9972A7B9C6700B259C"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Shared.pdb",
+    "length": 15148,
+    "sha256": "E71FB97756D3DC3B243CE8A90F97A039AB18C839034A0C72BDEA885993D9A10B"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Snippets.dll",
+    "length": 154624,
+    "sha256": "7F5C6320BC70E8009F18CB57897B467D0F17D6E44E3DC6332EC9141B2889D4C1"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.System.dll",
+    "length": 8192,
+    "sha256": "6D9ACCDBF73F4C8F79E60B91764B34E25F0ED207820C62DA1112980AD32B6F82"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.System.xml",
+    "length": 4781,
+    "sha256": "B643C0786B53E472D2F022A3493FBF6C589D0256FF1435B12ACC82DD1F849745"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.WPFonts.pdb",
+    "length": 12756,
+    "sha256": "0B6FBBFF8EC86FFEE4C7BFF303F8E3FB2F917EE0D6B676FB13E5289607B942DB"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.WPFonts.xml",
+    "length": 1668,
+    "sha256": "3665C541DA2288A27BA9D611395C905D145C4AE9F8F3EF6BE007EA9B166F15F0"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.xml",
+    "length": 1318352,
+    "sha256": "06E3E9A175C77547173316F354537E07D7C5C2AF50977294C9F8B5972BF3A92B"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Charting.dll",
+    "length": 88064,
+    "sha256": "714A27E299BBCB6EAC7AE7F9A83BD8A9972A157A8C53581B73C260EAD16AE24F"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Charting.xml",
+    "length": 128353,
+    "sha256": "D1EB8C1962E0486EC95073E220A7A3441294189C411797DB9C3880DD5D06A1ED"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Cryptography.pdb",
+    "length": 15060,
+    "sha256": "9729A2193CF6FD289441B366CBF5176734223D5EFB1C2E7F945561CC7A81C19A"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.dll",
+    "length": 793088,
+    "sha256": "A30A1C39E942A6C7F33F451257F26E9A8856D389EF98031971711A7C77123D82"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.pdb",
+    "length": 339348,
+    "sha256": "2313CF97C76FB2E8E2633D14415AA7DBB92719E267A8F1EC71FCE6576BD1AF94"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Quality.pdb",
+    "length": 23696,
+    "sha256": "1C01AF143B4BAD693FA57EC67A1D68CC82E1A987F4F0F55AC95FE221C6992E1E"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Shared.dll",
+    "length": 23040,
+    "sha256": "B3ED534CAE06D4B2129D1242FA52D57EFFA4F06883C3B959C18966DE7CE8A264"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Shared.xml",
+    "length": 6685,
+    "sha256": "4B89D5F19E1E1B8EAC3EA533ED3AF15DAD4ECAE57A3E849A1752473A5D832C1B"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.Snippets.pdb",
+    "length": 41732,
+    "sha256": "692307D360C8CCDDC2E3146E542FD6802F9A1EFBB4E5BA8EBFE6CA3235BC2688"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.System.pdb",
+    "length": 14580,
+    "sha256": "058FAE92C57DCD111EDEBECE8C5AFB06744EEA8D839EE6F96987C10F738DAF61"
+  },
+  {
+    "name": "lib/net8.0/PdfSharp.WPFonts.dll",
+    "length": 421376,
+    "sha256": "F2CBB72F4345C3ABCBDED9CC5A71C24E6B1988D2953A083681DDF1ADF540AA42"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.BarCodes.dll",
+    "length": 35840,
+    "sha256": "5A92208A8FF147B9F3D3A3EAF5D678D1E07FECF7CED7ED535D667526565FE3E6"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.BarCodes.pdb",
+    "length": 23244,
+    "sha256": "084D9D96917F85EE6DBF5EA7B0FD352DF5AADFE8FA325D40DA634E644DDDC3AF"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.BarCodes.xml",
+    "length": 32689,
+    "sha256": "6C48E7B659DD6C6ABFD2517E24830983FA43A1F983623BED688AA4C27A5DE5EE"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Charting.pdb",
+    "length": 58136,
+    "sha256": "F696870DDC601CF308CB6285A50CB760E2ECBD972A6EC1B9400AE82C60EFAD96"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Cryptography.dll",
+    "length": 15360,
+    "sha256": "47D77B624181104B7FD41653380849FB935E08A102A542EDAC82228D0BB1D749"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Cryptography.xml",
+    "length": 2511,
+    "sha256": "88A89A3B075A12E6B410ED7D35A5673995627E8FE1907A9669AAFCC1D9A28883"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Quality.dll",
+    "length": 40448,
+    "sha256": "970CDFDAA57E27E260DDD81696E471D05F5C621B207CAD379DE6A73743FE22DE"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Quality.xml",
+    "length": 44154,
+    "sha256": "FD9207E3A4DDAC496C2CE145ABD268190F3515C24B8ADD9972A7B9C6700B259C"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Shared.pdb",
+    "length": 15216,
+    "sha256": "38055A878A34F15C059930AFE7461FB535BB2C552F83A220F0749AFFD5F090BD"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Snippets.dll",
+    "length": 154624,
+    "sha256": "F779E23BB65BB20F780341B25F44054CE07DC21CE29F602913B4BA306056D9A9"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.System.dll",
+    "length": 8192,
+    "sha256": "8506B85EA33D7780B4709F536813570598FD435C6D468190DE660B676716AA1B"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.System.xml",
+    "length": 4781,
+    "sha256": "B643C0786B53E472D2F022A3493FBF6C589D0256FF1435B12ACC82DD1F849745"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.WPFonts.pdb",
+    "length": 12824,
+    "sha256": "9F6B2AD040D76BCE1C34CDF185A7F06674D33C89CCFADFA71DE296AE086709DA"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.WPFonts.xml",
+    "length": 1668,
+    "sha256": "3665C541DA2288A27BA9D611395C905D145C4AE9F8F3EF6BE007EA9B166F15F0"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.xml",
+    "length": 1318352,
+    "sha256": "06E3E9A175C77547173316F354537E07D7C5C2AF50977294C9F8B5972BF3A92B"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Charting.dll",
+    "length": 88064,
+    "sha256": "A7E6CF9AC2F900CDB31EB7FF0FA5F6FB6E406C78B7A9EB7D9304F3FA1B9B59B0"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Charting.xml",
+    "length": 128353,
+    "sha256": "D1EB8C1962E0486EC95073E220A7A3441294189C411797DB9C3880DD5D06A1ED"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Cryptography.pdb",
+    "length": 15128,
+    "sha256": "A2D4CD2F263A8AEBDD2937ABE3AABE4CE87EEBC945F2B078ECFF30B42C0899D4"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.dll",
+    "length": 794624,
+    "sha256": "34D34FB83AC818C392AC89FA024515D49AF9E2E6F77FA46DD7B66A2E254A50F7"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.pdb",
+    "length": 339432,
+    "sha256": "D3DF531A7107254D6AC41DFCFCD1132501047EFA586D1183AD563BF64776C090"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Quality.pdb",
+    "length": 23764,
+    "sha256": "31C271A7FFDD46D2F32CF343CD6C5A45DCB8FFF343BF512FCF18D321225867DC"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Shared.dll",
+    "length": 23040,
+    "sha256": "ED85998FFC67E96A1A125A349C86181C1444B39C277676E73389874D2E58EBBE"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Shared.xml",
+    "length": 6685,
+    "sha256": "4B89D5F19E1E1B8EAC3EA533ED3AF15DAD4ECAE57A3E849A1752473A5D832C1B"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.Snippets.pdb",
+    "length": 41800,
+    "sha256": "74B1A0F1BD2F3DC970AE0991041916A96E28D7DA54B776DEB12B25AAA5B28FBD"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.System.pdb",
+    "length": 14648,
+    "sha256": "913BE19F6A1835E795B326BF3E3F8B07C6A83B26A6D1499D905ABC6DA14426C6"
+  },
+  {
+    "name": "lib/net9.0/PdfSharp.WPFonts.dll",
+    "length": 421376,
+    "sha256": "89AC7E7B6DDD274D4D1DDA929DAFD145BE495BDC6E543E19ABB8EA9FC459C292"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.BarCodes.dll",
+    "length": 35840,
+    "sha256": "BAFC4175AFAEF8629C6122CAB01E90C8F8CDF72E2B957D328C42229D12D02FDD"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.BarCodes.xml",
+    "length": 32689,
+    "sha256": "6C48E7B659DD6C6ABFD2517E24830983FA43A1F983623BED688AA4C27A5DE5EE"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Charting.pdb",
+    "length": 58292,
+    "sha256": "2B73A1FCD828914709A283BE5BE94163F97BAB34FE1F155C766B236DD76342C3"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Cryptography.dll",
+    "length": 15360,
+    "sha256": "25FC17414785592CA4CDC5EFD93F2A9C245812A97CB66B986A63112F61552944"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.BarCodes.pdb",
+    "length": 23400,
+    "sha256": "D577273D053FA68593B2076931A210BF1F85504EFDE41C522AF90088F10D1484"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Charting.dll",
+    "length": 88064,
+    "sha256": "FCE1973D6474160E736112B215410244310F47983853FD5AFD776086A7392469"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Charting.xml",
+    "length": 128353,
+    "sha256": "D1EB8C1962E0486EC95073E220A7A3441294189C411797DB9C3880DD5D06A1ED"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Cryptography.pdb",
+    "length": 15280,
+    "sha256": "DD2DDBFACACF6017E6D9A3F2E085ABC9F17D1868E05EFAC89E4ACD13A0C50266"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Quality.dll",
+    "length": 40448,
+    "sha256": "3F88EC2601D13607EC81A8F7CBC14BD710FF10E2730626FFECE48C86098DF0D1"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.pdb",
+    "length": 339596,
+    "sha256": "1AB78ED5ABE8D8E7ACBE20DA6D83F35A2D86F9B3BFD93B2FBE73A247980E839F"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Quality.pdb",
+    "length": 23924,
+    "sha256": "3452EF9AB0F44CA68362D592585F68C81D060CD5BF63BEC5F35AEEE78D199C87"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Quality.xml",
+    "length": 44154,
+    "sha256": "FD9207E3A4DDAC496C2CE145ABD268190F3515C24B8ADD9972A7B9C6700B259C"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Cryptography.xml",
+    "length": 2511,
+    "sha256": "88A89A3B075A12E6B410ED7D35A5673995627E8FE1907A9669AAFCC1D9A28883"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Shared.dll",
+    "length": 23040,
+    "sha256": "4B21196CF18CB3B971EC02D1F66F2DA0D98D77AA5ED5767754F5DE2CF36CB737"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.dll",
+    "length": 794624,
+    "sha256": "1A77754D9B06C077F339EB33C0CDEF28927AE8EE46ECCA84E7874B15DABC85A1"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Shared.pdb",
+    "length": 15380,
+    "sha256": "3A4DAC760E36EF18EBD79D41A3D304825C7D3E56E5DAD89AC4447D66DE1FB4BA"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Shared.xml",
+    "length": 6685,
+    "sha256": "4B89D5F19E1E1B8EAC3EA533ED3AF15DAD4ECAE57A3E849A1752473A5D832C1B"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Snippets.dll",
+    "length": 154624,
+    "sha256": "B8191AAC4339B25DD54BE0BC61206B873C69A4D0150EA9F16FDCECFC0F1907A4"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.WPFonts.pdb",
+    "length": 12976,
+    "sha256": "D08B972A4B56CA7F49FCF34C7A69C9495D00B98D4B915FBE2533F6C84C58D445"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.Snippets.pdb",
+    "length": 41956,
+    "sha256": "EB4E969539CFEB1628AE6941986A2F44783C06AFF17D4878CEE2CE9CC649A150"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.System.dll",
+    "length": 8192,
+    "sha256": "5E8DC5ED655D223BE9F9B5B3DFECADB607B00E695C34C60AAC4E037AF9E557E6"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.WPFonts.xml",
+    "length": 1668,
+    "sha256": "3665C541DA2288A27BA9D611395C905D145C4AE9F8F3EF6BE007EA9B166F15F0"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.xml",
+    "length": 1318352,
+    "sha256": "06E3E9A175C77547173316F354537E07D7C5C2AF50977294C9F8B5972BF3A92B"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.System.pdb",
+    "length": 14812,
+    "sha256": "62E71035C14F49F4089E12C64FA369B02313212175EE88F482B4E54A9342DED5"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.System.xml",
+    "length": 4781,
+    "sha256": "B643C0786B53E472D2F022A3493FBF6C589D0256FF1435B12ACC82DD1F849745"
+  },
+  {
+    "name": "lib/net10.0/PdfSharp.WPFonts.dll",
+    "length": 421376,
+    "sha256": "35A3AE0D7EE749E77A6DB7C938AC2C41684D50A792B069E3A3723E9FDD6AAFD3"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.BarCodes.dll",
+    "length": 32256,
+    "sha256": "8CDCECBC297CA33CCBA22FE25CB89750AF4DBD7289CE01EAAE2C98E837008689"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.BarCodes.xml",
+    "length": 33374,
+    "sha256": "2CFF5BE78218BF16FC3D370B7B592FB5FF9E496DE41069A5B2B2724F2A53D4B5"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Charting.pdb",
+    "length": 55384,
+    "sha256": "EF62F279C3B3972F314E3B1275290F37EB072226AE87F4B68BDCF07BCA456007"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Cryptography.dll",
+    "length": 13312,
+    "sha256": "1A69F4067BB551A38B8B03821C8D79625DC72AEDB9106ECD368F18B87486143A"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Cryptography.xml",
+    "length": 3196,
+    "sha256": "B1790A04027E963624C12B4136D26A7A57F9D4DEE1D636CE41406740A21AAB89"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Quality.dll",
+    "length": 40960,
+    "sha256": "CD9C33EC71A6E702EEC06FAE7FEB8E872A3B803408D739566AF83ABBDC61009A"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Quality.xml",
+    "length": 44839,
+    "sha256": "FBCBFEC37A8599638EABD57D990E27F431390B75C75AE4CFC9E0632DF310AF83"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Shared.pdb",
+    "length": 13724,
+    "sha256": "874A16F0FD5CC798A4BBA451A89AA7B17E4DEF3EE48DEDC99B591A3D90B9866D"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Snippets.dll",
+    "length": 154624,
+    "sha256": "BF8359D7AD1292D06AADB8AD0F996A33FD163FA7BF35B9628E50D727D37E10BD"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.System.dll",
+    "length": 10240,
+    "sha256": "361B75AE4DA87CD63F4B451BBC2239770D9175D9CFAA466C41A6FB495991F221"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.System.xml",
+    "length": 12223,
+    "sha256": "F39B95367E1728A31454FD3CB8687445EAF936B333A7131B68D1FA3252916FE9"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.WPFonts.pdb",
+    "length": 9892,
+    "sha256": "E4D482234284990316BB716730AF1BC62A19A0B408B679E0B0C99B4F30A5918F"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.WPFonts.xml",
+    "length": 1668,
+    "sha256": "3665C541DA2288A27BA9D611395C905D145C4AE9F8F3EF6BE007EA9B166F15F0"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.xml",
+    "length": 1325985,
+    "sha256": "D51C810E3401162D5D8F3B0F8FBEB4762EEAC7206705382D7E656F1911EDC400"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.BarCodes.pdb",
+    "length": 20800,
+    "sha256": "50B811141F16E8ECB86825DC67F4755D6C6525ADA5EF39A4375EE268519CFCB2"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Charting.dll",
+    "length": 88576,
+    "sha256": "DEE811622AF396450C591F959595CD6FD1415F9D20BB4D12A6CA24082A5C9225"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Charting.xml",
+    "length": 128353,
+    "sha256": "D1EB8C1962E0486EC95073E220A7A3441294189C411797DB9C3880DD5D06A1ED"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Cryptography.pdb",
+    "length": 12452,
+    "sha256": "CCC5C510DE76675D0E9576274C2CAFC31536CBA654167EDB95714F1B613F24D3"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.dll",
+    "length": 799232,
+    "sha256": "B3A6AE252EBC9F16A04944FA66C82782604E9A773B973D9FF8A43F8CAB26E719"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.pdb",
+    "length": 337320,
+    "sha256": "33E977751795324DC90F9D84F03AA5ED651241352016AEA182F3C871A5ADCE5C"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Quality.pdb",
+    "length": 21288,
+    "sha256": "9A98B131C348DF9B1EB4B06A0C62B1C0229D21D6E08C8025430911355296DE4E"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Shared.dll",
+    "length": 26112,
+    "sha256": "AD30AF67D13F532372A350CD83B1C64D04FD8AAD64C4695CAAF2E4322609F235"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Shared.xml",
+    "length": 14531,
+    "sha256": "EE2881257D52C6C4DEEA95035903D85D86969A99793145C92E2C00D1B4FBA793"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.Snippets.pdb",
+    "length": 38828,
+    "sha256": "DDA7CA63EC09C281668A5A015523218B0D5249AE62594EA734AF3FC0701848FC"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.System.pdb",
+    "length": 12344,
+    "sha256": "873E76C9FC774F13B34C5BBCF7697C9AECF2C71BF6DD70BD3325312CB2357BA4"
+  },
+  {
+    "name": "lib/netstandard2.0/PdfSharp.WPFonts.dll",
+    "length": 421888,
+    "sha256": "5DB891B3AE62AE87DEDA3E037B504336316003E4E5C4DC9574311DA64824D712"
+  },
+  {
+    "name": "README.md",
+    "length": 918,
+    "sha256": "3C3F3610578AF1D1BA46A5AA07B69A2A81BE89F30BD8965DA04EA71663224F2D"
+  },
+  {
+    "name": "images/PDFsharp-128x128.png",
+    "length": 6666,
+    "sha256": "7A9FEF7F6A741DFAA370A06C9E8BB307315E39D7DAD3F14B5B9A448F86B41629"
+  },
+  {
+    "name": "[Content_Types].xml",
+    "length": 716,
+    "sha256": "5B6684A4D2D5C6728E55FEC37934534F532AF76DB229925222DB8FE22AC1D2D0"
+  },
+  {
+    "name": "package/services/metadata/core-properties/310269059d41461bb1c4a32f80513a76.psmdcp",
+    "length": 1081,
+    "sha256": "81EE0CD1A5CCEC604284872B4F5E73973AA7DA108A48CDB7CD71ECF126B9A165"
+  },
+  {
+    "name": ".signature.p7s",
+    "length": 12987,
+    "sha256": "A37BDCC61E2F28F4E29EB7B24AEA3C7A8C4E49D1CA3AECC2280128007333E361"
+  }
+]
