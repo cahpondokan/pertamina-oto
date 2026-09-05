@@ -1,0 +1,51 @@
+name: Provisional PR validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pr-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Restore through safe reports
+    runs-on:
+      - self-hosted
+      - oto-dotnet-10
+    timeout-minutes: 30
+    env:
+      CI: "true"
+      DOTNET_NOLOGO: "true"
+      DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+    steps:
+      - name: Check out pull request commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Validate exact SDK
+        shell: pwsh
+        run: |
+          $actual = (dotnet --version).Trim()
+          if ($actual -cne '10.0.400') {
+            throw "Required .NET SDK 10.0.400 is unavailable."
+          }
+
+      - name: Run fail-closed PR validation
+        shell: pwsh
+        run: ./pipelines/Invoke-PRValidation.ps1 -Configuration Release
+
+      - name: Report local evidence location
+        if: always()
+        shell: pwsh
+        run: |
+          Write-Output 'Validation evidence remains under artifacts/evidence on the approved self-hosted runner.'
+          Write-Output 'Remote retention and signing are intentionally not enabled in Phase 0.'

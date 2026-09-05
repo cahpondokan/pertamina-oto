@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "decisionIds": [
+    "LOCAL-BOOT-001",
+    "CCR-015",
+    "P0-D06"
+  ],
+  "packageSources": [
+    {
+      "key": "nuget.org",
+      "url": "https://api.nuget.org/v3/index.json",
+      "patterns": [
+        "Microsoft.*",
+        "MSTest.*"
+      ]
+    }
+  ],
+  "versionedProjectSdks": [
+    {
+      "id": "MSTest.Sdk",
+      "version": "4.4.0"
+    }
+  ],
+  "packageReferences": []
+}
