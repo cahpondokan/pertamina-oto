@@ -1,0 +1,83 @@
+{
+  "task": "P2-W0D-A6-SECURITY-PACKET-REVIEW",
+  "baseline": "07b5621c8d5e26793e4d8658aef9f8e23b3a86ec",
+  "templateValidation": {
+    "exit": 0,
+    "passed": 15,
+    "discovered": 15
+  },
+  "closureValidation": {
+    "exit": 0,
+    "nodes": 4,
+    "edges": 3
+  },
+  "inputs": [
+    {
+      "path": "poc/environment/windows-sandbox/offline.wsb.template",
+      "sha256": "A011670A197F054D2AA787499F401BD48A72E59B1683D036FA8E58576A6BA97F"
+    },
+    {
+      "path": "poc/environment/windows-sandbox/Validate-Template.ps1",
+      "sha256": "ED63C2F60F55A705CDF8F0BF09436811E92E0524FE5A2C893AF2B92FBBBD6C05"
+    },
+    {
+      "path": "poc/environment/windows-sandbox/RUNBOOK.md",
+      "sha256": "817F50494825DEE5D73B51DDC5CE2B905754B61985C3CFBFF0186C142DC86E44"
+    },
+    {
+      "path": "poc/intake/dependency-closure/closure.json",
+      "sha256": "3130E92422B3449A26D30B80B3EE3030CC1699F8810D439AFB54A767CCEA857A"
+    },
+    {
+      "path": "poc/intake/dependency-closure/Build-Closure.ps1",
+      "sha256": "7EDCBECDB5B4ADE456BC6D000C19804E8C459A7FEAADAA4D06CF70F3787AA1F2"
+    },
+    {
+      "path": "poc/oracles/candidate-research/RESEARCH.md",
+      "sha256": "A7C7F0590DA8C4F8D55C07B7F1F1F3EE07DE03BBCBED459721B5C05256B90A48"
+    },
+    {
+      "path": "poc/oracles/candidate-research/manifest.json",
+      "sha256": "F81DBCDE9929A377E6A48343DAF03453B75702A4ED6DED7457563264A51D9F24"
+    }
+  ],
+  "metadata": [
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.2",
+      "metadataSha256": "FEB5B0B3E0E41FD72449A0FE707BEAB8C44B69475264A474A9AFDB9E7899D406",
+      "upstreamPackageHash": "uhlg7xEKxzh6Kgbu/ALFnOV7D+WLPgzMt5scjyFQEFxdH0tl4O2V/1DXDygUKRfGpzW4P05UBrsdj53R+WNdfQ==",
+      "algorithm": "SHA512",
+      "localArtifactVerified": false
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "metadataSha256": "EC60A3E307866D9034ABC7A349E679A5958B36F7DE9F2917090FC70C01A5907B",
+      "upstreamPackageHash": "5onsHiy50vr6n9n2q4YaCJWqmhy8n7N+ndhWyNFwkATrFFXmRXC1EBO+iLYOmuDET4+FOTLZzeqzPdtC/OwZmw==",
+      "algorithm": "SHA512",
+      "localArtifactVerified": false
+    },
+    {
+      "id": "PDFsharp",
+      "version": "6.2.4",
+      "metadataSha256": "24E0B05A0385DFD4879A210C55C619B21BA4DD29B031CBBB42B4BB34AB35B739",
+      "upstreamPackageHash": "K1/qaAyYQxf4g57OGAS21RxDbi5nAX4TrWjt8RBwdTC2NAwO8vPFeGC0sfc1LvQsFitepCXFs6CGhanA1NRfDg==",
+      "algorithm": "SHA512",
+      "localArtifactVerified": false
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "metadataSha256": "8CEBD48B774BDB6D81F62E6C2949AED5B8FF0A39CC5DE0AE8486E1D4571832EB",
+      "upstreamPackageHash": "MbBgZwHc5ACLGJ28C8+g2FWi3rLsg6PTFQ2B2wAZVfgbbRv8MPrZU+dcVwS0eIMABrqBx7hL35pQ6CQQVcpkUA==",
+      "algorithm": "SHA512",
+      "localArtifactVerified": false
+    }
+  ],
+  "processing": "NOT_RUN",
+  "restart": "NOT_RUN",
+  "acquisition": "NOT_RUN",
+  "scanner": "NOT_RUN",
+  "cost": "ZERO_ADDITIONAL_COST"
+}
