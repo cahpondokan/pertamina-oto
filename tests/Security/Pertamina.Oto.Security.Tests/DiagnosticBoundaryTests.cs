@@ -39,4 +39,3 @@ public sealed class DiagnosticBoundaryTests
         Assert.IsTrue(boundary.Evaluate(new(AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied, AuthorizationGate.Satisfied)).IsAllowed);
     }
 }
-

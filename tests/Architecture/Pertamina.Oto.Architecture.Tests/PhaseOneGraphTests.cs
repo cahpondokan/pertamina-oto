@@ -59,4 +59,3 @@ public sealed class PhaseOneGraphTests
         Assert.IsFalse(Compliant("<Project/>", ["required"]));
     }
 }
-

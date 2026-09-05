@@ -58,4 +58,3 @@ public sealed class OfflineBoundaryTests
         Assert.ThrowsExactly<ArgumentException>(() => MergeOutcome.Completed(id, Guid.Empty));
     }
 }
-

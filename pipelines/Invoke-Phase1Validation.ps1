@@ -98,6 +98,3 @@ try {
     }
     'PHASE1_PIPELINE_RESULT=FAIL'; exit 1
 }
-
-
-

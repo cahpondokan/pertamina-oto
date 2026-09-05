@@ -51,4 +51,3 @@ Check ($LASTEXITCODE -ne 0) 'SCOPE_NEGATIVE'
 $report | Set-Content (Join-Path $EvidenceRoot 'self-test-results.log')
 $report
 'PHASE1_SELF_TEST_RESULT=PASS'
-
