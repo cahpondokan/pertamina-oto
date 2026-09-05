@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../Pertamina.Oto.Contracts/Pertamina.Oto.Contracts.csproj" />
+  </ItemGroup>
+</Project>

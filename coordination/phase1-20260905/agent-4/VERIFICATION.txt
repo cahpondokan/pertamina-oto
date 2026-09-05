@@ -1,0 +1,32 @@
+Run P01-20260905-1319 / P1-A4-OFFLINE-PORTS
+Baseline d497ec68ea8fa3e21ca311a580a44111045cfb20
+Base HEAD (tested working changes identified by SOURCE_SHA256.txt): d497ec68ea8fa3e21ca311a580a44111045cfb20
+COMMAND: dotnet restore tests/Unit/OfflineFoundation/Pertamina.Oto.OfflineFoundation.Tests.csproj --locked-mode --ignore-failed-sources
+  Determining projects to restore...
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Storage.Abstractions\Pertamina.Oto.Storage.Abstractions.csproj (in 539 ms).
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Contracts\Pertamina.Oto.Contracts.csproj (in 539 ms).
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Processing.Abstractions\Pertamina.Oto.Processing.Abstractions.csproj (in 539 ms).
+  Restored <WORKTREE>\tests\Unit\OfflineFoundation\Pertamina.Oto.OfflineFoundation.Tests.csproj (in 967 ms).
+EXIT: 0
+COMMAND: dotnet build tests/Unit/OfflineFoundation/Pertamina.Oto.OfflineFoundation.Tests.csproj -c Release --no-restore
+  Pertamina.Oto.Contracts -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Contracts\bin\Release\net10.0\Pertamina.Oto.Contracts.dll
+  Pertamina.Oto.Processing.Abstractions -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Processing.Abstractions\bin\Release\net10.0\Pertamina.Oto.Processing.Abstractions.dll
+  Pertamina.Oto.Storage.Abstractions -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Storage.Abstractions\bin\Release\net10.0\Pertamina.Oto.Storage.Abstractions.dll
+  Pertamina.Oto.OfflineFoundation.Tests -> <WORKTREE>\tests\Unit\OfflineFoundation\bin\Release\net10.0\Pertamina.Oto.OfflineFoundation.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.38
+EXIT: 0
+COMMAND: dotnet run --project tests/Unit/OfflineFoundation/Pertamina.Oto.OfflineFoundation.Tests.csproj -c Release --no-build
+
+Test run summary: Passed! - <WORKTREE>\tests\Unit\OfflineFoundation\bin\Release\net10.0\Pertamina.Oto.OfflineFoundation.Tests.dll (net10.0|x64)
+  total: 18
+  failed: 0
+  succeeded: 18
+  skipped: 0
+  duration: 368ms
+EXIT: 0
+git diff --check EXIT: 0

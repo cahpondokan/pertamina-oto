@@ -1,0 +1,7 @@
+<Project Sdk="MSTest.Sdk/4.4.0">
+  <PropertyGroup><IsPackable>false</IsPackable></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/Pertamina.Oto.Storage.Abstractions.csproj" />
+    <ProjectReference Include="../../../src/BuildingBlocks/Pertamina.Oto.Processing.Abstractions/Pertamina.Oto.Processing.Abstractions.csproj" />
+  </ItemGroup>
+</Project>
