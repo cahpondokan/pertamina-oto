@@ -1,0 +1,33 @@
+{
+  "task": "P2-W0D-A7-GOVERNANCE-PACKET-REVIEW",
+  "baseline": "07b5621c8d5e26793e4d8658aef9f8e23b3a86ec",
+  "checkedDate": "2026-09-06",
+  "command": "pwsh -NoProfile -File poc/intake/dependency-closure/Build-Closure.ps1 -Verify",
+  "exitCode": 0,
+  "result": "PASS: metadata identities, MIT expressions, selected groups, 4 nodes/3 edges, exact URL/version allowlist, deterministic manifest, text-only scope",
+  "inputs": [
+    {
+      "path": "poc/intake/dependency-closure/closure.json",
+      "sha256": "3130E92422B3449A26D30B80B3EE3030CC1699F8810D439AFB54A767CCEA857A"
+    },
+    {
+      "path": "poc/oracles/candidate-research/RESEARCH.md",
+      "sha256": "A7C7F0590DA8C4F8D55C07B7F1F1F3EE07DE03BBCBED459721B5C05256B90A48"
+    },
+    {
+      "path": "poc/oracles/candidate-research/manifest.json",
+      "sha256": "F81DBCDE9929A377E6A48343DAF03453B75702A4ED6DED7457563264A51D9F24"
+    },
+    {
+      "path": "poc/environment/windows-sandbox/offline.wsb.template",
+      "sha256": "A011670A197F054D2AA787499F401BD48A72E59B1683D036FA8E58576A6BA97F"
+    }
+  ],
+  "inputsUnchanged": true,
+  "acquisitions": 0,
+  "candidateExecutions": 0,
+  "documentProcessing": 0,
+  "restartIssued": false,
+  "productTests": "NOT_RUN",
+  "additionalCost": 0
+}
