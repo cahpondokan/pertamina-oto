@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Provider-neutral local processing boundaries for PERTAMINA OTO.</Description>
+    <RootNamespace>Pertamina.Oto.Processing.Abstractions</RootNamespace>
+    <AssemblyName>Pertamina.Oto.Processing.Abstractions</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Pertamina.Oto.Contracts/Pertamina.Oto.Contracts.csproj" />
+  </ItemGroup>
+</Project>

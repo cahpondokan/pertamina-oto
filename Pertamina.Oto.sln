@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pertamina.Oto.Contracts", "src\BuildingBlocks\Pertamina.Oto.Contracts\Pertamina.Oto.Contracts.csproj", "{7BF1471C-C897-464F-A67E-99A91AA46343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pertamina.Oto.Processing.Abstractions", "src\BuildingBlocks\Pertamina.Oto.Processing.Abstractions\Pertamina.Oto.Processing.Abstractions.csproj", "{AE3937C6-0E46-4404-B446-C94877BCA63A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF1471C-C897-464F-A67E-99A91AA46343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF1471C-C897-464F-A67E-99A91AA46343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF1471C-C897-464F-A67E-99A91AA46343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF1471C-C897-464F-A67E-99A91AA46343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3937C6-0E46-4404-B446-C94877BCA63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3937C6-0E46-4404-B446-C94877BCA63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3937C6-0E46-4404-B446-C94877BCA63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3937C6-0E46-4404-B446-C94877BCA63A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Typed and versioned cross-boundary contracts for PERTAMINA OTO.</Description>
+    <RootNamespace>Pertamina.Oto.Contracts</RootNamespace>
+    <AssemblyName>Pertamina.Oto.Contracts</AssemblyName>
+  </PropertyGroup>
+</Project>
