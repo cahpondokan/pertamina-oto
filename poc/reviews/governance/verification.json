@@ -1,0 +1,11 @@
+{
+  "package": "PDFsharp",
+  "version": "6.2.4",
+  "bytes": 4625326,
+  "sha256Before": "5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67",
+  "sha256After": "5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67",
+  "archiveEntriesVerified": 111,
+  "preparationSourcesVerified": 12,
+  "candidateExecuted": false,
+  "result": "PASS_STATIC_BINDING"
+}
