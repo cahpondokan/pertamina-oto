@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../../Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/Pertamina.Oto.Modules.Pdf.Contracts.csproj" /></ItemGroup></Project>

@@ -1,0 +1,1 @@
+<Project Sdk="MSTest.Sdk/4.4.0"><PropertyGroup><IsPackable>false</IsPackable></PropertyGroup><ItemGroup><ProjectReference Include="../../../src/Hosts/Pertamina.Oto.Desktop/Pertamina.Oto.Desktop.csproj" /></ItemGroup></Project>
