@@ -1,0 +1,53 @@
+[
+  {
+    "command": "dotnet restore tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/Pertamina.Oto.Modules.Pdf.UnitTests.csproj --locked-mode",
+    "exitCode": 0,
+    "evidence": "unit-restore.log"
+  },
+  {
+    "command": "dotnet build tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/Pertamina.Oto.Modules.Pdf.UnitTests.csproj -c Release --no-restore",
+    "exitCode": 0,
+    "evidence": "unit-build.log"
+  },
+  {
+    "command": "dotnet run --project tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/Pertamina.Oto.Modules.Pdf.UnitTests.csproj -c Release --no-build --no-restore -- --report-trx",
+    "exitCode": 0,
+    "evidence": "unit-test.log"
+  },
+  {
+    "suite": "unit",
+    "total": 39,
+    "passed": 39,
+    "failed": 0
+  },
+  {
+    "command": "dotnet restore tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/Pertamina.Oto.Modules.Pdf.ContractTests.csproj --locked-mode",
+    "exitCode": 0,
+    "evidence": "contract-restore.log"
+  },
+  {
+    "command": "dotnet build tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/Pertamina.Oto.Modules.Pdf.ContractTests.csproj -c Release --no-restore",
+    "exitCode": 0,
+    "evidence": "contract-build.log"
+  },
+  {
+    "command": "dotnet run --project tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/Pertamina.Oto.Modules.Pdf.ContractTests.csproj -c Release --no-build --no-restore -- --report-trx",
+    "exitCode": 0,
+    "evidence": "contract-test.log"
+  },
+  {
+    "suite": "contract",
+    "total": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  {
+    "check": "package version/contentHash parity with approved baseline",
+    "result": "PASS"
+  },
+  {
+    "check": "no concrete network/filesystem/database/log IO in PDF source",
+    "result": "PASS",
+    "limitation": "static source check, not OS network denial"
+  }
+]

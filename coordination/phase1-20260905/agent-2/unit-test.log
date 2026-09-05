@@ -1,0 +1,10 @@
+Warning: Trx file '<WORKTREE>\tests\Unit\Pdf\Pertamina.Oto.Modules.Pdf.UnitTests\bin\Release\net10.0\TestResults\Pertamina.Oto.Modules.Pdf.UnitTests_net10.0_x64.trx' already exists and will be overwritten.
+
+Test run summary: Passed! - <WORKTREE>\tests\Unit\Pdf\Pertamina.Oto.Modules.Pdf.UnitTests\bin\Release\net10.0\Pertamina.Oto.Modules.Pdf.UnitTests.dll (net10.0|x64)
+  total: 39
+  failed: 0
+  succeeded: 39
+  skipped: 0
+  duration: 591ms
+  Out of process file artifacts produced:
+    - <WORKTREE>\tests\Unit\Pdf\Pertamina.Oto.Modules.Pdf.UnitTests\bin\Release\net10.0\TestResults\Pertamina.Oto.Modules.Pdf.UnitTests_net10.0_x64.trx

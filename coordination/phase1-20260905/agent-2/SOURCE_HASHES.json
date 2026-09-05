@@ -1,0 +1,66 @@
+[
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/MergePorts.cs",
+    "sha256": "D81BDB78D40816F7D5DEDD8446CA6E2328AB7D4DD1941487428C2FAF9FD21326"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/MergeService.cs",
+    "sha256": "174CEE3F8441E8710B83596637A41E624B1D44766C5A95905F5FA9A81969B618"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/packages.lock.json",
+    "sha256": "8B42C5BA6D4846B6E406470CBC245D037302F788A14D36D87E061E0A11198938"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/Pertamina.Oto.Modules.Pdf.Application.csproj",
+    "sha256": "F118817BF1A2BFB35CB57F80994BD295DEA990D34E508306C44308FF978343DD"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/MergeContracts.cs",
+    "sha256": "ABA91B21FF5EDFB449D2F77B2655543F3C8FA20FFA10E2C986A1EE2775B78C28"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/packages.lock.json",
+    "sha256": "1624731BF151EC2AC6993023046A4ABBAC7C6DDC71ED2E242E8285BBC69D561E"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/Pertamina.Oto.Modules.Pdf.Contracts.csproj",
+    "sha256": "8D654C44B7BEBB6B31A9F2F606927F45B5072193ADC4EEF8CCE3F3CF3B278DF3"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/MergePlan.cs",
+    "sha256": "F4CE8C696F9EE8E973155E8EB5EA4EDBF0676638B6BC263BB034ABE98136218D"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/packages.lock.json",
+    "sha256": "6240E843CE5B2625DC436E28D4E0317E9272555EF3DF128F71492A9DCCADC77F"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/Pertamina.Oto.Modules.Pdf.Domain.csproj",
+    "sha256": "4800C43930EA853F886C13CEDB2EF7186436E454075D74E304E6C2010EAA2E3D"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/MergeContractTests.cs",
+    "sha256": "108B05CF708320D63906DD7EF2F5E08ACC1E4AD60A3E42513E86DED66B26941C"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/packages.lock.json",
+    "sha256": "CAE278A09C53ADA9D60B96943DB3DCF14145747C2E95D863C41191EC3F0B147F"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/Pertamina.Oto.Modules.Pdf.ContractTests.csproj",
+    "sha256": "2812F888A9E350DE00D188BC9CF51BBD60EE59C9A6BFF95B558BC17FB3BE73F0"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/MergeTests.cs",
+    "sha256": "EA8ABE6373163E7122B60B60A062988708002C6A776DC3E04A3F6FB9B6FBF225"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/packages.lock.json",
+    "sha256": "191DAD372BF5DEAA7E2894714585A9E6E6CBB584637C0BB34DD53DBC60659E85"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/Pertamina.Oto.Modules.Pdf.UnitTests.csproj",
+    "sha256": "5813F3BEAA24CFB9DAF2B2B9892211DB088C022FB578B7A90DA523D79D41F380"
+  }
+]

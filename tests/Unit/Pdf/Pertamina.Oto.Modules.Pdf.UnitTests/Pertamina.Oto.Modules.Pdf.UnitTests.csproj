@@ -1,0 +1,1 @@
+<Project Sdk="MSTest.Sdk/4.4.0"><PropertyGroup><IsPackable>false</IsPackable></PropertyGroup><ItemGroup><ProjectReference Include="../../../../src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/Pertamina.Oto.Modules.Pdf.Application.csproj" /></ItemGroup></Project>
