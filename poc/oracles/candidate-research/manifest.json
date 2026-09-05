@@ -1,0 +1,32 @@
+{
+  "task": "P2-W0C-A3-INDEPENDENT-ORACLE-RESEARCH",
+  "checkedDate": "2026-09-06",
+  "status": "RESEARCH_ONLY",
+  "acquisitionAuthorized": false,
+  "executionAuthorized": false,
+  "cost": "ZERO_ADDITIONAL_COST",
+  "restartAuthorized": false,
+  "candidates": [
+    {
+      "id": "ORACLE-QPDF-12.4.1",
+      "version": "12.4.1",
+      "license": "Apache-2.0",
+      "role": "STRUCTURAL",
+      "source": "https://github.com/qpdf/qpdf/releases/tag/v12.4.1",
+      "proposedAsset": "qpdf-12.4.1-msvc64.zip",
+      "advertisedSha256": "3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6",
+      "localSha256": null
+    },
+    {
+      "id": "ORACLE-MUPDF-1.28.3",
+      "version": "1.28.3",
+      "license": "GNU AGPL v3 - exact use review pending",
+      "role": "RENDER_TEXT",
+      "source": "https://github.com/ArtifexSoftware/mupdf/tree/1.28.3",
+      "distribution": "SOURCE_ONLY",
+      "proposedAsset": null,
+      "localSha256": null
+    }
+  ],
+  "reportSha256": "a7c7f0590da8c4f8d55c07b7f1f1f3ee07de03bbcbed459721b5c05256b90a48"
+}
