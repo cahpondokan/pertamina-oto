@@ -1,0 +1,1196 @@
+{
+  "sha256Before": "5647882339b327cbf6da9ea3f882efb335f8d602e6fd45323adf9e78da53cf67",
+  "sha256After": "5647882339b327cbf6da9ea3f882efb335f8d602e6fd45323adf9e78da53cf67",
+  "bytes": 4625326,
+  "archiveChecks": "PASS",
+  "signatureValidation": "NOT_RUN",
+  "assemblyExecution": false,
+  "method": "PE CLI directory and string vocabulary only; no IL/callgraph/PInvoke-table decoding",
+  "entries": [
+    {
+      "name": "_rels/.rels",
+      "bytes": 502,
+      "sha256": "01d6adacff4155d288cd3907bf0180af82e786bd734338eb488ab0d5ec2f1df3",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "PDFsharp.nuspec",
+      "bytes": 3189,
+      "sha256": "49e089d9d155c7fef3a413bcf150aed53476c3c1ab60696df86ebf2a3aecae77",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.BarCodes.dll",
+      "bytes": 35840,
+      "sha256": "5416b543494682e49e42fb02130cf6ff21c1509129f74ba94146e6df2fb202b1",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.BarCodes.pdb",
+      "bytes": 23176,
+      "sha256": "d07e0fd085b19397635fa051327c3ac35e86602ccbb622b6ef1a26c7a3bea9f9",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.BarCodes.xml",
+      "bytes": 32689,
+      "sha256": "6c48e7b659dd6c6abfd2517e24830983fa43a1f983623bed688aa4c27a5de5ee",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Charting.pdb",
+      "bytes": 58068,
+      "sha256": "56ca909ab24be67be4dd5c35bbcb1989d83e5bfd01fdf0114d04bab85df80f82",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Cryptography.dll",
+      "bytes": 15360,
+      "sha256": "f6579034356bac7aa6589741285bd2c025df5954414280943ea214826461f08b",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "HttpClient",
+          "System.Net"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "Uri",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Cryptography.xml",
+      "bytes": 2511,
+      "sha256": "88a89a3b075a12e6b410ed7d35a5673995627e8fe1907a9669aafcc1d9a28883",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Quality.dll",
+      "bytes": 40448,
+      "sha256": "f5fbf9773da5dcb756859145ac5afbd44a5246b57cc33f0c4b69a7f283dee097",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "Download",
+          "HttpClient",
+          "System.Net",
+          "download"
+        ],
+        "process": [
+          "ProcessStartInfo",
+          "ShellExecute"
+        ],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "urI",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Quality.xml",
+      "bytes": 44154,
+      "sha256": "fd9207e3a4ddac496c2ce145abd268190f3515c24b8add9972a7b9c6700b259c",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Shared.pdb",
+      "bytes": 15148,
+      "sha256": "e71fb97756d3dc3b243ce8a90f97a039ab18c839034a0c72bdea885993d9a10b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Snippets.dll",
+      "bytes": 154624,
+      "sha256": "7f5c6320bc70e8009f18cb57897b467d0f17d6e44e3dc6332ec9141b2889d4c1",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.System.dll",
+      "bytes": 8192,
+      "sha256": "6d9accdbf73f4c8f79e60b91764b34e25f0ed207820c62da1112980ad32b6f82",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.System.xml",
+      "bytes": 4781,
+      "sha256": "b643c0786b53e472d2f022a3493fbf6c589d0256ff1435b12acc82dd1f849745",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.WPFonts.pdb",
+      "bytes": 12756,
+      "sha256": "0b6fbbff8ec86ffee4c7bff303f8e3fb2f917ee0d6b676fb13e5289607b942db",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.WPFonts.xml",
+      "bytes": 1668,
+      "sha256": "3665c541da2288a27ba9d611395c905d145c4ae9f8f3ef6be007ea9b166f15f0",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.xml",
+      "bytes": 1318352,
+      "sha256": "06e3e9a175c77547173316f354537e07d7c5c2af50977294c9f8b5972bf3a92b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Charting.dll",
+      "bytes": 88064,
+      "sha256": "714a27e299bbcb6eac7ae7f9a83bd8a9972a157a8c53581b73c260ead16ae24f",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Charting.xml",
+      "bytes": 128353,
+      "sha256": "d1eb8c1962e0486ec95073e220a7a3441294189c411797db9c3880dd5d06a1ed",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Cryptography.pdb",
+      "bytes": 15060,
+      "sha256": "9729a2193cf6fd289441b366cbf5176734223d5efb1c2e7f945561cc7a81c19a",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.dll",
+      "bytes": 793088,
+      "sha256": "a30a1c39e942a6c7f33f451257f26e9a8856d389ef98031971711a7c77123d82",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [
+          "Marshal"
+        ],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "EmbeddedFile",
+          "GoToR",
+          "Launch",
+          "OpenAction",
+          "URI",
+          "embeddedFile",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.pdb",
+      "bytes": 339348,
+      "sha256": "2313cf97c76fb2e8e2633d14415aa7dbb92719e267a8f1ec71fce6576bd1af94",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Quality.pdb",
+      "bytes": 23696,
+      "sha256": "1c01af143b4bad693fa57ec67a1d68cc82e1a987f4f0f55ac95fe221c6992e1e",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Shared.dll",
+      "bytes": 23040,
+      "sha256": "b3ed534cae06d4b2129d1242fa52d57effa4f06883c3b959c18966de7ce8a264",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Shared.xml",
+      "bytes": 6685,
+      "sha256": "4b89d5f19e1e1b8eac3ea533ed3af15dad4ecae57a3e849a1752473a5d832c1b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.Snippets.pdb",
+      "bytes": 41732,
+      "sha256": "692307d360c8ccddc2e3146e542fd6802f9a1efbb4e5ba8ebfe6ca3235bc2688",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.System.pdb",
+      "bytes": 14580,
+      "sha256": "058fae92c57dcd111edebece8c5afb06744eea8d839ee6f96987c10f738daf61",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net8.0/PdfSharp.WPFonts.dll",
+      "bytes": 421376,
+      "sha256": "f2cbb72f4345c3abcbded9cc5a71c24e6b1988d2953a083681ddf1adf540aa42",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.BarCodes.dll",
+      "bytes": 35840,
+      "sha256": "5a92208a8ff147b9f3d3a3eaf5d678d1e07fecf7ced7ed535d667526565fe3e6",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.BarCodes.pdb",
+      "bytes": 23244,
+      "sha256": "084d9d96917f85ee6dbf5ea7b0fd352df5aadfe8fa325d40da634e644dddc3af",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.BarCodes.xml",
+      "bytes": 32689,
+      "sha256": "6c48e7b659dd6c6abfd2517e24830983fa43a1f983623bed688aa4c27a5de5ee",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Charting.pdb",
+      "bytes": 58136,
+      "sha256": "f696870ddc601cf308cb6285a50cb760e2ecbd972a6ec1b9400ae82c60efad96",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Cryptography.dll",
+      "bytes": 15360,
+      "sha256": "47d77b624181104b7fd41653380849fb935e08a102a542edac82228d0bb1d749",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "HttpClient",
+          "System.Net"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "Uri",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Cryptography.xml",
+      "bytes": 2511,
+      "sha256": "88a89a3b075a12e6b410ed7d35a5673995627e8fe1907a9669aafcc1d9a28883",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Quality.dll",
+      "bytes": 40448,
+      "sha256": "970cdfdaa57e27e260ddd81696e471d05f5c621b207cad379de6a73743fe22de",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "Download",
+          "HttpClient",
+          "System.Net",
+          "download"
+        ],
+        "process": [
+          "ProcessStartInfo",
+          "ShellExecute"
+        ],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "urI",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Quality.xml",
+      "bytes": 44154,
+      "sha256": "fd9207e3a4ddac496c2ce145abd268190f3515c24b8add9972a7b9c6700b259c",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Shared.pdb",
+      "bytes": 15216,
+      "sha256": "38055a878a34f15c059930afe7461fb535bb2c552f83a220f0749affd5f090bd",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Snippets.dll",
+      "bytes": 154624,
+      "sha256": "f779e23bb65bb20f780341b25f44054ce07dc21ce29f602913b4ba306056d9a9",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.System.dll",
+      "bytes": 8192,
+      "sha256": "8506b85ea33d7780b4709f536813570598fd435c6d468190de660b676716aa1b",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.System.xml",
+      "bytes": 4781,
+      "sha256": "b643c0786b53e472d2f022a3493fbf6c589d0256ff1435b12acc82dd1f849745",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.WPFonts.pdb",
+      "bytes": 12824,
+      "sha256": "9f6b2ad040d76bce1c34cdf185a7f06674d33c89ccfadfa71de296ae086709da",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.WPFonts.xml",
+      "bytes": 1668,
+      "sha256": "3665c541da2288a27ba9d611395c905d145c4ae9f8f3ef6be007ea9b166f15f0",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.xml",
+      "bytes": 1318352,
+      "sha256": "06e3e9a175c77547173316f354537e07d7c5c2af50977294c9f8b5972bf3a92b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Charting.dll",
+      "bytes": 88064,
+      "sha256": "a7e6cf9ac2f900cdb31eb7ff0fa5f6fb6e406c78b7a9eb7d9304f3fa1b9b59b0",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Charting.xml",
+      "bytes": 128353,
+      "sha256": "d1eb8c1962e0486ec95073e220a7a3441294189c411797db9c3880dd5d06a1ed",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Cryptography.pdb",
+      "bytes": 15128,
+      "sha256": "a2d4cd2f263a8aebdd2937abe3aabe4ce87eebc945f2b078ecff30b42c0899d4",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.dll",
+      "bytes": 794624,
+      "sha256": "34d34fb83ac818c392ac89fa024515d49af9e2e6f77fa46dd7b66a2e254a50f7",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [
+          "Marshal"
+        ],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "EmbeddedFile",
+          "GoToR",
+          "Launch",
+          "OpenAction",
+          "URI",
+          "embeddedFile",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.pdb",
+      "bytes": 339432,
+      "sha256": "d3df531a7107254d6ac41dfcfcd1132501047efa586d1183ad563bf64776c090",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Quality.pdb",
+      "bytes": 23764,
+      "sha256": "31c271a7ffdd46d2f32cf343cd6c5a45dcb8fff343bf512fcf18d321225867dc",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Shared.dll",
+      "bytes": 23040,
+      "sha256": "ed85998ffc67e96a1a125a349c86181c1444b39c277676e73389874d2e58ebbe",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Shared.xml",
+      "bytes": 6685,
+      "sha256": "4b89d5f19e1e1b8eac3ea533ed3af15dad4ecae57a3e849a1752473a5d832c1b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.Snippets.pdb",
+      "bytes": 41800,
+      "sha256": "74b1a0f1bd2f3dc970ae0991041916a96e28d7da54b776deb12b25aaa5b28fbd",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.System.pdb",
+      "bytes": 14648,
+      "sha256": "913be19f6a1835e795b326bf3e3f8b07c6a83b26a6d1499d905abc6da14426c6",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net9.0/PdfSharp.WPFonts.dll",
+      "bytes": 421376,
+      "sha256": "89ac7e7b6ddd274d4d1dda929dafd145be495bdc6e543e19abb8ea9fc459c292",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.BarCodes.dll",
+      "bytes": 35840,
+      "sha256": "bafc4175afaef8629c6122cab01e90c8f8cdf72e2b957d328c42229d12d02fdd",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.BarCodes.xml",
+      "bytes": 32689,
+      "sha256": "6c48e7b659dd6c6abfd2517e24830983fa43a1f983623bed688aa4c27a5de5ee",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Charting.pdb",
+      "bytes": 58292,
+      "sha256": "2b73a1fcd828914709a283be5be94163f97bab34fe1f155c766b236dd76342c3",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Cryptography.dll",
+      "bytes": 15360,
+      "sha256": "25fc17414785592ca4cdc5efd93f2a9c245812a97cb66b986a63112f61552944",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "HttpClient",
+          "System.Net"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "Uri",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.BarCodes.pdb",
+      "bytes": 23400,
+      "sha256": "d577273d053fa68593b2076931a210bf1f85504efde41c522af90088f10d1484",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Charting.dll",
+      "bytes": 88064,
+      "sha256": "fce1973d6474160e736112b215410244310f47983853fd5afd776086a7392469",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Charting.xml",
+      "bytes": 128353,
+      "sha256": "d1eb8c1962e0486ec95073e220a7a3441294189c411797db9c3880dd5d06a1ed",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Cryptography.pdb",
+      "bytes": 15280,
+      "sha256": "dd2ddbfacacf6017e6d9a3f2e085abc9f17d1868e05efac89e4acd13a0c50266",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Quality.dll",
+      "bytes": 40448,
+      "sha256": "3f88ec2601d13607ec81a8f7cbc14bd710ff10e2730626ffece48c86098df0d1",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "Download",
+          "HttpClient",
+          "System.Net",
+          "download"
+        ],
+        "process": [
+          "ProcessStartInfo",
+          "ShellExecute"
+        ],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "urI",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.pdb",
+      "bytes": 339596,
+      "sha256": "1ab78ed5abe8d8e7acbe20da6d83f35a2d86f9b3bfd93b2fbe73a247980e839f",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Quality.pdb",
+      "bytes": 23924,
+      "sha256": "3452ef9ab0f44ca68362d592585f68c81d060cd5bf63bec5f35aeee78d199c87",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Quality.xml",
+      "bytes": 44154,
+      "sha256": "fd9207e3a4ddac496c2ce145abd268190f3515c24b8add9972a7b9c6700b259c",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Cryptography.xml",
+      "bytes": 2511,
+      "sha256": "88a89a3b075a12e6b410ed7d35a5673995627e8fe1907a9669aafcc1d9a28883",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Shared.dll",
+      "bytes": 23040,
+      "sha256": "4b21196cf18cb3b971ec02d1f66f2da0d98d77aa5ed5767754f5de2cf36cb737",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.dll",
+      "bytes": 794624,
+      "sha256": "1a77754d9b06c077f339eb33c0cdef28927ae8ee46ecca84e7874b15dabc85a1",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [
+          "Marshal"
+        ],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "EmbeddedFile",
+          "GoToR",
+          "Launch",
+          "OpenAction",
+          "URI",
+          "embeddedFile",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Shared.pdb",
+      "bytes": 15380,
+      "sha256": "3a4dac760e36ef18ebd79d41a3d304825c7d3e56e5dad89ac4447d66de1fb4ba",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Shared.xml",
+      "bytes": 6685,
+      "sha256": "4b89d5f19e1e1b8eac3ea533ed3af15dad4ecae57a3e849a1752473a5d832c1b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Snippets.dll",
+      "bytes": 154624,
+      "sha256": "b8191aac4339b25dd54be0bc61206b873c69a4d0150ea9f16fdcecfc0f1907a4",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.WPFonts.pdb",
+      "bytes": 12976,
+      "sha256": "d08b972a4b56ca7f49fcf34c7a69c9495d00b98d4b915fbe2533f6c84c58d445",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.Snippets.pdb",
+      "bytes": 41956,
+      "sha256": "eb4e969539cfeb1628ae6941986a2f44783c06aff17d4878cee2ce9cc649a150",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.System.dll",
+      "bytes": 8192,
+      "sha256": "5e8dc5ed655d223be9f9b5b3dfecadb607b00e695c34c60aac4e037af9e557e6",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.WPFonts.xml",
+      "bytes": 1668,
+      "sha256": "3665c541da2288a27ba9d611395c905d145c4ae9f8f3ef6be007ea9b166f15f0",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.xml",
+      "bytes": 1318352,
+      "sha256": "06e3e9a175c77547173316f354537e07d7c5c2af50977294c9f8b5972bf3a92b",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.System.pdb",
+      "bytes": 14812,
+      "sha256": "62e71035c14f49f4089e12c64fa369b02313212175ee88f482b4e54a9342ded5",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.System.xml",
+      "bytes": 4781,
+      "sha256": "b643c0786b53e472d2f022a3493fbf6c589d0256ff1435b12acc82dd1f849745",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/net10.0/PdfSharp.WPFonts.dll",
+      "bytes": 421376,
+      "sha256": "35a3ae0d7ee749e77a6db7c938ac2c41684d50a792b069e3a3723e9fdd6aafd3",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.BarCodes.dll",
+      "bytes": 32256,
+      "sha256": "8cdcecbc297ca33ccba22fe25cb89750af4dbd7289ce01eaae2c98e837008689",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.BarCodes.xml",
+      "bytes": 33374,
+      "sha256": "2cff5be78218bf16fc3d370b7b592fb5ff9e496de41069a5b2b2724f2a53d4b5",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Charting.pdb",
+      "bytes": 55384,
+      "sha256": "ef62f279c3b3972f314e3b1275290f37eb072226ae87f4b68bdcf07bca456007",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Cryptography.dll",
+      "bytes": 13312,
+      "sha256": "1a69f4067bb551a38b8b03821c8d79625dc72aedb9106ecd368f18b87486143a",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "Uri",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Cryptography.xml",
+      "bytes": 3196,
+      "sha256": "b1790a04027e963624c12b4136d26a7a57f9d4dee1d636ce41406740a21aab89",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Quality.dll",
+      "bytes": 40960,
+      "sha256": "cd9c33ec71a6e702eec06fae7feb8e872a3b803408d739566af83abbdc61009a",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "Download",
+          "HttpClient",
+          "System.Net",
+          "download"
+        ],
+        "process": [
+          "ProcessStartInfo",
+          "ShellExecute"
+        ],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": [
+          "urI",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Quality.xml",
+      "bytes": 44839,
+      "sha256": "fbcbfec37a8599638eabd57d990e27f431390b75c75ae4cfc9e0632df310af83",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Shared.pdb",
+      "bytes": 13724,
+      "sha256": "874a16f0fd5cc798a4bba451a89aa7b17e4def3ee48dedc99b591a3d90b9866d",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Snippets.dll",
+      "bytes": 154624,
+      "sha256": "bf8359d7ad1292d06aadb8ad0f996a33fd163fa7bf35b9628e50d727d37e10bd",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.System.dll",
+      "bytes": 10240,
+      "sha256": "361b75ae4da87cd63f4b451bbc2239770d9175d9cfaa466c41a6fb495991f221",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.System.xml",
+      "bytes": 12223,
+      "sha256": "f39b95367e1728a31454fd3cb8687445eaf936b333a7131b68d1fa3252916fe9",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.WPFonts.pdb",
+      "bytes": 9892,
+      "sha256": "e4d482234284990316bb716730af1bc62a19a0b408b679e0b0c99b4f30a5918f",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.WPFonts.xml",
+      "bytes": 1668,
+      "sha256": "3665c541da2288a27ba9d611395c905d145c4ae9f8f3ef6be007ea9b166f15f0",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.xml",
+      "bytes": 1325985,
+      "sha256": "d51c810e3401162d5d8f3b0f8fbeb4762eeac7206705382d7e656f1911edc400",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.BarCodes.pdb",
+      "bytes": 20800,
+      "sha256": "50b811141f16e8ecb86825dc67f4755d6c6525ada5ef39a4375ee268519cfcb2",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Charting.dll",
+      "bytes": 88576,
+      "sha256": "dee811622af396450c591f959595cd6fd1415f9d20bb4d12a6ca24082a5c9225",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Charting.xml",
+      "bytes": 128353,
+      "sha256": "d1eb8c1962e0486ec95073e220a7a3441294189c411797db9c3880dd5d06a1ed",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Cryptography.pdb",
+      "bytes": 12452,
+      "sha256": "ccc5c510de76675d0e9576274c2cafc31536cba654167edb95714f1b613f24d3",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.dll",
+      "bytes": 799232,
+      "sha256": "b3a6ae252ebc9f16a04944fa66c82782604e9a773b973d9ff8a43f8cab26e719",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [
+          "Unsafe"
+        ],
+        "active_pdf": [
+          "EmbeddedFile",
+          "GoToR",
+          "Launch",
+          "OpenAction",
+          "URI",
+          "embeddedFile",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.pdb",
+      "bytes": 337320,
+      "sha256": "33e977751795324dc90f9d84f03aa5ed651241352016aea182f3c871a5adce5c",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Quality.pdb",
+      "bytes": 21288,
+      "sha256": "9a98b131c348df9b1eb4b06a0c62b1c0229d21d6e08c8025430911355296de4e",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Shared.dll",
+      "bytes": 26112,
+      "sha256": "ad30af67d13f532372a350cd83b1c64d04fd8aad64c4695caaf2e4322609f235",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Shared.xml",
+      "bytes": 14531,
+      "sha256": "ee2881257d52c6c4deea95035903d85d86969a99793145c92e2c00d1b4fba793",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.Snippets.pdb",
+      "bytes": 38828,
+      "sha256": "dda7ca63ec09c281668a5a015523218b0d5249ae62594ea734af3fc0701848fc",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.System.pdb",
+      "bytes": 12344,
+      "sha256": "873e76c9fc774f13b34c5bbcf7697c9aecf2c71bf6dd70bd3325312cb2357ba4",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "lib/netstandard2.0/PdfSharp.WPFonts.dll",
+      "bytes": 421888,
+      "sha256": "5db891b3ae62ae87deda3e037b504336316003e4e5c4dc9574311da64824d712",
+      "nativeBuildScriptPath": false,
+      "cliHeaderPresent": true,
+      "indicators": {
+        "interop": [],
+        "network": [
+          "download"
+        ],
+        "process": [],
+        "dynamic": [],
+        "telemetry_activation": [],
+        "unsafe": [],
+        "active_pdf": []
+      }
+    },
+    {
+      "name": "README.md",
+      "bytes": 918,
+      "sha256": "3c3f3610578af1d1ba46a5aa07b69a2a81be89f30bd8965da04ea71663224f2d",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "images/PDFsharp-128x128.png",
+      "bytes": 6666,
+      "sha256": "7a9fef7f6a741dfaa370a06c9e8bb307315e39d7dad3f14b5b9a448f86b41629",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "[Content_Types].xml",
+      "bytes": 716,
+      "sha256": "5b6684a4d2d5c6728e55fec37934534f532af76db229925222db8fe22ac1d2d0",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": "package/services/metadata/core-properties/310269059d41461bb1c4a32f80513a76.psmdcp",
+      "bytes": 1081,
+      "sha256": "81ee0cd1a5ccec604284872b4f5e73973aa7da108a48cdb7cd71ecf126b9a165",
+      "nativeBuildScriptPath": false
+    },
+    {
+      "name": ".signature.p7s",
+      "bytes": 12987,
+      "sha256": "a37bdcc61e2f28f4e29eb7b24aea3c7a8c4e49d1ca3aecc2280128007333e361",
+      "nativeBuildScriptPath": false
+    }
+  ]
+}
