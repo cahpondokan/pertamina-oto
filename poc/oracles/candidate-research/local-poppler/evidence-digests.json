@@ -1,0 +1,34 @@
+[
+  {
+    "path": "Collect-Inventory.ps1",
+    "sha256": "ed78a2b51f9f6024349b1037ddb9574d60a5bf5ec4e06969d42d32fa6770a779"
+  },
+  {
+    "path": "Inspect-PE.py",
+    "sha256": "f62aa0e9b27e6d05f9cff59582506d699e02af8ecfe45522b77293f3ebec41e4"
+  },
+  {
+    "path": "inventory.json",
+    "sha256": "b01f370c73f1f424229a25fb68c95ea415e4f0ec3ca28019e23ef205fb93c49b"
+  },
+  {
+    "path": "pe-imports.json",
+    "sha256": "8b6c8576d8fe11fff407815a8eadc5742639c3f00a7125e76a8b6785c273e6d6"
+  },
+  {
+    "path": "REPORT.md",
+    "sha256": "61ead86082221ac579ac0d2aa2ccebe5803ed7b4eb47a2045ca0c9f7ad2bfa1a"
+  },
+  {
+    "path": "static-closure.json",
+    "sha256": "3d1ad58dd92398e7206553e5b047ebafa7622346075fb276510d1f0bbcfc8071"
+  },
+  {
+    "path": "verification.json",
+    "sha256": "f9a35eeeb48e66b8e9de87dcc87475b28d918678b1e04ff82d1982a080ed03b6"
+  },
+  {
+    "path": "version-results.json",
+    "sha256": "fec00842e12a54e69df3da372d835402355e4cb2e4e70d13960c68d55b6f2cbf"
+  }
+]

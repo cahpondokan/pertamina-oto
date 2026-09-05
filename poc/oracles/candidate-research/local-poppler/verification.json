@@ -1,0 +1,13 @@
+{
+  "fileHashesRechecked": 445,
+  "peFiles": 123,
+  "peArchitecture": "x64",
+  "versionCommandsPassed": 2,
+  "staticBundledClosure": 34,
+  "externalImportsUnresolved": 10,
+  "sourceUnchanged": "PASS",
+  "textOnly": "PASS",
+  "sanitizedPathSecretScan": "PASS",
+  "pdfProcessing": "NOT_RUN",
+  "performance": "NOT_RUN"
+}

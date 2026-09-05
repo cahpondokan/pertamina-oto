@@ -1,0 +1,1537 @@
+{
+  "scope": "STATIC_IMPORTS_NOT_RUNTIME_LOAD_PROOF",
+  "files": [
+    {
+      "path": "Library/bin/api-ms-win-core-console-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-console-l1-2-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-datetime-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-debug-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-errorhandling-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-fibers-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-fibers-l1-1-1.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-file-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-file-l1-2-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-file-l2-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-handle-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-heap-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-interlocked-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-libraryloader-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-localization-l1-2-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-memory-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-namedpipe-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-processenvironment-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-processthreads-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-processthreads-l1-1-1.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-profile-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-rtlsupport-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-string-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-synch-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-synch-l1-2-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-sysinfo-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-sysinfo-l1-2-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-timezone-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-core-util-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-conio-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-convert-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-environment-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-filesystem-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-heap-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-locale-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-math-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-multibyte-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-private-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-process-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-runtime-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-stdio-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-string-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-time-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/api-ms-win-crt-utility-l1-1-0.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/cairo-gobject.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "cairo.dll",
+        "glib-2.0-0.dll",
+        "gobject-2.0-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/cairo-script-interpreter.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "cairo.dll",
+        "fontconfig-1.dll",
+        "freetype.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/cairo.dll",
+      "machine": "0x8664",
+      "imports": [
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "MSIMG32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "fontconfig-1.dll",
+        "freetype.dll",
+        "libpng16.dll",
+        "ole32.dll",
+        "pixman-1-0.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/charset.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/comerr64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "k5sprt64.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/concrt140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/deflate.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/ffi-8.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/fontconfig-1.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-multibyte-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "freetype.dll",
+        "intl-8.dll",
+        "libexpat.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/freetype.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "libpng16.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/gio-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "DNSAPI.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "SHELL32.dll",
+        "SHLWAPI.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-conio-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "glib-2.0-0.dll",
+        "gmodule-2.0-0.dll",
+        "gobject-2.0-0.dll",
+        "intl-8.dll",
+        "ole32.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/girepository-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "ffi-8.dll",
+        "glib-2.0-0.dll",
+        "gmodule-2.0-0.dll",
+        "gobject-2.0-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/glib-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-process-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "iconv.dll",
+        "intl-8.dll",
+        "ole32.dll",
+        "pcre2-8.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/gmodule-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "glib-2.0-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/gobject-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "ffi-8.dll",
+        "glib-2.0-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/gssapi64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "comerr64.dll",
+        "k5sprt64.dll",
+        "krb5_64.dll"
+      ],
+      "delayImports": [
+        "ADVAPI32.dll"
+      ]
+    },
+    {
+      "path": "Library/bin/gthread-2.0-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "glib-2.0-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/iconv.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "charset.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icudt.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icudt78.dll",
+      "machine": "0x8664",
+      "imports": [],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuin.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuin78.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuio.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuin78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuio78.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuin78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icutest.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icutu78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icutest78.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icutu78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icutu.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuin78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icutu78.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "icuin78.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuuc.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "icudt78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/icuuc78.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "icudt78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/intl-8.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "iconv.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/jpeg8.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/k5sprt64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/kfwlogon.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "USERENV.dll",
+        "VCRUNTIME140.dll",
+        "WSOCK32.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/krb5_64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "DNSAPI.dll",
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "comerr64.dll",
+        "k5sprt64.dll"
+      ],
+      "delayImports": [
+        "ADVAPI32.dll",
+        "Secur32.dll"
+      ]
+    },
+    {
+      "path": "Library/bin/krbcc64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "RPCRT4.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "comerr64.dll",
+        "k5sprt64.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/lcms2.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/leashw64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "ole32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/Lerc.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libbz2.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libcrypto-3-x64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "CRYPT32.dll",
+        "KERNEL32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libcurl.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "CRYPT32.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "Secur32.dll",
+        "VCRUNTIME140.dll",
+        "WLDAP32.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "bcrypt.dll",
+        "libssh2.dll",
+        "psl-5.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libexpat.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/liblzma.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libpng16.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libssh2.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "libcrypto-3-x64.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libssl-3-x64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "libcrypto-3-x64.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libtiff.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "Lerc.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "deflate.dll",
+        "jpeg8.dll",
+        "liblzma.dll",
+        "zlib.dll",
+        "zstd.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/libzstd.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/msvcp140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/msvcp140_1.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/msvcp140_2.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/msvcp140_atomic_wait.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/msvcp140_codecvt_ids.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/openjp2.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pcre2-16.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pcre2-32.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pcre2-8.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pcre2-posix.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "pcre2-8.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pdfinfo.exe",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "SHELL32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "poppler.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pdftoppm.exe",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "SHELL32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "lcms2.dll",
+        "poppler.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/pixman-1-0.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/poppler-cpp.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "iconv.dll",
+        "poppler.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/poppler-glib.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "cairo.dll",
+        "freetype.dll",
+        "gio-2.0-0.dll",
+        "glib-2.0-0.dll",
+        "gobject-2.0-0.dll",
+        "poppler.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/poppler.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "SHELL32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "freetype.dll",
+        "jpeg8.dll",
+        "lcms2.dll",
+        "libcurl.dll",
+        "libpng16.dll",
+        "openjp2.dll",
+        "tiff.dll",
+        "zlib.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/psl-5.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "icuuc78.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/tiff.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "Lerc.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "deflate.dll",
+        "jpeg8.dll",
+        "liblzma.dll",
+        "zlib.dll",
+        "zstd.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/turbojpeg.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/ucrtbase.dll",
+      "machine": "0x8664",
+      "imports": [
+        "api-ms-win-core-console-l1-1-0.dll",
+        "api-ms-win-core-datetime-l1-1-0.dll",
+        "api-ms-win-core-debug-l1-1-0.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-fibers-l1-1-0.dll",
+        "api-ms-win-core-fibers-l1-1-1.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-file-l1-2-0.dll",
+        "api-ms-win-core-file-l2-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l1-1-0.dll",
+        "api-ms-win-core-interlocked-l1-1-0.dll",
+        "api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+        "api-ms-win-core-libraryloader-l1-1-0.dll",
+        "api-ms-win-core-localization-l1-2-0.dll",
+        "api-ms-win-core-memory-l1-1-0.dll",
+        "api-ms-win-core-namedpipe-l1-1-0.dll",
+        "api-ms-win-core-processenvironment-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-sysinfo-l1-2-0.dll",
+        "api-ms-win-core-timezone-l1-1-0.dll",
+        "api-ms-win-core-util-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vcamp140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "ADVAPI32.dll",
+        "CONCRT140.dll",
+        "D3DCOMPILER_47.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "VERSION.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "d3d11.dll",
+        "dxgi.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vccorlib140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "OLEAUT32.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll",
+        "api-ms-win-core-winrt-error-l1-1-0.dll",
+        "api-ms-win-core-winrt-l1-1-0.dll",
+        "api-ms-win-core-winrt-string-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "ole32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vcomp140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vcruntime140.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vcruntime140_1.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/vcruntime140_threads.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/xpprof64.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "comerr64.dll",
+        "k5sprt64.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/zlib.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ],
+      "delayImports": []
+    },
+    {
+      "path": "Library/bin/zstd.dll",
+      "machine": "0x8664",
+      "imports": [
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll"
+      ],
+      "delayImports": []
+    }
+  ]
+}
