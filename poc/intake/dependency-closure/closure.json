@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P2-W0C-A2-DEPENDENCY-METADATA",
+  "baseline": "099af9d40810f54277f82baeee80573370427208",
+  "targetFramework": "net10.0",
+  "targetPlatform": "Windows x64 proposed",
+  "resolutionStatus": "METADATA_ONLY_PROPOSED_NOT_RESTORED",
+  "versionPolicy": "Exact lower-bound baseline; not latest/security-approved; no other top-level dependencies assumed",
+  "processingAuthorized": false,
+  "restartAuthorized": false,
+  "components": [
+    {
+      "id": "PDFsharp",
+      "version": "6.2.4",
+      "selectedDependencyGroup": "net10.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "costStatus": "NO_LICENSE_FEE_PROPOSED_REVIEW_REQUIRED",
+      "checkedUtc": "2026-09-05T18:30:08.0913115Z",
+      "metadataSource": "https://api.nuget.org/v3/registration5-gz-semver2/pdfsharp/6.2.4.json",
+      "catalogSource": "https://api.nuget.org/v3/catalog0/data/2026.01.06.14.37.12/pdfsharp.6.2.4.json",
+      "gallerySource": "https://www.nuget.org/packages/PDFsharp/6.2.4",
+      "proposedAcquisitionUrl": "https://api.nuget.org/v3-flatcontainer/pdfsharp/6.2.4/pdfsharp.6.2.4.nupkg",
+      "acquisitionStatus": "ALREADY_ACQUIRED_WAVE_0A_NO_REDOWNLOAD",
+      "binarySha256": null,
+      "dependencies": [
+        {
+          "id": "Microsoft.Extensions.Logging.Abstractions",
+          "declaredRange": "[8.0.3, )",
+          "proposedVersion": "8.0.3"
+        },
+        {
+          "id": "System.Security.Cryptography.Pkcs",
+          "declaredRange": "[8.0.1, )",
+          "proposedVersion": "8.0.1"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "selectedDependencyGroup": "net8.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "costStatus": "NO_LICENSE_FEE_PROPOSED_REVIEW_REQUIRED",
+      "checkedUtc": "2026-09-05T18:30:09.4705623Z",
+      "metadataSource": "https://api.nuget.org/v3/registration5-gz-semver2/microsoft.extensions.logging.abstractions/8.0.3.json",
+      "catalogSource": "https://api.nuget.org/v3/catalog0/data/2025.02.11.18.30.56/microsoft.extensions.logging.abstractions.8.0.3.json",
+      "gallerySource": "https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/8.0.3",
+      "proposedAcquisitionUrl": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg",
+      "acquisitionStatus": "PROPOSED_NOT_AUTHORIZED",
+      "binarySha256": null,
+      "dependencies": [
+        {
+          "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "declaredRange": "[8.0.2, )",
+          "proposedVersion": "8.0.2"
+        }
+      ]
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "selectedDependencyGroup": "net8.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "costStatus": "NO_LICENSE_FEE_PROPOSED_REVIEW_REQUIRED",
+      "checkedUtc": "2026-09-05T18:30:10.8198566Z",
+      "metadataSource": "https://api.nuget.org/v3/registration5-gz-semver2/system.security.cryptography.pkcs/8.0.1.json",
+      "catalogSource": "https://api.nuget.org/v3/catalog0/data/2024.10.08.14.01.59/system.security.cryptography.pkcs.8.0.1.json",
+      "gallerySource": "https://www.nuget.org/packages/System.Security.Cryptography.Pkcs/8.0.1",
+      "proposedAcquisitionUrl": "https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg",
+      "acquisitionStatus": "PROPOSED_NOT_AUTHORIZED",
+      "binarySha256": null,
+      "dependencies": []
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.2",
+      "selectedDependencyGroup": "net8.0",
+      "license": "MIT",
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "costStatus": "NO_LICENSE_FEE_PROPOSED_REVIEW_REQUIRED",
+      "checkedUtc": "2026-09-05T18:30:12.2159059Z",
+      "metadataSource": "https://api.nuget.org/v3/registration5-gz-semver2/microsoft.extensions.dependencyinjection.abstractions/8.0.2.json",
+      "catalogSource": "https://api.nuget.org/v3/catalog0/data/2024.10.08.13.35.05/microsoft.extensions.dependencyinjection.abstractions.8.0.2.json",
+      "gallerySource": "https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2",
+      "proposedAcquisitionUrl": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg",
+      "acquisitionStatus": "PROPOSED_NOT_AUTHORIZED",
+      "binarySha256": null,
+      "dependencies": []
+    }
+  ],
+  "newPackageAcquisitionCount": 3,
+  "unresolved": [
+    "Fresh security/vulnerability review",
+    "Artifact hashes/signatures and notices for three unacquired packages",
+    "RID/native/build/analyzer asset verification",
+    "SDK/runtime packs and exact guest runtime identity outside package closure",
+    "Actual restore graph, asset selection, framework pruning and conflict validation",
+    "Human acquisition, license, security and execution approvals"
+  ]
+}
