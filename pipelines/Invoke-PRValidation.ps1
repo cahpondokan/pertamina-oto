@@ -85,8 +85,23 @@ function Invoke-PowerShellGate {
         [string]$FailureCode
     )
 
-    Invoke-CheckedCommand -FailureCode $FailureCode -Command {
-        & $Script @Arguments
+    $powerShellHost = Join-Path $PSHOME 'pwsh.exe'
+    if (-not (Test-Path -LiteralPath $powerShellHost -PathType Leaf)) {
+        throw "$FailureCode;POWERSHELL_HOST_UNAVAILABLE"
+    }
+
+    $output = @(
+        & $powerShellHost `
+            -NoLogo `
+            -NoProfile `
+            -NonInteractive `
+            -File $Script `
+            @Arguments 2>&1
+    )
+    $exitCode = $LASTEXITCODE
+    $output
+    if ($exitCode -ne 0) {
+        throw "$FailureCode;EXIT=$exitCode"
     }
 }
 
