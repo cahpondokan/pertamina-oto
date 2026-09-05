@@ -1,5 +1,9 @@
 [
   {
+    "path": ".gitattributes",
+    "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+  },
+  {
     "path": "Collect-Inventory.ps1",
     "sha256": "ed78a2b51f9f6024349b1037ddb9574d60a5bf5ec4e06969d42d32fa6770a779"
   },
@@ -25,7 +29,7 @@
   },
   {
     "path": "verification.json",
-    "sha256": "f9a35eeeb48e66b8e9de87dcc87475b28d918678b1e04ff82d1982a080ed03b6"
+    "sha256": "95fdcb406f80839b98d8a391b8ebdff0bc375b434a7bffa611637f741b2513b2"
   },
   {
     "path": "version-results.json",
