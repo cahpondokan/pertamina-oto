@@ -7,5 +7,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\BuildingBlocks\Pertamina.Oto.Contracts\Pertamina.Oto.Contracts.csproj" />
-  </ItemGroup>
+  <ProjectReference Include="../../../src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/Pertamina.Oto.Storage.Abstractions.csproj" /><ProjectReference Include="../../../src/BuildingBlocks/Pertamina.Oto.Processing.Abstractions/Pertamina.Oto.Processing.Abstractions.csproj" /><ProjectReference Include="../../../src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/Pertamina.Oto.Modules.Pdf.Application.csproj" /></ItemGroup>
 </Project>

@@ -1,0 +1,23 @@
+[
+  {
+    "suite": "Pertamina.Oto.Architecture.Tests",
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "sha256": "D1789AA80EAD702492316D7F092EE21EACB26BBAA22DB2E89BCC5E66FE8EBA1D"
+  },
+  {
+    "suite": "Pertamina.Oto.Contracts.Tests",
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "sha256": "DACEBA97EB54CD2D42F827A7CC7351EAFB98480903D7E1E5434EEE915670999F"
+  },
+  {
+    "suite": "Pertamina.Oto.Security.Tests",
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "sha256": "5AD89635555D0DE5114BA755AEDF40AC56A5F646128DD8AB8FB4F3461BE27B41"
+  }
+]

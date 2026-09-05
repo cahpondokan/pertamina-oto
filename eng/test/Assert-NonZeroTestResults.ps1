@@ -42,6 +42,22 @@ foreach ($resultFile in $resultFiles) {
         exit 23
     }
 
+    $perFile = @{}
+    foreach ($name in @('total', 'executed', 'passed', 'failed', 'error', 'aborted')) {
+        $value = 0
+        $attribute = $counters.Attributes[$name]
+        if ($null -eq $attribute -or -not [int]::TryParse($attribute.Value, [ref]$value) -or $value -lt 0) {
+            Write-Error 'TEST_GATE_ERROR=invalid_per_file_counter'
+            exit 28
+        }
+        $perFile[$name] = $value
+    }
+    if ($perFile.total -le 0 -or $perFile.executed -le 0 -or
+        $perFile.total -ne $perFile.executed -or $perFile.passed -ne $perFile.executed -or
+        ($perFile.failed + $perFile.error + $perFile.aborted) -gt 0) {
+        Write-Error 'TEST_GATE_ERROR=non_passing_individual_suite'
+        exit 29
+    }
     foreach ($field in @('Total', 'Executed', 'Passed', 'Failed', 'Error', 'Aborted')) {
         $attributeName = $field.ToLowerInvariant()
         $attribute = $counters.Attributes[$attributeName]

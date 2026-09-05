@@ -102,6 +102,36 @@
       },
       "pertamina.oto.contracts": {
         "type": "Project"
+      },
+      "pertamina.oto.modules.pdf.application": {
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Modules.Pdf.Domain": "[1.0.0, )"
+        }
+      },
+      "pertamina.oto.modules.pdf.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Contracts": "[1.0.0, )"
+        }
+      },
+      "pertamina.oto.modules.pdf.domain": {
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Modules.Pdf.Contracts": "[1.0.0, )"
+        }
+      },
+      "pertamina.oto.processing.abstractions": {
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Contracts": "[1.0.0, )"
+        }
+      },
+      "pertamina.oto.storage.abstractions": {
+        "type": "Project",
+        "dependencies": {
+          "Pertamina.Oto.Contracts": "[1.0.0, )"
+        }
       }
     }
   }
