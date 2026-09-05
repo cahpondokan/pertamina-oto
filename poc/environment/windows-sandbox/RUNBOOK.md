@@ -96,4 +96,3 @@ included. A reset cannot erase failed-run evidence or justify a PASS.
 documents these XML controls, read-only mappings and persistence of mapped writes.
 [Microsoft overview](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/)
 provides the Windows Sandbox product context. Local compatibility remains untested.
-

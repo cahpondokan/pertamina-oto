@@ -63,4 +63,3 @@ if ($SelfTest) {
     Write-Output "DISCOVERED=$passed PASSED=$passed FAILED=0"
 }
 Write-Output 'TEMPLATE_STATIC_VALIDATION=PASS; LAUNCH_AUTHORIZED=false; NETWORK_PROVEN=false'
-
