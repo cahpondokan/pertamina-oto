@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "runId": "canary",
+  "commit": "429583ed8e8d3914713fb880e3566f30f061b414",
+  "taskIds": [
+    "P1-A7-CI-EVIDENCE"
+  ],
+  "decisionIds": [
+    "P0-D05",
+    "P0-D06",
+    "LOCAL-BOOT-001",
+    "CCR-015"
+  ],
+  "status": "FAIL",
+  "files": [
+    {
+      "path": "Architecture.log",
+      "bytes": 39,
+      "sha256": "ee412119c200d4597eaccdd7decb9200bdd40b51d6ff4d730bdb4c2de8e3216c"
+    },
+    {
+      "path": "Build.log",
+      "bytes": 32,
+      "sha256": "685ba017fd79ee3796e5ee33edb6d43a8238722129bacc58bfd98672235d7211"
+    },
+    {
+      "path": "Contract.log",
+      "bytes": 35,
+      "sha256": "0d53a08fb19d8c87be284ddb962cc752f3b3efa7e445cdefad429101ff93a12f"
+    },
+    {
+      "path": "pipeline-summary.json",
+      "bytes": 1083,
+      "sha256": "7030c0831238653cecdd2ad513cea68ba45267eb5f3d3f96a44c7aa1c1c49fb4"
+    },
+    {
+      "path": "Restore.log",
+      "bytes": 34,
+      "sha256": "41c04fe8a4a23caaacb7b43c6bd9103bc69f5f6193cc81ed06aab746e8530c6e"
+    },
+    {
+      "path": "Scope.log",
+      "bytes": 32,
+      "sha256": "7f8d155fd1704d20fa2fba138091b6e1a55dfda9e67ce8d1316e119704cf93cd"
+    },
+    {
+      "path": "Unit.log",
+      "bytes": 31,
+      "sha256": "85fda088555a7d0058bbd10f8a4f5db30b0a7509cda2d4afb2dc94e3a0ebd2ea"
+    }
+  ]
+}

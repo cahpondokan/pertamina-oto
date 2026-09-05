@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "runId": "canary",
+  "commit": "429583ed8e8d3914713fb880e3566f30f061b414",
+  "taskIds": [
+    "P1-A7-CI-EVIDENCE"
+  ],
+  "decisionIds": [
+    "P0-D05",
+    "P0-D06",
+    "LOCAL-BOOT-001",
+    "CCR-015"
+  ],
+  "status": "FAIL",
+  "files": [
+    {
+      "path": "pipeline-summary.json",
+      "bytes": 1089,
+      "sha256": "99ac5d4bc07537e24c02903ea50c166c23a8769ae833b33b12dabc173dfbb93d"
+    }
+  ]
+}

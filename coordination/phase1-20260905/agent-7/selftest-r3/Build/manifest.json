@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "runId": "canary",
+  "commit": "429583ed8e8d3914713fb880e3566f30f061b414",
+  "taskIds": [
+    "P1-A7-CI-EVIDENCE"
+  ],
+  "decisionIds": [
+    "P0-D05",
+    "P0-D06",
+    "LOCAL-BOOT-001",
+    "CCR-015"
+  ],
+  "status": "FAIL",
+  "files": [
+    {
+      "path": "Build.log",
+      "bytes": 32,
+      "sha256": "24a71895194501f0d7605cd005b74c4e27a183797758786dfede02c78c2c450a"
+    },
+    {
+      "path": "pipeline-summary.json",
+      "bytes": 1101,
+      "sha256": "ccf709b4cccac6e4ece33cf6b6a370dad89ba2b244f537fb246549ee9e2f7f33"
+    },
+    {
+      "path": "Restore.log",
+      "bytes": 34,
+      "sha256": "41c04fe8a4a23caaacb7b43c6bd9103bc69f5f6193cc81ed06aab746e8530c6e"
+    },
+    {
+      "path": "Scope.log",
+      "bytes": 32,
+      "sha256": "7f8d155fd1704d20fa2fba138091b6e1a55dfda9e67ce8d1316e119704cf93cd"
+    }
+  ]
+}

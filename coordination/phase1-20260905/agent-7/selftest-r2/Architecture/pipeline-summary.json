@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "runId": "canary",
+  "commit": "429583ed8e8d3914713fb880e3566f30f061b414",
+  "taskIds": [
+    "P1-A7-CI-EVIDENCE"
+  ],
+  "decisionIds": [
+    "P0-D05",
+    "P0-D06",
+    "LOCAL-BOOT-001",
+    "CCR-015"
+  ],
+  "status": "FAIL",
+  "stages": [
+    {
+      "name": "Scope",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "Restore",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "Build",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "Unit",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    {
+      "name": "Architecture",
+      "status": "FAIL",
+      "exitCode": 1
+    },
+    {
+      "name": "Contract",
+      "status": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "name": "Security",
+      "status": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "name": "UI",
+      "status": "NOT_RUN",
+      "exitCode": null
+    },
+    {
+      "name": "Audit",
+      "status": "NOT_RUN",
+      "exitCode": null
+    }
+  ]
+}
