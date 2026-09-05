@@ -1,0 +1,29 @@
+P01-20260905-1319 / P1-A1-BUILDING-BLOCKS; SDK 10.0.400; Release; telemetry opt-out
+dotnet restore tests/Unit/BuildingBlocks/Pertamina.Oto.BuildingBlocks.UnitTests.csproj --locked-mode --ignore-failed-sources EXIT=0
+  Determining projects to restore...
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Contracts\Pertamina.Oto.Contracts.csproj (in 898 ms).
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Observability\Pertamina.Oto.Observability.csproj (in 904 ms).
+  Restored <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Security\Pertamina.Oto.Security.csproj (in 904 ms).
+  Restored <WORKTREE>\tests\Unit\BuildingBlocks\Pertamina.Oto.BuildingBlocks.UnitTests.csproj (in 1,68 sec).
+dotnet build tests/Unit/BuildingBlocks/Pertamina.Oto.BuildingBlocks.UnitTests.csproj --no-restore -c Release EXIT=0
+  Pertamina.Oto.Contracts -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Contracts\bin\Release\net10.0\Pertamina.Oto.Contracts.dll
+  Pertamina.Oto.Security -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Security\bin\Release\net10.0\Pertamina.Oto.Security.dll
+  Pertamina.Oto.Observability -> <WORKTREE>\src\BuildingBlocks\Pertamina.Oto.Observability\bin\Release\net10.0\Pertamina.Oto.Observability.dll
+  Pertamina.Oto.BuildingBlocks.UnitTests -> <WORKTREE>\tests\Unit\BuildingBlocks\bin\Release\net10.0\Pertamina.Oto.BuildingBlocks.UnitTests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:16.40
+Package lock comparison against baseline Contract suite: 0 new external package/version; PASS.
+Static IO/network scan: rg exit 1 (0 matches). Pure in-memory boundary; no runtime network-disabled claim.
+dotnet run --project tests/Unit/BuildingBlocks/Pertamina.Oto.BuildingBlocks.UnitTests.csproj -c Release --no-build --no-restore -- --minimum-expected-tests 15 EXIT=0
+
+Test run summary: Passed! - <WORKTREE>\tests\Unit\BuildingBlocks\bin\Release\net10.0\Pertamina.Oto.BuildingBlocks.UnitTests.dll (net10.0|x64)
+  total: 15
+  failed: 0
+  succeeded: 15
+  skipped: 0
+  duration: 2s 310ms
+git diff --cached --check: initial extra EOF blank line corrected; final exit 0 required before commit.
