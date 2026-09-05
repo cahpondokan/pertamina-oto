@@ -1,4 +1,5 @@
 namespace Pertamina.Oto.Desktop;
+
 public enum ShellAction { SelectFiles, Run, Cancel }
 public sealed record CommandSemantic(ShellAction Action, string Key, string AccessibleName, int FocusOrder);
 public static class ShellSemantics

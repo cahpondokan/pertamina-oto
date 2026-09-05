@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pertamina.Oto.Contracts.Identifiers;
+using Pertamina.Oto.Modules.Pdf.Application;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 using Pertamina.Oto.Modules.Pdf.Domain;
-using Pertamina.Oto.Modules.Pdf.Application;
 namespace Pertamina.Oto.Modules.Pdf.UnitTests;
 
 [TestClass]
@@ -216,11 +216,14 @@ public sealed class MergeTests
     public async Task Execute_CleanupFailure_PreservesTerminalStateAndRecordsIntent(bool cancel)
     {
         using var cancellation = new CancellationTokenSource();
-        var fake = new Boundary { OnCall = name =>
+        var fake = new Boundary
+        {
+            OnCall = name =>
         {
             if (cancel && name == "stage") cancellation.Cancel();
             if (name == "discard") throw new InvalidOperationException("SENSITIVE_CANARY");
-        }};
+        }
+        };
         var result = await fake.Service.ExecuteAsync(Command(Inputs(2)), cancellation.Token);
         Assert.AreEqual(cancel ? MergeStatus.Cancelled : MergeStatus.Completed, result.Status);
         Assert.IsTrue(result.CleanupRequired);
@@ -230,10 +233,13 @@ public sealed class MergeTests
     public async Task Execute_CancellationExceptionDuringPublication_RequiresReconciliation()
     {
         using var cancellation = new CancellationTokenSource();
-        var fake = new Boundary { OnCall = name =>
+        var fake = new Boundary
+        {
+            OnCall = name =>
         {
             if (name == "publish") { cancellation.Cancel(); throw new OperationCanceledException(cancellation.Token); }
-        }};
+        }
+        };
         var result = await fake.Service.ExecuteAsync(Command(Inputs(2)), cancellation.Token);
         Assert.AreEqual(MergeIssue.ReconciliationRequired, result.Issue);
         Assert.IsNull(result.ResultId);

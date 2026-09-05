@@ -1,10 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pertamina.Oto.Contracts.Identifiers;
-using Pertamina.Oto.Processing.Abstractions;
-using Pertamina.Oto.Storage.Abstractions;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 using Pertamina.Oto.Modules.Pdf.Domain;
+using Pertamina.Oto.Processing.Abstractions;
+using Pertamina.Oto.Storage.Abstractions;
 namespace Pertamina.Oto.Contracts.Tests;
+
 [TestClass]
 public sealed class OfflineBoundaryTests
 {
@@ -12,8 +13,8 @@ public sealed class OfflineBoundaryTests
     public void Every_terminal_state_rejects_every_subsequent_state()
     {
         foreach (var terminal in new[] { LocalJobState.Completed, LocalJobState.Cancelled, LocalJobState.Failed })
-        foreach (var next in Enum.GetValues<LocalJobState>())
-            Assert.IsFalse(LocalJobTransitions.CanTransition(terminal, next));
+            foreach (var next in Enum.GetValues<LocalJobState>())
+                Assert.IsFalse(LocalJobTransitions.CanTransition(terminal, next));
         Assert.IsFalse(LocalJobTransitions.CanTransition(LocalJobState.Queued, LocalJobState.Completed));
         Assert.IsTrue(LocalJobTransitions.CanTransition(LocalJobState.Running, LocalJobState.CancellationRequested));
     }
@@ -29,14 +30,14 @@ public sealed class OfflineBoundaryTests
     public void Publication_truth_table_requires_all_safety_facts()
     {
         foreach (var stage in Enum.GetValues<ArtifactStage>())
-        for (var bits = 0; bits < 32; bits++)
-        {
-            bool authorized = (bits & 1) != 0, alias = (bits & 2) != 0, exists = (bits & 4) != 0,
-                capacity = (bits & 8) != 0, cancel = (bits & 16) != 0;
-            var actual = LocalPublicationPolicy.Evaluate(stage, authorized, alias, exists, capacity, cancel);
-            Assert.AreEqual(stage == ArtifactStage.Validated && authorized && !alias && !exists && capacity && !cancel,
-                actual == PublicationOutcome.Published);
-        }
+            for (var bits = 0; bits < 32; bits++)
+            {
+                bool authorized = (bits & 1) != 0, alias = (bits & 2) != 0, exists = (bits & 4) != 0,
+                    capacity = (bits & 8) != 0, cancel = (bits & 16) != 0;
+                var actual = LocalPublicationPolicy.Evaluate(stage, authorized, alias, exists, capacity, cancel);
+                Assert.AreEqual(stage == ArtifactStage.Validated && authorized && !alias && !exists && capacity && !cancel,
+                    actual == PublicationOutcome.Published);
+            }
         foreach (var outcome in Enum.GetValues<PublicationOutcome>().Except([PublicationOutcome.Unknown, PublicationOutcome.Validated, PublicationOutcome.Published]))
             Assert.IsNull(PublicationResult.Rejected(outcome).FinalReference);
         Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => PublicationResult.Rejected(PublicationOutcome.Published));

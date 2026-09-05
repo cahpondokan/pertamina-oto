@@ -1,5 +1,6 @@
 using Pertamina.Oto.Modules.Pdf.Contracts;
 namespace Pertamina.Oto.Desktop;
+
 public enum EntryFlow { FileFirst, ToolFirst }
 public enum ShellPhase { Idle, Validation, Running, Cancelled, Completed, Failed, Unavailable }
 public sealed record ShellState(ShellPhase Phase, MergeIssue Issue = MergeIssue.None, Guid? ResultId = null, bool CancellationRequested = false)

@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pertamina.Oto.Contracts.Identifiers;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 namespace Pertamina.Oto.Desktop.Tests;
+
 [TestClass]
 public sealed class ShellTests
 {

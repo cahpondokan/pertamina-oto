@@ -4,6 +4,7 @@ using Pertamina.Oto.Modules.Pdf.Application;
 using Pertamina.Oto.Modules.Pdf.Contracts;
 using Pertamina.Oto.Modules.Pdf.Domain;
 namespace Pertamina.Oto.Contracts.Tests;
+
 [TestClass]
 public sealed class MergeFailureBoundaryTests
 {

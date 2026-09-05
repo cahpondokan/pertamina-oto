@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Pertamina.Oto.Architecture.Tests;
+
 [TestClass]
 public sealed class PhaseOneGraphTests
 {
@@ -36,7 +37,8 @@ public sealed class PhaseOneGraphTests
             Assert.IsFalse(System.Text.RegularExpressions.Regex.IsMatch(File.ReadAllText(file),
                 @"\b(System\.Net|HttpClient|HttpWebRequest|TcpClient|UdpClient|HubConnection|DllImport|LibraryImport)\b"), Path.GetFileName(file));
         }
-    }    [TestMethod]
+    }
+    [TestMethod]
     public void Foundation_graph_matches_exact_checkpoint_edges()
     {
         var root = new DirectoryInfo(AppContext.BaseDirectory);
@@ -54,8 +56,8 @@ public sealed class PhaseOneGraphTests
     public void Forbidden_reference_negative_canaries_fail_closed()
     {
         foreach (var target in new[] { "Desktop", "Storage.Abstractions", "Pdf.Infrastructure", "Server", "System.Net.Http" })
-        foreach (var kind in new[] { "ProjectReference", "PackageReference", "Reference" })
-            Assert.IsFalse(Compliant($"<Project><ItemGroup><{kind} Include='{target}.csproj'/></ItemGroup></Project>", []));
+            foreach (var kind in new[] { "ProjectReference", "PackageReference", "Reference" })
+                Assert.IsFalse(Compliant($"<Project><ItemGroup><{kind} Include='{target}.csproj'/></ItemGroup></Project>", []));
         Assert.IsFalse(Compliant("<Project/>", ["required"]));
     }
 }
