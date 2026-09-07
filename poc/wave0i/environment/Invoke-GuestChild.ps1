@@ -22,6 +22,7 @@ try {
     $info=[Diagnostics.ProcessStartInfo]::new()
     $info.FileName=$exe; $info.Arguments=$Arguments; $info.WorkingDirectory=$caseRoot
     $info.UseShellExecute=$false; $info.CreateNoWindow=$true
+    Set-CleanChildEnvironment $info $caseRoot
     # No pipes: avoids unbounded capture/deadlock. Child writes only guest-private files by reviewed arguments.
     $child=[Diagnostics.Process]::new(); $child.StartInfo=$info
     $clock=[Diagnostics.Stopwatch]::StartNew()

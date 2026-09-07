@@ -15,6 +15,21 @@ These paths are root's run-owned paths; helpers do not choose or create them.
 Manifest stays OUTSIDE input: JSON {schema:1,files:[{path:'environment/Environment.psm1',sha256:'UPPERCASE_SHA256'}]}.
 Supply one exact relative path/hash per file, no extras; no examples are defaults.
 
+Agent 2 adapter: copy contents of guest/ into input/ so dotnet/ and app/ are direct
+children. Add reviewed environment/corpus/oracle files. Supply supplement.json
+outside input with schema=1 and files path/sha256 for every added file only.
+`pwsh -NoProfile -File poc/wave0i/environment/Convert-BundleManifest.ps1 -BundleManifest $bundleManifest -SupplementManifest $supplementManifest > $manifestPath`
+Require exit0 before Test-Staging. Adapter accepts A2 schemaVersion=1,
+BUILT_NOT_EXECUTED and engineExecuted=false, checks entrypoint/runner, rejects
+duplicate paths and emits schema=1. Test-Staging then verifies actual bytes and
+rejects extra files. Neither manifest is mapped. No automatic file acquisition.
+
+Child environment is cleared via PS5-compatible EnvironmentVariables. Exact
+allowlist: SystemRoot/WINDIR=C:\Windows, TEMP/TMP=private case directory,
+DOTNET_ROOT=C:\PocInput\dotnet, DOTNET_MULTILEVEL_LOOKUP=0,
+DOTNET_ROLL_FORWARD=Disable, DOTNET_CLI_TELEMETRY_OPTOUT=1. No inherited PATH,
+startup hooks, profiler, additional deps or shared store survive.
+
 From integrated worktree:
 1. `pwsh -NoProfile -File poc/wave0i/environment/Test-Staging.ps1 -InputRoot $inputRoot -ManifestPath $manifestPath`
 2. `Import-Module ./poc/wave0i/environment/Environment.psm1`
@@ -34,7 +49,7 @@ bytes there. Never auto-open/import contents. No logon auto-execution is configu
 ## Root guest invocation
 
 Use built-in Windows PowerShell, no pwsh installation needed:
-`powershell.exe -NoProfile -File C:\PocInput\environment\Invoke-GuestChild.ps1 -CaseId AB -Executable C:\PocInput\runtime\dotnet.exe -ExecutableSha256 HASH_FROM_FROZEN_MANIFEST -Arguments 'C:\PocInput\app\MergeSmoke.dll result.pdf C:\PocInput\corpus\A.pdf C:\PocInput\corpus\B.pdf' -TimeoutSeconds 30`
+`powershell.exe -NoProfile -File C:\PocInput\environment\Invoke-GuestChild.ps1 -CaseId AB -Executable C:\PocInput\dotnet\dotnet.exe -ExecutableSha256 HASH_FROM_FROZEN_MANIFEST -Arguments 'C:\PocInput\app\MergeSmoke.dll result.pdf C:\PocInput\corpus\A.pdf C:\PocInput\corpus\B.pdf' -TimeoutSeconds 30`
 
 Argument order matches baseline MergeSmoke (output first); reconcile asset paths with Agent 2 staging;
 the wrapper accepts trusted root-reviewed arguments, not arbitrary user content.
