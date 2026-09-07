@@ -1,0 +1,63 @@
+{
+  "task": "P2-W0F-A3-QPDF-STATIC-INTAKE",
+  "status": "ACQUIRED_HASH_MATCH_HELD_FOR_AUDIT",
+  "executionAuthorized": false,
+  "cost": "ZERO_ADDITIONAL_COST",
+  "acquisition": {
+    "source": "https://github.com/qpdf/qpdf/releases/download/v12.4.1/qpdf-12.4.1-msvc64.zip",
+    "startedUtc": "2026-09-07T05:10:32.208289+00:00",
+    "redirects": [
+      {
+        "status": 302,
+        "scheme": "https",
+        "host": "release-assets.githubusercontent.com",
+        "path": "/github-production-release-asset/4539167/93e37410-6eb6-403a-9bb2-e284012cc081",
+        "query": "REDACTED"
+      }
+    ],
+    "expectedSha256": "3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6",
+    "httpStatus": 200,
+    "bytes": 28165367,
+    "sha256": "3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6",
+    "finishedUtc": "2026-09-07T05:10:59.710505+00:00",
+    "status": "HASH_MATCH"
+  },
+  "entryCount": 319,
+  "peCount": 12,
+  "rawEvidence": [
+    {
+      "name": "acquisition.json",
+      "sha256": "f2e73f3c334bad76aad862a6763f79433037aa5665a262070295e73060933885",
+      "bytes": 692
+    },
+    {
+      "name": "archive-static-inventory.json",
+      "sha256": "ef2fe6ce59119388b16ca8ce69b6a697ccea50d8b73ba5ba15920a2a0ed8faf0",
+      "bytes": 96767
+    },
+    {
+      "name": "qpdf-12.4.1-msvc64.zip",
+      "sha256": "3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6",
+      "bytes": 28165367
+    }
+  ],
+  "blockers": [
+    "BUNDLED_LICENSE_NOTICE_COVERAGE",
+    "STATIC_COMPONENT_VERSIONS_SBOM",
+    "SIGNATURE_SECURITY_DISPOSITION"
+  ],
+  "trackedEvidence": [
+    {
+      "name": ".gitattributes",
+      "sha256": "a79691a93b46e49ce460c26ef22afcc03d6eca1e63bf2edbc20e96159510f6c9"
+    },
+    {
+      "name": "inspect_zip.py",
+      "sha256": "99b543d5c85e83e6e7b5cceff836eba52e53829e53e6470b4ed94927d935b92a"
+    },
+    {
+      "name": "STATIC_INTAKE.md",
+      "sha256": "1ec8fda70646cdf0e9e7edaa1bbbf2c08850c63a3a3f54aaee62cdc8a908cf8c"
+    }
+  ]
+}
