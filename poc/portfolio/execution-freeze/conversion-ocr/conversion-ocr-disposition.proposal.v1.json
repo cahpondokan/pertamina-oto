@@ -1,0 +1,538 @@
+{
+  "schemaVersion": "1.0",
+  "packetId": "P2-W0G-B-CONVERSION-OCR-DISPOSITION-001",
+  "runId": "P02-20260905-1434",
+  "taskId": "P2-W0G-B-A4-CONVERSION-OCR-DISPOSITION",
+  "baselineCommit": "f246fd03b26a39afef958174cd12105a78d0a259",
+  "status": "PROPOSED_UNEXECUTED_BLOCKED",
+  "objective": "Preserve a separate no-execution scope, dependency, and gate disposition for seven conversion, OCR, and PDF/A PoCs; this packet is neither execution authority nor vendor selection.",
+  "authorityBoundary": {
+    "documentationOnly": true,
+    "zeroAdditionalCost": true,
+    "sandboxLaunchAuthorized": false,
+    "candidateInstallAuthorized": false,
+    "candidateLoadAuthorized": false,
+    "candidateExecutionAuthorized": false,
+    "restoreAuthorized": false,
+    "buildAuthorized": false,
+    "documentProcessingAuthorized": false,
+    "networkAcquisitionAuthorized": false,
+    "newBinaryModelPackageAcquisitionAuthorized": false,
+    "vendorSelectionAuthorized": false,
+    "productAdapterImplementationAuthorized": false,
+    "productionActionAuthorized": false
+  },
+  "approvalIsolation": {
+    "pocPdf001ApprovalMayBeInherited": false,
+    "pocPdf001ResultMayProveThesePocs": false,
+    "pocPdf001CandidateMayBeAssumedCompatible": false,
+    "pocPdf001CorpusOracleMayBeReusedWithoutSeparateReview": false,
+    "rule": "Each listed PoC requires its own exact scope, candidate/version, license/cost, security, corpus, oracle, environment, measurement, evidence, reviewer, and human execution authorization."
+  },
+  "authoritativeSources": [
+    "AGENTS.md",
+    "docs/implementation-prompts/00_SHARED_AGENT_CONTRACT.md",
+    "docs/implementation-prompts/PHASE_02_PROOF_OF_CAPABILITY.md",
+    "docs/project-management/PROJECT_STATE.md",
+    "docs/project-management/PHASE_DECISION_REGISTER.md",
+    "docs/project-management/PHASE_02_WAVE_0G_TASK_CARDS_P02-20260905-1434.md",
+    "MASTER_PROJECT_SUMMARY.md",
+    "03_FEATURE_CATALOG_FINAL_v1.3_PERTAMINA_OTO.md",
+    "04_SOLUTION_DESIGN_FINAL_v1.2_PERTAMINA_OTO.md",
+    "05_TECHNICAL_REFERENCE_FINAL_v1.2_PERTAMINA_OTO.md",
+    "08_SECURITY_DESIGN_FINAL_v1.0_PERTAMINA_OTO.md",
+    "11_UNIT_TEST_DOCUMENT_FINAL_v1.0_PERTAMINA_OTO.md",
+    "12_TEST_PLAN_FINAL_v1.0_PERTAMINA_OTO.md",
+    "docs/baseline-audit/POC_MASTER_PLAN_v1.0.md",
+    "docs/baseline-audit/POC_PDF_001_EXECUTION_CHARTER_CANDIDATE_v1.0.md",
+    "docs/baseline-audit/OPEN_ITEM_AND_CONFIRMATION_REGISTER.md"
+  ],
+  "commonDecisionGates": [
+    {
+      "gate": "P2-D01",
+      "currentStatus": "PROPOSED",
+      "owner": "Technical Owner",
+      "requiredEvidence": "Exact per-PoC candidate/product/runtime/model identity, version/build, source, digest, dependency graph, platform support, maintenance and removal path."
+    },
+    {
+      "gate": "P2-D02",
+      "currentStatus": "PROPOSED",
+      "owner": "Product + QA + Security",
+      "requiredEvidence": "Exact synthetic or approved corpus, manifest/digest/classification, expected properties, independent oracle, quality method and approved numeric targets."
+    },
+    {
+      "gate": "P2-D03",
+      "currentStatus": "PROPOSED",
+      "owner": "Legal/License + Technical",
+      "requiredEvidence": "Exact license text and obligations, internal-evaluation and redistribution/runtime/support boundary, SBOM, advisory review and zero-additional-cost disposition."
+    },
+    {
+      "gate": "PER_POC_SECURITY_REVIEW",
+      "currentStatus": "NOT_RECORDED",
+      "owner": "Security Reviewer",
+      "requiredEvidence": "Threat-boundary review, deny rules, malicious corpus plan, least-privilege isolation, no-hidden-upload proof, stop authority and independent result review."
+    },
+    {
+      "gate": "PER_POC_ENVIRONMENT_MEASUREMENT_EVIDENCE_FREEZE",
+      "currentStatus": "NOT_FROZEN",
+      "owner": "Environment Owner + QA/Performance + Evidence Owner",
+      "requiredEvidence": "Exact environment, network mode, resource safety ceilings, instrumentation, repetitions, run/evidence root, access, sanitization, retention, expiry and disposal."
+    },
+    {
+      "gate": "PER_POC_HUMAN_EXECUTION_AUTHORIZATION",
+      "currentStatus": "NOT_AUTHORIZED",
+      "owner": "Human Execution Approver",
+      "requiredEvidence": "Explicit authorization bound to exact PoC, candidate/version/digest, feature scope, environment, corpus/oracle, experiments, safety ceilings, stop rules and expiry."
+    }
+  ],
+  "plannedDecisionStatuses": [
+    "APPROVED_ENGINE",
+    "APPROVED_WITH_LIMITATION",
+    "BLOCKED_ALTERNATIVE_REQUIRED",
+    "DEFERRED_BY_GOVERNED_DECISION"
+  ],
+  "pocRecords": [
+    {
+      "pocId": "POC-CONV-001",
+      "objective": "Prove Office to PDF capability for Word, Excel, and PowerPoint without selecting a permanent provider.",
+      "priority": "P0",
+      "phaseGate": "Phase 5 Office-to-PDF",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "Future Wave 1 candidate only after separate admission and authority."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-CONV-001", "FEAT-CONV-002", "FEAT-CONV-003"],
+        "dependentFeatureIds": [],
+        "explicitlyNotProven": ["FEAT-CONV-004", "FEAT-CONV-005", "FEAT-CONV-006", "FEAT-CONV-017", "FEAT-CONV-018", "FEAT-CONV-036", "FEAT-PDF-075"]
+      },
+      "canonicalRequirementIds": ["FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005", "BR-GOV-006", "BR-GOV-007"],
+      "mandatoryControls": [
+        "OFFICE_MACRO_VBA_OLE_DDE_EXECUTION_DENY",
+        "OFFICE_EXTERNAL_LINK_TEMPLATE_NETWORK_FETCH_DENY",
+        "OFFICE_EMBEDDED_EXECUTABLE_AND_SHELL_DENY",
+        "HIDDEN_UPLOAD_DENY",
+        "LEAST_PRIVILEGE_ISOLATED_PROVIDER",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT",
+        "SAFE_LOG_NO_DOCUMENT_OR_FORMULA_CONTENT",
+        "PINNED_DEPENDENCY_SBOM_LICENSE_SECURITY_REVIEW"
+      ],
+      "oracleNeeds": [
+        "Synthetic DOCX/PPTX/XLSX corpus covering fonts, tables, charts, formulas, pagination, print areas, sheet selection and slide order.",
+        "Independent visual and structural comparison that does not trust the converter output alone.",
+        "Per-format fidelity and limitation record, including missing-font and unsupported-object behavior.",
+        "Reopen, type, page/slide/sheet provenance and final-output validation."
+      ],
+      "resourceNeeds": [
+        "Measured CPU, RAM, child processes, handles/threads, disk/temp/output size and stage duration on the frozen environment.",
+        "Control, typical, large-supported, policy-boundary, over-limit and adversarial-valid bands without invented numeric thresholds.",
+        "Single and bounded-concurrency runs with responsiveness, residual growth and cleanup evidence."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, provider crash, invalid container, unsupported object, missing font, write/finalization denial and resource exhaustion.",
+        "No false success, late publication, partial final, source mutation, uncontrolled retry, orphan temp or unbounded child process.",
+        "Stable per-format limitation/fallback outcome; failure must not activate desktop Office automation or a server/public route silently."
+      ],
+      "prerequisites": [
+        "P2-D01 approved for the exact Office conversion candidate/version/digest and platform/runtime.",
+        "P2-D02 approved for passive synthetic Office corpus, visual/structural oracle and quality/resource method.",
+        "P2-D03 approved with explicit zero-additional-cost, license, redistribution/runtime/support and SBOM/advisory disposition.",
+        "Security approval of macro/link/network denial and isolated headless behavior.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/Corpus Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "A governed Phase 2 task explicitly schedules POC-CONV-001.",
+        "All prerequisites are complete and hash-bound to the same candidate, environment and corpus.",
+        "No paid component, Office license entitlement, support or infrastructure assumption remains unresolved.",
+        "An explicit, unexpired human execution authorization is recorded for this PoC only."
+      ]
+    },
+    {
+      "pocId": "POC-CONV-002",
+      "objective": "Prove PDF to Word, Excel, and PowerPoint capability with target-specific editability and fidelity limitations.",
+      "priority": "P0",
+      "phaseGate": "Phase 5 PDF-to-Office",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "A prior governed-defer recommendation is not a human decision."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-CONV-004", "FEAT-CONV-005", "FEAT-CONV-006"],
+        "dependentFeatureIds": [],
+        "explicitlyNotProven": ["FEAT-CONV-001", "FEAT-CONV-002", "FEAT-CONV-003", "FEAT-CONV-017", "FEAT-CONV-018", "FEAT-CONV-036", "FEAT-PDF-075"]
+      },
+      "canonicalRequirementIds": ["FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005", "BR-GOV-006", "BR-GOV-007"],
+      "mandatoryControls": [
+        "MALICIOUS_PDF_ACTIVE_CONTENT_FAIL_CLOSED",
+        "HIDDEN_UPLOAD_DENY",
+        "SPREADSHEET_FORMULA_INJECTION_NEUTRALIZATION",
+        "GENERATED_OFFICE_MACRO_AND_EXTERNAL_LINK_DENY",
+        "LEAST_PRIVILEGE_ISOLATED_PROVIDER",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT",
+        "SAFE_LOG_NO_DOCUMENT_OR_EXTRACTED_CONTENT",
+        "PINNED_DEPENDENCY_SBOM_LICENSE_SECURITY_REVIEW"
+      ],
+      "oracleNeeds": [
+        "Native, scanned and mixed PDF corpus with text, layout, tables, images, reading order and unsupported structures.",
+        "Independent semantic, layout and editability oracle reported separately for DOCX, XLSX and PPTX.",
+        "Spreadsheet-cell oracle proving dangerous formula prefixes and external links are neutralized or safely rejected.",
+        "Reopen, type, content provenance, source digest and final-output validation."
+      ],
+      "resourceNeeds": [
+        "Measured CPU, RAM, child processes, handles/threads, disk/temp/output and duration for native, scanned, mixed, large and complex inputs.",
+        "Single and bounded-concurrency behavior, including OCR-dependent routes if separately authorized.",
+        "No numeric performance or fidelity PASS until targets are approved."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, provider crash, malformed/encrypted input, unsupported layout, write/finalization denial and resource exhaustion.",
+        "Target-specific safe failure/limitation instead of fabricated editable content or silent raster-only success.",
+        "No false success, hidden upload, public fallback, source mutation, partial final or orphan temp."
+      ],
+      "prerequisites": [
+        "P2-D01 approved for the exact PDF-to-Office candidate/version/digest and three target scopes.",
+        "P2-D02 approved for native/scanned/mixed corpus and per-target semantic/layout/editability oracle.",
+        "P2-D03 approved with zero-additional-cost and exact license/runtime/redistribution/support evidence.",
+        "Security approval for malicious-PDF handling, hidden-upload denial and generated spreadsheet formula safety.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/Corpus Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "Product Owner resolves whether the three output targets are Release-1 scope or governed defer.",
+        "A governed Phase 2 task explicitly schedules the exact approved target subset.",
+        "All prerequisites are complete and bind one candidate/configuration to one corpus/oracle revision.",
+        "An explicit, unexpired human execution authorization is recorded for POC-CONV-002 only."
+      ]
+    },
+    {
+      "pocId": "POC-OCR-001",
+      "objective": "Prove local-first Indonesian, English, mixed-language and searchable-PDF OCR for the declared basic OCR scope.",
+      "priority": "P0",
+      "phaseGate": "OCR Core",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "Future Wave 1 candidate only after local engine/language asset admission."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-OCR-001", "FEAT-OCR-002", "FEAT-OCR-003", "FEAT-OCR-004", "FEAT-OCR-005", "FEAT-OCR-009", "FEAT-OCR-010", "FEAT-OCR-011"],
+        "dependentFeatureIds": [],
+        "explicitlyNotProven": ["FEAT-OCR-006", "FEAT-OCR-012", "FEAT-OCR-013", "FEAT-CONV-025", "FEAT-CONV-036"]
+      },
+      "canonicalRequirementIds": ["FR-SCAN-001", "FR-SCAN-002", "FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005"],
+      "mandatoryControls": [
+        "PUBLIC_AI_AND_HIDDEN_UPLOAD_DENY",
+        "OCR_CONTENT_CLASSIFIED_RESTRICTED_UNTRUSTED_DATA",
+        "OCR_CONTENT_EXCLUDED_FROM_ORDINARY_LOGS_TELEMETRY_INDEX",
+        "ADVERSARIAL_IMAGE_PDF_AND_RESOURCE_BOMB_FAIL_CLOSED",
+        "LOCAL_FIRST_NETWORK_DISABLED_PROOF",
+        "LEAST_PRIVILEGE_ISOLATED_ENGINE",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT",
+        "PINNED_ENGINE_LANGUAGE_ASSET_SBOM_LICENSE_SECURITY_REVIEW"
+      ],
+      "oracleNeeds": [
+        "Synthetic Indonesian, English and mixed-language corpus with rotation, noise, scan quality, page selection and known expected text/fields.",
+        "Independent character, word and field metric implementation with approved normalization and numeric targets.",
+        "Searchable-PDF oracle for page/language selection, text-layer presence, reading order and reopen behavior.",
+        "Accuracy/confidence and limitation report that does not place full OCR text in ordinary evidence."
+      ],
+      "resourceNeeds": [
+        "Exact engine and language asset/model size plus package/storage footprint.",
+        "Measured pages, pixels/resolution, CPU, RAM, temp/output, duration, handles/threads and residual growth.",
+        "Control through approved boundary bands, multi-page/batch and bounded concurrency without invented thresholds."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, engine crash, corrupt/adversarial image or PDF, unsupported language, low-confidence result, insufficient memory/storage and output validation failure.",
+        "No false searchability/accuracy success, hidden upload, public AI fallback, content logging, partial final or source mutation.",
+        "Checkpoint/retry only if separately designed and bound to matching engine/input/config; otherwise safe rerun from source."
+      ],
+      "prerequisites": [
+        "P2-D01 approved for exact local OCR engine/version/digest and Indonesian/English language assets.",
+        "P2-D02 approved for the ID/EN/mixed corpus, metric normalization, thresholds and privacy-safe evidence method.",
+        "P2-D03 approved for engine/language-data license, redistribution, runtime, update, support and zero cost.",
+        "Security approval for no public AI/upload, content exclusion, malicious input and isolated resource limits.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/OCR Corpus Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "A governed Phase 2 task explicitly schedules POC-OCR-001 and declares its basic OCR feature subset.",
+        "Exact language assets and offline behavior are admitted without paid or public-service assumptions.",
+        "Accuracy/resource methodology and evidence sanitization are independently reviewable.",
+        "An explicit, unexpired human execution authorization is recorded for POC-OCR-001 only."
+      ]
+    },
+    {
+      "pocId": "POC-OCR-002",
+      "objective": "Prove complex-table, form and mixed-layout OCR structure fidelity without broadening basic OCR silently.",
+      "priority": "P1",
+      "phaseGate": "Table-heavy OCR, Markdown and Excel routes",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "A prior governed-defer recommendation is not a human decision; basic-table versus complex-layout scope remains unresolved."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-OCR-006", "FEAT-OCR-012", "FEAT-OCR-013"],
+        "dependentFeatureIds": ["FEAT-CONV-005", "FEAT-CONV-021", "FEAT-CONV-022", "FEAT-CONV-025", "FEAT-CONV-036"],
+        "explicitlyNotProven": ["FEAT-OCR-001", "FEAT-OCR-002", "FEAT-OCR-003", "FEAT-OCR-004", "FEAT-OCR-005", "FEAT-CONV-004", "FEAT-CONV-006"]
+      },
+      "canonicalRequirementIds": ["FR-SCAN-001", "FR-SCAN-002", "FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005"],
+      "mandatoryControls": [
+        "SPREADSHEET_FORMULA_INJECTION_NEUTRALIZATION",
+        "GENERATED_ACTIVE_LINK_MACRO_EXTERNAL_FETCH_DENY",
+        "OCR_CONTENT_CLASSIFIED_RESTRICTED_UNTRUSTED_DATA",
+        "OCR_CONTENT_EXCLUDED_FROM_ORDINARY_LOGS_TELEMETRY_INDEX",
+        "PUBLIC_AI_AND_HIDDEN_UPLOAD_DENY",
+        "ADVERSARIAL_IMAGE_PDF_AND_RESOURCE_BOMB_FAIL_CLOSED",
+        "LEAST_PRIVILEGE_ISOLATED_ENGINE",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT"
+      ],
+      "oracleNeeds": [
+        "Synthetic complex-table corpus with merged cells, repeated and nested headers, multi-page tables, forms, mixed layouts, empty cells and reading-order markers.",
+        "Independent row/column/cell-span/header/page-continuation/form-field structure oracle.",
+        "Safe spreadsheet/CSV-cell oracle that proves formula-like values are neutralized or rejected without corrupting ordinary text.",
+        "Separate limitation result for downstream Excel/CSV/Markdown routes; those routes are not approved automatically."
+      ],
+      "resourceNeeds": [
+        "Measured page, pixel, table, row, column, cell and layout complexity with CPU, RAM, temp/output and duration.",
+        "Large/multi-page tables, bounded concurrency, child-process/handle/thread use and post-run residual growth.",
+        "No numeric accuracy/resource PASS before exact target and safety ceiling approval."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, engine crash, malformed/adversarial input, unsupported layout, ambiguous spans/headers, low confidence, output limit and formula-safety failure.",
+        "Preserve cell text as untrusted data while failing safely on structure; never emit active formula/link/macro side effects.",
+        "No false fidelity success, hidden upload, public fallback, partial final, source mutation or orphan temp."
+      ],
+      "prerequisites": [
+        "Product Owner decides basic-table MVP versus complex-layout Release-1 scope.",
+        "P2-D01 approved for exact complex OCR candidate/version/digest and declared output routes.",
+        "P2-D02 approved for complex-table corpus, structural oracle, formula-safety oracle and thresholds.",
+        "P2-D03 and Security Reviewer approve exact engine/assets/license/cost and isolated formula/link/macro controls.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/OCR Corpus Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "The basic versus complex table/layout scope has a governed Product decision.",
+        "A governed Phase 2 task schedules the exact direct feature subset and downstream routes are separately gated.",
+        "All candidate/corpus/oracle/security/resource prerequisites are hash-bound and zero-cost.",
+        "An explicit, unexpired human execution authorization is recorded for POC-OCR-002 only."
+      ]
+    },
+    {
+      "pocId": "POC-CONV-003",
+      "objective": "Prove safe PDF rendering from validated local or captured HTML artifacts; arbitrary remote URL fetching is excluded.",
+      "priority": "P1",
+      "phaseGate": "Phase 5 HTML-to-PDF",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "Only a future captured/local-artifact scope may be proposed; current execution contract has no arbitrary URL input."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-CONV-017", "FEAT-CONV-018"],
+        "dependentFeatureIds": [],
+        "explicitlyNotProven": ["REMOTE_URL_FETCH", "UNCONTROLLED_WEB_NAVIGATION", "FEAT-CONV-036"]
+      },
+      "canonicalRequirementIds": ["FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005", "BR-GOV-006", "BR-GOV-007"],
+      "mandatoryControls": [
+        "HTML_JAVASCRIPT_AND_ACTIVE_CONTENT_DENY",
+        "HTML_NETWORK_EGRESS_DENY",
+        "HTML_SSRF_AND_ARBITRARY_REMOTE_URL_DENY",
+        "HTML_LOCAL_FILE_AND_CUSTOM_SCHEME_DENY",
+        "HTML_DOWNLOAD_WEBSOCKET_AMBIENT_CREDENTIAL_STORAGE_DENY",
+        "HTML_UNCONTROLLED_NAVIGATION_DENY",
+        "HIDDEN_UPLOAD_DENY",
+        "LEAST_PRIVILEGE_ISOLATED_RENDERER_WITH_RESOURCE_LIMITS"
+      ],
+      "scopeBoundary": {
+        "validatedLocalOrCapturedHtmlArtifactOnly": true,
+        "arbitraryRemoteUrlInputAllowed": false,
+        "networkAccessAllowedDuringRendering": false,
+        "javascriptOrActiveContentAllowed": false,
+        "ambientCredentialsAllowed": false,
+        "automaticExternalResourceFetchAllowed": false
+      },
+      "oracleNeeds": [
+        "Synthetic local/captured HTML, CSS, embedded font/image and layout corpus with declared resource provenance.",
+        "Independent render comparison for layout, pagination, fonts, CSS and stable visible content.",
+        "Negative oracle proving script, navigation, downloads, local/custom schemes, WebSocket and every external network request are denied.",
+        "SSRF canaries for loopback, link-local, private/internal/metadata targets, redirects and ambiguous hosts remain denied without fetching them."
+      ],
+      "resourceNeeds": [
+        "Measured CPU, RAM, child processes, handles/threads, nested-resource count, disk/temp/output and stage duration.",
+        "Large page, deeply nested layout, adversarial-valid input, bounded concurrency, timeout and post-run residual growth.",
+        "No numeric fidelity/resource PASS before targets and safety ceilings are approved."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, renderer crash, malformed HTML/CSS/font/image, resource-limit breach, blocked scheme/fetch/navigation and output/finalization failure.",
+        "Any denied or inconclusive active/network behavior fails closed with no final output.",
+        "No hidden upload, network fallback, partial final, source mutation, persistent browser state or orphan process/temp."
+      ],
+      "prerequisites": [
+        "P2-D01 approved for exact renderer/runtime/version/digest and local/captured-only capability.",
+        "P2-D02 approved for inert HTML corpus, independent rendering oracle and deny canaries.",
+        "P2-D03 approved with exact renderer/runtime/native/font license, patching, redistribution/support and zero cost.",
+        "Security approval for renderer isolation and total active-content/network/SSRF denial.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/Visual Oracle Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "The canonical HTML-to-PDF risk mismatch BASE-OI-008 is dispositioned or Medium controls remain mandatory.",
+        "The task scope remains local/captured-only; any remote fetch requires a separate controlled API/security addendum and new PoC authority.",
+        "All renderer/corpus/oracle/security/resource prerequisites are hash-bound and zero-cost.",
+        "An explicit, unexpired human execution authorization is recorded for POC-CONV-003 only."
+      ]
+    },
+    {
+      "pocId": "POC-PDF-003",
+      "objective": "Prove conversion to explicitly declared PDF/A level or levels and conformance using an independent validator.",
+      "priority": "P1",
+      "phaseGate": "PDF/A Core",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "POC-PDF-001 is Merge-only and cannot approve PDF/A conversion, conformance or validator choice."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-PDF-075"],
+        "dependentFeatureIds": [],
+        "explicitlyNotProven": ["FEAT-PDF-005", "UNDECLARED_PDFA_LEVEL", "LONG_TERM_COMPATIBILITY_OUTSIDE_DECLARED_EVIDENCE"]
+      },
+      "canonicalRequirementIds": ["FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005", "UIR-UI-005", "UIR-UI-006", "UIR-UI-007", "UIR-UI-008", "UIR-UI-009", "UIR-UI-010"],
+      "mandatoryControls": [
+        "INDEPENDENT_PDFA_CONFORMANCE_VALIDATOR_REQUIRED",
+        "CONVERTER_AND_VALIDATOR_IDENTITY_INDEPENDENCE_REQUIRED",
+        "DECLARED_PDFA_LEVEL_ONLY",
+        "FONT_COLOR_PROFILE_METADATA_ATTACHMENT_SIGNATURE_HANDLING_REVIEW",
+        "MALFORMED_ENCRYPTED_ACTIVE_CONTENT_FAIL_CLOSED",
+        "NO_FINAL_PUBLICATION_BEFORE_INDEPENDENT_CONFORMANCE_PASS",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT",
+        "PINNED_CONVERTER_VALIDATOR_SBOM_LICENSE_SECURITY_REVIEW"
+      ],
+      "oracleNeeds": [
+        "Product-approved exact PDF/A level or levels with synthetic valid, invalid and repairable fixtures.",
+        "Independent conformance validator with exact product/version/source/digest and a different implementation trust path from the converter.",
+        "Validation of fonts, embedding, color profiles, metadata, attachments, forms/actions and signature handling for the declared level.",
+        "Negative fixtures proving converter success alone, invalid conformance, validator error or inconclusive result cannot publish final output."
+      ],
+      "independentValidatorRequirement": {
+        "required": true,
+        "converterMaySelfValidateAsSoleOracle": false,
+        "exactValidatorIdentity": "TBD_APPROVED_INDEPENDENT_VALIDATOR",
+        "declaredPdfaLevels": "TBC_PRODUCT_QA_DECISION",
+        "executionStatus": "NOT_RUN_NOT_AUTHORIZED"
+      },
+      "resourceNeeds": [
+        "Measured converter and independent-validator CPU, RAM, child processes, handles/threads, disk/temp/output and stage durations separately.",
+        "Control, typical, large-supported, invalid, repairable, policy-boundary and over-limit cases with bounded concurrency.",
+        "No numeric resource or conformance PASS before environment, target levels and policy thresholds are approved."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, converter crash, validator crash/unavailable/inconclusive, invalid input, unsupported object/font/profile, output validation and finalization failure.",
+        "Validator unavailable/inconclusive is blocked or failed, never conformance success.",
+        "No partial final, silent repair claim, source mutation, hidden upload/network fallback or orphan temp."
+      ],
+      "prerequisites": [
+        "Product + QA approve exact PDF/A level or levels and acceptable repair/limitation semantics.",
+        "P2-D01 separately approves exact converter and independent validator identities, versions and digests.",
+        "P2-D02 approves PDF/A corpus, independent conformance oracle, invalid cases and long-term compatibility claims allowed.",
+        "P2-D03 and Security Reviewer approve both tools, licenses, runtime/redistribution/support, advisories and zero cost.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "PDF/A QA/Conformance Reviewer", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "Exact PDF/A levels and validation authority are decided without assuming all levels.",
+        "Converter and independent validator are both admitted and hash-bound, with no self-validation-only oracle.",
+        "All corpus/security/resource/evidence prerequisites are complete and zero-cost.",
+        "An explicit, unexpired human execution authorization is recorded for POC-PDF-003 only."
+      ]
+    },
+    {
+      "pocId": "POC-CONV-004",
+      "objective": "Prove PDF to Markdown using deterministic text/layout extraction first and separately governed OCR fallback only when needed.",
+      "priority": "P1",
+      "phaseGate": "Phase 7 PDF-to-Markdown",
+      "currentState": {
+        "lifecycleStatus": "NOT_STARTED",
+        "scopeApproval": "NOT_APPROVED",
+        "executionAuthorization": "NOT_AUTHORIZED",
+        "governedDisposition": "NO_GOVERNED_DISPOSITION",
+        "candidate": "TBD_APPROVED_CANDIDATE",
+        "vendorRecommendation": "NONE",
+        "planningNote": "Future Wave 2 only; OCR/AI fallback does not become authorized through this record."
+      },
+      "featureMapping": {
+        "directFeatureIds": ["FEAT-CONV-036"],
+        "dependentFeatureIds": ["FEAT-OCR-005", "FEAT-OCR-006", "FEAT-OCR-012", "FEAT-OCR-013"],
+        "explicitlyNotProven": ["FEAT-INTEL-001", "FEAT-INTEL-002", "FEAT-ASSIST-026", "PUBLIC_AI_FALLBACK"]
+      },
+      "canonicalRequirementIds": ["FR-INTEL-003", "FR-PROC-001", "FR-PROC-002", "FR-PROC-003", "FR-PROC-004", "FR-PROC-005"],
+      "mandatoryControls": [
+        "DETERMINISTIC_TEXT_LAYOUT_EXTRACTION_FIRST",
+        "OCR_FALLBACK_SEPARATELY_GOVERNED_AND_ONLY_WHEN_NEEDED",
+        "PUBLIC_AI_AND_HIDDEN_UPLOAD_DENY",
+        "MARKDOWN_RAW_HTML_AND_AUTO_FETCH_DENY",
+        "FORMULA_LINK_AND_CONTENT_SANITIZATION",
+        "DOCUMENT_OCR_MARKDOWN_CONTENT_IS_UNTRUSTED_DATA",
+        "SOURCE_IMMUTABILITY_AND_VALIDATED_ATOMIC_RESULT",
+        "SAFE_LOG_NO_DOCUMENT_OCR_OR_MARKDOWN_CONTENT"
+      ],
+      "oracleNeeds": [
+        "Native, scanned, table and multi-column PDF corpus with expected headings, lists, tables, reading order, page provenance and inert links/text.",
+        "Independent Markdown structure oracle; visual similarity alone is insufficient.",
+        "Separate deterministic-path and OCR-fallback results, each with exact provenance and limitations.",
+        "Sanitization oracle proving raw HTML, auto-fetch, formula-like text, active links and document instructions remain inert data."
+      ],
+      "resourceNeeds": [
+        "Measured CPU, RAM, disk/temp/output, duration, child processes and residual growth for deterministic and authorized OCR routes separately.",
+        "Large/multi-column/table/scanned inputs, bounded concurrency and fallback-rate measurement.",
+        "No numeric fidelity/resource PASS before exact targets and safety ceilings are approved."
+      ],
+      "failureNeeds": [
+        "Cancel, timeout, parser/OCR crash, malformed/encrypted input, unsupported layout, unsafe Markdown output, OCR unavailable and finalization failure.",
+        "No silent OCR/AI/public/provider fallback, false structure success, active output side effect, partial final or source mutation.",
+        "A failed deterministic path produces a governed limitation/fallback decision, not automatic content transfer."
+      ],
+      "prerequisites": [
+        "P2-D01 approves exact deterministic extractor; any OCR fallback must also have a separately approved POC-OCR disposition and exact engine/assets.",
+        "P2-D02 approves the Markdown structure corpus/oracle, sanitization oracle and fidelity/resource targets.",
+        "P2-D03 approves all extractor/OCR dependencies, licenses, redistribution/runtime/support and zero cost.",
+        "Security approves inert Markdown output, link/formula/content handling and no public AI/hidden upload.",
+        "Per-PoC environment/evidence freeze and separate human execution authorization."
+      ],
+      "decisionOwners": ["Product Owner", "Technical Owner", "QA/Markdown Oracle Owner", "Security Reviewer", "License/Cost Reviewer", "Environment Owner", "Human Execution Approver"],
+      "reopenConditions": [
+        "A governed Phase 2 task explicitly schedules POC-CONV-004 and fixes deterministic versus OCR scope.",
+        "Every required OCR fallback has its own governed disposition; optional AI is not inferred.",
+        "All extractor/corpus/oracle/security/resource prerequisites are hash-bound and zero-cost.",
+        "An explicit, unexpired human execution authorization is recorded for POC-CONV-004 only."
+      ]
+    }
+  ]
+}

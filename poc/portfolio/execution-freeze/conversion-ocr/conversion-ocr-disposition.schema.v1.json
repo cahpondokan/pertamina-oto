@@ -1,0 +1,36 @@
+{
+  "schemaId": "P2-CONVERSION-OCR-NO-EXECUTION-DISPOSITION-SCHEMA-1.0",
+  "schemaVersion": "1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packetId",
+    "runId",
+    "taskId",
+    "baselineCommit",
+    "status",
+    "objective",
+    "authorityBoundary",
+    "approvalIsolation",
+    "authoritativeSources",
+    "commonDecisionGates",
+    "plannedDecisionStatuses",
+    "pocRecords"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "1.0" },
+    "packetId": { "type": "string", "const": "P2-W0G-B-CONVERSION-OCR-DISPOSITION-001" },
+    "runId": { "type": "string", "const": "P02-20260905-1434" },
+    "taskId": { "type": "string", "const": "P2-W0G-B-A4-CONVERSION-OCR-DISPOSITION" },
+    "baselineCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "status": { "type": "string", "const": "PROPOSED_UNEXECUTED_BLOCKED" },
+    "objective": { "type": "string" },
+    "authorityBoundary": { "type": "object" },
+    "approvalIsolation": { "type": "object" },
+    "authoritativeSources": { "type": "array", "minItems": 10 },
+    "commonDecisionGates": { "type": "array", "minItems": 6 },
+    "plannedDecisionStatuses": { "type": "array", "minItems": 4 },
+    "pocRecords": { "type": "array", "minItems": 7 }
+  }
+}
