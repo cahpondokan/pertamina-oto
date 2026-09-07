@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-09-08",
+  "note": "Exact working-file hashes govern; HEAD alone may exclude uncommitted source.",
+  "inputs": [
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/Environment.psm1",
+      "sha256": "B25A7343596BBDA0FFDCEBAD93FE9E785DED6E9A216FA5878AE99F5EB13C46BE",
+      "bytes": 2616
+    },
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/HANDOFF.md",
+      "sha256": "CE076E21B3D2F22D67D54E23014FDD287A720661B3CEF21FCC6CDE25F2CD9BA3",
+      "bytes": 1711
+    },
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/INTERFACE.md",
+      "sha256": "C32AA6050F2A4B08434AB034F698240E00476C2D61ED9687E00438D20AD53AB3",
+      "bytes": 6945
+    },
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/Invoke-GuestChild.ps1",
+      "sha256": "729E1BD2CB10EBB7DC17FCA50D71976DC830FE8C9B52CE92B2780A8215B6B1C8",
+      "bytes": 3439
+    },
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/Test-Staging.ps1",
+      "sha256": "B86A2777A959A366870214F279326E1A4AE55326BA2630F67E2C2CE8940BF5C6",
+      "bytes": 1169
+    },
+    {
+      "agent": "agent-1-wave0i",
+      "head": "2f1ff3413a8105f5531e52eb05fd49de3528c1d7",
+      "path": "poc/wave0i/environment/Test-Static.ps1",
+      "sha256": "E5872959D5CA47C91818AED479C00393BD4C53C7C82AD296CEEFC549A2993355",
+      "bytes": 954
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/Build-Offline.ps1",
+      "sha256": "A9B026FC19A72CFA28D9685FC932775CE91D44190BCFCCFF60F500CE5754258C",
+      "bytes": 7252
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/CandidateTools.ps1",
+      "sha256": "B8CC50A8EFC4C9F0A16BD669E88873F1E7D626DFB1AB70AB082881B0A29BBA12",
+      "bytes": 6589
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/HANDOFF.md",
+      "sha256": "0C7A57B6DEE9B2FCDBAD477ACBD3F4E45F8EDAE64607D9D462EEBF5083ACF921",
+      "bytes": 3241
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/inputs.lock.json",
+      "sha256": "3825D5ACC6A2692C6160B474EB3DDBA2FF4223E1D0FBDE6C32FFC83E7354AD27",
+      "bytes": 89118
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/README.md",
+      "sha256": "B3487F27639318AA128711EF11BD4E02E08381ACA46BEF224034E6073EA1D139",
+      "bytes": 6743
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/static-test-results.json",
+      "sha256": "54C441C423B684DC2048D192E859BE081B5D9309190FC68C87E88925AAE3D610",
+      "bytes": 1039
+    },
+    {
+      "agent": "agent-2-wave0i",
+      "head": "672252324b7c2047b210d57b3738f6f3e0a156b4",
+      "path": "poc/wave0i/candidate/Test-Static.ps1",
+      "sha256": "159BD32F05BF63769EB7A43C97FA8304426AD3154AA62A6700DC0C46007377C8",
+      "bytes": 5005
+    },
+    {
+      "agent": "agent-3-wave0i",
+      "head": "ce9fb7b765bc77c2f848988c5513ba3f03dd9fc5",
+      "path": "poc/wave0i/oracle/EVIDENCE.md",
+      "sha256": "740EBBE15A87D344706A755AD66B0B5BEF4A5DE1CD31A4D77E4DA0AE62BBDC17",
+      "bytes": 3792
+    },
+    {
+      "agent": "agent-3-wave0i",
+      "head": "ce9fb7b765bc77c2f848988c5513ba3f03dd9fc5",
+      "path": "poc/wave0i/oracle/observe.py",
+      "sha256": "AFCE6D2031C36EF22F8B175DE3333642D74F990BE13ECB15213DEE3C6B309469",
+      "bytes": 12920
+    },
+    {
+      "agent": "agent-3-wave0i",
+      "head": "ce9fb7b765bc77c2f848988c5513ba3f03dd9fc5",
+      "path": "poc/wave0i/oracle/README.md",
+      "sha256": "C071A01CA774F8218103A22183E28EB2FA3CAAEE665DC23F7E3C77C92FDB60C2",
+      "bytes": 9012
+    },
+    {
+      "agent": "agent-3-wave0i",
+      "head": "ce9fb7b765bc77c2f848988c5513ba3f03dd9fc5",
+      "path": "poc/wave0i/oracle/test_observe.py",
+      "sha256": "E4E400BC8ED4616C04DD20DD2BA386D6C9699F052D1F472742639126AAB2D02E",
+      "bytes": 11547
+    }
+  ]
+}
