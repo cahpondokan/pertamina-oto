@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "tests": 8,
+  "results": [
+    {
+      "status": "PASS",
+      "name": "PowerShell syntax for both executable sources and tests"
+    },
+    {
+      "status": "PASS",
+      "name": "path traversal, rooted, alternate stream and UNC rejected"
+    },
+    {
+      "status": "PASS",
+      "name": "hash and length mismatch rejected"
+    },
+    {
+      "status": "PASS",
+      "name": "missing existing asset fails closed"
+    },
+    {
+      "status": "PASS",
+      "name": "ZIP selected member verified; missing and duplicate entries rejected"
+    },
+    {
+      "status": "PASS",
+      "name": "compiler response preserves spaces and excludes restore/analyzer imports"
+    },
+    {
+      "status": "PASS",
+      "name": "runtime exact version and deps bind application libraries only"
+    },
+    {
+      "status": "PASS",
+      "name": "locked real source, installed bytes, packages and selected members"
+    }
+  ],
+  "compilerExecuted": false,
+  "engineExecuted": false,
+  "pdfGenerated": false
+}
