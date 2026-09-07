@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0",
+  "metadata": {
+    "taskId": "P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW",
+    "runId": "P02-20260905-1434",
+    "reviewedAt": "2026-09-07T21:06:10+07:00",
+    "baselineCommit": "f246fd03b26a39afef958174cd12105a78d0a259",
+    "reviewRole": "Agent 6 independent security reviewer",
+    "disposition": "BLOCKED_SECURITY",
+    "executionApproval": false,
+    "selfApproval": false,
+    "additionalCost": "ZERO_ADDITIONAL_COST"
+  },
+  "sourceBindings": [
+    {"root":"repository","path":"poc/environment/execution-freeze/environment-manifest.v1.json","bytes":6391,"sha256":"01747013d277aafba8742cd162fd42019a75c1b672ab89b0d0a1a2012d48e52d"},
+    {"root":"repository","path":"poc/environment/execution-freeze/control-checklist.v1.json","bytes":3819,"sha256":"a85df9ad5ff77d4b01b62b5734f775b0c1d44103d8da316f41ae79b47e81d3f4"},
+    {"root":"repository","path":"poc/environment/execution-freeze/later-launch-observation-plan.v1.json","bytes":9015,"sha256":"90f993774a5506389eb7892855f8a82d5b62542661539213dbe3e32d98c98a57"},
+    {"root":"repository","path":"poc/environment/execution-freeze/Verify-ExecutionFreeze.ps1","bytes":11361,"sha256":"fe69e286c111d9f558b90fb95aa1b9aa3c5b05d07941c4813f740c1660d8627b"},
+    {"root":"repository","path":"poc/intake/execution-freeze/pdfsharp/candidate-freeze.json","bytes":19668,"sha256":"f804c59e698031e9e65345cefa33cc0f1099c8a51876321059b544e339734ca7"},
+    {"root":"repository","path":"poc/intake/execution-freeze/pdfsharp/verification.json","bytes":1430,"sha256":"2f8ae6b29f1fe4f0420b704da81850b43ec01ae48ab2c4f860c16f103c9f656c"},
+    {"root":"repository","path":"poc/intake/execution-freeze/pdfsharp/Verify-Freeze.ps1","bytes":9108,"sha256":"73ecbe9c59994b4d46d96006e5867e20f1865d7080c2b30b456ffe726bef3063"},
+    {"root":"repository","path":"poc/corpus/execution-freeze/corpus-freeze.proposal.v1.json","bytes":7949,"sha256":"2d19b08b572ece020054f27765820a51f6f91505198ad3c916273b7848306095"},
+    {"root":"repository","path":"poc/corpus/execution-freeze/corpus-freeze.schema.v1.json","bytes":1258,"sha256":"d0f76e4247577a414ed879277333a417fc28e0f8811bf65ac3f83b95da764ce0"},
+    {"root":"repository","path":"poc/oracles/execution-freeze/oracle-freeze.proposal.v1.json","bytes":16639,"sha256":"0af3326391e2a7c8fb5c8324c190364db5dbfccb60190a9112dc72a35933a7a7"},
+    {"root":"repository","path":"poc/oracles/execution-freeze/oracle-freeze.schema.v1.json","bytes":1452,"sha256":"3e24c54aaf1142b93f264951307ddf6e6e305e278e87e54f1b8728078b1be103"},
+    {"root":"repository","path":"poc/oracles/execution-freeze/verify_static.py","bytes":9072,"sha256":"893c28e52802cd5cde85baad8a015d505b6108e5998d6dfc1f2ef029d525257b"},
+    {"root":"repository","path":"poc/oracles/qpdf-12.4.1/intake-manifest.json","bytes":1992,"sha256":"0754a4319dc4095883a9d40919a062a2c28190f950c20cb43749710dda246e64"},
+    {"root":"repository","path":"poc/oracles/qpdf-12.4.1/STATIC_INTAKE.md","bytes":6790,"sha256":"1ec8fda70646cdf0e9e7edaa1bbbf2c08850c63a3a3f54aaee62cdc8a908cf8c"},
+    {"root":"repository","path":"poc/reviews/security/REVIEW.md","bytes":11896,"sha256":"44248c63cc9458995da59903283280eac4ff6c2d2358055114a043081c433471"},
+    {"root":"repository","path":"poc/reviews/security/wave0e/REVIEW.md","bytes":10830,"sha256":"fe2acc3468c0c8c599c5b947cc4eef323f021b59f3cde05c557b2e7b76877313"},
+    {"root":"repository","path":"poc/reviews/security/wave0f/REVIEW.md","bytes":10352,"sha256":"9e7e40531770a1a72e98143df008a6437bd36265ec4ec412d390395bae277c28"},
+    {"root":"repository","path":"poc/reviews/governance/README.md","bytes":12287,"sha256":"3ade9a4c755d66f7433e5c3d9e27a94b82308d3861d812012ac5266ed1113a79"},
+    {"root":"repository","path":"poc/reviews/governance/wave0e/README.md","bytes":11570,"sha256":"33f21eaa0e464010598d007ad7322519e69c7176b34b1fc17e638c72fd95f1fa"},
+    {"root":"repository","path":"poc/reviews/governance/wave0f/README.md","bytes":11939,"sha256":"30d438e017302eceebb0d2ed88258e958507655118961b7667fb7c1380815533"},
+    {"root":"coordination","path":"AGENTS.md","bytes":12200,"sha256":"284871ecd681f59555bb52f9f0db4fd3659020d8306457b284f9ad63f2532af6"},
+    {"root":"coordination","path":"docs/implementation-prompts/00_SHARED_AGENT_CONTRACT.md","bytes":5306,"sha256":"11d48c94c832ac7c9745a1bf9c7f79a3ae820894583a682c6bd08a503282e72f"},
+    {"root":"coordination","path":"docs/implementation-prompts/PHASE_02_PROOF_OF_CAPABILITY.md","bytes":5931,"sha256":"cadecd159ce12fd0968a44ea64bc3fe5925cca42fb4afa852d31e3707eee9e69"},
+    {"root":"coordination","path":"docs/project-management/PROJECT_STATE.md","bytes":10577,"sha256":"e734889428dd9986810be44b6f3a6bd2bb63cdc756b304a2c7dbdbd10cb907e3"},
+    {"root":"coordination","path":"docs/project-management/PHASE_DECISION_REGISTER.md","bytes":15018,"sha256":"ff59350534d55240b6de3b2c4bfacde130f9442fa469eff3f58dbc35183a9824"},
+    {"root":"coordination","path":"docs/project-management/PHASE_02_WAVE_0G_TASK_CARDS_P02-20260905-1434.md","bytes":9555,"sha256":"030c687fa281b0704023eb6b692c1629184119210984ebe85a828a4c68e50e88"},
+    {"root":"coordination","path":"docs/baseline-audit/POC_PDF_001_EXECUTION_CHARTER_CANDIDATE_v1.0.md","bytes":37471,"sha256":"e47460dfb3768f6ee76afb0ef30aaf6f0672905befa2a93b5137218bf1176f5a"},
+    {"root":"coordination","path":"08_SECURITY_DESIGN_FINAL_v1.0_PERTAMINA_OTO.md","bytes":81859,"sha256":"df9c8ba8b70b224206918096fc2acbe990c452aa932f27871fb36b282f6f404f"},
+    {"root":"coordination","path":"docs/project-management/PHASE_02_POSTRESTART_SANDBOX_OBSERVATION_P02-20260905-1434.md","bytes":3014,"sha256":"d9863580de97af7d940fe3cc762169db9b35a9d9239aa6649574d875daff29d6"},
+    {"root":"coordination","path":"docs/project-management/PHASE_02_WINDOWS_SANDBOX_POSTRESTART_RESULT.json","bytes":1883,"sha256":"5ba5cf8c75d8a945dd5f88f14918e744c17473f16d97147942f673468bae924d"}
+  ],
+  "peerPortfolioBindings": [
+    {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/README.md","gitBlobOid":"5f9b61a33a5026b1885073d247d42c16d5b94b11","bytes":4633,"sha256":"51835471bdc7a67ca605a715e1b704ea4cfe7e1dd6b62910a09568b106f49c06"},
+    {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/conversion-ocr-disposition.proposal.v1.json","gitBlobOid":"2dd2320bbd478fc8c7d234c1c2c197b5bff33394","bytes":34299,"sha256":"266b3f0d630e9692ee387f9f47ee7c63f1118b505b2f394b945d6b243fc74be5"},
+    {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/conversion-ocr-disposition.schema.v1.json","gitBlobOid":"edf4cb2d5778f38bd75a6af22d41e5e887487f0b","bytes":1298,"sha256":"c7881ff24bd855f01a596a0d651aed97c9f5c995ae63c185ef1f6d8a5cbc3c3d"},
+    {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/verify_static.py","gitBlobOid":"b81a30f464da037dc412c09bac5e306db0286f52","bytes":8925,"sha256":"e4480d33683ddbdd2c058619e889233d3c33a8ce8efd6574a0e4d43809146191"},
+    {"commit":"ee7f86735131302482af7524baf5422e081b73c9","path":"poc/portfolio/execution-freeze/device-ai/README.md","gitBlobOid":"a34f152a8091bc12e87a968f4b0d9ac1f379e435","bytes":4195,"sha256":"10df7c9998d6eb368a57e86325382a7328ca1adeff570465dc6d2d8134451df7"},
+    {"commit":"ee7f86735131302482af7524baf5422e081b73c9","path":"poc/portfolio/execution-freeze/device-ai/device-ai-disposition.proposal.v1.json","gitBlobOid":"5dc8341225f11f959b6e20cf98ba8900d85ac9c8","bytes":46223,"sha256":"3b17bb350feeb035bf6f2f3e83892a2fa4daef7bd61eb1bd4a69793d7844068b"},
+    {"commit":"ee7f86735131302482af7524baf5422e081b73c9","path":"poc/portfolio/execution-freeze/device-ai/device-ai-disposition.schema.v1.json","gitBlobOid":"60f3e5f6ebea44c077972ddd2de6a848b33f76d3","bytes":8209,"sha256":"71026cc03359f482f67addc1e95f2aea6251058db023aa8062b4a8f5c31c2ad6"},
+    {"commit":"ee7f86735131302482af7524baf5422e081b73c9","path":"poc/portfolio/execution-freeze/device-ai/verify_static.py","gitBlobOid":"3092a1514c99441d9f5d89ef3f7737a1803f60e5","bytes":8572,"sha256":"14366935473b08117742f38d57d91b8082ecb229ca52e95cafc21437efbe63b8"}
+  ],
+  "peerPortfolioCoverage": [
+    {
+      "commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda",
+      "taskId":"P2-W0G-B-A4-CONVERSION-OCR-DISPOSITION",
+      "pocIds":["POC-CONV-001","POC-CONV-002","POC-OCR-001","POC-OCR-002","POC-CONV-003","POC-PDF-003","POC-CONV-004"],
+      "reviewResult":"COVERED_STATIC_ONLY_REMAINS_BLOCKED",
+      "securityFinding":"The proposal preserves per-PoC approval isolation and material macro/OLE/DDE/link, formula-injection, HTML active-content/SSRF, OCR-content, PDF/A-oracle and Markdown-sanitization controls. Every candidate, numeric ceiling, corpus/oracle, license/security review and execution authority remains unresolved; none may inherit POC-PDF-001 authority."
+    },
+    {
+      "commit":"ee7f86735131302482af7524baf5422e081b73c9",
+      "taskId":"P2-W0G-B-A5-DEVICE-AI-DISPOSITION",
+      "pocIds":["POC-SCAN-001","POC-INTEL-001","POC-INTEL-002","POC-CONV-004","POC-AI-LOCAL-001"],
+      "reviewResult":"COVERED_STATIC_ONLY_REMAINS_BLOCKED",
+      "securityFinding":"The proposal denies public AI/translation, silent upload, endpoint/device/model execution and iOS reopening, and preserves offline proof, consent, untrusted-output and zero-cost boundaries. Exact device/provider/model/runtime/assets, data policy, numeric ceilings, corpus/oracles, licenses and PRE-012 remain unresolved. POC-CONV-004 overlaps the conversion/OCR packet consistently: deterministic-first and any OCR/AI fallback separately governed."
+    }
+  ],
+  "officialReferenceSnapshot": [
+    {"id":"OFF-QPDF-REL","url":"https://github.com/qpdf/qpdf/releases/tag/v12.4.1","observed":"12.4.1 release and verified tag are published; release provenance does not substitute for runtime security evidence."},
+    {"id":"OFF-QPDF-NOTES","url":"https://qpdf.readthedocs.io/en/stable/release-notes.html","observed":"12.4.1 release notes list two bug fixes and do not explicitly resolve the reviewed open resource-exhaustion reports."},
+    {"id":"OFF-QPDF-1739","url":"https://github.com/qpdf/qpdf/issues/1739","observed":"Open report: linearization checking can exhaust memory; exact 12.4.1 applicability remains unresolved."},
+    {"id":"OFF-QPDF-1688","url":"https://github.com/qpdf/qpdf/issues/1688","observed":"Open report: predictor overflow/unbounded decompression; exact 12.4.1 applicability remains unresolved."},
+    {"id":"OFF-PDFSHARP-REL","url":"https://github.com/empira/PDFsharp/releases/tag/v6.2.4","observed":"6.2.4 release tag is published."},
+    {"id":"OFF-PDFSHARP-NUGET","url":"https://www.nuget.org/packages/PDFsharp/6.2.4","observed":"Official package page declares net10 compatibility and Logging.Abstractions/Pkcs dependencies."},
+    {"id":"OFF-PDFSHARP-361","url":"https://github.com/empira/PDFsharp/issues/361","observed":"Open report explicitly reproduces unbounded recursion and process-terminating StackOverflowException on PDFsharp 6.2.4 with a cyclic page tree."}
+  ],
+  "frozenCandidateIdentities": [
+    {"id":"PDFsharp","version":"6.2.4","bytes":4625326,"sha256":"5647882339b327cbf6da9ea3f882efb335f8d602e6fd45323adf9e78da53cf67"},
+    {"id":"Microsoft.Extensions.Logging.Abstractions","version":"8.0.3","bytes":802188,"sha256":"e4c498d5a13051b4577a148f1d8c3470167215c507e2392069b75dc61322bb74"},
+    {"id":"System.Security.Cryptography.Pkcs","version":"8.0.1","bytes":1078389,"sha256":"28c348909df243fe4ee962213e3c8021aaecbc8321929dba03a69bcb92a49de5"},
+    {"id":"Microsoft.Extensions.DependencyInjection.Abstractions","version":"8.0.2","bytes":278862,"sha256":"51f2df1100245f10da54f0bb7e813f277155117777d4fbbab902214e27372606"},
+    {"id":"qpdf-msvc64","version":"12.4.1","bytes":28165367,"sha256":"3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6"}
+  ],
+  "effectiveAllowlist": {
+    "candidateFiles": [],
+    "restoreCommands": [],
+    "buildCommands": [],
+    "launchCommands": [],
+    "runtimeProcesses": [],
+    "runtimeModules": [],
+    "networkDestinations": [],
+    "note": "Intentionally empty: this review grants no execution authority."
+  },
+  "futureEligibilityProfiles": [
+    {"id":"FE-ENV-OBSERVE","status":"BLOCKED_NOT_AUTHORIZED","purpose":"Benign Windows Sandbox environment observation","processes":["WindowsSandbox.exe@5ba5cf8c75d8a945dd5f88f14918e744c17473f16d97147942f673468bae924d"],"commands":["TBC_BY_AGENT_0_AFTER_PRE_GATES"],"modules":["TBC_FROM_GUEST_BASELINE"],"network":"deny all; prove effective guest egress state"},
+    {"id":"FE-PDFSHARP-BOOTSTRAP-RESTORE","status":"BLOCKED_NOT_AUTHORIZED","purpose":"Bootstrap resolution only","processes":["dotnet.exe@TBC_EXACT_HASH"],"commands":["dotnet restore <bootstrap-project> --locked-mode --packages <guest-temp> --no-cache --disable-parallel"],"modules":["TBC_FROM_PROCESS_TELEMETRY"],"network":"deny all; restore must consume mapped read-only frozen packages only"},
+    {"id":"FE-PDFSHARP-LOCKED-RESTORE","status":"BLOCKED_NOT_AUTHORIZED","purpose":"Locked harness restore","processes":["dotnet.exe@TBC_EXACT_HASH"],"commands":["dotnet restore <harness-project> --locked-mode --packages <guest-temp> --no-cache --disable-parallel"],"modules":["TBC_FROM_PROCESS_TELEMETRY"],"network":"deny all"},
+    {"id":"FE-PDFSHARP-BUILD","status":"BLOCKED_NOT_AUTHORIZED","purpose":"Deterministic harness build","processes":["dotnet.exe@TBC_EXACT_HASH"],"commands":["dotnet build <harness-project> --no-restore --configuration Release --runtime win-x64"],"modules":["TBC_FROM_PROCESS_TELEMETRY"],"network":"deny all"},
+    {"id":"FE-PDFSHARP-RUN","status":"BLOCKED_NOT_AUTHORIZED","purpose":"PDFsharp experiment runtime","processes":["Oto.Poc.PdfsharpHarness.exe@TBC_EXACT_HASH"],"commands":["Oto.Poc.PdfsharpHarness.exe run --manifest RUN_INPUT/run-manifest.json"],"modules":["TBC_FROM_SIGNED_BUILD_MANIFEST_AND_TELEMETRY"],"network":"deny all"},
+    {"id":"FE-QPDF-ORACLE","status":"BLOCKED_NOT_AUTHORIZED","purpose":"qpdf structural oracle","processes":["qpdf.exe@57c003e868fb66cd343fd5afb91be8c2277f56434eea8635762499731bf9f60d"],"commands":["TBC_EXACT_ARGUMENT_TEMPLATE; prohibit --check, --check-linearization and --show-linearization while OFF-QPDF-1739 is unresolved"],"modules":["qpdf30.dll@36fe5b2023f244e5785d96b8372dba26b75ea51b63adf4d4f1e66ad0aa1c8a61","concrt140.dll@54716f0738af891f283d213b5c8d11b25896bb8ee3097d301eae718560cf974e","msvcp140.dll@7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca","msvcp140_1.dll@206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982","msvcp140_2.dll@d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838","msvcp140_atomic_wait.dll@3d0cbfaa1bf3eecf5a3f4491d2960ee803cb994f30292c6adc4a07c498f60e2b","msvcp140_codecvt_ids.dll@8a65c7596ef2e6938731f5a1058e7e40145b6d97967cc649231a076b9a608d78","vcruntime140.dll@d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7","vcruntime140_1.dll@a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"],"network":"deny all; qpdf30 imports WS2_32 and must have observed zero connection attempts"}
+  ],
+  "denylist": [
+    "Any candidate, process, module, package, command, argument, network destination or mapped path not in a later approved exact manifest",
+    "fix-qdf.exe and zlib-flate.exe",
+    "Shells, script interpreters, package managers, browsers and download utilities except an exact separately approved launcher",
+    "Host paths outside exact read-only input and write-only evidence mappings",
+    "qpdf --check, --check-linearization and --show-linearization while OFF-QPDF-1739 applicability is unresolved"
+  ],
+  "evidencePlans": {
+    "processModuleDllSearch": [
+      "Capture guest process tree from launcher through termination with image path, command line, parent, start/end time, hash and signer.",
+      "Capture every loaded module with resolved absolute path and SHA-256; compare against a separately approved exact module set.",
+      "Record SafeDllSearchMode, KnownDLL resolution, current/working directory, PATH, DOTNET_ROOT, runtimeconfig, deps and native probing paths.",
+      "Plant uniquely named unsigned canary DLLs in writable/current/input directories and prove they are never opened or loaded.",
+      "Stop before corpus parsing on an unapproved child process, module, search path, writable executable directory or hash drift."
+    ],
+    "networkEgress": [
+      "Prove effective guest network disabled and firewall deny-default after boot; configuration text alone is insufficient.",
+      "Capture DNS, TCP, UDP and WinHTTP/WinINet activity for all allowed processes from pre-launch through teardown.",
+      "Use a local blocked-resolution canary and prove zero successful or attempted external egress; never contact the public canary.",
+      "Hash/export firewall, route, adapter, proxy and DNS snapshots without secrets.",
+      "Stop on any destination, DNS query, listening socket, proxy use or evidence gap."
+    ],
+    "tempResourceCancelCleanupCanary": [
+      "Use a fresh run ID and guest-only temp/work directory; deny host temp, profile, registry persistence and undisclosed mappings.",
+      "Before parse, freeze numeric wall-clock, CPU, working-set/private-byte, handle, child-process and output-growth ceilings plus sampling cadence.",
+      "Exercise cooperative cancel, timeout kill-tree, crash and forced-teardown paths; record exit code, latency and complete process-tree death.",
+      "Hash before/after input, output, evidence and mapped-path inventories; prove source immutability, bounded output and zero residue outside the run root.",
+      "Use non-PDF sentinel/canary files around all writable and forbidden paths; prove no read/write/delete outside the exact run root.",
+      "Quarantine partial outputs and distinguish CANCELLED, TIMEOUT, RESOURCE_LIMIT, CRASH and SECURITY_STOP from functional failure.",
+      "After each run, destroy the disposable guest and independently verify host mapping cleanup and no surviving process, handle or lock."
+    ]
+  },
+  "preGateStatus": {
+    "PRE-003":"BLOCKED","PRE-004":"BLOCKED","PRE-005":"BLOCKED","PRE-006":"BLOCKED","PRE-007":"BLOCKED","PRE-008":"BLOCKED","PRE-009":"BLOCKED","PRE-010":"BLOCKED","PRE-011":"BLOCKED","PRE-012":"HUMAN_ONLY_NOT_APPROVED"
+  },
+  "severityRankedGaps": [
+    {"id":"SEC-G-001","severity":"HIGH","title":"PDFsharp 6.2.4 malformed-input process-termination report","evidence":"OFF-PDFSHARP-361 explicitly targets the frozen version and reports cyclic page-tree recursion ending in StackOverflowException.","closureOwner":"Security Approver + Technical Owner","closure":"Obtain an authoritative fixed/admitted version or a reviewed containment/reproducer disposition; re-freeze exact artifacts and prove a subprocess resource/kill boundary before hostile parsing."},
+    {"id":"SEC-G-002","severity":"HIGH","title":"qpdf resource-exhaustion applicability unresolved","evidence":"OFF-QPDF-1739 and OFF-QPDF-1688 remain open; exact 12.4.1 applicability has not been demonstrated either way.","closureOwner":"Security Approver + Technical Owner","closure":"Complete read-only applicability review, freeze safe exact argument surface, then prove hard resource termination in the disposable guest."},
+    {"id":"SEC-G-003","severity":"HIGH","title":"Trust, advisory and scanner admission incomplete","evidence":"Prior package trust had RevocationStatusUnknown; qpdf primary binaries lack embedded certificate tables; no approved fresh scanner/advisory disposition exists.","closureOwner":"Security Approver","closure":"Document approved provenance/advisory disposition and, only if separately authorized, scanner results tied to exact hashes."},
+    {"id":"SEC-G-004","severity":"HIGH","title":"Restore, build and runtime closure absent","evidence":"No resolved dependency graph, exact dotnet host hash, locked restore, harness build, executable hash or runtime module closure exists.","closureOwner":"Technical Owner + Agent 0","closure":"Freeze exact command/process/module manifests and prove them in a later authorized observation."},
+    {"id":"SEC-G-005","severity":"HIGH","title":"Containment and egress are design-only","evidence":"Guest boot, effective network denial, mapped evidence/output/temp roots and process/module observations are not proven.","closureOwner":"Security Approver + Agent 0","closure":"Complete FE-ENV-OBSERVE evidence and approve an exact fail-closed sandbox profile."},
+    {"id":"SEC-G-006","severity":"HIGH","title":"Resource, cancellation, crash and cleanup ceilings missing","evidence":"Numeric memory ceiling is absent and no kill-tree, residue, handle or partial-output evidence exists.","closureOwner":"Technical Owner + Security Approver","closure":"Freeze numeric ceilings and prove every termination/cleanup path before hostile corpus execution."},
+    {"id":"SEC-G-007","severity":"HIGH","title":"Corpus and oracle coverage cannot support security claims","evidence":"Corpus groups E03/E04/E05/E07/E08/E09/E10 are unmaterialized and render/content oracle coverage is unavailable.","closureOwner":"Product Owner + UAT Approver + Technical Owner","closure":"Approve lawful synthetic fixtures, expected outcomes and false-positive/negative bounds; never substitute unreviewed production data."},
+    {"id":"SEC-G-008","severity":"HIGH","title":"Evidence export privacy, retention and custody unresolved","evidence":"The frozen sandbox has no evidence/output mapping and no approved export redaction/retention/custody workflow.","closureOwner":"Security Approver + Repository Integrator","closure":"Freeze minimal evidence schema, redaction, manifest hashing, destination, retention and cleanup controls."},
+    {"id":"SEC-G-009","severity":"MEDIUM","title":"Host readiness evidence can become stale","evidence":"Post-restart observation is point-in-time and does not establish later guest behavior.","closureOwner":"Agent 0","closure":"Revalidate host identity and prerequisite state immediately before any separately authorized launch."},
+    {"id":"SEC-G-010","severity":"LOW","title":"Official public-reference snapshot is mutable","evidence":"Issue/release pages are URLs observed at review time, not archived immutable artifacts.","closureOwner":"Repository Integrator","closure":"At governance review, record observation timestamp and approved archival method without acquiring binaries."},
+    {"id":"SEC-G-011","severity":"HIGH","title":"Conversion/OCR/device/AI portfolio remains security-unadmitted","evidence":"The two peer proposals correctly remain unexecuted and blocked, but all named candidates/devices/providers/models, data/consent policies, numeric ceilings, corpus/oracles, license reviews and per-PoC security/authority gates are TBC or unapproved.","closureOwner":"Product Owner + Technical Owner + Security Approver + Privacy/License/QA owners","closure":"Resolve each PoC independently against its exact scope and peer-packet controls; re-review the exact integrated commits and never inherit POC-PDF-001 approval."}
+  ],
+  "failClosedStopRules": [
+    "Stop if any source, candidate, config, command, process, module or evidence-schema hash differs from its approved manifest.",
+    "Stop if PRE-003 through PRE-011 are not evidenced and PRE-012 is not explicitly approved by its human authority.",
+    "Stop if the run is launched from this review; this review provides no execution authority.",
+    "Stop on any undeclared child process, shell, interpreter, package acquisition or executable from a writable path.",
+    "Stop on any module outside the approved absolute path/hash set or any DLL canary access/load.",
+    "Stop if DLL search-order evidence is incomplete or includes current/writable directories ahead of trusted locations.",
+    "Stop on any DNS query, socket, listener, proxy, external route or network-evidence blind spot.",
+    "Stop if input mapping is writable or if output/evidence/temp mappings are absent, ambiguous or overlap input.",
+    "Stop before hostile input if numeric time, CPU, memory, handle, process and output ceilings are not frozen.",
+    "Stop and kill the full process tree on timeout, resource threshold, cancellation deadline, crash or telemetry loss.",
+    "Stop if cancellation cannot bound termination latency or if any process/handle survives cleanup.",
+    "Stop if a canary/sentinel outside the run root is read, written, renamed or deleted.",
+    "Stop if source hashes change, partial output escapes quarantine or residue exists outside the run root.",
+    "Stop use of qpdf linearization-check arguments while OFF-QPDF-1739 applicability remains unresolved.",
+    "Stop hostile PDFsharp parsing while SEC-G-001 lacks an accepted mitigation/fix disposition.",
+    "Stop if evidence contains secrets, production documents, unnecessary document content or unapproved identifiers.",
+    "Stop on official advisory/provenance drift until the exact candidate decision is refreshed.",
+    "Stop after the first security invariant failure; do not continue remaining experiments for coverage."
+  ],
+  "verificationBoundary": {
+    "staticReadOnlyOnly": true,
+    "scannerExecuted": false,
+    "sandboxLaunched": false,
+    "candidateExecuted": false,
+    "engineExecuted": false,
+    "restoreExecuted": false,
+    "buildExecuted": false,
+    "pdfCorpusOpened": false,
+    "downloadOrInstallPerformed": false,
+    "systemChanged": false
+  },
+  "invalidation": "Any bound-source drift, candidate/hash/version change, task-card/authority change, new advisory, host/sandbox profile change, or future observation invalidates this disposition and requires independent re-review.",
+  "stopMarker": "BLOCKED_SECURITY; route to governance only as a blocker packet, never as execution approval."
+}
