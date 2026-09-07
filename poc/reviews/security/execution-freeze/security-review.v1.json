@@ -1,10 +1,11 @@
 {
   "schemaVersion": "1.0",
   "metadata": {
-    "taskId": "P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW",
+    "taskId": "P2-W0G-D-A6-SECURITY-RECHECK",
+    "supersedesTaskId": "P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW",
     "runId": "P02-20260905-1434",
-    "reviewedAt": "2026-09-07T21:06:10+07:00",
-    "baselineCommit": "f246fd03b26a39afef958174cd12105a78d0a259",
+    "reviewedAt": "2026-09-07T21:47:26+07:00",
+    "baselineCommit": "d895b2bc5e9c6229de77959332b8a026b9d45736",
     "reviewRole": "Agent 6 independent security reviewer",
     "disposition": "BLOCKED_SECURITY",
     "executionApproval": false,
@@ -35,14 +36,29 @@
     {"root":"coordination","path":"AGENTS.md","bytes":12200,"sha256":"284871ecd681f59555bb52f9f0db4fd3659020d8306457b284f9ad63f2532af6"},
     {"root":"coordination","path":"docs/implementation-prompts/00_SHARED_AGENT_CONTRACT.md","bytes":5306,"sha256":"11d48c94c832ac7c9745a1bf9c7f79a3ae820894583a682c6bd08a503282e72f"},
     {"root":"coordination","path":"docs/implementation-prompts/PHASE_02_PROOF_OF_CAPABILITY.md","bytes":5931,"sha256":"cadecd159ce12fd0968a44ea64bc3fe5925cca42fb4afa852d31e3707eee9e69"},
-    {"root":"coordination","path":"docs/project-management/PROJECT_STATE.md","bytes":10577,"sha256":"e734889428dd9986810be44b6f3a6bd2bb63cdc756b304a2c7dbdbd10cb907e3"},
-    {"root":"coordination","path":"docs/project-management/PHASE_DECISION_REGISTER.md","bytes":15018,"sha256":"ff59350534d55240b6de3b2c4bfacde130f9442fa469eff3f58dbc35183a9824"},
     {"root":"coordination","path":"docs/project-management/PHASE_02_WAVE_0G_TASK_CARDS_P02-20260905-1434.md","bytes":9555,"sha256":"030c687fa281b0704023eb6b692c1629184119210984ebe85a828a4c68e50e88"},
     {"root":"coordination","path":"docs/baseline-audit/POC_PDF_001_EXECUTION_CHARTER_CANDIDATE_v1.0.md","bytes":37471,"sha256":"e47460dfb3768f6ee76afb0ef30aaf6f0672905befa2a93b5137218bf1176f5a"},
     {"root":"coordination","path":"08_SECURITY_DESIGN_FINAL_v1.0_PERTAMINA_OTO.md","bytes":81859,"sha256":"df9c8ba8b70b224206918096fc2acbe990c452aa932f27871fb36b282f6f404f"},
     {"root":"coordination","path":"docs/project-management/PHASE_02_POSTRESTART_SANDBOX_OBSERVATION_P02-20260905-1434.md","bytes":3014,"sha256":"d9863580de97af7d940fe3cc762169db9b35a9d9239aa6649574d875daff29d6"},
     {"root":"coordination","path":"docs/project-management/PHASE_02_WINDOWS_SANDBOX_POSTRESTART_RESULT.json","bytes":1883,"sha256":"5ba5cf8c75d8a945dd5f88f14918e744c17473f16d97147942f673468bae924d"}
   ],
+  "mutableCoordinationSnapshots": [
+    {"path":"docs/project-management/PROJECT_STATE.md","reviewedBytes":10589,"reviewedSha256":"076047bfe559f53396f705e3ac46d41a27302526ca22a75e409d294fd0ad5d06","validationMode":"TRACEABILITY_SNAPSHOT_PLUS_CURRENT_FAIL_CLOSED_SEMANTICS","role":"CURRENT_PHASE_STATUS_AND_EXECUTION_RESTRICTION"},
+    {"path":"docs/project-management/PHASE_DECISION_REGISTER.md","reviewedBytes":15018,"reviewedSha256":"ff59350534d55240b6de3b2c4bfacde130f9442fa469eff3f58dbc35183a9824","validationMode":"TRACEABILITY_SNAPSHOT_PLUS_CURRENT_FAIL_CLOSED_SEMANTICS","role":"CURRENT_DECISION_AND_AUTHORITY_BOUNDARY"},
+    {"path":"docs/project-management/PHASE_EXECUTION_LOG.md","reviewedBytes":45416,"reviewedSha256":"881bdc748690766caadcb3bd686988215346b7e998e24ab2a8d748a756cfdde1","validationMode":"TRACEABILITY_SNAPSHOT_PLUS_CURRENT_FAIL_CLOSED_SEMANTICS","role":"CURRENT_RUN_HISTORY_AND_LATEST_RESTRICTIONS"}
+  ],
+  "coordinationSemanticPolicy": {
+    "phase": 2,
+    "allowedNonCompletePhaseStatuses": ["NOT_STARTED","READY","ACTIVE","BLOCKED","PAUSED","FAILED"],
+    "phaseCompleteAllowed": false,
+    "executionAuthorityMustRemainRestricted": true,
+    "pre012MustRemainHumanOnlyAndNotApproved": true,
+    "zeroAdditionalCostMustRemainHardBoundary": true,
+    "snapshotHashDriftAloneIsSecurityFailure": false,
+    "missingOrAmbiguousSemanticsAreSecurityFailure": true,
+    "permissiveSemanticChangeIsSecurityFailure": true,
+    "note": "Reviewed byte/hash snapshots are retained for traceability. Current content is always re-read and must satisfy fail-closed semantics; snapshots do not grant authority."
+  },
   "peerPortfolioBindings": [
     {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/README.md","gitBlobOid":"5f9b61a33a5026b1885073d247d42c16d5b94b11","bytes":4633,"sha256":"51835471bdc7a67ca605a715e1b704ea4cfe7e1dd6b62910a09568b106f49c06"},
     {"commit":"df5430a14b432ed5ad18b0799512f4d1bd5d8dda","path":"poc/portfolio/execution-freeze/conversion-ocr/conversion-ocr-disposition.proposal.v1.json","gitBlobOid":"2dd2320bbd478fc8c7d234c1c2c197b5bff33394","bytes":34299,"sha256":"266b3f0d630e9692ee387f9f47ee7c63f1118b505b2f394b945d6b243fc74be5"},
@@ -183,6 +199,6 @@
     "downloadOrInstallPerformed": false,
     "systemChanged": false
   },
-  "invalidation": "Any bound-source drift, candidate/hash/version change, task-card/authority change, new advisory, host/sandbox profile change, or future observation invalidates this disposition and requires independent re-review.",
+  "invalidation": "Any immutable bound-source drift, candidate/hash/version change, task-card/authority change, new advisory, host/sandbox profile change, permissive or ambiguous coordination semantic change, or future observation invalidates this disposition and requires independent re-review. Byte-only drift in the three declared mutable coordination records is traceability information and does not invalidate the review when current fail-closed semantics still pass.",
   "stopMarker": "BLOCKED_SECURITY; route to governance only as a blocker packet, never as execution approval."
 }

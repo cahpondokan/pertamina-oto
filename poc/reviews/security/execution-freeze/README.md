@@ -4,9 +4,9 @@
 
 `BLOCKED_SECURITY`
 
-Task `P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW`, run
-`P02-20260905-1434`, was independently reviewed against baseline
-`f246fd03b26a39afef958174cd12105a78d0a259`.
+Task `P2-W0G-D-A6-SECURITY-RECHECK`, run `P02-20260905-1434`, independently
+re-reviewed the prior Wave 0G-B packet against exact integrated baseline
+`d895b2bc5e9c6229de77959332b8a026b9d45736`.
 
 This is a hash-bound blocker/readiness packet for governance review. It is not
 an execution approval, Security Approver sign-off, PRE-012 approval, or
@@ -17,6 +17,27 @@ run during this review, and no system setting was changed. Cost was zero.
 The machine-readable authority boundary, source hashes, future eligibility
 profiles, evidence plan, stop rules, and gap register are in
 `security-review.v1.json`.
+
+## GOV-C-001 controlled remediation
+
+The recurring `GOV-C-001` failure was caused by treating append-oriented
+coordination records as immutable material evidence. The repaired boundary is:
+
+- 28 candidate, environment, corpus/oracle, prior-review, task-contract, and
+  other material inputs retain exact byte-length/SHA-256 enforcement;
+- all eight portfolio artifacts retain immutable commit, Git-blob, byte-length,
+  and SHA-256 enforcement;
+- `PROJECT_STATE.md`, `PHASE_DECISION_REGISTER.md`, and
+  `PHASE_EXECUTION_LOG.md` retain reviewed byte/hash snapshots for traceability,
+  but current content is re-read semantically on every verification.
+
+Byte drift in those three declared mutable records is not itself security
+clearance or failure. Verification fails if Phase 2 becomes `COMPLETE`, its
+state is missing/ambiguous, candidate/Sandbox execution becomes permissive,
+`PRE-012` becomes approved or loses its human-only boundary, or
+`ZERO_ADDITIONAL_COST` ceases to be a hard stop. One harmless editorial-drift
+fixture must pass; four permissive coordination mutations must fail. This fixes
+the false recurring drift without clearing any actual security gap.
 
 ## Decisive findings
 
@@ -156,12 +177,14 @@ Expected and observed result at packet creation:
 
 ```text
 SECURITY_FREEZE_STATIC_VERIFICATION=PASS
-SOURCE_BINDINGS=30;PEER_BLOBS=8;NEGATIVE_FIXTURES=6;HIGH_GAPS=9;PRE003_011_BLOCKED=9
+IMMUTABLE_BINDINGS=28;PEER_BLOBS=8;MUTABLE_COORDINATION=3;SNAPSHOT_MATCHES=3;NEGATIVE_FIXTURES=10;SAFE_DRIFT_FIXTURES=1;HIGH_GAPS=9;PRE003_011_BLOCKED=9
 DISPOSITION=BLOCKED_SECURITY;EXECUTION_APPROVAL=false;SELF_APPROVAL=false;COST=ZERO_ADDITIONAL_COST
 SCANNERS=0;SANDBOX_LAUNCHES=0;RESTORES=0;BUILDS=0;CANDIDATE_EXECUTIONS=0;PDF_FILES_OPENED=0
 ```
 
-The verifier parses the packet, recomputes all 30 repository/coordination
-source hashes and byte lengths, validates the frozen identities and authority
-boundary, and rejects five in-memory unsafe mutations. It performs no dynamic
-security or candidate test.
+The verifier parses the packet; recomputes 28 immutable source and eight peer
+Git-blob hashes/lengths; records whether three mutable coordination files still
+match their reviewed snapshots; validates their current fail-closed semantics,
+frozen identities, and authority boundary; accepts one safe byte-drift fixture;
+and rejects ten unsafe mutations. It performs no dynamic security or candidate
+test.

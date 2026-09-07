@@ -11,6 +11,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -19,6 +20,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPOSITORY_ROOT = HERE.parents[3]
 PACKET_PATH = HERE / "security-review.v1.json"
+MUTABLE_COORDINATION_PATHS = (
+    "docs/project-management/PROJECT_STATE.md",
+    "docs/project-management/PHASE_DECISION_REGISTER.md",
+    "docs/project-management/PHASE_EXECUTION_LOG.md",
+)
 
 
 def fail(message: str) -> None:
@@ -35,11 +41,13 @@ def sha256(path: Path) -> str:
 
 def assert_core(packet: dict) -> None:
     metadata = packet.get("metadata", {})
-    if metadata.get("taskId") != "P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW":
+    if metadata.get("taskId") != "P2-W0G-D-A6-SECURITY-RECHECK":
         fail("task identity drift")
+    if metadata.get("supersedesTaskId") != "P2-W0G-B-A6-SECURITY-EXECUTION-FREEZE-REVIEW":
+        fail("superseded review identity drift")
     if metadata.get("runId") != "P02-20260905-1434":
         fail("run identity drift")
-    if metadata.get("baselineCommit") != "f246fd03b26a39afef958174cd12105a78d0a259":
+    if metadata.get("baselineCommit") != "d895b2bc5e9c6229de77959332b8a026b9d45736":
         fail("baseline binding drift")
     if metadata.get("disposition") != "BLOCKED_SECURITY":
         fail("only BLOCKED_SECURITY is supported by this packet")
@@ -47,6 +55,48 @@ def assert_core(packet: dict) -> None:
         fail("packet must not grant execution or self approval")
     if metadata.get("additionalCost") != "ZERO_ADDITIONAL_COST":
         fail("cost boundary drift")
+
+    expected_snapshots = {
+        "docs/project-management/PROJECT_STATE.md": (
+            10589, "076047bfe559f53396f705e3ac46d41a27302526ca22a75e409d294fd0ad5d06"
+        ),
+        "docs/project-management/PHASE_DECISION_REGISTER.md": (
+            15018, "ff59350534d55240b6de3b2c4bfacde130f9442fa469eff3f58dbc35183a9824"
+        ),
+        "docs/project-management/PHASE_EXECUTION_LOG.md": (
+            45416, "881bdc748690766caadcb3bd686988215346b7e998e24ab2a8d748a756cfdde1"
+        ),
+    }
+    snapshots = packet.get("mutableCoordinationSnapshots", [])
+    if {item.get("path") for item in snapshots} != set(expected_snapshots):
+        fail("mutable coordination snapshot set drift")
+    for item in snapshots:
+        expected_bytes, expected_hash = expected_snapshots[item["path"]]
+        if item.get("reviewedBytes") != expected_bytes or item.get("reviewedSha256") != expected_hash:
+            fail(f"reviewed coordination snapshot drift: {item['path']}")
+        if item.get("validationMode") != "TRACEABILITY_SNAPSHOT_PLUS_CURRENT_FAIL_CLOSED_SEMANTICS":
+            fail(f"mutable coordination validation mode drift: {item['path']}")
+
+    policy = packet.get("coordinationSemanticPolicy", {})
+    if policy.get("phase") != 2:
+        fail("coordination semantic phase drift")
+    if set(policy.get("allowedNonCompletePhaseStatuses", [])) != {
+        "NOT_STARTED", "READY", "ACTIVE", "BLOCKED", "PAUSED", "FAILED"
+    }:
+        fail("allowed non-complete phase status set drift")
+    required_true = (
+        "executionAuthorityMustRemainRestricted",
+        "pre012MustRemainHumanOnlyAndNotApproved",
+        "zeroAdditionalCostMustRemainHardBoundary",
+        "missingOrAmbiguousSemanticsAreSecurityFailure",
+        "permissiveSemanticChangeIsSecurityFailure",
+    )
+    if any(policy.get(key) is not True for key in required_true):
+        fail("coordination fail-closed semantic policy weakened")
+    if policy.get("phaseCompleteAllowed") is not False:
+        fail("Phase 2 completion was allowed")
+    if policy.get("snapshotHashDriftAloneIsSecurityFailure") is not False:
+        fail("mutable snapshot was converted back to strict hash equality")
 
     allowlist = packet.get("effectiveAllowlist", {})
     expected_empty = (
@@ -142,8 +192,8 @@ def assert_core(packet: dict) -> None:
 
 def assert_bindings(packet: dict, coordination_root: Path) -> None:
     bindings = packet.get("sourceBindings", [])
-    if len(bindings) != 30:
-        fail(f"expected 30 source bindings, got {len(bindings)}")
+    if len(bindings) != 28:
+        fail(f"expected 28 immutable source bindings, got {len(bindings)}")
     seen: set[tuple[str, str]] = set()
     roots = {"repository": REPOSITORY_ROOT, "coordination": coordination_root}
     for binding in bindings:
@@ -154,6 +204,8 @@ def assert_bindings(packet: dict, coordination_root: Path) -> None:
         key = (root_name, relative)
         if key in seen:
             fail(f"duplicate source binding: {root_name}:{relative}")
+        if root_name == "coordination" and relative in MUTABLE_COORDINATION_PATHS:
+            fail(f"mutable coordination file placed in immutable bindings: {relative}")
         seen.add(key)
         path = roots[root_name] / Path(relative)
         if not path.is_file():
@@ -164,6 +216,132 @@ def assert_bindings(packet: dict, coordination_root: Path) -> None:
         digest = sha256(path)
         if digest != binding.get("sha256"):
             fail(f"bound source hash drift: {path}: {digest}")
+
+
+def read_mutable_coordination(coordination_root: Path) -> dict[str, str]:
+    texts: dict[str, str] = {}
+    for relative in MUTABLE_COORDINATION_PATHS:
+        path = coordination_root / relative
+        if not path.is_file():
+            fail(f"mutable coordination input missing: {path}")
+        texts[relative] = path.read_text(encoding="utf-8")
+    return texts
+
+
+def assert_coordination_semantics(packet: dict, texts: dict[str, str]) -> None:
+    if set(texts) != set(MUTABLE_COORDINATION_PATHS):
+        fail("mutable coordination input set incomplete")
+
+    state = texts[MUTABLE_COORDINATION_PATHS[0]]
+    phase_rows = [
+        line for line in state.splitlines()
+        if re.match(r"^\|\s*2\s*\|", line)
+    ]
+    if len(phase_rows) != 1:
+        fail("Phase 2 state row missing or ambiguous")
+    cells = [cell.strip().strip("`") for cell in phase_rows[0].strip().strip("|").split("|")]
+    if len(cells) < 3:
+        fail("Phase 2 state row malformed")
+    status = cells[2].upper()
+    allowed = set(packet["coordinationSemanticPolicy"]["allowedNonCompletePhaseStatuses"])
+    if status not in allowed or status == "COMPLETE":
+        fail(f"Phase 2 state is not safely non-complete: {status}")
+
+    combined_lines = [
+        line.strip() for text in texts.values() for line in text.splitlines() if line.strip()
+    ]
+    lowered = [line.casefold() for line in combined_lines]
+    pre_lines = [line for line in lowered if "pre-012" in line]
+    if not pre_lines:
+        fail("PRE-012 semantic evidence missing")
+    if not any(
+        "human-only" in line
+        and any(token in line for token in ("unapproved", "not approved", "remains false", "tetap false"))
+        for line in pre_lines
+    ):
+        fail("PRE-012 human-only/unapproved evidence missing or ambiguous")
+    for line in pre_lines:
+        safe = any(token in line for token in (
+            "unapproved", "not approved", "not authorized", "unauthorized",
+            "remains false", "tetap false", "does not authorize",
+        ))
+        positive = re.search(r"\b(approved|authorized|true|passed|pass)\b", line)
+        if positive and not safe:
+            fail(f"PRE-012 permissive semantic change: {line}")
+
+    restricted = [
+        line for line in lowered
+        if any(subject in line for subject in ("sandbox", "qpdf", "pdfsharp", "candidate"))
+        and any(action in line for action in ("execution", "launch", "run", "restore", "build", "processing"))
+        and any(deny in line for deny in (
+            "unauthorized", "not authorized", "prohibited", "do not ",
+            "does not authorize", "no launch", "no execution", "remain blocked",
+        ))
+    ]
+    if not restricted:
+        fail("current candidate/Sandbox execution restriction evidence missing")
+
+    permissive_patterns = (
+        r"(?:candidate|qpdf|pdfsharp) execution (?:is |now )?(?:approved|authorized|allowed|permitted)",
+        r"(?:sandbox|windowssandbox) launch (?:is |now )?(?:approved|authorized|allowed|permitted)",
+        r"(?:restore|build|pdf processing) (?:is |are |now )?(?:approved|authorized|allowed|permitted)",
+        r"execution authority (?:is |now )?(?:unrestricted|approved|authorized)",
+    )
+    for line in lowered:
+        if any(re.search(pattern, line) for pattern in permissive_patterns):
+            if not any(deny in line for deny in (
+                "not approved", "not authorized", "unauthorized", "does not authorize",
+                "no install", "no sandbox launch", "no candidate execution",
+            )):
+                fail(f"permissive execution semantic change: {line}")
+
+    combined = "\n".join(lowered)
+    if "zero_additional_cost" not in combined and "zero additional cost" not in combined:
+        fail("zero-additional-cost boundary missing")
+    if not any(
+        ("zero_additional_cost" in line or "zero additional cost" in line)
+        and any(stop in line for stop in ("hard stop", "mandatory stop", "stop condition", "stop before"))
+        for line in lowered
+    ):
+        fail("zero-additional-cost hard-stop semantics missing")
+    for line in lowered:
+        if re.search(r"(?:paid action|paid commitment|paid service).*(?:approved|authorized|allowed|permitted)", line) and not any(
+            deny in line for deny in (
+                "no launch", "no execution", "no acquisition", "no paid", "without paid",
+                "not authorized", "unauthorized",
+            )
+        ):
+            fail(f"paid action became permissive: {line}")
+        if ("zero_additional_cost" in line or "zero additional cost" in line) and any(
+            token in line for token in ("removed", "waived", "disabled", "no longer applies")
+        ):
+            fail(f"zero-cost boundary weakened: {line}")
+
+    decision = texts[MUTABLE_COORDINATION_PATHS[1]]
+    for line in decision.splitlines():
+        if not re.match(r"^\|\s*(?:PRE-012|P2-[^|]+)\s*\|", line, flags=re.IGNORECASE):
+            continue
+        row = [cell.strip().strip("`") for cell in line.strip().strip("|").split("|")]
+        if len(row) >= 3 and row[0].upper() == "PRE-012" and row[2].upper() == "APPROVED":
+            fail("decision register approves PRE-012")
+
+    log = texts[MUTABLE_COORDINATION_PATHS[2]]
+    sections = re.split(r"(?m)(?=^### )", log)
+    run_sections = [section for section in sections if "P02-20260905-1434" in section]
+    if not run_sections:
+        fail("current run is absent from execution log")
+    latest = run_sections[-1].casefold()
+    if not any(token in latest for token in ("no execution", "execution approval", "not execution approval", "unauthorized")):
+        fail("latest run log section lacks an execution restriction")
+
+
+def snapshot_match_count(packet: dict, coordination_root: Path) -> int:
+    snapshots = {item["path"]: item for item in packet["mutableCoordinationSnapshots"]}
+    return sum(
+        (coordination_root / relative).stat().st_size == snapshots[relative]["reviewedBytes"]
+        and sha256(coordination_root / relative) == snapshots[relative]["reviewedSha256"]
+        for relative in MUTABLE_COORDINATION_PATHS
+    )
 
 
 def assert_peer_git_bindings(packet: dict) -> None:
@@ -238,6 +416,49 @@ def assert_negative_fixtures(packet: dict) -> None:
         fail(f"negative fixture {index} was not rejected")
 
 
+def assert_coordination_fixtures(packet: dict, texts: dict[str, str]) -> None:
+    safe_drift = dict(texts)
+    safe_drift[MUTABLE_COORDINATION_PATHS[2]] += "\n<!-- non-authoritative editorial trace -->\n"
+    assert_coordination_semantics(packet, safe_drift)
+
+    unsafe_sets: list[tuple[str, dict[str, str]]] = []
+
+    changed = dict(texts)
+    changed_state, count = re.subn(
+        r"(?m)^(\|\s*2\s*\|[^|]*\|)\s*`?[A-Z_]+`?\s*\|",
+        r"\1 `COMPLETE` |",
+        changed[MUTABLE_COORDINATION_PATHS[0]],
+        count=1,
+    )
+    if count != 1:
+        fail("could not create Phase 2 completion negative fixture")
+    changed[MUTABLE_COORDINATION_PATHS[0]] = changed_state
+    unsafe_sets.append(("phase-complete", changed))
+
+    changed = dict(texts)
+    changed[MUTABLE_COORDINATION_PATHS[1]] += (
+        "\n| PRE-012 | Candidate execution authority | `APPROVED` | Human | synthetic negative fixture |\n"
+    )
+    unsafe_sets.append(("pre012-approved", changed))
+
+    changed = dict(texts)
+    changed[MUTABLE_COORDINATION_PATHS[2]] += "\nCandidate execution is authorized.\n"
+    unsafe_sets.append(("candidate-execution-authorized", changed))
+
+    changed = dict(texts)
+    changed[MUTABLE_COORDINATION_PATHS[2]] += (
+        "\nZERO_ADDITIONAL_COST hard stop removed; paid action authorized.\n"
+    )
+    unsafe_sets.append(("cost-boundary-weakened", changed))
+
+    for label, unsafe in unsafe_sets:
+        try:
+            assert_coordination_semantics(packet, unsafe)
+        except AssertionError:
+            continue
+        fail(f"coordination negative fixture was not rejected: {label}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--coordination-root", required=True, type=Path)
@@ -251,14 +472,18 @@ def main() -> int:
     assert_bindings(packet, coordination_root)
     assert_peer_git_bindings(packet)
     assert_negative_fixtures(packet)
+    coordination_texts = read_mutable_coordination(coordination_root)
+    assert_coordination_semantics(packet, coordination_texts)
+    assert_coordination_fixtures(packet, coordination_texts)
+    snapshot_matches = snapshot_match_count(packet, coordination_root)
 
     high_count = sum(
         gap.get("severity") == "HIGH" for gap in packet["severityRankedGaps"]
     )
     print("SECURITY_FREEZE_STATIC_VERIFICATION=PASS")
     print(
-        f"SOURCE_BINDINGS={len(packet['sourceBindings'])};PEER_BLOBS={len(packet['peerPortfolioBindings'])};"
-        f"NEGATIVE_FIXTURES=6;"
+        f"IMMUTABLE_BINDINGS={len(packet['sourceBindings'])};PEER_BLOBS={len(packet['peerPortfolioBindings'])};"
+        f"MUTABLE_COORDINATION=3;SNAPSHOT_MATCHES={snapshot_matches};NEGATIVE_FIXTURES=10;SAFE_DRIFT_FIXTURES=1;"
         f"HIGH_GAPS={high_count};PRE003_011_BLOCKED=9"
     )
     print(
@@ -275,6 +500,6 @@ def main() -> int:
 if __name__ == "__main__":
     try:
         raise SystemExit(main())
-    except (AssertionError, json.JSONDecodeError, OSError) as error:
+    except (AssertionError, json.JSONDecodeError, OSError, UnicodeError) as error:
         print(f"SECURITY_FREEZE_STATIC_VERIFICATION=FAIL: {error}", file=sys.stderr)
         raise SystemExit(1)
