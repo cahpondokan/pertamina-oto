@@ -474,7 +474,15 @@ def assert_coordination_fixtures(packet: dict, texts: dict[str, str]) -> tuple[i
     mutations: list[tuple[str, dict[str, str]]] = []
 
     changed = copy.deepcopy(texts)
-    changed[state_path] = re.sub(r"(^\|\s*2\s*\|[^|]*\|\s*)`ACTIVE`", r"\1`COMPLETE`", changed[state_path], count=1, flags=re.MULTILINE)
+    changed[state_path], status_substitutions = re.subn(
+        r"(^\|\s*2\s*\|[^|]*\|\s*)`(?:NOT_STARTED|READY|ACTIVE|BLOCKED|PAUSED|FAILED)`(\s*\|)",
+        r"\1`COMPLETE`\2",
+        changed[state_path],
+        count=1,
+        flags=re.MULTILINE,
+    )
+    if status_substitutions != 1:
+        fail(f"phase2-complete fixture setup expected one status substitution, got {status_substitutions}")
     mutations.append(("phase2-complete", changed))
 
     changed = copy.deepcopy(texts)
