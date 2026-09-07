@@ -9,6 +9,8 @@
     "metadata",
     "authorityBoundary",
     "sourceBindings",
+    "mutableCoordinationSnapshots",
+    "coordinationSemanticPolicy",
     "sourceIntegrityFindings",
     "candidateAndLicenseDecision",
     "futureExecutionScope",
@@ -34,7 +36,13 @@
       "additionalProperties": false,
       "required": ["staticReviewOnly", "acquisitionAuthorized", "installAuthorized", "restoreAuthorized", "buildAuthorized", "sandboxLaunchAuthorized", "candidateLoadAuthorized", "candidateExecutionAuthorized", "oracleExecutionAuthorized", "documentProcessingAuthorized", "pdfProcessingAuthorized", "redistributionAuthorized", "productChangeAuthorized", "paidCommitmentAuthorized", "productionActionAuthorized"]
     },
-    "sourceBindings": {"type": "array", "minItems": 39},
+    "sourceBindings": {"type": "array", "minItems": 38, "maxItems": 38},
+    "mutableCoordinationSnapshots": {"type": "array", "minItems": 3, "maxItems": 3},
+    "coordinationSemanticPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "snapshotHashesInformational", "failClosedOnMissingAmbiguousOrPermissive", "phase2MustRemainNonComplete", "executionMustRemainRestricted", "pre012MustRemainUnapproved", "zeroAdditionalCostMustRemainEnforced", "blockedSecurityMustRemainControlling"]
+    },
     "sourceIntegrityFindings": {"type": "array", "minItems": 2},
     "candidateAndLicenseDecision": {
       "type": "object",

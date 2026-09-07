@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static verifier for the Wave 0G-C governance decision packet.
+"""Static verifier for the Wave 0G-D governance decision recheck.
 
 This script parses JSON and hashes declared text/static evidence only. It does
 not invoke a scanner, Sandbox, candidate, oracle, restore, build, or PDF tool.
@@ -20,6 +20,11 @@ HERE = Path(__file__).resolve().parent
 REPOSITORY_ROOT = HERE.parents[3]
 PACKET_PATH = HERE / "governance-decision-packet.v1.json"
 SCHEMA_PATH = HERE / "governance-decision-packet.schema.v1.json"
+MUTABLE_COORDINATION_PATHS = {
+    "docs/project-management/PROJECT_STATE.md",
+    "docs/project-management/PHASE_DECISION_REGISTER.md",
+    "docs/project-management/PHASE_EXECUTION_LOG.md",
+}
 
 
 def fail(message: str) -> None:
@@ -74,18 +79,18 @@ def assert_schema_shape(packet: dict, schema: dict) -> None:
 
 def assert_core(packet: dict) -> None:
     metadata = packet["metadata"]
-    if metadata["taskId"] != "P2-W0G-C-A7-GOVERNANCE-EVIDENCE-REVIEW":
+    if metadata["taskId"] != "P2-W0G-D-A7-GOVERNANCE-RECHECK":
         fail("task identity drift")
     if metadata["runId"] != "P02-20260905-1434":
         fail("run identity drift")
-    if metadata["baselineCommit"] != "df37fd77aafd569082a568556e75e7e452d3596b":
+    if metadata["baselineCommit"] != "62d8a843771e7ac4fa4cad965f9489329e52847c":
         fail("baseline commit drift")
     if metadata["status"] != "DECISION_PACKET_COMPLETE_GATES_BLOCKED":
         fail("packet status must remain blocked")
     if metadata["securityDisposition"] != "BLOCKED_SECURITY":
         fail("Agent 6 BLOCKED_SECURITY disposition was weakened")
-    if metadata["upstreamSecurityReplay"] != "FAIL_INPUT_BINDING_DRIFT":
-        fail("security replay drift must remain explicit")
+    if metadata["upstreamSecurityReplay"] != "PASS_SEMANTIC_FAIL_CLOSED_BLOCKED_SECURITY_PRESERVED":
+        fail("security remediation replay result drift")
     for key in ("executionApproval", "selfApproval", "engineDispositionGranted"):
         if metadata[key] is not False:
             fail(f"forbidden approval flag: {key}")
@@ -100,16 +105,18 @@ def assert_core(packet: dict) -> None:
     findings = {item.get("id"): item for item in packet["sourceIntegrityFindings"]}
     if set(findings) != {"GOV-C-001", "GOV-C-002"}:
         fail("source/schema integrity finding set drift")
-    if any(item.get("severity") != "BLOCKER" for item in findings.values()):
-        fail("integrity findings must remain blockers")
+    if findings["GOV-C-001"].get("severity") != "RESOLVED_CONTROL_GAP":
+        fail("GOV-C-001 remediation status drift")
+    if findings["GOV-C-002"].get("severity") != "BLOCKER":
+        fail("GOV-C-002 must remain a blocker")
     drift_text = json.dumps(findings["GOV-C-001"], sort_keys=True)
     for token in (
-        "e734889428dd9986810be44b6f3a6bd2bb63cdc756b304a2c7dbdbd10cb907e3",
-        "076047bfe559f53396f705e3ac46d41a27302526ca22a75e409d294fd0ad5d06",
+        "6a5f8c312f11d92330b5fb3080d1dc2f776afdcb85b2c93bd278e9fe84a27174",
+        "327071c61a6863cbe58c1d3b875e36b7d816db3d1c73fbbac4bd738f89b9e61d",
         "BLOCKED_SECURITY",
     ):
         if token not in drift_text:
-            fail(f"security binding drift evidence incomplete: {token}")
+            fail(f"security remediation evidence incomplete: {token}")
 
     decision = packet["candidateAndLicenseDecision"]
     if decision["evaluationBoundary"]["status"] != "BLOCKED_PENDING_HUMAN_ACCEPTANCE_AND_SECURITY_CLOSURE":
@@ -253,7 +260,7 @@ def assert_core(packet: dict) -> None:
     if observed_pre["PRE-012"].get("gateStatus") != "HUMAN_ONLY_NOT_APPROVED":
         fail("PRE-012 must remain human-only and unapproved")
     pre006 = json.dumps(observed_pre["PRE-006"], sort_keys=True)
-    for token in ("GOV-C-001", "SEC-G-001", "BLOCKED_SECURITY", "re-review"):
+    for token in ("SEC-G-001", "SEC-G-011", "BLOCKED_SECURITY", "reverify"):
         if token not in pre006:
             fail(f"PRE-006 does not preserve security blocker: {token}")
 
@@ -312,9 +319,9 @@ def assert_core(packet: dict) -> None:
         fail("verification boundary is not static")
     if verify["inputHashesRecomputed"] is not True or verify["schemaChecked"] is not True:
         fail("verification claims incomplete")
-    if verify["securityVerifierReplayExitCode"] != 1:
-        fail("security verifier drift was hidden")
-    if verify["securityVerifierReplayDisposition"] != "EXPECTED_BLOCKER_RECORDED_NOT_OVERRIDDEN":
+    if verify["securityVerifierReplayExitCode"] != 0:
+        fail("security verifier remediation replay did not pass")
+    if verify["securityVerifierReplayDisposition"] != "PASS_BINDING_REMEDIATION_ONLY_BLOCKED_SECURITY_PRESERVED":
         fail("security replay disposition drift")
     for key in (
         "scannerExecuted", "sandboxLaunched", "candidateExecuted", "oracleExecuted",
@@ -327,8 +334,8 @@ def assert_core(packet: dict) -> None:
 
 def assert_bindings(packet: dict, coordination_root: Path) -> None:
     bindings = packet["sourceBindings"]
-    if len(bindings) != 39:
-        fail(f"expected 39 source bindings, got {len(bindings)}")
+    if len(bindings) != 38:
+        fail(f"expected 38 immutable source bindings, got {len(bindings)}")
     roots = {"repository": REPOSITORY_ROOT, "coordination": coordination_root}
     seen: set[tuple[str, str]] = set()
     for binding in bindings:
@@ -341,6 +348,8 @@ def assert_bindings(packet: dict, coordination_root: Path) -> None:
         key = (root_name, relative)
         if key in seen:
             fail(f"duplicate source binding: {root_name}:{relative}")
+        if root_name == "coordination" and relative in MUTABLE_COORDINATION_PATHS:
+            fail(f"mutable coordination file incorrectly strict-bound: {relative}")
         seen.add(key)
         path = roots[root_name] / Path(relative)
         if not path.is_file():
@@ -352,6 +361,158 @@ def assert_bindings(packet: dict, coordination_root: Path) -> None:
             fail(f"bound source hash drift: {path}: {observed_hash}")
         if not re.fullmatch(r"[0-9a-f]{64}", binding["sha256"]):
             fail(f"source hash is not lowercase SHA-256: {relative}")
+
+
+def read_mutable_coordination(packet: dict, coordination_root: Path) -> tuple[dict[str, str], int]:
+    snapshots = packet["mutableCoordinationSnapshots"]
+    if len(snapshots) != 3:
+        fail("expected exactly three mutable coordination snapshots")
+    observed_paths = {item.get("path") for item in snapshots}
+    if observed_paths != MUTABLE_COORDINATION_PATHS:
+        fail("mutable coordination snapshot path set drift")
+    texts: dict[str, str] = {}
+    snapshot_matches = 0
+    for item in snapshots:
+        if set(item) != {"root", "path", "reviewedBytes", "reviewedSha256"}:
+            fail(f"mutable snapshot shape invalid: {item!r}")
+        if item["root"] != "coordination":
+            fail(f"mutable snapshot root invalid: {item['path']}")
+        if not re.fullmatch(r"[0-9a-f]{64}", item["reviewedSha256"]):
+            fail(f"mutable snapshot hash invalid: {item['path']}")
+        path = coordination_root / item["path"]
+        if not path.is_file():
+            fail(f"mutable coordination source missing: {path}")
+        texts[item["path"]] = path.read_text(encoding="utf-8")
+        if path.stat().st_size == item["reviewedBytes"] and sha256(path) == item["reviewedSha256"]:
+            snapshot_matches += 1
+    return texts, snapshot_matches
+
+
+def assert_coordination_policy(packet: dict) -> None:
+    policy = packet["coordinationSemanticPolicy"]
+    expected = {
+        "mode": "CURRENT_SEMANTICS_FAIL_CLOSED_SNAPSHOT_HASHES_AUDIT_ONLY",
+        "snapshotHashesInformational": True,
+        "failClosedOnMissingAmbiguousOrPermissive": True,
+        "phase2MustRemainNonComplete": True,
+        "executionMustRemainRestricted": True,
+        "pre012MustRemainUnapproved": True,
+        "zeroAdditionalCostMustRemainEnforced": True,
+        "blockedSecurityMustRemainControlling": True,
+    }
+    if policy != expected:
+        fail("mutable coordination semantic policy drift")
+
+
+def _unique_line(text: str, pattern: str, label: str) -> str:
+    matches = re.findall(pattern, text, flags=re.MULTILINE | re.IGNORECASE)
+    if len(matches) != 1:
+        fail(f"mutable coordination {label} must occur exactly once, got {len(matches)}")
+    return matches[0]
+
+
+def assert_coordination_semantics(texts: dict[str, str]) -> None:
+    state = texts["docs/project-management/PROJECT_STATE.md"]
+    decisions = texts["docs/project-management/PHASE_DECISION_REGISTER.md"]
+    log = texts["docs/project-management/PHASE_EXECUTION_LOG.md"]
+
+    phase_active = _unique_line(state, r"^\*\*Phase aktif:\*\*[^\r\n]*$", "active phase line")
+    if "phase 2" not in phase_active.casefold() or "no candidate/sandbox execution" not in phase_active.casefold():
+        fail("current active phase does not retain the no-execution boundary")
+
+    phase2_row = _unique_line(state, r"^\|\s*2\s*\|[^\r\n]*$", "Phase 2 row")
+    cells = [cell.strip().strip("`").upper() for cell in phase2_row.strip().strip("|").split("|")]
+    if len(cells) < 5 or cells[2] not in {"NOT_STARTED", "READY", "ACTIVE", "BLOCKED", "PAUSED", "FAILED"}:
+        fail("Phase 2 status is missing, ambiguous, COMPLETE, or permissive")
+    phase2_folded = phase2_row.casefold()
+    for token in ("sandbox/candidate launch", "restore/build", "pdf processing", "unauthorized"):
+        if token not in phase2_folded:
+            fail(f"Phase 2 execution restriction missing: {token}")
+
+    authority = _unique_line(state, r"^\|\s*Execution authority\s*\|[^\r\n]*$", "execution authority row")
+    authority_folded = authority.casefold()
+    for token in ("static/read-only", "no authority", "sandbox", "qpdf/pdfsharp", "restore/build", "process pdf", "zero additional cost"):
+        if token not in authority_folded:
+            fail(f"current execution authority restriction missing: {token}")
+    if re.search(r"\b(execution|launch|restore|build|processing)\s+(is\s+)?authorized\b", authority_folded):
+        fail("current execution authority became permissive")
+
+    nearest_gate = _unique_line(state, r"^\*\*Gate terdekat:\*\*[^\r\n]*$", "nearest gate line")
+    if "pre-012" not in nearest_gate.casefold() or "human-only" not in nearest_gate.casefold():
+        fail("current PRE-012 human-only status missing")
+
+    for decision_id in ("P2-D01", "P2-D02", "P2-D03"):
+        row = _unique_line(decisions, rf"^\|\s*{re.escape(decision_id)}\s*\|[^\r\n]*$", f"{decision_id} row")
+        if "`proposed`" not in row.casefold():
+            fail(f"{decision_id} is no longer explicitly unapproved/PROPOSED")
+    d01 = _unique_line(decisions, r"^\|\s*P2-D01\s*\|[^\r\n]*$", "P2-D01 execution row")
+    if "no provider/oracle execution or engine selection approved" not in d01.casefold():
+        fail("candidate/oracle decision became permissive or ambiguous")
+    d03 = _unique_line(decisions, r"^\|\s*P2-D03\s*\|[^\r\n]*$", "P2-D03 cost row")
+    if "no-license-fee" not in d03.casefold() or "remain open" not in d03.casefold():
+        fail("license/cost boundary became permissive or ambiguous")
+
+    sections = re.split(r"(?m)(?=^###\s+)", log)
+    run_sections = [section for section in sections if "P02-20260905-1434" in section]
+    if not run_sections:
+        fail("current run has no execution-log section")
+    latest = run_sections[-1].casefold()
+    for token in ("blocked_security", "pre-012", "human-only/unapproved", "no execution, acquisition, paid action", "not execution approval"):
+        if token not in latest:
+            fail(f"latest run log lost fail-closed semantic: {token}")
+
+
+def assert_coordination_fixtures(packet: dict, texts: dict[str, str]) -> tuple[int, int]:
+    safe = copy.deepcopy(texts)
+    for path in MUTABLE_COORDINATION_PATHS:
+        safe[path] += "\n<!-- harmless editorial note -->\n"
+    assert_coordination_semantics(safe)
+
+    state_path = "docs/project-management/PROJECT_STATE.md"
+    decision_path = "docs/project-management/PHASE_DECISION_REGISTER.md"
+    log_path = "docs/project-management/PHASE_EXECUTION_LOG.md"
+    mutations: list[tuple[str, dict[str, str]]] = []
+
+    changed = copy.deepcopy(texts)
+    changed[state_path] = re.sub(r"(^\|\s*2\s*\|[^|]*\|\s*)`ACTIVE`", r"\1`COMPLETE`", changed[state_path], count=1, flags=re.MULTILINE)
+    mutations.append(("phase2-complete", changed))
+
+    changed = copy.deepcopy(texts)
+    phase2_row = _unique_line(changed[state_path], r"^\|\s*2\s*\|[^\r\n]*$", "fixture Phase 2 row")
+    changed[state_path] += f"\n{phase2_row}\n"
+    mutations.append(("ambiguous-phase2-row", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[state_path] = re.sub(r"^\|\s*Execution authority\s*\|[^\r\n]*$", "| Execution authority | Candidate execution, restore, build, and paid processing are authorized |", changed[state_path], count=1, flags=re.MULTILINE | re.IGNORECASE)
+    mutations.append(("permissive-execution-authority", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[state_path] = re.sub(r"^\|\s*Execution authority\s*\|[^\r\n]*\r?\n?", "", changed[state_path], count=1, flags=re.MULTILINE | re.IGNORECASE)
+    mutations.append(("missing-execution-authority", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[state_path] = changed[state_path].replace("zero additional cost", "paid actions allowed", 1)
+    mutations.append(("zero-cost-removed", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[decision_path] = changed[decision_path].replace("| P2-D01 | 2 | Approved PoC candidate list, exact versions, dan evaluation priority | `PROPOSED` |", "| P2-D01 | 2 | Approved PoC candidate list, exact versions, dan evaluation priority | `APPROVED` |", 1)
+    mutations.append(("candidate-decision-approved", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[decision_path] = changed[decision_path].replace("No provider/oracle execution or engine selection approved", "Provider/oracle execution and engine selection approved", 1)
+    mutations.append(("candidate-execution-approved", changed))
+
+    changed = copy.deepcopy(texts)
+    changed[log_path] += "\n### 2026-09-07 23:59:59 +07:00 — P02-20260905-1434 — Permissive drift\n\n- PRE-012 approved; candidate execution and paid action authorized; BLOCKED_SECURITY cleared.\n"
+    mutations.append(("latest-log-permissive", changed))
+
+    for label, mutation in mutations:
+        try:
+            assert_coordination_semantics(mutation)
+        except AssertionError:
+            continue
+        fail(f"permissive coordination fixture was not rejected: {label}")
+    return len(mutations), 1
 
 
 def assert_negative_fixtures(packet: dict, schema: dict, coordination_root: Path) -> None:
@@ -421,12 +582,16 @@ def main() -> int:
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     assert_schema_shape(packet, schema)
     assert_core(packet)
+    assert_coordination_policy(packet)
     assert_bindings(packet, coordination_root)
+    coordination_texts, snapshot_matches = read_mutable_coordination(packet, coordination_root)
+    assert_coordination_semantics(coordination_texts)
     assert_negative_fixtures(packet, schema, coordination_root)
+    coordination_negative_count, safe_drift_count = assert_coordination_fixtures(packet, coordination_texts)
 
     print("GOVERNANCE_FREEZE_STATIC_VERIFICATION=PASS")
-    print("SOURCE_BINDINGS=39;SCHEMA=1;NEGATIVE_FIXTURES=10;LICENSE_NOTICE_GAPS=6;STOP_RULES=24")
-    print("PRE003_011_BLOCKED=9;PRE012=HUMAN_ONLY_NOT_APPROVED;SECURITY=BLOCKED_SECURITY;UPSTREAM_REPLAY=FAIL_INPUT_BINDING_DRIFT")
+    print(f"IMMUTABLE_BINDINGS=38;MUTABLE_COORDINATION=3;SNAPSHOT_MATCHES={snapshot_matches};SCHEMA=1;NEGATIVE_FIXTURES={10 + coordination_negative_count};SAFE_DRIFT_FIXTURES={safe_drift_count};LICENSE_NOTICE_GAPS=6;STOP_RULES=24")
+    print("PRE003_011_BLOCKED=9;PRE012=HUMAN_ONLY_NOT_APPROVED;SECURITY=BLOCKED_SECURITY;UPSTREAM_REPLAY=PASS_BINDING_REMEDIATION_ONLY")
     print("EXECUTION_APPROVAL=false;SELF_APPROVAL=false;ENGINE_DISPOSITION=false;COST=ZERO_ADDITIONAL_COST")
     print("SCANNERS=0;SANDBOX_LAUNCHES=0;RESTORES=0;BUILDS=0;CANDIDATE_EXECUTIONS=0;ORACLE_EXECUTIONS=0;PDF_FILES_OPENED=0;ACQUISITIONS=0")
     return 0

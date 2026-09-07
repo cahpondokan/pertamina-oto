@@ -1,10 +1,10 @@
-# Wave 0G-C governance, license, and evidence decision packet
+# Wave 0G-D governance, license, and evidence recheck
 
-Agent / task: Agent 7 / P2-W0G-C-A7-GOVERNANCE-EVIDENCE-REVIEW
+Agent / task: Agent 7 / P2-W0G-D-A7-GOVERNANCE-RECHECK
 
 Run: P02-20260905-1434
 
-Baseline: df37fd77aafd569082a568556e75e7e452d3596b
+Baseline: 62d8a843771e7ac4fa4cad965f9489329e52847c
 
 Result: DECISION_PACKET_COMPLETE_GATES_BLOCKED
 
@@ -23,17 +23,19 @@ The governance packet itself is complete as a blocker/decision record: every
 PRE-003..012 row has an exact current status, blockers, owners, and required
 human action. This does not mean any precondition passed.
 
-A new reproducibility blocker was found. Agent 6's verifier binds an older
-PROJECT_STATE.md at 10,577 bytes and SHA-256
-e734889428dd9986810be44b6f3a6bd2bb63cdc756b304a2c7dbdbd10cb907e3.
-The current post-dispatch file is 10,589 bytes and SHA-256
-076047bfe559f53396f705e3ac46d41a27302526ca22a75e409d294fd0ad5d06.
-Replay therefore exits 1. The change does not clear any finding; it requires an
-independent security re-review bound to the current snapshot.
+GOV-C-001 is resolved narrowly: Agent 6's Wave 0G-D verifier replay exits 0 and
+uses strict hashes for 28 immutable inputs plus semantic fail-closed validation
+for three mutable coordination records. It still returns `BLOCKED_SECURITY`
+with nine HIGH gaps. This recheck does not treat verifier PASS as security
+clearance and does not clear PRE-006.
 
-All 39 authoritative/integrated inputs, byte lengths, and SHA-256 values are in
-governance-decision-packet.v1.json. The verifier recomputes them from the
-repository and coordination roots.
+The governance packet strictly binds 38 immutable authoritative/integrated
+inputs. It records reviewed hashes for PROJECT_STATE.md,
+PHASE_DECISION_REGISTER.md, and PHASE_EXECUTION_LOG.md as audit snapshots, but
+validates their current semantics instead of requiring byte equality. Missing,
+ambiguous, or permissive current semantics fail closed: Phase 2 must remain
+non-COMPLETE, execution restricted, PRE-012 human-only/unapproved,
+`BLOCKED_SECURITY` controlling, and zero additional cost enforced.
 
 ## PRE-003..012 matrix
 
@@ -42,7 +44,7 @@ repository and coordination roots.
 | PRE-003 | BLOCKED | Agent 0 + Technical Owner + Execution Approver: approve a new exact task card with branch/worktree, paths, commands/hashes, writers, independent reviewers, stop authority, effective time, and expiry only after PRE-004..011 pass. |
 | PRE-004 | BLOCKED | Technical + License + Security: accept or reject the five exact candidate/oracle identities after resolved locked assets, SDK/runtime/framework/harness hashes, provenance, and complete SBOM are reviewed. |
 | PRE-005 | BLOCKED | Human License/Cost + Technical + Evidence: decide internal evaluation separately from redistribution; accept exact license/notice delivery, SBOM format, support/removal owners, and zero cost. |
-| PRE-006 | BLOCKED_SECURITY | Independent Security Reviewer + Human Security Approver + Technical + Agent 0: preserve all Agent 6 high findings, resolve GOV-C-001, re-review current hashes, then issue the human security decision. |
+| PRE-006 | BLOCKED_SECURITY | Independent Security Reviewer + Human Security Approver + Technical + Agent 0: preserve and close or explicitly reject all nine Agent 6 HIGH findings, independently reverify exact evidence, then issue the human security decision. GOV-C-001 replay drift alone is resolved. |
 | PRE-007 | BLOCKED | Product + QA/Corpus + Security: approve/amend/reject the exact synthetic manifest and fill classification, owner/reviewer, access, retention, expiry, disposal, and missing groups. |
 | PRE-008 | BLOCKED | Technical + independent PDF Quality/Oracle + Security: freeze structural, render, content/marker, source/finality identities, hashes, settings, tolerances, negative fixtures, and fail-closed aggregation. |
 | PRE-009 | BLOCKED | Environment + Security + Agent 0: separately approve benign environment observation, then prove guest identity, network denial, mappings, least privilege, quota, recovery, cleanup, and expiry. |
@@ -138,9 +140,11 @@ Run from the assigned repository worktree:
     python -B poc/reviews/governance/execution-freeze/verify_static.py --coordination-root "D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO"
 
 The checker validates the closed top-level schema, nested required sections,
-39 file lengths/hashes, five exact component identities, six license/notice
+38 immutable file lengths/hashes, three mutable coordination semantics and
+snapshot audit records, five exact component identities, six license/notice
 gaps, exact experiment/test sets, PRE matrix, owner/custody gaps, 24 stop rules,
-portfolio isolation, false authorities, and ten unsafe in-memory mutations.
+portfolio isolation, false authorities, 18 unsafe in-memory mutations, and one
+safe editorial-drift fixture.
 
 Upstream static replays during review:
 
@@ -149,8 +153,9 @@ Upstream static replays during review:
 - corpus/oracle: exit 0; 2 schemas/14 bindings/10 experiments;
 - conversion/OCR: exit 0; 7 PoCs; no authorization;
 - device/AI: exit 0; 5 PoCs; no authorization;
-- Agent 6 security: exit 1 only because of GOV-C-001 current coordination
-  binding drift; BLOCKED_SECURITY retained.
+- Agent 6 Wave 0G-D security: exit 0; 28 immutable bindings, three mutable
+  coordination records, ten negative fixtures, one safe-drift fixture, nine
+  HIGH gaps; `BLOCKED_SECURITY` retained.
 
 No scanner, Sandbox, qpdf/PDFsharp, generator, parser, renderer, candidate,
 restore, build, download, install, PDF open/processing, system mutation, or paid
