@@ -1,0 +1,18 @@
+{
+  "status": "ENGINE_SMOKE_NOT_ORACLE_VALIDATED",
+  "startedAt": "2026-09-08T05:34:33.5570601+07:00",
+  "elapsedSeconds": 31.6303146,
+  "guestExitCode": 0,
+  "session": "9b4d6904-4890-49f4-b272-4ff1ff456049",
+  "sessionClosed": true,
+  "sourceUnchanged": true,
+  "manifestSha256": "4D620CD59E18A6AE6E51B403E0CC84F3024417C5E7B884B80274DDC11C4B4F3C",
+  "configSha256": "3CFDD35F8128AC12E2C14B0D45E9E54B343170053CE84DD95FC18101B4C8F5EE",
+  "commandSha256": "9DA27BE95DB679348947D83866945A0FFE5998BBE4DBD4622C64590790D37EAC",
+  "allFourEngineCasesCompleted": true,
+  "independentOracleValidated": false,
+  "pdfExported": false,
+  "recordedBy": "Agent0 from actual operator stdout; command exit 0",
+  "canonicalTestsPassed": [],
+  "phaseExitPassed": false
+}
