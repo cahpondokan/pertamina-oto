@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "freezeId": "POC-PDF-001-CORPUS-FREEZE-PROPOSAL-001",
+  "manifestId": "POC-PDF-001-CORPUS-MANIFEST-PROPOSAL-001",
+  "runId": "P02-20260905-1434",
+  "baselineCommit": "4a78212e01d3daee9ae47f0473fb6186df0dccde",
+  "status": "PROPOSED_NOT_APPROVED_NOT_MATERIALIZED",
+  "scope": {
+    "pocId": "POC-PDF-001",
+    "featureIds": ["FEAT-PDF-005"],
+    "experimentIds": [
+      "PDF001-E01",
+      "PDF001-E02",
+      "PDF001-E03",
+      "PDF001-E04",
+      "PDF001-E05",
+      "PDF001-E06",
+      "PDF001-E07",
+      "PDF001-E08",
+      "PDF001-E09",
+      "PDF001-E10"
+    ],
+    "processingMode": "LOCAL",
+    "serverDependency": "NONE"
+  },
+  "authority": {
+    "preparationDecisionId": "P2-W0-CORPUS-001",
+    "preparationAuthorized": true,
+    "executionAuthorized": false,
+    "materializationAuthorized": false,
+    "approvalRequired": "TBC_HUMAN_CORPUS_AUTHORITY",
+    "costBoundary": "ZERO_ADDITIONAL_COST"
+  },
+  "activationBoundary": {
+    "pdfGeneration": false,
+    "pdfOpen": false,
+    "pdfParsing": false,
+    "pdfRendering": false,
+    "pdfProcessing": false,
+    "qpdfExecution": false,
+    "popplerExecution": false,
+    "mupdfExecution": false,
+    "candidateExecution": false,
+    "sandboxLaunch": false,
+    "restore": false,
+    "build": false,
+    "downloadOrInstall": false
+  },
+  "sourceBindings": [
+    {
+      "path": "poc/corpus/manifest.v1.json",
+      "sha256": "0233c4c6960c16c1e7dba20febd14cfec40b7f3e5daa45f8fd9ece1f5e15b102",
+      "role": "FOUNDATION_MANIFEST"
+    },
+    {
+      "path": "poc/corpus/expected.v1.json",
+      "sha256": "a4d4bc86598404ab00863ed2d77d3a77e1ec47118980d3e710e2b29a3d111d7a",
+      "role": "FOUNDATION_EXPECTATIONS"
+    },
+    {
+      "path": "poc/corpus/generate.py",
+      "sha256": "74ddea116fd20b1d770ebc682e0ce7ca3abc1e238f05ad0f9aac8cea009ba845",
+      "role": "UNEXECUTED_FOUNDATION_GENERATOR_SOURCE"
+    },
+    {
+      "path": "poc/oracles/generator-evidence.json",
+      "sha256": "44f8423eb9c562644118d0006844050cbc8977281d580da6fbbf0e5a0b123aaa",
+      "role": "PRIOR_GENERATOR_EVIDENCE"
+    },
+    {
+      "path": "poc/oracles/source-digests.json",
+      "sha256": "7dd1a7907aef3c881cd25105a222a6460edce0e2210f9692ae772704874543ec",
+      "role": "FOUNDATION_SOURCE_DIGEST_INDEX"
+    }
+  ],
+  "policy": {
+    "corpusType": "SYNTHETIC_ONLY",
+    "productionOrPersonalDocumentsPermitted": false,
+    "observedPreparationClassification": "SYNTHETIC_NON_SENSITIVE",
+    "classificationDecision": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+    "owner": "TBC_CORPUS_OWNER",
+    "reviewer": "TBC_CORPUS_REVIEWER",
+    "access": "TBC_RUN_SPECIFIC_ACCESS_POLICY",
+    "retention": "TBC_RUN_SPECIFIC_RETENTION_PERIOD",
+    "expiry": "TBC_EXPIRY_TIMESTAMP_ASIA_JAKARTA",
+    "disposal": "TBC_AUTHORIZED_DISPOSAL_METHOD_AND_OWNER",
+    "provenanceAndUseAuthority": "TBC_HUMAN_APPROVAL_OF_EXACT_MANIFEST_AND_GENERATOR_BINDING",
+    "rawDocumentContentInLogsOrEvidence": false,
+    "credentialsOrRealPasswordsPermitted": false
+  },
+  "foundation": {
+    "foundationManifestSha256": "0233c4c6960c16c1e7dba20febd14cfec40b7f3e5daa45f8fd9ece1f5e15b102",
+    "foundationExpectedSha256": "a4d4bc86598404ab00863ed2d77d3a77e1ec47118980d3e710e2b29a3d111d7a",
+    "seed": "P02-20260905-1434/CORP-v1",
+    "materializationState": "NOT_PRESENT_NOT_REGENERATED_BY_THIS_TASK",
+    "artifactRecords": [
+      {
+        "id": "A",
+        "pageCount": 2,
+        "byteCount": 896,
+        "sha256": "7c1fbe0ed7c3a68184411287c1d564319dd0e4ea9cc9280be4ebd419f2583635",
+        "markers": [
+          "SYNTHETIC-4cd3a419b018658cebd8bc5e",
+          "SYNTHETIC-a219aac1f256b66d31ab7f6f"
+        ],
+        "identitySource": "TRACKED_FOUNDATION_RECORD_ONLY"
+      },
+      {
+        "id": "B",
+        "pageCount": 3,
+        "byteCount": 1185,
+        "sha256": "69c81ca93c0ed0ede1ba75cfc18514f575bf89fa97e7e06ee27b8213df60413c",
+        "markers": [
+          "SYNTHETIC-6ae9b67d92718538c5a87909",
+          "SYNTHETIC-4830a9e6b190704b48cf70cf",
+          "SYNTHETIC-2ce8875f30729d7e07c8f630"
+        ],
+        "identitySource": "TRACKED_FOUNDATION_RECORD_ONLY"
+      },
+      {
+        "id": "C",
+        "pageCount": 1,
+        "byteCount": 609,
+        "sha256": "aba17076f0cc4f3197eb6994ecec75812f307630cf9fa5bbd0e0ec1f00605c54",
+        "markers": ["SYNTHETIC-35375b10f9d8f9d2cabf623a"],
+        "identitySource": "TRACKED_FOUNDATION_RECORD_ONLY"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "CONTROL_AB",
+        "inputs": ["A", "B"],
+        "expectedPageCount": 5,
+        "traceIds": ["PDF001-E01", "PDF001-E06", "UT-MERGE-003", "TP-MRG-001", "TP-MRG-029"]
+      },
+      {
+        "id": "ORDER_CAB",
+        "inputs": ["C", "A", "B"],
+        "expectedPageCount": 6,
+        "traceIds": ["PDF001-E02", "PDF001-E06", "UT-MERGE-006", "TP-MRG-006", "TP-MRG-029"]
+      },
+      {
+        "id": "DUPLICATE_AA",
+        "inputs": ["A", "A"],
+        "expectedPageCount": 4,
+        "traceIds": ["PDF001-E02", "PDF001-E06", "UT-MERGE-009", "TP-MRG-008", "TP-MRG-029"]
+      },
+      {
+        "id": "REMOVE_B",
+        "inputs": ["A", "C"],
+        "expectedPageCount": 3,
+        "traceIds": ["PDF001-E02", "PDF001-E06", "UT-MERGE-007", "TP-MRG-007", "TP-MRG-029"]
+      }
+    ]
+  },
+  "coverageGaps": [
+    {
+      "group": "STRUCTURAL_VALID",
+      "experimentIds": ["PDF001-E03"],
+      "status": "BLOCKED_NOT_MATERIALIZED",
+      "missing": [
+        "TBC_TEXT_VECTOR_RASTER_VARIANTS",
+        "TBC_MIXED_PAGE_SIZE_ORIENTATION_ROTATION",
+        "TBC_EMBEDDED_FONT_BOOKMARK_ANNOTATION_FORM_VARIANTS",
+        "TBC_EXPECTED_PRESERVATION_OR_LIMITATION_PER_PROPERTY"
+      ],
+      "numericTargetsInvented": false
+    },
+    {
+      "group": "PASSWORD",
+      "experimentIds": ["PDF001-E04"],
+      "status": "BLOCKED_NOT_MATERIALIZED",
+      "missing": [
+        "TBC_SYNTHETIC_ENCRYPTED_FIXTURE",
+        "TBC_EPHEMERAL_TEST_PASSWORD_HANDLING",
+        "TBC_MISSING_WRONG_CORRECT_PASSWORD_EXPECTATIONS"
+      ],
+      "numericTargetsInvented": false
+    },
+    {
+      "group": "INVALID_CORRUPT_AND_ACTIVE_UNTRUSTED",
+      "experimentIds": ["PDF001-E05"],
+      "status": "BLOCKED_NOT_MATERIALIZED_HOSTILE_SUITE",
+      "missing": [
+        "TBC_FAKE_EXTENSION_BAD_SIGNATURE_TRUNCATED_MALFORMED_FIXTURES",
+        "TBC_ACTION_JAVASCRIPT_LINK_EMBEDDED_OBJECT_POLYGLOT_FIXTURES",
+        "TBC_QUARANTINE_ACCESS_RETENTION_AND_ISOLATED_SUITE_AUTHORITY"
+      ],
+      "numericTargetsInvented": false
+    },
+    {
+      "group": "FAILURE_FINALITY",
+      "experimentIds": ["PDF001-E07", "PDF001-E08"],
+      "status": "BLOCKED_NO_FAILURE_FIXTURE_OR_INJECTION_AUTHORITY",
+      "missing": [
+        "TBC_SOURCE_TARGET_STAGING_MANIFEST",
+        "TBC_WRITE_RENAME_QUOTA_FAILURE_INJECTION",
+        "TBC_CANCEL_CRASH_TIMEOUT_RECONCILIATION_CASES"
+      ],
+      "numericTargetsInvented": false
+    },
+    {
+      "group": "RESOURCE_AND_CONCURRENCY",
+      "experimentIds": ["PDF001-E09", "PDF001-E10"],
+      "status": "BLOCKED_PENDING_HUMAN_NUMERIC_POLICY",
+      "missing": [
+        "TBC_CONTROL_TYPICAL_LARGE_SUPPORTED_POLICY_BOUNDARY_OVER_LIMIT_ADVERSARIAL_VALID_BANDS",
+        "TBC_FILE_PAGE_OBJECT_DECOMPRESSION_OUTPUT_TEMP_LIMITS",
+        "TBC_CONCURRENCY_REPETITION_COLD_WARM_SAMPLING_POLICY"
+      ],
+      "numericTargetsInvented": false
+    }
+  ],
+  "gateDisposition": {
+    "id": "PRE-007",
+    "status": "BLOCKED",
+    "safePreparationResult": "EXACT_FOUNDATION_IDENTITIES_AND_PROPOSED_MANIFEST_ID_BOUND",
+    "blockers": [
+      "HUMAN_APPROVAL_OF_EXACT_MANIFEST",
+      "CLASSIFICATION_AUTHORITY",
+      "CORPUS_OWNER_AND_REVIEWER",
+      "RUN_SPECIFIC_ACCESS_RETENTION_EXPIRY_DISPOSAL",
+      "MISSING_E03_E04_E05_E07_E08_E09_E10_CORPUS"
+    ],
+    "requiredDecision": "Approve, amend, or reject manifest POC-PDF-001-CORPUS-MANIFEST-PROPOSAL-001 and fill every TBC policy field; approval must not authorize materialization or execution by implication."
+  }
+}

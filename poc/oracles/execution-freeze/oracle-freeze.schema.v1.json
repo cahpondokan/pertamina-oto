@@ -1,0 +1,40 @@
+{
+  "schemaId": "POC-PDF-001-ORACLE-FREEZE-SCHEMA-1.0",
+  "schemaVersion": "1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "freezeId",
+    "oracleManifestId",
+    "runId",
+    "baselineCommit",
+    "status",
+    "scope",
+    "activationBoundary",
+    "sourceBindings",
+    "expectedOutcomes",
+    "independentOraclePlan",
+    "measurementPlanProposal",
+    "evidencePolicyProposal",
+    "experimentSpecifications",
+    "gateDispositions"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "1.0" },
+    "freezeId": { "type": "string", "const": "POC-PDF-001-ORACLE-FREEZE-PROPOSAL-001" },
+    "oracleManifestId": { "type": "string", "const": "POC-PDF-001-ORACLE-MANIFEST-PROPOSAL-001" },
+    "runId": { "type": "string", "const": "P02-20260905-1434" },
+    "baselineCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "status": { "type": "string", "const": "PROPOSED_UNEXECUTED_BLOCKED" },
+    "scope": { "type": "object" },
+    "activationBoundary": { "type": "object" },
+    "sourceBindings": { "type": "array", "minItems": 1 },
+    "expectedOutcomes": { "type": "object" },
+    "independentOraclePlan": { "type": "object" },
+    "measurementPlanProposal": { "type": "object" },
+    "evidencePolicyProposal": { "type": "object" },
+    "experimentSpecifications": { "type": "array", "minItems": 10 },
+    "gateDispositions": { "type": "array", "minItems": 4 }
+  }
+}

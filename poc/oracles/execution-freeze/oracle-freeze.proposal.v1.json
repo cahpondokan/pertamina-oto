@@ -1,0 +1,342 @@
+{
+  "schemaVersion": "1.0",
+  "freezeId": "POC-PDF-001-ORACLE-FREEZE-PROPOSAL-001",
+  "oracleManifestId": "POC-PDF-001-ORACLE-MANIFEST-PROPOSAL-001",
+  "runId": "P02-20260905-1434",
+  "baselineCommit": "4a78212e01d3daee9ae47f0473fb6186df0dccde",
+  "status": "PROPOSED_UNEXECUTED_BLOCKED",
+  "scope": {
+    "pocId": "POC-PDF-001",
+    "featureIds": ["FEAT-PDF-005"],
+    "corpusManifestId": "POC-PDF-001-CORPUS-MANIFEST-PROPOSAL-001",
+    "experimentIds": [
+      "PDF001-E01",
+      "PDF001-E02",
+      "PDF001-E03",
+      "PDF001-E04",
+      "PDF001-E05",
+      "PDF001-E06",
+      "PDF001-E07",
+      "PDF001-E08",
+      "PDF001-E09",
+      "PDF001-E10"
+    ]
+  },
+  "activationBoundary": {
+    "oracleExecutionAuthorized": false,
+    "qpdfExecutionAuthorized": false,
+    "renderOracleExecutionAuthorized": false,
+    "contentOracleExecutionAuthorized": false,
+    "candidateExecutionAuthorized": false,
+    "pdfOpenAuthorized": false,
+    "pdfParsingAuthorized": false,
+    "pdfRenderingAuthorized": false,
+    "pdfProcessingAuthorized": false,
+    "sandboxLaunchAuthorized": false,
+    "restoreOrBuildAuthorized": false,
+    "downloadOrInstallAuthorized": false
+  },
+  "sourceBindings": [
+    {
+      "path": "poc/corpus/expected.v1.json",
+      "sha256": "a4d4bc86598404ab00863ed2d77d3a77e1ec47118980d3e710e2b29a3d111d7a",
+      "role": "FOUNDATION_EXPECTED_OUTCOMES"
+    },
+    {
+      "path": "poc/oracles/contract.py",
+      "sha256": "83e788b340d835cd35f03f4fe80f81c4d85dcb13488f858215ef923897ff6b94",
+      "role": "SYNTHETIC_RECORD_COMPARATOR_ONLY"
+    },
+    {
+      "path": "poc/oracles/schemas.py",
+      "sha256": "ba949f88feeb57f61268aeaf67dae20e3df214d0b50b8d1af35a89369ba131b8",
+      "role": "FOUNDATION_SCHEMA_SOURCE"
+    },
+    {
+      "path": "poc/oracles/test_foundation.py",
+      "sha256": "a7cfe59aad6b09251ab86e053b7c4efd6f1d94163d83928c2013967317f23530",
+      "role": "PRIOR_FOUNDATION_SELF_TEST_SOURCE_NOT_RUN_BY_THIS_TASK"
+    },
+    {
+      "path": "poc/oracles/candidate-research/RESEARCH.md",
+      "sha256": "a7c7f0590da8c4f8d55c07b7f1f1f3ee07de03bbcbed459721b5c05256b90a48",
+      "role": "INDEPENDENT_ORACLE_RESEARCH"
+    },
+    {
+      "path": "poc/oracles/qpdf-12.4.1/intake-manifest.json",
+      "sha256": "0754a4319dc4095883a9d40919a062a2c28190f950c20cb43749710dda246e64",
+      "role": "QPDF_STATIC_INTAKE_BINDING"
+    },
+    {
+      "path": "poc/oracles/qpdf-12.4.1/STATIC_INTAKE.md",
+      "sha256": "1ec8fda70646cdf0e9e7edaa1bbbf2c08850c63a3a3f54aaee62cdc8a908cf8c",
+      "role": "QPDF_STATIC_INTAKE_REPORT"
+    },
+    {
+      "path": "poc/reviews/security/wave0f/REVIEW.md",
+      "sha256": "9e7e40531770a1a72e98143df008a6437bd36265ec4ec412d390395bae277c28",
+      "role": "INDEPENDENT_SECURITY_REVIEW"
+    },
+    {
+      "path": "poc/reviews/governance/wave0f/README.md",
+      "sha256": "30d438e017302eceebb0d2ed88258e958507655118961b7667fb7c1380815533",
+      "role": "INDEPENDENT_GOVERNANCE_REVIEW"
+    }
+  ],
+  "expectedOutcomes": {
+    "byteEqualityRequired": false,
+    "pageCountRule": "EXACT_MATCH",
+    "pageOrderRule": "EXACT_ORDERED_OCCURRENCE_MATCH",
+    "duplicateRule": "EXPLICIT_DUPLICATES_PRESERVED_NO_SILENT_DEDUPE",
+    "markerRule": "EXACT_MARKER_PER_SOURCE_PAGE_OCCURRENCE",
+    "reopenRule": "FRESH_PROCESS_REOPEN_REQUIRED_AFTER_CANDIDATE_HANDLES_CLOSE",
+    "sourceRule": "EVERY_SOURCE_SHA256_UNCHANGED_BEFORE_AND_AFTER_SUCCESS_FAILURE_CANCEL_CRASH",
+    "existingTargetRule": "EXISTING_TARGET_SHA256_UNCHANGED_UNLESS_A_SEPARATELY_GOVERNED_OVERWRITE_ACTION_EXISTS",
+    "finalityRule": "STAGING_BYTES_VALIDATE_INDEPENDENTLY_THEN_ATOMIC_PUBLICATION_ONLY",
+    "validatedPublishedBindingRule": "PUBLISHED_ARTIFACT_SHA256_MUST_EQUAL_THE_EXACT_VALIDATED_STAGING_ARTIFACT_SHA256",
+    "partialResultRule": "EMPTY_WRONG_REORDERED_DEDUPLICATED_TRUNCATED_CORRUPT_OR_INCONCLUSIVE_OUTPUT_IS_NEVER_FINAL",
+    "repairAndWarningRule": "QPDF_REPAIR_WARNING_PARSER_ERROR_TIMEOUT_OR_INCONCLUSIVE_IS_NOT_A_CLEAN_PASS",
+    "aggregateRule": "ALL_REQUIRED_ORACLE_PLANES_MUST_RETURN_CLEAN_MATCH; ANY_FAIL_MISSING_DISAGREEMENT_OR_INCONCLUSIVE_REJECTS_PUBLICATION"
+  },
+  "independentOraclePlan": {
+    "structural": {
+      "candidateId": "ORACLE-QPDF-12.4.1",
+      "version": "12.4.1",
+      "assetSha256": "3cd016cd433ef7232e42f4c13348a49cc14907a3c7278ef4f99120593126f7a6",
+      "intakeStatus": "ACQUIRED_HASH_MATCH_HELD_FOR_AUDIT",
+      "executionStatus": "NOT_RUN_NOT_AUTHORIZED",
+      "roleLimit": "STRUCTURAL_CANDIDATE_ONLY_NOT_RENDERER_NOT_CONTENT_TRUTH",
+      "commandAndArgumentAllowlist": "TBC_SECURITY_REVIEWED_MINIMAL_PROFILE",
+      "cleanPassRequires": [
+        "TBC_NO_REPAIR_OR_WARNING",
+        "TBC_VALID_STRUCTURE_RESULT",
+        "TBC_BOUNDED_STDOUT_STDERR_SANITIZATION",
+        "TBC_FRESH_PROCESS_REOPEN_OBSERVATION"
+      ],
+      "blockers": [
+        "PRE-004_CANDIDATE_RUNTIME_ASSET_CLOSURE",
+        "PRE-005_LICENSE_NOTICE_RUNTIME_RIGHTS",
+        "PRE-006_TRUST_ADVISORY_ISOLATION_AND_OUTPUT_HANDLING",
+        "PRE-009_EFFECTIVE_GUEST_AND_NETWORK_CONTROLS",
+        "PRE-012_EXECUTION_AUTHORIZATION"
+      ]
+    },
+    "render": {
+      "candidateId": "TBC_APPROVED_RENDER_ORACLE",
+      "version": "TBC_EXACT_VERSION_BUILD",
+      "artifactSha256": "TBC_SHA256",
+      "executionStatus": "NOT_RUN_NOT_AUTHORIZED",
+      "requiredFrozenSettings": [
+        "TBC_PAGE_BOX",
+        "TBC_RESOLUTION",
+        "TBC_COLORSPACE",
+        "TBC_ANTIALIASING",
+        "TBC_FONT_SET",
+        "TBC_RENDER_OUTPUT_FORMAT",
+        "TBC_COMPARISON_METHOD_AND_HUMAN_REVIEW_COVERAGE"
+      ],
+      "numericTolerance": "TBC_NO_TOLERANCE_APPROVED",
+      "blocker": "NO_COMPLEMENTARY_RENDER_ORACLE_ADMITTED; POPPLER_HELD; MUPDF_DEFERRED"
+    },
+    "content": {
+      "candidateId": "TBC_APPROVED_CONTENT_ORACLE",
+      "version": "TBC_EXACT_VERSION_BUILD",
+      "artifactSha256": "TBC_SHA256",
+      "executionStatus": "NOT_RUN_NOT_AUTHORIZED",
+      "requiredObservations": [
+        "ACTUAL_PAGE_COUNT",
+        "ACTUAL_ORDERED_MARKER_SEQUENCE",
+        "ACTUAL_SOURCE_PAGE_OCCURRENCE_SEQUENCE",
+        "ACTUAL_PAGE_GEOMETRY_AND_ROTATION",
+        "TBC_APPROVED_PROPERTY_PRESERVATION_OBSERVATIONS"
+      ],
+      "blocker": "NO_INDEPENDENT_CONTENT_OR_MARKER_EXTRACTOR_ADMITTED"
+    },
+    "sourceAndFinality": {
+      "candidateId": "TBC_HASH_AND_ATOMIC_PUBLICATION_OBSERVER",
+      "executionStatus": "NOT_RUN_NOT_AUTHORIZED",
+      "requiredObservations": [
+        "SOURCE_SHA256_BEFORE_AND_AFTER",
+        "EXISTING_TARGET_SHA256_BEFORE_AND_AFTER",
+        "STAGING_SHA256_BEFORE_VALIDATION",
+        "VALIDATED_STAGING_SHA256",
+        "PUBLISHED_ARTIFACT_SHA256",
+        "RUN_SCOPED_TEMP_AND_ORPHAN_INVENTORY",
+        "ATOMIC_RENAME_OR_SAFE_FAILURE_EVIDENCE"
+      ],
+      "blocker": "EXACT_OBSERVER_AND_SAFE_FAILURE_INSTRUMENTATION_NOT_FROZEN"
+    },
+    "foundationComparator": {
+      "candidateId": "RECORD_COMPARATOR_ONLY",
+      "version": "1.0",
+      "executionStatus": "NOT_RUN_BY_THIS_TASK",
+      "authority": "SYNTHETIC_SELF_TEST_ONLY_NEVER_PUBLICATION_AUTHORITY",
+      "publishAuthorized": false,
+      "blocker": "CANNOT_OBSERVE_PDF_BYTES_OR_ESTABLISH_INDEPENDENT_FIDELITY"
+    }
+  },
+  "measurementPlanProposal": {
+    "status": "BLOCKED_PENDING_HUMAN_RUN_POLICY",
+    "requiredMetricCategories": [
+      "CPU_UTILIZATION_AND_TIME",
+      "RAM_WORKING_PRIVATE_COMMITTED_AND_RESIDUAL",
+      "GC_ALLOCATION_HEAP_LOH_AND_PAUSE_IF_APPLICABLE",
+      "THREAD_HANDLE_AND_CHILD_PROCESS_COUNT",
+      "DISK_READ_WRITE_FREE_SPACE_AND_LATENCY_IF_AVAILABLE",
+      "TEMP_PEAK_ORPHAN_AND_CLEANUP",
+      "STAGE_AND_TOTAL_DURATION",
+      "CANCEL_REQUEST_TO_SAFE_STOP_AND_LATE_COMPLETION",
+      "CONCURRENCY_QUEUE_COLLISION_AND_AGGREGATE_RESOURCE",
+      "PROCESSING_EGRESS_UPLOAD_API_SIGNALR_SERVER_JOB_COUNTS",
+      "PAGE_ORDER_MARKER_REOPEN_SOURCE_AND_FINALITY_UNDER_LOAD"
+    ],
+    "instrumentationIdentity": "TBC_EXACT_TOOL_VERSION_AND_DIGEST",
+    "samplingWindow": "TBC_INTERVAL_WINDOW_AND_CLOCK_POLICY",
+    "coldWarmPolicy": "TBC_COLD_WARM_DEFINITION_AND_SEQUENCE",
+    "repetitionCount": "TBC_HUMAN_APPROVED_COUNT",
+    "concurrencyLevels": "TBC_HUMAN_APPROVED_LEVELS",
+    "resourceAndTimeoutLimits": "TBC_HUMAN_APPROVED_LIMITS",
+    "numericAcceptanceTargets": "TBC_HUMAN_APPROVED_TARGETS",
+    "statusBeforeNumericTargetsExist": "MEASURED_BASELINE_AND_BLOCKED_PENDING_TARGET_APPROVAL",
+    "allRunsAndOutliersRetained": true
+  },
+  "evidencePolicyProposal": {
+    "status": "BLOCKED_PENDING_RUN_SPECIFIC_POLICY",
+    "authorityDecisionId": "P2-W0-EVID-001",
+    "logicalRoot": "POC-PDF-001/<candidate-record-id>/<run-set-id>/",
+    "safeRecordFields": [
+      "CANDIDATE_VERSION_BUILD_SHA256",
+      "COMMIT_BUILD_RUN_ID",
+      "ENVIRONMENT_CORPUS_ORACLE_CONFIG_DIGESTS",
+      "SOURCE_TARGET_STAGING_PUBLISHED_DIGESTS",
+      "SANITIZED_ORACLE_AND_RESOURCE_RESULTS",
+      "BLOCKER_LIMITATION_AND_REVIEW_STATUS"
+    ],
+    "forbiddenEvidence": [
+      "DOCUMENT_BYTES_OR_CONTENT",
+      "PASSWORD_OR_SECRET",
+      "RAW_SENSITIVE_PATH",
+      "UNSANITIZED_STDOUT_STDERR",
+      "SENSITIVE_CRASH_DUMP"
+    ],
+    "access": "TBC_RUN_SPECIFIC_ACCESS",
+    "retention": "TBC_RETENTION",
+    "expiry": "TBC_EXPIRY",
+    "disposal": "TBC_DISPOSAL",
+    "sanitizationReviewer": "TBC_REVIEWER",
+    "immutabilityMechanism": "TBC_HASHED_IMMUTABILITY_MECHANISM",
+    "sbomFormat": "TBC_SBOM_FORMAT"
+  },
+  "experimentSpecifications": [
+    {
+      "id": "PDF001-E01",
+      "status": "NOT_RUN",
+      "corpus": ["CONTROL_AB"],
+      "expectedPropertyIds": ["PAGE_COUNT", "ORDER", "MARKER", "REOPEN", "SOURCE_IMMUTABILITY"],
+      "traceIds": ["UT-MERGE-003", "UT-MERGE-004", "UT-MERGE-005", "UT-MERGE-012", "UT-MERGE-019", "TP-MRG-001", "TP-MRG-029"],
+      "blocker": "EXECUTION_AND_INDEPENDENT_ORACLE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "PDF001-E02",
+      "status": "NOT_RUN",
+      "corpus": ["ORDER_CAB", "DUPLICATE_AA", "REMOVE_B"],
+      "expectedPropertyIds": ["PAGE_COUNT", "ORDER", "OCCURRENCE", "NO_SILENT_DEDUPE", "SOURCE_IMMUTABILITY"],
+      "traceIds": ["UT-MERGE-006", "UT-MERGE-007", "UT-MERGE-009", "UT-MERGE-010", "TP-MRG-006", "TP-MRG-007", "TP-MRG-008"],
+      "blocker": "EXECUTION_AND_INDEPENDENT_ORACLE_NOT_AUTHORIZED"
+    },
+    {
+      "id": "PDF001-E03",
+      "status": "BLOCKED_CORPUS_GAP",
+      "corpus": ["TBC_STRUCTURAL_VALID"],
+      "expectedPropertyIds": ["TBC_PROPERTY_PRESERVATION_MATRIX", "REOPEN", "RENDER", "STRUCTURE"],
+      "traceIds": ["UT-MERGE-012", "UT-MERGE-014", "UT-MERGE-015", "UT-MERGE-033", "UT-MERGE-034", "TP-MRG-005", "TP-MRG-028", "TP-MRG-029"],
+      "blocker": "STRUCTURAL_VARIANTS_AND_PRESERVATION_EXPECTATIONS_NOT_FROZEN"
+    },
+    {
+      "id": "PDF001-E04",
+      "status": "BLOCKED_CORPUS_AND_SECRET_HANDLING_GAP",
+      "corpus": ["TBC_PASSWORD"],
+      "expectedPropertyIds": ["PASSWORD_REQUIRED", "WRONG_PASSWORD_SAFE_FAILURE", "CORRECT_EPHEMERAL_PASSWORD", "NO_PASSWORD_PERSISTENCE_OR_LEAKAGE"],
+      "traceIds": ["UT-MERGE-016", "UT-MERGE-017", "UT-MERGE-018", "UT-MERGE-046", "TP-MRG-030", "TP-MRG-033"],
+      "blocker": "SYNTHETIC_PASSWORD_FIXTURE_AND_EPHEMERAL_INJECTION_POLICY_NOT_FROZEN"
+    },
+    {
+      "id": "PDF001-E05",
+      "status": "BLOCKED_HOSTILE_CORPUS_AND_ISOLATION_GAP",
+      "corpus": ["TBC_INVALID_CORRUPT", "TBC_ACTIVE_UNTRUSTED"],
+      "expectedPropertyIds": ["FAIL_CLOSED", "NO_ACTIVE_CONTENT_EXECUTION", "NO_EGRESS", "BOUNDED_HANDLING", "NO_FINAL_OUTPUT"],
+      "traceIds": ["UT-MERGE-013", "UT-MERGE-014", "UT-MERGE-015", "UT-MERGE-034", "UT-MERGE-046", "TP-MRG-005", "TP-MRG-028", "TP-MRG-031", "TP-MRG-033"],
+      "blocker": "HOSTILE_FIXTURES_AND_EFFECTIVE_ISOLATION_NOT_FROZEN"
+    },
+    {
+      "id": "PDF001-E06",
+      "status": "BLOCKED_COMPLEMENTARY_ORACLE_GAP",
+      "corpus": ["CONTROL_AB", "ORDER_CAB", "DUPLICATE_AA", "REMOVE_B", "TBC_NEGATIVE_OUTPUT_FIXTURES"],
+      "expectedPropertyIds": ["REJECT_EMPTY", "REJECT_WRONG_COUNT", "REJECT_REORDERED", "REJECT_DEDUPLICATED", "REJECT_WRONG_MARKER", "REJECT_TRUNCATED", "REJECT_CORRUPT", "REJECT_INCONCLUSIVE", "PUBLICATION_VETO"],
+      "traceIds": ["UT-MERGE-033", "UT-MERGE-034", "TP-MRG-028", "TP-MRG-029"],
+      "blocker": "QPDF_UNEXECUTED_AND_RENDER_CONTENT_ORACLES_NOT_ADMITTED"
+    },
+    {
+      "id": "PDF001-E07",
+      "status": "BLOCKED_FAILURE_INSTRUMENTATION_GAP",
+      "corpus": ["TBC_FAILURE_FINALITY"],
+      "expectedPropertyIds": ["REJECT_TARGET_EQUALS_SOURCE", "PRESERVE_EXISTING_TARGET", "NO_HALF_FINAL", "ATOMIC_PUBLICATION", "SOURCE_IMMUTABILITY"],
+      "traceIds": ["UT-MERGE-035", "UT-MERGE-036", "UT-MERGE-037", "UT-MERGE-038", "TP-MRG-025", "TP-MRG-026", "TP-MRG-027"],
+      "blocker": "SAFE_WRITE_RENAME_FAILURE_AND_ATOMICITY_OBSERVER_NOT_FROZEN"
+    },
+    {
+      "id": "PDF001-E08",
+      "status": "BLOCKED_FAILURE_INSTRUMENTATION_GAP",
+      "corpus": ["TBC_CANCEL_CRASH_TIMEOUT"],
+      "expectedPropertyIds": ["NO_FALSE_COMPLETION", "NO_LATE_PUBLICATION", "TEMP_NON_FINAL", "SOURCE_IMMUTABILITY", "BOUNDED_CLEANUP_OR_RECONCILIATION"],
+      "traceIds": ["UT-MERGE-025", "UT-MERGE-026", "UT-MERGE-027", "UT-MERGE-028", "UT-MERGE-029", "UT-MERGE-030", "UT-MERGE-031", "UT-MERGE-032", "UT-MERGE-034", "UT-MERGE-038", "UT-MERGE-043", "TP-MRG-019", "TP-MRG-020", "TP-MRG-021", "TP-MRG-022", "TP-MRG-023", "TP-MRG-024", "TP-MRG-025"],
+      "blocker": "TIMEOUT_CANCEL_TERMINATION_AND_RECONCILIATION_POLICY_NOT_FROZEN"
+    },
+    {
+      "id": "PDF001-E09",
+      "status": "BLOCKED_PENDING_HUMAN_NUMERIC_POLICY",
+      "corpus": ["TBC_RESOURCE_BANDS"],
+      "expectedPropertyIds": ["CORRECTNESS_UNDER_LOAD", "MEASURED_BASELINE_ONLY", "NO_NUMERIC_PASS_WITHOUT_APPROVED_TARGET", "NO_UNSAFE_RESOURCE_EXHAUSTION"],
+      "traceIds": ["UT-MERGE-011", "UT-MERGE-020", "UT-MERGE-021", "UT-MERGE-022", "UT-MERGE-023", "UT-MERGE-024", "UT-MERGE-025", "UT-MERGE-033", "UT-MERGE-034", "TP-MRG-015", "TP-MRG-016", "TP-MRG-017", "TP-MRG-018", "TP-MRG-024"],
+      "blocker": "RESOURCE_BANDS_LIMITS_INSTRUMENTATION_AND_SAMPLING_NOT_APPROVED"
+    },
+    {
+      "id": "PDF001-E10",
+      "status": "BLOCKED_PENDING_HUMAN_NUMERIC_POLICY",
+      "corpus": ["TBC_REPEATABILITY_AND_CONCURRENCY"],
+      "expectedPropertyIds": ["SEMANTIC_REPEATABILITY", "NO_CROSS_RUN_COLLISION", "NO_RESIDUAL_GROWTH", "ALL_RUNS_RECORDED", "NO_BEST_RUN_SELECTION"],
+      "traceIds": ["UT-MERGE-004", "UT-MERGE-009", "UT-MERGE-032", "UT-MERGE-047", "TP-MRG-008", "TP-MRG-016", "TP-MRG-017", "TP-MRG-034"],
+      "blocker": "CONCURRENCY_REPETITION_COLD_WARM_AND_RESIDUAL_POLICY_NOT_APPROVED"
+    }
+  ],
+  "gateDispositions": [
+    {
+      "id": "PRE-007",
+      "status": "BLOCKED",
+      "packetContribution": "CORPUS_MANIFEST_PROPOSAL_AND_FOUNDATION_HASH_BINDING_READY",
+      "blockers": ["EXACT_MANIFEST_HUMAN_APPROVAL", "CLASSIFICATION_OWNER_ACCESS_RETENTION_EXPIRY_DISPOSAL", "MISSING_CORPUS_GROUPS"],
+      "requiredDecision": "Approve, amend, or reject POC-PDF-001-CORPUS-MANIFEST-PROPOSAL-001 and fill every corpus policy TBC."
+    },
+    {
+      "id": "PRE-008",
+      "status": "BLOCKED",
+      "packetContribution": "EXPECTED_PAGE_ORDER_DUPLICATE_MARKER_REOPEN_SOURCE_AND_FINALITY_RULES_READY",
+      "blockers": ["QPDF_RUNTIME_AND_COMMAND_PROFILE_NOT_ADMITTED", "RENDER_ORACLE_MISSING", "CONTENT_ORACLE_MISSING", "NEGATIVE_OUTPUT_FIXTURES_MISSING"],
+      "requiredDecision": "Approve exact independent structural, render, content, and source/finality oracle identities, versions, digests, frozen settings, and fail-closed aggregation after technical/license/security review."
+    },
+    {
+      "id": "PRE-010",
+      "status": "BLOCKED",
+      "packetContribution": "REQUIRED_METRIC_CATEGORIES_AND_NONNUMERIC_CORRECTNESS_INVARIANTS_IDENTIFIED",
+      "blockers": ["INSTRUMENTATION_VERSION", "SAMPLING_WINDOW", "COLD_WARM_POLICY", "REPETITION_COUNT", "CONCURRENCY_LEVEL", "RESOURCE_AND_TIMEOUT_LIMITS", "NUMERIC_ACCEPTANCE_TARGETS"],
+      "requiredDecision": "Approve exact instrumentation and run policy; if only baseline measurement is authorized, keep every numeric outcome MEASURED_BASELINE/BLOCKED_PENDING_TARGET_APPROVAL."
+    },
+    {
+      "id": "PRE-011",
+      "status": "BLOCKED",
+      "packetContribution": "SAFE_RECORD_FIELDS_AND_SHA256_BINDING_REQUIREMENTS_IDENTIFIED",
+      "blockers": ["RUN_SPECIFIC_ACCESS", "RETENTION", "EXPIRY", "DISPOSAL", "SANITIZATION_REVIEWER", "IMMUTABILITY_MECHANISM", "SBOM_FORMAT"],
+      "requiredDecision": "Approve run-specific evidence access, retention, expiry, disposal, sanitization reviewer, integrity/immutability mechanism, and SBOM format for the already approved logical evidence root."
+    }
+  ]
+}
