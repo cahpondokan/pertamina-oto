@@ -53,7 +53,7 @@ confirm returns exit4 and tells root to close guest. Parent exit does not prove
 all descendants stopped; taskkill is best-effort and PID races remain. No Job
 Object, memory quota or disk quota is implemented. Reject hostile/unbounded input.
 4096MB config is a smoke budget, not a PDF acceptance threshold. 1MiB output check
-is post-write only. Root closes the exact guest via UI within five minutes total,
+is post-write only. Root stops the exact guest via session-bound CLI (below), or UI, within five minutes total,
 or immediately on timeout/error. Never kill shared host services or restart host.
 Retain failure evidence; guest disposal is not application cleanup proof.
 
@@ -71,3 +71,35 @@ engine, PDF generation/build/restore or Sandbox launch. Runtime staging, actual
 timeout/tree behavior and machine export require root's controlled test. Security
 review must decide whether best-effort supervision suffices for tiny benign smoke;
 this implementation does not claim full POC-PDF-001 containment or exit PASS.
+
+## CLI session control update from operator
+
+Operator report 2026-09-08: launch04:19:36, visible guest04:20:45, no logon summary;
+exact-session CLI stop04:25:13 followed by empty session list. This is reported
+boot/close evidence only; effective configuration and logon execution unproven.
+Existing per-user wsb package0.8.107.0 was found by root; no acquisition required.
+
+Use the existing root-resolved executable as $wsb (do not persist user path):
+`& $wsb start --config (Get-Content -LiteralPath $configPath -Raw) --raw`
+Capture the returned session ID, validate GUID shape, bind to this run and never
+select an arbitrary session from the list. Configure explicitly, never default start.
+`& $wsb connect --id $sessionId`
+`& $wsb exec --id $sessionId --command $reviewedGuestCommand --run-as ExistingLogin`
+`& $wsb stop --id $sessionId`
+`& $wsb list --raw`
+
+Root binds stop in its supervisory finally/timeout path; confirm this ID absent
+or stopped afterward. Do not stop unrelated sessions. If control CLI stalls,
+UI-close remains fallback; never kill shared host services. ExistingLogin requires
+an active connected guest; do not silently switch to System. Root should inspect
+installed command help for argument handling before constructing guest commands.
+The start config argument is XML TEXT, not a filename. Preserve the reviewed
+Networking value Disable from configuration documentation; CLI documentation's
+Disabled example differs and must not silently replace the frozen profile.
+
+CLI exec reports exit code but documentation says it cannot retrieve process I/O.
+Therefore it does not remove the JSON quarantine export requirement. Session stop
+adds an outer containment response, not per-child Job Object or PDF correctness
+proof. This lane has not run any CLI start/exec/stop command.
+
+Source checked2026-09-08: https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-cli
