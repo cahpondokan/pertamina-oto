@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pertamina-oto:poc:device-ai-disposition:1.0",
+  "title": "PERTAMINA OTO device, platform, and AI no-execution disposition packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packetId",
+    "taskId",
+    "runId",
+    "baselineCommit",
+    "status",
+    "scope",
+    "authorityBoundary",
+    "sourceBindings",
+    "portfolio",
+    "sharedStopConditions",
+    "gateSummary"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "packetId": { "const": "P2-W0G-B-DEVICE-AI-DISPOSITION-PROPOSAL-001" },
+    "taskId": { "const": "P2-W0G-B-A5-DEVICE-AI-DISPOSITION" },
+    "runId": { "const": "P02-20260905-1434" },
+    "baselineCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "status": { "const": "PROPOSED_UNEXECUTED_BLOCKED" },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pocIds", "releaseProfile", "platformPolicy", "exactFeatureMappings"],
+      "properties": {
+        "pocIds": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "POC-SCAN-001",
+              "POC-INTEL-001",
+              "POC-INTEL-002",
+              "POC-CONV-004",
+              "POC-AI-LOCAL-001"
+            ]
+          }
+        },
+        "releaseProfile": { "const": "WINDOWS_DESKTOP_OFFLINE_FIRST" },
+        "platformPolicy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["windowsDesktop", "android", "web", "ios"],
+          "properties": {
+            "windowsDesktop": { "const": "FIRST_RELEASE_PRIORITY_EXACT_MATRIX_TBC" },
+            "android": { "const": "LATER_CURATED_NOT_OPENED_BY_THIS_PACKET" },
+            "web": { "const": "LATER_CURATED_NOT_OPENED_BY_THIS_PACKET" },
+            "ios": { "const": "DEFERRED_NOT_IN_FIRST_RELEASE_NOT_REOPENED" }
+          }
+        },
+        "exactFeatureMappings": { "type": "array", "minItems": 5, "maxItems": 5 }
+      }
+    },
+    "authorityBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preparationAuthorized",
+        "executionAuthorized",
+        "endpointCallAuthorized",
+        "downloadAuthorized",
+        "installAuthorized",
+        "restoreAuthorized",
+        "buildAuthorized",
+        "modelAcquisitionAuthorized",
+        "deviceAccessAuthorized",
+        "documentProcessingAuthorized",
+        "iosScopeChangeAuthorized",
+        "sandboxLaunchAuthorized",
+        "qpdfExecutionAuthorized",
+        "pdfsharpLoadOrExecutionAuthorized",
+        "costBoundary",
+        "aiBoundary"
+      ],
+      "properties": {
+        "preparationAuthorized": { "const": true },
+        "executionAuthorized": { "const": false },
+        "endpointCallAuthorized": { "const": false },
+        "downloadAuthorized": { "const": false },
+        "installAuthorized": { "const": false },
+        "restoreAuthorized": { "const": false },
+        "buildAuthorized": { "const": false },
+        "modelAcquisitionAuthorized": { "const": false },
+        "deviceAccessAuthorized": { "const": false },
+        "documentProcessingAuthorized": { "const": false },
+        "iosScopeChangeAuthorized": { "const": false },
+        "sandboxLaunchAuthorized": { "const": false },
+        "qpdfExecutionAuthorized": { "const": false },
+        "pdfsharpLoadOrExecutionAuthorized": { "const": false },
+        "costBoundary": { "const": "ZERO_ADDITIONAL_COST_STOP_BEFORE_ANY_PAID_COMMITMENT" },
+        "aiBoundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["publicAi", "publicTranslation", "permittedProviderClasses", "specificProviderApproved"],
+          "properties": {
+            "publicAi": { "const": "DENIED" },
+            "publicTranslation": { "const": "DENIED" },
+            "permittedProviderClasses": {
+              "const": ["APPROVED_LOCAL", "APPROVED_ENTERPRISE_INTERNAL"]
+            },
+            "specificProviderApproved": { "const": false }
+          }
+        }
+      }
+    },
+    "sourceBindings": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "role"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "role": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "portfolio": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/pocRecord" }
+    },
+    "sharedStopConditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "gateSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packetResult", "formalPocDispositionGranted", "pre012ExecutionAuthority", "nextOwnerAction"],
+      "properties": {
+        "packetResult": { "const": "READY_FOR_INDEPENDENT_SECURITY_AND_GOVERNANCE_REVIEW_WITH_BLOCKERS" },
+        "formalPocDispositionGranted": { "const": false },
+        "pre012ExecutionAuthority": { "const": false },
+        "nextOwnerAction": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "pocRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pocId",
+        "objective",
+        "exactFeatureIds",
+        "exactRequirementIds",
+        "releaseRole",
+        "currentDisposition",
+        "formalGovernedDisposition",
+        "recommendation",
+        "platformExposure",
+        "aiBoundary",
+        "offline",
+        "data",
+        "consent",
+        "model",
+        "device",
+        "resource",
+        "license",
+        "oracleAndFailureNeeds",
+        "prerequisites",
+        "reopenConditions",
+        "stopConditions"
+      ],
+      "properties": {
+        "pocId": { "type": "string" },
+        "objective": { "type": "string", "minLength": 1 },
+        "exactFeatureIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^FEAT-[A-Z]+-[0-9]{3}$" }
+        },
+        "exactRequirementIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^(FR|SR)-[A-Z]+-[0-9]{3}$" }
+        },
+        "releaseRole": { "type": "string", "minLength": 1 },
+        "currentDisposition": { "const": "NOT_STARTED_BLOCKED_PRE_EXECUTION" },
+        "formalGovernedDisposition": { "const": "NONE_NOT_GRANTED" },
+        "recommendation": { "type": "string", "minLength": 1 },
+        "platformExposure": { "type": "object" },
+        "aiBoundary": { "type": "object" },
+        "offline": { "type": "object" },
+        "data": { "type": "object" },
+        "consent": { "type": "object" },
+        "model": { "type": "object" },
+        "device": { "type": "object" },
+        "resource": { "type": "object" },
+        "license": { "type": "object" },
+        "oracleAndFailureNeeds": { "type": "object" },
+        "prerequisites": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/prerequisite" }
+        },
+        "reopenConditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "stopConditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "prerequisite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "owner", "requiredValue"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["PROPOSED_NOT_APPROVED", "OPEN", "HUMAN_ONLY_UNAPPROVED"] },
+        "owner": { "type": "string", "minLength": 1 },
+        "requiredValue": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

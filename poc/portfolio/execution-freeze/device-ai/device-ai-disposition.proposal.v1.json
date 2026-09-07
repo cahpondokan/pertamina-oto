@@ -1,0 +1,939 @@
+{
+  "schemaVersion": "1.0",
+  "packetId": "P2-W0G-B-DEVICE-AI-DISPOSITION-PROPOSAL-001",
+  "taskId": "P2-W0G-B-A5-DEVICE-AI-DISPOSITION",
+  "runId": "P02-20260905-1434",
+  "baselineCommit": "f246fd03b26a39afef958174cd12105a78d0a259",
+  "status": "PROPOSED_UNEXECUTED_BLOCKED",
+  "scope": {
+    "pocIds": [
+      "POC-SCAN-001",
+      "POC-INTEL-001",
+      "POC-INTEL-002",
+      "POC-CONV-004",
+      "POC-AI-LOCAL-001"
+    ],
+    "releaseProfile": "WINDOWS_DESKTOP_OFFLINE_FIRST",
+    "platformPolicy": {
+      "windowsDesktop": "FIRST_RELEASE_PRIORITY_EXACT_MATRIX_TBC",
+      "android": "LATER_CURATED_NOT_OPENED_BY_THIS_PACKET",
+      "web": "LATER_CURATED_NOT_OPENED_BY_THIS_PACKET",
+      "ios": "DEFERRED_NOT_IN_FIRST_RELEASE_NOT_REOPENED"
+    },
+    "exactFeatureMappings": [
+      {
+        "pocId": "POC-SCAN-001",
+        "exactFeatureIds": ["FEAT-SCAN-014", "FEAT-SCAN-018"],
+        "mappingBoundary": "FEAT-SCAN-014_IS_CORE_SCAN_TO_PDF_OUTCOME; FEAT-SCAN-018_IS_THE_PHYSICAL_SCANNER_FEASIBILITY_GATE; CAMERA_SCAN_FEATURES_ARE_NOT_OPENED"
+      },
+      {
+        "pocId": "POC-INTEL-001",
+        "exactFeatureIds": ["FEAT-INTEL-001"],
+        "mappingBoundary": "AI_SUMMARIZER_ONLY"
+      },
+      {
+        "pocId": "POC-INTEL-002",
+        "exactFeatureIds": ["FEAT-INTEL-002"],
+        "mappingBoundary": "TRANSLATE_PDF_ONLY"
+      },
+      {
+        "pocId": "POC-CONV-004",
+        "exactFeatureIds": ["FEAT-CONV-036"],
+        "mappingBoundary": "PDF_TO_MARKDOWN_DETERMINISTIC_FIRST; OCR_OR_AI_IS_NOT_IMPLIED"
+      },
+      {
+        "pocId": "POC-AI-LOCAL-001",
+        "exactFeatureIds": ["FEAT-ASSIST-026"],
+        "mappingBoundary": "OPTIONAL_LOCAL_SMALL_LANGUAGE_MODEL_ONLY; DOES_NOT_APPROVE_INTELLIGENCE_FEATURES_OR_ANY_PROVIDER"
+      }
+    ]
+  },
+  "authorityBoundary": {
+    "preparationAuthorized": true,
+    "executionAuthorized": false,
+    "endpointCallAuthorized": false,
+    "downloadAuthorized": false,
+    "installAuthorized": false,
+    "restoreAuthorized": false,
+    "buildAuthorized": false,
+    "modelAcquisitionAuthorized": false,
+    "deviceAccessAuthorized": false,
+    "documentProcessingAuthorized": false,
+    "iosScopeChangeAuthorized": false,
+    "sandboxLaunchAuthorized": false,
+    "qpdfExecutionAuthorized": false,
+    "pdfsharpLoadOrExecutionAuthorized": false,
+    "costBoundary": "ZERO_ADDITIONAL_COST_STOP_BEFORE_ANY_PAID_COMMITMENT",
+    "aiBoundary": {
+      "publicAi": "DENIED",
+      "publicTranslation": "DENIED",
+      "permittedProviderClasses": ["APPROVED_LOCAL", "APPROVED_ENTERPRISE_INTERNAL"],
+      "specificProviderApproved": false
+    }
+  },
+  "sourceBindings": [
+    {
+      "path": "02_REQUIREMENT_SPECIFICATION_FINAL_v1.5_PERTAMINA_OTO.md",
+      "sha256": "24986dc7d4d369935ca7f8d382f6ab2ae88464e9f640ab5cfd726b7f761b1f11",
+      "role": "EXACT_REQUIREMENTS_AND_PUBLIC_AI_BOUNDARY"
+    },
+    {
+      "path": "03_FEATURE_CATALOG_FINAL_v1.3_PERTAMINA_OTO.md",
+      "sha256": "b908b1e6e45d84ad26ebb4e8504f1b0faa7ad96a6c85fb5c92ee0bc580429a45",
+      "role": "EXACT_FEATURE_IDS_EXECUTION_PROFILES_AND_FEASIBILITY_GATES"
+    },
+    {
+      "path": "04_SOLUTION_DESIGN_FINAL_v1.2_PERTAMINA_OTO.md",
+      "sha256": "9c973809ce1083c4bc36ea87371bc31d5cad4c95684531357b6ecc4665c31a5d",
+      "role": "WINDOWS_DESKTOP_FIRST_PLATFORM_AND_RUNTIME_POLICY"
+    },
+    {
+      "path": "05_TECHNICAL_REFERENCE_FINAL_v1.2_PERTAMINA_OTO.md",
+      "sha256": "a2d212402396f4db26a62f3a1b756d4477988af73a9d84f4171c35029e4854bd",
+      "role": "TECHNICAL_FEASIBILITY_AND_INTELLIGENCE_BOUNDARY"
+    },
+    {
+      "path": "08_SECURITY_DESIGN_FINAL_v1.0_PERTAMINA_OTO.md",
+      "sha256": "df9c8ba8b70b224206918096fc2acbe990c452aa932f27871fb36b282f6f404f",
+      "role": "AI_DATA_EGRESS_CONSENT_AND_UNTRUSTED_OUTPUT_CONTROLS"
+    },
+    {
+      "path": "11_UNIT_TEST_DOCUMENT_FINAL_v1.0_PERTAMINA_OTO.md",
+      "sha256": "ad1e9323961c64380c863795a2e20767d4eba67999c4f28dea9a0b578c596e14",
+      "role": "UNIT_BOUNDARIES_AND_CRITICAL_LOGIC_TESTS"
+    },
+    {
+      "path": "12_TEST_PLAN_FINAL_v1.0_PERTAMINA_OTO.md",
+      "sha256": "a4449e43f877327fa645c3d02e1875958345f727ddc2fa576e88d7f8c419586d",
+      "role": "DEVICE_PROVIDER_RESOURCE_SECURITY_AND_MANUAL_EVIDENCE_PLAN"
+    },
+    {
+      "path": "MASTER_PROJECT_SUMMARY.md",
+      "sha256": "9c983d8090e60a0ef42035ec6c2621c0fbefc0cf54c9288ed8ba840c9601284c",
+      "role": "PROGRAM_LOCKS_OFFLINE_FIRST_AND_NO_PUBLIC_AI"
+    },
+    {
+      "path": "docs/baseline-audit/POC_MASTER_PLAN_v1.0.md",
+      "sha256": "7af1b21ecee5b9076e83651bc7e0e34c57aa3f449700ebc69645ded6b65dce6c",
+      "role": "PORTFOLIO_SCOPE_MINIMUM_EVIDENCE_AND_DISPOSITION_MODEL"
+    },
+    {
+      "path": "docs/implementation-prompts/PHASE_02_PROOF_OF_CAPABILITY.md",
+      "sha256": "cadecd159ce12fd0968a44ea64bc3fe5925cca42fb4afa852d31e3707eee9e69",
+      "role": "AGENT_5_POC_BOUNDARY"
+    },
+    {
+      "path": "docs/implementation-prompts/PHASE_05_CONVERSION_OCR.md",
+      "sha256": "3a568fcd8158675c36c0ca2a4228d9e02027f8573a21dfa0fee66ba959b9c355",
+      "role": "FUTURE_SCANNER_DEVICE_ENTRY_GATES"
+    },
+    {
+      "path": "docs/implementation-prompts/PHASE_07_PDF_INTELLIGENCE.md",
+      "sha256": "fce20fc3116939a02f1e799d223a0a7a0c250f2df888e80918bf39d0b1b10ccf",
+      "role": "FUTURE_INTELLIGENCE_ENTRY_GATES_AND_PROVIDER_POLICY"
+    },
+    {
+      "path": "docs/implementation-prompts/PHASE_08_MOBILE_WEB.md",
+      "sha256": "89f8d729c7c4522cf16a4907da619f65fe55e392cd99ca3414d687e5b696a308",
+      "role": "ANDROID_WEB_CURATED_AND_IOS_DEFERRED_BOUNDARY"
+    },
+    {
+      "path": "docs/project-management/PROJECT_STATE.md",
+      "sha256": "e734889428dd9986810be44b6f3a6bd2bb63cdc756b304a2c7dbdbd10cb907e3",
+      "role": "CURRENT_RUN_AND_NO_EXECUTION_AUTHORITY"
+    },
+    {
+      "path": "docs/project-management/PHASE_DECISION_REGISTER.md",
+      "sha256": "ff59350534d55240b6de3b2c4bfacde130f9442fa469eff3f58dbc35183a9824",
+      "role": "CURRENT_DECISION_OWNERS_AND_UNAPPROVED_GATES"
+    },
+    {
+      "path": "docs/project-management/PHASE_02_READINESS_REPORT_P02-20260905-1434.md",
+      "sha256": "3796ac937acfe80e7ddcdb33762f35c58b999daf272fa5704f872bee2d0a1c52",
+      "role": "READINESS_RECOMMENDATIONS_NOT_HUMAN_DISPOSITIONS"
+    },
+    {
+      "path": "docs/project-management/PHASE_02_WAVE_0G_TASK_CARDS_P02-20260905-1434.md",
+      "sha256": "030c687fa281b0704023eb6b692c1629184119210984ebe85a828a4c68e50e88",
+      "role": "ACTIVE_TASK_SCOPE_AND_PROHIBITIONS"
+    }
+  ],
+  "portfolio": [
+    {
+      "pocId": "POC-SCAN-001",
+      "objective": "Prove an approved physical-scanner path to the canonical Scan to PDF outcome without implying camera capture or universal scanner support.",
+      "exactFeatureIds": ["FEAT-SCAN-014", "FEAT-SCAN-018"],
+      "exactRequirementIds": [
+        "FR-SCAN-001",
+        "FR-SCAN-002",
+        "FR-PROC-001",
+        "FR-PROC-002",
+        "FR-PROC-003",
+        "FR-PROC-004",
+        "FR-PROC-005"
+      ],
+      "releaseRole": "CORE_SCAN_TO_PDF_OUTCOME_WITH_PHYSICAL_SCANNER_PATH_FEASIBILITY_GATED",
+      "currentDisposition": "NOT_STARTED_BLOCKED_PRE_EXECUTION",
+      "formalGovernedDisposition": "NONE_NOT_GRANTED",
+      "recommendation": "CONDITIONAL_WAVE_2_OR_GOVERNED_DEFER_RECOMMENDED_NOT_DECIDED; DEFERING_THE_PHYSICAL_PATH_MUST_NOT_SILENTLY_REMOVE_FEAT-SCAN-014",
+      "platformExposure": {
+        "windowsDesktop": "PRIORITY_FOR_PHYSICAL_SCANNER_POC_AFTER_EXACT_MATRIX_APPROVAL",
+        "android": "NOT_OPENED; CAMERA_SCAN_IS_A_SEPARATE_CURATED_FUTURE_EXPOSURE",
+        "web": "NOT_OPENED; NO_BROWSER_DEVICE_ASSUMPTION",
+        "ios": "DEFERRED_NOT_REOPENED"
+      },
+      "aiBoundary": {
+        "publicEndpoint": "DENIED",
+        "route": "NONE_REQUIRED_FOR_CAPTURE; APPROVED_LOCAL_OCR_ONLY_IF_SEPARATELY_SCOPED",
+        "specificProviderApproved": false,
+        "silentUpload": false
+      },
+      "offline": {
+        "requiredMode": "LOCAL_DEVICE_PATH_WITH_PROCESSING_NETWORK_DISABLED",
+        "serverDependency": "NONE_FOR_THE_PHYSICAL_CAPTURE_PROOF",
+        "proofStatus": "NOT_RUN",
+        "failureBehavior": "DEVICE_OR_DRIVER_UNAVAILABLE_MUST_EXPLAIN_AND_FAIL_SAFE_WITHOUT_UPLOAD"
+      },
+      "data": {
+        "corpus": "TBC_APPROVED_SYNTHETIC_SCAN_TARGETS_AND_GENERATED_OUTPUT_ORACLE",
+        "classification": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+        "productionOrPersonalDataPermitted": false,
+        "rawImageOrDocumentContentInOrdinaryLogs": false,
+        "retentionAccessExpiryDisposal": "TBC_RUN_SPECIFIC_POLICY",
+        "egress": "DENIED"
+      },
+      "consent": {
+        "requiredBefore": "OS_DEVICE_PERMISSION_AND_EXPLICIT_USER_CAPTURE_ACTION",
+        "silentActionDenied": "NO_SILENT_CAPTURE_NO_SILENT_UPLOAD",
+        "proofStatus": "NOT_RUN_ON_APPROVED_DEVICE"
+      },
+      "model": {
+        "applicability": "NOT_REQUIRED_FOR_BASE_SCAN_CAPTURE; REQUIRED_ONLY_IF_APPROVED_OCR_OR_AI_FALLBACK_IS_IN_SCOPE",
+        "candidate": "TBC_APPROVED_CANDIDATE",
+        "versionAndSha256": "TBC_EXACT_VERSION_AND_SHA256",
+        "runtimeAndPackage": "TBC_ONLY_IF_FALLBACK_SCOPED",
+        "integrityAndUpdate": "TBC_ONLY_IF_FALLBACK_SCOPED"
+      },
+      "device": {
+        "releaseTarget": "WINDOWS_DESKTOP_FIRST",
+        "approvedMatrix": "TBC_APPROVED_DEVICE_ENVIRONMENT_MATRIX",
+        "physicalIdentity": "TBC_VENDOR_MODEL_HARDWARE_REVISION",
+        "interfaceDriverFirmware": "TBC_APPROVED_INTERFACE_DRIVER_VERSION_FIRMWARE",
+        "capabilities": "TBC_FEEDER_DUPLEX_DPI_PAGE_SIZE_COLOR_MODES",
+        "hostEnvironment": "TBC_OS_BUILD_ARCHITECTURE_PORT_POWER_AND_PERMISSION_STATE"
+      },
+      "resource": {
+        "metrics": [
+          "CPU_TIME_AND_UTILIZATION",
+          "RAM_PEAK_AND_RESIDUAL",
+          "TEMP_AND_OUTPUT_STORAGE",
+          "PAGE_THROUGHPUT_AND_DURATION",
+          "CANCEL_TO_SAFE_STOP",
+          "LARGE_BATCH_BOUNDARY",
+          "DEVICE_RECONNECT_AND_RESOURCE_RELEASE"
+        ],
+        "numericTargets": "TBC_HUMAN_APPROVED_BASELINE_AND_CEILINGS",
+        "workloads": "TBC_APPROVED_SINGLE_PAGE_FEEDER_DUPLEX_DPI_AND_LARGE_BATCH_CASES",
+        "measurementStatus": "NOT_MEASURED"
+      },
+      "license": {
+        "candidateLicense": "TBC_EXACT_DRIVER_SDK_LIBRARY_LICENSE",
+        "runtimeRedistribution": "TBC_DRIVER_RUNTIME_PACKAGING_AND_REDISTRIBUTION_RIGHTS",
+        "supportMaintenance": "TBC_OWNER_PATCH_AND_DEVICE_SUPPORT_WINDOW",
+        "cost": "ZERO_ADDITIONAL_COST_ONLY; PAID_DEVICE_SDK_SUPPORT_OR_COMPONENT_STOPS",
+        "decision": "TBC_HUMAN_LICENSE_COST_REVIEW"
+      },
+      "oracleAndFailureNeeds": {
+        "quality": "PAGE_COUNT_ORDER_ORIENTATION_CROP_DPI_METADATA_REOPEN_AND_FINAL_PDF_VALIDATION",
+        "security": "DEVICE_PERMISSION_NO_SILENT_CAPTURE_NO_UPLOAD_SAFE_PRIVATE_STAGING_AND_SANITIZED_LOGS",
+        "failure": "UNAVAILABLE_DENIED_PERMISSION_DEVICE_LOSS_PAPER_JAM_CANCEL_TIMEOUT_DRIVER_CRASH_PARTIAL_BATCH_AND_CLEANUP",
+        "sourceSafety": "INPUT_OR_PRIOR_OUTPUT_UNCHANGED; PARTIAL_CAPTURE_NEVER_PUBLISHED_AS_FINAL"
+      },
+      "prerequisites": [
+        {
+          "id": "P2-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Technical Owner",
+          "requiredValue": "EXACT_SCANNER_INTERFACE_DRIVER_LIBRARY_CANDIDATE_VERSION_BUILD_AND_EVALUATION_PRIORITY"
+        },
+        {
+          "id": "P2-D02",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product + QA + Security",
+          "requiredValue": "EXACT_SYNTHETIC_SCAN_CORPUS_ORACLE_AND_APPROVED_QUALITY_RESOURCE_FAILURE_THRESHOLDS"
+        },
+        {
+          "id": "P2-D03",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Legal/License + Technical",
+          "requiredValue": "LICENSE_REDISTRIBUTION_RUNTIME_SUPPORT_MAINTENANCE_AND_ZERO_COST_ACCEPTANCE"
+        },
+        {
+          "id": "P8-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product Owner",
+          "requiredValue": "EXACT_RELEASE_FEATURE_EXPOSURE_CONFIRMING_WINDOWS_DESKTOP_PHYSICAL_SCANNER_PATH"
+        },
+        {
+          "id": "P8-D03",
+          "status": "OPEN",
+          "owner": "Platform Owners",
+          "requiredValue": "EXACT_APPROVED_WINDOWS_DEVICE_ENVIRONMENT_MATRIX; NO_IOS_SCOPE"
+        },
+        {
+          "id": "PRE-012",
+          "status": "HUMAN_ONLY_UNAPPROVED",
+          "owner": "Workspace User temporary execution authority with required Technical/Security/License reviewers",
+          "requiredValue": "SEPARATE_EXACT_EXECUTION_SCOPE_ENVIRONMENT_DEVICE_CORPUS_LIMITS_STOP_RULES_AND_ZERO_COST_AUTHORIZATION"
+        }
+      ],
+      "reopenConditions": [
+        "AGENT_0_RECORDS_A_GOVERNED_RUN_OR_DEFER_DECISION_FOR_THE_EXACT_TWO_FEATURE_IDS",
+        "EVERY_TBC_DEVICE_DRIVER_CORPUS_RESOURCE_LICENSE_AND_OWNER_FIELD_IS_RESOLVED_AND_REVIEWED",
+        "PRE-012_EXPLICITLY_AUTHORIZES_THE_EXACT_NON_PRODUCTION_DEVICE_RUN"
+      ],
+      "stopConditions": [
+        "UNAPPROVED_OR_UNIDENTIFIED_DEVICE_DRIVER_INTERFACE_OR_SDK",
+        "ANY_SILENT_CAPTURE_UPLOAD_OR_NETWORK_REQUIREMENT",
+        "ANY_PAID_DEVICE_COMPONENT_SUPPORT_OR_COMMITMENT",
+        "DEVICE_OR_OUTPUT_EVIDENCE_CANNOT_BE_SANITIZED",
+        "REQUEST_TO_OPEN_CAMERA_MOBILE_WEB_OR_IOS_SCOPE_BY_IMPLICATION"
+      ]
+    },
+    {
+      "pocId": "POC-INTEL-001",
+      "objective": "Prove grounded AI-assisted PDF summarization through an exact approved local or enterprise-internal provider while public AI remains unreachable.",
+      "exactFeatureIds": ["FEAT-INTEL-001"],
+      "exactRequirementIds": [
+        "FR-INTEL-001",
+        "FR-PROC-001",
+        "FR-PROC-002",
+        "FR-PROC-003",
+        "FR-PROC-004",
+        "FR-PROC-005",
+        "SR-SEC-021"
+      ],
+      "releaseRole": "CORE_PDF_INTELLIGENCE_FEASIBILITY_GATE",
+      "currentDisposition": "NOT_STARTED_BLOCKED_PRE_EXECUTION",
+      "formalGovernedDisposition": "NONE_NOT_GRANTED",
+      "recommendation": "WAVE_2_AFTER_PROVIDER_DATA_MODEL_CORPUS_LICENSE_RESOURCE_AND_SECURITY_GATES; DO_NOT_DEFER_OR_APPROVE_SILENTLY",
+      "platformExposure": {
+        "windowsDesktop": "FIRST_RELEASE_PRIORITY_AFTER_EXACT_PROVIDER_AND_RESOURCE_APPROVAL",
+        "android": "LATER_CURATED_NOT_OPENED",
+        "web": "LATER_CURATED_NOT_OPENED",
+        "ios": "DEFERRED_NOT_REOPENED"
+      },
+      "aiBoundary": {
+        "publicEndpoint": "DENIED",
+        "route": "ONLY_EXACT_APPROVED_LOCAL_OR_ENTERPRISE_INTERNAL_PROVIDER",
+        "specificProviderApproved": false,
+        "providerSelectionByUserOrDocument": false,
+        "documentContentIsUntrustedInstruction": true,
+        "noTrainingOrReuseAssumption": "MUST_BE_PROVEN_NOT_ASSUMED"
+      },
+      "offline": {
+        "requiredMode": "LOCAL_ROUTE_MAY_RUN_OFFLINE_ONLY_AFTER_EXACT_MODEL_RUNTIME_PROOF",
+        "enterpriseInternalRoute": "ONLINE_REQUIRED_AND_MUST_BE_SHOWN_UNAVAILABLE_OR_PENDING_WHEN_OFFLINE",
+        "silentRerouteOrUpload": false,
+        "proofStatus": "NOT_RUN"
+      },
+      "data": {
+        "corpus": "TBC_APPROVED_SYNTHETIC_LONG_SHORT_STRUCTURED_MULTILINGUAL_CORPUS",
+        "classification": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+        "productionOrPersonalDataPermitted": false,
+        "selection": "MINIMUM_EXPLICITLY_SELECTED_PAGES_OR_TEXT_WITH_SOURCE_LINKAGE",
+        "ordinaryLogsOrEvidence": "NO_DOCUMENT_PROMPT_PROVIDER_REQUEST_RESPONSE_OR_SUMMARY_CONTENT",
+        "internalTransferPolicy": "TBC_PERMISSION_CLASSIFICATION_MINIMIZATION_RETENTION_EGRESS_LOCATION_AND_SUBPROCESSOR_POLICY"
+      },
+      "consent": {
+        "requiredBefore": "TBC_APPROVED_NOTICE_OR_CONSENT_BOUND_TO_ROUTE_AND_SELECTED_CONTENT; EXPLICIT_BEFORE_ANY_INTERNAL_TRANSFER",
+        "outputDisclosure": "LABEL_AI_ASSISTED_SUMMARY_WITH_PROVENANCE_LIMITATIONS_AND_REVIEW_EXPECTATION",
+        "silentActionDenied": "NO_SILENT_TRANSFER_NO_AUTOMATIC_AUTHORITATIVE_REPLACEMENT",
+        "proofStatus": "NOT_RUN"
+      },
+      "model": {
+        "candidate": "TBC_APPROVED_CANDIDATE",
+        "providerAndRoute": "TBC_APPROVED_LOCAL_OR_ENTERPRISE_INTERNAL_PROVIDER",
+        "versionAndSha256": "TBC_EXACT_MODEL_RUNTIME_PACKAGE_VERSION_BUILD_AND_DIGEST",
+        "contextAndTokenPolicy": "TBC_APPROVED_CHUNK_CONTEXT_OUTPUT_LIMITS",
+        "integrityUpdateRollback": "TBC_SIGNATURE_HASH_UPDATE_CACHE_ROLLBACK_AND_EXPIRY",
+        "trainingRetentionSubprocessors": "TBC_VERIFIABLE_PROVIDER_GOVERNANCE"
+      },
+      "device": {
+        "releaseTarget": "WINDOWS_DESKTOP_FIRST",
+        "approvedMatrix": "TBC_APPROVED_DEVICE_ENVIRONMENT_MATRIX",
+        "localHardware": "TBC_CPU_RAM_STORAGE_ARCHITECTURE_AND_OPTIONAL_ACCELERATOR_WITHOUT_ASSUMPTION",
+        "internalEnvironment": "TBC_ONLY_IF_ENTERPRISE_INTERNAL_ROUTE_APPROVED",
+        "androidWeb": "NOT_IN_THIS_PACKET",
+        "ios": "DEFERRED"
+      },
+      "resource": {
+        "metrics": [
+          "MODEL_AND_PACKAGE_BYTES",
+          "CPU_TIME_AND_UTILIZATION",
+          "RAM_WORKING_PRIVATE_COMMITTED_AND_RESIDUAL",
+          "STORAGE_CACHE_AND_TEMP_PEAK",
+          "LATENCY_STAGE_AND_TOTAL",
+          "CONTEXT_SIZE_AND_SELECTED_PAGE_COUNT",
+          "CONCURRENCY_QUEUE_AND_CANCEL_TO_SAFE_STOP",
+          "THERMAL_AND_SUSTAINED_BEHAVIOR_ON_APPROVED_DEVICE"
+        ],
+        "numericTargets": "TBC_HUMAN_APPROVED_QUALITY_RESOURCE_LATENCY_AND_CAPACITY_TARGETS",
+        "workloads": "TBC_APPROVED_SHORT_LONG_STRUCTURED_MULTILINGUAL_AND_ADVERSARIAL_CASES",
+        "measurementStatus": "NOT_MEASURED"
+      },
+      "license": {
+        "modelLicense": "TBC_EXACT_MODEL_WEIGHTS_LICENSE_AND_USE_RESTRICTIONS",
+        "runtimePackageLicense": "TBC_EXACT_RUNTIME_DEPENDENCY_LICENSES_AND_NOTICES",
+        "serviceTerms": "TBC_ONLY_IF_ENTERPRISE_INTERNAL_PROVIDER_APPROVED",
+        "redistributionSupport": "TBC_PACKAGING_REDISTRIBUTION_UPDATE_SUPPORT_AND_EXIT_RIGHTS",
+        "cost": "ZERO_ADDITIONAL_COST_ONLY; PAID_API_MODEL_SERVICE_SUPPORT_OR_LICENSE_STOPS",
+        "decision": "TBC_HUMAN_LICENSE_COST_REVIEW"
+      },
+      "oracleAndFailureNeeds": {
+        "quality": "APPROVED_FACTUALITY_COVERAGE_OMISSION_HALLUCINATION_GROUNDING_AND_MULTILINGUAL_THRESHOLDS",
+        "security": "DIRECT_AND_INDIRECT_PROMPT_INJECTION_PUBLIC_EGRESS_SECRET_CONTENT_LEAKAGE_AND_MALICIOUS_OUTPUT",
+        "failure": "UNSUPPORTED_SCAN_OCR_MISSING_CONTEXT_OVERSIZE_TIMEOUT_CANCEL_PROVIDER_BUSY_OFFLINE_MODEL_FAILURE_AND_CLEANUP",
+        "review": "SOURCE_LINKED_HUMAN_REVIEW; OUTPUT_NEVER_TRUSTED_COMMAND_OR_APPROVAL"
+      },
+      "prerequisites": [
+        {
+          "id": "P2-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Technical Owner",
+          "requiredValue": "EXACT_PROVIDER_MODEL_RUNTIME_PACKAGE_VERSION_DIGEST_ROUTE_AND_EVALUATION_PRIORITY"
+        },
+        {
+          "id": "P2-D02",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product + QA + Security",
+          "requiredValue": "EXACT_SYNTHETIC_CORPUS_FACTUALITY_COVERAGE_OMISSION_HALLUCINATION_AND_RESOURCE_TARGETS"
+        },
+        {
+          "id": "P2-D03",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Legal/License + Technical",
+          "requiredValue": "MODEL_RUNTIME_SERVICE_LICENSE_NOTICE_REDISTRIBUTION_SUPPORT_EXIT_AND_ZERO_COST_ACCEPTANCE"
+        },
+        {
+          "id": "P7-D01",
+          "status": "OPEN",
+          "owner": "Product + Security/Privacy",
+          "requiredValue": "MODEL_PROVIDER_VERSION_LOCAL_OR_INTERNAL_ROUTE_EGRESS_RETENTION_LOCATION_TRAINING_REUSE_AND_SUBPROCESSOR_POLICY"
+        },
+        {
+          "id": "P7-D02",
+          "status": "OPEN",
+          "owner": "Product + QA",
+          "requiredValue": "FACTUALITY_COVERAGE_OMISSION_HALLUCINATION_AND_HUMAN_REVIEW_ACCEPTANCE_THRESHOLDS"
+        },
+        {
+          "id": "PRE-012",
+          "status": "HUMAN_ONLY_UNAPPROVED",
+          "owner": "Workspace User temporary execution authority with required Technical/Security/Privacy/License reviewers",
+          "requiredValue": "SEPARATE_EXACT_EXECUTION_SCOPE_ENVIRONMENT_CORPUS_MODEL_ROUTE_LIMITS_STOP_RULES_AND_ZERO_COST_AUTHORIZATION"
+        }
+      ],
+      "reopenConditions": [
+        "AGENT_0_RECORDS_APPROVED_POC_SCOPE_AND_EXACT_FEATURE_ID",
+        "P2_D01_D02_D03_AND_P7_D01_D02_VALUES_ARE_APPROVED_AND_HASH_BOUND",
+        "PUBLIC_ENDPOINT_DENIAL_AND_LOCAL_OR_INTERNAL_EGRESS_CONTROLS_HAVE_INDEPENDENT_REVIEW",
+        "PRE-012_EXPLICITLY_AUTHORIZES_THE_EXACT_NON_PRODUCTION_RUN"
+      ],
+      "stopConditions": [
+        "PUBLIC_AI_OR_PUBLIC_TRANSLATION_ENDPOINT_REQUIRED_REACHABLE_OR_CONFIGURED",
+        "UNAPPROVED_PROVIDER_MODEL_RUNTIME_VERSION_OR_DYNAMIC_DOWNLOAD",
+        "DOCUMENT_CONTENT_PROMPT_SECRET_OR_PROVIDER_PAYLOAD_APPEARS_IN_ORDINARY_LOG_OR_EVIDENCE",
+        "INTERNAL_TRANSFER_WITHOUT_APPROVED_POLICY_PERMISSION_MINIMIZATION_AND_CONSENT_OR_NOTICE",
+        "PAID_API_MODEL_SERVICE_SUPPORT_OR_LICENSE",
+        "QUALITY_OR_SECURITY_ORACLE_MISSING_INCONCLUSIVE_OR_UNSANITIZABLE"
+      ]
+    },
+    {
+      "pocId": "POC-INTEL-002",
+      "objective": "Prove reviewed PDF translation for an exact approved language scope through an approved local or enterprise-internal provider without public translation egress.",
+      "exactFeatureIds": ["FEAT-INTEL-002"],
+      "exactRequirementIds": [
+        "FR-INTEL-002",
+        "FR-PROC-001",
+        "FR-PROC-002",
+        "FR-PROC-003",
+        "FR-PROC-004",
+        "FR-PROC-005",
+        "SR-SEC-021"
+      ],
+      "releaseRole": "CORE_PDF_INTELLIGENCE_FEASIBILITY_GATE",
+      "currentDisposition": "NOT_STARTED_BLOCKED_PRE_EXECUTION",
+      "formalGovernedDisposition": "NONE_NOT_GRANTED",
+      "recommendation": "WAVE_2_AFTER_PROVIDER_LANGUAGE_DATA_MODEL_CORPUS_LICENSE_RESOURCE_AND_SECURITY_GATES; NO_FIDELITY_PROMISE_BEFORE_EVIDENCE",
+      "platformExposure": {
+        "windowsDesktop": "FIRST_RELEASE_PRIORITY_AFTER_EXACT_PROVIDER_AND_RESOURCE_APPROVAL",
+        "android": "LATER_CURATED_NOT_OPENED",
+        "web": "LATER_CURATED_NOT_OPENED",
+        "ios": "DEFERRED_NOT_REOPENED"
+      },
+      "aiBoundary": {
+        "publicEndpoint": "DENIED",
+        "route": "ONLY_EXACT_APPROVED_LOCAL_OR_ENTERPRISE_INTERNAL_PROVIDER",
+        "specificProviderApproved": false,
+        "publicTranslationService": "DENIED",
+        "documentContentIsUntrustedInstruction": true,
+        "noTrainingOrReuseAssumption": "MUST_BE_PROVEN_NOT_ASSUMED"
+      },
+      "offline": {
+        "requiredMode": "LOCAL_ROUTE_MAY_RUN_OFFLINE_ONLY_AFTER_EXACT_MODEL_RUNTIME_PROOF",
+        "enterpriseInternalRoute": "ONLINE_REQUIRED_AND_MUST_BE_SHOWN_UNAVAILABLE_OR_PENDING_WHEN_OFFLINE",
+        "silentRerouteOrUpload": false,
+        "proofStatus": "NOT_RUN"
+      },
+      "data": {
+        "corpus": "TBC_APPROVED_SYNTHETIC_ID_EN_LAYOUT_TABLE_TERMINOLOGY_CORPUS",
+        "classification": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+        "productionOrPersonalDataPermitted": false,
+        "selection": "EXPLICIT_SOURCE_TARGET_LANGUAGE_AND_CONTENT_SCOPE",
+        "ordinaryLogsOrEvidence": "NO_DOCUMENT_PROMPT_PROVIDER_REQUEST_RESPONSE_OR_TRANSLATED_CONTENT",
+        "internalTransferPolicy": "TBC_PERMISSION_CLASSIFICATION_MINIMIZATION_RETENTION_EGRESS_LOCATION_AND_SUBPROCESSOR_POLICY"
+      },
+      "consent": {
+        "requiredBefore": "TBC_APPROVED_NOTICE_OR_CONSENT_BOUND_TO_ROUTE_LANGUAGE_AND_SELECTED_CONTENT; EXPLICIT_BEFORE_ANY_INTERNAL_TRANSFER",
+        "outputDisclosure": "PREVIEW_AND_REVIEW_BEFORE_EXPORT_WITH_LAYOUT_FIDELITY_LIMITATIONS",
+        "silentActionDenied": "NO_SILENT_TRANSFER_NO_AUTOMATIC_AUTHORITATIVE_REPLACEMENT",
+        "proofStatus": "NOT_RUN"
+      },
+      "model": {
+        "candidate": "TBC_APPROVED_CANDIDATE",
+        "providerAndRoute": "TBC_APPROVED_LOCAL_OR_ENTERPRISE_INTERNAL_PROVIDER",
+        "versionAndSha256": "TBC_EXACT_MODEL_RUNTIME_PACKAGE_VERSION_BUILD_AND_DIGEST",
+        "languagePairsAndTerminology": "TBC_APPROVED_SOURCE_TARGET_LANGUAGE_TERMINOLOGY_AND_DETECTION_SCOPE",
+        "integrityUpdateRollback": "TBC_SIGNATURE_HASH_UPDATE_CACHE_ROLLBACK_AND_EXPIRY",
+        "trainingRetentionSubprocessors": "TBC_VERIFIABLE_PROVIDER_GOVERNANCE"
+      },
+      "device": {
+        "releaseTarget": "WINDOWS_DESKTOP_FIRST",
+        "approvedMatrix": "TBC_APPROVED_DEVICE_ENVIRONMENT_MATRIX",
+        "localHardware": "TBC_CPU_RAM_STORAGE_ARCHITECTURE_AND_OPTIONAL_ACCELERATOR_WITHOUT_ASSUMPTION",
+        "internalEnvironment": "TBC_ONLY_IF_ENTERPRISE_INTERNAL_ROUTE_APPROVED",
+        "androidWeb": "NOT_IN_THIS_PACKET",
+        "ios": "DEFERRED"
+      },
+      "resource": {
+        "metrics": [
+          "MODEL_AND_PACKAGE_BYTES",
+          "CPU_TIME_AND_UTILIZATION",
+          "RAM_WORKING_PRIVATE_COMMITTED_AND_RESIDUAL",
+          "STORAGE_CACHE_AND_TEMP_PEAK",
+          "LATENCY_STAGE_AND_TOTAL",
+          "PAGE_CONTEXT_AND_OUTPUT_SIZE",
+          "CONCURRENCY_QUEUE_AND_CANCEL_TO_SAFE_STOP",
+          "THERMAL_AND_SUSTAINED_BEHAVIOR_ON_APPROVED_DEVICE"
+        ],
+        "numericTargets": "TBC_HUMAN_APPROVED_TRANSLATION_FIDELITY_RESOURCE_LATENCY_AND_CAPACITY_TARGETS",
+        "workloads": "TBC_APPROVED_ID_TO_EN_EN_TO_ID_LAYOUT_TABLE_TERMINOLOGY_LONG_AND_FAILURE_CASES",
+        "measurementStatus": "NOT_MEASURED"
+      },
+      "license": {
+        "modelLicense": "TBC_EXACT_MODEL_WEIGHTS_AND_LANGUAGE_ASSET_LICENSES",
+        "runtimePackageLicense": "TBC_EXACT_RUNTIME_DEPENDENCY_LICENSES_AND_NOTICES",
+        "serviceTerms": "TBC_ONLY_IF_ENTERPRISE_INTERNAL_PROVIDER_APPROVED",
+        "redistributionSupport": "TBC_PACKAGING_REDISTRIBUTION_UPDATE_SUPPORT_AND_EXIT_RIGHTS",
+        "cost": "ZERO_ADDITIONAL_COST_ONLY; PAID_API_MODEL_LANGUAGE_PACK_SERVICE_SUPPORT_OR_LICENSE_STOPS",
+        "decision": "TBC_HUMAN_LICENSE_COST_REVIEW"
+      },
+      "oracleAndFailureNeeds": {
+        "quality": "APPROVED_BILINGUAL_MEANING_TERMINOLOGY_COVERAGE_LAYOUT_TABLE_AND_OMISSION_THRESHOLDS",
+        "security": "DIRECT_AND_INDIRECT_PROMPT_INJECTION_PUBLIC_EGRESS_SECRET_CONTENT_LEAKAGE_AND_MALICIOUS_OUTPUT",
+        "failure": "UNSUPPORTED_LANGUAGE_SCAN_OCR_MISSING_OVERSIZE_TIMEOUT_CANCEL_PROVIDER_BUSY_OFFLINE_PARTIAL_OUTPUT_AND_CLEANUP",
+        "review": "SIDE_BY_SIDE_OR_SOURCE_LINKED_HUMAN_REVIEW_BEFORE_EXPORT; NO_UNSUPPORTED_LAYOUT_FIDELITY_CLAIM"
+      },
+      "prerequisites": [
+        {
+          "id": "P2-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Technical Owner",
+          "requiredValue": "EXACT_PROVIDER_MODEL_RUNTIME_LANGUAGE_ASSET_VERSION_DIGEST_ROUTE_AND_EVALUATION_PRIORITY"
+        },
+        {
+          "id": "P2-D02",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product + QA + Security",
+          "requiredValue": "EXACT_SYNTHETIC_BILINGUAL_CORPUS_FIDELITY_OMISSION_LAYOUT_AND_RESOURCE_TARGETS"
+        },
+        {
+          "id": "P2-D03",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Legal/License + Technical",
+          "requiredValue": "MODEL_LANGUAGE_ASSET_RUNTIME_SERVICE_LICENSE_NOTICE_REDISTRIBUTION_SUPPORT_EXIT_AND_ZERO_COST_ACCEPTANCE"
+        },
+        {
+          "id": "P7-D01",
+          "status": "OPEN",
+          "owner": "Product + Security/Privacy",
+          "requiredValue": "MODEL_PROVIDER_VERSION_LOCAL_OR_INTERNAL_ROUTE_EGRESS_RETENTION_LOCATION_TRAINING_REUSE_AND_SUBPROCESSOR_POLICY"
+        },
+        {
+          "id": "P7-D02",
+          "status": "OPEN",
+          "owner": "Product + QA",
+          "requiredValue": "TRANSLATION_FIDELITY_TERMINOLOGY_LAYOUT_OMISSION_AND_HUMAN_REVIEW_THRESHOLDS"
+        },
+        {
+          "id": "PRE-012",
+          "status": "HUMAN_ONLY_UNAPPROVED",
+          "owner": "Workspace User temporary execution authority with required Technical/Security/Privacy/License reviewers",
+          "requiredValue": "SEPARATE_EXACT_EXECUTION_SCOPE_ENVIRONMENT_CORPUS_MODEL_LANGUAGE_ROUTE_LIMITS_STOP_RULES_AND_ZERO_COST_AUTHORIZATION"
+        }
+      ],
+      "reopenConditions": [
+        "AGENT_0_RECORDS_APPROVED_POC_SCOPE_EXACT_FEATURE_ID_AND_LANGUAGE_PAIRS",
+        "P2_D01_D02_D03_AND_P7_D01_D02_VALUES_ARE_APPROVED_AND_HASH_BOUND",
+        "PUBLIC_TRANSLATION_DENIAL_AND_LOCAL_OR_INTERNAL_EGRESS_CONTROLS_HAVE_INDEPENDENT_REVIEW",
+        "PRE-012_EXPLICITLY_AUTHORIZES_THE_EXACT_NON_PRODUCTION_RUN"
+      ],
+      "stopConditions": [
+        "PUBLIC_AI_OR_PUBLIC_TRANSLATION_ENDPOINT_REQUIRED_REACHABLE_OR_CONFIGURED",
+        "UNAPPROVED_PROVIDER_MODEL_RUNTIME_LANGUAGE_ASSET_VERSION_OR_DYNAMIC_DOWNLOAD",
+        "DOCUMENT_SOURCE_TRANSLATION_PROMPT_SECRET_OR_PROVIDER_PAYLOAD_APPEARS_IN_ORDINARY_LOG_OR_EVIDENCE",
+        "INTERNAL_TRANSFER_WITHOUT_APPROVED_POLICY_PERMISSION_MINIMIZATION_AND_CONSENT_OR_NOTICE",
+        "PAID_API_MODEL_LANGUAGE_PACK_SERVICE_SUPPORT_OR_LICENSE",
+        "FIDELITY_OR_SECURITY_ORACLE_MISSING_INCONCLUSIVE_OR_UNSANITIZABLE"
+      ]
+    },
+    {
+      "pocId": "POC-CONV-004",
+      "objective": "Prove deterministic-first PDF to Markdown extraction with explicit structure and sanitization oracles and only an approved local OCR fallback when required.",
+      "exactFeatureIds": ["FEAT-CONV-036"],
+      "exactRequirementIds": [
+        "FR-INTEL-003",
+        "FR-PROC-001",
+        "FR-PROC-002",
+        "FR-PROC-003",
+        "FR-PROC-004",
+        "FR-PROC-005",
+        "SR-SEC-021"
+      ],
+      "releaseRole": "CORE_PDF_INTELLIGENCE_EXTRACTION_PATH",
+      "currentDisposition": "NOT_STARTED_BLOCKED_PRE_EXECUTION",
+      "formalGovernedDisposition": "NONE_NOT_GRANTED",
+      "recommendation": "WAVE_2_DETERMINISTIC_TEXT_LAYER_FIRST_AFTER_CANDIDATE_CORPUS_ORACLE_LICENSE_AND_RESOURCE_GATES; LOCAL_OCR_FALLBACK_ONLY_IF_SEPARATELY_APPROVED",
+      "platformExposure": {
+        "windowsDesktop": "FIRST_RELEASE_PRIORITY_AFTER_EXACT_EXTRACTION_CANDIDATE_APPROVAL",
+        "android": "LATER_CURATED_NOT_OPENED",
+        "web": "LATER_CURATED_NOT_OPENED",
+        "ios": "DEFERRED_NOT_REOPENED"
+      },
+      "aiBoundary": {
+        "publicEndpoint": "DENIED",
+        "route": "DETERMINISTIC_FIRST; APPROVED_LOCAL_OCR_IF_REQUIRED; AI_PROVIDER_NOT_IMPLIED",
+        "specificProviderApproved": false,
+        "remoteHtmlOrLinkFetch": false,
+        "rawHtmlExecution": false
+      },
+      "offline": {
+        "requiredMode": "DETERMINISTIC_EXTRACTION_AND_ANY_APPROVED_OCR_FALLBACK_MUST_RUN_LOCAL_WITH_NETWORK_DISABLED",
+        "serverDependency": "NONE_FOR_APPROVED_LOCAL_PATH",
+        "silentRerouteOrUpload": false,
+        "proofStatus": "NOT_RUN"
+      },
+      "data": {
+        "corpus": "TBC_APPROVED_SYNTHETIC_NATIVE_SCANNED_TABLE_AND_MULTI_COLUMN_PDF_CORPUS",
+        "classification": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+        "productionOrPersonalDataPermitted": false,
+        "ordinaryLogsOrEvidence": "NO_DOCUMENT_OCR_OR_MARKDOWN_CONTENT",
+        "outputSanitization": "FORMULA_LINK_EMBEDDED_HTML_ACTIVE_CONTENT_AND_PATH_POLICY_TBC",
+        "retentionAccessExpiryDisposal": "TBC_RUN_SPECIFIC_POLICY"
+      },
+      "consent": {
+        "requiredBefore": "EXPLICIT_USER_SELECTED_INPUT_AND_OUTPUT; TBC_NOTICE_IF_APPROVED_OCR_FALLBACK_CHANGES_PROCESSING",
+        "silentActionDenied": "NO_SILENT_OCR_AI_UPLOAD_REMOTE_FETCH_OR_ACTIVE_CONTENT_EXECUTION",
+        "proofStatus": "NOT_RUN"
+      },
+      "model": {
+        "applicability": "NOT_REQUIRED_FOR_DETERMINISTIC_TEXT_LAYER; TBC_ONLY_FOR_APPROVED_LOCAL_OCR_FALLBACK",
+        "candidate": "TBC_APPROVED_CANDIDATE",
+        "versionAndSha256": "TBC_EXACT_EXTRACTION_AND_OPTIONAL_OCR_COMPONENT_VERSIONS_AND_DIGESTS",
+        "languageAssets": "TBC_ONLY_IF_OCR_FALLBACK_SCOPED",
+        "integrityAndUpdate": "TBC_CANDIDATE_AND_OPTIONAL_MODEL_PACKAGE_INTEGRITY"
+      },
+      "device": {
+        "releaseTarget": "WINDOWS_DESKTOP_FIRST",
+        "approvedMatrix": "TBC_APPROVED_DEVICE_ENVIRONMENT_MATRIX",
+        "localHardware": "TBC_CPU_RAM_STORAGE_ARCHITECTURE_WITHOUT_ACCELERATOR_ASSUMPTION",
+        "scannerDependency": "NONE_FOR_INPUT; IMPORTED_SCANNED_PDF_MAY_REQUIRE_SEPARATELY_APPROVED_LOCAL_OCR",
+        "androidWeb": "NOT_IN_THIS_PACKET",
+        "ios": "DEFERRED"
+      },
+      "resource": {
+        "metrics": [
+          "CPU_TIME_AND_UTILIZATION",
+          "RAM_WORKING_PRIVATE_COMMITTED_AND_RESIDUAL",
+          "TEMP_AND_OUTPUT_STORAGE",
+          "PAGE_OBJECT_AND_OUTPUT_SIZE",
+          "LATENCY_STAGE_AND_TOTAL",
+          "OCR_FALLBACK_ACTIVATION_AND_COST",
+          "CONCURRENCY_QUEUE_CANCEL_TIMEOUT_AND_CLEANUP"
+        ],
+        "numericTargets": "TBC_HUMAN_APPROVED_STRUCTURE_RESOURCE_LATENCY_AND_SIZE_TARGETS",
+        "workloads": "TBC_APPROVED_NATIVE_SCANNED_TABLE_MULTI_COLUMN_LARGE_AND_ADVERSARIAL_CASES",
+        "measurementStatus": "NOT_MEASURED"
+      },
+      "license": {
+        "candidateLicense": "TBC_EXACT_EXTRACTION_COMPONENT_LICENSE",
+        "optionalOcrModelLicense": "TBC_ONLY_IF_OCR_FALLBACK_SCOPED",
+        "runtimeRedistribution": "TBC_COMPONENT_MODEL_ASSET_NOTICE_AND_REDISTRIBUTION_RIGHTS",
+        "supportMaintenance": "TBC_OWNER_PATCH_UPDATE_AND_FALLBACK_SUPPORT",
+        "cost": "ZERO_ADDITIONAL_COST_ONLY; PAID_COMPONENT_MODEL_SERVICE_SUPPORT_OR_LICENSE_STOPS",
+        "decision": "TBC_HUMAN_LICENSE_COST_REVIEW"
+      },
+      "oracleAndFailureNeeds": {
+        "quality": "HEADING_LIST_TABLE_READING_ORDER_PAGE_SOURCE_LINKAGE_CODE_BLOCK_AND_WHITESPACE_STRUCTURE_ORACLE",
+        "security": "FORMULA_LINK_PATH_EMBEDDED_HTML_ACTIVE_CONTENT_PROMPT_LIKE_TEXT_SANITIZATION_AND_ZERO_EGRESS",
+        "failure": "NO_TEXT_SCANNED_UNSUPPORTED_FONT_CORRUPT_OVERSIZE_TIMEOUT_CANCEL_OCR_UNAVAILABLE_PARTIAL_OUTPUT_AND_CLEANUP",
+        "fallback": "DETERMINISTIC_FAILURE_MUST_NOT_AUTO_ENABLE_AI_OR_SERVER; OPTIONAL_LOCAL_OCR_REQUIRES_EXACT_APPROVAL"
+      },
+      "prerequisites": [
+        {
+          "id": "P2-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Technical Owner",
+          "requiredValue": "EXACT_DETERMINISTIC_EXTRACTION_AND_OPTIONAL_LOCAL_OCR_CANDIDATES_VERSIONS_DIGESTS_AND_PRIORITY"
+        },
+        {
+          "id": "P2-D02",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product + QA + Security",
+          "requiredValue": "EXACT_SYNTHETIC_NATIVE_SCANNED_TABLE_MULTI_COLUMN_CORPUS_STRUCTURE_SANITIZATION_AND_RESOURCE_TARGETS"
+        },
+        {
+          "id": "P2-D03",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Legal/License + Technical",
+          "requiredValue": "EXTRACTION_AND_OPTIONAL_OCR_LICENSE_NOTICE_REDISTRIBUTION_RUNTIME_SUPPORT_AND_ZERO_COST_ACCEPTANCE"
+        },
+        {
+          "id": "P7-D01",
+          "status": "OPEN",
+          "owner": "Product + Security/Privacy",
+          "requiredValue": "EXPLICIT_CONFIRMATION_THAT_DETERMINISTIC_LOCAL_PATH_IS_PRIMARY_AND_ANY_OCR_OR_AI_ROUTE_HAS_SEPARATE_DATA_EGRESS_POLICY"
+        },
+        {
+          "id": "P7-D02",
+          "status": "OPEN",
+          "owner": "Product + QA",
+          "requiredValue": "MARKDOWN_STRUCTURE_OMISSION_FIDELITY_SANITIZATION_AND_REVIEW_THRESHOLDS"
+        },
+        {
+          "id": "PRE-012",
+          "status": "HUMAN_ONLY_UNAPPROVED",
+          "owner": "Workspace User temporary execution authority with required Technical/Security/License reviewers",
+          "requiredValue": "SEPARATE_EXACT_EXECUTION_SCOPE_ENVIRONMENT_CORPUS_CANDIDATE_FALLBACK_LIMITS_STOP_RULES_AND_ZERO_COST_AUTHORIZATION"
+        }
+      ],
+      "reopenConditions": [
+        "AGENT_0_RECORDS_APPROVED_POC_SCOPE_AND_EXACT_FEATURE_ID",
+        "DETERMINISTIC_EXTRACTOR_CORPUS_ORACLE_SANITIZATION_RESOURCE_AND_LICENSE_FIELDS_ARE_APPROVED_AND_HASH_BOUND",
+        "OPTIONAL_OCR_OR_AI_FALLBACK_REMAINS_DISABLED_UNLESS_SEPARATELY_APPROVED",
+        "PRE-012_EXPLICITLY_AUTHORIZES_THE_EXACT_NON_PRODUCTION_RUN"
+      ],
+      "stopConditions": [
+        "PUBLIC_AI_TRANSLATION_REMOTE_FETCH_OR_HIDDEN_UPLOAD_REQUIRED_REACHABLE_OR_CONFIGURED",
+        "UNAPPROVED_EXTRACTION_OCR_MODEL_RUNTIME_VERSION_OR_DYNAMIC_DOWNLOAD",
+        "RAW_HTML_SCRIPT_LINK_FORMULA_OR_DOCUMENT_INSTRUCTION_CAN_EXECUTE_OR_BYPASS_SANITIZATION",
+        "DOCUMENT_OCR_OR_MARKDOWN_CONTENT_APPEARS_IN_ORDINARY_LOG_OR_EVIDENCE",
+        "PAID_COMPONENT_MODEL_SERVICE_SUPPORT_OR_LICENSE",
+        "STRUCTURE_SECURITY_OR_FAILURE_ORACLE_MISSING_INCONCLUSIVE_OR_UNSANITIZABLE"
+      ]
+    },
+    {
+      "pocId": "POC-AI-LOCAL-001",
+      "objective": "Optionally assess an exact local AI runtime on approved target hardware with network disabled; this PoC does not approve or schedule a provider or any Core intelligence feature.",
+      "exactFeatureIds": ["FEAT-ASSIST-026"],
+      "exactRequirementIds": [
+        "FR-ASSIST-001",
+        "FR-ASSIST-002",
+        "FR-ASSIST-003",
+        "FR-ASSIST-004",
+        "FR-ASSIST-005",
+        "FR-ASSIST-006",
+        "FR-ASSIST-007",
+        "FR-ASSIST-008",
+        "FR-ASSIST-009",
+        "FR-ASSIST-010",
+        "FR-ASSIST-011",
+        "FR-ASSIST-012",
+        "FR-ASSIST-013",
+        "FR-ASSIST-014",
+        "FR-ASSIST-015",
+        "SR-SEC-013",
+        "SR-SEC-014",
+        "SR-SEC-015",
+        "SR-SEC-016",
+        "SR-SEC-017",
+        "SR-SEC-018"
+      ],
+      "releaseRole": "OPTIONAL_COULD_R3_LOCAL_MODEL_FEASIBILITY_GATE_NOT_A_CORE_PROVIDER_APPROVAL",
+      "currentDisposition": "NOT_STARTED_BLOCKED_PRE_EXECUTION",
+      "formalGovernedDisposition": "NONE_NOT_GRANTED",
+      "recommendation": "GOVERNED_DEFER_RECOMMENDED_NOT_DECIDED_UNTIL_PRODUCT_SCHEDULES_THE_OPTIONAL_CAPABILITY_AND_ALL_MODEL_PACKAGE_DEVICE_LICENSE_RESOURCE_AND_SECURITY_FIELDS_ARE_APPROVED",
+      "platformExposure": {
+        "windowsDesktop": "ONLY_POTENTIAL_TARGET_AFTER_EXPLICIT_OPTIONAL_SCOPE_AND_DEVICE_APPROVAL",
+        "android": "LATER_CURATED_NOT_OPENED",
+        "web": "NOT_A_LOCAL_MODEL_TARGET_ASSUMED_OR_OPENED",
+        "ios": "DEFERRED_NOT_REOPENED"
+      },
+      "aiBoundary": {
+        "publicEndpoint": "DENIED",
+        "route": "LOCAL_ONLY_FULLY_OFFLINE",
+        "specificProviderApproved": false,
+        "networkAtRuntime": "DENIED",
+        "dynamicModelDownload": false,
+        "coreIntelligenceApprovalImplied": false
+      },
+      "offline": {
+        "requiredMode": "FULLY_OFFLINE_WITH_MODEL_RUNTIME_AND_ASSETS_PRE_FROZEN_BY_SEPARATE_AUTHORITY",
+        "serverDependency": "NONE",
+        "updateBehavior": "NO_RUNTIME_FETCH; UPDATE_PACKAGE_REQUIRES_NEW_ADMISSION_AND_AUTHORITY",
+        "proofStatus": "NOT_RUN"
+      },
+      "data": {
+        "corpus": "TBC_APPROVED_SYNTHETIC_REPRESENTATIVE_INTELLIGENCE_CORPUS",
+        "classification": "TBC_HUMAN_CLASSIFICATION_AUTHORITY",
+        "productionOrPersonalDataPermitted": false,
+        "ordinaryLogsOrEvidence": "NO_DOCUMENT_PROMPT_MODEL_INPUT_OUTPUT_OR_CACHE_CONTENT",
+        "localCacheRetentionAccessExpiryDisposal": "TBC_RUN_SPECIFIC_POLICY",
+        "egress": "DENIED"
+      },
+      "consent": {
+        "requiredBefore": "TBC_EXPLICIT_PRODUCT_AND_USER_DISCLOSURE_FOR_OPTIONAL_LOCAL_MODEL_ACTIVATION_AND_RESOURCE_USE",
+        "outputDisclosure": "AI_ASSISTED_UNTRUSTED_OUTPUT_WITH_PROVENANCE_LIMITATIONS_AND_REVIEW",
+        "silentActionDenied": "NO_SILENT_MODEL_INSTALL_DOWNLOAD_ACTIVATION_OR_BACKGROUND_PROCESSING",
+        "proofStatus": "NOT_RUN"
+      },
+      "model": {
+        "candidate": "TBC_APPROVED_CANDIDATE",
+        "modelAndVariant": "TBC_EXACT_MODEL_FAMILY_VARIANT_QUANTIZATION_AND_BUILD",
+        "versionAndSha256": "TBC_EXACT_WEIGHTS_RUNTIME_TOKENIZER_CONFIG_AND_PACKAGE_DIGESTS",
+        "formatRuntimeDependencies": "TBC_EXACT_FORMAT_RUNTIME_NATIVE_MANAGED_CLOSURE_AND_LOAD_POLICY",
+        "contextLanguageQuality": "TBC_APPROVED_CONTEXT_LANGUAGE_TASK_AND_QUALITY_SCOPE",
+        "integrityUpdateRollback": "TBC_SIGNATURE_HASH_UPDATE_CACHE_ROLLBACK_EXPIRY_AND_REVOCATION",
+        "originTrainingDataRestrictions": "TBC_PROVENANCE_USE_RESTRICTIONS_AND_GOVERNANCE"
+      },
+      "device": {
+        "releaseTarget": "WINDOWS_DESKTOP_FIRST_ONLY_IF_SCHEDULED",
+        "approvedMatrix": "TBC_APPROVED_DEVICE_ENVIRONMENT_MATRIX",
+        "hardware": "TBC_CPU_RAM_STORAGE_ARCHITECTURE_AND_OPTIONAL_GPU_NPU_WITHOUT_ASSUMPTION",
+        "osRuntime": "TBC_EXACT_OS_BUILD_RUNTIME_DRIVER_AND_ACCELERATOR_STACK_IF_ANY",
+        "thermalPower": "TBC_SENSOR_METHOD_POWER_MODE_AMBIENT_AND_SUSTAINED_RUN_POLICY",
+        "androidWeb": "NOT_IN_THIS_PACKET",
+        "ios": "DEFERRED"
+      },
+      "resource": {
+        "metrics": [
+          "MODEL_RUNTIME_PACKAGE_AND_CACHE_BYTES",
+          "STARTUP_AND_WARMUP_DURATION",
+          "CPU_GPU_NPU_TIME_AND_UTILIZATION_IF_APPLICABLE",
+          "RAM_VRAM_WORKING_PRIVATE_COMMITTED_AND_RESIDUAL_IF_APPLICABLE",
+          "STORAGE_TEMP_AND_CACHE_PEAK",
+          "INPUT_OUTPUT_CONTEXT_AND_LATENCY",
+          "CONCURRENCY_QUEUE_CANCEL_TIMEOUT_AND_CLEANUP",
+          "THERMAL_THROTTLING_POWER_AND_SUSTAINED_BEHAVIOR_ON_APPROVED_DEVICE"
+        ],
+        "numericTargets": "TBC_HUMAN_APPROVED_PACKAGE_RESOURCE_QUALITY_LATENCY_THERMAL_AND_CAPACITY_TARGETS",
+        "workloads": "TBC_APPROVED_REPRESENTATIVE_ADVERSARIAL_LONG_SUSTAINED_COLD_WARM_AND_CONCURRENT_CASES",
+        "measurementStatus": "NOT_MEASURED"
+      },
+      "license": {
+        "modelWeightsLicense": "TBC_EXACT_MODEL_LICENSE_NOTICE_USE_AND_DERIVATIVE_RESTRICTIONS",
+        "runtimeTokenizerDependencyLicenses": "TBC_EXACT_LICENSES_NOTICES_AND_SBOM",
+        "redistribution": "TBC_PACKAGE_BUNDLING_DISTRIBUTION_UPDATE_AND_MODEL_DELIVERY_RIGHTS",
+        "supportMaintenance": "TBC_OWNER_PATCH_ADVISORY_UPDATE_REVOCATION_AND_EXIT_SUPPORT",
+        "cost": "ZERO_ADDITIONAL_COST_ONLY; PAID_MODEL_RUNTIME_ACCELERATOR_SDK_SERVICE_SUPPORT_OR_LICENSE_STOPS",
+        "decision": "TBC_HUMAN_LICENSE_COST_REVIEW"
+      },
+      "oracleAndFailureNeeds": {
+        "quality": "APPROVED_TASK_LANGUAGE_GROUNDING_COVERAGE_OMISSION_HALLUCINATION_AND_REPEATABILITY_ORACLE",
+        "security": "PROMPT_INJECTION_MODEL_PACKAGE_INTEGRITY_DLL_OR_NATIVE_LOAD_SEARCH_PUBLIC_EGRESS_SECRET_CONTENT_LEAKAGE_AND_MALICIOUS_OUTPUT",
+        "failure": "INSUFFICIENT_RAM_STORAGE_UNSUPPORTED_INSTRUCTION_OVERSIZE_TIMEOUT_CANCEL_CRASH_THERMAL_LIMIT_CACHE_CORRUPTION_AND_CLEANUP",
+        "scope": "CANNOT_APPROVE_FEAT-INTEL-001_FEAT-INTEL-002_OR_ANY_PROVIDER_BY_IMPLICATION"
+      },
+      "prerequisites": [
+        {
+          "id": "P2-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Technical Owner",
+          "requiredValue": "EXACT_LOCAL_MODEL_RUNTIME_VARIANT_PACKAGE_ASSET_VERSION_DIGEST_AND_EVALUATION_PRIORITY"
+        },
+        {
+          "id": "P2-D02",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product + QA + Security",
+          "requiredValue": "EXACT_SYNTHETIC_CORPUS_TASK_QUALITY_SECURITY_RESOURCE_THERMAL_AND_FAILURE_THRESHOLDS"
+        },
+        {
+          "id": "P2-D03",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Legal/License + Technical",
+          "requiredValue": "MODEL_WEIGHTS_RUNTIME_TOKENIZER_DEPENDENCY_LICENSE_NOTICE_REDISTRIBUTION_SUPPORT_AND_ZERO_COST_ACCEPTANCE"
+        },
+        {
+          "id": "P7-D01",
+          "status": "OPEN",
+          "owner": "Product + Security/Privacy",
+          "requiredValue": "EXPLICIT_OPTIONAL_LOCAL_MODEL_SCOPE_VERSION_DATA_CACHE_RETENTION_EGRESS_UPDATE_AND_REVOCATION_POLICY"
+        },
+        {
+          "id": "P8-D01",
+          "status": "PROPOSED_NOT_APPROVED",
+          "owner": "Product Owner",
+          "requiredValue": "EXACT_RELEASE_FEATURE_EXPOSURE_AND_CONFIRMATION_THAT_OPTIONAL_LOCAL_MODEL_IS_SCHEDULED"
+        },
+        {
+          "id": "P8-D03",
+          "status": "OPEN",
+          "owner": "Platform Owners",
+          "requiredValue": "EXACT_APPROVED_WINDOWS_DEVICE_ENVIRONMENT_MATRIX; NO_ANDROID_WEB_OR_IOS_EXPANSION_BY_IMPLICATION"
+        },
+        {
+          "id": "PRE-012",
+          "status": "HUMAN_ONLY_UNAPPROVED",
+          "owner": "Workspace User temporary execution authority with required Technical/Security/Privacy/License reviewers",
+          "requiredValue": "SEPARATE_EXACT_EXECUTION_SCOPE_ENVIRONMENT_DEVICE_CORPUS_MODEL_LIMITS_STOP_RULES_AND_ZERO_COST_AUTHORIZATION"
+        }
+      ],
+      "reopenConditions": [
+        "PRODUCT_OWNER_EXPLICITLY_SCHEDULES_FEAT-ASSIST-026_AND_AGENT_0_RECORDS_THE_GOVERNED_SCOPE",
+        "EVERY_TBC_MODEL_RUNTIME_PACKAGE_DEVICE_CORPUS_RESOURCE_LICENSE_SECURITY_AND_OWNER_FIELD_IS_APPROVED_AND_HASH_BOUND",
+        "FULLY_OFFLINE_NO_PUBLIC_ENDPOINT_CONTROLS_HAVE_INDEPENDENT_REVIEW",
+        "PRE-012_EXPLICITLY_AUTHORIZES_THE_EXACT_NON_PRODUCTION_RUN"
+      ],
+      "stopConditions": [
+        "FEATURE_REMAINS_UNSCHEDULED_OR_ONLY_RECOMMENDED_FOR_DEFER",
+        "PUBLIC_ENDPOINT_NETWORK_FETCH_DYNAMIC_DOWNLOAD_OR_UNAPPROVED_NATIVE_LOAD_REQUIRED",
+        "UNAPPROVED_MODEL_RUNTIME_ASSET_VERSION_DEVICE_OR_ACCELERATOR_ASSUMPTION",
+        "DOCUMENT_PROMPT_MODEL_INPUT_OUTPUT_SECRET_OR_CACHE_CONTENT_APPEARS_IN_ORDINARY_LOG_OR_EVIDENCE",
+        "PAID_MODEL_RUNTIME_ACCELERATOR_SDK_SERVICE_SUPPORT_OR_LICENSE",
+        "QUALITY_SECURITY_RESOURCE_THERMAL_OR_FAILURE_ORACLE_MISSING_INCONCLUSIVE_OR_UNSANITIZABLE"
+      ]
+    }
+  ],
+  "sharedStopConditions": [
+    "NO_PRE_012_EXECUTION_AUTHORITY",
+    "NO_SANDBOX_LAUNCH",
+    "NO_QPDF_PDFSHARP_OR_OTHER_ENGINE_LOAD_OR_EXECUTION",
+    "NO_RESTORE_BUILD_OR_DOCUMENT_PROCESSING",
+    "NO_DOWNLOAD_INSTALL_MODEL_OR_PACKAGE_ACQUISITION",
+    "NO_PROVIDER_OR_PUBLIC_ENDPOINT_CALL",
+    "NO_DEVICE_ACCESS_CAPTURE_OR_DRIVER_ACTION",
+    "NO_PRODUCT_MOBILE_OR_WEB_CODE_CHANGE",
+    "NO_ANDROID_OR_WEB_SCOPE_OPENING",
+    "NO_IOS_SCOPE_REOPENING_BUILD_SIGNING_OR_PUBLISHING",
+    "NO_PRODUCTION_OR_PERSONAL_DATA",
+    "ZERO_ADDITIONAL_COST_STOP_BEFORE_ANY_PAID_COMMITMENT",
+    "ANY_UNRESOLVED_PROVIDER_MODEL_DEVICE_LICENSE_DATA_CONSENT_RESOURCE_OR_SECURITY_FIELD_REMAINS_BLOCKING"
+  ],
+  "gateSummary": {
+    "packetResult": "READY_FOR_INDEPENDENT_SECURITY_AND_GOVERNANCE_REVIEW_WITH_BLOCKERS",
+    "formalPocDispositionGranted": false,
+    "pre012ExecutionAuthority": false,
+    "nextOwnerAction": "Agent 0 and independent reviewers must validate this packet, preserve every blocker, and include exact human decisions in the later PRE-003..012 packet; static packet completeness must never be interpreted as execution authority."
+  }
+}
