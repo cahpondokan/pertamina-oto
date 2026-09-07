@@ -1,0 +1,74 @@
+{
+  "schemaId": "P02-W0G-C-GOVERNANCE-DECISION-PACKET-SCHEMA-1.0",
+  "schemaVersion": "1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packetId",
+    "metadata",
+    "authorityBoundary",
+    "sourceBindings",
+    "sourceIntegrityFindings",
+    "candidateAndLicenseDecision",
+    "futureExecutionScope",
+    "custodyAndRetentionDecision",
+    "reviewersAndOwners",
+    "zeroCostProof",
+    "preconditionMatrix",
+    "stopConditions",
+    "portfolioIsolation",
+    "humanDecisionPacket",
+    "verificationBoundary"
+  ],
+  "properties": {
+    "schemaVersion": {"type": "string", "const": "1.0"},
+    "packetId": {"type": "string", "const": "P02-20260905-1434-W0G-C-GOVERNANCE-DECISION-PACKET-V1"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["taskId", "runId", "reviewedAt", "baselineCommit", "reviewRole", "status", "securityDisposition", "upstreamSecurityReplay", "executionApproval", "selfApproval", "engineDispositionGranted"]
+    },
+    "authorityBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["staticReviewOnly", "acquisitionAuthorized", "installAuthorized", "restoreAuthorized", "buildAuthorized", "sandboxLaunchAuthorized", "candidateLoadAuthorized", "candidateExecutionAuthorized", "oracleExecutionAuthorized", "documentProcessingAuthorized", "pdfProcessingAuthorized", "redistributionAuthorized", "productChangeAuthorized", "paidCommitmentAuthorized", "productionActionAuthorized"]
+    },
+    "sourceBindings": {"type": "array", "minItems": 39},
+    "sourceIntegrityFindings": {"type": "array", "minItems": 2},
+    "candidateAndLicenseDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evaluationBoundary", "redistributionBoundary", "components", "componentAndNoticeGaps", "sbom", "support"]
+    },
+    "futureExecutionScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "pocId", "featureIds", "experimentIds", "unitTraceIds", "systemTraceIds", "candidateRole", "oracleRole", "futureProfiles", "taskCardFields", "explicitExclusions"]
+    },
+    "custodyAndRetentionDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corpus", "environment", "evidence"]
+    },
+    "reviewersAndOwners": {"type": "array", "minItems": 8},
+    "zeroCostProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["boundary", "preparationCostObserved", "licenseFeeFinding", "excludedCostClasses", "proofLimit", "humanAcceptance", "stopRule"]
+    },
+    "preconditionMatrix": {"type": "array", "minItems": 10, "maxItems": 10},
+    "stopConditions": {"type": "array", "minItems": 20},
+    "portfolioIsolation": {"type": "array", "minItems": 2},
+    "humanDecisionPacket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currentDecisionStatus", "selectOneCurrentDisposition", "requiredResponseFields", "safeCurrentDecisionWording", "futureExecutionAuthorizationWording", "futureExecutionAuthorizationEligible"]
+    },
+    "verificationBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["staticReadOnlyOnly", "inputHashesRecomputed", "schemaChecked", "securityVerifierReplayExitCode", "securityVerifierReplayDisposition", "scannerExecuted", "sandboxLaunched", "candidateExecuted", "oracleExecuted", "restoreExecuted", "buildExecuted", "pdfOpened", "downloadOrInstallPerformed", "paidCommitmentMade", "systemChanged"]
+    }
+  }
+}
