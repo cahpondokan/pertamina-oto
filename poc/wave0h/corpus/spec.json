@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "sources": {"A": ["W0H-A-P1", "W0H-A-P2"], "B": ["W0H-B-P1", "W0H-B-P2", "W0H-B-P3"], "C": ["W0H-C-P1"]},
+  "cases": {
+    "AB": {"inputs": ["A", "B"], "expected": ["W0H-A-P1", "W0H-A-P2", "W0H-B-P1", "W0H-B-P2", "W0H-B-P3"], "ids": ["UT-MERGE-003", "UT-MERGE-005", "TP-MRG-001"]},
+    "CAB": {"inputs": ["C", "A", "B"], "expected": ["W0H-C-P1", "W0H-A-P1", "W0H-A-P2", "W0H-B-P1", "W0H-B-P2", "W0H-B-P3"], "ids": ["UT-MERGE-004", "UT-MERGE-006", "TP-MRG-006", "TP-MRG-008"]},
+    "AA": {"inputs": ["A", "A"], "expected": ["W0H-A-P1", "W0H-A-P2", "W0H-A-P1", "W0H-A-P2"], "ids": ["UT-MERGE-009", "TP-MRG-008"]},
+    "AC": {"inputs": ["A", "C"], "expected": ["W0H-A-P1", "W0H-A-P2", "W0H-C-P1"], "ids": ["UT-MERGE-007", "TP-MRG-007"]}
+  }
+}
