@@ -34,10 +34,27 @@ function Invoke-Cli([string[]]$Arguments,[int]$TimeoutSeconds=30){
     foreach($arg in $Arguments){$info.ArgumentList.Add($arg)}
     $p=[Diagnostics.Process]::Start($info)
     try {
-        $out=$p.StandardOutput.ReadToEndAsync(); $err=$p.StandardError.ReadToEndAsync()
+        # Drain stderr asynchronously, but never wait for EOF inherited by a broker.
+        $err=$p.StandardError.ReadToEndAsync()
         if(-not $p.WaitForExit($TimeoutSeconds*1000)){$p.Kill($true);$null=$p.WaitForExit(5000);throw 'CLI_TIMEOUT'}
-        $stdout=$out.GetAwaiter().GetResult();$stderr=$err.GetAwaiter().GetResult()
-        if($p.ExitCode -ne 0 -or $stderr.Length -gt 0 -or $stdout.Length -gt 65536){throw 'CLI_FAILED'}
+        if($p.ExitCode -ne 0){throw 'CLI_FAILED'}
+        if($err.IsCompleted -and $err.GetAwaiter().GetResult().Length -gt 0){throw 'CLI_STDERR'}
+        # connect/stop are exit-code operations. JSON operations finish when one
+        # complete JSON object has arrived, not when a persistent broker closes IO.
+        if($Arguments[0] -in @('connect','stop')){return ''}
+        $stdout='';$complete=$false;$readClock=[Diagnostics.Stopwatch]::StartNew()
+        for($lineCount=0;$lineCount -lt 64;$lineCount++){
+            if($readClock.Elapsed.TotalSeconds -ge 5){throw 'CLI_JSON_READ_TIMEOUT'}
+            $line=$p.StandardOutput.ReadLineAsync()
+            if(-not $line.Wait(1000)){throw 'CLI_JSON_READ_TIMEOUT'}
+            $value=$line.GetAwaiter().GetResult()
+            if($null -eq $value){break}
+            $stdout+=$value+"`n"
+            if($stdout.Length -gt 65536){throw 'CLI_OUTPUT_LIMIT'}
+            try{$null=$stdout|ConvertFrom-Json -ErrorAction Stop;$complete=$true}catch{}
+            if($complete){break}
+        }
+        if(-not $complete){throw 'CLI_JSON_INCOMPLETE'}
         return $stdout
     } finally {$p.Dispose()}
 }
