@@ -1,0 +1,404 @@
+[
+  {
+    "name": "_rels/.rels",
+    "bytes": 535,
+    "sha256": "DB211FBC815546705CCDC4F89676B35B8AFF15B701EC8B35E3C290318C780620",
+    "activationSurface": false
+  },
+  {
+    "name": "Microsoft.Extensions.Logging.Abstractions.nuspec",
+    "bytes": 2552,
+    "sha256": "2E248071B6C3B471DB228AA5F8F71BE4B3FE0076AD1914E82579A13B54B37526",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+    "bytes": 67856,
+    "sha256": "B4E0E778AFDC76403792390B056F68DE0CED742D16C5B0347D9CCA6930F4761B",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+    "bytes": 91749,
+    "sha256": "8EA6209C93E063A0F0E03FEB43DBE05F0E7E4CD5117B6519C566183D27B7B81C",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
+    "bytes": 66312,
+    "sha256": "A676DC5D33D378B46444C334CB08BE31A1037A41AA0EDD8BE474E3EC58CDE100",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
+    "bytes": 84095,
+    "sha256": "1553D3820F78A2D8F513E23B472E1B258B82AF0063F5FED01FD42B4FF050DDB8",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
+    "bytes": 65304,
+    "sha256": "6398F3E4C804251E0CB6C9291A63DEDAEBFFB60588D21C4A18EF7A0A0F35D857",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
+    "bytes": 80151,
+    "sha256": "3E3C5A358B238D72A0C081E7BEEFA36C02023784EFD36D8987B0FCC503854A76",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+    "bytes": 65288,
+    "sha256": "BB853130F5AFAF335BE7858D661F8212EC653835100F5A4E3AA2C66A4D4F685D",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+    "bytes": 80151,
+    "sha256": "3E3C5A358B238D72A0C081E7BEEFA36C02023784EFD36D8987B0FCC503854A76",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+    "bytes": 67864,
+    "sha256": "79F67FF002712D6589370DB25F751D3F53FB49EF1A6D750D1C62419EF3A4392C",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+    "bytes": 91749,
+    "sha256": "8EA6209C93E063A0F0E03FEB43DBE05F0E7E4CD5117B6519C566183D27B7B81C",
+    "activationSurface": false
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21304,
+    "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21808,
+    "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 23336,
+    "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20776,
+    "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20264,
+    "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+    "bytes": 72968,
+    "sha256": "249E758EC5137ECF60615E56BBD4BE6DCE29AEB4EDACBEF1FF2D07FF249536AC",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21304,
+    "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21808,
+    "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 23336,
+    "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20776,
+    "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20264,
+    "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+    "bytes": 91912,
+    "sha256": "AC4680341915FCDBC1AB47A40CDE367E72328849587939A0999A228225153010",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21304,
+    "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21808,
+    "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21816,
+    "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21288,
+    "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 23336,
+    "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 21296,
+    "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20776,
+    "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+    "bytes": 20264,
+    "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+    "activationSurface": true
+  },
+  {
+    "name": "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+    "bytes": 76080,
+    "sha256": "AD05A26AA2FCD488E0A358FEA3802556BE6C7E1C9CC4832F2FA2AEF7A490B0EA",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+    "bytes": 1507,
+    "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
+    "bytes": 1507,
+    "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+    "bytes": 1507,
+    "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+    "activationSurface": true
+  },
+  {
+    "name": "Icon.png",
+    "bytes": 7006,
+    "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+    "activationSurface": false
+  },
+  {
+    "name": "useSharedDesignerContext.txt",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": false
+  },
+  {
+    "name": "PACKAGE.md",
+    "bytes": 5715,
+    "sha256": "D3BC026ADB56A7AD3C914DDA7660104CE68C4FDC27F54D8F9E46A1C713EC8A33",
+    "activationSurface": false
+  },
+  {
+    "name": "LICENSE.TXT",
+    "bytes": 1139,
+    "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+    "activationSurface": false
+  },
+  {
+    "name": "THIRD-PARTY-NOTICES.TXT",
+    "bytes": 68910,
+    "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+    "activationSurface": false
+  },
+  {
+    "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+    "bytes": 697,
+    "sha256": "E759D3139C8F0595D5DB4A8A78D55BC7AA05F549E2F9A5EE8CA614FE5C48707E",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+    "bytes": 697,
+    "sha256": "05B7457FE0DF401DCD644D9E896D1E4FB7CEF4662585C09FF09BC4B8C713D269",
+    "activationSurface": true
+  },
+  {
+    "name": "[Content_Types].xml",
+    "bytes": 783,
+    "sha256": "2484087C65213C4299C4BBE0BEC73A23EF7BD1E9DBE681CE358EEF5CF86F6743",
+    "activationSurface": false
+  },
+  {
+    "name": "package/services/metadata/core-properties/4a7e6e5799314a278295ca651737d163.psmdcp",
+    "bytes": 1046,
+    "sha256": "2E24743C8C936D3D68D4BC36409D7BC2BC2F35F9653D4DDF161311D0EBBEFDB9",
+    "activationSurface": false
+  },
+  {
+    "name": ".signature.p7s",
+    "bytes": 25625,
+    "sha256": "4D471B0BD4EB905EC906A62008D5FA5FD1AE57381E78E8A23AC7428C707E35A9",
+    "activationSurface": false
+  }
+]

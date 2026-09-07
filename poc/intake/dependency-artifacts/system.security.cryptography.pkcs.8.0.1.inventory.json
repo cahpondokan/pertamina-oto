@@ -1,0 +1,188 @@
+[
+  {
+    "name": "_rels/.rels",
+    "bytes": 527,
+    "sha256": "385181953CB4CD1812136722B869827D546F9743407EBBDA22365CD43B0DCBB8",
+    "activationSurface": false
+  },
+  {
+    "name": "System.Security.Cryptography.Pkcs.nuspec",
+    "bytes": 2190,
+    "sha256": "68092C8877A00D9F5B1F75293E4DE4DFA7BDC883D031018C0775B52809CF1C9A",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 22176,
+    "sha256": "89436836E39A6BB4275613CE45226FFA10E590151296343560221441D7A79670",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 265992,
+    "sha256": "79993E70DCEF2A68749D354A6927832F2C964E6C8B75E6F0613777960869D1F6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 264864,
+    "sha256": "4539F410C76C094AC365F748BAF8DC72107DDD02CEED3B01D2DA4E02A66F833B",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 264864,
+    "sha256": "E2352938ED4F664F770A5C98EF067CB145304456D014D2C311D725C95C8A21A9",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 212264,
+    "sha256": "816F2687F23F9BAD20354BBEBFCA5C5533F1529B8BE8A29FB0ED4050C8F801D9",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 266024,
+    "sha256": "BBAEBC1EF6F4D953820AEA72774392396E6A7A2CAFC3D76B71BA65B2635C7473",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 233685,
+    "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+    "activationSurface": false
+  },
+  {
+    "name": "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 316712,
+    "sha256": "4D18CEBB69FEA44844F1A881B090E6E68D17EE3FA7B93440A4B2DCB30AF5ABFF",
+    "activationSurface": true
+  },
+  {
+    "name": "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 47738,
+    "sha256": "C93A7B88691F9CE6D7339B1BD6C301146685F8B69AF72C2CB6F01D86220B41F6",
+    "activationSurface": true
+  },
+  {
+    "name": "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 317224,
+    "sha256": "CF74AF48411F6C85BF08FA35A988863FF8C9137531F6A0C1E8422C5C0CEE572D",
+    "activationSurface": true
+  },
+  {
+    "name": "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 43794,
+    "sha256": "7256AB173AB9D84349F39ECB002734F2AF009DFA4C4F0AD98BDC9FA3D0C4180C",
+    "activationSurface": true
+  },
+  {
+    "name": "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+    "bytes": 319784,
+    "sha256": "D8E4B733FBAEC1FE0E808FD6391479F190B170DF03E309C5F07DC85445447D22",
+    "activationSurface": true
+  },
+  {
+    "name": "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+    "bytes": 43794,
+    "sha256": "7256AB173AB9D84349F39ECB002734F2AF009DFA4C4F0AD98BDC9FA3D0C4180C",
+    "activationSurface": true
+  },
+  {
+    "name": "Icon.png",
+    "bytes": 7006,
+    "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+    "activationSurface": false
+  },
+  {
+    "name": "useSharedDesignerContext.txt",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": false
+  },
+  {
+    "name": "LICENSE.TXT",
+    "bytes": 1139,
+    "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+    "activationSurface": false
+  },
+  {
+    "name": "THIRD-PARTY-NOTICES.TXT",
+    "bytes": 68910,
+    "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+    "activationSurface": false
+  },
+  {
+    "name": "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+    "bytes": 673,
+    "sha256": "A1FE39AB142FC584FA26C1184710C313D2725BDA68B0BD429743AD4394ECEF10",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net6.0/_._",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net462/_._",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+    "bytes": 673,
+    "sha256": "8ED946CFC9A5025D74FB1A39B78D93234AA365A58500CC02A4CEC4FEF176DC6B",
+    "activationSurface": true
+  },
+  {
+    "name": "[Content_Types].xml",
+    "bytes": 782,
+    "sha256": "DACC6F7BAB2786A95095A86275B6A851647461C4CA15E8B76908429486A7EF54",
+    "activationSurface": false
+  },
+  {
+    "name": "package/services/metadata/core-properties/4a3d937af85446f2b31c8d2968d02d66.psmdcp",
+    "bytes": 752,
+    "sha256": "15984EEF0A93367F1ED9731F09706893B61986BA5925AE8988DBADE16841FC0E",
+    "activationSurface": false
+  },
+  {
+    "name": ".signature.p7s",
+    "bytes": 25623,
+    "sha256": "CFD89505B4B36CC9FC04FA1C26C4F6C594D10FA004343F8FD69C7EA39D0EB71F",
+    "activationSurface": false
+  }
+]

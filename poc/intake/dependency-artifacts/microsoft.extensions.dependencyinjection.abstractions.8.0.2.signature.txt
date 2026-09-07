@@ -1,0 +1,55 @@
+X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+
+Verifying Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2
+Content hash: 3iE7UF7MQkCv1cxzCahz+Y/guQbTqieyxyaWKhrRO91itI9cOKO76OHeQDahqG4MmW5umr3CcCvGmK92lWNlbg==
+<RUN_EVIDENCE>\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg
+Signature Hash Algorithm: SHA256
+
+Signature type: Author
+Verifying the author primary signature with certificate:
+  Subject Name: CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+  SHA1 hash: F25C45D17C53D4E0D1DC9FB9DFD0731FCF904B77
+  SHA256 hash: 566A31882BE208BE4422F7CFD66ED09F5D4524A5994F50CCC8B05EC0528C1353
+  Issued by: CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1, O="DigiCert, Inc.", C=US
+  Valid from: 07/27/2023 07:00:00 to 10/18/2026 06:59:59
+  CRL URL: http://crl3.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl
+  CRL URL: http://crl4.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl
+  OCSP URL: http://ocsp.digicert.com
+The author primary signature found a chain building issue: The revocation function was unable to check revocation because the certificate is not available in the cached certificate revocation list and NUGET_CERT_REVOCATION_MODE environment variable has been set to offline. For more information, visit https://aka.ms/certificateRevocationMode.
+The author primary signature found a chain building issue: RevocationStatusUnknown: The revocation function was unable to check revocation for the certificate.
+Timestamp: 09/18/2024 04:39:58
+Verifying author primary signature's timestamp with timestamping service certificate:
+  Subject Name: CN=DigiCert Timestamp 2023, O="DigiCert, Inc.", C=US
+  SHA1 hash: 66F02B32C2C2C90F825DCEAA8AC9C64F199CCF40
+  SHA256 hash: D2F6E46DED7422CCD1D440576841366F828ADA559AAE3316AF4D1A9AD40C7828
+  Issued by: CN=DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA, O="DigiCert, Inc.", C=US
+  Valid from: 07/14/2023 07:00:00 to 10/14/2034 06:59:59
+  CRL URL: http://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl
+  OCSP URL: http://ocsp.digicert.com
+
+Signature type: Repository
+Service index: https://api.nuget.org/v3/index.json
+Owners: aspnet, dotnetframework, Microsoft
+Verifying the repository countersignature with certificate:
+  Subject Name: CN=NuGet.org Repository by Microsoft, O=NuGet.org Repository by Microsoft, L=Redmond, S=Washington, C=US
+  SHA1 hash: C72FE7739A9EECB8EC1E4F596DB3BB74039B1DE2
+  SHA256 hash: 1F4B311D9ACC115C8DC8018B5A49E00FCE6DA8E2855F9F014CA6F34570BC482D
+  Issued by: CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1, O="DigiCert, Inc.", C=US
+  Valid from: 02/23/2024 07:00:00 to 05/19/2027 06:59:59
+  CRL URL: http://crl3.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl
+  CRL URL: http://crl4.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl
+  OCSP URL: http://ocsp.digicert.com
+The repository countersignature found a chain building issue: The revocation function was unable to check revocation because the certificate is not available in the cached certificate revocation list and NUGET_CERT_REVOCATION_MODE environment variable has been set to offline. For more information, visit https://aka.ms/certificateRevocationMode.
+The repository countersignature found a chain building issue: RevocationStatusUnknown: The revocation function was unable to check revocation for the certificate.
+Timestamp: 10/08/2024 20:20:53
+Verifying repository countersignature's timestamp with timestamping service certificate:
+  Subject Name: CN=DigiCert Timestamp 2024, O=DigiCert, C=US
+  SHA1 hash: DBD385EE62DBD23E7BE4F67148508724D5865B45
+  SHA256 hash: 76769FA8F2632F1F430B3A2330AED65675FED773DB05D665B9059398438F9ADB
+  Issued by: CN=DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA, O="DigiCert, Inc.", C=US
+  Valid from: 09/26/2024 07:00:00 to 11/26/2035 06:59:59
+  CRL URL: http://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl
+  OCSP URL: http://ocsp.digicert.com
+
+Successfully verified package 'Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2'.

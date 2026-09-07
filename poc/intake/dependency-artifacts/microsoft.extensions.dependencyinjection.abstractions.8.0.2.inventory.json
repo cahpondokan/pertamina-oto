@@ -1,0 +1,158 @@
+[
+  {
+    "name": "_rels/.rels",
+    "bytes": 547,
+    "sha256": "50676399A66FF04FE382F7B0D9828FE41F30ED5551A83949213A18777E923880",
+    "activationSurface": false
+  },
+  {
+    "name": "Microsoft.Extensions.DependencyInjection.Abstractions.nuspec",
+    "bytes": 1738,
+    "sha256": "0D37E4C53A93E295975D3F62214FF54088F34AC72DC1D601E1C504190BB59DC8",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 63784,
+    "sha256": "19EDD4F5E69A4589DC314909B5854A22F89C4B9AB040591771397B2CB1A17BA6",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 205740,
+    "sha256": "9F629C193CF8767344BD0A58F2B513F248FFDA9D7BD7D55286639E1F2AE63518",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 62640,
+    "sha256": "AC9CD953B7EEB03CF48E343C5ACE6FC9B48AC968B68D1CB30AD1D6111178BF4D",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 186954,
+    "sha256": "AFEBCF965568EF928DA65E348449552C506AEC56DAA9BA21F0CB2C3784F46A91",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 61240,
+    "sha256": "F5C0B8E07169BBFD61EFE611E23F6868DF0A312D7E17707F9A64697A216D85BD",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 181454,
+    "sha256": "A6283CFB90226D736D0B0FF723C653FD5846B2EA4664FD2C1E1CD242DD03A2D9",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 63768,
+    "sha256": "67FA4325000DB017DC0C35829B416F024F042D24EFB868BCF17A895EE6500A93",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 181735,
+    "sha256": "B5F3FFB8B45E059213F0026E3BFA45AEB32AEB2D2F2EA074D61F22994BDCDA91",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 63784,
+    "sha256": "1C4F6F097825170B7A61578D9C6BAC849DB7FEA37AB9CB67B3E91989A70350C9",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 205740,
+    "sha256": "9F629C193CF8767344BD0A58F2B513F248FFDA9D7BD7D55286639E1F2AE63518",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+    "bytes": 63648,
+    "sha256": "6C479C61BD03AC7CAC4421E5A5689359CB83634E06895EB2D93B4B6DF2773DC0",
+    "activationSurface": false
+  },
+  {
+    "name": "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+    "bytes": 201093,
+    "sha256": "28FC059F82D2C9347E44E2B188327D0CF09DECA22E89D3AD7F0A3586BC09EA4E",
+    "activationSurface": false
+  },
+  {
+    "name": "Icon.png",
+    "bytes": 7006,
+    "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+    "activationSurface": false
+  },
+  {
+    "name": "useSharedDesignerContext.txt",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": false
+  },
+  {
+    "name": "PACKAGE.md",
+    "bytes": 2255,
+    "sha256": "5072329EAC84C6DA3A5D5EAC78196B4487CD176CC146600E427D827C4B43B3D8",
+    "activationSurface": false
+  },
+  {
+    "name": "LICENSE.TXT",
+    "bytes": 1139,
+    "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+    "activationSurface": false
+  },
+  {
+    "name": "THIRD-PARTY-NOTICES.TXT",
+    "bytes": 68910,
+    "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+    "activationSurface": false
+  },
+  {
+    "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+    "bytes": 733,
+    "sha256": "CE5926A5B63BBF49EAB3B12046F3246AD41CC4461F9AC046639FB7C3ACBB6B7B",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net6.0/_._",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net462/_._",
+    "bytes": 0,
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "activationSurface": true
+  },
+  {
+    "name": "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+    "bytes": 733,
+    "sha256": "8C4778386D241138FC2CC0EFE1BE45541884BDF0EFC94C3E0FBCED06A56C4507",
+    "activationSurface": true
+  },
+  {
+    "name": "[Content_Types].xml",
+    "bytes": 844,
+    "sha256": "F23110D3ED7BBD6A13EFB437833CF1E62C4CA935745BC2085002DA7CB781AB21",
+    "activationSurface": false
+  },
+  {
+    "name": "package/services/metadata/core-properties/1ee101924ecf4b2b946b4eea6df62bac.psmdcp",
+    "bytes": 778,
+    "sha256": "19AA7D67797EAFBF089ED05B65839A05EFD557DA040D4B339E1E3B2ED6CAAD32",
+    "activationSurface": false
+  },
+  {
+    "name": ".signature.p7s",
+    "bytes": 25630,
+    "sha256": "D316A8D9130544404329A822BEA832E67C4E1CD93A6E173A95E9A881EF957498",
+    "activationSurface": false
+  }
+]

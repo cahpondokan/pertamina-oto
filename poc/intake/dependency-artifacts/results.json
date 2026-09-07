@@ -1,0 +1,155 @@
+[
+  {
+    "id": "Microsoft.Extensions.Logging.Abstractions",
+    "version": "8.0.3",
+    "receipt": {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg",
+      "acquiredUtc": "2026-09-07T02:56:16.3901679Z",
+      "httpReceipt": "200|https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg|0",
+      "bytes": 802188,
+      "sha256": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "sha512Base64": "5onsHiy50vr6n9n2q4YaCJWqmhy8n7N+ndhWyNFwkATrFFXmRXC1EBO+iLYOmuDET4+FOTLZzeqzPdtC/OwZmw==",
+      "catalogSha512": "5onsHiy50vr6n9n2q4YaCJWqmhy8n7N+ndhWyNFwkATrFFXmRXC1EBO+iLYOmuDET4+FOTLZzeqzPdtC/OwZmw==",
+      "catalogHashMatch": true
+    },
+    "entries": 67,
+    "signatureExit": 0,
+    "revocationUnknown": true,
+    "license": "MIT",
+    "legalEntries": [
+      "LICENSE.TXT",
+      "THIRD-PARTY-NOTICES.TXT"
+    ],
+    "selectedDependencies": [
+      {
+        "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+        "version": "8.0.2"
+      }
+    ],
+    "activationEntries": [
+      "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+      "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+      "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+      "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+      "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+      "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
+      "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+      "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+      "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets"
+    ],
+    "nativeNamedEntries": [],
+    "providerExecuted": false
+  },
+  {
+    "id": "System.Security.Cryptography.Pkcs",
+    "version": "8.0.1",
+    "receipt": {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "source": "https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg",
+      "acquiredUtc": "2026-09-07T02:56:18.2984919Z",
+      "httpReceipt": "200|https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg|0",
+      "bytes": 1078389,
+      "sha256": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "sha512Base64": "MbBgZwHc5ACLGJ28C8+g2FWi3rLsg6PTFQ2B2wAZVfgbbRv8MPrZU+dcVwS0eIMABrqBx7hL35pQ6CQQVcpkUA==",
+      "catalogSha512": "MbBgZwHc5ACLGJ28C8+g2FWi3rLsg6PTFQ2B2wAZVfgbbRv8MPrZU+dcVwS0eIMABrqBx7hL35pQ6CQQVcpkUA==",
+      "catalogHashMatch": true
+    },
+    "entries": 31,
+    "signatureExit": 0,
+    "revocationUnknown": true,
+    "license": "MIT",
+    "legalEntries": [
+      "LICENSE.TXT",
+      "THIRD-PARTY-NOTICES.TXT"
+    ],
+    "selectedDependencies": [],
+    "activationEntries": [
+      "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+      "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+      "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+      "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+      "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+      "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+      "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+      "buildTransitive/net6.0/_._",
+      "buildTransitive/net462/_._",
+      "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets"
+    ],
+    "nativeNamedEntries": [],
+    "providerExecuted": false
+  },
+  {
+    "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+    "version": "8.0.2",
+    "receipt": {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.2",
+      "source": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg",
+      "acquiredUtc": "2026-09-07T02:56:19.2784808Z",
+      "httpReceipt": "200|https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg|0",
+      "bytes": 278862,
+      "sha256": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+      "sha512Base64": "uhlg7xEKxzh6Kgbu/ALFnOV7D+WLPgzMt5scjyFQEFxdH0tl4O2V/1DXDygUKRfGpzW4P05UBrsdj53R+WNdfQ==",
+      "catalogSha512": "uhlg7xEKxzh6Kgbu/ALFnOV7D+WLPgzMt5scjyFQEFxdH0tl4O2V/1DXDygUKRfGpzW4P05UBrsdj53R+WNdfQ==",
+      "catalogHashMatch": true
+    },
+    "entries": 26,
+    "signatureExit": 0,
+    "revocationUnknown": true,
+    "license": "MIT",
+    "legalEntries": [
+      "LICENSE.TXT",
+      "THIRD-PARTY-NOTICES.TXT"
+    ],
+    "selectedDependencies": [],
+    "activationEntries": [
+      "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+      "buildTransitive/net6.0/_._",
+      "buildTransitive/net462/_._",
+      "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets"
+    ],
+    "nativeNamedEntries": [],
+    "providerExecuted": false
+  }
+]
