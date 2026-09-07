@@ -22,7 +22,7 @@ internal static class MergeSmoke
         for (int i = 1; i < args.Length; i++)
         {
             using var source = PdfReader.Open(args[i], PdfDocumentOpenMode.Import);
-            if (source.PageCount < 1 || source.PageCount > 2) return 5;
+            if (source.PageCount < 1 || source.PageCount > 3) return 5;
             for (int page = 0; page < source.PageCount; page++)
                 merged.AddPage(source.Pages[page]);
         }
