@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "packetId": "P2-W0G-A2-PDFSHARP-CANDIDATE-FREEZE",
+  "runId": "P02-20260905-1434",
+  "baselineCommit": "4a78212e01d3daee9ae47f0473fb6186df0dccde",
+  "status": "FREEZE_PROPOSAL_STATIC_ONLY_NOT_EXECUTION_READY",
+  "scope": {
+    "pocId": "POC-PDF-001",
+    "featureIds": ["FEAT-PDF-005"],
+    "technicalDecisionIds": ["TECH-DEC-005", "TECH-DEC-006"],
+    "decisionIds": ["P2-D01", "P2-D03", "P2-W0-ACQ-001", "P2-W0-DEP-002"],
+    "preconditionIds": ["PRE-003", "PRE-004", "PRE-005", "PRE-006"],
+    "targetFrameworkProposal": "net10.0",
+    "runtimeIdentifierProposal": "win-x64",
+    "sdkProposal": "10.0.400",
+    "assetResolutionStatus": "NOT_RESTORED_NOT_RESOLVED",
+    "providerDisposition": "NOT_DECIDED"
+  },
+  "cost": {
+    "boundary": "ZERO_ADDITIONAL_COST",
+    "licenseFeeObserved": false,
+    "paidSupportOrServiceIncluded": false,
+    "humanCostAcceptanceStatus": "PENDING"
+  },
+  "currentAuthorizationFlags": {
+    "acquireOrDownload": false,
+    "install": false,
+    "restore": false,
+    "evaluateBuildTargets": false,
+    "loadAnalyzerOrSourceGenerator": false,
+    "build": false,
+    "loadAssemblyOrNativeModule": false,
+    "launchSandbox": false,
+    "launchCandidateHarness": false,
+    "processPdf": false,
+    "invokeOracle": false,
+    "publishResult": false,
+    "changeProductGraph": false,
+    "redistribute": false
+  },
+  "historicalAcquisitionReferences": [
+    {"decisionId": "P2-W0-ACQ-001", "state": "FULFILLED_CONSUMED_NO_REPEAT_AUTHORITY"},
+    {"decisionId": "P2-W0-DEP-002", "state": "FULFILLED_CONSUMED_NO_REPEAT_AUTHORITY"}
+  ],
+  "components": [
+    {
+      "id": "PDFsharp",
+      "version": "6.2.4",
+      "relationship": "ROOT_CANDIDATE",
+      "artifact": {
+        "fileName": "pdfsharp.6.2.4.nupkg",
+        "bytes": 4625326,
+        "sha256": "5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67",
+        "catalogSha512Base64": "K1/qaAyYQxf4g57OGAS21RxDbi5nAX4TrWjt8RBwdTC2NAwO8vPFeGC0sfc1LvQsFitepCXFs6CGhanA1NRfDg==",
+        "sourceUrl": "https://api.nuget.org/v3-flatcontainer/pdfsharp/6.2.4/pdfsharp.6.2.4.nupkg",
+        "evidenceRootKey": "agent-2-pdfsharp-intake",
+        "receiptStatus": "NO_SEPARATE_RECEIPT_JSON_ACQUISITION_FACT_INHERITED_FROM_INTAKE"
+      },
+      "metadata": {
+        "authors": "PDFsharp Team",
+        "owners": "empira Software GmbH",
+        "repositoryUrl": "https://github.com/empira/PDFsharp",
+        "repositoryBranch": "master",
+        "repositoryCommit": null,
+        "publishedUtc": "2026-01-06T10:43:54.907Z"
+      },
+      "license": {
+        "expression": "MIT",
+        "standaloneLicenseEntryPresent": false,
+        "standaloneNoticeEntryPresent": false,
+        "status": "PENDING_HUMAN_LICENSE_AND_DISTRIBUTION_ACCEPTANCE"
+      },
+      "trustAndSecurity": {
+        "signatureEvidence": "OFFLINE_NUGET_VERIFY_REPORTED_SUCCESS_WITH_REVOCATION_UNKNOWN",
+        "sourceToBinaryReproducibility": "UNVERIFIED",
+        "malwareScanner": "NOT_RUN",
+        "currentAdvisoryDisposition": "NOT_FROZEN_FOR_EXECUTION",
+        "reviewReferences": ["poc/reviews/security/REVIEW.md", "poc/reviews/governance/README.md"],
+        "status": "BLOCKED_SECURITY_FOR_LOAD_BUILD_OR_PROCESSING"
+      },
+      "selectedFrameworkProposal": "net10.0",
+      "selectedRidProposal": "win-x64",
+      "candidateLibraryAssets": [
+        {"path": "lib/net10.0/PdfSharp.dll", "sha256": "1A77754D9B06C077F339EB33C0CDEF28927AE8EE46ECCA84E7874B15DABC85A1"},
+        {"path": "lib/net10.0/PdfSharp.BarCodes.dll", "sha256": "BAFC4175AFAEF8629C6122CAB01E90C8F8CDF72E2B957D328C42229D12D02FDD"},
+        {"path": "lib/net10.0/PdfSharp.Charting.dll", "sha256": "FCE1973D6474160E736112B215410244310F47983853FD5AFD776086A7392469"},
+        {"path": "lib/net10.0/PdfSharp.Cryptography.dll", "sha256": "25FC17414785592CA4CDC5EFD93F2A9C245812A97CB66B986A63112F61552944"},
+        {"path": "lib/net10.0/PdfSharp.Quality.dll", "sha256": "3F88EC2601D13607EC81A8F7CBC14BD710FF10E2730626FFECE48C86098DF0D1"},
+        {"path": "lib/net10.0/PdfSharp.Shared.dll", "sha256": "4B21196CF18CB3B971EC02D1F66F2DA0D98D77AA5ED5767754F5DE2CF36CB737"},
+        {"path": "lib/net10.0/PdfSharp.Snippets.dll", "sha256": "B8191AAC4339B25DD54BE0BC61206B873C69A4D0150EA9F16FDCECFC0F1907A4"},
+        {"path": "lib/net10.0/PdfSharp.System.dll", "sha256": "5E8DC5ED655D223BE9F9B5B3DFECADB607B00E695C34C60AAC4E037AF9E557E6"},
+        {"path": "lib/net10.0/PdfSharp.WPFonts.dll", "sha256": "35A3AE0D7EE749E77A6DB7C938AC2C41684D50A792B069E3A3723E9FDD6AAFD3"}
+      ],
+      "candidateAssetStatus": "PACKAGE_GROUP_INVENTORIED_ACTUAL_COMPILE_RUNTIME_LOAD_SET_UNRESOLVED"
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "relationship": "DIRECT_DEPENDENCY",
+      "declaredRange": "[8.0.3, )",
+      "artifact": {
+        "fileName": "microsoft.extensions.logging.abstractions.8.0.3.nupkg",
+        "bytes": 802188,
+        "sha256": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+        "catalogSha512Base64": "5onsHiy50vr6n9n2q4YaCJWqmhy8n7N+ndhWyNFwkATrFFXmRXC1EBO+iLYOmuDET4+FOTLZzeqzPdtC/OwZmw==",
+        "sourceUrl": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging.abstractions/8.0.3/microsoft.extensions.logging.abstractions.8.0.3.nupkg",
+        "evidenceRootKey": "agent-2-dependency-intake",
+        "receiptFileName": "microsoft.extensions.logging.abstractions.8.0.3.acquisition.json",
+        "receiptSha256": "D3D6E21E7B2DE2DFFA93B47446F8244D59434E2549C76794464D0ECB0D11EA0B"
+      },
+      "repositoryCommit": "eba546b0f0d448e0176a2222548fd7a2fbf464c0",
+      "license": {"expression": "MIT", "legalEntries": ["LICENSE.TXT", "THIRD-PARTY-NOTICES.TXT"], "status": "HUMAN_APPLICABILITY_ACCEPTANCE_PENDING"},
+      "selectedFrameworkProposal": "net8.0",
+      "runtimeAssetCandidates": [
+        {"path": "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll", "sha256": "BB853130F5AFAF335BE7858D661F8212EC653835100F5A4E3AA2C66A4D4F685D"}
+      ],
+      "buildActivationCandidates": [
+        {"path": "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets", "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5", "disposition": "TEXT_ONLY_EVALUATION_NOT_AUTHORIZED"},
+        {"path": "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll", "sha256": "249E758EC5137ECF60615E56BBD4BE6DCE29AEB4EDACBEF1FF2D07FF249536AC", "disposition": "DENY_LOAD"},
+        {"path": "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll", "sha256": "AC4680341915FCDBC1AB47A40CDE367E72328849587939A0999A228225153010", "disposition": "DENY_LOAD"},
+        {"path": "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll", "sha256": "AD05A26AA2FCD488E0A358FEA3802556BE6C7E1C9CC4832F2FA2AEF7A490B0EA", "disposition": "DENY_LOAD"}
+      ],
+      "trustAndSecurity": {"signatureEvidence": "OFFLINE_SUCCESS_REVOCATION_UNKNOWN", "malwareScanner": "NOT_RUN", "currentAdvisoryDisposition": "NOT_FROZEN", "status": "BLOCKED_SECURITY_FOR_BUILD_GENERATOR_LOAD_OR_RUNTIME_USE"}
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "relationship": "DIRECT_DEPENDENCY",
+      "declaredRange": "[8.0.1, )",
+      "artifact": {
+        "fileName": "system.security.cryptography.pkcs.8.0.1.nupkg",
+        "bytes": 1078389,
+        "sha256": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+        "catalogSha512Base64": "MbBgZwHc5ACLGJ28C8+g2FWi3rLsg6PTFQ2B2wAZVfgbbRv8MPrZU+dcVwS0eIMABrqBx7hL35pQ6CQQVcpkUA==",
+        "sourceUrl": "https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/8.0.1/system.security.cryptography.pkcs.8.0.1.nupkg",
+        "evidenceRootKey": "agent-2-dependency-intake",
+        "receiptFileName": "system.security.cryptography.pkcs.8.0.1.acquisition.json",
+        "receiptSha256": "D427151DF65BC6B64BC09747F5AE46CD0F3251589ECA0FE37B7BD9A86DAD6315"
+      },
+      "repositoryCommit": "81cabf2857a01351e5ab578947c7403a5b128ad1",
+      "license": {"expression": "MIT", "legalEntries": ["LICENSE.TXT", "THIRD-PARTY-NOTICES.TXT"], "status": "HUMAN_APPLICABILITY_ACCEPTANCE_PENDING"},
+      "selectedFrameworkProposal": "net8.0",
+      "runtimeAssetCandidates": [
+        {"path": "lib/net8.0/System.Security.Cryptography.Pkcs.dll", "sha256": "E2352938ED4F664F770A5C98EF067CB145304456D014D2C311D725C95C8A21A9", "role": "COMPILE_CANDIDATE"},
+        {"path": "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll", "sha256": "D8E4B733FBAEC1FE0E808FD6391479F190B170DF03E309C5F07DC85445447D22", "role": "WINDOWS_RUNTIME_CANDIDATE"}
+      ],
+      "buildActivationCandidates": [
+        {"path": "buildTransitive/net6.0/_._", "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", "disposition": "PLACEHOLDER_SELECTION_UNRESOLVED"}
+      ],
+      "trustAndSecurity": {"signatureEvidence": "OFFLINE_SUCCESS_REVOCATION_UNKNOWN", "malwareScanner": "NOT_RUN", "currentAdvisoryDisposition": "NOT_FROZEN", "interopIndicators": ["crypt32.dll", "BCrypt.dll", "ncrypt.dll", "kernel32.dll"], "networkVocabulary": "PRESENT_REACHABILITY_UNPROVEN", "status": "BLOCKED_SECURITY_FOR_RUNTIME_INTEROP_OR_NETWORK_BEHAVIOR"}
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.2",
+      "relationship": "TRANSITIVE_DEPENDENCY_VIA_LOGGING",
+      "declaredRange": "[8.0.2, )",
+      "artifact": {
+        "fileName": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg",
+        "bytes": 278862,
+        "sha256": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+        "catalogSha512Base64": "uhlg7xEKxzh6Kgbu/ALFnOV7D+WLPgzMt5scjyFQEFxdH0tl4O2V/1DXDygUKRfGpzW4P05UBrsdj53R+WNdfQ==",
+        "sourceUrl": "https://api.nuget.org/v3-flatcontainer/microsoft.extensions.dependencyinjection.abstractions/8.0.2/microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg",
+        "evidenceRootKey": "agent-2-dependency-intake",
+        "receiptFileName": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.acquisition.json",
+        "receiptSha256": "B90BDEB3EA2B96ED0A202CB79D04600B5EBA47557ACD2C15A2F676A274B53E26"
+      },
+      "repositoryCommit": "81cabf2857a01351e5ab578947c7403a5b128ad1",
+      "license": {"expression": "MIT", "legalEntries": ["LICENSE.TXT", "THIRD-PARTY-NOTICES.TXT"], "status": "HUMAN_APPLICABILITY_ACCEPTANCE_PENDING"},
+      "selectedFrameworkProposal": "net8.0",
+      "runtimeAssetCandidates": [
+        {"path": "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll", "sha256": "67FA4325000DB017DC0C35829B416F024F042D24EFB868BCF17A895EE6500A93"}
+      ],
+      "buildActivationCandidates": [
+        {"path": "buildTransitive/net6.0/_._", "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855", "disposition": "PLACEHOLDER_SELECTION_UNRESOLVED"}
+      ],
+      "trustAndSecurity": {"signatureEvidence": "OFFLINE_SUCCESS_REVOCATION_UNKNOWN", "malwareScanner": "NOT_RUN", "currentAdvisoryDisposition": "NOT_FROZEN", "status": "BLOCKED_SECURITY_FOR_BUILD_OR_RUNTIME_USE"}
+    }
+  ],
+  "dependencyEdges": [
+    {"from": "PDFsharp/6.2.4", "to": "Microsoft.Extensions.Logging.Abstractions/8.0.3", "kind": "DIRECT", "declaredRange": "[8.0.3, )"},
+    {"from": "PDFsharp/6.2.4", "to": "System.Security.Cryptography.Pkcs/8.0.1", "kind": "DIRECT", "declaredRange": "[8.0.1, )"},
+    {"from": "Microsoft.Extensions.Logging.Abstractions/8.0.3", "to": "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2", "kind": "TRANSITIVE", "declaredRange": "[8.0.2, )", "exclude": "Build,Analyzers"}
+  ],
+  "activationPolicyProposal": {
+    "status": "PROPOSED_NOT_AUTHORIZED_ACTUAL_ASSET_SELECTION_PENDING",
+    "packageAllowlist": [
+      "PDFsharp/6.2.4@5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67",
+      "Microsoft.Extensions.Logging.Abstractions/8.0.3@E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "System.Security.Cryptography.Pkcs/8.0.1@28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2@51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606"
+    ],
+    "buildPolicy": {
+      "sourceGenerators": "DENY_BY_DEFAULT",
+      "proposedControl": "DisableMicrosoftExtensionsLoggingSourceGenerator=true",
+      "effectiveness": "MUST_BE_PROVEN_IN_SEPARATELY_AUTHORIZED_RESTORE_BUILD_REVIEW",
+      "unexpectedImportUsingTaskExec": "STOP"
+    },
+    "runtimePolicy": {
+      "candidateBoundary": "isolated PoC infrastructure adapter behind IPdfMergeEngine",
+      "dynamicPluginOrReflectionLoad": "DENY",
+      "moduleSearchOutsideFrozenGuestRoots": "DENY",
+      "processOrShellLaunch": "DENY",
+      "networkOrEgress": "DENY_AND_OBSERVE_ATTEMPTS"
+    },
+    "denylist": [
+      "unlisted package ID version source or hash",
+      "nonselected TFM or non-win-x64 RID assets",
+      "Logging analyzer or generator load until separately admitted",
+      "qpdf Poppler or MuPDF substitution or activation",
+      "viewer browser script shell arbitrary URI or public endpoint",
+      "fallback package folders user or machine caches and online feeds",
+      "product references redistribution and final publication"
+    ]
+  },
+  "offlineLockedRestoreDesign": {
+    "status": "DESIGN_ONLY_NO_RESTORE_AUTHORITY",
+    "localFeed": "only four hash-matched nupkg files in approved read-only guest-local source",
+    "sourcePolicy": "NuGet.Config clear plus one local source and exact four-ID mapping; no HTTP or fallback",
+    "pinPolicy": "isolated PoC exact versions plus RestorePackagesWithLockFile=true; no product graph change",
+    "bootstrapLock": "separately authorized offline restore generates lock/assets for independent review before build",
+    "lockedReplay": "dotnet restore <frozen-poc-project> --locked-mode --configfile <guest-local-config> --packages <run-owned-package-root> --no-cache",
+    "missingInputs": ["PoC project digest", "guest NuGet.Config digest", "accepted lock digest", "SDK/runtime/framework-pack identities", "approved roots", "restore and MSBuild-evaluation authorization"],
+    "expectedEvidence": ["packages.lock.json", "project.assets.json", "generated props/targets inventory", "compile/runtime/analyzer/build asset manifest", "package/runtime hashes", "no-online-feed observation"]
+  },
+  "plannedCandidateInvocation": {
+    "status": "BLOCKED_NOT_IMPLEMENTED_NOT_AUTHORIZED",
+    "entrypointLogicalName": "Oto.Poc.PdfsharpHarness.exe",
+    "entrypointDigest": null,
+    "argumentVectorProposal": ["run", "--manifest", "RUN_INPUT/run-manifest.json"],
+    "shell": false,
+    "semanticContract": ["ordered input references", "adapter behind IPdfMergeEngine", "run-owned staging only", "source and existing target immutable", "password memory-only", "typed sanitized status", "independent oracle veto before publication"],
+    "expectedOutputs": [
+      {"logicalPath": "RUN_ROOT/staging/candidate-output.pdf", "classification": "CONTENT_BEARING_NON_FINAL", "publishAuthorized": false},
+      {"logicalPath": "RUN_ROOT/records/candidate-result.json", "classification": "SANITIZED_TYPED_RECORD", "publishAuthorized": false},
+      {"logicalPath": "RUN_ROOT/records/resource-observations.jsonl", "classification": "SANITIZED_METRICS", "publishAuthorized": false},
+      {"logicalPath": "RUN_ROOT/records/module-process-network-observations.json", "classification": "SANITIZED_SECURITY_EVIDENCE", "publishAuthorized": false},
+      {"logicalPath": "RUN_ROOT/quarantine/stdout-stderr.raw", "classification": "QUARANTINED_NOT_EVIDENCE_UNTIL_SANITIZED", "publishAuthorized": false}
+    ]
+  },
+  "sbomLicenseSecurity": {
+    "recordType": "INTERIM_FOUR_PACKAGE_FREEZE_NOT_DEPLOYMENT_SBOM",
+    "sbomFormat": "UNDECIDED_BLOCKER_PER_CHARTER_SBOM_TBC",
+    "pre004Required": ["human exact candidate/hash acceptance", "resolved lock and compile/runtime/build/analyzer graph", "SDK/runtime/framework packs", "harness/adapter digests", "accepted SBOM format", "source/provenance treatment"],
+    "pre005Required": ["named human License/Cost reviewer", "PDFsharp exact MIT text and holder notice", "Microsoft supplied license/notices delivery policy", "PoC versus redistribution scope", "support ownership", "zero-cost acceptance and expiry"],
+    "pre006Required": ["named human Security reviewer", "trust/revocation/advisory/scanner disposition", "Logging generator policy", "Pkcs Windows interop and reachable network behavior", "PDFsharp Quality/Cryptography call-path review", "DLL/process/network/temp controls"]
+  },
+  "evidenceBindings": [
+    {"path": "poc/intake/pdfsharp-6.2.4/archive-inventory.json", "sha256": "F9B996F3BC91D029FBB7E81258AF4A0093ABAFAACB5042311AFFF2DDF9D54DE6"},
+    {"path": "poc/intake/pdfsharp-6.2.4/inspection.json", "sha256": "C3C79E2CF40535132A7CC97392DD74C25EE3C400E3039F52D8287946F6B44367"},
+    {"path": "poc/intake/pdfsharp-6.2.4/PDFsharp.nuspec.xml", "sha256": "5D21D9B9EDD2E5697D9B727E68AF4DF8373286421F3CCA98F7DF40AFD6A94328"},
+    {"path": "poc/intake/dependency-closure/closure.json", "sha256": "3130E92422B3449A26D30B80B3EE3030CC1699F8810D439AFB54A767CCEA857A"},
+    {"path": "poc/intake/dependency-artifacts/results.json", "sha256": "0CE8D6B091AA9F9CC50DAE5E960114F3F43F6C755C6871FCC9DEE7614AC5E972"},
+    {"path": "poc/intake/dependency-artifacts/microsoft.extensions.logging.abstractions.8.0.3.inventory.json", "sha256": "A760E76513CE1DC9C00AB593CDA72C4A2C826587153838A31A5A12FD972C2979"},
+    {"path": "poc/intake/dependency-artifacts/system.security.cryptography.pkcs.8.0.1.inventory.json", "sha256": "2F5071BF0F87947296AFACA50C733651C1E05234904D4B35CB1DB45DE7C1B9DC"},
+    {"path": "poc/intake/dependency-artifacts/microsoft.extensions.dependencyinjection.abstractions.8.0.2.inventory.json", "sha256": "5EA4DBEF4E56F7E97326AA35B40AC3A3937EB2C85FE0F1C3E4BF7456A23E251F"},
+    {"path": "poc/intake/dependency-artifacts/microsoft.extensions.logging.abstractions.8.0.3.legal.json", "sha256": "E86427241A42E97BE53EA7A01CCE97F64544BD99C4ECCC806E76B0FF092BBB65"},
+    {"path": "poc/intake/dependency-artifacts/system.security.cryptography.pkcs.8.0.1.legal.json", "sha256": "E86427241A42E97BE53EA7A01CCE97F64544BD99C4ECCC806E76B0FF092BBB65"},
+    {"path": "poc/intake/dependency-artifacts/microsoft.extensions.dependencyinjection.abstractions.8.0.2.legal.json", "sha256": "E86427241A42E97BE53EA7A01CCE97F64544BD99C4ECCC806E76B0FF092BBB65"},
+    {"path": "poc/reviews/security/REVIEW.md", "sha256": "44248C63CC9458995DA59903283280EAC4FF6C2D2358055114A043081C433471"},
+    {"path": "poc/reviews/security/wave0e/REVIEW.md", "sha256": "FE2ACC3468C0C8C599C5B947CC4EEF323F021B59F3CDE05C557B2E7B76877313"},
+    {"path": "poc/reviews/governance/README.md", "sha256": "3ADE9A4C755D66F7433E5C3D9E27A94B82308D3861D812012AC5266ED1113A79"},
+    {"path": "poc/reviews/governance/wave0e/README.md", "sha256": "33F21EAA0E464010598D007AD7322519E69C7176B34B1FC17E638C72FD95F1FA"}
+  ],
+  "freezeValidity": {
+    "preparedDate": "2026-09-07",
+    "effectiveForExecution": false,
+    "validUntil": null,
+    "expiryStatus": "UNSET_HUMAN_DECISION_BLOCKER",
+    "invalidatedBy": ["any bound hash mismatch", "package ID/version/source or graph change", "TFM/RID/SDK/runtime/OS change", "unexpected resolved asset/generator/build/native/module", "new advisory/trust/scanner/license/notice/support/cost fact", "harness/adapter/environment/corpus/oracle/config/evidence-policy change", "new dependency/tool/binary/network/paid requirement", "human expiry/rejection"]
+  }
+}

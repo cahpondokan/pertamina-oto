@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "packetId": "P2-W0G-A2-PDFSHARP-CANDIDATE-FREEZE",
+  "result": "PASS_STATIC_FREEZE_BINDING",
+  "baselineCommit": "4a78212e01d3daee9ae47f0473fb6186df0dccde",
+  "componentsVerified": 4,
+  "dependencyEdgesVerified": 3,
+  "evidenceBindingsVerified": 15,
+  "authorizationFlagsVerifiedFalse": 14,
+  "rawArtifactsVerified": true,
+  "restoreOrBuild": false,
+  "assemblyAnalyzerGeneratorLoad": false,
+  "sandboxLaunch": false,
+  "pdfProcessing": false,
+  "networkAcquisition": false,
+  "paidCommitment": false,
+  "packages": [
+    {"id": "PDFsharp", "version": "6.2.4", "bytes": 4625326, "sha256": "5647882339B327CBF6DA9EA3F882EFB335F8D602E6FD45323ADF9E78DA53CF67", "rawByteHashVerified": true, "candidateLoaded": false},
+    {"id": "Microsoft.Extensions.Logging.Abstractions", "version": "8.0.3", "bytes": 802188, "sha256": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74", "rawByteHashVerified": true, "candidateLoaded": false},
+    {"id": "System.Security.Cryptography.Pkcs", "version": "8.0.1", "bytes": 1078389, "sha256": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5", "rawByteHashVerified": true, "candidateLoaded": false},
+    {"id": "Microsoft.Extensions.DependencyInjection.Abstractions", "version": "8.0.2", "bytes": 278862, "sha256": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606", "rawByteHashVerified": true, "candidateLoaded": false}
+  ]
+}
