@@ -1,0 +1,97 @@
+{
+  "inputCommit": "0eb262b0dfbd16a32ebd1528105a009498baa788",
+  "inputs": [
+    {
+      "path": "poc/wave0h/environment/benign-observation.wsb",
+      "gitBlob": "3515ff59a9c417fbd1ef9cc38943ebba0da9c225",
+      "commitSha256": "6221edf587209e6d94aafb5e056c1c7108570a488724010c2022fddafd1b1e19",
+      "workingSha256": "6221edf587209e6d94aafb5e056c1c7108570a488724010c2022fddafd1b1e19"
+    },
+    {
+      "path": "poc/wave0h/environment/HANDOFF.md",
+      "gitBlob": "7b950806e26db459460af3708e45b3a1105a765e",
+      "commitSha256": "03899c5be135d0418138480e334107b6c5ff5f0cb532a915368e92f44271bf71",
+      "workingSha256": "03899c5be135d0418138480e334107b6c5ff5f0cb532a915368e92f44271bf71"
+    },
+    {
+      "path": "poc/wave0h/environment/Observe-Guest.ps1",
+      "gitBlob": "706a16d9791dece82540bc0524190feb66837ced",
+      "commitSha256": "6621419413499dadb5e63bccfb0922ea6ccadc5ba0f405886b6bc9ebe22a47ca",
+      "workingSha256": "b5f70c54139353770abc66b6bfaa50f6f612bfb98a7108f9dbc800aafecacfdc"
+    },
+    {
+      "path": "poc/wave0h/environment/RUNBOOK.md",
+      "gitBlob": "ee5469f977ff6dd9c2b4001a683cbffa0d77acbc",
+      "commitSha256": "521bb96c7eed527ae9050e079f5aacb31a562bce8c68fe14830f14c6c58cfc56",
+      "workingSha256": "521bb96c7eed527ae9050e079f5aacb31a562bce8c68fe14830f14c6c58cfc56"
+    },
+    {
+      "path": "poc/wave0h/environment/Verify-Static.ps1",
+      "gitBlob": "afb0cb5e0c0582bc8d0ca56442eabebb76512abc",
+      "commitSha256": "af3a35d7545e39548f1ac288aa63dcd7c60db592c0daef58ed0970545a3c0791",
+      "workingSha256": "0558b5bd780da51857d051871a7271c32985056b4f3f7c092ca8b3b29e51c340"
+    },
+    {
+      "path": "poc/wave0h/candidate/EVALUATION-NOTICES.md",
+      "gitBlob": "7f03ed2d14a738d8164fba71224fcc5cd43315f4",
+      "commitSha256": "ef22394aa80185169bc803370845bc7c84ee0cbf7d10990ed8d10f35054faf6c",
+      "workingSha256": "ef22394aa80185169bc803370845bc7c84ee0cbf7d10990ed8d10f35054faf6c"
+    },
+    {
+      "path": "poc/wave0h/candidate/HANDOFF.md",
+      "gitBlob": "af01765784d525921019de6f8ff4050b5be5ba40",
+      "commitSha256": "b79e949992afc37863d977a947e15c2fb47744b6aeef6fad1198bc9a554e5d12",
+      "workingSha256": "b79e949992afc37863d977a947e15c2fb47744b6aeef6fad1198bc9a554e5d12"
+    },
+    {
+      "path": "poc/wave0h/candidate/MergeSmoke.cs",
+      "gitBlob": "c623dffc97e755230a699a4051c7c2423d69fee5",
+      "commitSha256": "be56ffe0b1304319c9041f032f4591a52d35292a9ed9ccaa53f187126c38a507",
+      "workingSha256": "be56ffe0b1304319c9041f032f4591a52d35292a9ed9ccaa53f187126c38a507"
+    },
+    {
+      "path": "poc/wave0h/candidate/README.md",
+      "gitBlob": "0f0ebff5ee2c1e7b1a3f0c962c2990ecbd113f47",
+      "commitSha256": "df00c591e4cc7b06d720735c738b0de5e773f48719833f55863ca48a5fcb3bec",
+      "workingSha256": "df00c591e4cc7b06d720735c738b0de5e773f48719833f55863ca48a5fcb3bec"
+    },
+    {
+      "path": "poc/wave0h/corpus/EVIDENCE.md",
+      "gitBlob": "095cd40d0d0a40047ef4128c5400852fbdbae1ca",
+      "commitSha256": "a38aebc4092a4185fb307b27d92820d4ca1c2199a8aa764627253ada8251d4c2",
+      "workingSha256": "a38aebc4092a4185fb307b27d92820d4ca1c2199a8aa764627253ada8251d4c2"
+    },
+    {
+      "path": "poc/wave0h/corpus/generate.py",
+      "gitBlob": "15f4b03f9dac828a26f258371b0438a613431cd0",
+      "commitSha256": "337cdf0f7d3546572572ae0aeee583639f43f6cdcc3f6426834dd26ca6dca5e9",
+      "workingSha256": "337cdf0f7d3546572572ae0aeee583639f43f6cdcc3f6426834dd26ca6dca5e9"
+    },
+    {
+      "path": "poc/wave0h/corpus/oracle.py",
+      "gitBlob": "7446f20ffabdc91daef286e987102ced459b6eff",
+      "commitSha256": "181c41aa13aeaf107de4d037df50f1d15c8fa56fe68e68093c956d88cf6d97c0",
+      "workingSha256": "181c41aa13aeaf107de4d037df50f1d15c8fa56fe68e68093c956d88cf6d97c0"
+    },
+    {
+      "path": "poc/wave0h/corpus/README.md",
+      "gitBlob": "d5e2922572f1d1a33dde1fd16fc3590b81b29904",
+      "commitSha256": "4d0bd4526c2f74ed1b86ff7d4d0d287c2ba5d14a0ff72c9de7bdf88041f36f36",
+      "workingSha256": "4d0bd4526c2f74ed1b86ff7d4d0d287c2ba5d14a0ff72c9de7bdf88041f36f36"
+    },
+    {
+      "path": "poc/wave0h/corpus/spec.json",
+      "gitBlob": "7a6ddd8c4f1df320d58ef57807d7b903dadd2d75",
+      "commitSha256": "aaf11b9c45c03bd03671d7e28da683d3ea574ec99af604edd627d2727b71ab47",
+      "workingSha256": "aaf11b9c45c03bd03671d7e28da683d3ea574ec99af604edd627d2727b71ab47"
+    }
+  ],
+  "verification": "PASS: frozen blob binding, AST stdlib-only, generator literal/spec, four ordered cases, corrected three-page ceiling; no import/generation/PDF execution",
+  "hostMemoryKiB": {
+    "totalPhysical": 14513528,
+    "freePhysical": 629476,
+    "totalVirtual": 36423956,
+    "freeVirtual": 4537888
+  },
+  "environmentStaticValidatorExit": 0
+}
