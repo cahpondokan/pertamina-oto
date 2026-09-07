@@ -1,0 +1,50 @@
+{
+  "task": "P2-W0E-B-A7-GOVERNANCE-REVIEW",
+  "checkpoint": "dd003ea20ec8e00b96c265907560f66957783a5d",
+  "date": "2026-09-07",
+  "packages": [
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "bytes": 802188,
+      "sha256Before": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "sha256After": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "catalogSha512Match": true,
+      "entriesVerified": 67,
+      "legalTextsVerified": 2,
+      "sourceCommit": "eba546b0f0d448e0176a2222548fd7a2fbf464c0",
+      "result": "PASS_STATIC_BINDING",
+      "candidateExecuted": false
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "bytes": 1078389,
+      "sha256Before": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "sha256After": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "catalogSha512Match": true,
+      "entriesVerified": 31,
+      "legalTextsVerified": 2,
+      "sourceCommit": "81cabf2857a01351e5ab578947c7403a5b128ad1",
+      "result": "PASS_STATIC_BINDING",
+      "candidateExecuted": false
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.2",
+      "bytes": 278862,
+      "sha256Before": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+      "sha256After": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+      "catalogSha512Match": true,
+      "entriesVerified": 26,
+      "legalTextsVerified": 2,
+      "sourceCommit": "81cabf2857a01351e5ab578947c7403a5b128ad1",
+      "result": "PASS_STATIC_BINDING",
+      "candidateExecuted": false
+    }
+  ],
+  "acquisition": 0,
+  "restoreBuild": 0,
+  "documentProcessing": 0,
+  "cost": "ZERO_ADDITIONAL_COST"
+}
