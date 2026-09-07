@@ -1,0 +1,1954 @@
+{
+  "method": "Byte-only ZIP/PE import-directory/string/XML inspection; no assembly loading or IL/ImplMap/callgraph decoding",
+  "packages": [
+    {
+      "package": "microsoft.extensions.logging.abstractions.8.0.3",
+      "sha256Before": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "sha256After": "E4C498D5A13051B4577A148F1D8C3470167215C507E2392069B75DC61322BB74",
+      "bytes": 802188,
+      "catalogSha512Match": true,
+      "archiveInventoryMatch": true,
+      "selectedDependencies": [
+        {
+          "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+          "version": "8.0.2",
+          "exclude": "Build,Analyzers"
+        }
+      ],
+      "targets": [
+        {
+          "name": "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "tags": [
+            "Analyzer",
+            "ItemGroup",
+            "Project",
+            "Target",
+            "_Microsoft_Extensions_Logging_AbstractionsAnalyzer"
+          ],
+          "rootAttributes": {},
+          "targets": [
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsAnalyzerMultiTargeting",
+              "Condition": "'$(SupportsRoslynComponentVersioning)' != 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsRemoveAnalyzers",
+              "Condition": "'$(DisableMicrosoftExtensionsLoggingSourceGenerator)' == 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "tags": [
+            "Analyzer",
+            "ItemGroup",
+            "Project",
+            "Target",
+            "_Microsoft_Extensions_Logging_AbstractionsAnalyzer"
+          ],
+          "rootAttributes": {},
+          "targets": [
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsAnalyzerMultiTargeting",
+              "Condition": "'$(SupportsRoslynComponentVersioning)' != 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsRemoveAnalyzers",
+              "Condition": "'$(DisableMicrosoftExtensionsLoggingSourceGenerator)' == 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+          "tags": [
+            "Analyzer",
+            "ItemGroup",
+            "Project",
+            "Target",
+            "_Microsoft_Extensions_Logging_AbstractionsAnalyzer"
+          ],
+          "rootAttributes": {},
+          "targets": [
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsAnalyzerMultiTargeting",
+              "Condition": "'$(SupportsRoslynComponentVersioning)' != 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            },
+            {
+              "Name": "_Microsoft_Extensions_Logging_AbstractionsRemoveAnalyzers",
+              "Condition": "'$(DisableMicrosoftExtensionsLoggingSourceGenerator)' == 'true'",
+              "AfterTargets": "ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets",
+              "DependsOnTargets": "_Microsoft_Extensions_Logging_AbstractionsGatherAnalyzers"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_Microsoft_Extensions_Logging_Abstractions_net6_0"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_Microsoft_Extensions_Logging_Abstractions_net6_0",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_Microsoft_Extensions_Logging_Abstractions_net462"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_Microsoft_Extensions_Logging_Abstractions_net462",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        }
+      ],
+      "entries": [
+        {
+          "name": "_rels/.rels",
+          "sha256": "DB211FBC815546705CCDC4F89676B35B8AFF15B701EC8B35E3C290318C780620",
+          "bytes": 535
+        },
+        {
+          "name": "Microsoft.Extensions.Logging.Abstractions.nuspec",
+          "sha256": "2E248071B6C3B471DB228AA5F8F71BE4B3FE0076AD1914E82579A13B54B37526",
+          "bytes": 2552
+        },
+        {
+          "name": "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+          "sha256": "B4E0E778AFDC76403792390B056F68DE0CED742D16C5B0347D9CCA6930F4761B",
+          "bytes": 67856,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+          "sha256": "8EA6209C93E063A0F0E03FEB43DBE05F0E7E4CD5117B6519C566183D27B7B81C",
+          "bytes": 91749
+        },
+        {
+          "name": "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
+          "sha256": "A676DC5D33D378B46444C334CB08BE31A1037A41AA0EDD8BE474E3EC58CDE100",
+          "bytes": 66312,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
+          "sha256": "1553D3820F78A2D8F513E23B472E1B258B82AF0063F5FED01FD42B4FF050DDB8",
+          "bytes": 84095
+        },
+        {
+          "name": "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
+          "sha256": "6398F3E4C804251E0CB6C9291A63DEDAEBFFB60588D21C4A18EF7A0A0F35D857",
+          "bytes": 65304,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
+          "sha256": "3E3C5A358B238D72A0C081E7BEEFA36C02023784EFD36D8987B0FCC503854A76",
+          "bytes": 80151
+        },
+        {
+          "name": "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+          "sha256": "BB853130F5AFAF335BE7858D661F8212EC653835100F5A4E3AA2C66A4D4F685D",
+          "bytes": 65288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+          "sha256": "3E3C5A358B238D72A0C081E7BEEFA36C02023784EFD36D8987B0FCC503854A76",
+          "bytes": 80151
+        },
+        {
+          "name": "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+          "sha256": "79F67FF002712D6589370DB25F751D3F53FB49EF1A6D750D1C62419EF3A4392C",
+          "bytes": 67864,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+          "sha256": "8EA6209C93E063A0F0E03FEB43DBE05F0E7E4CD5117B6519C566183D27B7B81C",
+          "bytes": 91749
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+          "bytes": 21304,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+          "bytes": 21808,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+          "bytes": 23336,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+          "bytes": 20776,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+          "bytes": 20264,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+          "sha256": "249E758EC5137ECF60615E56BBD4BE6DCE29AEB4EDACBEF1FF2D07FF249536AC",
+          "bytes": 72968,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [
+                "ISourceGenerator"
+              ],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+          "bytes": 21304,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+          "bytes": 21808,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+          "bytes": 23336,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+          "bytes": 20776,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+          "bytes": 20264,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+          "sha256": "AC4680341915FCDBC1AB47A40CDE367E72328849587939A0999A228225153010",
+          "bytes": 91912,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [
+                "IIncrementalGenerator"
+              ],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "7F618D4EBE16B520BE96A90C37EC002119C772340402A49C1D0269D3812B1D62",
+          "bytes": 21304,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B8A783EE393593F0270F388D5CFB0BED29890AC34FC546FA389F85AC6F828B73",
+          "bytes": 21808,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "5DD2A9CDE4C03B5EC84A2F1F4025DBF2008FA38ECFCCB239AA8EF920BF654FD0",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "72B9B768F9BD09304568C59B227155EE5D82765A59CA49B716A3512A6B134D42",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "8003FD7F9CDF776C4D8B1E89725909EF2A434E525AA957885F56BF3A33930CD6",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "0AEB73D5735DB7C90F595F45E554D3CBA87B7F259B9A999924F40FA8ABAC35C0",
+          "bytes": 21816,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "32AE34100339E399E7AF4E74F15F8170BF71F8A4FCDB85B5F3A2913F2719114B",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "E7E0C1AAB82944FB72D9F3CFE98EADA3FB74C49EB53681BB8615ADC5526849A4",
+          "bytes": 21288,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "92E748EB57E0AD0D7DEF8D2604AC50A0D994F95CB4F8489FA2070D7EC11A9374",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "B119A7B2172083D72183CEDE8D5D7DDD9C663146D11A413D8A35EB2304DC4BB7",
+          "bytes": 23336,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BA0CB2FF3A0DA581CF2BF6A56887DB067D1CFD6AA9009CD6CE2015F427304F5D",
+          "bytes": 21296,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "2533FBC09BFF9361554B0EDBFBA433F46C5325084509FFAFD697D838562F4826",
+          "bytes": 20776,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+          "sha256": "BED079FF0A9FDE5D995AE2795722A0AB4E481B1A9942AFA98BCE5B2AE020AA19",
+          "bytes": 20264,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+          "sha256": "AD05A26AA2FCD488E0A358FEA3802556BE6C7E1C9CC4832F2FA2AEF7A490B0EA",
+          "bytes": 76080,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [
+                "IIncrementalGenerator"
+              ],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+          "bytes": 1507
+        },
+        {
+          "name": "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+          "bytes": 1507
+        },
+        {
+          "name": "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+          "sha256": "956112AB4506F26794830FF56D0BA43098FB7DD5FE4753F505963E0E20960EA5",
+          "bytes": 1507
+        },
+        {
+          "name": "Icon.png",
+          "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+          "bytes": 7006
+        },
+        {
+          "name": "useSharedDesignerContext.txt",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "PACKAGE.md",
+          "sha256": "D3BC026ADB56A7AD3C914DDA7660104CE68C4FDC27F54D8F9E46A1C713EC8A33",
+          "bytes": 5715
+        },
+        {
+          "name": "LICENSE.TXT",
+          "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+          "bytes": 1139
+        },
+        {
+          "name": "THIRD-PARTY-NOTICES.TXT",
+          "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+          "bytes": 68910
+        },
+        {
+          "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+          "sha256": "E759D3139C8F0595D5DB4A8A78D55BC7AA05F549E2F9A5EE8CA614FE5C48707E",
+          "bytes": 697
+        },
+        {
+          "name": "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+          "sha256": "05B7457FE0DF401DCD644D9E896D1E4FB7CEF4662585C09FF09BC4B8C713D269",
+          "bytes": 697
+        },
+        {
+          "name": "[Content_Types].xml",
+          "sha256": "2484087C65213C4299C4BBE0BEC73A23EF7BD1E9DBE681CE358EEF5CF86F6743",
+          "bytes": 783
+        },
+        {
+          "name": "package/services/metadata/core-properties/4a7e6e5799314a278295ca651737d163.psmdcp",
+          "sha256": "2E24743C8C936D3D68D4BC36409D7BC2BC2F35F9653D4DDF161311D0EBBEFDB9",
+          "bytes": 1046
+        },
+        {
+          "name": ".signature.p7s",
+          "sha256": "4D471B0BD4EB905EC906A62008D5FA5FD1AE57381E78E8A23AC7428C707E35A9",
+          "bytes": 25625
+        }
+      ]
+    },
+    {
+      "package": "system.security.cryptography.pkcs.8.0.1",
+      "sha256Before": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "sha256After": "28C348909DF243FE4EE962213E3C8021AAECBC8321929DBA03A69BCB92A49DE5",
+      "bytes": 1078389,
+      "catalogSha512Match": true,
+      "archiveInventoryMatch": true,
+      "selectedDependencies": [],
+      "targets": [
+        {
+          "name": "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_System_Security_Cryptography_Pkcs_net6_0"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_System_Security_Cryptography_Pkcs_net6_0",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_System_Security_Cryptography_Pkcs_net462"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_System_Security_Cryptography_Pkcs_net462",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        }
+      ],
+      "entries": [
+        {
+          "name": "_rels/.rels",
+          "sha256": "385181953CB4CD1812136722B869827D546F9743407EBBDA22365CD43B0DCBB8",
+          "bytes": 527
+        },
+        {
+          "name": "System.Security.Cryptography.Pkcs.nuspec",
+          "sha256": "68092C8877A00D9F5B1F75293E4DE4DFA7BDC883D031018C0775B52809CF1C9A",
+          "bytes": 2190
+        },
+        {
+          "name": "lib/net462/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "89436836E39A6BB4275613CE45226FFA10E590151296343560221441D7A79670",
+          "bytes": 22176,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net462/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "79993E70DCEF2A68749D354A6927832F2C964E6C8B75E6F0613777960869D1F6",
+          "bytes": 265992,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [
+                "HttpClient",
+                "WebRequest"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "4539F410C76C094AC365F748BAF8DC72107DDD02CEED3B01D2DA4E02A66F833B",
+          "bytes": 264864,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "Marshal"
+              ],
+              "network": [
+                "HttpClient",
+                "WebRequest"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "E2352938ED4F664F770A5C98EF067CB145304456D014D2C311D725C95C8A21A9",
+          "bytes": 264864,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "Marshal"
+              ],
+              "network": [
+                "HttpClient",
+                "WebRequest"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "816F2687F23F9BAD20354BBEBFCA5C5533F1529B8BE8A29FB0ED4050C8F801D9",
+          "bytes": 212264,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [
+                "HttpClient",
+                "WebRequest"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "BBAEBC1EF6F4D953820AEA72774392396E6A7A2CAFC3D76B71BA65B2635C7473",
+          "bytes": 266024,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [
+                "HttpClient",
+                "WebRequest"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "DB842D62EE8D57493148602CBDAD09333D3DBF403D3395843CDE054F01A5B0B6",
+          "bytes": 233685
+        },
+        {
+          "name": "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "4D18CEBB69FEA44844F1A881B090E6E68D17EE3FA7B93440A4B2DCB30AF5ABFF",
+          "bytes": 316712,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "BCrypt.dll",
+                "DllImport",
+                "LibraryImport",
+                "Marshal",
+                "crypt32.dll",
+                "kernel32.dll",
+                "ncrypt.dll"
+              ],
+              "network": [
+                "HttpClient",
+                "Socket",
+                "WebRequest",
+                "socket"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr",
+                "Unsafe"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "C93A7B88691F9CE6D7339B1BD6C301146685F8B69AF72C2CB6F01D86220B41F6",
+          "bytes": 47738
+        },
+        {
+          "name": "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "CF74AF48411F6C85BF08FA35A988863FF8C9137531F6A0C1E8422C5C0CEE572D",
+          "bytes": 317224,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "BCrypt.dll",
+                "DllImport",
+                "LibraryImport",
+                "Marshal",
+                "crypt32.dll",
+                "kernel32.dll",
+                "ncrypt.dll"
+              ],
+              "network": [
+                "HttpClient",
+                "Socket",
+                "WebRequest",
+                "socket"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr",
+                "Unmanaged",
+                "Unsafe"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "7256AB173AB9D84349F39ECB002734F2AF009DFA4C4F0AD98BDC9FA3D0C4180C",
+          "bytes": 43794
+        },
+        {
+          "name": "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+          "sha256": "D8E4B733FBAEC1FE0E808FD6391479F190B170DF03E309C5F07DC85445447D22",
+          "bytes": 319784,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "BCrypt.dll",
+                "DllImport",
+                "LibraryImport",
+                "Marshal",
+                "crypt32.dll",
+                "kernel32.dll",
+                "ncrypt.dll"
+              ],
+              "network": [
+                "HttpClient",
+                "Socket",
+                "WebRequest",
+                "socket"
+              ],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [
+                "IntPtr",
+                "Unmanaged",
+                "Unsafe"
+              ],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+          "sha256": "7256AB173AB9D84349F39ECB002734F2AF009DFA4C4F0AD98BDC9FA3D0C4180C",
+          "bytes": 43794
+        },
+        {
+          "name": "Icon.png",
+          "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+          "bytes": 7006
+        },
+        {
+          "name": "useSharedDesignerContext.txt",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "LICENSE.TXT",
+          "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+          "bytes": 1139
+        },
+        {
+          "name": "THIRD-PARTY-NOTICES.TXT",
+          "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+          "bytes": 68910
+        },
+        {
+          "name": "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+          "sha256": "A1FE39AB142FC584FA26C1184710C313D2725BDA68B0BD429743AD4394ECEF10",
+          "bytes": 673
+        },
+        {
+          "name": "buildTransitive/net6.0/_._",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "buildTransitive/net462/_._",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+          "sha256": "8ED946CFC9A5025D74FB1A39B78D93234AA365A58500CC02A4CEC4FEF176DC6B",
+          "bytes": 673
+        },
+        {
+          "name": "[Content_Types].xml",
+          "sha256": "DACC6F7BAB2786A95095A86275B6A851647461C4CA15E8B76908429486A7EF54",
+          "bytes": 782
+        },
+        {
+          "name": "package/services/metadata/core-properties/4a3d937af85446f2b31c8d2968d02d66.psmdcp",
+          "sha256": "15984EEF0A93367F1ED9731F09706893B61986BA5925AE8988DBADE16841FC0E",
+          "bytes": 752
+        },
+        {
+          "name": ".signature.p7s",
+          "sha256": "CFD89505B4B36CC9FC04FA1C26C4F6C594D10FA004343F8FD69C7EA39D0EB71F",
+          "bytes": 25623
+        }
+      ]
+    },
+    {
+      "package": "microsoft.extensions.dependencyinjection.abstractions.8.0.2",
+      "sha256Before": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+      "sha256After": "51F2DF1100245F10DA54F0BB7E813F277155117777D4FBBAB902214E27372606",
+      "bytes": 278862,
+      "catalogSha512Match": true,
+      "archiveInventoryMatch": true,
+      "selectedDependencies": [],
+      "targets": [
+        {
+          "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_Microsoft_Extensions_DependencyInjection_Abstractions_net6_0"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_Microsoft_Extensions_DependencyInjection_Abstractions_net6_0",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        },
+        {
+          "name": "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+          "tags": [
+            "Project",
+            "Target",
+            "Warning"
+          ],
+          "rootAttributes": {
+            "InitialTargets": "NETStandardCompatError_Microsoft_Extensions_DependencyInjection_Abstractions_net462"
+          },
+          "targets": [
+            {
+              "Name": "NETStandardCompatError_Microsoft_Extensions_DependencyInjection_Abstractions_net462",
+              "Condition": "'$(SuppressTfmSupportBuildWarnings)' == ''"
+            }
+          ],
+          "imports": [],
+          "usingTasks": [],
+          "execs": []
+        }
+      ],
+      "entries": [
+        {
+          "name": "_rels/.rels",
+          "sha256": "50676399A66FF04FE382F7B0D9828FE41F30ED5551A83949213A18777E923880",
+          "bytes": 547
+        },
+        {
+          "name": "Microsoft.Extensions.DependencyInjection.Abstractions.nuspec",
+          "sha256": "0D37E4C53A93E295975D3F62214FF54088F34AC72DC1D601E1C504190BB59DC8",
+          "bytes": 1738
+        },
+        {
+          "name": "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "19EDD4F5E69A4589DC314909B5854A22F89C4B9AB040591771397B2CB1A17BA6",
+          "bytes": 63784,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "9F629C193CF8767344BD0A58F2B513F248FFDA9D7BD7D55286639E1F2AE63518",
+          "bytes": 205740
+        },
+        {
+          "name": "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "AC9CD953B7EEB03CF48E343C5ACE6FC9B48AC968B68D1CB30AD1D6111178BF4D",
+          "bytes": 62640,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "AFEBCF965568EF928DA65E348449552C506AEC56DAA9BA21F0CB2C3784F46A91",
+          "bytes": 186954
+        },
+        {
+          "name": "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "F5C0B8E07169BBFD61EFE611E23F6868DF0A312D7E17707F9A64697A216D85BD",
+          "bytes": 61240,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "A6283CFB90226D736D0B0FF723C653FD5846B2EA4664FD2C1E1CD242DD03A2D9",
+          "bytes": 181454
+        },
+        {
+          "name": "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "67FA4325000DB017DC0C35829B416F024F042D24EFB868BCF17A895EE6500A93",
+          "bytes": 63768,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "B5F3FFB8B45E059213F0026E3BFA45AEB32AEB2D2F2EA074D61F22994BDCDA91",
+          "bytes": 181735
+        },
+        {
+          "name": "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "1C4F6F097825170B7A61578D9C6BAC849DB7FEA37AB9CB67B3E91989A70350C9",
+          "bytes": 63784,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "9F629C193CF8767344BD0A58F2B513F248FFDA9D7BD7D55286639E1F2AE63518",
+          "bytes": 205740
+        },
+        {
+          "name": "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+          "sha256": "6C479C61BD03AC7CAC4421E5A5689359CB83634E06895EB2D93B4B6DF2773DC0",
+          "bytes": 63648,
+          "pe": {
+            "cliHeader": true,
+            "peImportDlls": [
+              "mscoree.dll"
+            ],
+            "indicators": {
+              "interop": [
+                "DllImport",
+                "LibraryImport",
+                "Marshal"
+              ],
+              "network": [],
+              "process": [],
+              "dynamic": [],
+              "unsafe": [],
+              "generator": [],
+              "telemetry": []
+            }
+          }
+        },
+        {
+          "name": "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+          "sha256": "28FC059F82D2C9347E44E2B188327D0CF09DECA22E89D3AD7F0A3586BC09EA4E",
+          "bytes": 201093
+        },
+        {
+          "name": "Icon.png",
+          "sha256": "3356B59B6D9C24DB3A22398C0FB3430724052FE75AE5E8430EE8EDE2FB713356",
+          "bytes": 7006
+        },
+        {
+          "name": "useSharedDesignerContext.txt",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "PACKAGE.md",
+          "sha256": "5072329EAC84C6DA3A5D5EAC78196B4487CD176CC146600E427D827C4B43B3D8",
+          "bytes": 2255
+        },
+        {
+          "name": "LICENSE.TXT",
+          "sha256": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+          "bytes": 1139
+        },
+        {
+          "name": "THIRD-PARTY-NOTICES.TXT",
+          "sha256": "B60B2912DA28EAA6518593C9E2EFB5334EE062D3C42E80D8FDFA806B3DC52977",
+          "bytes": 68910
+        },
+        {
+          "name": "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+          "sha256": "CE5926A5B63BBF49EAB3B12046F3246AD41CC4461F9AC046639FB7C3ACBB6B7B",
+          "bytes": 733
+        },
+        {
+          "name": "buildTransitive/net6.0/_._",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "buildTransitive/net462/_._",
+          "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "bytes": 0
+        },
+        {
+          "name": "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+          "sha256": "8C4778386D241138FC2CC0EFE1BE45541884BDF0EFC94C3E0FBCED06A56C4507",
+          "bytes": 733
+        },
+        {
+          "name": "[Content_Types].xml",
+          "sha256": "F23110D3ED7BBD6A13EFB437833CF1E62C4CA935745BC2085002DA7CB781AB21",
+          "bytes": 844
+        },
+        {
+          "name": "package/services/metadata/core-properties/1ee101924ecf4b2b946b4eea6df62bac.psmdcp",
+          "sha256": "19AA7D67797EAFBF089ED05B65839A05EFD557DA040D4B339E1E3B2ED6CAAD32",
+          "bytes": 778
+        },
+        {
+          "name": ".signature.p7s",
+          "sha256": "D316A8D9130544404329A822BEA832E67C4E1CD93A6E173A95E9A881EF957498",
+          "bytes": 25630
+        }
+      ]
+    }
+  ]
+}
