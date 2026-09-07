@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "P02-20260905-1434-ENV-CONTROLS-V1",
+  "environmentManifestId": "P02-20260905-1434-ENV-FREEZE-WINDOWS-SANDBOX-V1",
+  "templateBindingId": "SRC-OFFLINE-TEMPLATE",
+  "policy": "DENY_ANY_UNLISTED_SETTING_OR_MAPPING",
+  "templateValidation": { "status": "PASS_STATIC_ONLY", "validatorBindingId": "SRC-TEMPLATE-VALIDATOR", "runtimeEnforcementProven": false },
+  "allowlistedConfigurationElements": [
+    { "name": "Networking", "value": "Disable" },
+    { "name": "vGPU", "value": "Disable" },
+    { "name": "AudioInput", "value": "Disable" },
+    { "name": "VideoInput", "value": "Disable" },
+    { "name": "PrinterRedirection", "value": "Disable" },
+    { "name": "ClipboardRedirection", "value": "Disable" },
+    { "name": "ProtectedClient", "value": "Enable" },
+    { "name": "MappedFolders", "value": "EXACT_SINGLE_MAPPING_BELOW" }
+  ],
+  "allowedMappings": {
+    "maximumCount": 1,
+    "input": {
+      "hostFolderToken": "__APPROVED_READONLY_INPUT_ROOT__",
+      "sandboxFolder": "C:\\PocInput",
+      "readOnly": true,
+      "purpose": "HUMAN_APPROVED_SYNTHETIC_BENIGN_INPUT_ONLY",
+      "resolvedHostLocationRecorded": false
+    },
+    "output": { "present": false, "status": "DENIED_IN_CURRENT_PROFILE" }
+  },
+  "deniedMappings": [
+    "host drive root",
+    "workspace or repository root",
+    "user profile or shared user folder",
+    "UNC, network share, device path, or alternate data stream",
+    "Production, personal, operational-document, credential, secret, or key location",
+    "symlink, junction, mount point, reparse point, alias, or unresolved path",
+    "write-capable input mapping",
+    "output, temp, or evidence mapping in the current profile",
+    "more than one mapped folder",
+    "any mapping not bound to a reviewed immutable manifest"
+  ],
+  "deniedConfigurationElements": [
+    "LogonCommand",
+    "MemoryInMB until an approved ceiling and revised template are frozen",
+    "any element, attribute, duplicate, or default not explicitly allowlisted"
+  ],
+  "controlEvidence": [
+    { "controlId": "ENV-CFG-NET", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-VGPU", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-AUDIO", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-VIDEO", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-PRINTER", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-CLIPBOARD", "configured": "Disable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-CFG-PROTECTED-CLIENT", "configured": "Enable", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-MAP-INPUT", "configured": "READ_ONLY_SINGLE_TOKEN", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-MAP-OUTPUT", "configured": "ABSENT", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-IDENTITY", "configured": "REQUIRES_APPROVED_LEAST_PRIVILEGE_IDENTITY", "staticStatus": "BLOCKED", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-RESOURCE-CEILINGS", "configured": "REQUIRES_APPROVED_NUMERIC_BOUNDS", "staticStatus": "BLOCKED", "runtimeStatus": "NOT_RUN" },
+    { "controlId": "ENV-EVIDENCE-EXPORT", "configured": "NO_PERSISTENT_GUEST_EXPORT", "staticStatus": "PASS", "runtimeStatus": "NOT_RUN" }
+  ],
+  "authorities": {
+    "sandboxLaunchAuthorized": false,
+    "candidateExecutionAuthorized": false,
+    "documentProcessingAuthorized": false,
+    "pdfProcessingAuthorized": false,
+    "networkDisabledProven": false
+  },
+  "stopMarker": "STOP_BEFORE_LAUNCH"
+}

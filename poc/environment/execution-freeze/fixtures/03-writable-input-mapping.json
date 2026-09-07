@@ -1,0 +1,7 @@
+{
+  "fixtureId": "NEG-WRITABLE-INPUT-MAPPING",
+  "target": "checklist",
+  "search": "\"readOnly\": true",
+  "replace": "\"readOnly\": false",
+  "expectedFailure": "INPUT_MAPPING_INVALID"
+}

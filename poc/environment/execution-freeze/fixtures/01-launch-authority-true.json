@@ -1,0 +1,7 @@
+{
+  "fixtureId": "NEG-LAUNCH-AUTHORITY-TRUE",
+  "target": "manifest",
+  "search": "\"sandboxLaunchAuthorized\": false",
+  "replace": "\"sandboxLaunchAuthorized\": true",
+  "expectedFailure": "AUTHORITY_FLAG_TRUE"
+}

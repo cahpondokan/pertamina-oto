@@ -1,0 +1,7 @@
+{
+  "fixtureId": "NEG-NETWORK-ENABLED",
+  "target": "checklist",
+  "search": "{ \"name\": \"Networking\", \"value\": \"Disable\" }",
+  "replace": "{ \"name\": \"Networking\", \"value\": \"Enable\" }",
+  "expectedFailure": "SETTINGS_INVALID"
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "P02-20260905-1434-ENV-FREEZE-WINDOWS-SANDBOX-V1",
+  "runId": "P02-20260905-1434",
+  "taskId": "P2-W0G-A1-ENVIRONMENT-FREEZE",
+  "baselineCommit": "4a78212e01d3daee9ae47f0473fb6186df0dccde",
+  "classification": "INTERNAL_SANITIZED_CONFIGURATION_METADATA",
+  "purpose": "PRE-009 environment freeze input and PRE-010 observation-plan binding only",
+  "productionStatus": "NON_PRODUCTION_POC_PREPARATION_ONLY",
+  "environmentDisposition": "HOST_OBSERVED_GUEST_AND_NETWORK_UNPROVEN",
+  "costBoundary": "ZERO_ADDITIONAL_COST",
+  "sourceBindings": [
+    { "id": "SRC-POSTRESTART-REPORT", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "docs/project-management/PHASE_02_POSTRESTART_SANDBOX_OBSERVATION_P02-20260905-1434.md", "sha256": "D9863580DE97AF7D940FE3CC762169DB9B35A9D9239AA6649574D875DAFF29D6" },
+    { "id": "SRC-POSTRESTART-JSON", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "docs/project-management/PHASE_02_WINDOWS_SANDBOX_POSTRESTART_RESULT.json", "sha256": "5BA5CF8C75D8A945DD5F88F14918E744C17473F16D97147942F673468BAE924D" },
+    { "id": "SRC-HOST-INVENTORY", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "dev-setup/evidence/environment-inventory.json", "sha256": "2CC668283AC1190B3E12E035FA2BFF0793238A5DB673434EC9FAB675E770E306" },
+    { "id": "SRC-W0G-TASK-CARD", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "docs/project-management/PHASE_02_WAVE_0G_TASK_CARDS_P02-20260905-1434.md", "sha256": "030C687FA281B0704023EB6B692C1629184119210984EBE85A828A4C68E50E88" },
+    { "id": "SRC-PDF001-CHARTER", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "docs/baseline-audit/POC_PDF_001_EXECUTION_CHARTER_CANDIDATE_v1.0.md", "sha256": "E47460DFB3768F6EE76AFB0EF30AAF6F0672905BEFA2A93B5137218BF1176F5A" },
+    { "id": "SRC-SECURITY-DESIGN", "sourceDomain": "COORDINATION_WORKSPACE", "logicalPath": "08_SECURITY_DESIGN_FINAL_v1.0_PERTAMINA_OTO.md", "sha256": "DF9C8BA8B70B224206918096FC2ACBE990C452AA932F27871FB36B282F6F404F" },
+    { "id": "SRC-OFFLINE-TEMPLATE", "sourceDomain": "REPOSITORY_BASELINE", "logicalPath": "poc/environment/windows-sandbox/offline.wsb.template", "sha256": "A011670A197F054D2AA787499F401BD48A72E59B1683D036FA8E58576A6BA97F" },
+    { "id": "SRC-TEMPLATE-VALIDATOR", "sourceDomain": "REPOSITORY_BASELINE", "logicalPath": "poc/environment/windows-sandbox/Validate-Template.ps1", "sha256": "ED63C2F60F55A705CDF8F0BF09436811E92E0524FE5A2C893AF2B92FBBBD6C05" },
+    { "id": "SRC-POSTRESTART-VERIFIER", "sourceDomain": "REPOSITORY_BASELINE", "logicalPath": "poc/environment/windows-sandbox/postrestart/Verify-PostRestart.ps1", "sha256": "BA73EED4376233298BFE7FEE1F26492CB5CCE9AA97CC4D8EFC67402978ADCE03" }
+  ],
+  "hostEvidence": {
+    "postRestartObservation": {
+      "observedAt": "2026-09-07T20:20:57+07:00",
+      "lastBootAt": "2026-09-07T15:06:05+07:00",
+      "result": "OBSERVATIONS_COMPLETE_REVIEW_REQUIRED",
+      "checks": { "featureEnabled": "PASS", "launcherPresent": "PASS", "startEntryPresent": "PASS", "virtualizationObservable": "PASS", "noPendingRestart": "PASS", "templateControls": "PASS" },
+      "sourceBindingId": "SRC-POSTRESTART-JSON"
+    },
+    "operatingSystemBaseline": {
+      "caption": "Microsoft Windows 11 Pro",
+      "version": "10.0.26200",
+      "architecture": "64-bit",
+      "capturedAt": "2026-09-03T15:42:15.2026702+07:00",
+      "freshness": "PRE_RESTART_BASELINE_NOT_REOBSERVED_AFTER_RESTART",
+      "sourceBindingId": "SRC-HOST-INVENTORY"
+    },
+    "runtimeBaseline": {
+      "dotnetSdk": "10.0.400",
+      "dotnetHost": "10.0.11",
+      "runtimeIdentifier": "win-x64",
+      "capturedAt": "2026-09-03T15:42:15.2026702+07:00",
+      "freshness": "PRE_RESTART_BASELINE_NOT_REOBSERVED_AFTER_RESTART",
+      "sourceBindingId": "SRC-HOST-INVENTORY"
+    },
+    "launcher": {
+      "locationClass": "WINDOWS_SYSTEM32",
+      "basename": "WindowsSandbox.exe",
+      "bytes": 1078736,
+      "fileVersion": "10.0.26100.8875",
+      "sha256": "7C0095F52A1FDED07D90171A005BB495440C92DA099C064E0ED9AD08656AC3FB",
+      "signatureStatus": "Valid",
+      "signer": "Microsoft Windows",
+      "startEntryDisplayName": "Windows Sandbox",
+      "startEntryAppId": "Microsoft.Windows.Containers.Sandbox",
+      "binaryArchitecture": "UNOBSERVED",
+      "sourceBindingId": "SRC-POSTRESTART-JSON"
+    },
+    "virtualization": {
+      "hypervisorPresent": true,
+      "supportingServices": { "vmcompute": "Running/Manual", "hns": "Running/Manual" },
+      "meaning": "HOST_PREREQUISITE_OBSERVED_NOT_GUEST_COMPATIBILITY_PROOF",
+      "sourceBindingId": "SRC-POSTRESTART-JSON"
+    }
+  },
+  "guestEvidence": {
+    "guestBooted": false,
+    "status": "UNPROVEN_NOT_LAUNCHED",
+    "unprovenProperties": [
+      "guest OS edition and build",
+      "guest architecture",
+      "guest .NET runtime and SDK availability",
+      "successful boot of the bound template",
+      "effective network adapter and egress denial",
+      "effective read-only host-folder enforcement",
+      "effective disabled redirections and ProtectedClient behavior",
+      "host-boundary, process, module, DLL-search, resource, close, and cleanup behavior"
+    ]
+  },
+  "laterTargetProposal": {
+    "osFamily": "Windows Sandbox guest",
+    "architecture": "x64",
+    "framework": "net10.0",
+    "runtimeIdentifier": "win-x64",
+    "sdk": "10.0.400",
+    "status": "PROPOSED_NOT_GUEST_RUNTIME_PROVEN",
+    "authorityReference": "P0-D05"
+  },
+  "authorities": {
+    "restartAuthorized": false,
+    "sandboxLaunchAuthorized": false,
+    "candidateInstallAuthorized": false,
+    "candidateRestoreAuthorized": false,
+    "candidateBuildAuthorized": false,
+    "candidateLoadAuthorized": false,
+    "candidateExecutionAuthorized": false,
+    "documentProcessingAuthorized": false,
+    "pdfProcessingAuthorized": false,
+    "hostileCorpusAuthorized": false,
+    "evidenceExportMappingAuthorized": false,
+    "networkDisabledProven": false
+  },
+  "invalidationRules": [
+    "any source binding hash changes",
+    "host OS update, build change, or pending-restart state changes",
+    "launcher identity, template, validator, mapping, or control checklist changes",
+    "guest target runtime, architecture, identity, evidence policy, collector, quota, or safety ceiling changes",
+    "any candidate, corpus, oracle, or processing scope changes"
+  ],
+  "stopMarker": "STOP_BEFORE_LAUNCH"
+}

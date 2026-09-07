@@ -1,0 +1,7 @@
+{
+  "fixtureId": "NEG-UNSANITIZED-LAUNCHER-LOCATION",
+  "target": "manifest",
+  "search": "\"locationClass\": \"WINDOWS_SYSTEM32\"",
+  "replace": "\"locationClass\": \"RAW_HOST_LOCATION_CANARY\"",
+  "expectedFailure": "LAUNCHER_LOCATION_NOT_SANITIZED"
+}

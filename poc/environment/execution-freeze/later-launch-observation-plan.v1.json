@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "planId": "P02-20260905-1434-ENV-LATER-LAUNCH-PLAN-V1",
+  "environmentManifestId": "P02-20260905-1434-ENV-FREEZE-WINDOWS-SANDBOX-V1",
+  "controlChecklistId": "P02-20260905-1434-ENV-CONTROLS-V1",
+  "status": "PLAN_ONLY_NOT_AUTHORIZED",
+  "scope": "BENIGN_ENVIRONMENT_OBSERVATION_ONLY",
+  "exclusions": [
+    "candidate install, restore, build, load, or execution",
+    "PDF creation, opening, parsing, rendering, or processing",
+    "hostile corpus",
+    "feature, registry, service, security-policy, or system mutation",
+    "restart, download, acquisition, paid service, or new component",
+    "Production or personal data"
+  ],
+  "preconditionMatrix": [
+    { "id": "PRE-003", "status": "BLOCKED_EXECUTION_TASK_CARD_NOT_HUMAN_APPROVED", "required": "exact benign launch task card, scope, stop rules, reviewer, and expiry" },
+    { "id": "PRE-004", "status": "OUT_OF_SCOPE_FOR_BENIGN_ENVIRONMENT_OBSERVATION", "required": "candidate remains absent" },
+    { "id": "PRE-005", "status": "OUT_OF_SCOPE_FOR_BENIGN_ENVIRONMENT_OBSERVATION", "required": "no candidate or redistribution decision is inferred" },
+    { "id": "PRE-006", "status": "BLOCKED_INDEPENDENT_SECURITY_REVIEW", "required": "identity, containment, collector, network canary, privilege, and stop-rule approval" },
+    { "id": "PRE-007", "status": "BLOCKED_APPROVED_BENIGN_FIXTURE_MANIFEST", "required": "inert synthetic-only mapped input with owner, hash, access, retention, and disposal" },
+    { "id": "PRE-008", "status": "BLOCKED_INDEPENDENT_ENVIRONMENT_ORACLE", "required": "expected control observations and reviewer identity" },
+    { "id": "PRE-009", "status": "HOST_OBSERVED_GUEST_AND_EFFECTIVE_CONTROLS_UNPROVEN", "required": "fresh host binding plus authorized guest observation" },
+    { "id": "PRE-010", "status": "PLAN_PREPARED_NUMERIC_SAMPLING_AND_CEILINGS_UNAPPROVED", "required": "collector versions, sampling, duration, CPU/RAM/temp/output/handle/thread limits, cancel and close deadline" },
+    { "id": "PRE-011", "status": "ROOT_APPROVED_POLICY_FIELDS_INCOMPLETE", "required": "run access, retention, expiry, disposal, classification mapping, evidence owner, reviewer, and immutable index" },
+    { "id": "PRE-012", "status": "HUMAN_ONLY_NOT_APPROVED", "required": "separate explicit launch authorization bound to exact digests and expiry" }
+  ],
+  "requiredHumanAndSecurityFields": {
+    "executionApprover": "REQUIRED_NOT_SET",
+    "securityReviewer": "REQUIRED_NOT_SET",
+    "environmentOwner": "REQUIRED_NOT_SET",
+    "evidenceOwner": "REQUIRED_NOT_SET",
+    "authorizedManifestTemplateChecklistAndFixtureDigests": "REQUIRED_NOT_SET",
+    "approvedLeastPrivilegeIdentityClass": "REQUIRED_NOT_SET",
+    "approvedHostNetworkCollectorPrivilegeAndNonPublicCanary": "REQUIRED_NOT_SET",
+    "approvedSamplingDurationResourceAndCleanupCeilings": "REQUIRED_NOT_SET",
+    "evidenceAccessRetentionExpiryDisposal": "REQUIRED_NOT_SET",
+    "authorizationEffectiveAtAndExpiry": "REQUIRED_NOT_SET"
+  },
+  "orderedStages": [
+    { "stageId": "ENV-L01", "name": "Revalidate frozen hashes", "actions": ["compare all approved source, manifest, template, checklist, fixture, and plan digests"], "stopOn": ["hash mismatch", "unreviewed change"] },
+    { "stageId": "ENV-L02", "name": "Refresh host identity", "actions": ["observe OS edition, build, architecture, runtime, SDK, feature, hypervisor, services, pending restart, and launcher identity"], "stopOn": ["pending restart", "identity change", "invalid signature", "elevation or repair required"] },
+    { "stageId": "ENV-L03", "name": "Freeze inert input and rendered configuration", "actions": ["approve inert synthetic fixture root", "reject broad, linked, network, sensitive, or writable location", "render escaped token", "validate and hash configuration"], "stopOn": ["sensitive material", "mapping or configuration outside allowlist"] },
+    { "stageId": "ENV-L04", "name": "Separately authorized supervised benign launch", "actions": ["record exact authorization and expiry", "start approved collectors", "launch once", "keep candidates and PDF material absent"], "stopOn": ["authorization missing", "collector unavailable", "unexpected process, privilege, mapping, or network state"] },
+    { "stageId": "ENV-L05", "name": "Observe guest identity and controls", "actions": ["record guest OS/build/architecture/runtime", "verify inert input readable but not writable", "verify network and redirections unavailable", "record ProtectedClient result"], "stopOn": ["write succeeds", "egress or redirection available", "mandatory result UNKNOWN"] },
+    { "stageId": "ENV-L06", "name": "Measure benign resource and boundary behavior", "actions": ["sample approved process/resource counters", "observe sanitized process/module identities", "observe approved network-denial telemetry", "verify no candidate module and no document processing"], "stopOn": ["unapproved process/module", "resource ceiling", "network evidence inconclusive", "forbidden evidence"] },
+    { "stageId": "ENV-L07", "name": "Close and reconcile", "actions": ["request normal close", "verify run-owned process termination", "re-hash inert input", "inventory only run-owned residue", "never delete uncertain paths"], "stopOn": ["late process", "source changed", "cleanup ownership uncertain", "destructive action required"] },
+    { "stageId": "ENV-L08", "name": "Sanitize, hash, and review", "actions": ["allowlist evidence fields", "scan forbidden data", "hash and index evidence", "obtain independent review", "retain false authorities"], "stopOn": ["secret/content/identity/raw path exposed", "evidence not reproducible", "reviewer or policy missing"] }
+  ],
+  "instrumentation": {
+    "acquisitionPolicy": "BUILT_IN_ONLY_ZERO_ADDITIONAL_COST_NO_INSTALL",
+    "collectors": [
+      { "collectorId": "COL-HOST-IDENTITY", "interfaces": ["CIM operating-system/computer-system properties", "existing .NET inventory"], "fields": ["OS caption", "build", "architecture", "runtime/SDK", "RID"], "executionStatus": "NOT_RUN" },
+      { "collectorId": "COL-LAUNCHER-IDENTITY", "interfaces": ["file metadata", "SHA-256", "Authenticode", "Start registration"], "fields": ["basename", "location class", "bytes", "version", "digest", "signature", "signer", "AppID"], "executionStatus": "NOT_RUN" },
+      { "collectorId": "COL-HOST-READINESS", "interfaces": ["feature", "CIM hypervisor", "service state", "pending-restart indicators"], "fields": ["feature", "hypervisor", "service states", "pending restart"], "executionStatus": "NOT_RUN" },
+      { "collectorId": "COL-PROCESS-MODULE", "interfaces": ["CIM process snapshot", "process counters", "module metadata when readable without elevation"], "fields": ["process name", "opaque run-local ID", "parent relation", "times", "module basename/digest/signer", "child count"], "forbiddenFields": ["command line", "environment block", "raw path", "user identity"], "executionStatus": "NOT_RUN" },
+      { "collectorId": "COL-NETWORK-EGRESS", "interfaces": ["REQUIRES_SECURITY_APPROVED_HOST_COLLECTOR", "approved non-public canary only"], "fields": ["guest adapter/route presence", "attempt count", "blocked count", "unexpected flow count", "PASS/FAIL/UNKNOWN"], "executionStatus": "BLOCKED_COLLECTOR_AND_CANARY_NOT_APPROVED" },
+      { "collectorId": "COL-MAPPING-INTEGRITY", "interfaces": ["SHA-256", "inert read/write canary", "reparse inspection"], "fields": ["mapping count", "guest target", "read result", "write-denied result", "pre/post digest", "reparse count"], "executionStatus": "NOT_RUN" },
+      { "collectorId": "COL-GUEST-IDENTITY", "interfaces": ["REQUIRES_APPROVED_GUEST_OBSERVER_AND_SANITIZED_EXPORT_METHOD"], "fields": ["guest OS", "build", "architecture", "runtime/SDK or absent"], "executionStatus": "BLOCKED_OBSERVER_AND_EXPORT_METHOD_NOT_APPROVED" },
+      { "collectorId": "COL-RESOURCE", "interfaces": ["approved host process counters", "run-scoped storage inventory"], "fields": ["CPU", "working/private bytes", "threads/handles", "duration", "run-scoped files/bytes/residue"], "samplingAndCeilings": "REQUIRED_NOT_SET", "executionStatus": "BLOCKED_NUMERIC_PLAN_NOT_APPROVED" }
+    ]
+  },
+  "evidencePolicy": {
+    "allowlistedFields": ["timestamp", "run/environment IDs", "component/version", "safe status/error code", "duration", "bounded counters", "digest", "profile code", "review outcome"],
+    "forbiddenFields": ["password/token/secret/key", "document/PDF bytes or text", "raw path", "user/host identity", "command line/environment block/raw exception", "network payload/credential"],
+    "persistentGuestExportInCurrentProfile": false,
+    "writableHostMappingInCurrentProfile": false
+  },
+  "authorities": {
+    "restartAuthorized": false,
+    "sandboxLaunchAuthorized": false,
+    "candidateExecutionAuthorized": false,
+    "documentProcessingAuthorized": false,
+    "pdfProcessingAuthorized": false,
+    "hostileCorpusAuthorized": false,
+    "networkDisabledProven": false
+  },
+  "stopMarker": "STOP_BEFORE_LAUNCH"
+}

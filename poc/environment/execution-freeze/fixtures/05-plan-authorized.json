@@ -1,0 +1,7 @@
+{
+  "fixtureId": "NEG-PLAN-AUTHORIZED",
+  "target": "plan",
+  "search": "\"status\": \"PLAN_ONLY_NOT_AUTHORIZED\"",
+  "replace": "\"status\": \"AUTHORIZED\"",
+  "expectedFailure": "PLAN_STATUS_INVALID"
+}
