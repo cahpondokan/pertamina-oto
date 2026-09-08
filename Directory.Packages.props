@@ -5,5 +5,11 @@
   </PropertyGroup>
 
   <!-- Add package versions only after admission, license, and security review. -->
-  <ItemGroup />
+  <ItemGroup>
+    <PackageVersion Include="PDFsharp" Version="6.2.4" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250909003" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../../src/Hosts/Pertamina.Oto.Desktop.App/WorkerClient.cs" Link="WorkerClient.cs" />
+    <Compile Include="../../../src/Workers/Pertamina.Oto.LocalPdf.Worker/Protocol.cs" Link="Protocol.cs" />
+    <ProjectReference Include="../../../src/Workers/Pertamina.Oto.LocalPdf.Worker/Pertamina.Oto.LocalPdf.Worker.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <Target Name="CopyWorker" AfterTargets="Build">
+    <ItemGroup><WorkerFiles Include="../../../src/Workers/Pertamina.Oto.LocalPdf.Worker/bin/$(Configuration)/net10.0/**/*" /></ItemGroup>
+    <Copy SourceFiles="@(WorkerFiles)" DestinationFiles="@(WorkerFiles->'$(OutDir)worker/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+</Project>

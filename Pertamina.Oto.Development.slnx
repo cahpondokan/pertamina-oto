@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/Hosts/Pertamina.Oto.Desktop.App/Pertamina.Oto.Desktop.App.csproj" />
+  <Project Path="src/Workers/Pertamina.Oto.LocalPdf.Worker/Pertamina.Oto.LocalPdf.Worker.csproj" />
+  <Project Path="tests/Functional/Pertamina.Oto.LocalPdf.SmokeTests/Pertamina.Oto.LocalPdf.SmokeTests.csproj" />
+</Solution>
