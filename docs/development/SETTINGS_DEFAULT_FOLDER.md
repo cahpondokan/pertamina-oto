@@ -1,0 +1,7 @@
+# Settings and icon — 2026-09-09
+
+Approved settings redesign implemented with compact icon rows, adaptive layout, keyboard disclosure, language/status labels and a default-output-folder picker. Default path saved atomically in LocalApplicationData/PertaminaOTO/preferences.json. All tools share the loaded folder. Per-tool picker changes the current session location, not the persisted default. Cancel leaves preference unchanged. Missing/corrupt preference or unavailable directory does not block startup. Save failure is disclosed. No document contents or passwords persisted. Default folder selection does not move or alter files.
+
+App icon generated from the existing sidebar owl geometry using eng/Build-OtoIcon.ps1, six ICO sizes (16/24/32/48/64/256). Embedded via ApplicationIcon and copied as Assets/oto.ico for AppWindow.SetIcon. Icon load failure does not block startup. No external assets/dependencies. Script execution policy override was process-only, no persistent policy change.
+
+Verification: VS MSBuild Development.slnx Debug to artifacts/desktop-settings; final result in task. ICO header inspected; diff-check exit0. Runtime GUI acceptance and preference restart/save-failure checks pending. Manual: choose folder in Settings, open two different tools, restart, confirm default, override within a tool, restart and confirm original default, cancel picker, inspect title/taskbar icon. Earlier crash not claimed fixed. No production or phase promotion.

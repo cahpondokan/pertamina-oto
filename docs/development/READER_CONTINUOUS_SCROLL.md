@@ -1,0 +1,43 @@
+# Continuous PDF scrolling
+
+30 September 2026 — scoped user request: scrolling down stopped at the bottom of a page instead of continuing. Agent 0 only, existing dirty development worktree preserved. This changes the dedicated Pembaca PDF used by the reader entry and the PDF default opener; phase gates remain unchanged.
+
+## Behavior
+
+The native ScrollViewer now contains vertically arranged PDF page frames with a gap between them. Scrolling can cross page boundaries in either direction without a navigation-button click. The page number, previous/next buttons, bookmark action and thumbnail selection track the page at the top of the reading area. Mouse, touchpad, scrollbar and touch all use the same native scrolling surface; custom wheel-event interception is unnecessary.
+
+Page buttons, number entry, thumbnails and search results jump to the corresponding position in that same document surface. Scrolling retains zoom. Fit mode refits after a short layout debounce when the viewport changes size; doing ChangeView directly inside SizeChanged used stale native metrics and was corrected during verification. Short final pages remain reachable at the top. Mixed portrait/landscape and paper sizes use their actual dimensions and remain horizontally centered.
+
+## Resource and lifecycle handling
+
+- Measure only page dimensions when opening, with existing 100 MB / 1000-page document limits. Every page has a lightweight frame, but only the visible range and one adjacent page on each side retain rendered images.
+- Shared render gate serializes rendering. Request generations discard late output after scrolling, document replacement or leaving the reader. Distant bitmaps are released, and revisiting a page renders it again.
+- Requested page raster pixels share an 8-million-pixel budget across the retained range, with the existing 1800-pixel maximum dimension. This bounds requested retained page raster sizes, not total process memory or temporary renderer allocations. Thumbnails, frames and the PDF parser are additional memory.
+- Leaving/replacing the document clears all page bitmaps and stops the resize timer. Search cancellation/source read locking and save-copy behavior remain in place. No document upload, new dependency, default-app mutation or automatic install is introduced.
+- Main implementation: `ReaderWorkspace.cs`, `ReaderContinuousScroll.cs`; native verification: `ReaderUiAudit.cs`.
+
+## Verification and delivery
+
+The native audit exercises actual ScrollViewer offset changes: both directions, simultaneous neighboring pages, page controls, zoomed in-page movement, retained zoom, first/last clamping, rapid scrolling, bitmap eviction/reload, requested pixel budget, compact fit, search navigation and source preservation. Screenshots of a boundary and compact reader are visually inspected. Additional mixed-size fixture coverage verifies replacement, jumping to a short landscape final page and releasing distant images.
+
+Physical mouse/touchpad/pinch gestures and full accessibility/UAT remain manual; native offset tests are not claimed as a physical input test. The implementation uses the native scrolling surface to keep those inputs on the standard Windows path. Reference: [Microsoft ScrollViewer documentation](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [pointer wheel event behavior](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged).
+
+Final desktop build exit 0; native reader audit **63 PASS**, including the new scroll/fit/mixed-size cases plus existing reader/search/default-setting regression. Evidence: `artifacts/desktop-reader-scroll/reader-ui-audit-e11e1ed0485d41a3bee9b41c90850b48/audit.txt`. Page-boundary and compact screenshots were inspected in the earlier equivalent-layout audits; final mixed-size capture `10-continuous-mixed-sizes.png` was inspected. Failed intermediate compact-fit audits are retained and superseded by the final passing result.
+
+Published update **20260930-144154-279ce46c** after the standard clean rebuild and worker41/editor63/search25/helper41 regressions passed. Together with native reader63, **233 checks PASS**. Build log: `artifacts/reader-scroll-verification/package-build.txt`; helper evidence: `artifacts/pdf-association-verification/pdf-association-41c00aaa97b24e40a6833ba360fac818/audit.txt`.
+
+Integrity verification exit 0: manifest SHA-256 `2F915C7CDF98412727AA8EA8FD9626610E997E6739F2FE8D72306471C6AA1914`; all **368/368** payload lengths/hashes match, zero failures. Desktop, worker and helper DLLs match the tested build byte-for-byte. Evidence: `artifacts/reader-scroll-verification/package-integrity.txt`. Previous feed `20260930-141956-a5a4707b` retained.
+
+The user installs through **Pengaturan → Periksa update → Pasang update**, then saves work and reopens the stable desktop shortcut. Publishing did not modify the installed/running version. No phase or Production gate was promoted.
+
+## Reverification — 1 October 2026
+
+The new request was executed in this separate chat/worktree. Baseline `84cbb0f538020003bcfb6583e94c2fcf6524f87c`, branch `task/core-functional-first`; existing dirty files preserved. Inspection found the requested continuous native scroll already implemented in ReaderWorkspace.cs / ReaderContinuousScroll.cs and included in the previous local updates. This run did not rewrite production scrolling or change icons, dependencies, phase gates, user installation, or source documents. Changes are ReaderUiAudit.cs and this document only.
+
+ReaderUiAudit.cs now waits for the requested native scroll offset (bounded retries) instead of assuming a fixed 250 ms delay is sufficient. Assertions remain intact, with boundary diagnostics. It adds a synthetic 1000-page fixture, viewport-only retained bitmaps, end navigation/eviction, pixel budget, render invalidation during navigation, replacement by a small document, and unchanged source hashes. Early audit failures at native scroll timing boundaries and an intermediate compilation error are superseded by the final passing build/audit; failure artifacts remain available.
+
+Actual final native audit: **69 PASS**, exit 0. Evidence: `artifacts/reader-scroll-20261001/reader-ui-audit-6b0af8a69b3d4bfba99b1411cabc4626/audit.txt`. Screenshot boundary `09-continuous-page-boundary.png` from the earlier 63-PASS current-build audit was inspected; final `10-continuous-mixed-sizes.png` and `11-thousand-page-end.png` were inspected. Sampled process peak working set: **305,041,408 bytes (~291 MiB)** across the whole final audit including editor/search, sampled once per second; see resource.txt. The 1000-page fixture is a lightweight synthetic PDF (~153 KiB), not a scanned-document stress benchmark or a total-memory guarantee. Only viewport/neighbor rasters remain, with the existing 8-million requested pixel budget. Physical mouse/touchpad/pinch UAT, OCR, in-page highlight and printing are not claimed. Search keeps its existing highlighted result snippets and page navigation. No network-disabled physical UAT was performed; processing uses the existing local PDF renderer/worker.
+
+Commands: MSBuild Desktop.App.csproj `/t:Build /p:Configuration=Debug /p:DesktopUiOutputPath=artifacts/desktop-scroll-current/ /v:minimal /nologo` (exit 0); separate test instance `Pertamina.Oto.Desktop.App.exe --audit-reader-ui` (exit 0); `eng/Build-LocalUpdate.ps1` (final exit 0). The initial relative test output landed under the project directory and got included by build content globbing; initial package attempt failed. Only the newly created test output was moved to workspace `artifacts/reader-scroll-20261001`, and packaging retried successfully. No user folder was deleted or process force-closed.
+
+Published local update **20261001-095305-b3d19ad4**. Clean rebuild plus worker **41**, editor **63**, search **25**, PDF-opener helper **41** PASS; together with reader **69**, **239 checks PASS**. Build/regression log: `artifacts/reader-scroll-current-package-retry.txt`; helper evidence: `artifacts/pdf-association-verification/pdf-association-dccbcb8b7a3b4ace83e22a2c39e5ed2a/audit.txt`. Integrity exit 0: **369/369** payload lengths/SHA-256 verified, manifest `9C5D66DC1769EC374CB3D862E3E546ED221485B228F182E6A0318273FA3A2585`; `artifacts/reader-scroll-current-integrity.txt`. Audited desktop DLL matches the packaged DLL byte-for-byte. Package contains no audit/synthetic-document paths. Previous local feed retained. User installation is unchanged until Settings > Periksa update > Pasang update, save work, and reopen the stable shortcut.

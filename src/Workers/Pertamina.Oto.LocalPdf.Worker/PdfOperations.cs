@@ -9,7 +9,7 @@ namespace Pertamina.Oto.LocalPdf;
 
 internal sealed class InputException(string message) : Exception(message);
 
-internal static class PdfOperations
+internal static partial class PdfOperations
 {
     private const long MaxBytes = 100 * 1024 * 1024;
     private const int MaxPages = 1000;
@@ -17,8 +17,13 @@ internal static class PdfOperations
     internal static PdfReply Execute(PdfRequest request)
     {
         ArgumentNullException.ThrowIfNull(request);
+        LocalEditorFonts.Initialize();
+        if (request.Quality != "original") throw new InputException("Preset kualitas harus diproses oleh pipeline gambar desktop; operasi PDF mempertahankan kualitas asli.");
         if (request.Inputs is null || request.Inputs.Length is < 1 or > 50)
             throw new InputException("Pilih 1–50 file, total maksimal 100 MB.");
+        if (request.Tool == "edit-check") return InspectEditorDocument(request);
+        if (request.Tool == "edit-text-check") return InspectOriginalText(request);
+        if (request.Tool == "reader-search") return ReaderSearch.Execute(request);
         var output = Path.GetFullPath(request.Output);
         if (File.Exists(output) || Directory.Exists(output) || request.Inputs.Any(p =>
             string.Equals(Path.GetFullPath(p), output, StringComparison.OrdinalIgnoreCase)))
@@ -27,7 +32,7 @@ internal static class PdfOperations
             throw new InputException("Total input versi pengembangan dibatasi 100 MB.");
         if (request.Text.Length > 200 || request.Password.Length > 127 || request.NewPassword.Length > 127)
             throw new InputException("Teks terlalu panjang (maksimal 200 karakter; kata sandi 127).");
-        if (request.Tool is not ("merge" or "images") && request.Inputs.Length != 1)
+        if (request.Tool is not ("merge" or "images" or "organize" or "edit") && request.Inputs.Length != 1)
             throw new InputException("Alat ini memerlukan tepat satu PDF.");
         if (request.Tool == "merge" && request.Inputs.Length < 2)
             throw new InputException("Merge memerlukan minimal dua PDF.");
@@ -37,6 +42,8 @@ internal static class PdfOperations
         {
             "merge" => Merge(request),
             "images" => Images(request),
+            "edit" => AddEditorMarks(request),
+            "organize" when request.Layout is not null => Arrange(request),
             "extract" or "remove" or "organize" => Select(request),
             "split" => Split(request),
             "rotate" or "crop" or "numbers" or "watermark" or "compress" or "protect" or "unlock" => Modify(request),
@@ -93,19 +100,27 @@ internal static class PdfOperations
 
     private static int Merge(PdfRequest request)
     {
+        if (request.FileRotations is { } angles && (angles.Length != request.Inputs.Length || angles.Any(a => a is not (0 or 90 or 180 or 270))))
+            throw new InputException("Rotasi file tidak valid.");
         using var output = new PdfDocument();
-        foreach (var path in request.Inputs)
+        for (var i = 0; i < request.Inputs.Length; i++)
         {
+            var path = request.Inputs[i];
             using var input = Open(path, request.Password, PdfDocumentOpenMode.Import);
             if (output.PageCount + input.PageCount > MaxPages)
                 throw new InputException("Hasil dibatasi 1000 halaman.");
-            foreach (var page in input.Pages) output.AddPage(page);
+            foreach (var page in input.Pages)
+            {
+                var added = output.AddPage(page);
+                added.Rotate = (added.Rotate + (request.FileRotations?[i] ?? 0)) % 360;
+            }
         }
         return SaveValidated(output, request.Output);
     }
 
     private static int Select(PdfRequest request)
     {
+        if (request.Inputs.Length != 1) throw new InputException("Gunakan susunan halaman untuk beberapa PDF.");
         using var input = Open(request.Inputs[0], request.Password, PdfDocumentOpenMode.Import);
         if (string.IsNullOrWhiteSpace(request.Pages) && request.Tool == "remove")
             throw new InputException("Isi halaman yang akan dihapus.");
@@ -115,6 +130,37 @@ internal static class PdfOperations
         using var output = new PdfDocument();
         foreach (var page in pages) output.AddPage(input.Pages[page]);
         return SaveValidated(output, request.Output);
+    }
+
+    private static int Arrange(PdfRequest request)
+    {
+        var layout = request.Layout!;
+        if (layout.Length is < 1 or > MaxPages) throw new InputException("Susunan harus berisi 1–1000 halaman.");
+        var sources = new List<PdfDocument>();
+        try
+        {
+            foreach (var path in request.Inputs) sources.Add(Open(path, request.Password, PdfDocumentOpenMode.Import));
+            if (sources.Sum(document => document.PageCount) > MaxPages) throw new InputException("Total sumber dibatasi 1000 halaman.");
+            using var output = new PdfDocument();
+            foreach (var item in layout)
+            {
+                // Organizer blank page: explicit sentinel, always an A4 page.
+                if (item is { Source: -1, Page: -1, Rotation: 0 or 90 or 180 or 270 })
+                {
+                    var blank = output.AddPage();
+                    blank.Size = PdfSharp.PageSize.A4;
+                    blank.Rotate = item.Rotation;
+                    continue;
+                }
+                if (item is null || item.Source < 0 || item.Source >= sources.Count || item.Page < 0
+                    || item.Page >= sources[item.Source].PageCount || item.Rotation is not (0 or 90 or 180 or 270))
+                    throw new InputException("Susunan halaman tidak valid.");
+                var page = output.AddPage(sources[item.Source].Pages[item.Page]);
+                page.Rotate = (page.Rotate + item.Rotation) % 360;
+            }
+            return SaveValidated(output, request.Output);
+        }
+        finally { foreach (var source in sources) source.Dispose(); }
     }
 
     private static int Split(PdfRequest request)

@@ -1,0 +1,25 @@
+[Unit]
+Description=PERTAMINA OTO download portal
+After=network.target
+
+[Service]
+Type=simple
+User=oto-web
+Group=oto-web
+WorkingDirectory=/opt/oto-downloads/current
+ExecStart=/usr/bin/dotnet /opt/oto-downloads/current/Pertamina.Oto.Downloads.dll
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5088
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=Distribution__Root=/var/lib/oto-downloads/releases
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

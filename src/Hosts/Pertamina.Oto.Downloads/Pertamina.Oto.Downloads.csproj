@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup>
+  <ItemGroup><Compile Include="../../Distribution/ReleaseInfo.cs" Link="ReleaseInfo.cs" /></ItemGroup>
+</Project>

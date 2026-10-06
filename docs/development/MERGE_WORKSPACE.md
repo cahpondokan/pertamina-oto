@@ -1,0 +1,9 @@
+# Merge workspace — 2026-09-09
+
+Agent0 implements the approved Merge redesign in the existing dirty worktree. MergeWorkspace.cs supplies native thumbnail cards, horizontal add/paste/rotate-all toolbar, arrows and drag ordering, removal, per-file rotation, collapsed password control and readiness gating (two files and output folder). MainWindow.cs routes Merge to this workspace. NavigationHistory recognizes its Indonesian title; Edit/Paste retains Merge context. No new dependencies, uploads or paid services.
+
+Worker protocol adds optional FileRotations; Merge validates count/angles and rotates every imported page additively. Existing callers retain zero additional rotation. Angles retained per path in session; identical source paths share rotation, picker deduplicates them. Preview uses existing bounded native renderer; locked PDFs may lack preview but retain password processing. No passwords logged. Source files are not rewritten.
+
+Verification: VS MSBuild Development.slnx Debug, absolute output artifacts/desktop-merge/, exit0. Worker --self-test: 34 checks passed including per-file all-page rotation, invalid angles, source hash unchanged and existing PDF operations. Synthetic evidence: C:/Users/cahpo/AppData/Local/Temp/oto-functional-test-c3023ab3668143558ed609e70d32ec0b. git diff --check exit0 (pre-existing newline warning).
+
+Runtime visual/keyboard/drag/manual acceptance pending, not pixel-identical mockup. Existing section/favorite controls retained; no aggregate page count or enlarged preview dialog in this revision. Add uses picker; paste uses button or Edit menu. External file drop and new shortcut hints not added. Preview shows first page/count. Manual checks: two synthetic files, reorder, per-file/all rotate, save and inspect output, remove/add, navigate back, narrow resize, locked PDF. Earlier crash report not diagnosed by this work. Phase gates unchanged.

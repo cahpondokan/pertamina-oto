@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>PERTAMINA-OTO</AssemblyName>
+    <ApplicationIcon>../../src/Hosts/Pertamina.Oto.Desktop.App/Assets/oto.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/LocalAppUpdate.cs" Link="LocalAppUpdate.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/RestartProtocol.cs" Link="RestartProtocol.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/LauncherUpdate.cs" Link="LauncherUpdate.cs" /></ItemGroup>
+</Project>

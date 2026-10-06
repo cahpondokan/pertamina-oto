@@ -1,0 +1,51 @@
+PERTAMINA OTO 0.1.0 · PENGEMBANGAN — UJI PUBLIK
+
+Paket ini untuk evaluasi pengembangan, bukan Production atau versi stabil.
+Gunakan salinan dokumen uji yang tidak sensitif. Periksa hasil sebelum dipakai.
+
+1. Ekstrak SELURUH ZIP ke folder lokal yang dapat Anda tulis.
+   Gunakan jalur singkat, misalnya D:\OTO-Uji, agar mudah dibuka dan diperiksa.
+2. Baca file dalam folder lisensi dan pemberitahuan di bawah.
+3. Buka PERTAMINA-OTO.exe pada folder utama. Jangan menjalankan dari dalam ZIP.
+   Jangan memindahkan hanya EXE. Folder app dan seluruh isinya diperlukan.
+4. Hasil default berada di Data/Hasil. Anda dapat memilih folder hasil sendiri.
+5. Untuk versi baru, ekstrak ZIP baru ke folder terpisah. Jangan menimpa versi
+   yang sedang berjalan. Riwayat versi lama tidak diimpor otomatis.
+
+TARGET DAN RUNTIME
+Windows x64, API minimum Windows 10 build 19041 / Windows 11.
+Gunakan Windows yang masih mendapat pembaruan keamanan. Tidak untuk Windows
+32-bit, native ARM64, macOS atau Linux. Baca package-manifest.json untuk
+status runtime tepat paket ini. Bila runtime tidak disertakan, .NET 10 x64
+harus sudah tersedia; paket tersebut belum memenuhi portable tanpa prasyarat.
+Launcher tidak mengunduh atau memasang runtime dan tidak meminta administrator.
+
+KEAMANAN
+Aplikasi OTO belum ditandatangani dengan sertifikat penerbit tepercaya.
+Smart App Control, kebijakan organisasi atau antivirus dapat memblokirnya.
+Portable TIDAK menghindari blokir tersebut. Jangan menonaktifkan perlindungan,
+menambah pengecualian, atau mengubah kebijakan demi menjalankan paket ini.
+Jika diblokir, hentikan dan sampaikan kode error yang sudah disanitasi ke
+pengelola/IT. Hash mendeteksi perubahan file, bukan menjamin keamanan penerbit.
+
+DATA DAN BATASAN
+Preferensi, favorit, metadata riwayat (termasuk lokasi hasil) dan log OTO
+berada di folder Data paket ini, terpisah dari profil instalasi lama.
+Penanda app/portable-profile.json harus tetap utuh. Launcher utama memeriksa
+integritas paket; membuka host di app langsung melewati pemeriksaan launcher.
+Folder hasil pilihan Anda dapat berada di luar paket. Fitur Windows dapat
+menyimpan cache/jejak sistem; paket ini tidak menjanjikan "tanpa jejak".
+Dokumen diproses lokal, tanpa upload oleh operasi lokal. Tidak ada pemeriksaan
+update online otomatis dalam mode portable. Tombol Buka unduhan membuka
+website hanya saat dipilih. Tidak ada shortcut, asosiasi PDF, atau update
+instalasi lama yang dibuat otomatis oleh paket portable.
+Word ke PDF opsional: hanya DOCX A4 dalam batas provider lokal yang tersedia.
+Tanpa provider, fitur menampilkan keterbatasan; Office tidak dipasang otomatis.
+OCR dan kemampuan yang diberi label belum aktif tetap tidak tersedia.
+Fidelity dokumen kompleks, containment dan UAT komputer bersih belum tuntas.
+
+LISENSI
+Folder lisensi berisi teks lisensi/pemberitahuan vendor sebagaimana disediakan
+oleh sumber komponen. Pemakaian dan distribusi tetap tunduk pada syarat vendor.
+Kehadiran file lisensi tidak menggantikan persetujuan distribusi proyek.
+Identitas build, status runtime dan digest tercatat di package-manifest.json.

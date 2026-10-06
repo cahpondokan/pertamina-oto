@@ -2,7 +2,8 @@
   <!-- Keep WinUI extraction paths below Windows legacy path limits. -->
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Pertamina.Oto.Desktop.App'">
     <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts/obj/desktop/</BaseIntermediateOutputPath>
-    <OutputPath>$(MSBuildThisFileDirectory)artifacts/desktop/</OutputPath>
+    <OutputPath Condition="'$(DesktopUiOutputPath)' == ''">$(MSBuildThisFileDirectory)artifacts/desktop/</OutputPath>
+    <OutputPath Condition="'$(DesktopUiOutputPath)' != ''">$(DesktopUiOutputPath)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
