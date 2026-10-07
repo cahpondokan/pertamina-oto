@@ -90,6 +90,52 @@ internal sealed partial class MainWindow
             }
             try
             {
+                if (Environment.GetCommandLineArgs().Contains("--landing-layout-only"))
+                {
+                    // Exercise the actual Loaded thumbnail path, not just empty
+                    // session buttons. Native reentrancy requires a real recent PDF.
+                    var recentFixture = Path.Combine(output, "Recent synthetic PDF for storage broker regression.pdf");
+                    WriteHistoryAuditFixture(recentFixture);
+                    var recentHash = SHA256.HashData(await File.ReadAllBytesAsync(recentFixture));
+                    owner.savedJobs.Clear();
+                    owner.savedJobs.Add(new(Guid.NewGuid(), DateTimeOffset.Now, "reader", [recentFixture], "Synthetic crash regression"));
+                    var callsBefore = Volatile.Read(ref previewStorageBackgroundCalls);
+                    if (owner.AppWindow.Presenter is Microsoft.UI.Windowing.OverlappedPresenter presenter) presenter.Restore();
+                    owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(1920, 1040));
+                    foreach (var width in new[] { 1920, 640, 480, 900, 640 })
+                    foreach (var sessions in new[] { 0, 2, 20 })
+                    foreach (var status in new[] { PdfAssociation.DefaultStatus.Other, PdfAssociation.DefaultStatus.Oto, PdfAssociation.DefaultStatus.Unknown })
+                    {
+                        var label = $"landing {width} sessions={sessions} default={status}";
+                        File.WriteAllText(Path.Combine(output, "stage.txt"), label);
+                        owner.root.Width = width; owner.root.Height = 650;
+                        owner.homeFiles.Clear(); owner.chosenFiles.Clear();
+                        for (var i = 0; i < sessions; i++) owner.homeFiles.Add(Path.Combine(output, $"Dokumen sesi sintetis dengan nama panjang {i}.pdf"));
+                        landingDefaultTestStatus = status;
+                        owner.ShowHistory(); await Settle();
+                        owner.ShowPdfReader(false); RefreshLandingDefault(); await Settle();
+                        Check(Visible && document is null && landing!.Visibility == Visibility.Visible, label + " visible after history");
+                        Check(readerChrome.All(e => e.Visibility == Visibility.Collapsed), label + " document controls remain hidden");
+                        Check(landingSessions.Children.OfType<Button>().Count() == sessions, label + " session actions retained");
+                        var bounds = landingOpen!.TransformToVisual(landing).TransformBounds(new Windows.Foundation.Rect(0, 0, landingOpen.ActualWidth, landingOpen.ActualHeight));
+                        Check(bounds.Left >= 0 && bounds.Right <= landing!.ActualWidth + 1, label + " open action inside viewport");
+                        for (var attempt = 0; attempt < 60 && !Descendants(recentLanding).OfType<Image>().Any(i => i.Source is not null); attempt++)
+                            await Task.Delay(100);
+                        Check(Descendants(recentLanding).OfType<Image>().Any(i => i.Source is not null), label + " real recent thumbnail rendered after Loaded");
+                        Check(Volatile.Read(ref previewStorageUnsafeCalls) == 0 && Volatile.Read(ref previewStorageBackgroundCalls) > callsBefore,
+                            label + " storage broker invoked on background MTA, never XAML STA");
+                        if (sessions == 2 && status == PdfAssociation.DefaultStatus.Other) await Capture($"narrow-landing-{width}-{report.Count}");
+                        File.WriteAllLines(Path.Combine(output, "audit-current.txt"), report);
+                    }
+                    var recentAfterHash = SHA256.HashData(await File.ReadAllBytesAsync(recentFixture));
+                    Check(recentHash.SequenceEqual(recentAfterHash), "recent thumbnail source bytes preserved");
+                    var unavailable = false;
+                    try { await OpenPreviewStorageAsync(Path.Combine(output, "missing-storage-fixture.pdf")); }
+                    catch (Exception) { unavailable = true; }
+                    Check(unavailable, "missing preview file propagates to existing safe fallback");
+                    report.Add("NOT_TESTED physical DPI, multi-monitor, touch gestures and screen-reader UAT.");
+                    return;
+                }
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(1586, 1000)); await Settle();
                 Check(Visible && document is null && !edit.IsEnabled && !more.IsEnabled, "empty reader has no document actions");
                 Check(count.Text.Length == 0 && pageInput.Text.Length == 0 && zoomControls.Percent.Text == "—", "empty reader and shared preview show no fictitious page zero or zoom");

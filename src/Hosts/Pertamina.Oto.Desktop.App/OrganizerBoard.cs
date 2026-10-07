@@ -182,8 +182,7 @@ internal sealed partial class MainWindow
         try
         {
             var path = organizerSources[source];
-            var file = await Windows.Storage.StorageFile.GetFileFromPathAsync(path);
-            var properties = await file.GetBasicPropertiesAsync();
+            var (file, properties) = await OpenPreviewStorageAsync(path);
             if (properties.Size > 100 * 1024 * 1024) return null;
             if (!PreviewDocuments.TryGetValue(path, out var cached) || cached.Modified != properties.DateModified || cached.Size != properties.Size)
             {

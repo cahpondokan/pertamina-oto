@@ -1,7 +1,30 @@
 {
   "Schema": 1,
-  "ProductVersion": "0.1.4",
+  "ProductVersion": "0.1.5",
   "Releases": [{
+    "ProductVersion": "0.1.5",
+    "Date": "2026-10-07",
+    "Summary": [
+      "Menyeragamkan halaman awal 16 alat aktif sesuai desain yang disetujui.",
+      "Tombol pilih file dan Tempel file memiliki warna, ukuran, dan susunan yang konsisten.",
+      "Petunjuk format dan kemampuan disesuaikan dengan alat, tanpa mengubah halaman kerja setelah dokumen dibuka."
+    ],
+    "Features": [],
+    "Improvements": [
+      "Satu komponen halaman awal dengan ikon, judul, area seret file, dua tombol, dan petunjuk singkat.",
+      "Ukuran tombol menyesuaikan ruang jendela; pintasan tersedia melalui tooltip dan nama aksesibilitas."
+    ],
+    "Fixes": [
+      "Gabungkan PDF dan Hapus halaman tidak lagi memakai gaya tombol awal yang berbeda.",
+      "Pemilihan file pada Hapus halaman menggunakan tombol biru, bukan merah.",
+      "Memindahkan pembukaan file thumbnail ke latar belakang untuk mencegah crash akibat panggilan layanan penyimpanan Windows saat UI sedang melakukan layout."
+    ],
+    "Limitations": [
+      "Perubahan hanya pada halaman awal alat aktif; preview, zoom, editor, alat belum aktif, dan halaman lain tidak didesain ulang.",
+      "Word ke PDF tetap membutuhkan Microsoft Word lokal berlisensi dan DOCX A4 portrait.",
+      "Pengujian jendela tidak menggantikan UAT DPI fisik, multimonitor, cubit perangkat, dan pembaca layar."
+    ]
+  }, {
     "ProductVersion": "0.1.4",
     "Date": "2026-10-04",
     "Summary": [

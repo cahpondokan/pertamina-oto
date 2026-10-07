@@ -230,8 +230,8 @@ internal sealed partial class MainWindow
         try
         {
             if (source.StartsWith(@"\\", StringComparison.Ordinal)) throw new IOException();
-            var file = await StorageFile.GetFileFromPathAsync(source);
-            if ((await file.GetBasicPropertiesAsync()).Size is 0 or > 104857600) throw new IOException();
+            var (file, properties) = await OpenPreviewStorageAsync(source);
+            if (properties.Size is 0 or > 104857600) throw new IOException();
             var pdf = await PdfDocument.LoadFromFileAsync(file, secret);
             if (generation != splitGeneration || selected?.Id != "split" || host != sourcePreviewHost) return;
             if (pdf.PageCount is 0 or > 1000) throw new IOException();

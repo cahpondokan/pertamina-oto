@@ -78,7 +78,7 @@ internal sealed partial class MainWindow
         picture.Loaded += async (_, _) =>
         {
             var count = await RenderPreviewAsync(path, 0, picture, info, 420, password.Password);
-            try { var size = (await (await StorageFile.GetFileFromPathAsync(path)).GetBasicPropertiesAsync()).Size; ToolTipService.SetToolTip(border, $"{size / 1024d:N1} KB · {count} halaman"); }
+            try { var (_, properties) = await OpenPreviewStorageAsync(path); ToolTipService.SetToolTip(border, $"{properties.Size / 1024d:N1} KB · {count} halaman"); }
             catch (Exception) { /* Rendering already reports unreadable sources. */ }
         };
         sourcePreviewHost.Children.Add(border);

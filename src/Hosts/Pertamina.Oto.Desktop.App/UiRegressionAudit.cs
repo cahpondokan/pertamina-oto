@@ -112,10 +112,82 @@ internal sealed partial class MainWindow
                     Check(Math.Abs(panel.ActualWidth - Math.Min(850, frame.ActualWidth)) < 1, $"baseline support bounded width {width} {screen.Name}");
                     Bounds($"baseline support {width} {screen.Name}"); await Capture($"baseline-{width}-{screen.Name}");
                 }
-                ShowEmptyTool(ToolCatalog.All.First(t => t.Id == "merge")); await Settle();
-                var picker = Descendants(emptyPanel!).OfType<Button>().Single(b => b.Content as string == "Pilih file PDF");
-                Check(Math.Abs(picker.ActualWidth - Math.Min(280, ((FrameworkElement)picker.Parent).ActualWidth)) < 1, $"baseline merge picker width {width}");
-                Bounds($"baseline merge {width}"); await Capture($"baseline-{width}-merge-empty");
+            }
+            // Approved entry design replaces ONLY the former special merge/remove
+            // empty states. Keep all unrelated baseline and loaded-workspace gates.
+            var expectedEntries = new (string Id, string Title, string Picker, string Hint)[]
+            {
+                ("merge", "Gabungkan PDF", "Pilih PDF", "Minimal 2 PDF untuk digabungkan."),
+                ("split", "Pisahkan PDF", "Pilih PDF", "Satu PDF untuk memulai."),
+                ("remove", "Hapus halaman PDF", "Pilih PDF", "Sumber tetap utuh."),
+                ("extract", "Ambil halaman PDF", "Pilih PDF", "Satu PDF untuk memulai."),
+                ("organize", "Atur halaman PDF", "Pilih PDF", "Satu atau beberapa PDF."),
+                ("compress", "Kompres PDF", "Pilih PDF", "Kompresi lossless."),
+                ("images", "Gambar ke PDF", "Pilih gambar", "JPG atau PNG."),
+                ("word-pdf", "Word ke PDF", "Pilih DOCX", "A4 portrait · Perlu Word lokal berlisensi."),
+                ("pdf-jpg", "PDF ke JPG", "Pilih PDF", "Pilih halaman setelah dibuka."),
+                ("rotate", "Putar halaman", "Pilih PDF", "90°, 180°, atau 270°."),
+                ("numbers", "Nomor halaman", "Pilih PDF", "Nomor di bawah halaman."),
+                ("watermark", "Watermark", "Pilih PDF", "Teks penanda dokumen."),
+                ("crop", "Potong halaman", "Pilih PDF", "Bukan penghapusan data."),
+                ("edit", "Edit isi PDF", "Pilih PDF", "Edit teks yang didukung."),
+                ("unlock", "Buka kunci PDF", "Pilih PDF", "Perlu kata sandi pemilik."),
+                ("protect", "Kunci PDF", "Pilih PDF", "Kata sandi pembuka baru.")
+            };
+            Check(expectedEntries.Select(e => e.Id).Order().SequenceEqual(ToolCatalog.All.Where(t => t.Available).Select(t => t.Id).Order()), "entry matrix covers exactly all 16 active tools");
+            foreach (var width in new[] { 1920, 1366, 960, 640, 480 })
+            {
+                root.Width = width; root.Height = width >= 1366 ? 930 : 650; sidebarCollapsed = false;
+                double? referenceHeight = null; double? referenceButtonWidth = null;
+                foreach (var entry in expectedEntries)
+                {
+                    var tool = ToolCatalog.All.Single(t => t.Id == entry.Id);
+                    ShowEmptyTool(tool); await Settle();
+                    var label = $"uniform entry {width} {entry.Id}";
+                    var panel = emptyPanel!; var content = (StackPanel)panel.Child;
+                    var actions = (StackPanel)content.Children[3];
+                    var pick = (Button)actions.Children[0]; var paste = (Button)actions.Children[1];
+                    referenceHeight ??= panel.ActualHeight; referenceButtonWidth ??= pick.ActualWidth;
+                    Check(((TextBlock)body.Children[0]).Text == entry.Title, label + " correct heading");
+                    Check(content.Children.Count == 5 && content.Children[0] is Border { Child: Viewbox }, label + " same icon/title/hint/actions/status structure");
+                    Check(((TextBlock)content.Children[1]).Text == "Mulai dengan dokumen Anda" && ((TextBlock)content.Children[2]).Text == "Seret file ke sini", label + " shared copy");
+                    Check(AutomationProperties.GetName(pick) == entry.Picker && AutomationProperties.GetName(paste) == "Tempel file", label + " correct format and accessible names");
+                    Check(AutomationProperties.GetAcceleratorKey(pick) == "Ctrl+O" && AutomationProperties.GetAcceleratorKey(paste) == "Ctrl+V", label + " shortcut discovery");
+                    Check(emptyNotice!.Text == entry.Hint && emptyNotice.TextAlignment == TextAlignment.Center, label + " truthful centered capability hint");
+                    Check(Math.Abs(pick.ActualWidth - paste.ActualWidth) < 1 && Math.Abs(pick.ActualWidth - referenceButtonWidth.Value) < 1, label + " consistent action width");
+                    Check(Math.Abs(pick.ActualWidth - Math.Min(320, content.ActualWidth)) < 1, label + " bounded 320 DIP actions");
+                    Check(Math.Abs(pick.ActualHeight - 46) < 1 && Math.Abs(paste.ActualHeight - 46) < 1, label + " equal 46 DIP action heights");
+                    Check(width < 960 || Math.Abs(panel.ActualHeight - referenceHeight.Value) < 1, label + " desktop card height consistent");
+                    Check(pick.Background is SolidColorBrush { Color: { R: 8, G: 105, B: 229 } } && paste.Background is SolidColorBrush { Color: { R: 255, G: 255, B: 255 } }, label + " blue select and white paste, no destructive select color");
+                    var actionBox = Box(actions, panel);
+                    Check(actionBox.Left >= panel.Padding.Left && actionBox.Right <= panel.ActualWidth - panel.Padding.Right + 1, label + " actions inside card");
+                    Bounds(label);
+                    if (width is 1920 or 640 or 480) await Capture($"entry-{width}-{entry.Id}");
+                }
+            }
+            root.Width = 1920; root.Height = 930;
+            foreach (var tool in ToolCatalog.All.Where(t => t.Available && t.Id != "edit"))
+            {
+                selected = null; activeToolControls = null; files.Clear(); homeFiles.Clear(); chosenFiles.Clear(); toolDrafts.Remove(tool.Id);
+                ShowEmptyTool(tool); await Settle(); var entryPanel = emptyPanel;
+                await AcceptEmptyInputsAsync(Array.Empty<IStorageItem>());
+                Check(emptyPanel == entryPanel && emptyNotice!.Text == "Belum ada file dengan format yang sesuai.", "entry cancel/empty input retains " + tool.Id);
+                await AcceptEmptyInputsAsync([await StorageFile.GetFileFromPathAsync(tool.Id == "images" ? source : image)]);
+                Check(emptyPanel == entryPanel && emptyNotice!.Text == "Belum ada file dengan format yang sesuai.", "entry wrong format retained " + tool.Id);
+                if (tool.Id is not ("merge" or "images" or "organize"))
+                {
+                    var valid = await StorageFile.GetFileFromPathAsync(tool.Id == "word-pdf" ? word : source);
+                    // Distinct paths exercise the existing one-document guard.
+                    var otherPath = tool.Id == "word-pdf" ? Path.Combine(output, "Second.docx") : second;
+                    if (tool.Id == "word-pdf") File.Copy(word, otherPath, true);
+                    await AcceptEmptyInputsAsync([valid, await StorageFile.GetFileFromPathAsync(otherPath)]);
+                    Check(emptyPanel == entryPanel && emptyNotice!.Text.StartsWith("Alat ini menerima satu dokumen.", StringComparison.Ordinal), "entry rejects multiple documents " + tool.Id);
+                }
+                var inputs = new List<IStorageItem> { await StorageFile.GetFileFromPathAsync(tool.Id == "images" ? image : tool.Id == "word-pdf" ? word : source) };
+                if (tool.Id is "merge" or "organize") inputs.Add(await StorageFile.GetFileFromPathAsync(second));
+                await AcceptEmptyInputsAsync(inputs); await Settle(650);
+                Check(!entryPanel!.IsLoaded && toolWorkspace.IsLoaded && toolWorkspace.Children.Count == 2, "entry to loaded workspace " + tool.Id);
+                Separate(toolWorkspace, "entry loaded " + tool.Id);
             }
             root.Width = 1920; root.Height = 930; await Settle();
             if (failures > 0) throw new InvalidOperationException("Baseline recovery checks failed; stop before the full matrix.");

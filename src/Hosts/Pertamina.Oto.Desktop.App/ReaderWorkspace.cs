@@ -325,7 +325,9 @@ internal sealed partial class MainWindow
                 candidate = new FileStream(full, FileMode.Open, FileAccess.Read, FileShare.Read);
                 if (candidate.Length is <= 0 or > 104857600) { notice.Text = "Batas PDF: 100 MB. Dokumen sebelumnya tetap tersedia."; return; }
                 notice.Text = "Membuka PDF…";
-                var file = await StorageFile.GetFileFromPathAsync(full);
+                // Embedded previews also call OpenAsync from XAML Loaded. Keep
+                // synchronous Storage broker acquisition off that protected STA.
+                var file = await Task.Run(async () => await StorageFile.GetFileFromPathAsync(full));
                 PdfDocument loaded;
                 try { loaded = previewPassword.Length == 0 ? await PdfDocument.LoadFromFileAsync(file) : await PdfDocument.LoadFromFileAsync(file, previewPassword); }
                 catch (Exception error) when (error.HResult == unchecked((int)0x8007052B))

@@ -220,8 +220,8 @@ internal sealed partial class MainWindow
         try
         {
             if (!picture.IsLoaded || ticket != raster.Generation || !(stillCurrent?.Invoke() ?? true)) return 0;
-            var file = await StorageFile.GetFileFromPathAsync(path);
-            var properties = await file.GetBasicPropertiesAsync();
+            var (file, properties) = await OpenPreviewStorageAsync(path);
+            if (!picture.IsLoaded || ticket != raster.Generation || !(stillCurrent?.Invoke() ?? true)) return 0;
             if (properties.Size > 100 * 1024 * 1024) throw new InvalidOperationException();
             using var stream = new InMemoryRandomAccessStream();
             uint total;
@@ -261,6 +261,30 @@ internal sealed partial class MainWindow
         }
         catch (Exception) { info.Text = "Preview tidak tersedia: file terkunci, rusak, atau di luar batas. Sumber tidak diubah."; return 0; }
         finally { RenderGate.Release(); }
+    }
+
+#if DEBUG
+    private static int previewStorageBackgroundCalls;
+    private static int previewStorageUnsafeCalls;
+#endif
+    private static Task<(StorageFile File, Windows.Storage.FileProperties.BasicProperties Properties)> OpenPreviewStorageAsync(string path)
+    {
+        // GetFileFromPathAsync can synchronously contact the Storage broker before
+        // returning its async operation. On a XAML Loaded/layout callback, that
+        // COM wait can pump messages and fatally re-enter the WinUI dispatcher.
+        // Only storage acquisition runs in the background; XAML, the PDF cache,
+        // bitmap publication and zoom remain on their original UI continuation.
+        return Task.Run(async () =>
+        {
+#if DEBUG
+            Interlocked.Increment(ref previewStorageBackgroundCalls);
+            if (Thread.CurrentThread.GetApartmentState() != ApartmentState.MTA)
+                Interlocked.Increment(ref previewStorageUnsafeCalls);
+#endif
+            var file = await StorageFile.GetFileFromPathAsync(path);
+            var properties = await file.GetBasicPropertiesAsync();
+            return (file, properties);
+        });
     }
 
     private void ShowOrganizer()

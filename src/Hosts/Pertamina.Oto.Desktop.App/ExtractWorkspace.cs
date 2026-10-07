@@ -133,8 +133,8 @@ internal sealed partial class MainWindow
         try
         {
             if (path is null) { extractSummary.Text = "Pilih satu PDF untuk memulai."; return; }
-            var file = await StorageFile.GetFileFromPathAsync(path);
-            if ((await file.GetBasicPropertiesAsync()).Size > 100 * 1024 * 1024) throw new InvalidOperationException();
+            var (file, properties) = await OpenPreviewStorageAsync(path);
+            if (properties.Size > 100 * 1024 * 1024) throw new InvalidOperationException();
             var previewPassword = password.Password;
             var pdf = await PdfDocument.LoadFromFileAsync(file, previewPassword);
             if (generation != extractGeneration || selected?.Id != "extract" || !host.IsLoaded) return;
