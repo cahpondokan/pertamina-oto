@@ -63,9 +63,13 @@ internal sealed partial class MainWindow
             for (var i = 0; i < 30 && messageOpen; i++) await Task.Delay(100);
             Check(!messageOpen && chosenFiles.Contains(source), "home preview closes without changing document selection");
             ShowUnifiedResult([source], "Synthetic saved result", ShowHome); root.UpdateLayout(); await Task.Delay(300);
+            Invoke("Buka hasil", root);
+            for (var i = 0; i < 150 && pdfReader?.ReaderSource != Path.GetFullPath(source); i++) await Task.Delay(100);
+            Check(pdfReader?.ReaderSource == Path.GetFullPath(source) && pdfReader.Visible && checkedDialogs == 1, "actual saved-result button opens exact result in full OTO reader");
+            ShowUnifiedResult([source, editable], "Synthetic saved results", ShowHome); root.UpdateLayout(); await Task.Delay(300);
             Invoke("Preview hasil", root);
             for (var i = 0; i < 150 && checkedDialogs < 2 && dialogFailure is null; i++) await Task.Delay(100);
-            Check(checkedDialogs == 2 && dialogFailure is null, $"actual saved-result button opens shared native preview (count={checkedDialogs}, failure={dialogFailure})");
+            Check(checkedDialogs == 2 && dialogFailure is null, $"explicit result preview exercises shared native preview (count={checkedDialogs}, failure={dialogFailure})");
             for (var i = 0; i < 30 && messageOpen; i++) await Task.Delay(100);
             // Inline source/result previews use the exact PreviewPanel factory used by active tools.
             BeginScreen("Preview audit", "Synthetic fixture"); SetHistoryPageVisible(false);

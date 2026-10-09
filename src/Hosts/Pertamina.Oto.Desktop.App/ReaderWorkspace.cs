@@ -67,6 +67,7 @@ internal sealed partial class MainWindow
         private bool fitWidth;
         private readonly Button previous = HistoryButton("chevron-left", "Halaman sebelumnya");
         private readonly Button next = HistoryButton("chevron-right", "Halaman berikutnya");
+        private readonly Button print = new() { Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8, Children = { new FontIcon { Glyph = "\uE749", FontSize = 16 }, new TextBlock { Text = "Cetak" } } } };
         private readonly Button edit = HistoryButton("editor-pen", "Edit PDF", true);
         private readonly Button organize = HistoryButton("layout-grid", "Atur halaman", true);
         private readonly Button bookmark = HistoryButton("favorite-star", "Tandai halaman");
@@ -89,6 +90,8 @@ internal sealed partial class MainWindow
         internal PdfReaderView(MainWindow owner, bool previewOnly = false)
         {
             this.owner = owner; this.previewOnly = previewOnly;
+            print.Visibility = previewOnly ? Visibility.Collapsed : Visibility.Visible;
+            AutomationProperties.SetName(print, "Cetak dokumen aktif");
             foreach (var height in new[] { GridLength.Auto, GridLength.Auto, GridLength.Auto, GridLength.Auto, new GridLength(1, GridUnitType.Star), GridLength.Auto, GridLength.Auto })
                 View.RowDefinitions.Add(new RowDefinition { Height = height });
             var header = new Grid { Padding = new Thickness(24, 16, 24, 16), ColumnSpacing = 16, BorderBrush = Brush(222, 228, 237), BorderThickness = new Thickness(0, 0, 0, 1) };
@@ -116,7 +119,7 @@ internal sealed partial class MainWindow
             menu.Items.Add(save); menu.Items.Add(folder); menu.Items.Add(new MenuFlyoutSeparator()); menu.Items.Add(remove); more.Flyout = menu;
             var focus = HistoryButton("maximize2", "Mode fokus", true);
             focus.Click += (_, _) => { owner.readerFocus = !owner.readerFocus; focus.Background = owner.readerFocus ? Brush(222, 236, 255) : Brush(255, 255, 255); owner.LayoutCards(); };
-            actions.Children.Add(focus); actions.Children.Add(open); actions.Children.Add(edit); actions.Children.Add(more);
+            print.Click += async (_, _) => { if (path is not null && !busy) await owner.ShowPrintAsync(path, owner.readerResults.Contains(path) ? "Hasil proses tersimpan" : "Dokumen pembaca", pageIndex); }; actions.Children.Add(focus); actions.Children.Add(open); actions.Children.Add(print); actions.Children.Add(edit); actions.Children.Add(more);
             var other = new MenuFlyoutItem { Text = "Alat lainnya" };
             other.Click += (_, _) => { if (path is null || busy) return; if (!owner.homeFiles.Contains(path)) owner.homeFiles.Add(path); owner.chosenFiles.Clear(); owner.chosenFiles.Add(path); owner.ShowCatalog(); };
             menu.Items.Insert(0, other);
@@ -279,7 +282,7 @@ internal sealed partial class MainWindow
             var ready = document is not null && !busy;
             if (document is null) { count.Text = ""; pageInput.Text = ""; }
             zoomControls?.Sync();
-            sessionPicker.IsEnabled = !busy;
+            sessionPicker.IsEnabled = !busy; print.IsEnabled = ready; ToolTipService.SetToolTip(print, ready ? "Cetak dokumen aktif · Ctrl+P" : "Buka PDF valid dan tunggu pemuatan selesai");
             edit.IsEnabled = organize.IsEnabled = bookmark.IsEnabled = more.IsEnabled = pageInput.IsEnabled = ready;
             previous.IsEnabled = ready && pageIndex > 0; next.IsEnabled = ready && pageIndex + 1 < document!.PageCount;
             bookmark.Background = marks.Contains(pageIndex) ? Brush(222, 236, 255) : Brush(255, 255, 255);

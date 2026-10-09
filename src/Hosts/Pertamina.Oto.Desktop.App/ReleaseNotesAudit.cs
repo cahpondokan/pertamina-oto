@@ -69,7 +69,8 @@ internal sealed partial class MainWindow
                 Check(details.IsEnabled && details.MinHeight>=0,"accessible detail action "+width);
                 await Capture(dialog,"before-update-"+width);
                 Invoke(details); await Settle(); dialog=await PopupAsync(); texts=Walk(dialog).OfType<TextBlock>().Select(t=>t.Text).ToArray();
-                Check(dialog.Title as string == "Riwayat versi" && texts.Contains("Perbaikan") && texts.Contains("Batasan yang diketahui") && !texts.Contains("Fitur baru"),"details hides empty categories "+width);
+                var categories = new[] { ("Fitur baru", notes.Releases.Count(r => r.Features.Length > 0)), ("Peningkatan", notes.Releases.Count(r => r.Improvements.Length > 0)), ("Perbaikan", notes.Releases.Count(r => r.Fixes.Length > 0)), ("Batasan yang diketahui", notes.Releases.Count(r => r.Limitations.Length > 0)) };
+                Check(dialog.Title as string == "Riwayat versi" && categories.All(category => texts.Count(t => t == category.Item1) == category.Item2),"details shows populated categories and hides empty categories "+width);
                 var scroll=(ScrollViewer)dialog.Content; Check(scroll.HorizontalScrollBarVisibility==ScrollBarVisibility.Disabled,"wrapped history "+width);
                 await Capture(dialog,"history-top-"+width); scroll.ChangeView(null,scroll.ScrollableHeight,null); await Capture(dialog,"history-bottom-"+width);
                 dialog.Hide(); await Settle(); dialog=await PopupAsync(); dialog.Hide();

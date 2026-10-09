@@ -36,3 +36,40 @@ Preview: `http://127.0.0.1:5089/#unduh`. Portable publish: `artifacts/download-p
 Public oto.ayani.id activation still requires previously identified administrator ASP.NET10 setup/sudo and public development-distribution/signing disposition. OTO EXE is unsigned; no certificate acquisition or SmartScreen bypass. Phase/Production gates unchanged.
 
 Remaining: clean Windows without modern .NET; actual UAC allow/deny, standard-user elevation, reboot and interrupted install; physical high-DPI/keyboard UAT; initial install/update/app launch on a non-development PC; public HTTPS/download/notification after authorized activation. Minimum Windows build check does not claim all Windows10 editions remain vendor-supported. The user's active OTO installation was not changed by verification; applying the update/EXE remains an explicit user action.
+
+## Installer layout repair — 7 October 2026
+
+Scoped user authorization: repair the installer shown in the reported laptop photo and verify desktop layout coverage. Installer revision **1.0.1** wraps the unchanged application **0.1.5**, build `20261007-112106-cd7fafab`. This is not a new application build or a phase/Production approval.
+
+### Changes and protected scope
+
+- Measured, wrapped text replaces fixed branding/text boxes. The full PERTAMINA OTO identity stays visible; the decorative side panel is omitted when space is limited.
+- Initial window bounds respect the current monitor working area. Resizing and DPI-change handling reflow from original dimensions instead of accumulating scale. The minimum size is capped to the available working area.
+- Identity, versions, current phase, progress and actions stay outside the scrolling details. On short windows, long instructions and the optional post-install launch checkbox move into the vertically scrollable body. Buttons stack when necessary; no horizontal scrolling is required.
+- Runtime status and the disabled primary button follow the actual installation phase. Noncancelable stages explain why cancellation is temporarily unavailable. Failure explicitly says runtime detection will run again on retry.
+- Source changes: `eng/WindowsSetup/SetupWindow.cs`, new `SetupWindowLayout.cs` and `SetupUiAudit.cs`, `Program.cs`, `app.manifest`, and product-version metadata generation in `eng/Build-WindowsSetup.ps1`.
+- Application pages, PDF preview/editor/search/zoom, processing workers, application version/release notes, installer trust/download/extraction/UAC/activation/cancellation logic, local update feed and installed application pointer are outside this change. No dependency was added and no actual installation was performed.
+
+The manifest declares PerMonitorV2; explicit native DPI measurement and layout handling are used by this single-file Framework wrapper. Simulated DPI checks below do not establish physical per-monitor behavior on every Windows configuration.
+
+### Final exact-binary evidence
+
+- Build evidence: `artifacts/windows-setup-build-c0cafc7c054c4cf1b4e1bd111f565e8d`.
+- Installer regression: **54 PASS**, `tests/test-results.txt`. Embedded payload extraction and the extracted package's verification pass. Installation/runtime outcomes in regression tests are simulated.
+- Native UI audit: **717 cases, 26,745 assertions, zero failures**, `ui-audit/summary.json` and `ui-audit/audit.txt`. This includes 68 equivalent work-area/scale pairs across 12 physical-resolution inputs and 100–300% scales where the usable logical desktop is at least 480×300. Nine states cover preparation, prerequisites, progress, blocking, failure, completion and restart-required outcomes. Additional measured-font cases cover 96–192 DPI with 100–150% text factors and repeated return-to-96-DPI reflow.
+- Minimum-window audit loads the same final EXE: **27 cases, 933 assertions, zero failures**, `artifacts/installer-responsive-20261007/minimum-window-final`. Client sizes 404×281, 480×320 and 640×360 each exercise nine states. Combined: **744 native UI cases / 27,678 assertions**.
+- Native bitmap previews reviewed include normal installation, compact installation/completion, enlarged text and the minimum window. This verifies rendering and geometry, not physical gesture, screen-reader or device UAT.
+- The initial narrow audit was expanded after review. The expanded second attempt caught insufficient completion space at an equivalent 1280×720/200% work area; this was repaired before the final build. An initial supplemental harness startup failure was corrected by supplying its proper Framework target/manifest/icon; it was not an installer failure. Superseded attempts remain under `artifacts/installer-responsive-20261007` and are not final pass evidence.
+- `artifacts/installer-responsive-20261007/Verify-Delivery.ps1` records final package/catalog hashes, compares all **392** application payload files with the existing local release, and checks protected source and installed/local-feed pointers against the pre-change baseline. Its output is `delivery-verified.json`.
+
+### Local delivery and remaining acceptance
+
+Directory: `artifacts/installer-responsive-20261007/package`.
+
+- `PERTAMINA-OTO-Setup-x64-20261007-112106-cd7fafab.exe`, SHA256 `0FB2E624A011213049EB25250A4AB50592C77E2B9851E9430D852DD972E0F1F0`.
+- Companion ZIP: `PERTAMINA-OTO-Windows-x64-20261007-112106-cd7fafab.zip`, SHA256 `A080B92C87BCEB47E49F410A0DE6D20182A9DA84E49AD05B48FC14EB3122FE53`.
+- Application manifest remains `EB93D1827A72AC688C36D35160860361D92C68F135B7FA1C8417FFE95ED4DCD8`. The catalog carries application version 0.1.5; installer revision 1.0.1 appears in the wizard and executable assembly metadata.
+
+The repaired installer is available locally for user testing only. Website/GitHub publication and installation were not performed. Existing downloaded installers do not change through an in-app update; users must obtain this new EXE. `Build-LocalUpdate.ps1` was intentionally not run because no application code changed and the existing 0.1.5 application payload is reused unchanged.
+
+Remaining acceptance: real Windows display scaling/text settings, physical multi-monitor DPI transitions, themes/accessibility and clean non-development Windows installation including actual UAC/runtime outcomes. The tests cover a defined desktop matrix, not every possible monitor, driver, desktop size or user configuration. No universal desktop safety or Production/UAT completion claim is made.

@@ -53,3 +53,31 @@ Report-back delivered successfully to Agent 0 chat 01a07c8d-3c57-7963-8500-daed7
 ## 0.1.2 scoped search correction - 4 October 2026
 
 COMPLETE_LOCAL_READER_SEARCH_EXTGSTATE_SCOPE. Product 0.1.2 / Pengembangan, immutable local build 20261004-181107-307e2601. Manifest SHA256 7B967462A20000FE8BF91D3C7AB57AEDD34C57899767275569F2710C70B1AE33. All 390 payload hashes/lengths and 103 tested application binaries verified; installed pointer unchanged. Search on the authorized original now has two exact positioned hits; worker 67 PASS and eight final native gates 1,455 PASS / 0 FAIL. Notes retain 0.1.1 history. Local update only; no installed activation, online publication, phase or Production approval. Exact diagnosis, scope, commands, failures, evidence and ownership release: [READER_SEARCH_EXTGSTATE.md](READER_SEARCH_EXTGSTATE.md).
+## Approved Print release — 7 October 2026
+Human approval in parent chat 01a07c8d-3c57-7963-8500-daed7ddb07ee: 'Setuju, gunakan 0.2.0'. This authorizes 0.2.0 / Pengembangan for the Print feature local package, not installed activation or online publication. Immutable build identity and gates are unchanged. Final evidence and actual delivery status: PRINT_FEATURE.md.
+
+
+Print local delivery verified: 0.2.0 / Pengembangan, immutable build 20261007-141314-96a5fba4, manifest A982FA6D7BA69455D9318D9ABDD769F18E187FB27BA183F7D607553080A5B474. 392 payloads and 103 tested binaries verified; installed pointer unchanged. PRINT_FEATURE.md contains the handoff and hardware/UAT limits.
+
+
+## Approved Print correction release — 7 October 2026
+Human approved four bounded Print/organizer-label fixes and local **0.2.1 / Pengembangan** in parent chat turn 01a1154d-b724-7693-bf95-cf31770da0f2, “ok kerjakan sekarang di task baru”. Installed baseline was read directly as 0.2.0 / 20261007-141314-96a5fba4. This patch changes metadata once for the intentional release, preserves known release history and immutable build IDs, and authorizes no installed activation or online publication. Evidence, exact gates and terminal delivery status: PRINT_PATCH_0_2_1.md. Result-panel action improvements are a separate lane after the already frozen patch build; they are not silently included in this package.
+
+Final checkpoint 7 October 2026: 0.2.1 build 20261007-152435-9bfa6423 is verified staging only. Local publication blocked by automatic approval review; installed/feed 0.2.0 unchanged. See PRINT_PATCH_0_2_1.md for exact immutable candidate and gates.
+
+## Result actions 0.2.2 approval — 8 October 2026
+Human consent in parent chat 01a07c8d-3c57-7963-8500-daed7ddb07ee: 'saya setuju. saya mau melanjutkan perbaikan berikutnnya', after the parent asked about publishing 0.2.1 locally and 0.2.2 for result actions after Explorer verification. Authorizes 0.2.2 / Pengembangan and local package publication after acceptance/gates. No installed activation or online publication. Final delivery evidence: RESULT_ACTIONS_FIX.md; publication remains pending at this checkpoint.
+
+Final result-actions delivery 8 October 2026: **0.2.2 / Pengembangan**, immutable local build **20261008-084354-201e4764**, manifest SHA256 DAAA6FCBF4829018FC5BF430323DF3504A9ADFA5C554D77EFEF36592E0C3C91E. All 392 payloads and 103 tested binaries verified; previous 0.2.1 retained and installed pointer unchanged. Native Explorer single/multi exact-selection proof passed; 1,206 native assertions and official mandatory delivery gates passed. Local publication complete; no installed activation or online publication. Final scope/evidence/limitations: RESULT_ACTIONS_FIX.md.
+
+## Window minimum 0.2.3 approval — 8 October 2026
+Human directly approved 0.2.3 / Pengembangan in parent chat 01a07c8d-3c57-7963-8500-daed7ddb07ee, user reply 01a11c51-ea4e-77b0-868c-076f1e50fc55: 'Setuju, gunakan 0.2.3'. Authorizes one intentional version change and local development package after gates, plus preparation of website upload assets. No installed activation, remote upload, public feed activation, or Production approval. Exact audit and delivery status: WINDOW_MINIMUM_SIZE.md.
+
+Final local delivery 9 October 2026: **0.2.3 / Pengembangan**, build **20261009-035333-e218f12d**, manifest SHA256 `76065EE2DD5BE1B7AFD8CB9396968B5148BCBB923D5B229E9ED26CB726F874D0`, 392 verified payloads. Packaged DLL is identical to the frozen native-tested DLL; prior 0.2.2 preserved. Final read-only installed pointer observes 0.2.2, differing from the initial 0.2.0 baseline; task04 did not install/activate 0.2.3. ZIP/EXE prepared and verified locally, including isolated native bootstrap; no upload or task04 user-installed activation. Full operator activation archive awaits reviewed web input. Exact hashes, native versus simulated evidence, recovery history and residual limits: WINDOW_MINIMUM_SIZE.md.
+
+
+## Publication completed — 9 October 2026
+
+Development version 0.2.3, build `20261009-035333-e218f12d`, was activated by the human operator through the pinned canonical helper. Independent verification passed 65 public HTTPS checks, including complete ZIP and EXE SHA256, exact release metadata, website/download notes, guide, and static assets. Service is active/enabled at the new release symlink; service unit and Nginx hashes are unchanged. Prior release is retained. Evidence: `artifacts/window-minimum-20261008/server-publication-20261009/publication-state.json`, `post-activation-service.txt`, and `public-verification.txt`.
+
+Initial static verification incorrectly expected `.br` internal sidecars to be public. Corrected verification confirms their 404 responses and exact bytes for served assets, including `.gz`. Initial failure is retained; previously successful full artifact hashes were reused with fresh matching metadata. No website/server configuration change was needed. Earlier pending-activation checkpoints are historical and superseded by this result. Task04 did not install or activate 0.2.3 on the user's computer. Publication is a development release and does not establish Production phase approval.

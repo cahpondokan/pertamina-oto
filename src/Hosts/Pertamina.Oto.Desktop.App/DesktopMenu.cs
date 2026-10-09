@@ -31,6 +31,7 @@ internal sealed partial class MainWindow
             { await MenuMessageAsync("Simpan hasil", "Pilih alat dan dokumen terlebih dahulu. Atur nama baru serta folder hasil di halaman alat."); return; }
             await ExecuteAsync();
         }, VirtualKey.S, true, true));
+        file.Items.Add(MenuCommand("Cetak…", PrintActiveAsync, VirtualKey.P));
         file.Items.Add(MenuCommand("Buka hasil terakhir", async () =>
         {
             if (resultPath is null) { await MenuMessageAsync("Hasil", "Belum ada hasil pada sesi ini."); return; }

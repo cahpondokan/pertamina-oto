@@ -46,7 +46,17 @@ internal static class ResponsiveLayout
         bool? current = null;
         void Apply()
         {
-            var narrow = grid.ActualWidth < breakpoint && (allowNarrow?.Invoke() ?? true);
+            // A numeric breakpoint alone can leave the title just a few pixels
+            // after an action becomes visible (reader at 800 DIP). Budget the
+            // unwrapped action row as well; keep a useful title column.
+            var actionWidth = actions is ResponsiveWrapPanel row
+                ? row.Children.Where(c => c.Visibility == Visibility.Visible).Sum(c => c.DesiredSize.Width)
+                    + Math.Max(0, row.Children.Count(c => c.Visibility == Visibility.Visible) - 1) * row.Spacing
+                : 0;
+            var titleRoom = grid.ActualWidth - grid.Padding.Left - grid.Padding.Right
+                - Math.Max(0, grid.ColumnDefinitions.Count - 1) * grid.ColumnSpacing - actionWidth;
+            var narrow = (grid.ActualWidth < breakpoint || actionWidth > 0 && titleRoom < 200)
+                && (allowNarrow?.Invoke() ?? true);
             if (narrow == current) return; current = narrow;
             Grid.SetColumn(title, narrow ? 0 : originalColumn); Grid.SetColumnSpan(title, narrow ? grid.ColumnDefinitions.Count : originalSpan);
             Grid.SetColumn(actions, narrow ? 0 : grid.ColumnDefinitions.Count - 1);
@@ -54,7 +64,8 @@ internal static class ResponsiveLayout
             Grid.SetRow(actions, narrow ? 1 : 0);
             actions.Margin = new Thickness(0, narrow ? 8 : 0, 0, 0);
         }
-        grid.SizeChanged += (_, _) => Apply(); grid.Loaded += (_, _) => Apply(); return Apply;
+        grid.SizeChanged += (_, _) => Apply(); actions.SizeChanged += (_, _) => Apply();
+        grid.Loaded += (_, _) => Apply(); return Apply;
     }
     internal static void BoundDialog(ContentDialog dialog, FrameworkElement content, FrameworkElement viewport)
     {

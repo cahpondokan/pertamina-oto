@@ -9,13 +9,14 @@ var report = new List<string>();
 void Check(bool value, string label) { if (!value) throw new InvalidOperationException(label); report.Add("PASS " + label); }
 string Json(object value) => JsonSerializer.Serialize(value);
 var product = ApplicationVersion.Running().ProductVersion!;
+var differentProduct = product == "0.0.0" ? "0.0.1" : "0.0.0";
 var source = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../../../src/Hosts/Pertamina.Oto.Desktop.App/Assets/release-notes.json"));
 var raw = File.ReadAllText(source); var catalog = ReleaseNotes.Parse(raw, product)!;
 const string oldBuild = "20261004-120000-aaaaaaaa", newBuild = "20261004-140000-bbbbbbbb";
 var running = new ApplicationVersion.Identity(product, "Pengembangan", newBuild);
 var previous = new ApplicationVersion.Identity("0.1.0", "Pengembangan", oldBuild);
 Check(catalog is not null, "authoritative version equals current catalog");
-Check(ReleaseNotes.Parse(raw, "0.2.0") is null, "wrong selected product rejects notes");
+Check(ReleaseNotes.Parse(raw, differentProduct) is null, "wrong selected product rejects notes");
 Check(ReleaseNotes.Parse(null, product) is null, "legacy missing notes fallback");
 Check(ReleaseNotes.Parse("broken", product) is null, "malformed JSON fallback");
 Check(ReleaseNotes.Parse(new string(' ', 65537), product) is null, "byte limit");
@@ -60,7 +61,7 @@ var online = new ReleaseInfo(1,newBuild,DateTimeOffset.UtcNow,"development",$"PE
 online.Validate();
 Check(Json(local!) == Json(ReleaseNotes.Online(online)!),"exact local-online presenter model parity");
 Check(ReleaseNotes.Online(online with { ReleaseNotesSha256 = new string('0',64) }) is null,"online hash mismatch honest fallback");
-Check(ReleaseNotes.Online(online with { ProductVersion = "0.2.0" }) is null,"online chosen identity mismatch fallback");
+Check(ReleaseNotes.Online(online with { ProductVersion = differentProduct }) is null,"online chosen identity mismatch fallback");
 Check(ReleaseNotes.Online(online with { ReleaseNotesJson = null }) is null,"legacy online compatible");
 Check(Json(ReleaseNotes.Read(app,product)!) == Json(catalog),"offline history reads package only");
 File.AppendAllText(Path.Combine(app,"Assets/release-notes.json")," ");

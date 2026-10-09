@@ -29,7 +29,8 @@ foreach ($entry in $manifest.Files) {
 }
 Check $allValid 'all inert payload lengths and hashes agree'
 $original = Get-Content "$fixture/source/product-info.json" -Raw
-[IO.File]::WriteAllText("$fixture/source/product-info.json", '{ "ProductVersion":"0.2.0", "Channel":"Pengembangan" }')
+$differentProduct = if (($original | ConvertFrom-Json).ProductVersion -ceq '0.0.0') { '0.0.1' } else { '0.0.0' }
+[IO.File]::WriteAllText("$fixture/source/product-info.json", (@{ProductVersion=$differentProduct;Channel='Pengembangan'} | ConvertTo-Json))
 $rejected = $false
 try { & (Join-Path $PSScriptRoot 'Publish-LocalUpdate.ps1') -BuildOutput "$fixture/source" -Feed "$fixture/rejected-feed" } catch { $rejected = $true }
 Check ($rejected -and !(Test-Path "$fixture/rejected-feed/latest.json")) 'mismatched binary identity rejected before publishing'

@@ -1,7 +1,7 @@
 <Project>
   <!-- Change only for an explicitly approved product release, never per build. -->
   <PropertyGroup>
-    <OtoProductVersion>0.1.5</OtoProductVersion>
+    <OtoProductVersion>0.2.3</OtoProductVersion>
     <OtoChannel>Pengembangan</OtoChannel>
     <Version>$(OtoProductVersion)</Version>
     <FileVersion>$(OtoProductVersion).0</FileVersion>

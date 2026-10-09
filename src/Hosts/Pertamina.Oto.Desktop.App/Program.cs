@@ -8,6 +8,8 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
+        var printArgs = Environment.GetCommandLineArgs();
+        if (printArgs.Length == 3 && printArgs[1] == "--print-worker") { WinRT.ComWrappersSupport.InitializeComWrappers(); Environment.ExitCode = Task.Run(() => PrintWorker.RunAsync(printArgs[2])).GetAwaiter().GetResult(); return; }
         try { PortableProfile.ValidateStartup(); }
         catch (Exception error) when (error is IOException or UnauthorizedAccessException or System.Text.Json.JsonException or InvalidOperationException or KeyNotFoundException)
         {
@@ -76,7 +78,10 @@ public sealed partial class DesktopApplication : Application
 #endif
 #if DEBUG
         if (Environment.GetCommandLineArgs().Contains("--audit-word", StringComparer.Ordinal)) MainWindow.PrepareWordAuditStorage();
-        if (Environment.GetCommandLineArgs().Contains("--audit-ui-regression", StringComparer.Ordinal)
+        if (Environment.GetCommandLineArgs().Contains("--audit-window-size", StringComparer.Ordinal)
+            || Environment.GetCommandLineArgs().Contains("--audit-print", StringComparer.Ordinal)
+            || Environment.GetCommandLineArgs().Contains("--audit-result-actions", StringComparer.Ordinal)
+            || Environment.GetCommandLineArgs().Contains("--audit-ui-regression", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-responsive-preview", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-responsive", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-zoom-smoothness", StringComparer.Ordinal)
@@ -110,6 +115,9 @@ public sealed partial class DesktopApplication : Application
             return;
         }
 #if DEBUG
+        if (arguments.Contains("--audit-window-size", StringComparer.Ordinal)) { await ((MainWindow)window).AuditWindowSizeAsync(); Exit(); return; }
+        if (arguments.Contains("--audit-print", StringComparer.Ordinal)) { await ((MainWindow)window).AuditPrintAsync(); Exit(); return; }
+        if (arguments.Contains("--audit-result-actions", StringComparer.Ordinal)) { await ((MainWindow)window).AuditResultActionsAsync(); Exit(); return; }
         if (arguments.Contains("--audit-startup-window", StringComparer.Ordinal))
         { await ((MainWindow)window).AuditStartupWindowAsync(); Exit(); return; }
         if (arguments.Contains("--audit-update-completion", StringComparer.Ordinal))

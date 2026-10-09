@@ -24,7 +24,7 @@ foreach (var bad in new[] { "01.1.0", "0.1", "1.0.0\nsecret", "C:/private.pdf", 
     Check(!new ApplicationVersion.Identity(bad, "Pengembangan", first).Known, "invalid product suppressed " + report.Count);
 Check(!new ApplicationVersion.Identity("0.1.0", "secret\nchannel", first).Known, "untrusted channel suppressed");
 Check(ApplicationVersion.UpdateDescription(running, new(running.ProductVersion, "Pengembangan", second)).StartsWith("Pembaruan build", StringComparison.Ordinal), "same product new build explained");
-Check(!ApplicationVersion.UpdateDescription(running, new("0.2.0", "Pengembangan", second)).StartsWith("Pembaruan build", StringComparison.Ordinal), "minor release separate description");
+Check(!ApplicationVersion.UpdateDescription(running, new(running.ProductVersion == "0.2.0" ? "0.3.0" : "0.2.0", "Pengembangan", second)).StartsWith("Pembaruan build", StringComparison.Ordinal), "minor release separate description");
 var feed = Path.Combine(output, "feed"); Directory.CreateDirectory(feed);
 void Publish(string build)
 {

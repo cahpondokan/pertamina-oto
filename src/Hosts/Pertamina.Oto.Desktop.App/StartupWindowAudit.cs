@@ -51,7 +51,9 @@ internal sealed partial class MainWindow
                 && AppWindow.Position.X >= work.X && AppWindow.Position.Y >= work.Y
                 && AppWindow.Position.X + AppWindow.Size.Width <= work.X + work.Width
                 && AppWindow.Position.Y + AppWindow.Size.Height <= work.Y + work.Height, "restore rectangle fits current work area");
-            var size = new SizeInt32(Math.Min(900, work.Width * 4 / 5), Math.Min(650, work.Height * 4 / 5));
+            var minimum = windowSizePolicy!.Minimum;
+            var size = new SizeInt32(Math.Min(work.Width, Math.Max(minimum.Width, Math.Min(900, work.Width * 4 / 5))),
+                Math.Min(work.Height, Math.Max(minimum.Height, Math.Min(650, work.Height * 4 / 5))));
             AppWindow.Resize(size); await Settle();
             Check(AppWindow.Size.Width == size.Width && AppWindow.Size.Height == size.Height, "user resize remains effective");
             PrepareStartupWindow(); Activate(); await Settle();

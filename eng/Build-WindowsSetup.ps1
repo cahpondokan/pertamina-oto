@@ -23,9 +23,15 @@ if ($catalog.version -cnotmatch '^[0-9]{8}-[0-9]{6}-[a-f0-9]{8}$' -or (Get-FileH
 $archive = [IO.Compression.ZipFile]::OpenRead($PayloadZip)
 try { $expanded = ($archive.Entries | Measure-Object -Property Length -Sum).Sum } finally { $archive.Dispose() }
 if ($expanded -le 0 -or $expanded -gt 2GB) { throw 'Invalid expanded payload size.' }
+$setupProductVersion = 'tidak tersedia (paket lama)'
+if ($catalog.productVersion) {
+    if ($catalog.productVersion -cnotmatch '^\d+\.\d+\.\d+$') { throw 'Invalid product version.' }
+    $setupProductVersion = $catalog.productVersion
+}
 $generated = @"
 namespace Oto.Setup {
 internal static class PayloadInfo {
+    internal const string ProductVersion = "$setupProductVersion";
     internal const string Version = "$($catalog.version)";
     internal const string Sha256 = "$($catalog.sha256)";
     internal const long ExpandedBytes = ${expanded}L;

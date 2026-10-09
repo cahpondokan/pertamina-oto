@@ -301,7 +301,7 @@ internal sealed partial class MainWindow
         foreach (var control in new FrameworkElement[] { run, cancel, openResult, outputName, location, status, progress, password })
             if (control.Parent is Panel parent) parent.Children.Remove(control);
         var toolbar = new ResponsiveWrapPanel { Spacing = 8 };
-        toolbar.Children.Add(HomeButton("＋ Tambah PDF", "\uE710", async () => await PickOrganizerAsync(), true));
+        toolbar.Children.Add(HomeButton("Tambah PDF", "\uE710", async () => await PickOrganizerAsync(), true));
         toolbar.Children.Add(HomeButton("Tempel PDF", "\uE77F", async () => await PasteOrganizerAsync()));
         toolbar.Children.Add(DocumentCloseButton());
         toolbar.Children.Add(HomeButton("Undo", "\uE7A7", () => RestoreLayout(false)));
