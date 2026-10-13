@@ -95,6 +95,8 @@ public sealed partial class DesktopApplication : Application
         var homeAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-centered-home");
         var catalogWidthAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-catalog-content-width");
         var appExitAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-app-exit");
+        var organizerTransferAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-organizer-transfer");
+        if (organizerTransferAuditIndex >= 0 && organizerTransferAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareMergePanelAudit(homeAuditArgs[organizerTransferAuditIndex + 1]);
         if (catalogWidthAuditIndex >= 0 && catalogWidthAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareCenteredAudit(homeAuditArgs[catalogWidthAuditIndex + 1]);
         if (appExitAuditIndex >= 0 && appExitAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareMergePanelAudit(homeAuditArgs[appExitAuditIndex + 1]);
         var mergePanelAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-merge-panel");
@@ -137,6 +139,13 @@ public sealed partial class DesktopApplication : Application
         if (homeAuditIndex >= 0 && homeAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditCenteredHomeAsync(homeAuditArgs[homeAuditIndex + 1]); Exit(); return; }
         if (catalogWidthAuditIndex >= 0 && catalogWidthAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditCatalogContentWidthAsync(homeAuditArgs[catalogWidthAuditIndex + 1]); Exit(); return; }
         if (appExitAuditIndex >= 0 && appExitAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditAppExitConfirmationAsync(homeAuditArgs[appExitAuditIndex + 1]); Exit(); return; }
+        if (organizerTransferAuditIndex >= 0 && organizerTransferAuditIndex + 1 < homeAuditArgs.Length)
+        {
+            try { await ((MainWindow)window).AuditOrganizerTransferAsync(homeAuditArgs[organizerTransferAuditIndex + 1]); }
+            catch (Exception error) { LocalDiagnostics.Record("organizer-transfer-audit", error); Environment.ExitCode = 1; }
+            finally { Exit(); }
+            return;
+        }
         if (mergeCloseAuditIndex >= 0 && mergeCloseAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditMergeCloseFlowAsync(homeAuditArgs[mergeCloseAuditIndex + 1]); Exit(); return; }
         if (savedResultAuditIndex >= 0 && savedResultAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditSavedResultViewportAsync(homeAuditArgs[savedResultAuditIndex + 1]); Exit(); return; }
         if (mergeEmptyAuditIndex >= 0 && mergeEmptyAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditMergeEmptyAsync(homeAuditArgs[mergeEmptyAuditIndex + 1]); Exit(); return; }

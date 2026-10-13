@@ -14,10 +14,7 @@ internal sealed partial class MainWindow
             messageOpen = true;
             try
             {
-                var prompt = new ContentDialog { XamlRoot = root.XamlRoot, Title = "Ganti susunan Atur halaman?",
-                    Content = "Susunan sebelumnya akan diganti dengan dokumen Gabung PDF. File asli dan hasil tersimpan tidak dihapus.",
-                    PrimaryButtonText = "Gunakan dokumen ini", CloseButtonText = "Batal", DefaultButton = ContentDialogButton.Close };
-                if (await prompt.ShowAsync() != ContentDialogResult.Primary) return;
+                if (await ShowOrganizerTransferConfirmationAsync() != ContentDialogResult.Primary) return;
             }
             finally { messageOpen = false; }
         }

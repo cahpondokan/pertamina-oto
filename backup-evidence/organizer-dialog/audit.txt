@@ -1,0 +1,30 @@
+PASS 1400: only two custom actions, no duplicate footer
+PASS 1400: safe focus and default intent
+PASS 1400: exactly two native actions
+PASS 1400: OrganizerTransferReplace reachable hit target
+PASS 1400: OrganizerTransferReplace keyboard accessibility
+PASS 1400: OrganizerTransferReturn reachable hit target
+PASS 1400: OrganizerTransferReturn keyboard accessibility
+PASS 1400: existing Biblo 031 decoded
+PASS 1400: modal fits viewport
+PASS 1400: return only returns intent, keeps inputs
+PASS 660: only two custom actions, no duplicate footer
+PASS 660: safe focus and default intent
+PASS 660: exactly two native actions
+PASS 660: OrganizerTransferReplace reachable hit target
+PASS 660: OrganizerTransferReplace keyboard accessibility
+PASS 660: OrganizerTransferReturn reachable hit target
+PASS 660: OrganizerTransferReturn keyboard accessibility
+PASS 660: existing Biblo 031 decoded
+PASS 660: modal fits viewport
+PASS 660: return only returns intent, keeps inputs
+PASS cancel preserves existing arrangement, sources and undo/redo
+PASS cancel retains Merge name/inputs and releases guards
+PASS busy guard does not replace arrangement
+PASS reentrant modal guard does not replace arrangement
+PASS failed input loading retains old arrangement and history
+PASS failed input loading releases modal/import guards
+PASS explicit replacement transfers source order/pages/rotation
+PASS explicit replacement commits sources and releases guards
+PASS source PDFs and already saved PDF remain byte-identical
+LIMIT physical key-up/overlap, alternate DPI, screen reader and live high contrast are not asserted by this native fixture.
