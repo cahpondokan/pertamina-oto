@@ -1,0 +1,2 @@
+RECOVERY_PASS=20261013-142328-c5c96e5f;FILES=1336
+Recovery writes a fresh folder only; it does not install, activate or modify the current application.

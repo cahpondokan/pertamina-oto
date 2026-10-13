@@ -1,0 +1,18 @@
+{
+  "Repository": "cahpondokan/pertamina-oto",
+  "Private": true,
+  "Draft": true,
+  "ReleaseId": 411431695,
+  "ReleaseUrl": "https://github.com/cahpondokan/pertamina-oto/releases/tag/untagged-62b2587c600b50f5b2a9",
+  "AssetId": 636401028,
+  "Asset": "OTO-20261013-142328-c5c96e5f-recovery.zip",
+  "Bytes": 2765021,
+  "SHA256": "080A738B6CFDFD6CC9C1045DCF77607ED354856960FA447DA66E99175C759C6B",
+  "ServerDigest": "sha256:080a738b6cfdfd6cc9c1045dcf77607ed354856960fa447da66e99175c759c6b",
+  "Commit": "3adf0f777c4074abf3fb6561c4ab05332ea91014",
+  "ArchiveKind": "verified-recovery-overlay",
+  "BaseAssetId": 635962911,
+  "BaseSHA256": "DF59A98415EA9BA77B5ABAFA5A3EF5501345BE8F9C6E3EF0D7FB9992D0A62BC8",
+  "RecoveredFilesVerified": 1336,
+  "Verified": true
+}
