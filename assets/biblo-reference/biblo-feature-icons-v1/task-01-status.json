@@ -1,0 +1,246 @@
+{
+  "task": 1,
+  "lane": 1,
+  "state": "DELIVERED_WITH_REVIEW_NOTES",
+  "tool": "built-in image_gen",
+  "items": [
+    {
+      "id": "001",
+      "filename": "001-buat-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "3C2112A0D01A804F1FF943275B5192D6C15F82AAC1E63005B4DCE906C055261D",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 7,81/3,11/3,67/3,99; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "002",
+      "filename": "002-tulis-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "49DF2191FD245AB28030D5D82521B258251F37B75E20590D12468BE6A8039B35",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 12,2/1,2/11,4/3,11; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "003",
+      "filename": "003-buat-pdf-dengan-kamera.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "0878FC5878C9D41C46AF21667E7BFF8D2E339690FB7ACD2A6096A4F44E8B94DB",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 10,53/3,83/8,45/3,75; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "004",
+      "filename": "004-halaman-web-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "C702B59E87F93AB38C79835E1252CE2F98D46627025A78AB9239F4D23871A298",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 7,58/10,85/5,1/10,21; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "005",
+      "filename": "005-gambar-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "0D022476CF4E3204E8F4E1BD41A613456FC2AC31D1C10B1C2F664DC153F13EFE",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 7,34/9,73/6,62/9,41; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "006",
+      "filename": "006-buat-kolase-foto.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "4B4CB2E163931E76119CB1F58864C7D80232ADC54160FFE6E84C1F1A3123BE79",
+      "issue": null
+    },
+    {
+      "id": "007",
+      "filename": "007-buat-kartu.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "96795962881656D5AFB1312D7291AF08D4121FC5385E3BF143B5C7668C6ABCB3",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 19,54/6,86/14,75/6,54; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "008",
+      "filename": "008-buat-formulir-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "20BC1E10CFAF86E23E2C6582EF82D7A9B7AF75C80CD49BECA503FFACA978B2FF",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 16,27/7,89/9,89/6,54; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "009",
+      "filename": "009-buat-pdf-lamaran-pekerjaan.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "1CDCA868ED75E0973C32466639F82696E826CF107357D41A4A1AAFEDD5D45D58",
+      "issue": null
+    },
+    {
+      "id": "010",
+      "filename": "010-hasilkan-kode-qr.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "FA4E175EE06ABB4CD8ABF54BB004D3293DFA3BC2BE66F067EA36BC94429C7459",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 20,02/5,58/19,78/4,63; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "011",
+      "filename": "011-konverter-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "639D9084D7F9FA4224237F143562F3D2FAEC00F66F6CB04C42C0117676875D96",
+      "issue": null
+    },
+    {
+      "id": "012",
+      "filename": "012-buat-faktur.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "67487C228F7F63F4111B6595A9FC57CB3122BE4B1A49B91ADF5D206432DEFAB5",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 8,45/6,54/7,42/5,34; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "013",
+      "filename": "013-buat-faktur-secara-visual.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "AFDDA6ECFBDA9CAE8418AC7BAE3712A91114D6950E6E5FC5643712D1B54146E8",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 13,48/6,46/9,49/5,9; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "014",
+      "filename": "014-buat-faktur-elektronik.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "FE901E282F2810B37BB1746DDF366AD0E3D69B411D0ADC29157D8DE4AF9757C5",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 12,28/8,45/4,39/7,42; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "015",
+      "filename": "015-faktur-pdf-ke-faktur-elektronik.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "6A480A3B0176BCE3B2D59DD0B8812C8DE8303EADFF86C6516520AD168D80188E",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 9,49/6,22/8,93/7,26; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    },
+    {
+      "id": "016",
+      "filename": "016-faktur-elektronik-xml-ke-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "E601DBF42607D00D1BCE1E229A0CF8B88908519910459A6AC90B3262FBF0DA58",
+      "issue": null
+    },
+    {
+      "id": "017",
+      "filename": "017-validasi-faktur-elektronik.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "smallSizeReviewed": true,
+      "fileHash": "FE3B3EFC385BB405A5D65C64AC0FCC168992DD863CACC0F7B24D86EDC332C1D1",
+      "issue": "Foreground alpha>200 margins L/T/R/B percent: 14,59/7,66/7,58/5,98; minimum below 7 percent target. No clipping. Small-size visual QA passed."
+    }
+  ]
+}

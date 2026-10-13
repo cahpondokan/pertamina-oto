@@ -1,0 +1,39 @@
+BIBLO FEATURE ICONS V1 — KONTRAK ASET BERSAMA
+
+Otorisasi: Pengguna meminta 5 task baru terpisah. Masing-masing task mengerjakan tepat satu gambar sampai diperiksa dan disimpan, kemudian gambar berikutnya sampai daftar lane selesai. Jangan berhenti hanya setelah contoh pertama. Ini pembuatan aset, bukan implementasi fitur, phase software, atau perubahan UI.
+
+SUMBER DAN OWNERSHIP
+- Baca manifest.json untuk daftar exact nomor, filename, lane, label, dan metafora.
+- Lima task mempunyai kepemilikan file PNG yang tidak tumpang tindih. Jangan mengedit manifest.json atau BRIEF.txt; pemiliknya task induk.
+- Per task hanya boleh membuat PNG terdaftar miliknya, task-0N-status.json, task-0N-prompts.json, task-0N-handoff.txt, serta qa-0N/ untuk bukti inspeksi. Semua PNG final langsung di folder ini (bukan subfolder).
+- Semua path di luar output/imagegen/biblo-feature-icons-v1 DILARANG DITULIS, kecuali file sementara alat gambar dan lokasi bawaan generated_images. Baca referensi saja.
+- Jangan edit aplikasi, source, logo lama, proyek phase, versi, release, installer, build, GitHub, website. Jangan jalankan build/install/print. Jangan mengganggu audit crash yang sedang berjalan. Jangan membuat task/subagent tambahan.
+
+WORKFLOW
+1. Baca skill imagegen sendiri sepenuhnya: C:/Users/cahpo/.codex/skills/.system/imagegen/SKILL.md.
+2. Inspect referenceImages.palette dan minimal referensi kostum yang akan dipakai melalui view_image sebelum generasi. Gunakan referenceImages dari manifest sebagai imagegen referenced_image_paths; semua task harus berbagi identitas yang sama.
+3. Built-in image_gen saja. Satu panggilan per satu aset, transparent_background:true, satu gambar final per fitur, bukan sprite sheet atau collage. Jangan Promise.all banyak gambar di satu task. Alat boleh memerlukan beberapa menit; output melalui generatedImage(result). Jangan cetak base64.
+4. Simpan prompt persis dan sumber generasi. Salin PNG hasil generasi ke filename terdaftar, pertahankan original. Gunakan filesystem yang tersedia; jangan menebak path output.
+5. Periksa visual, transparansi sungguhan, dimensi, pemotongan, konsistensi karakter, dan metafora/format sebelum maju. Boleh inspeksi metadata/alpha read-only memakai runtime yang sudah tersedia; jangan install dependency. Jangan menggambar ulang atau menghapus background pakai Python/shell/SVG: perbaikan visual dilakukan melalui imagegen.
+6. Tulis checkpoint task-0N-status.json setelah setiap aset (id, filename, state, dimensions, alphaVerified, visualReviewed, fileHash bila tersedia, issue bila ada). Status VERIFIED hanya jika semua pemeriksaan benar-benar dilakukan. Tulis task-0N-prompts.json dengan prompt aktual dan source path.
+7. Lanjut otomatis aset berikutnya. Bila tool gagal/rate-limit, simpan checkpoint jujur dan blocker; jangan diam-diam ganti CLI/model atau meminta API key. Jangan ulangi berlebihan; maksimal satu perbaikan terarah per aset lalu tandai NEEDS_REVIEW dan teruskan aset independen.
+8. Beri update singkat progres setiap beberapa aset. Handoff terakhir daftar lengkap path, verified/needs_review/pending, bukti QA dan batasannya. Jangan kirim callback lintas chat tanpa otorisasi manusia terpisah; induk dapat membaca status/handoff langsung.
+
+GAYA WAJIB
+- Satu BIBLO yang sama: burung hantu chibi biru azure gemuk pendek; dua jambul merah; wajah putih; mata besar cokelat gelap; kacamata bulat navy besar dengan lensa jernih; paruh cyan kecil; aksen bulu hijau pada dada/ujung sayap; kaki burung biru. Jangan menjadi burung lain atau menambah karakter kedua.
+- Ikuti identitas dan palet gambar yang disetujui. Kostum berbeda sesuai pekerjaan: rompi pustakawan, overall teknisi, jaket pilot/kurir; adaptasi sederhana seperti apron seniman atau rompi pemeriksa boleh. Jangan menutupi jambul, wajah, kacamata. Sayap tetap sayap, bukan tangan manusia.
+- Gambar ikon untuk kartu fitur, bukan poster: square canvas, target 1024x1024; karakter dan prop mengambil sekitar 80–86% frame; margin aman sekitar 7–10%; full-body atau three-quarter konsisten, tidak terpotong.
+- 2D anime mascot rapi, garis navy jelas, shading sederhana, kurangi helai bulu/jahitan agar terbaca pada 64–128px. Maksimal 1–2 prop utama dan satu simbol aksi. Jangan memenuhi gambar dengan detail.
+- Background 100% transparan/alpha: tanpa bidang putih, pola kotak palsu, panel, lantai, drop shadow lebar, panggung, judul, watermark, kalimat, nomor urut di dalam gambar. Nomor/nama berada di filename/metadata/UI.
+- Hanya badge format pendek bila esensial (PDF, DOCX, PNG, XML, PDF/A dan sebagainya) atau angka halaman 1/2/3. Ejaan dan arah panah harus benar. Word/DOCX, Excel/XLSX, PowerPoint/PPTX boleh memakai kartu generik bergaris/tabel/slide dengan label pendek, TANPA logo Microsoft/Adobe/PDF24.
+- Screenshot PDF24 hanya daftar capability; tidak menyalin karakter domba, ilustrasi, layout, merek, atau badge favoritnya.
+- Dua konversi berlawanan harus tampak berlawanan, bukan sekadar mengganti filename. Konversi gambar memakai prop landscape; teks memakai baris; spreadsheet tabel; presentasi slide; ebook buku; kode angle brackets.
+- Bukan animasi, bukan SVG, bukan penambahan fitur. Kehadiran aset belum menandakan capability tersedia.
+
+QUALITY GATE
+A. PNG bisa dibuka, square, ukuran jelas dilaporkan, alpha memiliki pixel transparan nyata dan foreground yang tidak kosong.
+B. Identitas Biblo/palet/kacamata konsisten, tidak ada anggota tubuh berlebih/terpotong, prop dikenali.
+C. Tidak ada background/judul/slogan; label format benar; aksi cocok exact fitur.
+D. Inspect hasil di ukuran penuh dan tampilan kecil (64/96/128 CSS px pada latar terang dan gelap jika tool tersedia). Jika tes ukuran kecil belum dilakukan, laporkan belum teruji; jangan klaim app-ready tanpa bukti.
+E. Tidak mengubah render/zoom/editor/print atau file aplikasi.
+

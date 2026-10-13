@@ -1,0 +1,17 @@
+<Project>
+  <!-- Change only for an explicitly approved product release, never per build. -->
+  <PropertyGroup>
+    <OtoProductVersion>0.3.0</OtoProductVersion>
+    <OtoChannel>Pengembangan</OtoChannel>
+    <Version>$(OtoProductVersion)</Version>
+    <FileVersion>$(OtoProductVersion).0</FileVersion>
+    <InformationalVersion>$(OtoProductVersion)</InformationalVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>OtoProductVersion</_Parameter1><_Parameter2>$(OtoProductVersion)</_Parameter2></AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute"><_Parameter1>OtoChannel</_Parameter1><_Parameter2>$(OtoChannel)</_Parameter2></AssemblyAttribute>
+  </ItemGroup>
+  <Target Name="WriteProductIdentity" AfterTargets="Build">
+    <WriteLinesToFile File="$(OutDir)product-info.json" Lines="{ &quot;ProductVersion&quot;: &quot;$(OtoProductVersion)&quot;, &quot;Channel&quot;: &quot;$(OtoChannel)&quot; }" Overwrite="true" Encoding="UTF-8" />
+  </Target>
+</Project>

@@ -1,0 +1,410 @@
+[
+  {
+    "id": "088",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 539781,
+    "foregroundPixels": 1032735,
+    "bounds": [
+      14,
+      18,
+      1243,
+      1234
+    ],
+    "minMarginPercent": 0.8,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "089",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 668412,
+    "foregroundPixels": 904104,
+    "bounds": [
+      83,
+      48,
+      1174,
+      1207
+    ],
+    "minMarginPercent": 3.67,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "090",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 727478,
+    "foregroundPixels": 845038,
+    "bounds": [
+      94,
+      58,
+      1157,
+      1172
+    ],
+    "minMarginPercent": 4.63,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "091",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 674431,
+    "foregroundPixels": 898085,
+    "bounds": [
+      43,
+      64,
+      1198,
+      1173
+    ],
+    "minMarginPercent": 3.43,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "092",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 749407,
+    "foregroundPixels": 823109,
+    "bounds": [
+      42,
+      63,
+      1211,
+      1175
+    ],
+    "minMarginPercent": 3.35,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "093",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 718628,
+    "foregroundPixels": 853888,
+    "bounds": [
+      70,
+      84,
+      1194,
+      1156
+    ],
+    "minMarginPercent": 4.7,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "094",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 719727,
+    "foregroundPixels": 852789,
+    "bounds": [
+      47,
+      88,
+      1190,
+      1187
+    ],
+    "minMarginPercent": 3.75,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "095",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 667671,
+    "foregroundPixels": 904845,
+    "bounds": [
+      62,
+      67,
+      1197,
+      1155
+    ],
+    "minMarginPercent": 4.47,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "096",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 723658,
+    "foregroundPixels": 848858,
+    "bounds": [
+      46,
+      67,
+      1186,
+      1159
+    ],
+    "minMarginPercent": 3.67,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "097",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 725004,
+    "foregroundPixels": 847512,
+    "bounds": [
+      109,
+      33,
+      1149,
+      1203
+    ],
+    "minMarginPercent": 2.63,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "098",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 705452,
+    "foregroundPixels": 867064,
+    "bounds": [
+      62,
+      51,
+      1195,
+      1182
+    ],
+    "minMarginPercent": 4.07,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "099",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 715574,
+    "foregroundPixels": 856942,
+    "bounds": [
+      90,
+      34,
+      1182,
+      1201
+    ],
+    "minMarginPercent": 2.71,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "100",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 696490,
+    "foregroundPixels": 876026,
+    "bounds": [
+      46,
+      68,
+      1208,
+      1209
+    ],
+    "minMarginPercent": 3.51,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "101",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 710639,
+    "foregroundPixels": 861877,
+    "bounds": [
+      74,
+      86,
+      1219,
+      1166
+    ],
+    "minMarginPercent": 2.71,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "102",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 686119,
+    "foregroundPixels": 886397,
+    "bounds": [
+      61,
+      82,
+      1202,
+      1150
+    ],
+    "minMarginPercent": 4.07,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "103",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 779489,
+    "foregroundPixels": 793027,
+    "bounds": [
+      84,
+      77,
+      1173,
+      1177
+    ],
+    "minMarginPercent": 6.06,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "104",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 733295,
+    "foregroundPixels": 839221,
+    "bounds": [
+      71,
+      82,
+      1204,
+      1189
+    ],
+    "minMarginPercent": 3.91,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "105",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 734719,
+    "foregroundPixels": 837797,
+    "bounds": [
+      60,
+      72,
+      1205,
+      1156
+    ],
+    "minMarginPercent": 3.83,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "106",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 650062,
+    "foregroundPixels": 922454,
+    "bounds": [
+      19,
+      63,
+      1234,
+      1186
+    ],
+    "minMarginPercent": 1.52,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "107",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 694885,
+    "foregroundPixels": 877631,
+    "bounds": [
+      125,
+      54,
+      1178,
+      1190
+    ],
+    "minMarginPercent": 4.31,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "108",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 742186,
+    "foregroundPixels": 830330,
+    "bounds": [
+      73,
+      81,
+      1182,
+      1186
+    ],
+    "minMarginPercent": 5.34,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "109",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 693941,
+    "foregroundPixels": 878575,
+    "bounds": [
+      36,
+      51,
+      1222,
+      1207
+    ],
+    "minMarginPercent": 2.47,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "110",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 765410,
+    "foregroundPixels": 807106,
+    "bounds": [
+      57,
+      83,
+      1208,
+      1190
+    ],
+    "minMarginPercent": 3.59,
+    "state": "NEEDS_REVIEW"
+  },
+  {
+    "id": "111",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "transparentPixels": 784691,
+    "foregroundPixels": 787825,
+    "bounds": [
+      31,
+      97,
+      1225,
+      1181
+    ],
+    "minMarginPercent": 2.23,
+    "state": "NEEDS_REVIEW"
+  }
+]

@@ -1,9 +1,14 @@
 using System.Text.Json;
 using Pertamina.Oto.LocalPdf;
 
+LocalEditorFonts.Initialize();
 // One process per operation. The desktop owns timeout, cancellation and publication.
 if (args is ["--self-test"])
     return WorkerTests.Run();
+if (args is ["--self-test-editor"])
+    return EditorTests.Run();
+if (args is ["--self-test-search"])
+    return ReaderSearchTests.Run();
 
 try
 {

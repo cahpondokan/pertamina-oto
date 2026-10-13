@@ -1,0 +1,41 @@
+@page
+@model Pertamina.Oto.Downloads.Pages.IndexModel
+@{ Layout = null; var release = Model.Release; var distribution = Model.Distribution; var culture = System.Globalization.CultureInfo.GetCultureInfo("id-ID"); }
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="Unduh PERTAMINA OTO untuk Windows. Pemrosesan PDF lokal, langsung di perangkat Anda."/><title>Unduh PERTAMINA OTO</title><link rel="icon" href="/brand.svg" type="image/svg+xml"/><link rel="stylesheet" href="/site.css?v=refresh-20261011"/><script src="/site.js?v=refresh-20261011" defer></script></head>
+<body>
+<a class="skip" href="#utama">Lewati ke isi</a>
+<header class="header wrap"><a class="brand" href="/" aria-label="PERTAMINA OTO — Beranda"><img src="/brand.svg" alt="" width="40" height="40"/><span>PERTAMINA <strong>OTO</strong><small>Office Tools Organizer</small></span></a><nav aria-label="Navigasi utama"><a href="#rilis">Catatan rilis</a><a href="/panduan">Panduan</a></nav><div class="theme-control" hidden><label for="theme">Tema</label><select id="theme"><option value="system">Ikuti sistem</option><option value="light">Terang</option><option value="dark">Gelap</option></select></div></header>
+<main id="utama" class="wrap portal">
+@if (Model.FixturePreview) { <p class="status-note"><strong>PRATINJAU LOKAL — FIXTURE SINTETIS.</strong> Angka dan file uji bukan paket rilis nyata. Jangan jalankan file fixture.</p> }
+<section id="unduh" class="portal-grid"><div class="intro"><p class="eyebrow"><span class="dot"></span> OTO UNTUK WINDOWS</p><h1>Dokumen beres.<br/><span>Pekerjaan lanjut.</span></h1><p class="lead">Baca, gabung, pisah, dan atur PDF. Dokumen diproses lokal di perangkat Anda.</p><p class="fine">Windows 10 versi 2004+ / Windows 11 · x64 · Pengembangan</p><img class="portal-preview" src="/reader-preview.png" alt="Contoh Pembaca PDF OTO pada build sebelumnya, memakai dokumen sintetis" width="1570" height="921"/><p class="fine">Contoh tampilan build sebelumnya. Dukungan fitur bergantung pada jenis dokumen.</p></div>
+<div class="download-card">
+@if (release is not null) {
+<p class="release-label"><span class="dot"></span> Rilis terverifikasi tersedia</p><h2>Unduh OTO</h2><p class="version">@(release.ProductVersion ?? "Versi produk belum tercatat") · @release.Channel<br/>Build @release.Version</p><p class="fine">@release.PublishedAt.ToOffset(TimeSpan.FromHours(7)).ToString("dd MMMM yyyy", culture)</p>
+@if (distribution is not null) {
+<p class="package-kind">Installer online · @Pertamina.Oto.Downloads.Pages.IndexModel.FormatSize(distribution.OnlineInstaller.Size) awal</p>
+<a class="button full" data-download href="/downloads/@distribution.OnlineInstaller.FileName">↓ Unduh untuk Windows</a>
+<p class="fine">Memerlukan internet saat setup: unduhan lanjutan @Pertamina.Oto.Downloads.Pages.IndexModel.FormatSize(distribution.OfflineInstaller.Size). Total termasuk EXE awal: @Pertamina.Oto.Downloads.Pages.IndexModel.FormatSize(distribution.OnlineInstaller.Size + distribution.OfflineInstaller.Size).</p>
+<a class="offline-link" data-download href="/downloads/@distribution.OfflineInstaller.FileName">Installer offline lengkap · @Pertamina.Oto.Downloads.Pages.IndexModel.FormatSize(distribution.OfflineInstaller.Size) ↓</a>
+<p class="fine">Untuk memasang tanpa internet setelah unduhan selesai.</p>
+<details class="checksum"><summary>Ukuran dan SHA-256 installer online</summary><p>@distribution.OnlineInstaller.Size.ToString("N0", culture) byte</p><code>@distribution.OnlineInstaller.Sha256</code></details>
+} else {
+<p class="package-kind">@(release.InstallerFileName is null ? "Paket ZIP" : "Installer lengkap") · @((release.DownloadSize / 1048576d).ToString("0.0", culture)) MB</p>
+<a class="button full" data-download href="@release.DownloadPath">↓ Unduh untuk Windows</a>
+<p class="fine">@(release.InstallerFileName is null ? "Ekstrak ZIP, lalu jalankan Setup.exe." : "Buka file EXE. Kebutuhan komputer diperiksa otomatis.")</p>
+<p class="status-note">Installer online belum tersedia untuk rilis ini. Paket lengkap tetap dapat diunduh.</p>
+}@if (release.RuntimeBundled) { <p class="fine">Runtime privat sudah disertakan; tidak perlu memasang .NET 10 terpisah. Setelah paket lengkap diunduh, pemasangan dapat dilakukan offline.</p> }
+else { <p class="fine">Runtime belum dibundel pada paket ini. Ikuti persyaratan pada panduan pemasangan.</p> }
+@if (release.ManualInstallerOnly) { <p class="status-note"><strong>Paket uji @release.ProductVersion.</strong> Transisi memakai installer lengkap sekali; paket ini tidak ditawarkan melalui updater lama. <a href="/panduan#uji-laptop">Checklist uji laptop lain</a>.</p> }
+<details class="checksum"><summary>Ukuran dan SHA-256 paket lengkap</summary><p>@release.DownloadSize.ToString("N0", culture) byte</p><code>@release.DownloadSha256</code></details>
+} else { <p class="release-label">Rilis sedang disiapkan</p><h2>Segera tersedia di sini.</h2><p>Paket belum tersedia atau belum lolos validasi. Coba kembali nanti.</p> }
+<p class="development-note">Versi pengembangan untuk evaluasi. Installer belum ditandatangani; SHA-256 memeriksa integritas, bukan identitas penerbit. Penerimaan produksi belum dilakukan.</p>
+</div></section>
+<section class="quick-start" aria-labelledby="mulai"><h2 id="mulai">Tiga langkah untuk mulai</h2><ol><li><strong>Unduh</strong><p>Pilih paket Windows yang tersedia.</p></li><li><strong>Pasang</strong><p>Simpan pekerjaan, buka installer dan ikuti petunjuk.</p></li><li><strong>Buka OTO</strong><p>Gunakan shortcut yang sama, lalu pilih dokumen lokal.</p></li></ol><p class="fine">Internet digunakan untuk unduhan aplikasi dan setup online/update. Pemrosesan PDF lokal dapat berjalan offline. Konversi Word tertentu memerlukan Microsoft Word.</p></section>
+<section id="rilis" class="release-section"><div><p class="eyebrow">CATATAN RILIS</p><h2>Apa yang baru?</h2><p>Pembaruan tetap atas pilihan Anda. Periksa hasil dokumen sebelum dipakai.</p></div><div class="release-notes">@if(release is not null) { <h3>Build @release.Version</h3><ul>@foreach(var note in release.Notes) { <li>@note</li> }</ul> } else { <p>Catatan rilis akan muncul bersama paket terverifikasi.</p> }</div></section>
+</main><footer class="footer"><div class="wrap"><p>PERTAMINA OTO · Dokumen tetap lokal.</p><a href="/panduan">Baca panduan →</a></div></footer>
+<div class="download-toast" hidden><p role="status" aria-live="polite" aria-atomic="true"></p><button type="button" aria-label="Tutup notifikasi">×</button></div>
+</body></html>
+
+

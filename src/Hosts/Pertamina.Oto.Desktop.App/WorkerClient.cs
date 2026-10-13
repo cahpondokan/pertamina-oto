@@ -57,6 +57,7 @@ internal static class WorkerClient
             var reply = JsonSerializer.Deserialize<PdfReply>(await response);
             if (process.ExitCode != 0 || reply is not { Success: true })
                 return reply is { Success: false } ? reply : new(false, "Mesin PDF berhenti; sumber tidak diubah.");
+            if (request.Tool is "edit-check" or "edit-text-check" or "reader-search") return reply;
             var output = new FileInfo(stage);
             if (!output.Exists || output.Length <= 0 || output.Length != reply.Bytes || output.Length > 250L * 1024 * 1024)
                 return new(false, "Hasil tidak memenuhi validasi ukuran; tidak diterbitkan.");
@@ -96,7 +97,7 @@ internal static class WorkerClient
 
     private static async Task<string> ReadBoundedAsync(StreamReader reader, CancellationToken token)
     {
-        var buffer = new char[8192];
+        var buffer = new char[131072];
         var count = 0;
         while (count < buffer.Length)
         {

@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../eng/ProductRelease.props" />
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
@@ -13,17 +14,44 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <ApplicationIcon>Assets/oto.ico</ApplicationIcon>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**;artifacts/**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Assets/release-notes.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/oto.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/oto.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/About-component-notices.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/History/*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/Biblo/*" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets/BibloAppExit.png" CopyToOutputDirectory="PreserveNewest" />
     <PackageReference Include="Microsoft.WindowsAppSDK" />
     <Compile Include="../../Workers/Pertamina.Oto.LocalPdf.Worker/Protocol.cs" Link="Protocol.cs" />
+    <Compile Include="../../Workers/Pertamina.Oto.WordPdf.Worker/WordProvider.cs" Link="WordProvider.cs" />
+    <ProjectReference Include="../../Workers/Pertamina.Oto.WordPdf.Worker/Pertamina.Oto.WordPdf.Worker.csproj" ReferenceOutputAssembly="false" GlobalPropertiesToRemove="RuntimeIdentifier;PlatformTarget;TargetFramework" />
+    <Compile Include="../../Distribution/ReleaseInfo.cs" Link="ReleaseInfo.cs" />
+    <Compile Include="../../Distribution/DistributionRelease.cs" Link="DistributionRelease.cs" />
+    <Compile Include="../../Distribution/OnlineReleaseClient.cs" Link="OnlineReleaseClient.cs" />
+    <Compile Include="../../Distribution/OnlineUpdatePackage.cs" Link="OnlineUpdatePackage.cs" />
     <ProjectReference Include="../../Workers/Pertamina.Oto.LocalPdf.Worker/Pertamina.Oto.LocalPdf.Worker.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../../../eng/PdfFileLauncher/PdfFileLauncher.csproj" ReferenceOutputAssembly="false" GlobalPropertiesToRemove="RuntimeIdentifier;PlatformTarget;TargetFramework" />
+    <ProjectReference Include="../../../eng/LocalLauncher/LocalLauncher.csproj" ReferenceOutputAssembly="false" Private="false" GlobalPropertiesToRemove="RuntimeIdentifier;PlatformTarget;TargetFramework" />
   </ItemGroup>
-  <Target Name="CopyLocalWorker" AfterTargets="Build">
+  <Target Name="CopyLocalWorker" AfterTargets="Build" Condition="'$(OtoSelfContained)' != 'true'">
     <ItemGroup>
       <LocalWorkerFiles Include="../../Workers/Pertamina.Oto.LocalPdf.Worker/bin/$(Configuration)/net10.0/**/*" />
+      <WordWorkerFiles Include="../../Workers/Pertamina.Oto.WordPdf.Worker/bin/$(Configuration)/net10.0-windows/*" />
+      <PdfOpenerFiles Include="../../../eng/PdfFileLauncher/bin/$(Configuration)/net10.0/*" />
     </ItemGroup>
     <Copy SourceFiles="@(LocalWorkerFiles)" DestinationFiles="@(LocalWorkerFiles->'$(OutDir)worker/%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(WordWorkerFiles)" DestinationFolder="$(OutDir)word-worker/" />
+    <Copy SourceFiles="@(PdfOpenerFiles)" DestinationFolder="$(OutDir)pdf-opener/" />
+  </Target>
+  <Target Name="CopyRestartLauncher" AfterTargets="Build" Condition="'$(OtoSelfContained)' != 'true'">
+    <ItemGroup>
+      <RestartLauncherFiles Include="../../../eng/LocalLauncher/bin/$(Configuration)/net10.0/PERTAMINA-OTO.exe;../../../eng/LocalLauncher/bin/$(Configuration)/net10.0/PERTAMINA-OTO.dll;../../../eng/LocalLauncher/bin/$(Configuration)/net10.0/PERTAMINA-OTO.deps.json;../../../eng/LocalLauncher/bin/$(Configuration)/net10.0/PERTAMINA-OTO.runtimeconfig.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(RestartLauncherFiles)" DestinationFolder="$(OutDir)restart-launcher/" />
+    <Exec Command="&quot;$(OutDir)restart-launcher/PERTAMINA-OTO.exe&quot; --write-restart-capability" />
   </Target>
 </Project>

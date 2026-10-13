@@ -1,8 +1,19 @@
 <Project>
+  <!-- Opt-in release packaging; regular developer/test builds remain unchanged. -->
+  <PropertyGroup Condition="'$(OtoSelfContained)' == 'true'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishAot>false</PublishAot>
+    <PublishSingleFile>false</PublishSingleFile>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <AppHostDotNetSearch>AppLocal</AppHostDotNetSearch>
+  </PropertyGroup>
   <!-- Keep WinUI extraction paths below Windows legacy path limits. -->
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Pertamina.Oto.Desktop.App'">
     <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts/obj/desktop/</BaseIntermediateOutputPath>
-    <OutputPath>$(MSBuildThisFileDirectory)artifacts/desktop/</OutputPath>
+    <OutputPath Condition="'$(DesktopUiOutputPath)' == ''">$(MSBuildThisFileDirectory)artifacts/desktop/</OutputPath>
+    <OutputPath Condition="'$(DesktopUiOutputPath)' != ''">$(DesktopUiOutputPath)</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>

@@ -1,0 +1,48 @@
+PERTAMINA OTO — paket aktivasi portal pengembangan
+Target: aynadmin@187.53.134.25, oto.ayani.id
+Build desktop: 20261001-094532-c58e4ca7
+
+Status: paket telah disiapkan; script aktivasi BELUM dijalankan.
+DNS A dan HTTPS telah diverifikasi. VPS: Ubuntu 22.04.5 x86_64.
+Nginx saat ini masih melayani halaman placeholder. Tidak ada layanan lain yang perlu diubah.
+Host belum memiliki dotnet. Image ASP.NET 8.0.30 yang tersedia tidak dapat menjalankan portal .NET 10.
+sudo -n ditolak dengan "a password is required". Jangan mengirim password melalui chat.
+
+Sebelum aktivasi administrator/pemilik otorisasi harus meninjau:
+- admission runtime ASP.NET Core 10 dari sumber resmi Ubuntu .NET backports;
+- izin publikasi paket pengembangan ini yang belum ditandatangani;
+- konfigurasi, bukti test dan rollback. Ini bukan kelulusan phase atau izin Production.
+
+Panduan runtime resmi (Ubuntu 22.04, hindari pencampuran sumber .NET):
+https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install#ubuntu-2204
+https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0
+
+Setelah admission/otorisasi yang diperlukan, administrator dapat menjalankan melalui terminal SSH sendiri:
+
+sudo add-apt-repository ppa:dotnet/backports
+sudo apt-get update
+sudo apt-get install aspnetcore-runtime-10.0
+dotnet --list-runtimes
+
+Lalu, dari folder staging yang berisi file ini, tinjau dahulu:
+
+cat activate-vps-development.sh
+cat config/oto.ayani.id.vps-reviewed.conf
+cat config/oto-downloads.service
+sha256sum --check SHA256SUMS
+
+Aktivasi eksplisit portal dan unduhan pengembangan:
+
+sudo bash ./activate-vps-development.sh --activate-development-download
+
+Script tidak memasang runtime atau mengunduh dependency. Script memerlukan ASP.NET 10 lebih dahulu;
+menolak perubahan baseline Nginx/nama layanan/port; menyimpan backup; memakai service user baca-saja;
+memeriksa health sebelum dan sesudah pergantian proxy; dan memulihkan konfigurasi jika aktivasi gagal.
+Ia tidak mengubah Gatelog/Comels/SQL Server, Windows yang sudah terpasang, atau source dokumen.
+Script ini baru diperiksa sintaksnya, belum diuji aktivasi penuh pada Linux.
+
+Setelah aktivasi: verifikasi GET /health = 204, metadata build tepat, download ZIP SHA-256 cocok,
+dan notifikasi pada OTO terpasang dengan build lebih lama. Jangan menganggap aktivasi lulus hanya
+dari hasil nginx -t. Pemulihan manual jika dibutuhkan: pulihkan file Nginx dari
+/var/backups/oto-downloads/20261001-094532-c58e4ca7/oto.ayani.id.before.conf, jalankan nginx -t,
+reload Nginx, lalu hentikan oto-downloads.service. Berkas staging/versi lama tidak dihapus.

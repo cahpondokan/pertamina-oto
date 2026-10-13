@@ -1,0 +1,28 @@
+PERTAMINA OTO - PAKET UJI COBA WINDOWS x64
+
+1. Unduh ZIP sepenuhnya dari Google Drive.
+2. Ekstrak seluruh ZIP ke folder lokal yang dapat Anda tulis.
+3. Buka folder PERTAMINA-OTO, lalu klik dua kali MULAI-OTO.cmd.
+   Jangan jalankan dari dalam ZIP. Jangan pindahkan hanya EXE.
+4. Di Pengaturan, pilih folder hasil default Anda sendiri.
+
+Runtime .NET 10.0.11 disertakan. Tidak ada instalasi atau perubahan
+pengaturan sistem oleh launcher; variabel runtime hanya untuk proses ini.
+Build aplikasi: desktop-assistant, 9 September 2026.
+Target: Windows x64, minimum versi Windows yang didukung API aplikasi
+10.0.19041.0. Gunakan Windows yang masih menerima pembaruan keamanan.
+Bukan untuk macOS, Linux, Windows 32-bit, atau paket native ARM64.
+
+Paket ini bukan installer, bukan rilis produksi, dan belum lolos uji
+komputer bersih. Komponen sistem Windows lainnya mungkin diperlukan.
+Jika Windows atau antivirus memblokir aplikasi, jangan menonaktifkan
+perlindungan: kirim pesan error ke pengelola/IT untuk diperiksa.
+
+Gunakan salinan dokumen uji. Periksa hasil sebelum digunakan.
+13 alat memiliki operasi dasar, fitur lainnya dan AI belum tersedia.
+Folder default disimpan lokal di profil pengguna, bukan di Google Drive.
+Riwayat/favorit hanya berlaku selama sesi. Tidak ada unggahan otomatis.
+Google Drive hanya digunakan untuk mengirim ZIP, bukan memproses dokumen.
+
+Lisensi dan pemberitahuan .NET ada dalam folder runtime.
+Paket ini tidak mencakup dokumen pengguna atau pengaturan pribadi pembuat.

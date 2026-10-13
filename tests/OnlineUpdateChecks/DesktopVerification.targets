@@ -1,0 +1,3 @@
+<Project>
+ <Target Name="IsolateDesktopVerificationReferences" BeforeTargets="AssignProjectConfiguration;_GetProjectReferenceTargetFrameworkProperties;PrepareProjectReferences"><ItemGroup><ProjectReference><GlobalPropertiesToRemove>%(ProjectReference.GlobalPropertiesToRemove);BaseIntermediateOutputPath;MSBuildProjectExtensionsPath;CustomAfterMicrosoftCommonTargets</GlobalPropertiesToRemove></ProjectReference></ItemGroup></Target>
+</Project>

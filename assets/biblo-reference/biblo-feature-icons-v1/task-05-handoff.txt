@@ -1,0 +1,34 @@
+TASK 05 — BIBLO lane 5, 088–111
+Generation complete: 24/24 requested PNGs saved; 0 pending. QA: 0 VERIFIED, 24 NEEDS_REVIEW.
+Built-in image_gen only, sequential one asset at a time. One targeted repair on 088 removed an Adobe-like mark; no other visual repairs. Originals preserved at exact source paths in task-05-prompts.json.
+All 24: PNG opens; square 1254 x 1254; true transparent pixels and nonempty foreground confirmed by full alpha scan; full-size visual reviewed for Biblo identity, costume, palette, correct source/target badges and left-to-right arrows. No visible clipping, poster panels or titles.
+128 px actual raster preview inspected on white and navy backgrounds, all 24. Badges and arrows recognizable. 64/96 px and actual application CSS/device scaling untested.
+Measured minimum foreground margin (alpha threshold 32): 0.80–6.06 percent, below brief target 7–10 percent, so all remain NEEDS_REVIEW. 088 generic conversion uses DOCX representative destination and also needs semantic review. No claim app-ready.
+Evidence: qa-05/small-light-dark-128.png and qa-05/alpha-margin-audit.json; reproducible read-only source scans in qa-05/audit.ps1. Preview script creates QA sheet only; final PNG pixels never modified outside image_gen.
+Prompts and provenance: task-05-prompts.json. Per-file SHA256, dimensions, alpha counts, margin and state: task-05-status.json.
+No software/source/UI/logo/build/version/release changes, no upload/publish, no new tasks or agents, no cross-chat messages.
+DELIVERABLE PATHS:
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\088-konversi-pdf-ke-format-lain.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\089-pdf-ke-word.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\090-pdf-ke-powerpoint.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\091-pdf-ke-excel.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\092-pdf-ke-gambar.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\093-pdf-ke-jpg.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\094-pdf-ke-png.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\095-pdf-ke-svg.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\096-pdf-ke-tiff.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\097-pdf-ke-docx.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\098-pdf-ke-pptx.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\099-pdf-ke-xlsx.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\100-pdf-ke-odt.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\101-pdf-ke-ods.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\102-pdf-ke-odp.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\103-pdf-ke-teks.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\104-pdf-ke-rtf.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\105-pdf-ke-epub.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\106-pdf-ke-html.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\107-pdf-ke-markdown.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\108-heic-ke-jpg.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\109-heic-ke-png.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\110-webp-ke-jpg.png
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1\111-webp-ke-png.png

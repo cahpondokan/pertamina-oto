@@ -1,0 +1,4 @@
+PASS physical Enter on main exit above focused Remove preserves two inputs and name after key-up
+PASS physical Escape preserves two inputs
+PASS physical Return+Escape chord preserves two inputs after key-up
+PASS physical Enter with exit button focused retains two inputs

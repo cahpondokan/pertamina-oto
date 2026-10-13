@@ -1,0 +1,244 @@
+[
+  {
+    "id": "001",
+    "prompt": "Use case: stylized-concept. Create ONE square 1024x1024 transparent PNG feature icon for \"Buat PDF\". References: image 1 only identity/palette; image 2 only librarian costume. Do not copy poster layouts or text. One Biblo chibi azure blue owl, two red feather tufts, white face, dark brown eyes, big navy round clear glasses, small cyan beak, green chest/wing accents, blue bird feet. Wear simple navy creator waistcoat with cream shirt and green bow tie. Biblo uses wing to conjure one fresh white document sheet with large exact badge \"PDF\" and one small creation sparkle. Full body centered, all tufts/feet/props inside 8% safe margins, subject occupies 82% frame. Clean simplified 2D anime mascot, bold navy outlines, flat simple shading legible at 64px. Wings not human hands. Only one main document prop. No title, captions, number, extra mascot, brand logo, panel, floor or shadow. Background genuine transparent alpha, no painted checkerboard or white backdrop.",
+    "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-37c2-7650-a609-2738d33d174c/exec-821f2923-fb77-4a9a-80f8-c9694033401c.png",
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "002",
+    "prompt": "Use case: stylized-concept. Create ONE square 1024x1024 transparent PNG feature icon for \"Tulis PDF\". References: image 1 only identity/palette; image 2 only librarian costume. Do not copy poster layouts or text. One Biblo chibi azure blue owl, two red feather tufts, white face, dark brown eyes, big navy round clear glasses, small cyan beak, green chest/wing accents, blue bird feet. Wear simple navy creator waistcoat with cream shirt and green bow tie. Biblo holds a fountain pen in its left wing, nib touching a large white sheet, visibly writing three simple navy text lines. Large exact \"PDF\" badge on the sheet. No sparkles. Full body centered, all tufts/feet/props inside 10% safe margins, subject occupies 82% frame. Clean simplified 2D anime mascot, bold navy outlines, flat simple shading legible at 64px. Wings not human hands. Only a document and fountain pen as main props. No title, captions, number, extra mascot, brand logo, panel, floor or shadow. Background genuine transparent alpha, no painted checkerboard or white backdrop.",
+    "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-37c2-7650-a609-2738d33d174c/exec-e79ffc92-3068-4f6e-bfae-438cfc07d2fb.png",
+    "alphaSamplesTransparent": 48061,
+    "alphaSamplesForeground": 49315,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "003",
+    "prompt": "Create ONE square transparent PNG icon target 1024x1024 for Buat PDF dengan kamera. Reference 1 identity and palette ONLY; reference 2 explorer courier costume ONLY, omit reference backgrounds/titles. Same Biblo azure chibi owl, two red tufts, white face, dark brown eyes, large round navy clear glasses, cyan beak, green feather accents, blue bird feet. Simple cream explorer jacket. Biblo holds compact camera aimed at a separate white document with exact PDF badge; document below camera, recognizable scanning action. Two props only. Clean 2D anime mascot with bold navy outlines, simplified shading, readable 64px. Full body, generous 10% empty transparent margins on ALL sides including tufts and feet. Occupy 80% frame. Wings not human hands. No title, panel, background, floor, shadow, watermark, brand logo, extra character. Genuine alpha transparency.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-d811a8d8-59ce-4bf4-aa3e-a88188db4299.png",
+    "alphaSamplesTransparent": 48829,
+    "alphaSamplesForeground": 48333,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/03-biblo-pilot-kertas.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "004",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Halaman web ke PDF. Biblo wears simple cream courier jacket and red scarf. Across lower foreground, generic browser-window card on LEFT (three dots header and minimal web blocks), one clear arrow pointing RIGHT, white PDF document on RIGHT with exact large badge \"PDF\". Biblo guides the arrow with wing. Two main props, source browser and destination PDF. No other text.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-f2c3ea88-c7b8-4c7b-865c-d7a6ca4a8597.png",
+    "alphaSamplesTransparent": 52456,
+    "alphaSamplesForeground": 44892,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/03-biblo-pilot-kertas.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "005",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Gambar ke PDF. Simple artist apron adapted from navy costume with green trim. Biblo holds landscape photo card on LEFT with large mountain and sun pictogram; one clear RIGHTWARD arrow; white destination document on RIGHT with exact large \"PDF\" badge. Just two props and arrow. No pencil, brush, palette or extra tools.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-967e30a7-6aef-40e9-9b6f-b4e402c9dd1e.png",
+    "alphaSamplesTransparent": 54908,
+    "alphaSamplesForeground": 42699,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "006",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat kolase foto. Biblo wears simple navy artist apron with green trim. One large photo-collage board held in one wing: board contains exactly THREE large photo tiles with simple mountain, flower, and sun-sea pictograms. Other wing arranges one tile into this single framed composition, visibly assembling collage. Only this collage board as main prop, no arrows or tools, no text.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-d3d30499-8a0d-436e-bbe6-9077c99b9bd7.png",
+    "alphaSamplesTransparent": 56599,
+    "alphaSamplesForeground": 40978,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "007",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat kartu. Biblo wears simple navy librarian waistcoat, cream collar and green bowtie. Proudly present one folded greeting card, clearly showing its crease and two open panels, large simple red heart on front panel. Wings hold card at chest, face unobscured. One prop only. No text or extra decorations.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-11772c2b-b710-4a29-a5d0-861113fd495f.png",
+    "alphaSamplesTransparent": 57096,
+    "alphaSamplesForeground": 40485,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "008",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat formulir PDF. Biblo in simple navy designer vest with green trim. Holds one white form sheet with large exact \"PDF\" badge, two clearly EMPTY rounded field boxes and one empty square checkbox; other wing places a final field box onto sheet. One form prop, no pen, no extra floating box, no names, no fake text. Form creation clearly recognizable.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-9e55efda-1c93-4e2e-bf24-2d973059ac45.png",
+    "alphaSamplesTransparent": 55119,
+    "alphaSamplesForeground": 42385,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "009",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat PDF lamaran pekerjaan. Biblo wears smart navy waistcoat with cream shirt and green bowtie. Present white résumé sheet with exact \"PDF\" badge, generic small circular avatar silhouette and three broad text lines, and compact navy briefcase in other wing. Two main props only. Résumé is a document, avatar is flat pictogram not second character. No personal data or words besides PDF.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-09fb65a4-30f7-491f-bee4-c527b7981984.png",
+    "alphaSamplesTransparent": 50837,
+    "alphaSamplesForeground": 46715,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "010",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Hasilkan kode QR. Biblo wears simple navy technician overalls with cyan edging and green chest tab. Proudly presents ONE white square card with bold navy generic QR-like pattern: three recognizable square finder marks and sparse block modules. Decorative pattern ONLY, no real encoded URL required. Card held with both wings below face. No tools, clipboard or other props. No text.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-498069c0-8469-48af-8320-43c02508609e.png",
+    "alphaSamplesTransparent": 58817,
+    "alphaSamplesForeground": 38783,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "011",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Konverter PDF. Biblo in simple navy technician overalls with cyan edge and green tab. Two distinct document cards held across lower foreground: LEFT white document with red exact \"PDF\" badge, RIGHT white document with blue exact \"DOCX\" badge and text-line pictogram. Two curved arrows forming ONE circular exchange cycle between cards: top arrow points right, bottom arrow points left, visibly bidirectional conversion. Only these two file props and exchange symbol. No extra tools.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-6e4a8376-1209-4a62-86fb-09128d344098.png",
+    "alphaSamplesTransparent": 58896,
+    "alphaSamplesForeground": 38638,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "012",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat faktur. Biblo in simple navy bookkeeper waistcoat with cream collar and green bowtie. Holds ONE invoice sheet showing large clean 3-row item-price table and bold total underline, no words or numbers, and ONE simple compact calculator with large square keys in other wing. Invoice and calculator clearly visible beneath face. No currency logo, PDF badge optional omitted, no other props.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-568362a2-ac47-4e7a-9c30-e5b17ca2e5f1.png",
+    "alphaSamplesTransparent": 49600,
+    "alphaSamplesForeground": 47916,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "013",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat faktur secara visual. Biblo in simple navy designer apron with green trim. Hold ONE white invoice layout board showing a blue header block, simple three-row item table, bold total underline. Other wing holds ONE navy stylus, tip dragging a cyan layout block into selected dotted rectangle on invoice. Visual arrangement of invoice blocks, no calculator, no arrows, no extra props. No words or numbers.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-86216d39-c9e2-4b69-b5b0-410fb00e34ee.png",
+    "alphaSamplesTransparent": 51365,
+    "alphaSamplesForeground": 46064,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "014",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Buat faktur elektronik. Biblo in simple navy technician vest with cyan edging and green chest visible. Proudly holds ONE invoice sheet with clean 3-row item-price table and total underline. Sheet has a large cyan rounded data badge containing exact \"</>\" angle-bracket code symbol, clearly indicating structured electronic invoice. Other wing gestures to badge. One invoice prop only. No calculator, no arrows, no text, no tools.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-ea7023e7-a943-49d0-b89a-4dc2e0ad4978.png",
+    "alphaSamplesTransparent": 53306,
+    "alphaSamplesForeground": 44283,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "015",
+    "prompt": "Edit this transparent icon with ONE targeted anatomy correction: Biblo must have exactly TWO wings total. Remove both raised fan-shaped wing extensions behind the file cards. Retain only the two folded wings gripping the left PDF and right XML cards. Keep identity, red tufts, glasses, colors, vest, blue feet, source PDF invoice LEFT, destination XML code card RIGHT, one rightward yellow arrow, all text and composition unchanged. Transparent alpha must remain. Do not add anything.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-3e803213-9393-48a8-8579-00e9873cb961.png",
+    "alphaSamplesTransparent": 51978,
+    "alphaSamplesForeground": 45569,
+    "referenceImages": "C:/Users/cahpo/.codex/generated_images/01a128d6-37c2-7650-a609-2738d33d174c/exec-c38bc14e-1fe8-4ae4-9def-fcff997838fc.png",
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "015",
+    "stage": "initial",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Faktur PDF ke faktur elektronik. Biblo simple navy bookkeeper vest cream collar green bowtie. Across lower foreground TWO cards: source invoice on LEFT with exact red \"PDF\" badge and simple 3-row invoice table; destination structured electronic invoice on RIGHT with exact cyan \"XML\" badge and large angle-bracket \"</>\" code pictogram. ONE thick arrow pointing LEFT to RIGHT between cards. Must clearly show PDF -> XML, not reverse. No other text, props or tools.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-c38bc14e-1fe8-4ae4-9def-fcff997838fc.png",
+    "issue": "Extra raised wings; superseded by one anatomy repair",
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "016",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Faktur elektronik XML ke PDF. Biblo simple navy bookkeeper vest cream collar green bowtie. Exactly TWO folded wings, each holding one card, no raised wing fans behind cards. Source structured invoice card on LEFT with exact cyan \"XML\" badge and large \"</>\" code pictogram. Destination invoice sheet on RIGHT with exact red \"PDF\" badge and simple 3-row item-price table. ONE thick arrow pointing LEFT to RIGHT between cards. Must clearly show XML -> PDF, reverse formats of PDF -> XML feature. No other props, tools, text.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-773783e3-d555-4c3b-8a8b-2784efee7a8c.png",
+    "alphaSamplesTransparent": 52697,
+    "alphaSamplesForeground": 44831,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "017",
+    "prompt": "Use case: stylized-concept. ONE square transparent PNG feature-card icon, target 1024x1024. Image 1 reference: Biblo identity/palette ONLY. Image 2 reference: costume ONLY. Omit reference titles, backgrounds and layout. Same single chibi plump azure owl: two red feather tufts, white face, dark brown eyes, oversized navy round clear glasses, small cyan beak, green chest/wing feather accents, blue bird feet. Wings remain wings, no human hands. Clean simplified 2D anime mascot, bold navy outlines, simple shading, readable at 64px. Whole body and props fully visible. Scale entire composition down to occupy maximum 80% of canvas, keep at least 100px transparent margin on every side including top tufts. No floor, shadows, panel, poster, title, caption, numbers, watermark, logos, extra characters or checkerboard. Genuine transparent alpha background. FEATURE: Validasi faktur elektronik. Biblo focused friendly expression, simple navy inspector waistcoat cream collar green bowtie. Exactly two wings. Hold ONE electronic invoice sheet with large cyan exact \"XML\" badge and simple 3-row invoice table; other wing holds ONE magnifying glass inspecting the table. ONE prominent green check on lower invoice signals successful validation. Face and glasses unobscured. No extra wings, props, arrows, text or tools.",
+    "source": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-37c2-7650-a609-2738d33d174c\\exec-1036b3c5-77f5-41d8-acc1-ddaed408e2d7.png",
+    "alphaSamplesTransparent": 52877,
+    "alphaSamplesForeground": 44364,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "id": "001",
+    "prompt": "Use case: stylized-concept. Create ONE square 1024x1024 transparent PNG feature icon for \"Buat PDF\". References: image 1 only identity/palette; image 2 only librarian costume. Do not copy poster layouts or text. One Biblo chibi azure blue owl, two red feather tufts, white face, dark brown eyes, big navy round clear glasses, small cyan beak, green chest/wing accents, blue bird feet. Wear simple navy creator waistcoat with cream shirt and green bow tie. Biblo uses wing to conjure one fresh white document sheet with large exact badge \"PDF\" and one small creation sparkle. Full body centered, all tufts/feet/props inside 8% safe margins, subject occupies 82% frame. Clean simplified 2D anime mascot, bold navy outlines, flat simple shading legible at 64px. Wings not human hands. Only one main document prop. No title, captions, number, extra mascot, brand logo, panel, floor or shadow. Background genuine transparent alpha, no painted checkerboard or white backdrop.",
+    "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-37c2-7650-a609-2738d33d174c/exec-821f2923-fb77-4a9a-80f8-c9694033401c.png",
+    "alphaSamplesTransparent": 43602,
+    "alphaSamplesForeground": 53571,
+    "referenceImages": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/01-biblo-pustakawan.png"
+    ],
+    "tool": "built-in image_gen",
+    "transparent_background": true
+  }
+]

@@ -1,0 +1,10 @@
+<Project>
+  <Target Name="PinOtoPrivateRuntime" BeforeTargets="ProcessFrameworkReferences" Condition="'$(OtoSelfContained)' == 'true'">
+    <!-- Scope the pin to .NET Core. A global RuntimeFrameworkVersion also overrides
+         the unrelated Microsoft.Windows.SDK.NET.Ref runtime pack in WinUI builds. -->
+    <ItemGroup>
+      <FrameworkReference Update="Microsoft.NETCore.App" RuntimeFrameworkVersion="10.0.12" />
+      <KnownAppHostPack Update="Microsoft.NETCore.App" AppHostPackVersion="10.0.12" Condition="'%(KnownAppHostPack.TargetFramework)' == 'net10.0'" />
+    </ItemGroup>
+  </Target>
+</Project>

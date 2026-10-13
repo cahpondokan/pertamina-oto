@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework></PropertyGroup>
+ <ItemGroup><Compile Include="../../src/Distribution/*.cs" Link="%(Filename)%(Extension)" /><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/LocalAppUpdate.cs" Link="LocalAppUpdate.cs" /><Compile Include="../../eng/LocalLauncher/UpdateTests.cs" Link="UpdateTests.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/LauncherUpdate.cs" Link="LauncherUpdate.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../../src/Hosts/Pertamina.Oto.Desktop.App/BaselineUpdateAdmission.cs" Link="BaselineUpdateAdmission.cs" /></ItemGroup>
+</Project>

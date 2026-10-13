@@ -1,0 +1,348 @@
+{
+  "task": 2,
+  "lane": 2,
+  "state": "COMPLETE_WITH_REVIEW_ITEMS",
+  "items": [
+    {
+      "id": "018",
+      "filename": "018-sunting-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "9631DACB6CEF3434BDE425EF866864E22D25F3F0326D0612E5F9CA5BA5B1A65D",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "019",
+      "filename": "019-anotasi-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "205ECA8BC72BEB0751ED381A018EB30219C5C53482D03FDFB4D698BE932BF5E9",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "020",
+      "filename": "020-isi-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "issue": "Repair improved pen contact at edge of filled field; visual accepted.",
+      "fileHash": "E17DC0A3FCD592A39AE02D719111D98B7887ED2847DED440C1774EC40FDC9B7B",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "021",
+      "filename": "021-buat-pdf-dapat-diisi.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "44AFCB2D0BFC3A27D551E694C1929BF0D5EA3166A4FE0D2997DD9FD739E39C60",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "022",
+      "filename": "022-tambah-tanda-air.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "50880CDB0842EF2363CA6EF5A577C6D73F72E3ECE27558AEA6D7A0FA8273D5E3",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "023",
+      "filename": "023-tambahkan-nomor-halaman.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "CE5A3F09B8BEFE292E61AD7A4CA5A465E4B87266720422EC612D2333BE31C7E9",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "024",
+      "filename": "024-overlay-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "EB15AA80B65850EF9420AD97FAB170465CBD789C2D0F548E4EC8BEF9AA584A89",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "025",
+      "filename": "025-potong-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "471C87800154F99BE598CA5CECD0C3E10A88118724A44496ED204FF935E39570",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "026",
+      "filename": "026-ubah-ukuran-halaman-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "DC6B9EA02878D206BCD2EBC79451651BDAC2EB4F57F114DB893E9A48E65476FF",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "027",
+      "filename": "027-ubah-informasi-dokumen-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "F52753166A95E9A99A62B6E8DCFD7D779DD8D631E03956A62983EE3750D033D6",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "028",
+      "filename": "028-gabungkan-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "436047EA92E6DC19165C6E486D789F3C1FC001A0F0DBC3461BB9202E51EFB4AD",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "029",
+      "filename": "029-susun-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "EDA7C79601118B9553DF16A67DC824C7CF372506325BC63AA52E96A6AD4EFB81",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "030",
+      "filename": "030-pisahkan-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "8F6C5C4A653564CCD2D44767386024D9C50581F01F4BCFCDA4834D2770DFCCC2",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "031",
+      "filename": "031-atur-ulang-halaman-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "256AE41836E52D5ADED651D4A4F210F8FCA0660E5E711A9191FEB2C76DE86494",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "032",
+      "filename": "032-hapus-halaman-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "49D1A7D056504CF9A32509B7FBFD88F515FE2E0EC391E49CAF8A74FCE97CF6A3",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "033",
+      "filename": "033-ekstrak-halaman-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "21745F303AB1D18D3A1043AE13678EAAD59B0757415EEE15CB9683584A5BCBF7",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "034",
+      "filename": "034-putar-halaman-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "3D9E7A8E8085B84EE4F241F2456653BA7D29D3894BA8132E76CAE90C3B6512ED",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "035",
+      "filename": "035-halaman-per-lembar.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "7750644AE0749BC8B0F9FA04F794CC0E5D2D580F9AD1F6621A012D7E8C5904B4",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "036",
+      "filename": "036-potong-halaman-pdf-menjadi-dua.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "31740B83BADF877F9BB29EC52647DBAD592EA349AB95918A407CBEF5154999B6",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "037",
+      "filename": "037-tambahkan-bookmark-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "issue": "Extra wing remains after one targeted repair; do not use until anatomy reviewed.",
+      "fileHash": "3ACFA58B10ED8737BA595D6EEF68CF583543A7AE7D2E7DA0C7EDC73531B0993B",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "038",
+      "filename": "038-ekstrak-gambar-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "84AEAB30698E8DD152D78A096C1586D94A320897D8B9241DC008418B1A8F3473",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    },
+    {
+      "id": "039",
+      "filename": "039-salin-dari-pdf.png",
+      "state": "VERIFIED",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "visualReviewed": true,
+      "fileHash": "8D02B7E052C1560D9A3BDAF51853B28FEA4A86C42A07A402FA6DBAE46EAA968A",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-02/small-0.png or small-1.png; 020 final in 020-final-small.png",
+      "smallSizeNotes": "Static raster inspection at 64 and 96 px on light/dark backgrounds. Identity and main props visible; fine metadata/field details limited at 64 px. Not tested in application CSS."
+    }
+  ],
+  "summary": {
+    "generated": 22,
+    "verified": 21,
+    "needsReview": 1,
+    "pending": 0,
+    "tool": "built-in imagegen",
+    "repairs": 2,
+    "notes": "037 extra wing persists after one repair. Actual output 1254x1254, target was 1024. Safe margins vary, no observed cropping; 128px tested for 020 only."
+  }
+}

@@ -1,0 +1,626 @@
+{
+  "lane": 4,
+  "state": "NEEDS_REVIEW",
+  "items": [
+    {
+      "id": "062",
+      "filename": "062-konversi-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 647552,
+      "opaquePixels": 2764,
+      "foregroundBounds": [
+        26,
+        42,
+        1227,
+        1223
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "7BB7744346E518256A6C6CC972C052B1EB6FFA75DEACB911646D8AB0188C88D0",
+      "issue": "Identity, label, direction, alpha and 64/96/128px light/dark pass. No cropping; foreground margin 2–3%, narrower than 7–10% brief. Actual canvas 1254 square."
+    },
+    {
+      "id": "063",
+      "filename": "063-word-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 712982,
+      "opaquePixels": 2516,
+      "foregroundBounds": [
+        0,
+        38,
+        1205,
+        1218
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "601FB414DD03CD271847425205789181450F9DFCFC54E8B1A24BDB816C2EF5A7",
+      "issue": "Identity, labels, arrow, no cropping pass. Margin narrower than brief."
+    },
+    {
+      "id": "064",
+      "filename": "064-powerpoint-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 746481,
+      "opaquePixels": 1925,
+      "foregroundBounds": [
+        0,
+        25,
+        1237,
+        1205
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "7316CE82544FC600DE1A270C2D24FDEDA2040EFCF54295E52CCA88D53DFFB97F",
+      "issue": "Identity, PPT/PDF labels, presentation prop and direction pass. Full body, margins narrower than brief."
+    },
+    {
+      "id": "065",
+      "filename": "065-excel-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 618840,
+      "opaquePixels": 1932,
+      "foregroundBounds": [
+        0,
+        22,
+        1226,
+        1233
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "F6A21346C4748A0FA96F65F050778B780856BE2C4BCFF7062033792201117150",
+      "issue": "Identity, XLS/PDF, table, direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "066",
+      "filename": "066-publisher-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 712370,
+      "opaquePixels": 2328,
+      "foregroundBounds": [
+        44,
+        35,
+        1217,
+        1215
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "37EC52688BC98134E53B88A44FB8C9AF479864D6B80437DEF6F87833D8722A8F",
+      "issue": "Identity, PUB/PDF, brochure layout and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "067",
+      "filename": "067-jpg-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 716103,
+      "opaquePixels": 2139,
+      "foregroundBounds": [
+        0,
+        54,
+        1221,
+        1208
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "979D66B9BB49F5CDAB02223D7BFDC4D1E6A49B56ED81854C6BDD153C0FE0C6EA",
+      "issue": "Identity, JPG/PDF, landscape image and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "068",
+      "filename": "068-png-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 680139,
+      "opaquePixels": 2331,
+      "foregroundBounds": [
+        0,
+        44,
+        1235,
+        1224
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "6A0BFD25556FB0981C2B37B41D6CBE50C873D8C1112CD7B8E9F01B1380373C56",
+      "issue": "Identity, PNG/PDF, landscape image and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "069",
+      "filename": "069-webp-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 724193,
+      "opaquePixels": 2598,
+      "foregroundBounds": [
+        0,
+        28,
+        1217,
+        1206
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "2323420836652408500F6BB8059742ADD2D5C56394FF49795A6296FD776F490E",
+      "issue": "Identity, WEBP/PDF, landscape image and direction pass. Extra cyan expression marks; margin narrower than brief."
+    },
+    {
+      "id": "070",
+      "filename": "070-heic-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 725256,
+      "opaquePixels": 2066,
+      "foregroundBounds": [
+        73,
+        36,
+        1223,
+        1213
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "5FD25E35C67592C94F7CC6E8CB646DE4D460BAE0D4AA08EED345D47D1718FE7B",
+      "issue": "Identity, HEIC/PDF, landscape image and direction pass. Landscape has excess detail; margin narrower than brief."
+    },
+    {
+      "id": "071",
+      "filename": "071-svg-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 736019,
+      "opaquePixels": 2451,
+      "foregroundBounds": [
+        40,
+        61,
+        1211,
+        1210
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "07ABD8DFC75D013D0E67497157A5FEA61B1FBD04895279BB4D8F539DEEA75D23",
+      "issue": "Identity, SVG/PDF, landscape vector control points and direction pass. Margin narrower than brief."
+    },
+    {
+      "id": "072",
+      "filename": "072-tiff-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 707086,
+      "opaquePixels": 2459,
+      "foregroundBounds": [
+        0,
+        21,
+        1221,
+        1213
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "06AD2C530824CB0EF6225ADA82C764FD44E686D324B2B75A6140E078850F78BF",
+      "issue": "Identity, TIFF/PDF, landscape image and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "073",
+      "filename": "073-docx-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 710016,
+      "opaquePixels": 2142,
+      "foregroundBounds": [
+        0,
+        45,
+        1205,
+        1253
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "FCC3F0E233B1C39751B7852C4FA9A25CBF29CB7BC72B4184220AC864D4936BCB",
+      "issue": "Identity, DOCX/PDF, text lines and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "074",
+      "filename": "074-pptx-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 693354,
+      "opaquePixels": 2339,
+      "foregroundBounds": [
+        0,
+        38,
+        1233,
+        1221
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "1CDFE8AC792A7EBA1E8E626274A931B879F60C74087C7A5691CDDE5F000B46AA",
+      "issue": "Identity, PPTX/PDF, presentation and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "075",
+      "filename": "075-xlsx-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 749271,
+      "opaquePixels": 2431,
+      "foregroundBounds": [
+        0,
+        3,
+        1219,
+        1195
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "D7790C53679C520E3560D74C9268DFF31FAA107F3824BD58B78141805D0125C7",
+      "issue": "One targeted repair removed unwanted third-party logo. Identity, XLSX/PDF, table and direction pass. Margin remains narrower than brief."
+    },
+    {
+      "id": "076",
+      "filename": "076-doc-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 760516,
+      "opaquePixels": 2450,
+      "foregroundBounds": [
+        57,
+        23,
+        1205,
+        1207
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "700994B4384C3ECB2BC96C05543FF3DDCA2FA2D82C68FD7F40CB37B5AC663185",
+      "issue": "Identity, DOC/PDF, text lines and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "077",
+      "filename": "077-ppt-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 692779,
+      "opaquePixels": 2315,
+      "foregroundBounds": [
+        33,
+        35,
+        1239,
+        1222
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "F8FBEF83E33502C86695CE4967281DD6F887BB2218BD5A8CE33798FD28908ECD",
+      "issue": "Identity, PPT/PDF, presentation and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "078",
+      "filename": "078-xls-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 695479,
+      "opaquePixels": 2363,
+      "foregroundBounds": [
+        0,
+        39,
+        1206,
+        1209
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "B90991D534069C648C35D491B4CA45318655D2F175F8D369D682A8F549A71AF8",
+      "issue": "Identity, XLS/PDF, table and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "079",
+      "filename": "079-odt-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 714052,
+      "opaquePixels": 2615,
+      "foregroundBounds": [
+        31,
+        28,
+        1229,
+        1215
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "7ADF41BE12685D107935B08F486677D33D3A33AF945FDDE8D54E343266F943CE",
+      "issue": "Identity, ODT/PDF, text lines and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "080",
+      "filename": "080-odg-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 718524,
+      "opaquePixels": 2101,
+      "foregroundBounds": [
+        0,
+        37,
+        1237,
+        1208
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "0849509BCD78B7C2573F1C12DA8582D206C6E1FD69728DA5E03F1CAA22661C80",
+      "issue": "Identity, ODG/PDF, vector drawing prop and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "081",
+      "filename": "081-ods-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 700142,
+      "opaquePixels": 2273,
+      "foregroundBounds": [
+        0,
+        38,
+        1239,
+        1204
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "0D94F086D1E874DFAFDA67F31BD65C4A3DC10238923B821C531B578CC17BFDE3",
+      "issue": "Identity, ODS/PDF, table and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "082",
+      "filename": "082-odp-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 721990,
+      "opaquePixels": 2257,
+      "foregroundBounds": [
+        0,
+        25,
+        1229,
+        1235
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "CDFF411F2CFA09119CC2418DC82AD85311EBB6079AD88FC96E8383C83A6F75FE",
+      "issue": "Identity, ODP/PDF, presentation and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "083",
+      "filename": "083-teks-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 765839,
+      "opaquePixels": 2144,
+      "foregroundBounds": [
+        0,
+        31,
+        1209,
+        1253
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "A17729E5EAA3280A7C5D6DB08F481A825475DE9E9066532EF5888E1B5F667813",
+      "issue": "Identity, TXT/PDF, text lines and direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "084",
+      "filename": "084-rtf-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 789145,
+      "opaquePixels": 2057,
+      "foregroundBounds": [
+        0,
+        39,
+        1217,
+        1201
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "59129A392CF59929473D8CF04AB217DA0F824F355DF4331382DE381688BA88FF",
+      "issue": "Identity, RTF/PDF, rich text lines and direction pass. Full body. Top/bottom margins narrower than brief."
+    },
+    {
+      "id": "085",
+      "filename": "085-epub-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 798977,
+      "opaquePixels": 2034,
+      "foregroundBounds": [
+        39,
+        96,
+        1235,
+        1193
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "31BB3926275FE1A6FBC57813EAA89E7687109E590585FE894AB9271903D1A738",
+      "issue": "Identity, EPUB/PDF, ebook with spine and direction pass. Full body. Bottom margin narrower than brief."
+    },
+    {
+      "id": "086",
+      "filename": "086-markdown-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 687123,
+      "opaquePixels": 2402,
+      "foregroundBounds": [
+        34,
+        42,
+        1227,
+        1207
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "BF08735C67041EE6F1C799CB7710E1393572482696650287DF9BCF083FE9481C",
+      "issue": "Identity, MD/PDF, code angle brackets and text, direction pass. Full body. Margin narrower than brief."
+    },
+    {
+      "id": "087",
+      "filename": "087-pub-ke-pdf.png",
+      "state": "NEEDS_REVIEW",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 721518,
+      "opaquePixels": 1934,
+      "foregroundBounds": [
+        51,
+        49,
+        1233,
+        1219
+      ],
+      "visualReviewed": true,
+      "smallPreviewCreated": true,
+      "smallVisualReviewed": true,
+      "fileHash": "630A39572FECE613DBEA35DF05D1B8A083B42A7CA757A305C350EEB28425BAF5",
+      "issue": "Identity, PUB/PDF, publishing layout and direction pass. Full body. Margin narrower than brief."
+    }
+  ],
+  "summary": {
+    "saved": 26,
+    "verified": 0,
+    "needsReview": 26,
+    "pending": 0,
+    "blocker": null,
+    "generationComplete": true,
+    "qaGatePassed": false,
+    "tool": "built-in image_gen",
+    "calls": 27,
+    "repairCount": 1,
+    "smallSizes": [
+      64,
+      96,
+      128
+    ],
+    "smallBackgrounds": [
+      "white",
+      "midnightblue"
+    ],
+    "limitations": "Margins do not meet requested 7–10%; actual canvas 1254x1254. Alpha>0 bounds include very faint edge pixels. No application integration tested."
+  }
+}

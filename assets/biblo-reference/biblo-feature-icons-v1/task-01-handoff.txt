@@ -1,0 +1,36 @@
+TASK 01 / LANE 1 HANDOFF — 2026-10-11
+Result: all 17 requested PNGs generated sequentially, visually inspected, copied and checkpointed. No PENDING assets.
+Tool: built-in image_gen. 18 calls: 17 assets plus exactly one targeted anatomy repair of 015. All originals retained.
+Dimensions: all 17 PNGs are 1254x1254 (tool output), target 1024x1024 was requested. No resizing of finals performed.
+QA: full visual identity, costume, prop/action, format spelling, arrow directions and clipping inspection; full pixel alpha audit read-only with System.Drawing; 64/96/128 px previews on white and midnight-blue backgrounds inspected.
+All 17 have genuine alpha-zero background pixels and nonempty alpha>200 foreground. No checkerboard background, titles, panels or clipping observed.
+VERIFIED: 006, 009, 011, 016.
+NEEDS_REVIEW: 001, 002, 003, 004, 005, 007, 008, 010, 012, 013, 014, 015, 017. Reason: at least one foreground margin below 7 percent target; exact measured margins in qa-01/audit-results.json.
+015 initial extra raised wings removed by one targeted imagegen correction. Final has exactly two folded wings.
+Limitations: no application integration test; small previews use System.Drawing raster display, not actual application CSS. QR is decorative generic pattern, not scan tested. Final dimensions differ from requested target. Margin issues left visible rather than claimed conformant.
+No tool blocker/rate limit. No source/UI/build/version edits; no install/print/publish/upload; no new task/subagent; no other lanes modified.
+PROMPTS: 
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/task-01-prompts.json
+STATUS: 
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/task-01-status.json
+QA: 
+D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/qa-01/audit-results.json
+Preview files: qa-01/001-small-light-dark.png through qa-01/017-small-light-dark.png.
+DELIVERABLES:
+001 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/001-buat-pdf.png SHA256=3C2112A0D01A804F1FF943275B5192D6C15F82AAC1E63005B4DCE906C055261D
+002 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/002-tulis-pdf.png SHA256=49DF2191FD245AB28030D5D82521B258251F37B75E20590D12468BE6A8039B35
+003 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/003-buat-pdf-dengan-kamera.png SHA256=0878FC5878C9D41C46AF21667E7BFF8D2E339690FB7ACD2A6096A4F44E8B94DB
+004 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/004-halaman-web-ke-pdf.png SHA256=C702B59E87F93AB38C79835E1252CE2F98D46627025A78AB9239F4D23871A298
+005 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/005-gambar-ke-pdf.png SHA256=0D022476CF4E3204E8F4E1BD41A613456FC2AC31D1C10B1C2F664DC153F13EFE
+006 [VERIFIED] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/006-buat-kolase-foto.png SHA256=4B4CB2E163931E76119CB1F58864C7D80232ADC54160FFE6E84C1F1A3123BE79
+007 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/007-buat-kartu.png SHA256=96795962881656D5AFB1312D7291AF08D4121FC5385E3BF143B5C7668C6ABCB3
+008 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/008-buat-formulir-pdf.png SHA256=20BC1E10CFAF86E23E2C6582EF82D7A9B7AF75C80CD49BECA503FFACA978B2FF
+009 [VERIFIED] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/009-buat-pdf-lamaran-pekerjaan.png SHA256=1CDCA868ED75E0973C32466639F82696E826CF107357D41A4A1AAFEDD5D45D58
+010 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/010-hasilkan-kode-qr.png SHA256=FA4E175EE06ABB4CD8ABF54BB004D3293DFA3BC2BE66F067EA36BC94429C7459
+011 [VERIFIED] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/011-konverter-pdf.png SHA256=639D9084D7F9FA4224237F143562F3D2FAEC00F66F6CB04C42C0117676875D96
+012 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/012-buat-faktur.png SHA256=67487C228F7F63F4111B6595A9FC57CB3122BE4B1A49B91ADF5D206432DEFAB5
+013 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/013-buat-faktur-secara-visual.png SHA256=AFDDA6ECFBDA9CAE8418AC7BAE3712A91114D6950E6E5FC5643712D1B54146E8
+014 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/014-buat-faktur-elektronik.png SHA256=FE901E282F2810B37BB1746DDF366AD0E3D69B411D0ADC29157D8DE4AF9757C5
+015 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/015-faktur-pdf-ke-faktur-elektronik.png SHA256=6A480A3B0176BCE3B2D59DD0B8812C8DE8303EADFF86C6516520AD168D80188E
+016 [VERIFIED] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/016-faktur-elektronik-xml-ke-pdf.png SHA256=E601DBF42607D00D1BCE1E229A0CF8B88908519910459A6AC90B3262FBF0DA58
+017 [NEEDS_REVIEW] D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\output\imagegen\biblo-feature-icons-v1/017-validasi-faktur-elektronik.png SHA256=FE3B3EFC385BB405A5D65C64AC0FCC168992DD863CACC0F7B24D86EDC332C1D1

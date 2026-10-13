@@ -1,0 +1,732 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "02EBD81861B993F5FCD4FFF97F6E37174BC00902082A8BFA00D55789AF023D3D",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AboutDrawer.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "439A6055BB5557F9CC6F0FBD810082379435F60BF75309821AF3115087EEC001",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AboutDrawerAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "84612A9C143D4E12E6A5820348316A0998FE8C6B4B9C2882EB7A7D7D3D7DB943",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AppExitConfirmation.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D73E87438C4D65AA1770A62123CAADE39B6987FE37F8821709F242EACB99B306",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AppExitConfirmationAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0631AD7F43C3C346934CD864671D94BD9E57F61D7390A3C657EAF423CA15CE78",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AppExitLifecycleAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0CBF969C2016DEA59E4D6AC1CFA364D54C1A4B81BEFF106704AE7B621A894CC4",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ApplicationVersion.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "44C19FCEEA30B02C35BC1B921D0BE071C3B08A984819AC73A1E04F427615DEF7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\AutomaticOutputName.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "BDD768C08D2F636A6EBE8129498D750D22DB5A0383D8E94217D6B02C1E2E8B8B",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\BaselineUpdateAdmission.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4C06348507E7E16564AD6615AAC1A6A8768ABCA8D1001A45F7D648403031E8E2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\CatalogContentWidthAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "13AFE6D699CE835C7BE2B26D329C6B4F6320376844C5063CF79E7EA94645F701",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\CenteredHome.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "CB80D30D9BDCCB381BD53BFB20051FBDD014095EF827600F29DA55642CA5A0C2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\CenteredHomeAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "56D5994C67F76C794B369461A91D32946F4B90BCD8840859EF5A7D9CF22D6128",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ContentCenteredCatalogPanel.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "5A98BCDF382FBBBE50BBFBFF55FA98172A0448C6598067A482AA8BEF8C9BC431",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\CrashStabilityAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "FEF16201F474C57BF23D9EA8755FDA09358890AE126B0D6A0DDF64087008EDD3",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\DesignedHome.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6A8530051C9B5C64C9EB1073A78191A477E7E691F941694CE3095BF62480D11E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\DesktopMenu.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "E1D0DD2A73FF84E71CECD9538981DF099BFA26E651EA20F6D7AAD437E06336C6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\DocumentLifecycle.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7596CE8DC60ED82142BCCC3C92373CB59701F57CD2F8C4CD4A2AFA0BAC225A38",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\DocumentWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "BCA3FCB8CB23BBA161B159AE346DEBE7CD75D5A5AC3EE189709C738FB5CED5E2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorContinuousScroll.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B8FFBCD4DD3A686D53B15079FBCA64F19E6E2006A67D95AC5B74CE4EA8CC2451",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorContinuousScrollAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "CEE77840BCDCB3957D318849C61D9FC6717BAF324BFB34D3B072BE558A1A11C3",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorDirectInteractionAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "524C4A7A050440A2DD97C0E2149147D9CB64D93DB153288C53A5C6D1ECED4A30",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorFreehand.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8E1E067A5FE4AC309D59BCB066B1BE9377832BA8E808269296954A8B996A17E1",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorInlineText.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "11C2663998B2CC2DC8C70A21CB4F22878DF8DF774EDD636FAA993F1140E84339",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorObjectInteraction.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "A6533E8D84897778A5C78554EBC4C23204F5F2FE6ABEBAE9D0593E767BB4AC69",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorOriginalInline.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "000055265753E803D36359EB19F6E254790911EFB2E41A057B970E6C91D20C63",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorOriginalText.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "AE396E9CEDB6A1CA808F52656CA36D19576AB677EFDF5B28A00892CC890C5795",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorReadPreview.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "ADA63D73B31676CB09A37B1D647B38A289F23715412EF9E79472AA01A4AE11FD",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorSaveScreens.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "372CAE053E825D349014F6368B363CAA832235865AED247F7EEF476DD5CD0DF2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorShapeDrawing.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "1BFF31E2D8FBE2D5DFC99EC921B4E4997EF55821DD68EEC8F6F1B760F839F8A6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorTextGestureAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "DC7C9E2B42D8F80E102BBB269EFAE070C64C46377BE2FAAD289C09D972D42FA1",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EditorTextGestures.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8A92F16B72238F89E947859DC2EE7D70B8A7F9702D2EEB2D11754FE54C1C31CA",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\EmptyToolScreens.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "E59C840BC6262F4C18354C6EBB0B461C7BE23EE2D8339215A901A80A0C86D4C2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ExtractWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8114B043481B9CB405C130F6944A55A3B024371EFC076EB6200DA34CE5A94AC2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\FavoritesUiAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "F3F6CA831978A5F626949927BB2A6ACFF02A362988C326857F0C480FC1149A16",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\GlobalDocumentPaste.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "140694C41C352E50E171CB50E432D488CE9641B09384B30820240E966F1D699F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\GroupedCatalog.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9FE8985F28C04602695C184F75E185F04D44E405248010C6F5F663D100AD8219",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\HistoryDesign.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "950CA8C2AF00301C7D971312F7E25E7A2116AF1EC0369B97C21585102BFBCA74",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\HistoryGallery.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "14B39AF2C2E205ACE77AED7B859D61D90094F2476AB206A70C5E99D6653EE1D4",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\HistoryUiAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "08CFB8631CF59DA4FEDB2E715D7DFD197146B6AE115153A3F785598F38AC552C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\InternalPdfReader.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "BBC4E7674207B08FF53B9783FF15CF611D3F91D34604352DA96B82C3121E4B8F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\JpgResultScreen.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "53BF13AC89080721C1277AED185B73EAE9FB90558D51636F57E939161048F10C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\LauncherUpdate.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6263ACF804B83D144B2BE3352B8797E28D9178EBA8D849BB6D84A31C777AAD6C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\LiveEditorAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "04F381DEC163DCDADEB87A3713ED62229DA35AC146CA47C2DAB02A039D8B96CE",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\LivePdfEditor.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "41205149C12FEFBEDDF8E33BE87308CC7475C0462F9B539EDC54805C5E076842",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\LocalAppUpdate.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C879CBA64B5F0B608BE2F10C7B8041B7A34B4BEDC877877975388B5B50E311BF",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\LocalDiagnostics.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "DD29922159D9C9F37058C62E6F7C6AC48EC089554718A640387DD4D8EFF0BDB0",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MainWindow.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "AB436E91DA12D6BB0EB11CE8A64B884B0222D4579E1626F99694C43F7BE29B79",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ManualOnlineUpdate.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "E4EF5FD9663B6CA7D2F33D431B2CE197097D1D731321EA70EE967578E524B2E6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeBiblo.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "20C901707BF31A5B7A0ABCF9E5D4CC436D9AE5CDB9F94F032049CF870BA0DC4B",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseButton.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9DAEE02172EFC67F8355958563CD109D0450A1FEDBB9C9A105A8A77F03FBD8CA",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseButtonAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0B4D77393931D872C86D9E9C267978D0726860295FA9D84CBF044AC6FE77C8A7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseConfirmation.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "A41775B8028B3EBEAFECC47CF4D73DFD50934771849D546DE81C7DC4175F5275",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseConfirmationAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B721A9B1A7BE03C0468E8A9F71B676AC9C8578BC324112DD5DC673E33A564561",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeClosedSavedNotice.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "AB4D3F43B9B42862B33954A25E5122AB6CB496E73A7F84F937F28A91815EB0E7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeClosedSavedNoticeAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "E83A9F79A3DFE588EA1A5949C2851F1C363E51A37F1426F4DF3428804EBE179A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseFlowAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7330A9CEA69C54627C9249172FAE24095E01835A9D91A7C140D3FBD17123B8A5",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCloseProcessingAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "E3DD5646C1D74CCED18815B1D73FD26E6A5C9518BF1AFA7046D87C88EE258557",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeCompactHeader.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "08A15357B79F4C1886D9BD5C84A1488EA292F612A8F2AE7817682D276475DA06",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeEmptyAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B37EDE9EF4854A7900D08000CC7F303B3644510FF71C998A15F03F23EB20F093",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeHoverActions.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "33A87115FF51E163F9D5457CE42AB3D17C3DC9B7BECECB7272059E456AE08644",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeOrganizerTransfer.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9A7B73D7AAF65CB96C3550785802237410D35A4907D58D861BBB052EEDEFAB1F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeResultPanel.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B617C7A45924155D45DB124F85086936AD0CBAB2DE2BEBEFB95ABA75C5D7C28A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeResultPanelAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9B6125D157F821FF3F46DC91D5F79F98AEF9B5420A68E35099F6494466A5AF1C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "567E63F084BDEDAE4B37786B68DC3A60F5C5B11F2B551CA3A3EC0AF8883B508C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\MergeWorkspaceRevisionAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2C6B8AF97A48A99FCFBBB2834AC71F3289E7F500F3D5EE33DE33CAF76E100EF5",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\NavigationHistory.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B30C827EF7EB2337F65357944B1DF50F66D99A539D9B48507FA997B45E0FBD54",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OnlineUpdateAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D33ECB89F3F62B243518E20B27CB6C084539A52063B1609C0F5FCAE45FA90F2",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OnlineUpdateNotifications.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7FDF83FD271AC162DA4668B3948D68786108924BB29E2DD8CAB7DFA2327DC9B4",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerBoard.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C640892F794F3D1A198F7B7627C299945D43C230568064ABA6FBA25E4F7C4967",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerDrag.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D11E5F46044E6FADBCACA35D6A0D97DAAF26C347BEFBA63BF1EBB752FF8EB138",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerExecution.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B66518A4587DC9C28E44E282FBAEDA729F34C42CC38E718AF39C8CBDCA768016",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerPage.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B71027EE961D7478C79E2451AAEC5475713E929C878953F2DB642A5286C714DE",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerRevisionTests.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B2D1BCAC45107C02302EDA5DFC40BDCFE0AF58482930A146521382966E945BBB",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OrganizerWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "CE20BDC3ED0573D61419C821019007701CC165DB96119CD8E11831DED38F2EB6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OriginalFontUiAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "482BE0FA9EB100B847FF9CFABC5914F283108E016299F27A257870C4ED71BC07",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OutputQuality.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "77C1692EE2025449D92436D5137CCC0D2ABDE42F5CDB4E94D1D350474080646D",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\OutputQualityAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "98A7D997FA58BDEDB5FBD9F86DBA012EC82B7C61D56937CC0C64E96B14953F15",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PdfAssociation.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "3F9E98515BA575581C36A5BE7E2307D554696C98F6989779AD24F79774E3636F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PdfDefaultSettings.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4FDD34AAEFD4ABDD393B82B3A6ABFE79FECB608FE2DE393B73BBF20010F87EA6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PdfEditorDesignAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "1DE246CC5D6AC59336874BBAF9C2732386B3868514C15B8C24CBE324D9F45E3D",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PdfEditorDesignPreview.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D93BC41D0F278FE03229E0DE428073C34DAEFA85FEED84A5F4E9797E94B6086",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PdfJpgExport.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "3FB644049A53A13F419FFDE9CE26CB56E3AB33E840F59D1B9E7F92B92EA78E6E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PersistentLibrary.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D90FD4273E072ADBF9F401E738EBE8557B3B12F3424092200B48E612D27AC4A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PortableProfile.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7ACD58CFC3A8FF1D321F6FF94B1B85502ECE19407CF0D6EF9FB509BDAF4D8D82",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PreviewRaster.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "77939B5CCD5BB118BDB227761E51B27762CD8ABAF187BFA368A723EDD6DEB5C7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PreviewZoom.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "F8CE9B1C20292F792C7D13931F0911AC6B7DBCBFF7494B446673F7B3459EA935",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B543DDD925E9E13DB92A189AD172595294EE73FD72CDBC361295C583FEFA86E9",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintDevice.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C62C59658AF562D993EE367F2944EB274190D91C906FA47C91CF409D6D103141",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintDialog.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "3C5CE385CA6FD8F1074C8ACFF390AD7A79B8C20694E223C13E610816ED5B8A13",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintPlan.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "EC783C803D4D981A645F11CC33101DE40C12CE65D55B9DA329D94AC3EB16C037",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintResultPanel.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2719FB2124FDA010FAAF7FA9B68A60149C2D162E1C777CD4A17BC61031A0EC47",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintSecurity.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "91F227BAC626F6495E0F773A721A447B19FE73D4474E7E13E92FF29EE4A63FE9",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\PrintWorker.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "321BA6D2AC8E09A747A664E37FA2EC99B6D5BBE4B91E282F9FE06FE7F5CE607E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\Program.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "62A64A9AA056991DD8EFA37C21D1F37B2A262750305631A2FC941ED7732B89BE",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderContinuousScroll.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C5E97B759FB6546B72BC4C21FB30A0B0AE3FD597CCE7BA37405EF812C7954615",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderLanding.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D849EFE1B409DC4FC4F0A3BC98780EA96726A0F5373B0CA68DBA2CDA46B49DE1",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderSearchAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0A1F4D8DC1981F1BFF72F9D5FD3C14BB7263B3D1E23EE6445C46F781B28CC1BB",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderSearchUi.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2BBE62257E51B5B06FABA7CB743890FF6E3DF4585A73B39FFBC007FF8B655B86",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderSession.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "83639D3E2596911DBF11E130694A160C1EBAA5820516DF00BEFB36497C3263C5",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderUiAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6CBFFC73B8240876447A041ED02250E8C5DF428D108E776FE35FCBAABFD9257E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReaderWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "64E5CC6F869EADB6939320883F19275C2846B3626EC2AD4902A8A0DD93AFA4EC",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReadPreviewAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "A430FC0CFE4D7CDE6620529C7F962C072683B747358A13607858C40082D92BC6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReadPreviewDialog.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0AEB586EAF58CD5C3F262380B08022A496CCADFAADB0C8FE4D0844BB8529ACD1",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReleaseNotes.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "040F5602A6BD66C789BA398CC1DFFC0FB0F9629623DF595D6DEBCEB858DBCB56",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReleaseNotesAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "109D674307AA1E25EE9551E9AC576B9E2AE8F311DA8EAEE3F1B9AB223873048F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ReleaseNotesUi.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4BFB7DAFE08D873DE736EBC46CAA13359E78C4EA02590660EB72BE69122C6A8C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\RemoveWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "AC38E54D9E4B140440EEE5225B8EA64948F9B2BE248D4433A8D10DAE7A1F848A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ResponsiveAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6EC8166DBA53B82E9D8D0078B01FB7F06ED54BDEF0C1FCA6977B82AC933B730F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ResponsiveLayout.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0FAC9A05E6A7B2B132F4823F289D6FE86541C5E3CB34BA4B9F82FEF26EFBEC6A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\RestartProtocol.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "82594AB284F7F78D6E0FB4246EAC093904F26556B57BA20867D1826A4F4D8B3D",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\RestartWork.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D3EB3419AE81DFE050862D5C9BB653D5BCED8FB1CAC5B6497E34E6D22574F772",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\RestartWorkAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "49310E231B052526017D271939D41377D28929BC709FB9379B731F5F7D7A5CBD",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ResultActionsAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2444FF79497DDFFD5B3BBE7553F789195BC6AAEFBC3524393BDB67262C8D8AB5",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ResultFileReveal.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D8242F84B6BEC4B7A973EB9B181BE17681FCF370255F6B6B2D3F04EBD77CA73C",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SavedResultViewport.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "ED6D6D91C0B4E9DF72BB9A4035F03D6FF9938B3AE8594ECA4169F116FDB70BC8",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SavedResultViewportAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6512C870970A18359CF08605EAA5649B5F7BDB97D1F7FD721E5149321EC896FA",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SettingsWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6048AAAF9AA0735C9B0B45A0D7EF82243DACE1DE13AF85A3E234B6BD59419AEB",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SimpleJpgWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "489E9240EF30BA655A168C5894213A9AAFCD78B66056A03EB8ED3462EEB9FCA0",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SourceWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "27160DE7D07BE22904F953565C445A67CBD91C2095EF9132979375D82E67C5A7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SplitExport.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "F64AB24C1D7806B02C5FFD01135CF7A6F0BFF46AA66C26D54A1DD049B114D525",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SplitPlan.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "321FB0C2336E32420B1CB170FAFC1C523C4A29E0524503E0E180B054C19A9AD7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SplitPreviewDesign.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "5351A36F90A8BDBD947FCD20429A61D5741FB461FE994F002A92103887E143E0",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SplitSelfTest.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "EA8D2F0A7F47D66C4D698A6F096E33944DA832390ADCA930DFC8C41BA2836649",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\SplitWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0FE40B6C4C4FB012C7328E1808FF10CB0B18048A8210C64BEF7FDBE8B2DC932E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\StartupWindow.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "655FBEE5AB93F5B71DE585BBB398FCEFE4592F75285AC3EFE62A2A196976DA31",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\StartupWindowAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "1CABC76704222E08B15EC0AE6D12183CC76F09BFC666168F33747D1E10F51A96",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ToolCatalog.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7058A8431F08E1B947712E10839B494E6A86F76B8778F68C6D1ED4A3C38D9A8F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\UiRegressionAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "846A8CAFF186B5754BBF473461627B659946D523A1B6736A271F58D20F192DD7",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\UnifiedResult.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "A4708789D3FBB25A212461E94605621A75DFCE41A15906665A42BECCAB1292FF",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\UpdateCompletion.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "581979F640A440098BECF4F089AA095818AF2E68E4043B7F770DED14455AF37E",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\UpdateCompletionAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0CD4D1C638361A258AB8B30A4E30BBF2D038B2A5158329F247A4F6858F5B8F80",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\UpdateSettings.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "F011AAB8F201CAB551CAA65B7F8B24C0186BF190DA29F0ABACB4419400ACE3D8",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WindowPrintAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9D36581114DB71EADC10C1570D7A562CFB54A239F5843CA9D6031F6C3DEE294F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WindowSizeAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C515A360E13722C235EE6E2BBE58D21DF50DF06BF0EB39FC90860F2AF5049D73",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WindowSizeBounds.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "BFA921A0C726B90CF0A106B3EFD85C0C16727AB9AA47F48C0D92CA68C5E455E5",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WindowSizePolicy.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B78AA0EB98B06C74C049A5E8E57ED31E15A6C665E5F9EE70132E1D92D4EB7E5A",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WordPdfAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D98AF1E6AD08DFC647B92E88351F5776311B73E97981290FDE09155289060C8",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WordPdfClient.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4E0405C88DAC85820A859CA8975062B35E808D9ADF274BEA2CE47E6062F35299",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WordWorkspace.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9CAB802E2D175F8A2AEF008E44B7B28C6956C6A76220327374752AAD11753FD3",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WorkerClient.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "D78341DE6FAD81701AA2E4BD603B125A124758B19DAA2D7FF7C3C703300D4FE6",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WorkspaceFlow.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "7379AB2E4E70072D0EC5A205029E508111C87E592A61B30C3CB453DDBCF0F305",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WorkspaceFlowTests.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "64C89EBB373A4CCF4E17020451AF12BDC6F635BFF210BA702E4AADF35E653C55",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\WorkspaceScreens.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6F4E38B06DAD2DDAF1E5E004EF6B53E7347691E17812820F0393FACE6832F5EF",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ZoomAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "FE060F9A514EE725415017474D95C520511C24D472AC45CA2B85AB45F182BA87",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ZoomController.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "46364DDE3C8D1AB92A9DE1713FEF782E78FABA26469114400C548EA2E71DE20F",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\ZoomSmoothnessAudit.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "EC5E27B7EA1162AA8AE3D65E69675BBE6E2F7C7999DF7BD689211B30A56E2405",
+    "Path": "D:\\AFT Ahmad Yani Semarang\\Teknik\\Dokumentasi Pertamina OTO\\worktrees\\core-functional-first\\src\\Hosts\\Pertamina.Oto.Desktop.App\\Pertamina.Oto.Desktop.App.csproj"
+  }
+]

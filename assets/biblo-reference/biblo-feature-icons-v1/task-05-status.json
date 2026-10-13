@@ -1,0 +1,467 @@
+{
+  "lane": 5,
+  "status": "DELIVERED_WITH_REVIEW_ITEMS",
+  "items": [
+    {
+      "id": "088",
+      "filename": "088-konversi-pdf-ke-format-lain.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 0.8 percent, below 7 percent target; generic other-format destination is represented by DOCX; one repair used",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 539781,
+      "foregroundPixels": 1032735,
+      "minMarginPercent": 0.8,
+      "fileHash": "D93BD875E5E6C1C26E70133C0452BDC1A4A805536776CF9DBAE38E2C02FA813D",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "089",
+      "filename": "089-pdf-ke-word.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.67 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 668412,
+      "foregroundPixels": 904104,
+      "minMarginPercent": 3.67,
+      "fileHash": "F5F2566D87C59A4E2F8A8260C8B625081F9A13E82BF0F9116930D4EF98B963F1",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "090",
+      "filename": "090-pdf-ke-powerpoint.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.63 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 727478,
+      "foregroundPixels": 845038,
+      "minMarginPercent": 4.63,
+      "fileHash": "A363268C9E08F65F6C227F77D9F5A51656460A4598554679365635F3953D7A7C",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "091",
+      "filename": "091-pdf-ke-excel.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.43 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 674431,
+      "foregroundPixels": 898085,
+      "minMarginPercent": 3.43,
+      "fileHash": "5D58588CDBDDFDC707201151EF640E7A52CF17A1FDCE828A4F9C544DD6B9BB1C",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "092",
+      "filename": "092-pdf-ke-gambar.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.35 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 749407,
+      "foregroundPixels": 823109,
+      "minMarginPercent": 3.35,
+      "fileHash": "CC0D584DDBC6B21871BD32ECDA73FD7896C982D85A1C4AD691AFBF4E2EAD5BD6",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "093",
+      "filename": "093-pdf-ke-jpg.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.7 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 718628,
+      "foregroundPixels": 853888,
+      "minMarginPercent": 4.7,
+      "fileHash": "9BF928A1ABD21B38739BCECFC2C09F12A25CC9E0CF7304FE187AFC7FDD98C7E4",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "094",
+      "filename": "094-pdf-ke-png.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.75 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 719727,
+      "foregroundPixels": 852789,
+      "minMarginPercent": 3.75,
+      "fileHash": "D871C3D563CD4E0337EDA72A2EF78E0E98F2110077F78F73A17556A5DEAD861F",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "095",
+      "filename": "095-pdf-ke-svg.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.47 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 667671,
+      "foregroundPixels": 904845,
+      "minMarginPercent": 4.47,
+      "fileHash": "C8E864CFA3FF65F4CA6843B6A253D4DC746B88E3758C0EA062F18174F244DDFE",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "096",
+      "filename": "096-pdf-ke-tiff.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.67 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 723658,
+      "foregroundPixels": 848858,
+      "minMarginPercent": 3.67,
+      "fileHash": "891113BEA9784A61CD695E2D60AAE07238F3EE478EDB298A5ACB39B01E022A60",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "097",
+      "filename": "097-pdf-ke-docx.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 2.63 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 725004,
+      "foregroundPixels": 847512,
+      "minMarginPercent": 2.63,
+      "fileHash": "1382CC084975302B614B693BC26D93C7B8842A0B22C52CB805129E7BC6ECA684",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "098",
+      "filename": "098-pdf-ke-pptx.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.07 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 705452,
+      "foregroundPixels": 867064,
+      "minMarginPercent": 4.07,
+      "fileHash": "CA2936D98E9D0ACB778EF2963403510EA7E8101F3A558CD5D7FBED4FFDF8B4A3",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "099",
+      "filename": "099-pdf-ke-xlsx.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 2.71 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 715574,
+      "foregroundPixels": 856942,
+      "minMarginPercent": 2.71,
+      "fileHash": "BB7915A5A96CF3779EA4E500EB9581330F605A288891399C9425769BACDA63B6",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "100",
+      "filename": "100-pdf-ke-odt.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.51 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 696490,
+      "foregroundPixels": 876026,
+      "minMarginPercent": 3.51,
+      "fileHash": "D57F9C77D7313F1757B1ECAF94145456AE2D93AE9909A531C579F5ED8D4AD966",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "101",
+      "filename": "101-pdf-ke-ods.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 2.71 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 710639,
+      "foregroundPixels": 861877,
+      "minMarginPercent": 2.71,
+      "fileHash": "FCE40DA348CBBE3590A32171BCA672F41E2363ABE6294F143022594BB07DA58F",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "102",
+      "filename": "102-pdf-ke-odp.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.07 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 686119,
+      "foregroundPixels": 886397,
+      "minMarginPercent": 4.07,
+      "fileHash": "D2B0A65BD810AE6B70384C37451B0C1B3BD1B077191D9CC5E8449B99B95766BC",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "103",
+      "filename": "103-pdf-ke-teks.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 6.06 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 779489,
+      "foregroundPixels": 793027,
+      "minMarginPercent": 6.06,
+      "fileHash": "9989F7BF26E677D8A42FEBC88675A375B516BCB89CF82B7B6B0FF2009F4CE9F7",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "104",
+      "filename": "104-pdf-ke-rtf.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.91 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 733295,
+      "foregroundPixels": 839221,
+      "minMarginPercent": 3.91,
+      "fileHash": "620D5BE37071EA673E60251AA0D1E8576FAFAE0802FD5FDA269F7F0F120FCD7A",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "105",
+      "filename": "105-pdf-ke-epub.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.83 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 734719,
+      "foregroundPixels": 837797,
+      "minMarginPercent": 3.83,
+      "fileHash": "EE50BB0E3D4C2FF3A2B46DDDFB9669ECCECE5DB5019EB019213BD9518626A46E",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "106",
+      "filename": "106-pdf-ke-html.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 1.52 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 650062,
+      "foregroundPixels": 922454,
+      "minMarginPercent": 1.52,
+      "fileHash": "745572C93E1A0C02ED6510F7D3280127BC9AD5D16C4D654A5E99F113668B05E2",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "107",
+      "filename": "107-pdf-ke-markdown.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 4.31 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 694885,
+      "foregroundPixels": 877631,
+      "minMarginPercent": 4.31,
+      "fileHash": "75949169FF0DF7083A33BAC4191F813759B26BB2C89F94727D9665765DF80F36",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "108",
+      "filename": "108-heic-ke-jpg.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 5.34 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 742186,
+      "foregroundPixels": 830330,
+      "minMarginPercent": 5.34,
+      "fileHash": "61BB28431A70908659B2A62BB65264D2E2BA8D6228EF35FB873D1F04B8F09087",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "109",
+      "filename": "109-heic-ke-png.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 2.47 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 693941,
+      "foregroundPixels": 878575,
+      "minMarginPercent": 2.47,
+      "fileHash": "E7C38F80F3A58C83A472B5E65F40876EDBF4DB6D77FB0836D3D48C5A3DB2C0A6",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "110",
+      "filename": "110-webp-ke-jpg.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 3.59 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 765410,
+      "foregroundPixels": 807106,
+      "minMarginPercent": 3.59,
+      "fileHash": "6ADAB652C94052F566A9BDE1D93FC2B8B6ABCC7A91FA3CBFB812408B1FE11F42",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    },
+    {
+      "id": "111",
+      "filename": "111-webp-ke-png.png",
+      "state": "NEEDS_REVIEW",
+      "visualReviewed": true,
+      "issue": "Minimum foreground margin 2.23 percent, below 7 percent target",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaVerified": true,
+      "transparentPixels": 784691,
+      "foregroundPixels": 787825,
+      "minMarginPercent": 2.23,
+      "fileHash": "A35FD8D3D69C7EBAADAABE398834621D0711492CD68EEDF24B5CE0957F7D0516",
+      "smallSizeReviewed": true,
+      "smallSizeEvidence": "qa-05/small-light-dark-128.png",
+      "smallSizePx": 128
+    }
+  ],
+  "generationComplete": true,
+  "verifiedCount": 0,
+  "needsReviewCount": 24,
+  "pendingCount": 0,
+  "tool": "built-in image_gen"
+}

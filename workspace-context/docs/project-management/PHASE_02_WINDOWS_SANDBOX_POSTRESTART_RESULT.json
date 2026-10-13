@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "runId": "P02-20260905-1434",
+  "observedAt": "2026-09-07T20:20:57+07:00",
+  "lastBootAt": "2026-09-07T15:06:05+07:00",
+  "result": "OBSERVATIONS_COMPLETE_REVIEW_REQUIRED",
+  "checks": {
+    "featureEnabled": "PASS",
+    "launcherPresent": "PASS",
+    "startEntryPresent": "PASS",
+    "virtualizationObservable": "PASS",
+    "noPendingRestart": "PASS",
+    "templateControls": "PASS"
+  },
+  "primaryVerifier": {
+    "status": "BLOCKED",
+    "featureEnabled": "UNKNOWN",
+    "launcherPresent": "PASS",
+    "startEntryPresent": "UNKNOWN",
+    "virtualizationObservable": "PASS",
+    "noPendingRestart": "PASS",
+    "templateControls": "PASS",
+    "limitation": "Optional-feature cmdlet required administrative read access; Start-app regex did not match the observed dotted AppID. Independent read-only observations close both values."
+  },
+  "reconciliation": {
+    "optionalFeatureName": "Containers-DisposableClientVM",
+    "optionalFeatureCaption": "Windows Sandbox",
+    "optionalFeatureInstallState": 1,
+    "startEntryName": "Windows Sandbox",
+    "startEntryAppId": "Microsoft.Windows.Containers.Sandbox",
+    "launcherPath": "C:\\Windows\\System32\\WindowsSandbox.exe",
+    "launcherBytes": 1078736,
+    "launcherFileVersion": "10.0.26100.8875",
+    "launcherSha256": "7C0095F52A1FDED07D90171A005BB495440C92DA099C064E0ED9AD08656AC3FB",
+    "launcherSignatureStatus": "Valid",
+    "launcherSigner": "Microsoft Windows",
+    "hypervisorPresent": true,
+    "supportingServices": {
+      "vmcompute": "Running/Manual",
+      "hns": "Running/Manual"
+    }
+  },
+  "launchAuthorized": false,
+  "sandboxLaunched": false,
+  "processingAuthorized": false,
+  "qpdfOrPdfsharpExecuted": false,
+  "restoreOrBuildRun": false,
+  "pdfProcessed": false,
+  "networkDisabledProven": false,
+  "costBoundary": "ZERO_ADDITIONAL_COST",
+  "stopMarker": "STOP_BEFORE_LAUNCH"
+}

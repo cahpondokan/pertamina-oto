@@ -1,0 +1,56 @@
+[
+  {
+    "Group": "catalog",
+    "Pass": 658,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/catalog/catalog-content-width-audit.txt"
+  },
+  {
+    "Group": "app-exit",
+    "Pass": 70,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/app-exit/audit.txt"
+  },
+  {
+    "Group": "merge-flow",
+    "Pass": 171,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/merge-flow/audit.txt"
+  },
+  {
+    "Group": "merge-panel",
+    "Pass": 30,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/merge-panel/audit.txt"
+  },
+  {
+    "Group": "merge-empty",
+    "Pass": 50,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/merge-empty/audit.txt"
+  },
+  {
+    "Group": "centered-home",
+    "Pass": 83,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/centered-home/native-audit.txt"
+  },
+  {
+    "Group": "saved-result",
+    "Pass": 185,
+    "Fail": 0,
+    "Evidence": "C:/Users/cahpo/.codex/visualizations/2026/10/13/01a13336-ef5f-7e62-bf7b-47d3e3289987/native-r10/saved-result/audit.txt"
+  },
+  {
+    "Group": "document-close",
+    "Pass": 60,
+    "Fail": 0,
+    "Evidence": "artifacts/ui-five-revisions-20261013/candidate-r10/document-close-audit/audit.txt"
+  },
+  {
+    "Group": "ui-regression",
+    "Pass": 2770,
+    "Fail": 0,
+    "Evidence": "artifacts/ui-five-revisions-20261013/candidate-r10/ui-regression-audit/audit.txt"
+  }
+]

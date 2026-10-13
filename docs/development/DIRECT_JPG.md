@@ -1,0 +1,5 @@
+# Direct JPG output — 2026-09-15
+
+User approved replacing PDF-to-JPG ZIP output with actual JPG files. A single selected page publishes the requested .jpg file. Multiple pages publish a new directory named after the requested filename stem, containing stem-001.jpg etc. Existing files/directories refused. Unique sibling staging directory holds only this export's generated files; cancellation/failure removes those files and empty staging directory. Multiple-page publication uses directory move, not partial copying. Output metadata, source-derived name, catalog, Open result and Open folder updated. Split PDF ZIP behavior unchanged.
+
+Build artifacts/desktop-jpg-direct passed exit0. Native synthetic self-test: 12 PASS including direct multi-page files, single page, JPEG signatures, rotated dimensions, existing file/folder rejection, invalid page range, pre-cancel, unchanged source and no temporary remnants. git diff --check exit0. Runtime UI acceptance and complex fidelity still pending. Portable archive remains older build and was not regenerated. No dependency or phase promotion.

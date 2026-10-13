@@ -1,0 +1,8 @@
+PASS actual installed updater discovers configured build 20261013-114257-465ae8c8
+PASS manifest SHA256 75AF3F6C879A33DA3CBE01EA268BFCBE0D5C65A6BF63B0182A3AF6B76970FB84
+PASS all 1335 payload lengths and SHA256 hashes
+PASS packaged desktop DLL and Biblo match audited candidate
+PASS product 0.3.0 / Pengembangan
+PASS installed selection unchanged 20261013-002005-94b886e8
+PASS configured local update source unchanged
+PACKAGE D:\AFT Ahmad Yani Semarang\Teknik\Dokumentasi Pertamina OTO\releases\windows-local\20261013-114257-465ae8c8

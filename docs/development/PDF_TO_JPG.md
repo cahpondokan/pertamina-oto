@@ -1,0 +1,7 @@
+# PDF to JPG — 2026-09-15
+
+Activated existing pdf-jpg tool with local Windows.Data.Pdf rendering and JPEG encoder, no new dependency. Input one PDF <=100 MB, <=1000 pages. Optional page list/ranges, rejects duplicates and invalid indices. Each selected page becomes JPG in ZIP, sequential filename with original page number. Resolution 2x PDF point dimensions (approximately144dpi), capped2400px longest side; white background. Source preview/password controls reused. Output name defaults ZIP; folder default supported.
+
+Writes unique sibling staging ZIP; locks source against writes, refuses existing output, cancellation checks and cleanup, decoded image dimension check and ZIP count/size check before move. ZIP maximum250MB checked during writing. Native renderer is IN PROCESS, unlike existing worker; cancellation does not guarantee immediate native parse interruption. No sandbox/process timeout claimed. Not production-approved; use synthetic/test copies. Pixel fidelity, encrypted PDF and mid-render cancellation still need broader validation.
+
+Verification: Development.slnx VS MSBuild Debug output artifacts/desktop-pdf-jpg exit0. --self-test-jpg uses generated two-page synthetic PDF and hidden app instance. jpg-selftest.txt: 9 PASS (export/count/twoJPEG signatures/existing target/invalid range/pre-cancel/source unchanged/no staging leftovers). No real documents or uploads. GUI acceptance pending. This test does not validate complex visual fidelity. ZIP portable built September14 still contains older desktop-assistant and has not been regenerated.

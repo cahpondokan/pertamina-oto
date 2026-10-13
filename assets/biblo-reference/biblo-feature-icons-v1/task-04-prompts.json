@@ -1,0 +1,298 @@
+[
+  {
+    "id": "062",
+    "prompt": "Use case: stylized-concept. Create ONE square 1024x1024 transparent PNG feature icon for Konversi ke PDF. References are identity/palette and technician costume only, do not reproduce their poster backgrounds or text. One same Biblo: short plump azure chibi owl, two red feather tufts, white face, huge clear navy round spectacles, dark brown eyes, small cyan beak, green chest and wing-tip feathers, blue bird feet, two wings (no human hands). Simple navy technician overalls with cyan trim and green fastener. Full body centered upper/middle, wings guiding two large generic document cards in lower foreground: LEFT source card with simple text lines and small picture symbol, RIGHT destination document with bold exact badge 'PDF'. Exactly one strong arrow LEFT to RIGHT between cards. Friendly clean 2D anime mascot, bold navy contours, flat simple shading, simplified feathers/seams, readable at 64-128px. Only two props and one arrow. Occupy 80-86% canvas, safe 8-10% margins, all tufts feet and cards fully visible. Genuine transparent alpha everywhere outside foreground; no background, white field, checkerboard, panel, floor, shadow, title, number, slogan, watermark, logos or third-party brands. Text only 'PDF'.",
+    "sourcePath": "C:/Users/cahpo/.codex/generated_images/01a128d6-bc3a-7781-a50f-33ba757a3d1c/exec-dd1bfd62-d06a-4ad3-8e81-2d71e424c4d5.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "063",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic word-processing white document with short blue text lines, bold exact badge 'Word'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'Word' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-3e52ad5c-f435-4601-bf5a-87230f44e7ff.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "064",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic orange presentation slide card with one simple chart and bold exact badge 'PPT'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PPT' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-3bb171fd-b064-4c52-a798-39df7e636988.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "065",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic green spreadsheet document with simple large table grid and bold exact badge 'XLS'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'XLS' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-9b0f7291-d0d7-47df-8d05-32b58b4eed50.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "066",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic teal desktop publishing brochure document, one picture rectangle and two layout text columns, bold exact badge 'PUB'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PUB' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-96222772-6a14-4f4a-9f42-287020303b18.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "067",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: landscape photo card with simple mountain and sun, bold exact badge 'JPG'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'JPG' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-853424c5-b847-4dfe-a575-c636903bb89e.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "068",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: landscape image card with simple mountain and sun, bold exact badge 'PNG'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PNG' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-da7f4b72-a79e-413b-9e8b-9c3591341d5e.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "069",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: landscape web image card with simple mountain and sun, bold exact badge 'WEBP'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'WEBP' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-164b37b2-1139-4dc5-9623-346c954862ef.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "070",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: landscape photo card with simple mountain and sun, bold exact badge 'HEIC'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'HEIC' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-f614999a-8210-4751-8395-3819bc993cb1.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "071",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic vector drawing card with simple landscape mountain outline and three visible vector control-point dots, bold exact badge 'SVG'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'SVG' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-ca4e93d2-b60e-41a6-8fda-468182527bd9.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "072",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: landscape image card with simple mountain and sun, bold exact badge 'TIFF'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'TIFF' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-930a4fed-f8c5-4f54-a859-0668cee987ba.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "073",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic blue word-processing white document with short blue text lines, bold exact badge 'DOCX'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'DOCX' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-227a1aa4-f86e-4cc7-84a1-8e6696e08832.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "074",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic orange presentation slide card with one simple chart and bold exact badge 'PPTX'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PPTX' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-81f49e56-97f3-49d3-86d9-dbd85e8e1a65.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "075",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic green spreadsheet card with large simple table grid, bold exact badge 'XLSX'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'XLSX' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-c0dc4b15-19a2-4285-93c5-0ceb50eea40d.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "075",
+    "prompt": "Edit this exact icon. Remove ONLY the red Adobe-like curved ribbon logo at lower right of the PDF document. Replace it with two short plain gray text lines. Keep Biblo identity, outfit, two wings, feet, cards, exact XLSX and PDF badges and rightward arrow unchanged. Also provide more empty transparent margin around the whole composition, about 8% on each side without cutting anything. Genuine transparent alpha background; no logos or new symbols.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-0f02e431-194d-4ae7-945a-617744b64cbd.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a128d6-bc3a-7781-a50f-33ba757a3d1c/exec-c0dc4b15-19a2-4285-93c5-0ceb50eea40d.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "076",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic blue word-processing document with short blue text lines, bold exact badge 'DOC'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'DOC' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-2cf209f7-fe4a-4ee8-8f66-0179545ec3ef.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "077",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic orange presentation slide card with one simple chart, bold exact badge 'PPT'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PPT' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-6cd89885-47b5-44f4-a337-deaf26f3b921.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "078",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic green spreadsheet card with large simple table grid, bold exact badge 'XLS'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'XLS' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-42f951c2-d3d8-4aa7-8381-21767e6df6a9.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "079",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic blue OpenDocument text card with short blue text lines, bold exact badge 'ODT'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'ODT' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-61e52151-25a2-423c-85d7-9585cab00d0a.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "080",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic purple OpenDocument drawing card with a large circle and triangle joined by visible vector control nodes, bold exact badge 'ODG'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'ODG' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-fef45902-3e2a-4075-a4ac-c0a04025c384.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "081",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic green OpenDocument spreadsheet card with large simple table grid, bold exact badge 'ODS'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'ODS' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-4cd592de-bd78-48cb-9b68-cdeaca73a191.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "082",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic orange OpenDocument presentation slide card with one simple pie chart, bold exact badge 'ODP'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'ODP' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-12157333-b081-461f-8e98-c149e0a64aee.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "083",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic plain-text white document with three short dark monospace-style horizontal text lines, bold exact badge 'TXT'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'TXT' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-186b8d44-53fc-4d79-8c2e-125ca85b7ac2.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "084",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic rich-text white document with one bold dark line and two shorter blue lines, bold exact badge 'RTF'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'RTF' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-eaf9beaa-17fc-471a-92cc-54937f1485b0.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "085",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: a small closed purple ebook with visible spine and white page edges, no extra prop, bold exact cover badge 'EPUB'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'EPUB' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-eb98ba39-a529-44cf-9e4f-152040d87fec.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "086",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic Markdown code-text document card, bold exact badge 'MD', one large pair of angle brackets '< >' and two short horizontal text lines below. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'MD' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-1d743014-046e-4dc1-ac4a-da86e4835a51.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  },
+  {
+    "id": "087",
+    "prompt": "Use case: stylized-concept. ONE standalone square transparent PNG icon, target 1024x1024. References only establish Biblo identity/palette and technician outfit, never reproduce poster. ONE short plump azure blue chibi owl, TWO red feather tufts, white face, dark brown eyes, huge navy round clear spectacles, small cyan beak, green chest/wing-tip feathers, blue bird feet. Navy technician overalls cyan trim green fastener, simplified seams. Exactly two wings, no human hands. Clean bold navy contours, simple 2D anime cel shading. Full body facing viewer, guides TWO large cards across lower foreground with exactly ONE strong LEFT-to-RIGHT arrow between them. LEFT SOURCE: generic teal publisher brochure document with one picture rectangle and two simple text columns, bold exact badge 'PUB'. RIGHT destination: generic white page, bold exact 'PDF' badge, a few lines. Text only 'PUB' and 'PDF', no title or feature name. Large readable labels, no logos. 80% overall canvas occupancy with generous 10% empty margin ON ALL FOUR SIDES including wing edges and feet; nothing cropped. Transparent alpha background, no white field, checkerboard, panel, floor, shadow, watermark, numbers, other characters. Readable at 64–128px. IMPORTANT: PDF card contains ONLY badge PDF and plain straight gray text lines, absolutely no Adobe ribbon or Acrobat symbol.",
+    "sourcePath": "C:\\Users\\cahpo\\.codex\\generated_images\\01a128d6-bc3a-7781-a50f-33ba757a3d1c\\exec-521e9331-9f26-4b4c-842d-419389d29fc3.png",
+    "tool": "built-in image_gen",
+    "referencedImagePaths": [
+      "C:/Users/cahpo/.codex/generated_images/01a07c8d-3c57-7963-8500-daed7ddb07ee/exec-f5afce74-a429-41aa-a973-698c6d543097.png",
+      "D:/AFT Ahmad Yani Semarang/Teknik/Dokumentasi Pertamina OTO/output/imagegen/biblo-kostum-20261011/02-biblo-teknisi-dokumen.png"
+    ],
+    "transparentBackground": true
+  }
+]

@@ -1,0 +1,14 @@
+﻿{
+    "SchemaVersion":  1,
+    "TimestampUtc":  "2026-09-05T18:26:05.9418811+00:00",
+    "FeatureName":  "Containers-DisposableClientVM",
+    "CostBoundary":  "ZERO_ADDITIONAL_COST",
+    "RestartCommandIssued":  false,
+    "Action":  "ALREADY_ENABLED",
+    "StateBefore":  "Enabled",
+    "StateAfter":  "Enabled",
+    "RestartNeeded":  false,
+    "Status":  "ENABLED",
+    "ErrorType":  null,
+    "ErrorMessage":  null
+}

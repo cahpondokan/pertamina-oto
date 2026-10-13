@@ -1,0 +1,1006 @@
+{
+  "lane": 3,
+  "state": "COMPLETE_WITH_REVIEW",
+  "items": [
+    {
+      "id": "040",
+      "visualReviewed": true,
+      "filename": "040-kompres-pdf.png",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "issue": "Foreground minimum margin 1.59% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "state": "NEEDS_REVIEW",
+      "fileHash": "720deb4437928da628c65951f73ee4b72504300d76f1d7904705b9dd6d02f8d9",
+      "alphaBounds": [
+        0,
+        17,
+        1226,
+        1224
+      ],
+      "smallPreviewTested": true,
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        84,
+        20,
+        1209,
+        1222
+      ],
+      "minimumForegroundMarginPercent": 1.59,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-aedcd05d-6ed2-4704-bb80-941a26cf9dec.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 0
+    },
+    {
+      "id": "041",
+      "filename": "041-optimasi-pdf-untuk-web.png",
+      "visualReviewed": true,
+      "state": "VERIFIED",
+      "alphaVerified": true,
+      "issue": null,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "8baf2785cf019d9badc7b11f53c37b0e0659053b3a2beb99265a924508320125",
+      "alphaBounds": [
+        73,
+        139,
+        1202,
+        1222
+      ],
+      "smallPreviewTested": true,
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        134,
+        143,
+        1159,
+        1115
+      ],
+      "minimumForegroundMarginPercent": 7.58,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-8218e7cb-10cb-4de4-9268-e780d569cfb4.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 1
+    },
+    {
+      "id": "042",
+      "filename": "042-pdf-ocr.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "714041af0b2fd02ba1c1014b2f7c29887a8319690a398d5c4c63c190c8097fae",
+      "alphaBounds": [
+        0,
+        24,
+        1206,
+        1234
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 2.31% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        51,
+        29,
+        1203,
+        1225
+      ],
+      "minimumForegroundMarginPercent": 2.31,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-938b4132-9eee-4f38-bd3f-cc10fed0becb.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 0
+    },
+    {
+      "id": "043",
+      "filename": "043-perbaiki-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "2ea8597a719183160fc74f8c41218b4e4dd16dcd6d43425bb6e2170ff2ec6421",
+      "alphaBounds": [
+        0,
+        9,
+        1230,
+        1238
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 5.98% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        89,
+        96,
+        1164,
+        1179
+      ],
+      "minimumForegroundMarginPercent": 5.98,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-780cc4aa-dcb2-47f1-81f4-dbdb8ac1a2c4.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 0
+    },
+    {
+      "id": "044",
+      "filename": "044-rasterisasi-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "8f5c6369111ca208b18e7ba6a8c61623a3eb09b7181abe8d254a1541d20799be",
+      "alphaBounds": [
+        25,
+        79,
+        1170,
+        1254
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 6.06% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        101,
+        82,
+        1158,
+        1178
+      ],
+      "minimumForegroundMarginPercent": 6.06,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-6aab6ee9-efa6-4f58-a9d0-b21d9ca78dcf.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 1
+    },
+    {
+      "id": "045",
+      "filename": "045-ratakan-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "79d9a8e49a228b5fbea24d02b4ebfa9cf5ddf5215d0771789498dbb884c4f3b2",
+      "alphaBounds": [
+        0,
+        0,
+        1230,
+        1204
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 5.98% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        178,
+        92,
+        1047,
+        1179
+      ],
+      "minimumForegroundMarginPercent": 5.98,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-8a310fb3-e05b-45a7-ba25-cd55c0e70d25.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-0.png",
+      "repairCount": 0
+    },
+    {
+      "id": "046",
+      "filename": "046-pdf-ke-pdf-a.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "e76607a77eb0506b25822da12ad0f4f9ab6f408d18ec802128ee34a2596f2403",
+      "alphaBounds": [
+        0,
+        57,
+        1234,
+        1234
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 6.7% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        90,
+        98,
+        1170,
+        1159
+      ],
+      "minimumForegroundMarginPercent": 6.7,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-9f5b8716-8ef2-425e-82bf-5163313558a4.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "047",
+      "filename": "047-lindungi-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "82e6757947be573bb8358d40313c4df743e6f10c6777c208737a680342bcc665",
+      "alphaBounds": [
+        0,
+        59,
+        1236,
+        1230
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 4.63% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        139,
+        72,
+        1127,
+        1196
+      ],
+      "minimumForegroundMarginPercent": 4.63,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-507b0ce2-17bf-496a-b5e0-8be986057a5f.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "048",
+      "filename": "048-buka-kunci-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "4d5076afb647c998e676e6743b500762de87c5a45563c0642a930e9ab39dc849",
+      "alphaBounds": [
+        35,
+        39,
+        1234,
+        1212
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 4.47% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        146,
+        87,
+        1142,
+        1198
+      ],
+      "minimumForegroundMarginPercent": 4.47,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-cb8cffef-748a-4aec-a2a2-33938bfb928e.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "049",
+      "filename": "049-tanda-tangani-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "819f281b2bbc50a5ec6d9b6a50b11bcf8235e481ce7966562f63245046ee0b4a",
+      "alphaBounds": [
+        25,
+        74,
+        1124,
+        1192
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 5.34% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        164,
+        77,
+        1119,
+        1187
+      ],
+      "minimumForegroundMarginPercent": 5.34,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-87da2b4e-52aa-44fd-9c09-013cdd771d73.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "050",
+      "filename": "050-hitamkan-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "ed42060dde766ca408cb0d0c2c2d4bc7ab08cfc878a55dc9645c8b3b1a811125",
+      "alphaBounds": [
+        0,
+        41,
+        1228,
+        1208
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.91% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        130,
+        49,
+        1149,
+        1201
+      ],
+      "minimumForegroundMarginPercent": 3.91,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-ac90478a-33c6-4673-a4d8-b6f1d3fc2999.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "051",
+      "filename": "051-hapus-metadata-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "4acd3967d4a03caeedbf8f9d4585dba406d6cf1204de6a2a87ec227aae62598b",
+      "alphaBounds": [
+        33,
+        58,
+        1222,
+        1222
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 4.86% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        91,
+        61,
+        1170,
+        1192
+      ],
+      "minimumForegroundMarginPercent": 4.86,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-22e95d57-e16b-495d-8590-b4d338bd1617.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-1.png",
+      "repairCount": 0
+    },
+    {
+      "id": "052",
+      "filename": "052-buat-kata-sandi.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "5af6a00fa075848552123ae3a14a6a333121eb369dba6d3abd83b59c689e009d",
+      "alphaBounds": [
+        0,
+        23,
+        1216,
+        1222
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.51% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        44,
+        81,
+        1206,
+        1172
+      ],
+      "minimumForegroundMarginPercent": 3.51,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-fc01b471-5671-4178-8eca-cab0e82b1b39.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "053",
+      "filename": "053-tampilkan-sebagai-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "cb29e503bf55175dee4f43ff36b22ddd73cb74a92917529a973390e61f30fcbc",
+      "alphaBounds": [
+        0,
+        9,
+        1238,
+        1220
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 6.62% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        127,
+        89,
+        1122,
+        1171
+      ],
+      "minimumForegroundMarginPercent": 6.62,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-2e1a5dd2-8b00-45b9-acc8-4b676b52d30f.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "054",
+      "filename": "054-bandingkan-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "af7a5bf3bdfaa04e6bccc0ea51e44a853601875e3862e39dcd07640bd0ed3fde",
+      "alphaBounds": [
+        33,
+        45,
+        1234,
+        1226
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.83% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        79,
+        48,
+        1200,
+        1190
+      ],
+      "minimumForegroundMarginPercent": 3.83,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-f8b8721b-dc7c-49ed-a78c-760e50c0eb9f.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "055",
+      "filename": "055-cari-di-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "0d538cf2627971be86b08b63f0496ea8203c8fd20ea6d84fd6c4f32500bf4511",
+      "alphaBounds": [
+        0,
+        49,
+        1209,
+        1228
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.83% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        111,
+        64,
+        1206,
+        1195
+      ],
+      "minimumForegroundMarginPercent": 3.83,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-2e2278bd-9310-4d7f-89cf-410defa5f0a0.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "056",
+      "filename": "056-periksa-pdf-a.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "cbbc0f22aec7d2de28ecd599d18278340f2c184f2ea52df408ec890a516a8e95",
+      "alphaBounds": [
+        0,
+        49,
+        1230,
+        1222
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 4.15% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        100,
+        52,
+        1189,
+        1201
+      ],
+      "minimumForegroundMarginPercent": 4.15,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-e1a625e7-418e-44eb-9b37-44beda5cb5d8.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "057",
+      "filename": "057-verifikasi-tanda-tangan-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "7e6c5752cdd46692f9ba97bbc99af668f20770425e810278c97aacea4ef0d38c",
+      "alphaBounds": [
+        0,
+        27,
+        1190,
+        1210
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 2.55% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        156,
+        32,
+        1180,
+        1198
+      ],
+      "minimumForegroundMarginPercent": 2.55,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-149db6ec-48a2-4dee-ad81-33f78eba61cf.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-2.png",
+      "repairCount": 0
+    },
+    {
+      "id": "058",
+      "filename": "058-atur-preferensi-penampil-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "a2d2bb08f8879d495b01a5e94450dfc0e015729f2bcd133e5104751e1772e53b",
+      "alphaBounds": [
+        0,
+        34,
+        1236,
+        1224
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.03% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        156,
+        38,
+        1165,
+        1216
+      ],
+      "minimumForegroundMarginPercent": 3.03,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-1dd6905e-183a-4c36-a4a5-07c98f24355f.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-3.png",
+      "repairCount": 0
+    },
+    {
+      "id": "059",
+      "filename": "059-studio-pdf-desktop-oto.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "d2ee10a9365324b3680932f7513e334ee2d4e77813008a4b9090288b224217ed",
+      "alphaBounds": [
+        0,
+        37,
+        1234,
+        1254
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 5.42% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        79,
+        94,
+        1186,
+        1169
+      ],
+      "minimumForegroundMarginPercent": 5.42,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-50551135-b429-43cb-bbb2-1675fdef0730.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-3.png",
+      "repairCount": 0
+    },
+    {
+      "id": "060",
+      "filename": "060-pencetak-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "ee7f12ff9a56ea6ffc0b6ed6381661c8421923c1b77fc8333c877eac30265be8",
+      "alphaBounds": [
+        33,
+        26,
+        1220,
+        1236
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 6.78% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        117,
+        116,
+        1169,
+        1169
+      ],
+      "minimumForegroundMarginPercent": 6.78,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-188ab8db-1fad-4dba-b615-33accafff27d.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-3.png",
+      "repairCount": 0
+    },
+    {
+      "id": "061",
+      "filename": "061-pembaca-pdf.png",
+      "visualReviewed": true,
+      "state": "NEEDS_REVIEW",
+      "alphaVerified": true,
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "fileHash": "de55c619b3358b04c36a50ddd56c7f8a28cc82a0f87b3a10c050a4927ceb4aef",
+      "alphaBounds": [
+        0,
+        23,
+        1240,
+        1254
+      ],
+      "smallPreviewTested": true,
+      "issue": "Foreground minimum margin 3.11% narrower than requested approx 7–10%; no visible clipping. Some faint peripheral alpha pixels may extend beyond substantial foreground.",
+      "smallPreviewSizes": [
+        64,
+        128
+      ],
+      "smallPreviewBackgrounds": [
+        "#FFFFFF",
+        "#182030"
+      ],
+      "foregroundBoundsAlpha128": [
+        222,
+        39,
+        1112,
+        1209
+      ],
+      "minimumForegroundMarginPercent": 3.11,
+      "source": "C:/Users/cahpo/.codex/generated_images/01a128d6-981d-7801-aea2-190c1715c5fb/exec-53555a66-862d-4c90-8607-1b77fdcfbfda.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "metaphorReviewed": true,
+      "identityReviewed": true,
+      "labelReviewed": true,
+      "clippingVisible": false,
+      "visualIssue": null,
+      "qaEvidence": "qa-03/small-preview-3.png",
+      "repairCount": 0
+    }
+  ],
+  "generated": 22,
+  "pending": 0,
+  "verified": 1,
+  "needsReview": 21,
+  "tool": "built-in image_gen",
+  "limitations": [
+    "Output is 1254x1254 rather than target 1024x1024; originals preserved without resizing.",
+    "Small previews are static pixel-size QA, not an application CSS/integration test.",
+    "Margin review items do not assert app-ready status."
+  ]
+}
