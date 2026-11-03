@@ -1,0 +1,2714 @@
+[
+  {
+    "path": ".editorconfig",
+    "blob": "4749894fcacb2d713fb876f7836598e68079bbc3",
+    "bytes": 1045,
+    "sha256": "6d5ebfcfde4d1175d5a9c118e24a0d0efcc8324e3df268525f0359e116ab9f99"
+  },
+  {
+    "path": ".gitattributes",
+    "blob": "3ba9171e2bca1e2a924ea348901f7dd2f9e642f6",
+    "bytes": 180,
+    "sha256": "d970d995bdb171f8da4eead15fe58312591028ebb3c348fa0a82e9660134254f"
+  },
+  {
+    "path": ".gitea/workflows/pr-validation.yml",
+    "blob": "9bd0a84f498dac43d43364b323aae80704cd61e2",
+    "bytes": 1292,
+    "sha256": "594c5f4a72a9eb5f77b409c51058ef0ac15e55c17903c16b9b7fe6e76759ca14"
+  },
+  {
+    "path": ".gitignore",
+    "blob": "e128432bedac56e6ffd65574b76e6726cb3d6c1a",
+    "bytes": 405,
+    "sha256": "9458bc97dc7da30720af38aa273fe1322561e315f0cfbc6cae3198316836f91c"
+  },
+  {
+    "path": "BACKUP_MLKIT.md",
+    "blob": "fcd42806e947c4722916cc14c6f96cb232fdc2eb",
+    "bytes": 2776,
+    "sha256": "13944d0b5a8779574158ec2d377c08096ff88222c4313ceb83eba817fd7444e1"
+  },
+  {
+    "path": "Directory.Build.props",
+    "blob": "351babff9c761462752ed80eabdd17e7beb63650",
+    "bytes": 839,
+    "sha256": "fd1b059e7388aa2f5ed13493a65d38147613bbf10d7c38b9aa29a6311ab15715"
+  },
+  {
+    "path": "Directory.Packages.props",
+    "blob": "87488aaf5c4556f06a08451dff820fb7a5c14671",
+    "bytes": 324,
+    "sha256": "62c8865a774fd26bb9646e0628d98463d9bc7156c75388718c29c2e612805c14"
+  },
+  {
+    "path": "NuGet.Config",
+    "blob": "540fc6c1b0d241ffcb64abe0a137e028ea5a3521",
+    "bytes": 496,
+    "sha256": "aa66031f2fbfa90268c31aee11bdc5b17a5c0202a28bed554532ed3a3edc84cf"
+  },
+  {
+    "path": "Pertamina.Oto.sln",
+    "blob": "57aa4e10cfc9a053706900595e1a2811257aeb9f",
+    "bytes": 24617,
+    "sha256": "9030550ad8f10485c527cb1f94fd28834288ae870daf13469ee573a03af48d3b"
+  },
+  {
+    "path": "README.md",
+    "blob": "9a39c0f1240c4dc179d3c1dfd19dff34df458775",
+    "bytes": 2470,
+    "sha256": "f57c43fa76a6903bdb6bdfa1e8747ca4a0af1bb631e94551bc0f0d79c43458b4"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/main-artifact-verification.json",
+    "blob": "423ae6da4bc0c2ac45380e342fb0ed0af55c5b2b",
+    "bytes": 4145,
+    "sha256": "578cc01bc6b43bade63bd16d2f8e42f0b649b154a77c3dbe7f856c311f67f6a2"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/OtoScanPrivacy.cshtml",
+    "blob": "ddab14c4e3cf9c950399ba96e028432b0ad7fe6d",
+    "bytes": 4893,
+    "sha256": "63c9381f764ba4db4060ba144d0259ad9801e70844fa95a0a4568680199b8a02"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/full-description-id.txt",
+    "blob": "690d66fa533cc5d0cba1a2fdacafec9936ac2a01",
+    "bytes": 1689,
+    "sha256": "194723615a2048cf7bde8328b205821c06b44066b4746d263cf9e2fbac67061f"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/privacy-policy-id.txt",
+    "blob": "24d00b7043fe5f1a3036c913b6c845b986d1417b",
+    "bytes": 3156,
+    "sha256": "0beac57c0a20c5a795a73776e88b3c9db5c7633de6586b0f9a4848180cf6673d"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/privacy-policy.html",
+    "blob": "fb63967ba786a749a276aae9af11c5afcfa0f6a1",
+    "bytes": 4832,
+    "sha256": "f06634e494efae5373247120c8d9c231d27f67e1a98fcf87419cd62d17107041"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/release-notes-id.txt",
+    "blob": "6dc6650c1968543aa748270b166251aa7a3de0e9",
+    "bytes": 247,
+    "sha256": "9547cce3e4a27284337ba46c38def064587852f22ae8858128e718c4a57f4432"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/release-drafts/short-description-id.txt",
+    "blob": "a8341d6b28e0c3f94ab1227b1f7ce85c5a1d0f37",
+    "bytes": 78,
+    "sha256": "7f32f1d63756f1fccbf0cf1bdc9c68eec9e98ca72b5312f681f5473ba16172f4"
+  },
+  {
+    "path": "backup-evidence/mlkit-20261103/trial-artifact-verification.json",
+    "blob": "09194cd7f0be6103b709d02ea9cd00b0a96b39fa",
+    "bytes": 1015,
+    "sha256": "db3f42c1ca06b957f806bc1e22c8caee28d3159d870a307720bc70a9ba8d0a42"
+  },
+  {
+    "path": "coordination/phase0-20260905/agent-2/BOOT-004-006_EVIDENCE.md",
+    "blob": "8dc564cab522cffe38221ad49fdf550786dda0a4",
+    "bytes": 3355,
+    "sha256": "443f5550509c65ce1d67f85203182eae3ad9cdadbd6be2caaec33cd06ce1f4ba"
+  },
+  {
+    "path": "coordination/phase0-20260905/agent-6/VERIFICATION_SUMMARY.md",
+    "blob": "72c8736369728d47cc4bfb1ccf4499162bad329b",
+    "bytes": 3035,
+    "sha256": "6a8f7d3d86e33270e62531c14859a90d48a72f74547893cc7efca97bd00a993c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-1/HANDOFF.md",
+    "blob": "bd3a65fef1e7eaccc3d0c6aa32027c8c99537709",
+    "bytes": 5577,
+    "sha256": "2a070c7076cf203786490ad89be342cbc97fa945be2209c46afdcf4b0dc288b1"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-1/verification.txt",
+    "blob": "226848974736607e6aedb4bd1709d8ebdc846127",
+    "bytes": 2122,
+    "sha256": "303e908cb6d813bf3ab68fa152c6dfe4c4631087cc34952d651c3261bd49590f"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/HANDOFF.md",
+    "blob": "3b4092aba7250162408ba4bbfb9350797f0d9c4e",
+    "bytes": 5438,
+    "sha256": "b2801674ebb8b06f3436dd1259733170c87adad5e170b2ca32fb81d639e6451a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/INTEGRATION.md",
+    "blob": "1baa372309984ef66e6a386ff7ec0f01805a318d",
+    "bytes": 2811,
+    "sha256": "7431747b4e67dc097828513b388c182cde321d4ce1a116d3bd80a7530ac02ca7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/SOURCE_HASHES.json",
+    "blob": "f3cee80b9e39fba2786c2a3cff75b15515629d79",
+    "bytes": 2942,
+    "sha256": "7597d3984c43e5af1b2c8756db0291ed636d207643ac9a74a6401451c7f2a7c5"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/TRACE.md",
+    "blob": "c39f6d438366cd2240b3a8cd3a2a4983ea502f09",
+    "bytes": 7403,
+    "sha256": "d6aee4ae169f2f7d7866352f634f07c5149fc44433f3298aed500a466dcb5d80"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/Verify.ps1",
+    "blob": "b2f6ff8c91f60d432bc7d2b8b59597d8a5df6547",
+    "bytes": 3617,
+    "sha256": "f4676c61d558b039f0388989407384f600a165041e8a2fa2239dabed92b9cfc5"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/contract-build.log",
+    "blob": "113b861fcbd05a0cc06ee5aa75bdbd0312fcfda2",
+    "bytes": 419,
+    "sha256": "b526216e92a586c7e52bf8d57e2cf536326dcf91ab94c151090d937b5719b1da"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/contract-restore.log",
+    "blob": "fc2affe79786b0ac088e99154ca816de64921f8d",
+    "bytes": 80,
+    "sha256": "40d104602671164ab3958225da3e1c8cabd55f0251d6df6bc911d9d5a24f44ce"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/contract-test.log",
+    "blob": "950759d070f7f72b7f4d1e242a7652cc6b479bcd",
+    "bytes": 673,
+    "sha256": "7fdfe2fa56a903f1854e39bb65313cb4da9d7257485b044a0b462c968f68fcd7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/unit-build.log",
+    "blob": "9f9ad30324dafb4010a1da26bc527f4bd6def7d3",
+    "bytes": 728,
+    "sha256": "c19bff1b8d085b2fb51762b68a0f32b13d56ecf08d994f1e07fc67ef550b0e2c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/unit-restore.log",
+    "blob": "fc2affe79786b0ac088e99154ca816de64921f8d",
+    "bytes": 80,
+    "sha256": "40d104602671164ab3958225da3e1c8cabd55f0251d6df6bc911d9d5a24f44ce"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/unit-test.log",
+    "blob": "ab0af6edebf0b1d947cb4e6e21089062c9f48ade",
+    "bytes": 636,
+    "sha256": "2f2041e650fa49dbb5ff75454c6fec482b12b277566892cbabb388983cb55421"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-2/verification.json",
+    "blob": "63d0f5dc0941a92a65aa4911c022dcccee8d6edc",
+    "bytes": 1806,
+    "sha256": "a319d5b893b8e7d80cfd5e033a009af2f299e45f27bf1248adb2e283cdd7fea6"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-3/.gitignore",
+    "blob": "fbca22537997fac50f623ee6eb31f9bb2bb30799",
+    "bytes": 9,
+    "sha256": "f370ad043ec0c98a166fd98646c3b94280ed78bc996223b6cca2ba936f7c6781"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-3/HANDOFF.md",
+    "blob": "536366ff317e5fd65b7f55b4c34d61e8e8607169",
+    "bytes": 4132,
+    "sha256": "d11d280e239d29493de651098ee506ccc104aabfb68474d6e587b25629969c0d"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-4/HANDOFF.md",
+    "blob": "fc02a77b8c5842d93cd28d7cf531401038d5aa2d",
+    "bytes": 6570,
+    "sha256": "276eed9d1c4556f6d7b1cd72b3127372ec638186ed7f2a95e9271b8703711587"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-4/SOURCE_SHA256.txt",
+    "blob": "9390e59c84dd0e4658e27133a0d91f2b41e3be60",
+    "bytes": 1226,
+    "sha256": "2cedfecd0ea140c429fea3eac9439494411c92a2f5507cfe6657753db77e64e2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-4/VERIFICATION.txt",
+    "blob": "60648d64fcbe9d8dd65ccce3433a51d31c84afec",
+    "bytes": 2062,
+    "sha256": "f9695d8f1d3ba1ff42e79b9a6b7bdbb011403e7c577d2add4eb04f099bae8fae"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-4/Verify.ps1",
+    "blob": "83ca9aef6f21ff6ba9797df7bcc611ed34bcf3e3",
+    "bytes": 1576,
+    "sha256": "0424b43a2e4a950ee67897fe5b104c0e72fb402ebb08a55eb27735e2270aabed"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-6/.gitignore",
+    "blob": "599b36db9de1f424863d5a82e520646f664afe91",
+    "bytes": 25,
+    "sha256": "14d2ee06d7e21153cca0be8672e42d26eb589d153c1887638b3fa845103d8812"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-6/HANDOFF.md",
+    "blob": "c119eead767c22758adc43a4ee2a26eadfae559a",
+    "bytes": 4319,
+    "sha256": "fb6da12fdea649fb6313f29b384512d39293b1616bd5e6908b0bf0fe7b7780b4"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-6/VERIFICATION.json",
+    "blob": "c2b4a51295bdc7f3b49394a4e6019e1514911f29",
+    "bytes": 565,
+    "sha256": "cdd11390432e9009ce2dc26837d70463da000fc5b813ae3712c4b296845f27d9"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/HANDOFF.md",
+    "blob": "a5169b9e46e52d728986907ee81ca9795ef86792",
+    "bytes": 3151,
+    "sha256": "015a25c61519912026f6f873c2dd3f420049e8f05e862cb27c50a7f9d61d0a65"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Architecture/manifest.json",
+    "blob": "41653999d9d0b9812d7f08ab1032e7c0d66cd0f0",
+    "bytes": 427,
+    "sha256": "4c860d67c110e39e05f426426f66fd4af8b192326ef9f794ce211416ffac8dc5"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Architecture/pipeline-summary.json",
+    "blob": "9fb79e277f2a15c35fd3a128152acf3e28c1598f",
+    "bytes": 1027,
+    "sha256": "4426a8e15a178c6c5865c90b6baa31d3e247f54e19ffdd4f10cde1346be18291"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Audit/manifest.json",
+    "blob": "a08907abf650e46ac2bd2ca6544b472644de4815",
+    "bytes": 427,
+    "sha256": "4e148715d78b0f0580e28698ca9c082b784c9947c5c8709c715b77400c33e754"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Audit/pipeline-summary.json",
+    "blob": "d9d83ff45743c959aae96c4a4df0ad451a211828",
+    "bytes": 1003,
+    "sha256": "0639416311bd5fe375769956daf353e1139239a2c73bc4d910f3a95fff422c47"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Build/manifest.json",
+    "blob": "b8450b68ce3df047c7a2a92b80a79b43a1b5d4a4",
+    "bytes": 427,
+    "sha256": "a5472255635ec360f9265bb16d6318f86e0688c447489cf21a6a9aa89d2c734f"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Build/pipeline-summary.json",
+    "blob": "b3eff795b49b31df39b0a801bef198faa8849bf5",
+    "bytes": 1039,
+    "sha256": "0fd7facd5ebb0d0b6774d0771f403539638ec23adea28261709f1b1e18fe76eb"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Contract/manifest.json",
+    "blob": "d0d3aaa5d5f7e77caa006a0258df7faac2afe05b",
+    "bytes": 427,
+    "sha256": "63c4ce52f9fbc2a292202172d33fe3b9890cc146b022b0db7c7363ab3661cd14"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Contract/pipeline-summary.json",
+    "blob": "c176783cd5035b896e7635d948b377dfe798212e",
+    "bytes": 1021,
+    "sha256": "4c66200be3446cffeb9f71d013e92913554aa7d36717b8beb69f4f85119a262a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Restore/manifest.json",
+    "blob": "2ba3760634204555e294d74656606b2e5fca5445",
+    "bytes": 427,
+    "sha256": "0a9ce04c342241b83655c6b222d954d4991b48630e36cb605e0338b6b9390635"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Restore/pipeline-summary.json",
+    "blob": "db3143ec287cc676a1bcd5ffe81a856e823ebd3f",
+    "bytes": 1045,
+    "sha256": "e84c1559bf74984086a828f777f9cf6bffbc44ebdda3f8a525863a7bd785101a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Scope/manifest.json",
+    "blob": "abb779828a7627f9cb31fc1f44e35364b2ba4f70",
+    "bytes": 427,
+    "sha256": "586f3e48cf7a325625e207a67a3bab5bf6b04e460255739dc8313f8c73d8cf22"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Scope/pipeline-summary.json",
+    "blob": "de8ce71d8a7a07d7d5d7091019e04b16a3195803",
+    "bytes": 1051,
+    "sha256": "041aecdca02058db3c5ae768080d3fd16155951c53691c66b3bbf42546a15ee2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Security/manifest.json",
+    "blob": "f74947243ed6921ea45f12aa73988805e4acf0ff",
+    "bytes": 427,
+    "sha256": "e8f00aa90243fa82625a977e81bfd34dbd090f9fbd263d2a69555474bc83940f"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Security/pipeline-summary.json",
+    "blob": "f0046d04c92178bc0ae949f40cf79074d70d601f",
+    "bytes": 1015,
+    "sha256": "0c45b1b3dedc83c9a29c801e2633f99ab97b7d81fb0db2ecd43fc9bdff2e5284"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/UI/manifest.json",
+    "blob": "cb9d50d96e889fea779b2d6284de1df1862edb52",
+    "bytes": 427,
+    "sha256": "ebc3a83c5ae1769111391b8422f61f01a1eb72dbac150c076862f60962d676d7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/UI/pipeline-summary.json",
+    "blob": "b0a22b5bb7e57ecd1cb0b7ec50e2d982aa73f58e",
+    "bytes": 1009,
+    "sha256": "b5da82f0ca820e8e11ec8d804467758097a544c269856cf7779df6049165e9e8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Unit/manifest.json",
+    "blob": "896a6a466592cafc8fa2e2c7e30cfbb5c1be8465",
+    "bytes": 427,
+    "sha256": "e71109c31b64fa0b635d8d8699e1e304c750aeb2b18883c5794249173732fdeb"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/Unit/pipeline-summary.json",
+    "blob": "84c04a66b24e1aab0010e50baf0a86c445eeda15",
+    "bytes": 1033,
+    "sha256": "8ae0c381ed0b5503532677ba694a1353378eee182bd99d8b0ca7b107267d3df8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/count-0.trx",
+    "blob": "c61e954314f8e8c074395e30ea5c6c0cd85423e8",
+    "bytes": 130,
+    "sha256": "7aed30cccd7b252a1c5c62f7c87d1e08d49769500a2a5fb368cf733eb6dfd842"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/count-1.trx",
+    "blob": "628b7fae041bb9f1ec433dc83495119f7a657289",
+    "bytes": 130,
+    "sha256": "48ef73ff192caf2d4bfb4d8d297e31ba51a4cbb149e522b1ea58c4157e3f8b0c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/positive/manifest.json",
+    "blob": "28c6523cab5bf9fad23640f6b32a86f7054c0800",
+    "bytes": 436,
+    "sha256": "42183320ab38305beca62b04a846c6946a46ff6d1962336afa81d3cbd14b36f7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/positive/pipeline-summary.json",
+    "blob": "2e357c4af0b88f704f7263f23127b51e3ddabb39",
+    "bytes": 1012,
+    "sha256": "198088360280834ce90223ebe43591643880c82e224fe0654498e7971e3f321a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/scope-fixture/src/Hosts/ForbiddenServer/Forbidden.cs",
+    "blob": "587be6b4c3f93f93c489c0111bba5596147a26cb",
+    "bytes": 2,
+    "sha256": "73cb3858a687a8494ca3323053016282f3dad39d42cf62ca4e79dda2aac7d9ac"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r1/self-test-results.log",
+    "blob": "ada6799f5a8f7ebf18ca0c21fd29074f14dbba0a",
+    "bytes": 1728,
+    "sha256": "8670cf62859ffcf48ef258e529e27208b1794b4910571f4d2c6efe39c110e451"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2.log",
+    "blob": "0d542b238aacd447261d28831e82f8914c8f5727",
+    "bytes": 1757,
+    "sha256": "643e12df6b5e027a76925bdc282f6e610d52a9b89018fca94d9db0a7d20b1411"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/Architecture.log",
+    "blob": "15dd9de95122a0b47a04df704ec6f69279e08821",
+    "bytes": 38,
+    "sha256": "8f9a2d6edf34f8093feb96b835582dbd1b905c23e21956a3d15101e9636e3380"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/manifest.json",
+    "blob": "57256f68145161e9ca14b0c4f6f43be128771130",
+    "bytes": 1145,
+    "sha256": "8afb17c42fb6d6e032a58dcb9bbb77d78b48ff8077062fdae2b6339364e07907"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Architecture/pipeline-summary.json",
+    "blob": "9fb79e277f2a15c35fd3a128152acf3e28c1598f",
+    "bytes": 1027,
+    "sha256": "4426a8e15a178c6c5865c90b6baa31d3e247f54e19ffdd4f10cde1346be18291"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Audit.log",
+    "blob": "de61a05c3e231d1217209b94a7c05319ecc168a6",
+    "bytes": 31,
+    "sha256": "34ffd60cf313c5df2b23f3203797293761fda9a1a3d62ac690d61c81a2b7ae03"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/UI.log",
+    "blob": "e73a6cd4298b5d9777fc7438714b54c5e28d93c0",
+    "bytes": 28,
+    "sha256": "7e351ea4d6c8682bcc0b07c2ad15514d93bbf0b5ff470922b57d4d95346e9c18"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/manifest.json",
+    "blob": "d872fffaa6e6c19fdcda618aa5bb3cd7ac8108be",
+    "bytes": 1716,
+    "sha256": "4a00a3920e8eac3af7bd3fcb98531f345d0f783ec06097818ff008742cd9511f"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Audit/pipeline-summary.json",
+    "blob": "d9d83ff45743c959aae96c4a4df0ad451a211828",
+    "bytes": 1003,
+    "sha256": "0639416311bd5fe375769956daf353e1139239a2c73bc4d910f3a95fff422c47"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Build/Build.log",
+    "blob": "9d22b8546a3b91f7a8badca60366947d3636661c",
+    "bytes": 31,
+    "sha256": "d596e927819432d684f692e1a40e1df88d3662a1329eedbc7a9eb74f0940b183"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Build/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Build/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Build/manifest.json",
+    "blob": "ace1ba5c9207e740311b67dd1ab11e6657bae245",
+    "bytes": 855,
+    "sha256": "65c5cefa7573e0b4a002665752e9b3811e71257e5831c8b39ca7a4c0d892469d"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Build/pipeline-summary.json",
+    "blob": "b3eff795b49b31df39b0a801bef198faa8849bf5",
+    "bytes": 1039,
+    "sha256": "0fd7facd5ebb0d0b6774d0771f403539638ec23adea28261709f1b1e18fe76eb"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Contract.log",
+    "blob": "7bc5cf98fa7bcfa21abfcdbbae525ed0ba7bd67e",
+    "bytes": 34,
+    "sha256": "861985f11d4b2fcceeac125270c0fd576de555c8dd62049bce2597e9d96790ad"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/manifest.json",
+    "blob": "f11cc3e7c7bc7bad96f6178d2d0280f48f8f28e9",
+    "bytes": 1290,
+    "sha256": "d084f97614898f0917a8fbfca0783df63b408172905d141ba4cd405518221386"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Contract/pipeline-summary.json",
+    "blob": "c176783cd5035b896e7635d948b377dfe798212e",
+    "bytes": 1021,
+    "sha256": "4c66200be3446cffeb9f71d013e92913554aa7d36717b8beb69f4f85119a262a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Restore/Restore.log",
+    "blob": "2b3fcff7e7ad98161fffcfdc3e9b5c04cd7db49a",
+    "bytes": 33,
+    "sha256": "f4199d4611c0960e00cb4711572cd5101ce33b3771746914154e8aaf747a6069"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Restore/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Restore/manifest.json",
+    "blob": "8040be95ecdda8c2b83a9a4a71884ee36ebd34c0",
+    "bytes": 713,
+    "sha256": "6e25783de9f2eca4360061939c489ac16181618bda17ec9fbd54a9a588893579"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Restore/pipeline-summary.json",
+    "blob": "db3143ec287cc676a1bcd5ffe81a856e823ebd3f",
+    "bytes": 1045,
+    "sha256": "e84c1559bf74984086a828f777f9cf6bffbc44ebdda3f8a525863a7bd785101a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Scope/Scope.log",
+    "blob": "5fad15a48b0533e35b2c76eca5dd5b616bad0bb7",
+    "bytes": 31,
+    "sha256": "65afcbd0b6537c71a7a38a221b077292cb1da6c99601da0dbd1532fdeb4bd8e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Scope/manifest.json",
+    "blob": "b96b0d7873fd5b89f81892db23a5246c14ec24a1",
+    "bytes": 569,
+    "sha256": "2f4f1dd4bbbaa286e2ee0690994e6820000b61035d14e7c4b9d3727647ef1bf2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Scope/pipeline-summary.json",
+    "blob": "de8ce71d8a7a07d7d5d7091019e04b16a3195803",
+    "bytes": 1051,
+    "sha256": "041aecdca02058db3c5ae768080d3fd16155951c53691c66b3bbf42546a15ee2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Security.log",
+    "blob": "f8a95fb586d45c4a3ce2e804b2b2e7a8ea54fc9d",
+    "bytes": 34,
+    "sha256": "7ed248e893ec0472ba1684acfbfad2cdaec7e29a56ffe967217cde9616a881e7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/manifest.json",
+    "blob": "476ff845c8b3e17e303a2439e730b16cd1f9e741",
+    "bytes": 1435,
+    "sha256": "92eb3cad076a11f33f36dce3291b850f8453f002a9c021522b1946c988e36d4b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Security/pipeline-summary.json",
+    "blob": "f0046d04c92178bc0ae949f40cf79074d70d601f",
+    "bytes": 1015,
+    "sha256": "0c45b1b3dedc83c9a29c801e2633f99ab97b7d81fb0db2ecd43fc9bdff2e5284"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/UI.log",
+    "blob": "cb1dd1e34ae0ca3abf909b6a1283d94dca60afc9",
+    "bytes": 28,
+    "sha256": "2ea26244b02d8573d353666251cc127dede47f30129c18bd490c600e2e88a055"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/manifest.json",
+    "blob": "0b293d3abe45e9b8a61f472ce8fa73d6b8102823",
+    "bytes": 1574,
+    "sha256": "4caef170cde472703710e8ba014c6e4cc71da5bc64b6f91f3dccf86bfb54d65c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/UI/pipeline-summary.json",
+    "blob": "b0a22b5bb7e57ecd1cb0b7ec50e2d982aa73f58e",
+    "bytes": 1009,
+    "sha256": "b5da82f0ca820e8e11ec8d804467758097a544c269856cf7779df6049165e9e8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/Unit.log",
+    "blob": "4da4c40858748a21c9ab1c40dcb2a758845c0940",
+    "bytes": 30,
+    "sha256": "430bd6f6fa62be06b3b4329654c80a74be2ed8c81ede0788b19fc626b5099e3e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/manifest.json",
+    "blob": "8d18aa7816e3fb045ccf43e9921bfbf60b695e83",
+    "bytes": 996,
+    "sha256": "aa3d7c79d095460f6d2cf4b34bd924eee7eba3d901f34ebbecda4853d7109dcd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/Unit/pipeline-summary.json",
+    "blob": "84c04a66b24e1aab0010e50baf0a86c445eeda15",
+    "bytes": 1033,
+    "sha256": "8ae0c381ed0b5503532677ba694a1353378eee182bd99d8b0ca7b107267d3df8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/count-0.trx",
+    "blob": "c61e954314f8e8c074395e30ea5c6c0cd85423e8",
+    "bytes": 130,
+    "sha256": "7aed30cccd7b252a1c5c62f7c87d1e08d49769500a2a5fb368cf733eb6dfd842"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/count-1.trx",
+    "blob": "628b7fae041bb9f1ec433dc83495119f7a657289",
+    "bytes": 130,
+    "sha256": "48ef73ff192caf2d4bfb4d8d297e31ba51a4cbb149e522b1ea58c4157e3f8b0c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Audit.log",
+    "blob": "94f05501da5d232118680d97d96cf006163caf48",
+    "bytes": 31,
+    "sha256": "b05fb034190fb4ae654d266965e1e5af76e63e79010e10e893e5eb726889f429"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/UI.log",
+    "blob": "e73a6cd4298b5d9777fc7438714b54c5e28d93c0",
+    "bytes": 28,
+    "sha256": "7e351ea4d6c8682bcc0b07c2ad15514d93bbf0b5ff470922b57d4d95346e9c18"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/manifest.json",
+    "blob": "374eb5fc7d4e5efcb628afdb65ee4c6de5adb032",
+    "bytes": 1725,
+    "sha256": "15356b6e7bca966c0d7e8a4d988a8462a4a452c2ce59e675947256f02147c51d"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/positive/pipeline-summary.json",
+    "blob": "2e357c4af0b88f704f7263f23127b51e3ddabb39",
+    "bytes": 1012,
+    "sha256": "198088360280834ce90223ebe43591643880c82e224fe0654498e7971e3f321a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/scope-fixture/src/Hosts/ForbiddenServer/Forbidden.cs",
+    "blob": "587be6b4c3f93f93c489c0111bba5596147a26cb",
+    "bytes": 2,
+    "sha256": "73cb3858a687a8494ca3323053016282f3dad39d42cf62ca4e79dda2aac7d9ac"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r2/self-test-results.log",
+    "blob": "ada6799f5a8f7ebf18ca0c21fd29074f14dbba0a",
+    "bytes": 1728,
+    "sha256": "8670cf62859ffcf48ef258e529e27208b1794b4910571f4d2c6efe39c110e451"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3.log",
+    "blob": "ef999cb1b139bbcb541ab27a3a69a485bcfc0393",
+    "bytes": 1817,
+    "sha256": "b8bf329d541dcb35933f8d32c9ff94b471182e4c6df1eaa5aa07e3f18e7a3882"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/Architecture.log",
+    "blob": "15dd9de95122a0b47a04df704ec6f69279e08821",
+    "bytes": 38,
+    "sha256": "8f9a2d6edf34f8093feb96b835582dbd1b905c23e21956a3d15101e9636e3380"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/manifest.json",
+    "blob": "57256f68145161e9ca14b0c4f6f43be128771130",
+    "bytes": 1145,
+    "sha256": "8afb17c42fb6d6e032a58dcb9bbb77d78b48ff8077062fdae2b6339364e07907"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Architecture/pipeline-summary.json",
+    "blob": "9fb79e277f2a15c35fd3a128152acf3e28c1598f",
+    "bytes": 1027,
+    "sha256": "4426a8e15a178c6c5865c90b6baa31d3e247f54e19ffdd4f10cde1346be18291"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Audit.log",
+    "blob": "de61a05c3e231d1217209b94a7c05319ecc168a6",
+    "bytes": 31,
+    "sha256": "34ffd60cf313c5df2b23f3203797293761fda9a1a3d62ac690d61c81a2b7ae03"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/UI.log",
+    "blob": "e73a6cd4298b5d9777fc7438714b54c5e28d93c0",
+    "bytes": 28,
+    "sha256": "7e351ea4d6c8682bcc0b07c2ad15514d93bbf0b5ff470922b57d4d95346e9c18"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/manifest.json",
+    "blob": "d872fffaa6e6c19fdcda618aa5bb3cd7ac8108be",
+    "bytes": 1716,
+    "sha256": "4a00a3920e8eac3af7bd3fcb98531f345d0f783ec06097818ff008742cd9511f"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Audit/pipeline-summary.json",
+    "blob": "d9d83ff45743c959aae96c4a4df0ad451a211828",
+    "bytes": 1003,
+    "sha256": "0639416311bd5fe375769956daf353e1139239a2c73bc4d910f3a95fff422c47"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Build/Build.log",
+    "blob": "9d22b8546a3b91f7a8badca60366947d3636661c",
+    "bytes": 31,
+    "sha256": "d596e927819432d684f692e1a40e1df88d3662a1329eedbc7a9eb74f0940b183"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Build/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Build/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Build/manifest.json",
+    "blob": "ace1ba5c9207e740311b67dd1ab11e6657bae245",
+    "bytes": 855,
+    "sha256": "65c5cefa7573e0b4a002665752e9b3811e71257e5831c8b39ca7a4c0d892469d"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Build/pipeline-summary.json",
+    "blob": "b3eff795b49b31df39b0a801bef198faa8849bf5",
+    "bytes": 1039,
+    "sha256": "0fd7facd5ebb0d0b6774d0771f403539638ec23adea28261709f1b1e18fe76eb"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Contract.log",
+    "blob": "7bc5cf98fa7bcfa21abfcdbbae525ed0ba7bd67e",
+    "bytes": 34,
+    "sha256": "861985f11d4b2fcceeac125270c0fd576de555c8dd62049bce2597e9d96790ad"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/manifest.json",
+    "blob": "f11cc3e7c7bc7bad96f6178d2d0280f48f8f28e9",
+    "bytes": 1290,
+    "sha256": "d084f97614898f0917a8fbfca0783df63b408172905d141ba4cd405518221386"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Contract/pipeline-summary.json",
+    "blob": "c176783cd5035b896e7635d948b377dfe798212e",
+    "bytes": 1021,
+    "sha256": "4c66200be3446cffeb9f71d013e92913554aa7d36717b8beb69f4f85119a262a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Restore/Restore.log",
+    "blob": "2b3fcff7e7ad98161fffcfdc3e9b5c04cd7db49a",
+    "bytes": 33,
+    "sha256": "f4199d4611c0960e00cb4711572cd5101ce33b3771746914154e8aaf747a6069"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Restore/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Restore/manifest.json",
+    "blob": "8040be95ecdda8c2b83a9a4a71884ee36ebd34c0",
+    "bytes": 713,
+    "sha256": "6e25783de9f2eca4360061939c489ac16181618bda17ec9fbd54a9a588893579"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Restore/pipeline-summary.json",
+    "blob": "db3143ec287cc676a1bcd5ffe81a856e823ebd3f",
+    "bytes": 1045,
+    "sha256": "e84c1559bf74984086a828f777f9cf6bffbc44ebdda3f8a525863a7bd785101a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Scope/Scope.log",
+    "blob": "5fad15a48b0533e35b2c76eca5dd5b616bad0bb7",
+    "bytes": 31,
+    "sha256": "65afcbd0b6537c71a7a38a221b077292cb1da6c99601da0dbd1532fdeb4bd8e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Scope/manifest.json",
+    "blob": "b96b0d7873fd5b89f81892db23a5246c14ec24a1",
+    "bytes": 569,
+    "sha256": "2f4f1dd4bbbaa286e2ee0690994e6820000b61035d14e7c4b9d3727647ef1bf2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Scope/pipeline-summary.json",
+    "blob": "de8ce71d8a7a07d7d5d7091019e04b16a3195803",
+    "bytes": 1051,
+    "sha256": "041aecdca02058db3c5ae768080d3fd16155951c53691c66b3bbf42546a15ee2"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Security.log",
+    "blob": "f8a95fb586d45c4a3ce2e804b2b2e7a8ea54fc9d",
+    "bytes": 34,
+    "sha256": "7ed248e893ec0472ba1684acfbfad2cdaec7e29a56ffe967217cde9616a881e7"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/manifest.json",
+    "blob": "476ff845c8b3e17e303a2439e730b16cd1f9e741",
+    "bytes": 1435,
+    "sha256": "92eb3cad076a11f33f36dce3291b850f8453f002a9c021522b1946c988e36d4b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Security/pipeline-summary.json",
+    "blob": "f0046d04c92178bc0ae949f40cf79074d70d601f",
+    "bytes": 1015,
+    "sha256": "0c45b1b3dedc83c9a29c801e2633f99ab97b7d81fb0db2ecd43fc9bdff2e5284"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/UI.log",
+    "blob": "cb1dd1e34ae0ca3abf909b6a1283d94dca60afc9",
+    "bytes": 28,
+    "sha256": "2ea26244b02d8573d353666251cc127dede47f30129c18bd490c600e2e88a055"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/manifest.json",
+    "blob": "0b293d3abe45e9b8a61f472ce8fa73d6b8102823",
+    "bytes": 1574,
+    "sha256": "4caef170cde472703710e8ba014c6e4cc71da5bc64b6f91f3dccf86bfb54d65c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/UI/pipeline-summary.json",
+    "blob": "b0a22b5bb7e57ecd1cb0b7ec50e2d982aa73f58e",
+    "bytes": 1009,
+    "sha256": "b5da82f0ca820e8e11ec8d804467758097a544c269856cf7779df6049165e9e8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/Unit.log",
+    "blob": "4da4c40858748a21c9ab1c40dcb2a758845c0940",
+    "bytes": 30,
+    "sha256": "430bd6f6fa62be06b3b4329654c80a74be2ed8c81ede0788b19fc626b5099e3e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/manifest.json",
+    "blob": "8d18aa7816e3fb045ccf43e9921bfbf60b695e83",
+    "bytes": 996,
+    "sha256": "aa3d7c79d095460f6d2cf4b34bd924eee7eba3d901f34ebbecda4853d7109dcd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/Unit/pipeline-summary.json",
+    "blob": "84c04a66b24e1aab0010e50baf0a86c445eeda15",
+    "bytes": 1033,
+    "sha256": "8ae0c381ed0b5503532677ba694a1353378eee182bd99d8b0ca7b107267d3df8"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/count-0.trx",
+    "blob": "c61e954314f8e8c074395e30ea5c6c0cd85423e8",
+    "bytes": 130,
+    "sha256": "7aed30cccd7b252a1c5c62f7c87d1e08d49769500a2a5fb368cf733eb6dfd842"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/count-1.trx",
+    "blob": "628b7fae041bb9f1ec433dc83495119f7a657289",
+    "bytes": 130,
+    "sha256": "48ef73ff192caf2d4bfb4d8d297e31ba51a4cbb149e522b1ea58c4157e3f8b0c"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Architecture.log",
+    "blob": "3017da62a5b2c4cc229d7dd6890e79c96a44294e",
+    "bytes": 38,
+    "sha256": "919b96da164838b5c1f12dd4b07086fedf78833e004a5afb20a70af4e7b5f2dd"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Audit.log",
+    "blob": "94f05501da5d232118680d97d96cf006163caf48",
+    "bytes": 31,
+    "sha256": "b05fb034190fb4ae654d266965e1e5af76e63e79010e10e893e5eb726889f429"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Build.log",
+    "blob": "69888c14bcdf1a25c2b9a22039fac31e96641e6f",
+    "bytes": 31,
+    "sha256": "236e6f3dc17d018be130b584de2c288bb7d52d6b74d7c8dc7b8c4b89db9d29e0"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Contract.log",
+    "blob": "f96d417dfb0cd51aeada4c3c07403cdafc2a8cf1",
+    "bytes": 34,
+    "sha256": "5b4a79b96471762eb3f9249e968b8fd139b325ae885ef18ca747f5d59a14bd3b"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Restore.log",
+    "blob": "2ee4bc554ac06164edeeb2f39fdadd9869a17a03",
+    "bytes": 33,
+    "sha256": "315ce8586d19780e39915f738a9c68ae4de9dcb17882b2e820305d7257f44f89"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Scope.log",
+    "blob": "c2d3e817da120cf3d64583fad3b8ad9a6268f36f",
+    "bytes": 31,
+    "sha256": "9d7cb5354cbe02909ef3771b3e322c2952c04f423c1fad2794d07d4894575f69"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Security.log",
+    "blob": "c5268b73ba20885cef62976b65aab7621d77206e",
+    "bytes": 34,
+    "sha256": "c9a025106ac87848c8774bbb65cae610aef5dd72f5937e1fd18a7aeafed6685e"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/UI.log",
+    "blob": "e73a6cd4298b5d9777fc7438714b54c5e28d93c0",
+    "bytes": 28,
+    "sha256": "7e351ea4d6c8682bcc0b07c2ad15514d93bbf0b5ff470922b57d4d95346e9c18"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/Unit.log",
+    "blob": "e21f2c4aa0ee221695274ed03dd3dc93775c4819",
+    "bytes": 30,
+    "sha256": "b4183e9a8711ccab625e3d92d4659f22d8b99834a9339ed6b964697d02e89271"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/manifest.json",
+    "blob": "374eb5fc7d4e5efcb628afdb65ee4c6de5adb032",
+    "bytes": 1725,
+    "sha256": "15356b6e7bca966c0d7e8a4d988a8462a4a452c2ce59e675947256f02147c51d"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/positive/pipeline-summary.json",
+    "blob": "2e357c4af0b88f704f7263f23127b51e3ddabb39",
+    "bytes": 1012,
+    "sha256": "198088360280834ce90223ebe43591643880c82e224fe0654498e7971e3f321a"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/scope-fixture/src/Hosts/ForbiddenServer/Forbidden.cs",
+    "blob": "587be6b4c3f93f93c489c0111bba5596147a26cb",
+    "bytes": 2,
+    "sha256": "73cb3858a687a8494ca3323053016282f3dad39d42cf62ca4e79dda2aac7d9ac"
+  },
+  {
+    "path": "coordination/phase1-20260905/agent-7/selftest-r3/self-test-results.log",
+    "blob": "b93bae8d00bbf129646b57dfed42f9ad8a0db29b",
+    "bytes": 1788,
+    "sha256": "83ab235d366d0927ce1acfb3793584d39bce94b90c3d7d3f6c2733fb5bcb5960"
+  },
+  {
+    "path": "docs/android-scan/MLKIT_RELEASE_1.0.1.md",
+    "blob": "a62068df0acc99a7df4aac7c459a4c29b6860fae",
+    "bytes": 6322,
+    "sha256": "88df52c72043ba320c05fb00b288e9a7a263db1967d887c8828ed85b771b3528"
+  },
+  {
+    "path": "docs/android-scan/MLKIT_TRIAL.md",
+    "blob": "c942bb7b8f71f497285b6d16ce4860f7ae96b179",
+    "bytes": 10231,
+    "sha256": "77c3f16299821c32f3837c6e4de29dedad2f758c5448289d66224460ec04f8b3"
+  },
+  {
+    "path": "docs/development/MULTI_AGENT_WORKFLOW.md",
+    "blob": "d0e6d899cbab8ab31e030d5e0b3da3fb37de5aa3",
+    "bytes": 4360,
+    "sha256": "c0927b2a5d4ec7c9b3a8b303848481264b77b5bcd4bff5151627a96462cc81a6"
+  },
+  {
+    "path": "docs/development/PHASE1_VALIDATION.md",
+    "blob": "86d8febd6578a9f383fb2eff36c853c332eb1ca1",
+    "bytes": 1808,
+    "sha256": "72a1f070dc6fe00d852171c3d6052755132f12614aeb0287e3d2e89355389848"
+  },
+  {
+    "path": "docs/development/PR_VALIDATION.md",
+    "blob": "d4d9996ee3f4a2c801783404dc6324d875b327b2",
+    "bytes": 3476,
+    "sha256": "02994a82c54b6abae384b46d3ceca5cc6984dce347a580b58d451032823a95f0"
+  },
+  {
+    "path": "eng/baseline/Assert-ApprovedDependencies.ps1",
+    "blob": "54d5803b1582682848bd15d34117c193476007d5",
+    "bytes": 6941,
+    "sha256": "1f0a434ab93eedca81fbd597352b022a84961ea4d70842fd185834ddce6f9cc1"
+  },
+  {
+    "path": "eng/baseline/Assert-Phase0Scope.ps1",
+    "blob": "85de003611f83778e9fc2dbe23043abaa6baae3f",
+    "bytes": 1912,
+    "sha256": "0feb24804ffe45ba08b97a8a22e3d6ed37b55726d0974e3daa0db88a9ea5dbcf"
+  },
+  {
+    "path": "eng/baseline/Assert-Phase1Scope.ps1",
+    "blob": "90f36c74fc14aa60ee80ee8133c645ac97e2c417",
+    "bytes": 1522,
+    "sha256": "0ad66ad59dcbdd894134079d84707aed8253e24b7a9d250b313c10aec28e78a7"
+  },
+  {
+    "path": "eng/baseline/README.md",
+    "blob": "4a8ef9f80a8b64df3670d09e1a3d417e3829edf9",
+    "bytes": 991,
+    "sha256": "609e1a3e0026d6ac059ce58bd8bebd425aa56d6e88124a68733ec291355f8899"
+  },
+  {
+    "path": "eng/baseline/Test-BaselineGates.ps1",
+    "blob": "a08570916cbe41c2d0f927096c6908c850acf425",
+    "bytes": 3895,
+    "sha256": "788f76bdc5c2d2332876fbd8dc17e1dace53c485cd7df9ae708de7eb5803ac70"
+  },
+  {
+    "path": "eng/baseline/phase0-dependency-policy.json",
+    "blob": "6de4aa56bedc112f92955903d90443f2bf7d575e",
+    "bytes": 409,
+    "sha256": "ca3d4467e2ddc88bdd3ea339f23be99b22f4e2b4bc0aeae1b0ef700d55dcb8c4"
+  },
+  {
+    "path": "eng/build/Build.ps1",
+    "blob": "40956776e6a12463f0ff99fe39bef0eba0abab35",
+    "bytes": 1025,
+    "sha256": "63f52d5deacdd7c1101146bb58de3c02c32aab11cf721ea1f5e66163b5752dae"
+  },
+  {
+    "path": "eng/build/DEPENDENCY_SOURCE_RECORD.md",
+    "blob": "f3861453196aff7b37a6288fad772f475eb83251",
+    "bytes": 1095,
+    "sha256": "4f765e336cfbe3794d2c14a8066d944133e3076dbc1e2c2174125dab58ea274b"
+  },
+  {
+    "path": "eng/evidence/New-EvidenceManifest.ps1",
+    "blob": "9384d295fd4b50268df7adefb206d151d1f69afe",
+    "bytes": 2089,
+    "sha256": "b08235973b80be1691a96bbe74f321c6ac7719e7d8f7c8e0df8c77bfcb5bab2e"
+  },
+  {
+    "path": "eng/evidence/Phase1-Evidence.ps1",
+    "blob": "b5a0a12e539329923e1ac0fa398c33e79b1f4390",
+    "bytes": 3018,
+    "sha256": "f8868547859533e149ff75ed217d2e65543182473c71231b6f3734f08dc0961f"
+  },
+  {
+    "path": "eng/evidence/README.md",
+    "blob": "98abe93fec8a2287cac2e4398e9b3b1e166e4bb2",
+    "bytes": 1155,
+    "sha256": "571422c701396a04e4375dc07d70eb361a2a0f08c93b2e4874eb9897a61910af"
+  },
+  {
+    "path": "eng/evidence/Test-EvidenceManifest.ps1",
+    "blob": "5f062aa9aee5deef1d07dcff617bb9afbfa758eb",
+    "bytes": 2200,
+    "sha256": "4e98bccc11bb9b6e55fd8b4e368fef6cb79349a4877f820cf74676bed6cf1039"
+  },
+  {
+    "path": "eng/security/Invoke-DependencyAudit.ps1",
+    "blob": "668d3e11bff1ad6015f5354a5296501d6fbbf6e4",
+    "bytes": 2304,
+    "sha256": "58462323ea4cf2c10f738fc38fb098091ddcc7f993b39c4aec7153844e173dd9"
+  },
+  {
+    "path": "eng/security/Invoke-SecretScan.ps1",
+    "blob": "8a0eb3cc20bca8edff6526eaf42bae6dc911665e",
+    "bytes": 3285,
+    "sha256": "7271ceac2ed658a90b176af5ec31d98d2279ad2d191f0744963f8f2f922da615"
+  },
+  {
+    "path": "eng/security/Invoke-SecurityGates.ps1",
+    "blob": "377132cbe912106fb102c2e192d0c9cb2dfc9897",
+    "bytes": 1159,
+    "sha256": "5093baf12ed3baa3c183c2ad04de2c47874e3a82234db24afa1fd7ff29a1d4e7"
+  },
+  {
+    "path": "eng/security/Invoke-StaticChecks.ps1",
+    "blob": "d50fadb3c60ad260c81b0f63b424a6a0f991bd85",
+    "bytes": 2807,
+    "sha256": "9bf92aefc0648b547b5e62424deedd2fc73e03f9f3d21cabad756a19d2ece500"
+  },
+  {
+    "path": "eng/test/Assert-NonZeroTestResults.ps1",
+    "blob": "ff2dcdb1754fb05a5bafa81d1f50a1ddcd9aa49b",
+    "bytes": 2908,
+    "sha256": "0ce2e1a379ed857cdb48377a7e5a20da9e8cd4c31a296cdf8b587b15c571ff4f"
+  },
+  {
+    "path": "eng/test/Invoke-NegativeCanaries.ps1",
+    "blob": "70a32fb8c9c4c9e0575806292dd698fa688b711f",
+    "bytes": 4780,
+    "sha256": "6b68cffcf61603dbfa6b34e2d46edf57030a8412bdde46b473f0fbea846c4df3"
+  },
+  {
+    "path": "eng/test/Invoke-PhaseOneGateCanaries.ps1",
+    "blob": "dfcd1a4f320f0989dfe58656b28b2096019eabae",
+    "bytes": 1215,
+    "sha256": "fad44dbfbfc802f01326bd70ce736e889af7ba02bd48a1bb4e54bf77cac5db16"
+  },
+  {
+    "path": "eng/test/Invoke-UnitTests.ps1",
+    "blob": "965b43cf4c4b34e38e14f579a96dee30b4105347",
+    "bytes": 2944,
+    "sha256": "a9441a22e7b02d0fa87e1d893f82ffe71158cfa672d2261b03810e34ca29be7f"
+  },
+  {
+    "path": "flutter/oto_scan/.gitignore",
+    "blob": "2873fa68343686a7ac62178f17edb370d74882fc",
+    "bytes": 1162,
+    "sha256": "b448364316898fda22cf566d3580a8641da673c0d45edc98940df0add250dc23"
+  },
+  {
+    "path": "flutter/oto_scan/.metadata",
+    "blob": "878648b2d22a9ca08b06a4a8e6f58b3cb1661f8c",
+    "bytes": 968,
+    "sha256": "07d37d4fb1ae9d180b950a826be07ba077fca02081cf079fd671dcbee75798f2"
+  },
+  {
+    "path": "flutter/oto_scan/README.md",
+    "blob": "66ca7146b224c1dbb740dd423e920c3485b3b20e",
+    "bytes": 35250,
+    "sha256": "a3eb84f57f88a6761578c8649744e0fc49def5603ad68a4ff79ac4756cf7a8b7"
+  },
+  {
+    "path": "flutter/oto_scan/analysis_options.yaml",
+    "blob": "9c4c86675737171e14b337ab652ff702e640e3f6",
+    "bytes": 180,
+    "sha256": "fcf6f051521f4769c4d14dba018ae37fea8dacf743c2e7bee0365e0a007f9c98"
+  },
+  {
+    "path": "flutter/oto_scan/android/.gitignore",
+    "blob": "be3943c96d8eed92e2a329ce8327616d5e7dc440",
+    "bytes": 253,
+    "sha256": "b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/build.gradle.kts",
+    "blob": "6bb7e998265a18df581636eba33251a75893de5c",
+    "bytes": 2625,
+    "sha256": "299c2fbd09b41463c6b6c0af4f8105f04eb21d7f141f644bb9c2017d805cc567"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/proguard-rules.pro",
+    "blob": "53e87cdf9237429c05b9a448a4ae2e3a3e09092b",
+    "bytes": 1217,
+    "sha256": "3541ec70ec13c65dbbb7452a079c36c957a8ae380db05c2a7f437c6a28b3a92c"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/androidTest/java/id/ayani/oto/oto_scan/GoogleImportChecks.java",
+    "blob": "3b79d4f677f2eae85c6fb401bfc6f074a5e4ad77",
+    "bytes": 6968,
+    "sha256": "548ea039a7a3b09c935a0808146a50e13ca17e634b4e7bf2328fe1109bd8525c"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/androidTest/java/id/ayani/oto/oto_scan/GoogleUiChecks.java",
+    "blob": "d6a54572866449fa3061bd5e0eb574fd1507628a",
+    "bytes": 4036,
+    "sha256": "159221420e3cfeed7f772d937432ce68fe8ca6720392e2e93ef23262dfe347d9"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/androidTest/java/id/ayani/oto/oto_scan/ReleaseEmulatorChecks.java",
+    "blob": "29eb9ac2f72293eaf675772e32f9a8470724f782",
+    "bytes": 11983,
+    "sha256": "50ca00c83ca9f04c7f760723fd8d9f5c837a2e0096a7b4832da13eac597fa85e"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/androidTest/java/id/ayani/oto/oto_scan/ScanInstrumentation.java",
+    "blob": "7424797c96e3cc8cdd643112be9196e660e89eaa",
+    "bytes": 10412,
+    "sha256": "7549f90524611da12a75bb2b5deb06625c880b6ba0bae5b299ca2fad48baf52a"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/debug/AndroidManifest.xml",
+    "blob": "399f6981d5d35475eb18e6068ae67cdd7c731978",
+    "bytes": 378,
+    "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/local/java/id/ayani/oto/oto_scan/GoogleScanLauncher.java",
+    "blob": "b2dbe2818dbcd19cbbc0f4ef5b24ad31bf16a8a8",
+    "bytes": 514,
+    "sha256": "dc5bdbe232eb9405b4f6c3ac139bedb8727024489fb8cd1aafe5233cbf2955d4"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/AndroidManifest.xml",
+    "blob": "ea77ba09ce90dc4ad10b899baf14ba746c8aa093",
+    "bytes": 2237,
+    "sha256": "4fa323bb218733d79e3b7cc11d531cdb1df5d61bded6933250974374f4fd04a7"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/AdaptiveDocument.java",
+    "blob": "627a161429796a5821146d531a6905fd9f91c18a",
+    "bytes": 4669,
+    "sha256": "78336d57fe08c22567dc630f076f4c48a3ea8f17fc60a389e0e621c5e423cdfe"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/CameraView.java",
+    "blob": "8674e8073c087109590a61f5b95140d19a0a3104",
+    "bytes": 21096,
+    "sha256": "a76be0b376d89595db7583e21061cf61ba1d9f361dfbb3f2b01ca8eafa836573"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/CaptureReadiness.java",
+    "blob": "37cd606520316ea90ae171b8c8663c2c365ef14b",
+    "bytes": 1124,
+    "sha256": "fb1b3dd443f28562c93ff156ed38bd18cea9105a6718bc391cca77bf12f2f319"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/CaptureSelection.java",
+    "blob": "487a6ad329dd0b7bc1873c9499b7162b3a6e04e1",
+    "bytes": 1025,
+    "sha256": "2cf3775e5b3593657b4cefa97c3cd31efc4ac2548d58167e98274c41ab9676b2"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/CompactPdf.java",
+    "blob": "5364822eacdce7747eb657b73bb59e73c7b9a215",
+    "bytes": 6251,
+    "sha256": "b32aaec51819b13c043b99297015c9db9785e20567e2f5c87b55139610ed15f5"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/DetectionTarget.java",
+    "blob": "e472d3ece527156cca471bacd55966a5620278f8",
+    "bytes": 3178,
+    "sha256": "a015c494940c0050127d9af920c0da8056a77141363a3454232996fe745c5d10"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/DocumentBatch.java",
+    "blob": "5c51cad1b09631b347b30ca17b391e432455690c",
+    "bytes": 3053,
+    "sha256": "76398b89d25be99a18be3f7466d2050390ae0d69ff2921e4fb48a37230e202a1"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/DocumentCompression.java",
+    "blob": "9f127597641d6e0d80634c56c2cf1f7d55e077fd",
+    "bytes": 3244,
+    "sha256": "0799f3bc0dabb9d19daeb52a61495919eb6eebeade6d45f7872499af7b97cd1e"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/DocumentDetector.java",
+    "blob": "f190e9c30648dd3701285a0cc529fc1480215d26",
+    "bytes": 14852,
+    "sha256": "d74909bb3ad1df606ae33cd820462a4afb4aad4d448ba3585b95a7fb37e7b71c"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/EdgeDetector.java",
+    "blob": "6ac084550f1b87c54b541d3a4267161b417fb4d2",
+    "bytes": 7250,
+    "sha256": "fb3a86dc3a1a994529c5d8a5fdf888d4f2073d18aa1466b9603974a027405a74"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ExternalPdf.java",
+    "blob": "7b297d51059cae327702d01bb2e9164c32b75dfe",
+    "bytes": 6014,
+    "sha256": "57e4df518402059d49b7e381229c8936cd4111eb7129fc7ac5bbc032dfa9fb58"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/GooglePageImport.java",
+    "blob": "c941602c33d2b835cca4e06f24b6fe0330b79642",
+    "bytes": 3176,
+    "sha256": "fdd630f4a3e1309df30286e8bdf49a9e61a8dc6292ff9ccd667b0646f04b2fe1"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/MainActivity.java",
+    "blob": "e2ab9f375c472460b35295ae6d33f637449fd2e1",
+    "bytes": 14814,
+    "sha256": "5a5df7970d504476fe146798c806fd32ddb54f00ea14983b6b5586891ba53ed7"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/PageGeometry.java",
+    "blob": "e00df3ad457564d6b00f4f0452004bc956871798",
+    "bytes": 1521,
+    "sha256": "2dedd3103f35518ddf50348c0f801e9bdba52a4747f5401f152c0da47235e075"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/PdfInput.java",
+    "blob": "3f3bd3f37e5190c5e7002711cf403562ef942ea2",
+    "bytes": 1355,
+    "sha256": "512dade1a1a6b62cc937a258d538c045764c8cdbb179dc61424546b5b441aabc"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/PdfReaderEngine.java",
+    "blob": "facc8bd7031e5557e55f1c9e3ee694f869342079",
+    "bytes": 4467,
+    "sha256": "cf5f288873a624083cba52c4701ca972d1e8a9f98027ac46eec52ed14217cebc"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/PreviewPixels.java",
+    "blob": "7584f7a933c732b5d939dfeea6d797e2c4794458",
+    "bytes": 2305,
+    "sha256": "3761e8493fe342402d2988dfcbec432306732fd378e38542a75a94c7b6aaf154"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ReaderDiskCache.java",
+    "blob": "893096b384535d3b60cf99f9f4845fa8a8eacb40",
+    "bytes": 1890,
+    "sha256": "b5fd86e2e3875fd034c3fe47b72535e999af64ad66c60fe702be647ba1b2603b"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ReaderPolicy.java",
+    "blob": "02b022f64f404373f797981eef53ddc6109a9f4c",
+    "bytes": 1085,
+    "sha256": "0b93857c7fd1806f62c9b2dd49bd7da20b3231a02e91eb7e7c40c3727f3407aa"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ScanGeometry.java",
+    "blob": "d517d196ea20ad708d6a1ab2506b6a7432d475f8",
+    "bytes": 3120,
+    "sha256": "8d6c17fd1b0f09f4ab5592b3607625a38f7983bd564ab3b862116baae5f44032"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ScanQuality.java",
+    "blob": "93a96979631a1b5e5d634eb9cdfd7880265cb044",
+    "bytes": 2301,
+    "sha256": "6e952d4eebffdc61081f33e1275dcb2a137470f304e1525abd4d65cacf017e8b"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ScanShareProvider.java",
+    "blob": "2dd40118871891d2ba694a560a6ed79474e8a2a7",
+    "bytes": 2274,
+    "sha256": "4e500047e448a8bd218ac70ccd8bc1cf44f6b9fac2014fe83494e46864e887d9"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/java/id/ayani/oto/oto_scan/ScanStore.java",
+    "blob": "2b306a2cb26336245ecbab1d60000266d57686b4",
+    "bytes": 22730,
+    "sha256": "c6e324f1e6939f8799015c2fd0a9a6a3542795ad156684fb3afc8b3113ce5852"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/drawable-v21/launch_background.xml",
+    "blob": "f74085f3f6a2b995f8ad1f9ff7b2c46dc118a9e0",
+    "bytes": 438,
+    "sha256": "7ca6d5cec2169c5a98661a119db23a6f3399c8fef2256ff04f3a642831282478"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/drawable/launch_background.xml",
+    "blob": "304732f8842013497e14bd02f67a55f2614fb8f7",
+    "bytes": 434,
+    "sha256": "94433756fe10005ddd6fc55cc5c0b1e9f3c10b66a08ceac795ece6713d34e28a"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/drawable/oto.png",
+    "blob": "52badf703f38771afcf817f171406402132c8e73",
+    "bytes": 9316,
+    "sha256": "7c64be7d80aa464ed4bab6049dd95c3d01f043f56195e5b391d54c2def1e3b9f"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "blob": "87426f7bc0c9fa8ea65709c48b1601f4e22da9d3",
+    "bytes": 305,
+    "sha256": "c7fa0072fa0b5a8fe35a59adecc38790fdccff6548e4aae35b0c499ca214e70f"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "blob": "db77bb4b7b0906d62b1847e87f15cdcacf6a4f29",
+    "bytes": 544,
+    "sha256": "6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "blob": "17987b79bb8a35cc66c3c1fd44f5a5526c1b78be",
+    "bytes": 442,
+    "sha256": "c7c0c0189145e4e32a401c61c9bdc615754b0264e7afae24e834bb81049eaf81"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "blob": "09d4391482be68e9e4a07fab769b5de337d16eb1",
+    "bytes": 721,
+    "sha256": "e14aa40904929bf313fded22cf7e7ffcbf1d1aac4263b5ef1be8bfce650397aa"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "blob": "d5f1c8d34e7a88e3f88bea192c3a370d44689c3c",
+    "bytes": 1031,
+    "sha256": "4d470bf22d5c17d84edc5f82516d1ba8a1c09559cd761cefb792f86d9f52b540"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "blob": "4d6372eebdb28e45604e46eeda8dd24651419bc0",
+    "bytes": 1443,
+    "sha256": "3c34e1f298d0c9ea3455d46db6b7759c8211a49e9ec6e44b635fc5c87dfb4180"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/values-night/styles.xml",
+    "blob": "06952be745f9fa6fa75196e830d9578eb2ee631d",
+    "bytes": 995,
+    "sha256": "8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/values/colors.xml",
+    "blob": "0571cfc71a3ce27133153eab668fc7bde07cb197",
+    "bytes": 62,
+    "sha256": "1d8f59925efa0a26be1a1b40892be3f2c91235e8e57fc060a7deca8573371245"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/values/styles.xml",
+    "blob": "cb1ef88056edd1caf99a935e434e7ff6943a0ef6",
+    "bytes": 996,
+    "sha256": "937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/main/res/xml/data_extraction_rules.xml",
+    "blob": "6b5a2aabb822cad547e6d39c783ec9a06c7ffedf",
+    "bytes": 516,
+    "sha256": "ff3c3dd1a7b0683d5e114b62153abf7037cc004a6833ec8df7a983d82ebd4547"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/mlkit/java/id/ayani/oto/oto_scan/GoogleScanLauncher.java",
+    "blob": "3281ddd41740873fdfe2d7fb19a2a12e53dde0ba",
+    "bytes": 3997,
+    "sha256": "61e6929c9da74d488ef62c84d108c25770e4aa7e957e785fd2910250569569b8"
+  },
+  {
+    "path": "flutter/oto_scan/android/app/src/profile/AndroidManifest.xml",
+    "blob": "399f6981d5d35475eb18e6068ae67cdd7c731978",
+    "bytes": 378,
+    "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+  },
+  {
+    "path": "flutter/oto_scan/android/build.gradle.kts",
+    "blob": "89176ef44e8c7931fa32322d576e7f3f54d225c9",
+    "bytes": 515,
+    "sha256": "e704c38144ab59a5b51375447918d81d386d9ff49afd6c648b233bca8d759ed2"
+  },
+  {
+    "path": "flutter/oto_scan/android/gradle.properties",
+    "blob": "f4768109ffe4c902ff0751f9f237346dac566783",
+    "bytes": 249,
+    "sha256": "82a9cd504737a1737e5f53e6c6f98a83e5e7e565d14306f980f6e9f47aa0ff87"
+  },
+  {
+    "path": "flutter/oto_scan/android/gradle/wrapper/gradle-wrapper.properties",
+    "blob": "efdcc4ace985c5ba52a6f69755faa66af2ff37f7",
+    "bytes": 203,
+    "sha256": "adfec9a4aa8571d468eff9e0e5e4218eefdd6a7870e9f3774eef865641d78ec3"
+  },
+  {
+    "path": "flutter/oto_scan/android/settings.gradle.kts",
+    "blob": "a303fbf2245fd03cf583286f0f391b6b663f0541",
+    "bytes": 1010,
+    "sha256": "db2ad263efb0652193e347c8d9f63402171161a63d081194eecba6646d9fbac1"
+  },
+  {
+    "path": "flutter/oto_scan/assets/FLUTTER_LICENSE.txt",
+    "blob": "aea51a336a305bd31e4e50af448679ed0c73b95e",
+    "bytes": 1519,
+    "sha256": "a598db94b6290ffbe10b5ecf911057b6a943351c727fdda9e5f2891d68700a20"
+  },
+  {
+    "path": "flutter/oto_scan/assets/MLKIT_NOTICE.txt",
+    "blob": "4ef1eb4d89aa71190136c852f508142f34d623ae",
+    "bytes": 1150,
+    "sha256": "095208e6596532f3208607f764ee16f2d22d0397b79caa05e50946d012e96980"
+  },
+  {
+    "path": "flutter/oto_scan/assets/THIRD_PARTY_NOTICES.txt",
+    "blob": "9a80aee3ae1626b90c2496b582953db4a20eab74",
+    "bytes": 11899,
+    "sha256": "666815ffd33bbcfdfb161604c92e4233f9ff7da6b1b2d56b0e476a5883dd6cf7"
+  },
+  {
+    "path": "flutter/oto_scan/assets/oto.png",
+    "blob": "52badf703f38771afcf817f171406402132c8e73",
+    "bytes": 9316,
+    "sha256": "7c64be7d80aa464ed4bab6049dd95c3d01f043f56195e5b391d54c2def1e3b9f"
+  },
+  {
+    "path": "flutter/oto_scan/lib/app_config.dart",
+    "blob": "ca01c1bbecea7941177c101a0e823c198fb97e9c",
+    "bytes": 381,
+    "sha256": "f8a9fbaf149b554f58564873513319dfa345cd2305c9bab5db9823e4acfad45e"
+  },
+  {
+    "path": "flutter/oto_scan/lib/crop_screen.dart",
+    "blob": "e9da464daccebcc043a23476415e3427c7cb7af9",
+    "bytes": 13988,
+    "sha256": "8a1f71e8c520f0cd9a4038b108c9a4af4443c2157a6b190c5e4bf301c0f9326e"
+  },
+  {
+    "path": "flutter/oto_scan/lib/document_actions.dart",
+    "blob": "890f4d400f51515b78d1cc588eaec26893e01ce7",
+    "bytes": 2171,
+    "sha256": "d426cadd56b93afe51aa8e02ec56fb03a85d3b9bdf95a8f75115f9795ce9ed4f"
+  },
+  {
+    "path": "flutter/oto_scan/lib/document_gallery.dart",
+    "blob": "c7a0978a28dcee5967386e5135aa4067a553331d",
+    "bytes": 14628,
+    "sha256": "c24822e7da0cf43d3f52c7dadcee043791575895789b50ebda5a74c530800861"
+  },
+  {
+    "path": "flutter/oto_scan/lib/live_detection.dart",
+    "blob": "4cc50eb7441c4cceac3623d1a146665a791ab4bb",
+    "bytes": 2235,
+    "sha256": "0384b6870030773636b80c4b7ac7b265ff7846fc799d8980ae4f29203ce5f271"
+  },
+  {
+    "path": "flutter/oto_scan/lib/live_edges.dart",
+    "blob": "f004ca3c09bd2f03d243f66d0c2737b68f550d78",
+    "bytes": 3609,
+    "sha256": "1428be6f726266b529c32a49ba0356562f18e582f90afa7a896e7b62df3cf41d"
+  },
+  {
+    "path": "flutter/oto_scan/lib/main.dart",
+    "blob": "14cde1317032b788182c5753bc67fa97783f6ad6",
+    "bytes": 51649,
+    "sha256": "948453df3cca1fa8e9b2e2e6ac6f542a20175c0f8531a93ba3ecf934b2170d72"
+  },
+  {
+    "path": "flutter/oto_scan/lib/native_scan.dart",
+    "blob": "1629b60552dda16ef2351f8b57ecedea74043424",
+    "bytes": 1389,
+    "sha256": "28c802abc1d692f9f3c7c8e345fa6551fb56d8f300b55caee63c41a012fcf4f7"
+  },
+  {
+    "path": "flutter/oto_scan/lib/pdf_canvas.dart",
+    "blob": "fdc0a0d9188d6f18b918b211db6adde5e259d424",
+    "bytes": 16845,
+    "sha256": "d23189156eb8452ca7c5f6cb700a166ab6a66ca20998b01341e0258b44ef59d2"
+  },
+  {
+    "path": "flutter/oto_scan/lib/pdf_reader.dart",
+    "blob": "3b7eb5d2a5512943764fc2f8e7fcd7f57d76365e",
+    "bytes": 5478,
+    "sha256": "b23026840337fbbe127aafd91b0e4810b5e502c15c0fe469cf3efb0d2bcb223b"
+  },
+  {
+    "path": "flutter/oto_scan/lib/pdf_reading.dart",
+    "blob": "49c66064fadc3dca15aeb7e84084e43da9e34944",
+    "bytes": 9457,
+    "sha256": "778c3dc76da330031141375f86bab551a363362206e2254d737bbbf2bfd1bf8f"
+  },
+  {
+    "path": "flutter/oto_scan/lib/pdf_tiles.dart",
+    "blob": "fb51144d2909e491ba1d6c46c5d9028d45b7cb74",
+    "bytes": 1919,
+    "sha256": "e19126e64079439f01b36b8e89b5681716e735276b3379cc59b8e45a485497ae"
+  },
+  {
+    "path": "flutter/oto_scan/lib/privacy_screen.dart",
+    "blob": "234bbe3d4349d9871f208a6e69c44b259560905e",
+    "bytes": 8761,
+    "sha256": "39a657cdcce4c368c96ffd4832a35b99d20966298e62239e79a7f6783e9f256c"
+  },
+  {
+    "path": "flutter/oto_scan/lib/scan_model.dart",
+    "blob": "180e6f26c3390d7707e2875958d24e2bf7156440",
+    "bytes": 2301,
+    "sha256": "44c2cea269c8add2644a1348a22ab1a7700ffcc54df00b4e854e1ce67abbbdd1"
+  },
+  {
+    "path": "flutter/oto_scan/pubspec.lock",
+    "blob": "57850f4c1f76b927d08aff46af4c6cf5ac0bb4b6",
+    "bytes": 5369,
+    "sha256": "86470e48b35fa33d9c7c5a391629ad2ecbaa350b96cbccf29245ab106a4a2fad"
+  },
+  {
+    "path": "flutter/oto_scan/pubspec.yaml",
+    "blob": "36ed135957c13591624b882637543f3df238a146",
+    "bytes": 413,
+    "sha256": "b174a50fd05b34bdf43311ba1c8e68e7e19e38a7932a88eb9c40bd06ffc939b8"
+  },
+  {
+    "path": "flutter/oto_scan/test/gallery_test.dart",
+    "blob": "dcd62f1abaa18cf0821551cd6d7782687a2595e3",
+    "bytes": 17974,
+    "sha256": "e25ac533840204954da3680b57ae2a448b3e5cf9221448ba3cb0d08a3c1aef46"
+  },
+  {
+    "path": "flutter/oto_scan/test/google_scanner_test.dart",
+    "blob": "5e00c87bfc728688506bf6b150995b93010049f0",
+    "bytes": 6718,
+    "sha256": "d3fd1591f75e411a884ca47be2d67d42f99472c8bc79c20218200eeb792c228e"
+  },
+  {
+    "path": "flutter/oto_scan/test/live_camera_test.dart",
+    "blob": "87d05650aee990122a4017bf50fe0855d899caab",
+    "bytes": 7910,
+    "sha256": "d21711c1628f56fe09ad4b2e717e61df858a4c9d04af28e7d6f3fd1f408fd40a"
+  },
+  {
+    "path": "flutter/oto_scan/test/live_detection_test.dart",
+    "blob": "4d7292395433f097fd836da9843bd732960cfce8",
+    "bytes": 2554,
+    "sha256": "475d60049b68409a02cc01c418f533e8f2b6d79b6ac8d77baab8bfd8ea9178a7"
+  },
+  {
+    "path": "flutter/oto_scan/test/live_edges_test.dart",
+    "blob": "dfeb7a695b28bdfa64d09ea89fecea33abd814f9",
+    "bytes": 3079,
+    "sha256": "df9317e374f12a224374e680b702f9640e33bff31827169c012f72347504ec1d"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/CaptureSelectionTest.java",
+    "blob": "4fcab62339e266b3e5477e415e71a64a9cf6e579",
+    "bytes": 5292,
+    "sha256": "2c5fbec01b0fe47568158b4e0ad59d4084766b6db4b4ab09e2999fda4a534306"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/CompactPdfTest.java",
+    "blob": "3bc2c352020ca3d783cd614108b6189e683e16dc",
+    "bytes": 5437,
+    "sha256": "4f9529d75f83a116142a008baad7392d962dc9f41c04855207d1b65eb6c13842"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/DetectorTest.java",
+    "blob": "ba5c2b5e89b30aeec92e772789298bd1118b2d85",
+    "bytes": 3981,
+    "sha256": "130da6a388dded017dfb66e310685a8a364a6466b609a9dcfdab7fb3e25b5487"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/DocumentBatchTest.java",
+    "blob": "eb62166a40c03e46e9028ccbbe92e26a53197485",
+    "bytes": 3282,
+    "sha256": "e9dd0cd56b4f468b9f0d641684ad65cbad40485c3f2907ca79b77d141def6493"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/DocumentQualityTest.java",
+    "blob": "a1265551581122c6a90e0d86c9ece93aa07b2e3f",
+    "bytes": 8667,
+    "sha256": "66c2f11d69d3c492e040d2171f315376726520d7bb082904cf52c30d81e89ec7"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/LivePipelineTest.java",
+    "blob": "3e0abbe669ff03f69a51bd22259cb5d1a67beec6",
+    "bytes": 4912,
+    "sha256": "20a95e3520b04b2b457986d435e3a45362091aca62b15d96dd3d126ceef2c17a"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/OrientationCropTest.java",
+    "blob": "ca350d76b81458caa145c416378442e659634b5b",
+    "bytes": 9435,
+    "sha256": "4822b517920264a730283b7414efe41552c8e1092d6a6b0bb19f408fbaca79db"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/PdfInputTest.java",
+    "blob": "975964c9f951e7e5047fa3c1a94d77e90034e9e8",
+    "bytes": 2056,
+    "sha256": "90fbd34554f2251c77e66505c20de65a1569bc746732836a0e07492e98e64134"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/QualityTest.java",
+    "blob": "37cfed8f509e9291c1e08f36d91020d9934103a2",
+    "bytes": 2478,
+    "sha256": "36c60a7cb647e4851010fc3e6a457231532f6ae8a77f6e31e74e1990e9aec95d"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/ReaderCacheTest.java",
+    "blob": "343f2aa9402894f41167bff8d8a667a0dfad7e63",
+    "bytes": 2529,
+    "sha256": "6213659e738ba4b1f9555ace1e637b909947dc23cbdd530b65290ce3d009f1ee"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/SensitivityTest.java",
+    "blob": "3dd91a6ab1bbaca88639bf20b07f2d841b74f1c7",
+    "bytes": 1659,
+    "sha256": "83ea6116a3b14277e9be80be5fcaed25e12779e5daf8c2a9bbf9ec234589bc0e"
+  },
+  {
+    "path": "flutter/oto_scan/test/native/TargetTest.java",
+    "blob": "fa6c6c52a71136352f7acc9b4b8c9126fcaf8be6",
+    "bytes": 4268,
+    "sha256": "0b4d35365d2a5524981a27db803d4d69ad608cb47c690303649440a2de61558e"
+  },
+  {
+    "path": "flutter/oto_scan/test/navigation_test.dart",
+    "blob": "5e94514fb453df3d6669d4fb088ad2dc468cc067",
+    "bytes": 16571,
+    "sha256": "96cc7e1cf1bc2ada4018440d0ccc8b4af92044337fb1b06de0277046c903e927"
+  },
+  {
+    "path": "flutter/oto_scan/test/orientation_crop_test.dart",
+    "blob": "dacac49e9c7472716c87722a0750cf49ed9b8c57",
+    "bytes": 7909,
+    "sha256": "65c501bc327a308b2c38e4f745c3d88c10a8eadaba096bf1f399563b2974da4c"
+  },
+  {
+    "path": "flutter/oto_scan/test/pdf_open_test.dart",
+    "blob": "2a4d5085c8c8ecd501f2d836cdb6e5d0d4153021",
+    "bytes": 6124,
+    "sha256": "b089b31f1c4929dee1834d44ec342c1b27817d22f72c2f4edd2d6cc38177e333"
+  },
+  {
+    "path": "flutter/oto_scan/test/pdf_reader_visual_test.dart",
+    "blob": "34cae3b3bf2e2d567998daa8b716c26b1d1c5736",
+    "bytes": 5940,
+    "sha256": "59518938d103a5388960f1e009c5bdecef73f3dd09369c4980c6c8af3e61a8c3"
+  },
+  {
+    "path": "flutter/oto_scan/test/pdf_reading_test.dart",
+    "blob": "9f4830f3dfbbdb94dc5eb445ede106ffbfd38c02",
+    "bytes": 8164,
+    "sha256": "d2c117594444acc1578ebcb15d02cca53847a678357136487d42c361f2e40aaa"
+  },
+  {
+    "path": "flutter/oto_scan/test/pdf_zoom_test.dart",
+    "blob": "d4defe690eca7fa1f8033d780c4432a3053d8559",
+    "bytes": 9231,
+    "sha256": "409f1831b50b0c4d794b01a0082ee54c6942962f8872909f2c5c37b7952a219e"
+  },
+  {
+    "path": "flutter/oto_scan/test/reader_fixture.dart",
+    "blob": "fb1f2ec23bc0cfa2c5e366dc8f5201171864ab21",
+    "bytes": 449,
+    "sha256": "78a4f00ec0a5b0ac22c5d08a6411aed041d35708d13dfeb1a21cf2049810a774"
+  },
+  {
+    "path": "flutter/oto_scan/test/release_identity_test.dart",
+    "blob": "f384a83ec433bfcbfbfffae0dc1f82b3ca62416b",
+    "bytes": 919,
+    "sha256": "d8567f3846836102265db763666bb8dd7fd8e7785fee237857320c793078df2a"
+  },
+  {
+    "path": "flutter/oto_scan/test/scan_test.dart",
+    "blob": "555d00c7318760028b21ef6b5e96fc890794a65b",
+    "bytes": 7228,
+    "sha256": "d6702eb3bc45a4866ef66d77c61365796d3c66dce709df9577a1610bc6f73981"
+  },
+  {
+    "path": "flutter/oto_scan/test/tracking_benchmark_test.dart",
+    "blob": "37d977440bbdfc9258d5d15946a27bd6bdac78bd",
+    "bytes": 3223,
+    "sha256": "1c4d543d86dd64c6167596575a68c12c8a9880bae1d295c85bbcb78809c0a972"
+  },
+  {
+    "path": "flutter/oto_scan/tool/Build-MLKitRelease.ps1",
+    "blob": "050c19108baf7d7bf31dc492236e87f40f423c3e",
+    "bytes": 3438,
+    "sha256": "39effb35d481e734d9ccb9bcff384d4452252e392bcf35490f38126a813aa440"
+  },
+  {
+    "path": "flutter/oto_scan/tool/Build-MLKitTrial.ps1",
+    "blob": "6b891dc0df1ae0ce40ffc413ac64c16f58159205",
+    "bytes": 3444,
+    "sha256": "3864a79345f3b1dfb5cf9f46310eac5fabae5bb82da617dd789cb31023dd22f2"
+  },
+  {
+    "path": "flutter/oto_scan/tool/Build-PlayRelease.ps1",
+    "blob": "d0f0d81dc43940f9c2b30034dbc51aaf53fc1211",
+    "bytes": 3857,
+    "sha256": "b8635596f2a72edf9a44bdf7c723920a32f1519d8e0125c2cb5b0d8d0137fa30"
+  },
+  {
+    "path": "flutter/oto_scan/tool/DetectorReplay.java",
+    "blob": "c8c26813f96a420f4a9c895b0d7ebc1a516de5e1",
+    "bytes": 548,
+    "sha256": "8b820e4c40a42956f6d6250ec808b5dc3ba51700f9c60e36cdf27ee0a390edfe"
+  },
+  {
+    "path": "flutter/oto_scan/tool/Run-EmulatorRelease.ps1",
+    "blob": "905d3c461a8e1ad961206026e4e33512980dacf0",
+    "bytes": 1557,
+    "sha256": "ba2bed8406ac79e0a7a69e5dd4fd004f97f867e5cf46f79cf4f42fd71266defb"
+  },
+  {
+    "path": "flutter/oto_scan/tool/Sign-TestApk.ps1",
+    "blob": "266d97c7fecabe6f8830653ad7917c582164bf77",
+    "bytes": 2883,
+    "sha256": "96987cafda56045dfa6c772e984c865f555110c164ab0e92be8084c95673e019"
+  },
+  {
+    "path": "flutter/oto_scan/tool/audit_mlkit_dependencies.py",
+    "blob": "a5f83e6ddb4f21ac26fc7b8c6aed0a57f1ce351e",
+    "bytes": 3870,
+    "sha256": "9c42782dd5971ca3697265130da4450e265ba15d58596aaa5a96769a00f34f47"
+  },
+  {
+    "path": "flutter/oto_scan/tool/check_compact_pdf.py",
+    "blob": "bfae0520a0ed0f6ffa86f706e8fea1c8ff0b67be",
+    "bytes": 6703,
+    "sha256": "f58df01e4b2f6da7df50532646779c4248020794a77b1bc44ecd398c3cd61ea7"
+  },
+  {
+    "path": "flutter/oto_scan/tool/check_document_quality.py",
+    "blob": "9955fcc07cf7f6e1c467988e8e40de380a2fb7a3",
+    "bytes": 6685,
+    "sha256": "50db7fc46f756fe6acb3dc65a9307ca1556d83e38aee8591aa926e0872df06c7"
+  },
+  {
+    "path": "flutter/oto_scan/tool/check_reader_pdf.py",
+    "blob": "ed550c06b8f8658693020cccf970b26557e1ed84",
+    "bytes": 4096,
+    "sha256": "fa3a519b9144e56aa7ab284bacd78e0e3fee3218ebdb8a98f84953aae0b54050"
+  },
+  {
+    "path": "flutter/oto_scan/tool/device_qa.py",
+    "blob": "5b4997a99a785381283a330777fb34150db3e1e4",
+    "bytes": 2407,
+    "sha256": "68173990af3e58bf56ba0e6d82a4da1e7a0cd03e2063b2ea87f1a09adc05e4af"
+  },
+  {
+    "path": "flutter/oto_scan/tool/make_mlkit_fixtures.py",
+    "blob": "1b608db35e8850d72f76d29bea46611897232008",
+    "bytes": 1751,
+    "sha256": "ed31cbc374cea8d9042b4e3c3db08e7b50fdd06b1d60d19c42d6925ed6e8d816"
+  },
+  {
+    "path": "flutter/oto_scan/tool/mlkit_emulator.py",
+    "blob": "86224e30f806060f29e29da81f5a25fda749dc24",
+    "bytes": 3997,
+    "sha256": "b9f69d0a79d80e96c947d10c7217bc8fa29fedbc309b40425674bab9304d8487"
+  },
+  {
+    "path": "flutter/oto_scan/tool/package_play_evidence.py",
+    "blob": "4546de30ed0c706282a3dd1e063961119e558d94",
+    "bytes": 12653,
+    "sha256": "e55d5989cb611b911cfa26e76147c13b8f31892489c2c1d439a9870633c11a83"
+  },
+  {
+    "path": "flutter/oto_scan/tool/prepare_mlkit_release_notes.py",
+    "blob": "fa576211f6e247196ffd4babe264e0240bd16f7e",
+    "bytes": 5042,
+    "sha256": "1555516ee86f8262b719ee6dc3c919e41ad7f78a7b995af3c63497638281a523"
+  },
+  {
+    "path": "flutter/oto_scan/tool/prepare_store_materials.py",
+    "blob": "49607b357a810fbbf0ea6a9bd90b0e919702585e",
+    "bytes": 6816,
+    "sha256": "09d17a92612149c8005ef2cbe8070b496ac6d85ea2c0084404d968f71d086f49"
+  },
+  {
+    "path": "flutter/oto_scan/tool/preview_device.py",
+    "blob": "25daa014eaf44a68139a20a2b739ba569601f8d7",
+    "bytes": 738,
+    "sha256": "9a40b4d6f8d1d382c8ad8d1c9857fb83a9b1a7f3b2e335c0e166d689ca01e748"
+  },
+  {
+    "path": "flutter/oto_scan/tool/record_camera_handoff.py",
+    "blob": "6348a83ee63040e0949520a29ea53a0d1bcb8212",
+    "bytes": 1674,
+    "sha256": "f12ca4b21b80472ca0e9bef15cba73eee894bf5df7ef761f046d133a217817d9"
+  },
+  {
+    "path": "flutter/oto_scan/tool/record_gallery_handoff.py",
+    "blob": "d6b92f74244381f675c44f7b1f57021f7a4656b8",
+    "bytes": 4769,
+    "sha256": "4681aaedcfe0644c03c133d92ebcdc055ed5e4cac9e5c7e6a962b5da85ebbe84"
+  },
+  {
+    "path": "flutter/oto_scan/tool/record_handoff.py",
+    "blob": "1302e1976a1863fe463f47a4e276ce3c4a1136bc",
+    "bytes": 2050,
+    "sha256": "24e06c6ac387b0e65e12befbf0a69241b7c35aec9629714eef21b2f703df5820"
+  },
+  {
+    "path": "flutter/oto_scan/tool/record_reader_handoff.py",
+    "blob": "088d6d221bbd67a6c867d038c21509727157f026",
+    "bytes": 4402,
+    "sha256": "ff7ecb3e9c1771b5ee485614a641a2b61d9dede575ba6e722e544446075406a4"
+  },
+  {
+    "path": "flutter/oto_scan/tool/record_save_handoff.py",
+    "blob": "c9aaab0d73c3dd774a6c270ee4d7ffbe82e1eaff",
+    "bytes": 3706,
+    "sha256": "1544089133cc87d5409cb0ca6e6e75343e5f65043cd8752e4c67c6fefb29d94e"
+  },
+  {
+    "path": "flutter/oto_scan/tool/trace_detector.py",
+    "blob": "10e283a82b7d85a0c2e556218ae85ae46cb36813",
+    "bytes": 711,
+    "sha256": "9c41f8c95a68b3a67f80d972f78975ffea3a7e690850f65f507bf522a71cf183"
+  },
+  {
+    "path": "flutter/oto_scan/tool/verify_apk.py",
+    "blob": "29d9ac562e8aba693b74f8da24c7f25fe50ec015",
+    "bytes": 4399,
+    "sha256": "426787f4b3be16dc1be8319c44d49a527e187d232e31dab9d6779640514c6f45"
+  },
+  {
+    "path": "flutter/oto_scan/tool/verify_camera.py",
+    "blob": "c371bcac50d7409d39396d50eb96b9c018e468b2",
+    "bytes": 2026,
+    "sha256": "e6c8a269d2946c5a5c9de7631d13eea9e2d276c774d4a9dd63d6ac603573863e"
+  },
+  {
+    "path": "flutter/oto_scan/tool/verify_mlkit_trial.py",
+    "blob": "290321eb4943119e82a63a9fe343e2d8be0333a7",
+    "bytes": 4055,
+    "sha256": "090b0bf02e976f152b6c2455e47a194eb4960c8e24e7b5165bbdbc75a3424b40"
+  },
+  {
+    "path": "flutter/oto_scan/tool/verify_play_release.py",
+    "blob": "aa0f8a2c888f2ba9d4e83819743692dcee605b36",
+    "bytes": 7851,
+    "sha256": "47198135d9a20c9f75a8112f99bee41edc7b244fa42897d7e515b7f32747ffcc"
+  },
+  {
+    "path": "global.json",
+    "blob": "8aaa898ea56f6c8285cec334808efced58d7a74c",
+    "bytes": 105,
+    "sha256": "c39786ab1a147662bbe4db015f900165178875ec4a872ddae53bc0c90771ac34"
+  },
+  {
+    "path": "pipelines/Invoke-PRValidation.ps1",
+    "blob": "404bfba2e2d5151441ec0f9a04ec5a0a71920d7d",
+    "bytes": 14360,
+    "sha256": "d6df525283ae1932241d1dc57f0c73c234aa7979e4f9b685a18a51f64204071e"
+  },
+  {
+    "path": "pipelines/Invoke-Phase1Validation.ps1",
+    "blob": "8a539b728eafd4db85c7a4c8ee10df1c73d30c7a",
+    "bytes": 6793,
+    "sha256": "883a83b6014469e364d956444a8b00dcf3d853e25eb2c50a5dec5f045cc84388"
+  },
+  {
+    "path": "pipelines/Test-PRValidationBlocking.ps1",
+    "blob": "ce7e7e2f6c3df6f38b84d737573b263f6e3f084b",
+    "bytes": 3525,
+    "sha256": "54752289b6a2a52d52ea977ee5ec0253c24b86c619a7a9e382ea5fe46e5e14f3"
+  },
+  {
+    "path": "pipelines/Test-Phase1Validation.ps1",
+    "blob": "4c9bc4198ed8dca3cde1cb456dc6cd27d64b0ca2",
+    "bytes": 3847,
+    "sha256": "600fe2303fa59bf2e961dcc91c98ca753505d5d362697c6eafdfae35be3b54d6"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Contracts/Identifiers/CorrelationId.cs",
+    "blob": "25ada0eafaeea2f649ab97ebd075893ab145ff83",
+    "bytes": 1007,
+    "sha256": "9055a842410a2d7d522d6a2e501fad05e0a0ddb66fc4621c80418433278a7e0f"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Contracts/Identifiers/FeatureId.cs",
+    "blob": "46c5a8d02fe0c6a7ba9ebd1f11178a8184a3b55c",
+    "bytes": 2325,
+    "sha256": "b6bf7103b6158b1d76774fb4459824008bcaf98d863331b8ca5e497a94929c0c"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Contracts/Pertamina.Oto.Contracts.csproj",
+    "blob": "fca465e9f4443a1d70fa79be16bc1a9e05dfe2ca",
+    "bytes": 293,
+    "sha256": "643beaeb6e3ac863671d50d265fb3159b2af2257b26b21df0c34eee26458edb7"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Contracts/Versioning/ContractVersion.cs",
+    "blob": "38c59d1414164cc6bc57c1706a060607cedf600b",
+    "bytes": 1775,
+    "sha256": "5a4c434c919fc4990ac45781358e3940495c6fe6d327d40bc7f4c2b32fe4bb5f"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Contracts/packages.lock.json",
+    "blob": "6afd6786b95a8c85febce85cf6219643ee860872",
+    "bytes": 61,
+    "sha256": "03eeadc5ef377c17f787ab65f41fb4c8a9c936bb7f7f4171111fdeec8a81cb46"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Observability/Pertamina.Oto.Observability.csproj",
+    "blob": "34940f043b82081d5979c501a379d694c41167b0",
+    "bytes": 167,
+    "sha256": "246470479e17d887ac15a9f7320807f4e4a7de8dff6ee805fc7eba6d4a7989bf"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Observability/SafeDiagnostic.cs",
+    "blob": "04c68a2524bea4282ec1f2e6e36cd38ae4794caf",
+    "bytes": 1515,
+    "sha256": "64fb592b8ef83131d39457146f5d9205674facd14f08d0150d2a0ab933cdde9e"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Observability/packages.lock.json",
+    "blob": "89f285067fc2611f417e1eea127768a86a99abfc",
+    "bytes": 135,
+    "sha256": "d0ca39432025046302658c7b187dd6c7e75bf8c14ecdc1ab2c8e4c81819d5ac9"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Processing.Abstractions/LocalJobs.cs",
+    "blob": "b7e0cceb4e0057292f7b8eaa8dfbc31a7042fca8",
+    "bytes": 3571,
+    "sha256": "e574ebfad278d4c27fe4777301f9d6910b956873fd93c6262163e4d8bd6fe390"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Processing.Abstractions/Pertamina.Oto.Processing.Abstractions.csproj",
+    "blob": "2cdadb3c2594519cd991e126e727c10a0e81385a",
+    "bytes": 444,
+    "sha256": "be673b508a5ce421e809c902109fc0650b524ed73d27d71ede2d3cceb14991c1"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Processing.Abstractions/packages.lock.json",
+    "blob": "89f285067fc2611f417e1eea127768a86a99abfc",
+    "bytes": 135,
+    "sha256": "d0ca39432025046302658c7b187dd6c7e75bf8c14ecdc1ab2c8e4c81819d5ac9"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Security/AuthorizationBoundary.cs",
+    "blob": "d286ed1985b7e36ecb6f809c2a5deb2766174222",
+    "bytes": 1972,
+    "sha256": "523d4de5b4d8a90e200ed78106f44c9d29ddfe4ac6a658f9bd8a020eedfbe882"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Security/Pertamina.Oto.Security.csproj",
+    "blob": "34940f043b82081d5979c501a379d694c41167b0",
+    "bytes": 167,
+    "sha256": "246470479e17d887ac15a9f7320807f4e4a7de8dff6ee805fc7eba6d4a7989bf"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Security/packages.lock.json",
+    "blob": "89f285067fc2611f417e1eea127768a86a99abfc",
+    "bytes": 135,
+    "sha256": "d0ca39432025046302658c7b187dd6c7e75bf8c14ecdc1ab2c8e4c81819d5ac9"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/LocalMetadata.cs",
+    "blob": "000b2398efc3a071cef0a80af6a25299991ddc96",
+    "bytes": 2002,
+    "sha256": "043197116c6b7b5e17ba86731ceef85f299ad2cd76c9800be40b3c1fa8c5a778"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/LocalPublication.cs",
+    "blob": "1fb3316749cf6f3ff96ffdeb8ba8216966ab2f45",
+    "bytes": 3514,
+    "sha256": "6c2269e06b21209f7609ed31e8d9d316a12b16a480b2901de12a30de6413c7d5"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/LocalReferences.cs",
+    "blob": "7c38fe7eed445f59ca992dac6f992bc3b6f76d77",
+    "bytes": 1444,
+    "sha256": "04fd0669fb5a0873758a08a809fb7804360d79fe4c608597dc2e377cd6e86d7b"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/Pertamina.Oto.Storage.Abstractions.csproj",
+    "blob": "34940f043b82081d5979c501a379d694c41167b0",
+    "bytes": 167,
+    "sha256": "246470479e17d887ac15a9f7320807f4e4a7de8dff6ee805fc7eba6d4a7989bf"
+  },
+  {
+    "path": "src/BuildingBlocks/Pertamina.Oto.Storage.Abstractions/packages.lock.json",
+    "blob": "b1cd7c9b0e253ca26d168758061d83aa5a27b0ef",
+    "bytes": 136,
+    "sha256": "ff3236407d92dc07270c1d3f1ab465cbd13dad8205d5ca5fdccfcb991cf5ef91"
+  },
+  {
+    "path": "src/Hosts/Pertamina.Oto.Desktop/MergeShell.cs",
+    "blob": "69b12463580a913502aec5df4c3841da8f3d9e35",
+    "bytes": 2863,
+    "sha256": "a121dea24dcc410d60b80c1a201016169b4c686e090f7e28e16fbc5ff50211eb"
+  },
+  {
+    "path": "src/Hosts/Pertamina.Oto.Desktop/Pertamina.Oto.Desktop.csproj",
+    "blob": "03551c5ab8fa8f4498e5f44099175b6fbe6ab815",
+    "bytes": 194,
+    "sha256": "faeffa2e76bc274a25a46c4171030d6f130a63dcccdea42bde1d71cd95df9718"
+  },
+  {
+    "path": "src/Hosts/Pertamina.Oto.Desktop/ShellSemantics.cs",
+    "blob": "76e30d693ce82dcab552b6334e149c0e78124be5",
+    "bytes": 1613,
+    "sha256": "53ddf1e6f20260aa2ffd797c0565dc20e9723c97350cca6a54768af67aba3e43"
+  },
+  {
+    "path": "src/Hosts/Pertamina.Oto.Desktop/packages.lock.json",
+    "blob": "3bc45eb61b28ca711921ee28d846c18f6bcfc9e0",
+    "bytes": 303,
+    "sha256": "5bf876f5b9f2d98dfdb5aa362ab6f720abc62606a2bd4f0f3b54075f7615bfd3"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/MergePorts.cs",
+    "blob": "2d99ddc5629062ba752e987367b315faa26230a6",
+    "bytes": 1793,
+    "sha256": "d81bdb78d40816f7d5dedd8446ca6e2328ab7d4dd1941487428c2faf9fd21326"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/MergeService.cs",
+    "blob": "f6512d8167163fd238e920a70b7b1aaeee48c677",
+    "bytes": 3638,
+    "sha256": "76d1986e1a81883ba196ee857a96f21fbad63621d1bdda1735594bd76308fccb"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/Pertamina.Oto.Modules.Pdf.Application.csproj",
+    "blob": "02b6be70992957aff044acddf972a4460434e453",
+    "bytes": 173,
+    "sha256": "f118817bf1a2bfb35cb57f80994bd295dea990d34e508306c44308ff978343dd"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Application/packages.lock.json",
+    "blob": "455344a45e306afd280afb8c1a322dc57b73e270",
+    "bytes": 480,
+    "sha256": "e662ad15b05234eed6162ad338bd7c669f9b94dd559007a8e22611adcce8de69"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/MergeContracts.cs",
+    "blob": "54bfd7f231913759216467f08f417cb16bd0379d",
+    "bytes": 2968,
+    "sha256": "69024d6f4316f9e85f83fd9438ea4a45b6c406bfad7b83dc0825fde78542d314"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/Pertamina.Oto.Modules.Pdf.Contracts.csproj",
+    "blob": "41f7fe9228f6dfb009cf135ef5027fa5c2a4e84b",
+    "bytes": 188,
+    "sha256": "069a1406063e3d0e976a3633bf93a8c0dbba503d4c02f7b52797e1abc5bd5b41"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Contracts/packages.lock.json",
+    "blob": "89f285067fc2611f417e1eea127768a86a99abfc",
+    "bytes": 135,
+    "sha256": "d0ca39432025046302658c7b187dd6c7e75bf8c14ecdc1ab2c8e4c81819d5ac9"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/MergePlan.cs",
+    "blob": "78b63e6db193978dd1ee89fc25e071c890e84fca",
+    "bytes": 1756,
+    "sha256": "73f288029fc0209dfdf2b3ab8f35fd5285cf4bac8e4fdf7b30580058a8986267"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/Pertamina.Oto.Modules.Pdf.Domain.csproj",
+    "blob": "a9bd85315d2a01ba44c75ec1e5dd6de0e3810f69",
+    "bytes": 179,
+    "sha256": "4800c43930ea853f886c13cedb2ef7186436e454075d74e304e6c2010eaa2e3d"
+  },
+  {
+    "path": "src/Modules/Pdf/Pertamina.Oto.Modules.Pdf.Domain/packages.lock.json",
+    "blob": "3bc45eb61b28ca711921ee28d846c18f6bcfc9e0",
+    "bytes": 303,
+    "sha256": "5bf876f5b9f2d98dfdb5aa362ab6f720abc62606a2bd4f0f3b54075f7615bfd3"
+  },
+  {
+    "path": "tests/Architecture/Pertamina.Oto.Architecture.Tests/ContractsProjectDependencyRule.cs",
+    "blob": "ab49ceab727356d29a1a04d76676d99200113d4a",
+    "bytes": 1420,
+    "sha256": "57b3ae356cfc4f0b7db024153dbd1497ea97675f53b5995cb1aaa6c6ec3b6bdc"
+  },
+  {
+    "path": "tests/Architecture/Pertamina.Oto.Architecture.Tests/ContractsProjectDependencyTests.cs",
+    "blob": "4a4f367402e7099c0b1ad0a4a83bbb47b7e9d74b",
+    "bytes": 2027,
+    "sha256": "310e4feb56880b9b9a24337561cfd01edad88b36be9254d52552467a0a881d6c"
+  },
+  {
+    "path": "tests/Architecture/Pertamina.Oto.Architecture.Tests/Pertamina.Oto.Architecture.Tests.csproj",
+    "blob": "29d6329868ce504ea7d11b533daaa3eeffeabfe5",
+    "bytes": 195,
+    "sha256": "38397ca0de31f6ff878f7d99405c7a865327488c5dbb2dc52ba63a635875c5b0"
+  },
+  {
+    "path": "tests/Architecture/Pertamina.Oto.Architecture.Tests/PhaseOneGraphTests.cs",
+    "blob": "741f403a2a76c9a427699068bfbe6ba7b1db7ed9",
+    "bytes": 3615,
+    "sha256": "02a35348922ce7098ac4d2c692df33944f2969fde4c16daa9d2857c33e4e5b7b"
+  },
+  {
+    "path": "tests/Architecture/Pertamina.Oto.Architecture.Tests/packages.lock.json",
+    "blob": "1e1a8d8cac050570f0b8ec25e362114094f93285",
+    "bytes": 4218,
+    "sha256": "ef7e85a4f737f26163f6712257f20f65abcdea465bb6c23ff92d09f47faf975c"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/MergeContractTests.cs",
+    "blob": "fae96b47ff6b2feee7b87b92f11df3c15d8cac28",
+    "bytes": 2136,
+    "sha256": "56f1b5a3317b7ea0096e358d7eb9b7cf81d6f1849f085a7df5c8a68d4b8ace83"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/Pertamina.Oto.Modules.Pdf.ContractTests.csproj",
+    "blob": "c66c5fffbb85d7230e092aa1c1d16182e078a6da",
+    "bytes": 264,
+    "sha256": "2812f888a9e350de00d188bc9cf51bbd60ee59c9a6bff95b558bc17fb3be73f0"
+  },
+  {
+    "path": "tests/Contract/Pdf/Pertamina.Oto.Modules.Pdf.ContractTests/packages.lock.json",
+    "blob": "131f638896368225b8af144718d810cec84ba57e",
+    "bytes": 4456,
+    "sha256": "7329b86108e814e2a421342826c56c2376d3d7652a074fb5c53e1f78d545b206"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/ContractVersionTests.cs",
+    "blob": "b724fff927c0053f8855658a62b409b470a2c6c0",
+    "bytes": 1073,
+    "sha256": "29164297f2f5a7188d80c77c6677c4f40cd1a0f4529fde00011c24fe4ad4a856"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/FeatureIdTests.cs",
+    "blob": "26b86121ac5c1d104bec4998bbcb18d867bbfd38",
+    "bytes": 910,
+    "sha256": "37d3ed5c3adbea77eb94533de660d72fbe1f7366a9aae364d598995969d21b64"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/MergeFailureBoundaryTests.cs",
+    "blob": "d021bfaa4e11ec0c405c55fb0394f5632274763b",
+    "bytes": 4566,
+    "sha256": "f998c6cb7f38f564f016cb90b601a89ee4661ec20992d070a0fc6972f183cee8"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/OfflineBoundaryTests.cs",
+    "blob": "c9e1c182e51d439403cfaa7b2f219892f5c01c87",
+    "bytes": 3531,
+    "sha256": "3c35ee648d9918c76337560a80606dcfcd5d6c23eda4c7eef69f9c533ff82b26"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/Pertamina.Oto.Contracts.Tests.csproj",
+    "blob": "4abf9068be9e2102582fbc5541c10baf90c8af06",
+    "bytes": 757,
+    "sha256": "261b662debe66339a05470608d97d586446ee0eb98a7f488690c568d52dae620"
+  },
+  {
+    "path": "tests/Contract/Pertamina.Oto.Contracts.Tests/packages.lock.json",
+    "blob": "8779503fa33c1911f8080beb4db1685b02eeb9d4",
+    "bytes": 5149,
+    "sha256": "76ea78d9f4ea5a3d17549577512fba3d971edc1a541862da87c70f1a61a61e61"
+  },
+  {
+    "path": "tests/Security/Pertamina.Oto.Security.Tests/DiagnosticBoundaryTests.cs",
+    "blob": "cc56845723ca9aaec0ca820f2699b0bf7739ec2c",
+    "bytes": 2741,
+    "sha256": "7690a50fbfd3bfdbcf5eaddf5b6d75718f7703374f383e180884c3a783cfa004"
+  },
+  {
+    "path": "tests/Security/Pertamina.Oto.Security.Tests/Pertamina.Oto.Security.Tests.csproj",
+    "blob": "e873d20cd1d1c52437d2a9cad11a70c4da13c825",
+    "bytes": 404,
+    "sha256": "1305b710da23ed0ac009d64ecb6dee7ec8ca92b013045f0f4fd05779f88b6436"
+  },
+  {
+    "path": "tests/Security/Pertamina.Oto.Security.Tests/packages.lock.json",
+    "blob": "4e78ae520e9ffe668f1a9e0ffbe6f0a4205a9597",
+    "bytes": 4603,
+    "sha256": "0604a86a4508b901d2c2fff588ea9e8b823ac2ce7779b9360504a9fe72001b6c"
+  },
+  {
+    "path": "tests/UI/Pertamina.Oto.Desktop.Tests/Pertamina.Oto.Desktop.Tests.csproj",
+    "blob": "977e6af2d0d36a49a3eed5cc98ea8da0b25e917a",
+    "bytes": 227,
+    "sha256": "63c448847c1748f54cc264dcd1c532f0f84b87f752559efdbba522a175d69c27"
+  },
+  {
+    "path": "tests/UI/Pertamina.Oto.Desktop.Tests/ShellTests.cs",
+    "blob": "770024e33779098247547b7bccb5ba97d1d17340",
+    "bytes": 5518,
+    "sha256": "6789105ebe467299deb1b00adcb88741566751c0d0a78e27a68e076a37d0c43b"
+  },
+  {
+    "path": "tests/UI/Pertamina.Oto.Desktop.Tests/packages.lock.json",
+    "blob": "1ddbfb53215ca70e6320d839f4a1541a5dc137a9",
+    "bytes": 4622,
+    "sha256": "ee725a150a991b1cb0d247edaa3f604523780d6f35117487e043045b0b40d145"
+  },
+  {
+    "path": "tests/Unit/BuildingBlocks/FoundationBoundaryTests.cs",
+    "blob": "a75fe3da89a21fed342be77025a2d1033481694e",
+    "bytes": 4287,
+    "sha256": "a222f7e8fa1686feb3f8a2e4622c52f7b48383cdd3c2614158f9b70807da5d2f"
+  },
+  {
+    "path": "tests/Unit/BuildingBlocks/Pertamina.Oto.BuildingBlocks.UnitTests.csproj",
+    "blob": "fba4be9fc5b365abd5cbb38c4228e50bded95ddd",
+    "bytes": 497,
+    "sha256": "8d7d4d131277f76064f50b20afced3ae4c9f5f48be84848e17c661927e804c82"
+  },
+  {
+    "path": "tests/Unit/BuildingBlocks/packages.lock.json",
+    "blob": "4e78ae520e9ffe668f1a9e0ffbe6f0a4205a9597",
+    "bytes": 4603,
+    "sha256": "0604a86a4508b901d2c2fff588ea9e8b823ac2ce7779b9360504a9fe72001b6c"
+  },
+  {
+    "path": "tests/Unit/OfflineFoundation/OfflineContractTests.cs",
+    "blob": "cf0a45ea7fcebdd83208d0b29879d3c32c1f6adc",
+    "bytes": 11005,
+    "sha256": "53c334cc9be7cf90490506f5b59e649cd701480296290742ae2b159fbd88da48"
+  },
+  {
+    "path": "tests/Unit/OfflineFoundation/Pertamina.Oto.OfflineFoundation.Tests.csproj",
+    "blob": "48f26a0bceda6f22da65d42329c2fea54897fb48",
+    "bytes": 423,
+    "sha256": "d5e45f42680ebe2427cfed6bc877e24eae864f1b5d8d4343da1ba2ee57458451"
+  },
+  {
+    "path": "tests/Unit/OfflineFoundation/packages.lock.json",
+    "blob": "ea27406202889757ea616322e452bca06546bc89",
+    "bytes": 4626,
+    "sha256": "0d27f05a4e7177ae3a65421ba9b51e07be1aa0e584457b93b29c8eef45d357a7"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/MergeTests.cs",
+    "blob": "68f177ad64526e12334c24417766223febc79824",
+    "bytes": 12701,
+    "sha256": "2c26de5090c301cbb1dd0bbb0837fe3becab145d8cd903a4e5429a63181afd45"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/Pertamina.Oto.Modules.Pdf.UnitTests.csproj",
+    "blob": "cadf31368006aa624c1eec7928161537e18c0db3",
+    "bytes": 268,
+    "sha256": "5813f3beaa24cfb9daf2b2b9892211db088c022fb578b7a90da523d79d41f380"
+  },
+  {
+    "path": "tests/Unit/Pdf/Pertamina.Oto.Modules.Pdf.UnitTests/packages.lock.json",
+    "blob": "8752120de7bc51a408744575ac5778a265a9ffb7",
+    "bytes": 4812,
+    "sha256": "842bb76c0f8ba5c7f5e53ffaa24378a9d056211c1fabd94adfe18937169142eb"
+  },
+  {
+    "path": "tests/Unit/Pertamina.Oto.Foundation.UnitTests/EvidenceFingerprintSmokeTests.cs",
+    "blob": "ea18e4ed47d4728be1280d8d482c580d048fc249",
+    "bytes": 1292,
+    "sha256": "e7ac393be0394e2d9e680dec8f395de1355dc9c533e5eb236580e5a9bd7ae53b"
+  },
+  {
+    "path": "tests/Unit/Pertamina.Oto.Foundation.UnitTests/Pertamina.Oto.Foundation.UnitTests.csproj",
+    "blob": "48cc8e67b0f91873229e7f16083bb70d6da0e632",
+    "bytes": 295,
+    "sha256": "e10202da3ce47602ec5162b69ade6347b1518d9f2d57fbbc4f651100940f233f"
+  },
+  {
+    "path": "tests/Unit/Pertamina.Oto.Foundation.UnitTests/QualityGateCanaryTests.cs",
+    "blob": "bd8f9d6e0c7fd8c28fbd425d3f8b114fdec8eda5",
+    "bytes": 724,
+    "sha256": "bceccd5d90f7beb2fd4153d22f1853d78b18e0306f65a45f48beececd4acac09"
+  },
+  {
+    "path": "tests/Unit/Pertamina.Oto.Foundation.UnitTests/packages.lock.json",
+    "blob": "1e1a8d8cac050570f0b8ec25e362114094f93285",
+    "bytes": 4218,
+    "sha256": "ef7e85a4f737f26163f6712257f20f65abcdea465bb6c23ff92d09f47faf975c"
+  }
+]

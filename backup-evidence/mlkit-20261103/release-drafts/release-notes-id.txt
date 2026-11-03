@@ -1,0 +1,1 @@
+Pemindai Google ML Kit dengan Auto capture, crop otomatis, koreksi perspektif, dan filter penjernihan. Galeri dokumen, pembaca PDF vertikal, kompresi, serta berbagi beberapa PDF tetap tersedia. Penjelasan privasi diperbarui untuk layanan Google.

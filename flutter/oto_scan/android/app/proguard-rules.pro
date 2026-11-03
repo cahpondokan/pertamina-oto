@@ -22,3 +22,7 @@
 -keepclassmembers class id.ayani.oto.oto_scan.DetectionTarget {
     <init>(double[],double[]);
 }
+-keepclassmembers class id.ayani.oto.oto_scan.GooglePageImport {
+    <init>(android.content.Context,id.ayani.oto.oto_scan.ScanStore);
+    java.util.List importPages(java.util.List,int);
+}

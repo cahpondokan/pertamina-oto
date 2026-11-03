@@ -1,0 +1,24 @@
+GOOGLE ML KIT — OTO SCAN UJI ONLY
+
+Google ML Kit Document Scanner 16.0.0
+com.google.android.gms:play-services-mlkit-document-scanner
+Provider: Google LLC
+
+The Google ML Kit SDK and delivered software are provided under the ML Kit
+Terms of Service, incorporating the Google APIs Terms of Service:
+https://developers.google.com/ml-kit/terms
+https://developers.google.com/terms
+
+The SDK software is not licensed under the Apache license attached to Google's
+documentation code samples. OTO does not claim ownership of Google's scanner
+UI, model or library. Google Play services delivers the scanner components.
+
+Processing of document input/output occurs on the device. Google may receive
+technical performance/usage metrics and download/update scanner components.
+https://developers.google.com/ml-kit/android-data-disclosure
+https://policies.google.com/privacy
+
+Open-source AndroidX, Kotlin, and Google DataTransport/Firebase support
+components retain their upstream licenses. Apache-2.0 terms are included in
+THIRD_PARTY_NOTICES.txt. No Firebase analytics/account product is configured
+by OTO; the SDK's technical metrics are still disclosed above.

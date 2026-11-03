@@ -1,0 +1,186 @@
+{
+  "checks": {
+    "package": true,
+    "version": true,
+    "original_app_name": true,
+    "api36_android10_min": true,
+    "expected_platform_permissions": true,
+    "only_private_receiver_permission_added": true,
+    "not_debuggable": true,
+    "backup_disabled": true,
+    "no_cleartext": true,
+    "share_provider_private": true,
+    "qa_disabled": true,
+    "google_enabled_trial_identity_off": true,
+    "bundle_16kb_packaging": true,
+    "three_abis": true,
+    "flutter_aot_and_engine_present": true,
+    "matching_aot_architecture": true,
+    "same_native_binaries_apk_aab": true,
+    "same_dex_apk_aab": true,
+    "no_test_classes": true,
+    "google_scanner_and_notice": true,
+    "no_signing_secrets": true,
+    "brand_icon": true,
+    "licenses": true,
+    "elf_load_segments_16kb": true,
+    "apk_signature_valid": true,
+    "existing_upload_certificate_apk": true,
+    "not_historical_test_certificate": true,
+    "aab_signature_valid": true,
+    "existing_upload_certificate_aab": true,
+    "apk_zipalign_16kb": true
+  },
+  "passed": 30,
+  "total": 30,
+  "elf": {
+    "base/lib/arm64-v8a/libapp.so": [
+      {
+        "alignment": 65536,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 1900544,
+        "virtual": 1900544,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 5177344,
+        "virtual": 5177344,
+        "pass": true
+      }
+    ],
+    "base/lib/arm64-v8a/libflutter.so": [
+      {
+        "alignment": 65536,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 4594624,
+        "virtual": 4660160,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 10634880,
+        "virtual": 10765952,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 11048904,
+        "virtual": 11245512,
+        "pass": true
+      }
+    ],
+    "base/lib/armeabi-v7a/libapp.so": [
+      {
+        "alignment": 16384,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 16384,
+        "offset": 2228224,
+        "virtual": 2228224,
+        "pass": true
+      },
+      {
+        "alignment": 16384,
+        "offset": 5734400,
+        "virtual": 5734400,
+        "pass": true
+      }
+    ],
+    "base/lib/armeabi-v7a/libflutter.so": [
+      {
+        "alignment": 65536,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 2687616,
+        "virtual": 2753152,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 7619040,
+        "virtual": 7750112,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 7834336,
+        "virtual": 8030944,
+        "pass": true
+      }
+    ],
+    "base/lib/x86_64/libapp.so": [
+      {
+        "alignment": 65536,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 1900544,
+        "virtual": 1900544,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 5242880,
+        "virtual": 5242880,
+        "pass": true
+      }
+    ],
+    "base/lib/x86_64/libflutter.so": [
+      {
+        "alignment": 65536,
+        "offset": 0,
+        "virtual": 0,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 4716096,
+        "virtual": 4781632,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 11711600,
+        "virtual": 11842672,
+        "pass": true
+      },
+      {
+        "alignment": 65536,
+        "offset": 12120832,
+        "virtual": 12317440,
+        "pass": true
+      }
+    ]
+  },
+  "artifacts": {
+    "OTO-Scan-1.0.1.apk": {
+      "bytes": 49044767,
+      "sha256": "cc8283ab38ce4128efd9a1ec1ca3d0991372bd206ce584ec37552668ddc092c8"
+    },
+    "OTO-Scan-1.0.1.aab": {
+      "bytes": 23014957,
+      "sha256": "4a168183c222875e35ae6d9af2557705e8b069b450bd0522a23caee9ad26a21e"
+    }
+  }
+}

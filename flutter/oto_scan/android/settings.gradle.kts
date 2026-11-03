@@ -23,5 +23,7 @@ plugins {
 }
 
 include(":app")
-// Isolated development uses only already installed, pinned build components.
-gradle.startParameter.isOffline = true
+// Network resolution remains explicit for the owner-authorized ML Kit builds.
+gradle.startParameter.isOffline = !((System.getenv("OTO_MLKIT_TRIAL") == "true" ||
+    System.getenv("OTO_GOOGLE_SCANNER") == "true") &&
+    System.getenv("OTO_DEPENDENCY_INTAKE") == "true")

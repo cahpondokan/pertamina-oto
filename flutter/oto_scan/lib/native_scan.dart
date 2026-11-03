@@ -10,6 +10,15 @@ class NativeScan {
       ScanPage.fromMap((await call<Map>('capture', selection))!);
   Future<ScanPage> synthetic() async =>
       ScanPage.fromMap((await call<Map>('synthetic'))!);
+  Future<List<ScanPage>?> googleScan(int limit) async {
+    final result = await call<List>('googleScan', {'limit': limit});
+    if (result == null) return null;
+    if (result.isEmpty || result.length > limit) {
+      throw const FormatException('Invalid scanner page count');
+    }
+    return [for (final page in result) ScanPage.fromMap(page as Map)];
+  }
+
   Future<ScanPage> edit(ScanPage page, Map<String, dynamic> changes) async =>
       ScanPage.fromMap(
         (await call<Map>('edit', {...page.toMap(), ...changes}))!,

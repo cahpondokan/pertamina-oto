@@ -1,0 +1,22 @@
+OTO Scan membantu Anda memindai, menyimpan dan membagikan dokumen PDF dari HP.
+
+PINDAI DAN RAPIKAN
+Gunakan Google ML Kit Document Scanner untuk pengambilan otomatis saat dokumen terdeteksi dengan baik, crop tepi, koreksi perspektif dan filter penjernihan. Anda tetap dapat mengambil gambar secara manual dan menyesuaikan hasilnya sebelum digunakan. Kejelasan tulisan bergantung pada cahaya, fokus dan kualitas gambar sumber.
+
+DOKUMEN SAYA
+Lihat hasil scan sebagai galeri thumbnail, cari nama dokumen dan tandai beberapa PDF untuk dibagikan sekaligus.
+
+BACA DAN SIMPAN PDF
+Baca PDF beberapa halaman dengan menggulir ke bawah dan perbesar bagian yang diperlukan. Pembuatan PDF, kompresi dan pembacaan tetap dilakukan oleh OTO di perangkat. Simpan salinan di lokasi pilihan Anda atau bagikan melalui aplikasi yang tersedia di HP.
+
+PRIVASI
+Tidak perlu akun OTO dan tidak ada iklan. Isi gambar dan hasil pemrosesan ML Kit diproses di perangkat, bukan dikirim ke server Google menurut dokumentasi ML Kit. Google menerima metrik teknis SDK, termasuk informasi perangkat/aplikasi, pengenal, penggunaan, konfigurasi dan kinerja. Baca kebijakan privasi untuk rinciannya.
+
+PERANGKAT
+Memerlukan Android 10 atau lebih baru dan Google Play services yang mendukung pemindai. Google menetapkan sedikitnya 1,7 GB RAM untuk Document Scanner. Internet diperlukan saat komponen Google diunduh atau diperbarui. Dokumen yang sudah tersimpan dapat dibaca tanpa membuka kamera.
+
+Dokumen disimpan di ruang aplikasi. Ekspor salinan penting sebelum menghapus data atau mencopot aplikasi.
+
+Dukungan: aftachmadyanigps@gmail.com
+Kebijakan privasi: https://oto.ayani.id/oto-scan/kebijakan-privasi
+

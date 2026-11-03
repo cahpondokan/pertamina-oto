@@ -15,6 +15,7 @@ import 'document_gallery.dart';
 import 'document_actions.dart';
 import 'pdf_reader.dart';
 import 'privacy_screen.dart';
+import 'app_config.dart';
 export 'pdf_reader.dart' show PdfReader;
 
 const red = Color(0xFFF5102E),
@@ -44,11 +45,19 @@ Future<void> proof(String state, {String? id}) async {
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
-    yield LicenseEntryWithLineBreaks(
-      ['AndroidX', 'Kotlin', 'kotlinx.coroutines'],
-      await rootBundle.loadString('assets/THIRD_PARTY_NOTICES.txt'),
-    );
+    yield LicenseEntryWithLineBreaks([
+      'AndroidX',
+      'Kotlin',
+      'kotlinx.coroutines',
+    ], await rootBundle.loadString('assets/THIRD_PARTY_NOTICES.txt'));
   });
+  if (googleScannerEnabled) {
+    LicenseRegistry.addLicense(() async* {
+      yield LicenseEntryWithLineBreaks([
+        'Google ML Kit',
+      ], await rootBundle.loadString('assets/MLKIT_NOTICE.txt'));
+    });
+  }
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -61,11 +70,12 @@ void main() {
 }
 
 class OtoScanApp extends StatelessWidget {
-  const OtoScanApp({super.key});
+  final bool useGoogleScanner;
+  const OtoScanApp({super.key, this.useGoogleScanner = googleScannerEnabled});
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'OTO Scan',
+    title: applicationName,
     builder: (_, child) => RepaintBoundary(key: proofKey, child: child!),
     theme: ThemeData(
       useMaterial3: true,
@@ -95,14 +105,15 @@ class OtoScanApp extends StatelessWidget {
         style: IconButton.styleFrom(minimumSize: const Size(48, 48)),
       ),
     ),
-    home: const ScannerHome(),
+    home: ScannerHome(useGoogleScanner: useGoogleScanner),
   );
 }
 
 enum Stage { scan, pages, draft, library }
 
 class ScannerHome extends StatefulWidget {
-  const ScannerHome({super.key});
+  final bool useGoogleScanner;
+  const ScannerHome({super.key, this.useGoogleScanner = googleScannerEnabled});
   @override
   State<ScannerHome> createState() => _ScannerHomeState();
 }
@@ -167,6 +178,7 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (widget.useGoogleScanner) return;
     if (state == AppLifecycleState.resumed &&
         !checkingLaunch &&
         !externalMode &&
@@ -353,6 +365,10 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
       return;
     }
     if (!mounted || busy || stage != Stage.scan) return;
+    if (widget.useGoogleScanner) {
+      await _googleCapture();
+      return;
+    }
     final epoch = ++cameraEpoch;
     try {
       final allowed = await native.call<bool>('permission') ?? false;
@@ -521,6 +537,36 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
     }
   }
 
+  Future<void> _googleCapture() async {
+    if (!mounted || busy || recoveryFailed || externalMode) return;
+    final replace = retakeIndex;
+    final limit = replace == null ? 20 - pages.length : 1;
+    if (limit < 1) {
+      setState(() => error = 'Maksimal 20 halaman per dokumen.');
+      return;
+    }
+    await _guard('Menyiapkan pemindai dan hasil scan…', () async {
+      final scanned = await native.googleScan(limit);
+      if (!mounted) return;
+      if (scanned == null) {
+        retakeIndex = null;
+        if (pages.isNotEmpty) stage = Stage.pages;
+        return;
+      }
+      final next = [...pages];
+      if (replace != null) {
+        next[replace] = scanned.single;
+      } else {
+        next.addAll(scanned);
+      }
+      await native.checkpoint(next);
+      pages = next;
+      selected = replace ?? next.length - scanned.length;
+      retakeIndex = null;
+      stage = Stage.pages;
+    });
+  }
+
   Future<void> _edit() async {
     final edited = await Navigator.of(context).push<ScanPage>(
       MaterialPageRoute(
@@ -666,8 +712,8 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
     });
   }
 
-  void _scan() {
-    retakeIndex = null;
+  void _scan({int? replace}) {
+    retakeIndex = replace;
     setState(() => stage = Stage.scan);
     _startCamera();
   }
@@ -854,12 +900,12 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
                     children: [
                       Image.asset('assets/oto.png', width: 31, height: 31),
                       const SizedBox(width: 10),
-                      const Flexible(
+                      Flexible(
                         child: Text(
-                          'OTO Scan',
+                          applicationName,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -877,30 +923,56 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
                   }),
           actions:
               scanning
-                  ? [
-                    IconButton(
-                      tooltip: torch ? 'Matikan lampu' : 'Nyalakan lampu',
-                      onPressed:
-                          !camera || busy
-                              ? null
-                              : () async {
-                                await _guard('Mengatur lampu…', () async {
-                                  await native.call('torch', {
-                                    'enabled': !torch,
-                                  });
-                                  torch = !torch;
-                                });
-                              },
-                      icon: Icon(torch ? Icons.flash_on : Icons.flash_off),
-                    ),
-                  ]
+                  ? widget.useGoogleScanner
+                      ? [
+                        IconButton(
+                          tooltip: 'Privasi & tentang',
+                          onPressed:
+                              busy
+                                  ? null
+                                  : () => Navigator.of(context).push(
+                                    MaterialPageRoute<void>(
+                                      builder:
+                                          (_) => const PrivacyScreen(
+                                            googleScanner: true,
+                                          ),
+                                    ),
+                                  ),
+                          icon: const Icon(Icons.info_outline),
+                        ),
+                      ]
+                      : [
+                        IconButton(
+                          tooltip: torch ? 'Matikan lampu' : 'Nyalakan lampu',
+                          onPressed:
+                              !camera || busy
+                                  ? null
+                                  : () async {
+                                    await _guard('Mengatur lampu…', () async {
+                                      await native.call('torch', {
+                                        'enabled': !torch,
+                                      });
+                                      torch = !torch;
+                                    });
+                                  },
+                          icon: Icon(torch ? Icons.flash_on : Icons.flash_off),
+                        ),
+                      ]
                   : stage == Stage.library
                   ? [
                     IconButton(
                       tooltip: 'Privasi & tentang',
-                      onPressed: busy ? null : () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(builder: (_) => const PrivacyScreen()),
-                      ),
+                      onPressed:
+                          busy
+                              ? null
+                              : () => Navigator.of(context).push(
+                                MaterialPageRoute<void>(
+                                  builder:
+                                      (_) => PrivacyScreen(
+                                        googleScanner: widget.useGoogleScanner,
+                                      ),
+                                ),
+                              ),
                       icon: const Icon(Icons.info_outline),
                     ),
                     TextButton(
@@ -960,7 +1032,8 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
                     ),
                   Expanded(
                     child: switch (stage) {
-                      Stage.scan => _cameraBody(),
+                      Stage.scan =>
+                        widget.useGoogleScanner ? _googleBody() : _cameraBody(),
                       Stage.pages => _pagesBody(),
                       Stage.draft => _draftBody(),
                       Stage.library => _libraryBody(),
@@ -995,6 +1068,62 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
       ),
     );
   }
+
+  Widget _googleBody() => Center(
+    child: SingleChildScrollView(
+      padding: const EdgeInsets.all(28),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset('assets/oto.png', width: 96, height: 96),
+          const SizedBox(height: 24),
+          const Text(
+            'Scan dokumen lebih mudah',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            'Gunakan mode Otomatis di kamera. Tampilkan seluruh tepi dokumen dan tahan HP hingga foto diambil.',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white, fontSize: 16),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Potong, luruskan, dan jernihkan di pemindai Google. Ketuk Selesai untuk menyusun halaman dan menyimpan PDF di OTO.',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white70),
+          ),
+          const SizedBox(height: 24),
+          FilledButton.icon(
+            onPressed: busy ? null : _startCamera,
+            icon: const Icon(Icons.document_scanner_outlined),
+            label: Text(
+              retakeIndex == null ? 'Mulai scan' : 'Ambil ulang halaman',
+            ),
+          ),
+          if (pages.isNotEmpty)
+            TextButton(
+              onPressed: busy ? null : _showPages,
+              child: Text(
+                'Lihat ${pages.length} halaman',
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          const SizedBox(height: 16),
+          const Text(
+            'Pemakaian pertama memerlukan internet untuk menyiapkan pemindai Google.',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white70, fontSize: 12),
+          ),
+        ],
+      ),
+    ),
+  );
 
   Widget _cameraBody() => Column(
     children: [
@@ -1305,9 +1434,7 @@ class _ScannerHomeState extends State<ScannerHome> with WidgetsBindingObserver {
             _tool(Icons.add_circle_outline, 'Tambah', _scan),
             _tool(Icons.crop, 'Rapikan', _edit),
             _tool(Icons.camera_alt_outlined, 'Ambil ulang', () {
-              final index = selected;
-              _scan();
-              retakeIndex = index;
+              _scan(replace: selected);
             }),
             _tool(Icons.delete_outline, 'Hapus', _delete),
           ],

@@ -24,6 +24,12 @@ public final class ScanInstrumentation extends Instrumentation {
   }
   @Override public void onCreate(Bundle args){super.onCreate(args);options=args;start();}
   @Override public void onStart(){
+    if(options!=null&&options.getString("mode","").equals("mlkit-ui")){
+      new GoogleUiChecks(this).run();return;
+    }
+    if(options!=null&&options.getString("mode","").equals("mlkit-import")){
+      new GoogleImportChecks(this).run();return;
+    }
     if(options!=null&&options.getString("mode","").equals("release-ui")){
       new ReleaseEmulatorChecks(this).run();return;
     }

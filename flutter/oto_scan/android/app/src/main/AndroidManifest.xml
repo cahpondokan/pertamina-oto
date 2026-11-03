@@ -3,7 +3,7 @@
     <uses-feature android:name="android.hardware.camera.any" android:required="false"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
-    <application android:label="OTO Scan" android:name="${applicationName}"
+    <application android:label="${otoAppLabel}" android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher" android:allowBackup="false"
         android:fullBackupContent="false" android:dataExtractionRules="@xml/data_extraction_rules"
         android:usesCleartextTraffic="false">

@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "separate_package": true,
+    "trial_label": true,
+    "version": true,
+    "api_levels": true,
+    "not_debuggable": true,
+    "backup_disabled": true,
+    "cleartext_disabled": true,
+    "private_share_provider": true,
+    "no_microphone_broad_storage_or_contacts": true,
+    "qa_off_mlkit_on": true,
+    "no_test_classes": true,
+    "no_signing_secrets": true,
+    "arm64_and_emulator": true,
+    "flutter_engine_and_aot_for_each_abi": true,
+    "matching_aot_architecture": true,
+    "original_icon": true,
+    "google_notice": true,
+    "google_scanner_sdk_present": true,
+    "valid_signature_not_debug": true,
+    "16kb_zip_alignment": true
+  },
+  "permissions": [
+    "android.permission.CAMERA",
+    "com.niam.ayani.oto.uji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.INTERNET"
+  ],
+  "passed": 20,
+  "total": 20,
+  "bytes": 35445921,
+  "sha256": "ec0c037807f7b269e0dd7c8b7072c4eb48c45a8e9b5b98326fe8dbd9c3a85a91"
+}

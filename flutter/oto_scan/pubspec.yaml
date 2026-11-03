@@ -1,7 +1,7 @@
 name: oto_scan
 description: OTO Scan — pemindai dokumen lokal untuk Android.
 publish_to: none
-version: 1.0.0+17
+version: 1.0.1+19
 environment:
   sdk: '>=3.7.2 <4.0.0'
 dependencies:
@@ -16,3 +16,4 @@ flutter:
     - assets/oto.png
     - assets/FLUTTER_LICENSE.txt
     - assets/THIRD_PARTY_NOTICES.txt
+    - assets/MLKIT_NOTICE.txt

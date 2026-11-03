@@ -5,6 +5,9 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val mlkitTrial = System.getenv("OTO_MLKIT_TRIAL") == "true"
+val googleScanner = mlkitTrial || System.getenv("OTO_GOOGLE_SCANNER") == "true"
+
 android {
     namespace = "id.ayani.oto.oto_scan"
     compileSdk = 36
@@ -21,7 +24,10 @@ android {
 
     defaultConfig {
         buildConfigField("boolean", "QA", (System.getenv("OTO_SCAN_QA") == "true").toString())
-        applicationId = "com.niam.ayani.oto"
+        buildConfigField("boolean", "MLKIT_TRIAL", mlkitTrial.toString())
+        buildConfigField("boolean", "GOOGLE_SCANNER", googleScanner.toString())
+        applicationId = if (mlkitTrial) "com.niam.ayani.oto.uji" else "com.niam.ayani.oto"
+        manifestPlaceholders["otoAppLabel"] = if (mlkitTrial) "OTO Scan Uji" else "OTO Scan"
         minSdk = 29
         testInstrumentationRunner = "id.ayani.oto.oto_scan.ScanInstrumentation"
         targetSdk = 36
@@ -48,6 +54,11 @@ android {
     }
     buildFeatures { buildConfig = true }
     testBuildType = "release"
+    sourceSets.getByName("main").java.srcDir(if (googleScanner) "src/mlkit/java" else "src/local/java")
+}
+
+dependencies {
+    if (googleScanner) implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0")
 }
 
 flutter {

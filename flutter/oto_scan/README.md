@@ -1,3 +1,9 @@
+# Cadangan Android Google ML Kit — 1.0.1+19
+
+Snapshot 3 November 2026. Baca [BACKUP_MLKIT.md](../../BACKUP_MLKIT.md) untuk paket, flag build Google, dan pemisahan dari versi algoritma sendiri. Catatan lama di bawah adalah riwayat.
+
+---
+
 # OTO Scan Flutter
 
 ## Backup source GitHub — 23 Oktober 2026

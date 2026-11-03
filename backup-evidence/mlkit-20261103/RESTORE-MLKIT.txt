@@ -1,0 +1,26 @@
+OTO Scan — cadangan khusus Google ML Kit, 3 November 2026
+
+Cabang: backup/oto-scan-mlkit-v1.0.1-20261103
+Sumber utama: flutter/oto_scan, versi 1.0.1+19, package com.niam.ayani.oto.
+Pemindai: Google ML Kit Document Scanner 16.0.0. Galeri, pembaca PDF dan kompresi tetap implementasi OTO.
+
+Paket yang dicadangkan:
+- OTO-Scan-MLKit-1.0.1.apk dan .aab: kandidat utama 1.0.1 (19), package com.niam.ayani.oto. Nama aset GitHub diberi penanda MLKit; isi berkas identik dengan kandidat rilis lokal yang sudah ada.
+- OTO-Scan-Uji-MLKit-1.0.1.apk: versi uji terdahulu 1.0.1-mlkit.1 (18), package com.niam.ayani.oto.uji, penyimpanan aplikasi terpisah. APK uji ini adalah artefak historis, bukan hasil build ulang source versi 19.
+
+Bangun versi Google secara eksplisit:
+1. Baca docs/android-scan/MLKIT_RELEASE_1.0.1.md dan MLKIT_TRIAL.md untuk konfigurasi, dependensi dan batasan.
+2. Dari flutter/oto_scan, gunakan tool/Build-MLKitRelease.ps1 -Kind apk atau -Kind appbundle. Skrip mengaktifkan OTO_GOOGLE_SCANNER=true dan OTO_MLKIT_TRIAL=false. Build tanpa flag Google dapat memilih scanner lokal; jangan menganggap perintah build Flutter biasa menghasilkan ML Kit.
+3. Untuk aplikasi uji terpisah gunakan tool/Build-MLKitTrial.ps1 sesuai dokumentasinya.
+4. Pulihkan SDK/dependensi menurut lockfile dan prosedur proyek. Signing key dan password tidak ada di GitHub; gunakan milik pemilik dari penyimpanan rahasia yang aman. Sesuaikan path SDK lokal pada skrip bila diperlukan.
+5. Cocokkan SHA256SUMS.txt sebelum memakai paket yang diunduh. Instalasi HP, unggahan Play Console, kebijakan privasi VPS dan rilis publik memerlukan tindakan terpisah.
+
+Pemisahan:
+- Cadangan algoritma sendiri tetap pada backup/oto-scan-v1.0.0-20261023, commit 697655358a6d2d3736ca0677be63c350a3d6183b.
+- Cadangan Android algoritma sendiri + Web + Desktop tetap pada backup/android-web-desktop-20261103, commit b2c4ce52551f78c2ec8475cb342274cb04c58238.
+- Cabang baru ini menyimpan perubahan Google ML Kit tanpa menimpa kedua cabang tersebut. Kode scanner lokal yang masih ada di dalam source diperlukan oleh konfigurasi/fallback yang sudah tersedia; aplikasi tidak diubah dalam tugas pencadangan ini.
+
+Bukti:
+Hash kandidat utama cocok catatan verifikasi artefak sebelumnya (30/30); APK uji cocok catatan sebelumnya (20/20). Bukti ini historis, bukan hasil uji runtime baru. Pemeriksaan backup saat ini meliputi pola kredensial pada source, integritas ZIP/CRC APK/AAB, hash SHA256, serta identitas commit/tree/aset GitHub.
+
+Dokumen di release-drafts adalah draf historis 24 Oktober, bukan pernyataan status Play Console atau kebijakan publik saat ini. Backup ini tidak mengubah status Play Store. Cache/build, dokumen hasil scan pengguna, identitas perangkat fisik, signing key dan password tidak disertakan.

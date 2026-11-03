@@ -22,6 +22,7 @@ public class MainActivity extends FlutterActivity {
   ScanStore store;
   ExternalPdf externalPdf;
   PdfReaderEngine reader;
+  GoogleScanLauncher googleScanner;
   final ExecutorService readerWorker=Executors.newSingleThreadExecutor();
   MethodChannel scanChannel;
   Intent pendingPdf;
@@ -34,7 +35,7 @@ public class MainActivity extends FlutterActivity {
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
   }
   @Override public void configureFlutterEngine(FlutterEngine engine){
-    super.configureFlutterEngine(engine);store=new ScanStore(this);externalPdf=new ExternalPdf(this,store);reader=new PdfReaderEngine(this);
+    super.configureFlutterEngine(engine);store=new ScanStore(this);externalPdf=new ExternalPdf(this,store);reader=new PdfReaderEngine(this);googleScanner=new GoogleScanLauncher(this);
     if(Intent.ACTION_VIEW.equals(getIntent().getAction()))pendingPdf=new Intent(getIntent());
     engine.getPlatformViewsController().getRegistry().registerViewFactory("id.ayani.oto/camera",new PlatformViewFactory(StandardMessageCodec.INSTANCE){
       @Override public PlatformView create(Context context,int id,Object args){
@@ -45,6 +46,10 @@ public class MainActivity extends FlutterActivity {
     scanChannel.setMethodCallHandler((call,result)->{
       try{
         switch(call.method){
+          case "googleScan":{
+            Number limit=call.argument("limit");
+            googleScanner.start(limit==null?20:limit.intValue(),result);return;
+          }
           case "readerOpen":{
             String token=call.argument("session"),id=call.argument("id");boolean ext=Boolean.TRUE.equals(call.argument("external"));
             readerAsync(result,()->reader.open(token,id,ext?externalPdf.fileFor(id):store.document(id),ext));return;
@@ -194,6 +199,7 @@ public class MainActivity extends FlutterActivity {
   }
   @Override protected void onActivityResult(int request,int code,Intent data){
     super.onActivityResult(request,code,data);
+    if(googleScanner!=null&&googleScanner.onActivityResult(request,code,data))return;
     if(request==72&&exportResult!=null){
       MethodChannel.Result r=exportResult;exportResult=null;String id=exportId;exportId=null;
       if(code!=Activity.RESULT_OK||data==null||data.getData()==null){r.success(false);return;}
@@ -204,5 +210,5 @@ public class MainActivity extends FlutterActivity {
     }
   }
   @Override protected void onPause(){if(cameraView!=null)cameraView.close();super.onPause();}
-  @Override protected void onDestroy(){if(cameraView!=null)cameraView.close();if(externalPdf!=null)worker.execute(()->externalPdf.dispose());worker.shutdown();if(reader!=null)readerWorker.execute(()->reader.close(null));readerWorker.shutdown();super.onDestroy();}
+  @Override protected void onDestroy(){if(googleScanner!=null)googleScanner.close();if(cameraView!=null)cameraView.close();if(externalPdf!=null)worker.execute(()->externalPdf.dispose());worker.shutdown();if(reader!=null)readerWorker.execute(()->reader.close(null));readerWorker.shutdown();super.onDestroy();}
 }
