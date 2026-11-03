@@ -11,9 +11,9 @@ internal sealed partial class MainWindow
     private sealed record MergeClosedNoticeState(string SavedPath, Button Open, Button Folder,
         TextBlock Status, Func<Task> OpenAsync, Action Reveal);
 
-    private void ShowMergeClosedSavedNotice(string savedPath)
+    private void ShowMergeClosedSavedNotice(string savedPath, bool organizer = false)
     {
-        if (emptyTool?.Id != "merge" || emptyPanel is null || !body.Children.Contains(emptyPanel)) return;
+        if (emptyTool?.Id != (organizer ? "organize" : "merge") || emptyPanel is null || !body.Children.Contains(emptyPanel)) return;
         // The caller has validated and saved this result before clearing the session.
         var immutablePath = Path.GetFullPath(savedPath);
         var highContrast = new Windows.UI.ViewManagement.AccessibilitySettings().HighContrast;
@@ -22,7 +22,7 @@ internal sealed partial class MainWindow
             ? new SolidColorBrush(colors.UIElementColor(Windows.UI.ViewManagement.UIElementType.WindowText))
             : Brush(16, 77, 51);
         var text = new StackPanel { Spacing = 3 };
-        var title = Copy("Hasil gabungan berhasil disimpan", 16);
+        var title = Copy(organizer ? "Hasil susunan berhasil disimpan" : "Hasil gabungan berhasil disimpan", 16);
         title.FontWeight = Microsoft.UI.Text.FontWeights.SemiBold; title.Foreground = foreground;
         AutomationProperties.SetLiveSetting(title, Microsoft.UI.Xaml.Automation.Peers.AutomationLiveSetting.Polite);
         var titleRow = new Grid { ColumnSpacing = 8 };
@@ -60,7 +60,7 @@ internal sealed partial class MainWindow
             BorderBrush = highContrast ? foreground : Brush(135, 209, 166) };
         bool Available()
         {
-            if (!body.Children.Contains(banner) || !MergeEmptyActive || active is not null || importing || messageOpen) return false;
+            if (!body.Children.Contains(banner) || !PdfEmptyActive || active is not null || importing || messageOpen) return false;
             if (File.Exists(immutablePath)) { statusLine.Text = ""; statusLine.Visibility = Visibility.Collapsed; return true; }
             Failure("File hasil tidak ditemukan. File mungkin telah dipindahkan atau dihapus."); return false;
         }

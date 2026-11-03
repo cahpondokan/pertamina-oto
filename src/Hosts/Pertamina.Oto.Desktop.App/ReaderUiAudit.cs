@@ -14,7 +14,7 @@ internal sealed partial class MainWindow
 {
     internal async Task AuditReaderUiAsync()
     {
-        ShowPdfReader(); await pdfReader!.AuditAsync();
+        ShowPdfReader(false); await pdfReader!.WaitLoadedAsync(); await pdfReader.AuditAsync();
     }
     private sealed partial class PdfReaderView
     {
@@ -78,7 +78,9 @@ internal sealed partial class MainWindow
             void Check(bool condition, string label) { if (!condition) throw new InvalidOperationException(label); report.Add("PASS " + label); }
             async Task Settle()
             {
-                owner.root.UpdateLayout(); await Task.Delay(250); owner.root.UpdateLayout();
+                owner.root.UpdateLayout();
+                if (owner.pdfReader == this && owner.readerTabs is not null && owner.historyPage.Children.Contains(owner.readerTabs)) await WaitLoadedAsync();
+                await Task.Delay(250); owner.root.UpdateLayout();
                 for (var i = 0; i < 3; i++) { var pending = Rendering; await pending; if (pending == Rendering) break; }
             }
             async Task Capture(string name)
@@ -137,7 +139,7 @@ internal sealed partial class MainWindow
                     return;
                 }
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(1586, 1000)); await Settle();
-                Check(Visible && document is null && !edit.IsEnabled && !more.IsEnabled, "empty reader has no document actions");
+                Check(Visible && document is null && !edit.IsEnabled && !more.IsEnabled, $"empty reader has no document actions (visible={Visible}, loaded={View.IsLoaded}, document={document is not null})");
                 Check(count.Text.Length == 0 && pageInput.Text.Length == 0 && zoomControls.Percent.Text == "—", "empty reader and shared preview show no fictitious page zero or zoom");
                 await Capture("01-empty");
                 landingDefaultTestStatus = PdfAssociation.DefaultStatus.Other; RefreshLandingDefault();
@@ -224,7 +226,7 @@ internal sealed partial class MainWindow
                 bookmarksOnly = false;
                 await OpenAsync(Path.Combine(output, "missing.pdf")); Check(path == fixture && picture.Source is not null, "missing file preserves previous document");
                 await OpenAsync(Path.ChangeExtension(fixture, ".txt")); Check(path == fixture && notice.Text.Contains("lokal", StringComparison.Ordinal), "non-PDF rejected without losing previous document");
-                await AcceptAsync([]); Check(notice.Text.Contains("satu", StringComparison.Ordinal), "empty or multiple input rejected clearly");
+                await AcceptAsync([]); Check(notice.Text.Contains("Pilih", StringComparison.Ordinal) && notice.Text.Contains("PDF", StringComparison.Ordinal), "empty input rejected clearly with multi-tab PDF guidance");
                 await GoAsync(0); await Settle();
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(960, 720)); await Settle(); await Rendering; await Capture("03-reader-compact");
                 Check(workspace.ActualHeight > 200, "compact reader retains document viewport");
@@ -234,7 +236,7 @@ internal sealed partial class MainWindow
                 await Capture("return-diagnostic");
                 Check(Visible && picture.Source is not null, $"return restores reader document (visible={Visible}, loaded={View.IsLoaded}, pdf={document is not null}, notice={notice.Text})");
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(1586, 1000)); await Settle();
-                await UseToolAsync("edit"); Check(owner.liveEditor?.HasDocument == true && owner.liveEditor.Visible, "edit action opens actual existing editor");
+                await UseToolAsync("edit"); await Settle(); Check(owner.liveEditor?.HasDocument == true && owner.liveEditor.Visible, $"edit action opens actual existing editor (document={owner.liveEditor?.HasDocument}, visible={owner.liveEditor?.Visible})");
                 owner.ShowPdfReader(); await Settle(); await Rendering;
                 var afterHash = SHA256.HashData(await File.ReadAllBytesAsync(fixture));
                 Check(hash.SequenceEqual(afterHash), "reading and editor handoff preserve original bytes");
@@ -278,6 +280,9 @@ internal sealed partial class MainWindow
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(960, 720)); await Capture("08-settings-default-pdf-compact");
                 owner.AppWindow.Resize(new Windows.Graphics.SizeInt32(1586, 1000));
                 var explorerFixture = Path.Combine(output, "Berkas lokal é & (1).pdf"); File.Copy(fixture, explorerFixture);
+                // This legacy single-reader audit continues on the same empty tab;
+                // ReaderTabsAudit verifies that an occupied tab is never replaced.
+                CloseReaderDocument();
                 await owner.OpenPdfReaderAsync(explorerFixture); await Rendering; await Settle();
                 Check(Visible && path == explorerFixture && picture.Source is not null, "Explorer activation target opens spaced Unicode path directly in reader");
                 foreach (var (width, height, label) in new[] { (842, 1191, "A3"), (1191, 1684, "A2"), (1684, 1191, "A2 landscape") })

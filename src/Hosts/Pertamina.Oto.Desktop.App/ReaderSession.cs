@@ -20,10 +20,17 @@ internal sealed partial class MainWindow
         private double savedHorizontal, savedVertical;
         private float savedZoom = 1;
         private bool suspended;
+        private bool restoringPosition;
         private bool explicitlyClosed;
         private readonly StackPanel readerCloseNotice = new() { Spacing = 8 };
 
         internal void CloseReaderDocument()
+        {
+            if (!previewOnly && owner.FindReaderTab(this) is not null) { owner.CloseReaderTab(this); return; }
+            ResetReaderDocument();
+        }
+
+        internal void ResetReaderDocument()
         {
             // A reader close ends only this read session, never a tool/editor draft.
             explicitlyClosed = true; Release(); savedHorizontal = savedVertical = 0; savedZoom = 1;
@@ -69,7 +76,7 @@ internal sealed partial class MainWindow
             sessionPicker.SelectedIndex = path is null ? -1 : files.FindIndex(p => p.Equals(path, StringComparison.OrdinalIgnoreCase));
             // The empty reader already lists sessions on its landing page. Keep
             // the document toolbar collapsed when refreshing a cached reader.
-            sessionPicker.Visibility = files.Count == 0 || document is null ? Visibility.Collapsed : Visibility.Visible;
+            sessionPicker.Visibility = Visibility.Collapsed; // Document tabs own switching; landing still offers session inputs.
             refreshingSession = false;
             if (!sessionWired)
             {
@@ -77,7 +84,7 @@ internal sealed partial class MainWindow
                 sessionPicker.SelectionChanged += async (_, _) =>
                 {
                     if (refreshingSession || sessionPicker.SelectedItem is not ComboBoxItem { Tag: string input }) return;
-                    await OpenAsync(input); SetIdentity(input, owner.readerResults.Contains(input)); RefreshSession(false);
+                    await owner.OpenPdfReaderAsync(input, owner.readerResults.Contains(input));
                 };
             }
             // Existing manual reading always wins. Ambiguous sessions require a choice.
@@ -88,7 +95,7 @@ internal sealed partial class MainWindow
                 {
                     await WaitLoadedAsync();
                     if (explicitlyClosed || path is not null || !Visible) return;
-                    await OpenAsync(candidate); SetIdentity(candidate, owner.readerResults.Contains(candidate)); RefreshSession(false);
+                    await owner.OpenPdfReaderAsync(candidate, owner.readerResults.Contains(candidate));
                 });
         }
     }

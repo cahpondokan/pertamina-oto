@@ -1,0 +1,23 @@
+@model IReadOnlyList<ToolDefinition>
+@{ var favorites = ViewData["Favorites"] is true; ViewData["Title"] = favorites ? "Favorit" : "Semua alat"; ViewData["Nav"] = favorites ? "favorites" : "tools"; }
+<div class="breadcrumb">Ruang kerja <span>/</span> @(favorites ? "Favorit" : "Semua alat")<span class="preview-badge"><i></i> Pratinjau antarmuka</span></div>
+<section class="welcome">
+ <div class="welcome-copy"><span class="eyebrow">SATU RUANG UNTUK DOKUMEN ANDA</span><h1>@(favorites ? "Alat favorit Anda." : "Pekerjaan rapi, lebih mudah.")</h1><p>Pilih alat yang Anda butuhkan. Biblo siap menemani<br class="desktop-break"/> Anda menata dokumen, satu langkah pada satu waktu.</p><a href="/alat/merge" class="button primary">Mulai dengan PDF <svg><use href="#i-arrow"/></svg></a><a class="quiet-link" href="/panduan">Kenali ruang kerja</a></div>
+ <div class="welcome-art" aria-hidden="true"><span class="art-orbit"></span><span class="art-note note-a"><svg><use href="#i-check"/></svg>Lebih teratur</span><img src="/assets/031-atur-ulang-halaman-pdf.png" width="188" height="188" alt=""/><span class="art-note note-b"><svg><use href="#i-file"/></svg>Satu ruang kerja</span></div>
+</section>
+<section aria-labelledby="tools-heading" class="catalog" data-favorites-only="@(favorites ? "true" : "false")">
+ <div class="section-heading"><div><h2 id="tools-heading">@(favorites ? "Favorit" : "Semua alat PDF") <span class="count-pill" id="result-count">18</span></h2><p>Alat yang tepat untuk setiap pekerjaan.</p></div><label class="search"><svg><use href="#i-search"/></svg><input id="tool-search" type="search" placeholder="Cari alat PDF…" aria-label="Cari alat PDF" autocomplete="off"/><span class="search-hint" aria-hidden="true">Cari</span></label></div>
+ <div class="catalog-toolbar"><div class="category-tabs" role="group" aria-label="Kategori alat">@foreach (var category in new[] { "Semua", "Atur PDF", "Edit PDF", "Konversi", "Optimalkan", "Keamanan", "Lihat PDF" }){<button class="category-tab @(category == "Semua" ? "selected" : "")" data-category="@category" aria-pressed="@(category == "Semua" ? "true" : "false")">@category</button>}</div></div>
+ <div class="catalog-legend"><span><i class="legend-dot blue"></i> Contoh tampilan interaktif</span><span><i class="legend-dot amber"></i> Belum tersedia di web</span></div>
+ <div class="tool-grid">
+ @foreach (var tool in Model){
+  <article class="tool-card @(tool.Preview ? "preview-ready" : "planned")" data-id="@tool.Id" data-category="@tool.Category" data-search="@tool.Title @tool.Description">
+   <button class="favorite-button" data-favorite="@tool.Id" aria-label="Tambahkan @tool.Title ke favorit" aria-pressed="false" title="Tambah favorit"><svg><use href="#i-star"/></svg></button>
+   @if(tool.Preview){<a href="/alat/@tool.Id" class="tool-card-content"><img src="/assets/@tool.Icon" alt="" width="80" height="80" loading="lazy"/><h3>@tool.Title</h3><p>@tool.Description</p><span class="tool-status ready">Coba tampilan <span>↗</span></span></a>}
+   else {<button class="tool-card-content" data-planned="@tool.Title"><img src="/assets/@tool.Icon" alt="" width="80" height="80" loading="lazy"/><h3>@tool.Title</h3><p>@tool.Description</p><span class="tool-status pending">Belum tersedia</span></button>}
+  </article>
+ }
+ </div>
+ <div id="no-results" class="no-results" hidden><svg><use href="#i-search"/></svg><h3>Belum ada alat yang ditampilkan</h3><p>Coba kata lain, pilih kategori Semua, atau tandai alat dengan bintang.</p><button class="button" id="reset-search">Reset pencarian</button></div>
+</section>
+<section class="bottom-note"><svg><use href="#i-shield"/></svg><div><strong>Tampilan web, dengan pengalaman OTO yang Anda kenal.</strong><p>Masih tahap desain. Pemrosesan PDF, akun Pertamina, dan penyimpanan server belum diaktifkan.</p></div><span class="outline-pill">Pratinjau desain</span></section>

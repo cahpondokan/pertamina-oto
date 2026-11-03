@@ -3,7 +3,7 @@ using Microsoft.Win32;
 namespace Pertamina.Oto.LocalPdf;
 internal static class WordProvider
 {
- internal const string AdmittedHash="A02EC8E28E1210A13F1C8D1874C9F10D6ED987A18365CBAAE72D8403BA2D906D";
+ internal const string AdmittedHash="0F96D6172DD6CC9EDA5DDB786FEE5D8F9C8B4BEE96F56DB2DAB6F5888F3BE882";
  internal static bool MatchesCandidate(string path){if(!File.Exists(path))return false;using var stream=File.OpenRead(path);return Convert.ToHexString(SHA256.HashData(stream))==AdmittedHash;}
  internal static string? Find()
  {

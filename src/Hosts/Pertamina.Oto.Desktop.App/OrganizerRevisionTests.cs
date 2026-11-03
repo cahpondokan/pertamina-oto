@@ -8,7 +8,7 @@ namespace Pertamina.Oto.Desktop.App;
 internal sealed partial class MainWindow
 {
     // Runs on the real WinUI thread with synthetic PDFs, without system UI automation.
-    internal async Task TestOrganizerRevisionAsync(string fixture)
+    internal async Task TestOrganizerRevisionAsync(string fixture, string? evidence = null)
     {
         var log = new List<string>();
         void Check(bool condition, string name) { if (!condition) throw new InvalidOperationException(name); log.Add("PASS " + name); }
@@ -74,7 +74,7 @@ internal sealed partial class MainWindow
             log.Add($"{log.Count} checks PASS. GUI pointer timing/animation smoothness still needs visual acceptance.");
         }
         catch (Exception error) { log.Add("FAIL " + error.GetType().Name + ": " + error.Message); Environment.ExitCode = 1; }
-        await File.WriteAllLinesAsync(Path.Combine(AppContext.BaseDirectory, "organizer-revision-tests.txt"), log);
+        await File.WriteAllLinesAsync(Path.Combine(evidence ?? AppContext.BaseDirectory, "organizer-revision-tests.txt"), log);
     }
 }
 #endif

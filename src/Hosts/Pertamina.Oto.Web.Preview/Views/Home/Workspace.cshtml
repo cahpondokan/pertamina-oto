@@ -1,0 +1,32 @@
+@model WorkspaceViewModel
+@{ ViewData["Title"] = Model.Title; ViewData["Nav"] = Model.Id; var organize = Model.Id == "organize"; }
+<div class="breadcrumb"><a href="/">Ruang kerja</a><span>/</span>@Model.Title<span class="preview-badge"><i></i> Pratinjau antarmuka</span></div>
+<header class="page-heading"><div><h1>@Model.Title</h1><p>@(organize ? "Susun setiap halaman sesuai kebutuhan. Identitas sumber tetap terlihat." : "Tambahkan dokumen, atur urutannya, lalu satukan dalam satu PDF.")</p></div><button class="button" data-favorite="@Model.Id" aria-pressed="false"><svg><use href="#i-star"/></svg>Favorit</button></header>
+<div class="preview-notice"><svg><use href="#i-help"/></svg><span><strong>Pratinjau desain.</strong> Dokumen tidak diunggah dan belum diproses.</span><button class="text-button" id="load-demo">Gunakan contoh dokumen <span>↗</span></button></div>
+<div class="workspace-layout" data-workspace="@Model.Id" data-biblo="@Model.Icon">
+ <section class="document-panel panel" aria-labelledby="documents-heading">
+  <div class="panel-heading"><h2 id="documents-heading">@(organize ? "Susunan halaman" : "Dokumen")<span class="count-pill" id="document-count">0</span></h2><button class="button subtle-danger" id="close-documents" hidden><svg><use href="#i-close"/></svg>Tutup dokumen</button></div>
+  <div id="empty-workspace" class="empty-workspace"><img src="/assets/@Model.Icon" width="128" height="128" alt="Biblo untuk @Model.Title"/><h2>Mulai dari dokumen Anda</h2><p>@(organize ? "Tambahkan PDF untuk melihat susunan halamannya." : "Pilih dua PDF atau lebih untuk menyusun gabungan.")</p><button class="button primary large tooltip-target" data-pick data-tooltip="Ctrl + O"><svg><use href="#i-folder"/></svg>Pilih PDF</button><span class="drop-hint">Seret atau tempel PDF di area ini</span><button class="text-button" id="empty-demo">Lihat dengan contoh dokumen</button><small><svg><use href="#i-shield"/></svg>File asli tetap utuh.</small></div>
+  <div id="loaded-workspace" hidden>
+   <div class="workspace-identity"><img src="/assets/@Model.Icon" width="58" height="58" alt=""/><div><h3>@Model.Title</h3><p id="workspace-summary">Susun dokumen sesuai urutan hasil.</p></div></div>
+   <div class="workspace-toolbar"><button class="button tooltip-target" data-pick data-tooltip="Ctrl + O"><svg><use href="#i-plus"/></svg>Tambah PDF</button><div class="toolbar-separator"></div><button class="icon-button tooltip-target" id="undo" aria-label="Urungkan" data-tooltip="Ctrl + Z"><svg><use href="#i-undo"/></svg></button><button class="icon-button tooltip-target" id="redo" aria-label="Ulangi" data-tooltip="Ctrl + Shift + Z"><svg><use href="#i-redo"/></svg></button><span class="toolbar-spacer"></span><label class="size-select">Ukuran kartu<select id="card-size"><option value="normal">100%</option><option value="small">75%</option><option value="large">125%</option></select></label></div>
+   <div class="workspace-hint"><span>Seret untuk mengatur urutan · Aksi muncul saat disorot</span><span id="example-label" class="sample-label">DOKUMEN CONTOH</span></div>
+   <div id="page-grid" class="page-grid" aria-label="Susunan dokumen"></div>
+   <div class="inline-drop"><svg><use href="#i-plus"/></svg>Seret atau tempel PDF untuk menambah dokumen</div>
+  </div>
+  <input id="file-input" type="file" accept=".pdf,application/pdf" multiple hidden/>
+ </section>
+ <aside class="output-panel panel" aria-labelledby="output-heading">
+  <header class="output-heading"><img src="/assets/@Model.Icon" width="45" height="45" alt=""/><div><h2 id="output-heading">@(organize ? "Hasil susunan" : "Hasil gabungan")</h2><p>Atur hasil sesuai kebutuhan Anda.</p></div></header>
+  <div class="output-body">
+   <section id="sources-section" class="source-section" hidden><div class="small-heading"><h3>File sumber</h3><span id="source-count" class="count-pill"></span></div><div id="source-list"></div><small>Huruf dan warna sumber tetap saat dipindah.</small></section>
+   <label class="field-label" for="output-name"><svg><use href="#i-file"/></svg>Nama file hasil</label><input id="output-name" class="text-input" value="@(organize ? "dokumen_susun-ulang.pdf" : "dokumen_gabungan.pdf")" maxlength="120" spellcheck="false"/>
+   <div class="browser-save"><svg><use href="#i-folder"/></svg><div><strong>Unduhan browser</strong><p>Lokasi simpan mengikuti pengaturan browser, bukan folder aplikasi desktop.</p></div></div>
+   <details class="output-options"><summary><svg><use href="#i-lock"/></svg>Opsi dokumen<span>⌄</span></summary><p>Opsi kata sandi akan tersedia setelah mesin PDF diintegrasikan. Jangan masukkan kata sandi pada prototipe ini.</p></details>
+   <div class="ready-message" id="ready-message"><svg><use href="#i-help"/></svg><span>Tambahkan dokumen untuk melanjutkan.</span></div>
+   <button class="button primary full execute" id="execute" disabled>@(organize ? "Simpan PDF baru" : "Gabungkan PDF")</button><p class="execution-note">Tombol menampilkan contoh alur hasil.<br/>Belum membuat PDF sebenarnya.</p>
+   <p class="safe-copy"><svg><use href="#i-check"/></svg>File asli tidak ditimpa.</p>
+   <a class="related-link" href="@(organize ? "/alat/merge" : "/alat/organize")">@(organize ? "Gabungkan dokumen utuh" : "Atur halaman satu per satu") <span>→</span></a>
+  </div>
+ </aside>
+</div>

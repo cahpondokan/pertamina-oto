@@ -11,7 +11,7 @@ internal static partial class PdfOperations
 {
     // Fail closed for unsupported encodings/layouts. This changes the original Tj operand,
     // never paints a rectangle over the old text. No external/native dependency is required.
-    private sealed record TextCandidate(EditorTextRun Run, COperator Operator, Dictionary<char, double> Widths, Dictionary<char, string> Encoding, double Scale, TextState State);
+    private sealed record TextCandidate(EditorTextRun Run, COperator Operator, Dictionary<char, double> Widths, Dictionary<char, string> Encoding, double Scale, TextState State, bool PreserveAdvance, double LineX, double LineY, double TextX, double TextA, double TextD);
     private sealed record SourceFont(string Name, Dictionary<string, char> Decode, Dictionary<char, string> Encode, Dictionary<char, double> Widths, int CodeBytes)
     {
         internal string? Read(string raw)
@@ -134,7 +134,7 @@ internal static partial class PdfOperations
         return new(font.Elements.GetName("/BaseFont").TrimStart('/'), decode, encode, widths, codeBytes);
     }
     private sealed record TextState(double A = 1, double D = 1, double E = 0, double F = 0,
-        string Font = "", double Size = 0, double Spacing = 0, double WordSpacing = 0, double Horizontal = 100, double Rise = 0, int Render = 0, bool Safe = true);
+        string Font = "", double Size = 0, double Spacing = 0, double WordSpacing = 0, double Horizontal = 100, double Rise = 0, int Render = 0, bool Safe = true, double Leading = 0);
 
     private static PdfReply InspectOriginalText(PdfRequest request)
     {
@@ -174,11 +174,16 @@ internal static partial class PdfOperations
             if (op.Name == "TJ" && op.Operands.Count == 1 && op.Operands[0] is CArray array)
                 foreach (var item in array.OfType<CString>()) chars.Add(item.Value);
         }
-        var sourceFonts = available.Where(kv => kv.Value.Count > 0 && kv.Key.StartsWith('/') && fonts.Elements.GetDictionary(kv.Key) is not null)
+        // A restored font can be used solely for a numeric TJ advance after a local
+        // replacement. It still needs its state tracked even without painted glyphs.
+        var sourceFonts = available.Where(kv => kv.Key.StartsWith('/') && fonts.Elements.GetDictionary(kv.Key) is not null)
             .ToDictionary(kv => kv.Key, kv => ReadSourceFont(fonts.Elements.GetDictionary(kv.Key)!, kv.Value));
         var result = new List<TextCandidate>(); var state = new TextState(); var stack = new Stack<TextState>();
         var rejectedFont = 0; var rejectedLayout = 0;
-        double tx = 0, ty = 0, ta = 1, td = 1; var positioned = false; var inside = false; var matrixSafe = true;
+        // ISO 32000-1 9.4: text advances change Tm, never the text line matrix.
+        // Keep the line origin separately so T*, Td and TD survive earlier edits.
+        double tx = 0, ty = 0, lx = 0, ly = 0, ta = 1, td = 1;
+        var positioned = false; var inside = false; var matrixSafe = true;
         for (var id = 0; id < operators.Length; id++)
         {
             var op = operators[id]; var args = op.Operands;
@@ -195,50 +200,60 @@ internal static partial class PdfOperations
                     var gs = page.Resources.Elements.GetDictionary("/ExtGState")?.Elements.GetDictionary(gsName);
                     if (gs is null || gs.Elements.ContainsKey("/Font")) state = state with { Safe = false };
                     break;
-                case "BT": inside = true; positioned = false; matrixSafe = true; tx = ty = 0; ta = td = 1; break;
+                case "BT": inside = true; positioned = true; matrixSafe = true; lx = ly = tx = ty = 0; ta = td = 1; break;
                 case "ET": inside = false; break;
                 case "Tf" when args.Count == 2 && args[0] is CName fn: state = state with { Font = fn.Name, Size = N(1) }; break;
                 case "Tc": state = state with { Spacing = N(0) }; break;
                 case "Tw": state = state with { WordSpacing = N(0) }; break;
+                case "TL": state = state with { Leading = N(0) }; break;
                 case "Tz": state = state with { Horizontal = N(0) }; break;
                 case "Ts": state = state with { Rise = N(0) }; break;
                 case "Tr": state = state with { Render = (int)N(0) }; break;
                 case "Tm" when args.Count == 6:
-                    ta = N(0); td = N(3); tx = N(4); ty = N(5); matrixSafe = N(1) == 0 && N(2) == 0; positioned = matrixSafe; break;
+                    ta = N(0); td = N(3); lx = tx = N(4); ly = ty = N(5); matrixSafe = N(1) == 0 && N(2) == 0; positioned = matrixSafe; break;
                 case "Td" or "TD" when args.Count == 2:
-                    tx += ta * N(0); ty += td * N(1); positioned = matrixSafe; break;
-                case "T*" or "'" or "\"": positioned = false; matrixSafe = false; break;
+                    if (op.Name == "TD") state = state with { Leading = -N(1) };
+                    lx += ta * N(0); ly += td * N(1); tx = lx; ty = ly; positioned = matrixSafe; break;
+                case "T*":
+                    ly -= td * state.Leading; tx = lx; ty = ly; positioned = matrixSafe && double.IsFinite(ly); break;
+                case "'" or "\"": positioned = false; matrixSafe = false; break;
                 case "TJ" or "Tj":
                     var previousCount = result.Count;
                     var pieces = args.Count == 1 ? args[0] is CString single ? new CObject[] { single } : args[0] is CArray array ? array.ToArray() : [] : [];
                     var strings = pieces.OfType<CString>().ToArray();
                     var raw = string.Concat(strings.Select(s => s.Value));
                     var adjustment = pieces.Sum(p => p is CInteger integer ? integer.Value : p is CReal real ? real.Value : 0);
-                    if (inside && positioned && state.Safe && state.Render == 0 && double.IsFinite(state.Spacing) && Math.Abs(state.Spacing) <= 1 && state.WordSpacing == 0 && state.Horizontal == 100 && state.Rise == 0 &&
-                        state.Size is >= 1 and <= 72 && state.A * ta > 0 && state.D * td > 0 && strings.Length > 0 && pieces.All(p => p is CString or CInteger or CReal) &&
-                        raw.Length is > 0 and <= 400 && strings.All(s => s.CStringType is CStringType.String or CStringType.HexString) &&
-                        HasIndependentFollowingPosition(operators, id))
+                    var advanced = false;
+                    if (inside && positioned && state.Safe && state.Render == 0 && double.IsFinite(state.Spacing) && Math.Abs(state.Spacing) <= 1 && double.IsFinite(state.WordSpacing) && Math.Abs(state.WordSpacing) <= 72 && state.Horizontal == 100 && state.Rise == 0 &&
+                        state.Size is >= 1 and <= 72 && state.A * ta > 0 && state.D * td > 0 && pieces.Length > 0 && pieces.All(p => p is CString or CInteger or CReal) &&
+                        raw.Length <= 400 && strings.All(s => s.CStringType is CStringType.String or CStringType.HexString))
                     {
-                        if (sourceFonts.TryGetValue(state.Font, out var font) && font is not null && font.Read(raw) is { Length: > 0 and <= 200 } decoded)
+                        if (sourceFonts.TryGetValue(state.Font, out var font) && font is not null && font.Read(raw) is { Length: <= 200 } decoded)
                         {
                             if (decoded.All(font.Widths.ContainsKey))
                             {
                                 var scale = state.Size * state.A * ta / 1000;
-                                var width = (decoded.Sum(c => font.Widths[c]) - adjustment) * scale + decoded.Length * state.Spacing * state.A * ta;
+                                // Tw applies only to the single-byte code 32, not to a Unicode
+                                // space encoded as a multibyte CID or another source character code.
+                                var wordSpaces = font.CodeBytes == 1 ? raw.Count(c => c == ' ') : 0;
+                                var advance = (decoded.Sum(c => font.Widths[c]) - adjustment) * state.Size / 1000 + decoded.Length * state.Spacing + wordSpaces * state.WordSpacing;
+                                var width = advance * state.A * ta;
                                 var size = state.Size * state.D * td;
                                 var x = state.A * tx + state.E; var baseline = page.Height.Point - (state.D * ty + state.F);
                                 var top = baseline - size; var height = size * 1.3;
-                                if (new[] { x, top, width, height, size }.All(double.IsFinite) && x >= 0 && top >= 0 && width > 0 && x + width <= page.Width.Point && top + height <= page.Height.Point && result.Count < 100)
-                                    result.Add(new(new(id, decoded, font.Name, x, top, width, height, size, new string(font.Widths.Keys.Order().ToArray()), LocalEditorFonts.Match(font.Name)), op, font.Widths, font.Encode, scale, state));
+                                if (decoded.Length > 0 && new[] { x, top, width, height, size }.All(double.IsFinite) && x >= 0 && top >= 0 && width > 0 && x + width <= page.Width.Point && top + height <= page.Height.Point && result.Count < 100)
+                                    result.Add(new(new(id, decoded, font.Name, x, top, width, height, size, new string(font.Widths.Keys.Order().ToArray()), LocalEditorFonts.Match(font.Name)), op, font.Widths, font.Encode, scale, state, !HasIndependentFollowingPosition(operators, id), lx, ly, tx, ta, td));
+                                tx += advance * ta;
+                                advanced = double.IsFinite(tx);
                             }
                         }
                     }
-                    if (result.Count == previousCount)
+                    if (raw.Length > 0 && result.Count == previousCount)
                     {
                         if (!sourceFonts.TryGetValue(state.Font, out var rejected) || rejected is null || rejected.Read(raw) is null) rejectedFont++;
                         else rejectedLayout++;
                     }
-                    positioned = false; break;
+                    positioned = advanced; break;
             }
         }
         var reasons = new List<string>();
@@ -255,11 +270,8 @@ internal static partial class PdfOperations
         // Td/TD position relative to the line matrix, not the advanced text matrix.
         for (var i = index + 1; i < ops.Length; i++)
         {
-            // ReportLab commonly emits Tj T* ET. No later text uses the advance.
-            // Admit only the terminal form, not a general removal of position guards.
-            if (ops[i].Name == "T*" && i + 1 < ops.Length && ops[i + 1].Name == "ET") return true;
-            if (ops[i].Name is "Td" or "TD" or "Tm" or "ET") return true;
-            if (ops[i].Name is "Tj" or "TJ" or "'" or "\"" or "T*") return false;
+            if (ops[i].Name is "Td" or "TD" or "Tm" or "T*" or "ET") return true;
+            if (ops[i].Name is "Tj" or "TJ" or "'" or "\"") return false;
         }
         return false;
     }
@@ -283,12 +295,26 @@ internal static partial class PdfOperations
                 }
                 if (edit.Text is null || edit.Text.Length > 200 || edit.Text.Any(c => !candidate.Widths.ContainsKey(c)))
                     throw new InputException("Karakter pengganti tidak tersedia pada font PDF ini. Font asli tidak diganti diam-diam.");
-                var width = edit.Text.Sum(c => candidate.Widths[c]) * candidate.Scale + edit.Text.Length * candidate.State.Spacing * candidate.Scale * 1000 / candidate.State.Size;
+                var words = edit.Text.Count(c => candidate.Encoding[c] == " ");
+                var width = edit.Text.Sum(c => candidate.Widths[c]) * candidate.Scale + (edit.Text.Length * candidate.State.Spacing + words * candidate.State.WordSpacing) * candidate.Scale * 1000 / candidate.State.Size;
                 if (width > candidate.Run.Width + .1) throw new InputException("Teks pengganti lebih lebar dari area asli. Gunakan teks lebih singkat agar tata letak tetap aman.");
                 var operand = new CString { Value = string.Concat(edit.Text.Select(c => candidate.Encoding[c])), CStringType = CStringType.String };
-                candidate.Operator.Operands.Clear();
-                if (candidate.Operator.Name == "TJ") { var array = new CArray(); array.Add(operand); candidate.Operator.Operands.Add(array); }
-                else candidate.Operator.Operands.Add(operand);
+                if (candidate.PreserveAdvance)
+                {
+                    // Preserve the original endpoint for the next fragment, including a font
+                    // change mid-line. No overlay, guessed Tm or alteration of the line matrix.
+                    var sequence = ContentReader.ReadContent(System.Text.Encoding.ASCII.GetBytes("[] TJ\n"));
+                    var array = (CArray)((COperator)sequence[0]).Operands[0];
+                    array.Add(operand);
+                    array.Add(new CReal { Value = (width - candidate.Run.Width) / candidate.Scale });
+                    replacements[candidate.Operator] = sequence;
+                }
+                else
+                {
+                    candidate.Operator.Operands.Clear();
+                    if (candidate.Operator.Name == "TJ") { var array = new CArray(); array.Add(operand); candidate.Operator.Operands.Add(array); }
+                    else candidate.Operator.Operands.Add(operand);
+                }
             }
             var finalContent = new CSequence();
             foreach (var item in content)

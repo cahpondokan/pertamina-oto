@@ -47,6 +47,7 @@ namespace Oto.Setup
             cancellation.ThrowIfCancellationRequested();
             progress.Report(new SetupProgress("Memasang OTO", "Aplikasi dan shortcut sedang disiapkan. Dokumen serta versi sebelumnya tetap disimpan.", -1, false));
             var result = await operations.InstallAppAsync();
+            if (result == 3) throw new InvalidOperationException("OTO terpasang, tetapi pendaftaran uninstall belum berhasil. Jalankan ulang installer ini untuk memperbaikinya.");
             if (result != 0 && result != 2) throw new InvalidOperationException("OTO belum dapat dipasang. Pastikan paket ini lebih baru dan tidak ada pemasangan lain yang berjalan. Versi aktif tetap tersedia.");
             outcome.ShortcutWarning = result == 2;
             return outcome;

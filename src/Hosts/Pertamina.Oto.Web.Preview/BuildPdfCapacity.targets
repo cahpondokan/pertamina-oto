@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <OtoCapacityRoot>$(MSBuildThisFileDirectory)</OtoCapacityRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(OtoCapacityRoot)wwwroot/js/pdf-capacity.json" LogicalName="Oto.Pdf.Capacity.json" />
+  </ItemGroup>
+  <!-- Only the JSON is maintained. Workers consume a classic-script envelope;
+       Razor embeds that same JSON, so neither presentation nor validation owns
+       a second numeric budget. This needs no downloaded build tool. -->
+  <Target Name="GenerateOtoPdfCapacityData" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <OtoCapacityJson>$([System.IO.File]::ReadAllText('$(OtoCapacityRoot)wwwroot/js/pdf-capacity.json'))</OtoCapacityJson>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(OtoCapacityRoot)wwwroot/js/pdf-capacity-data.js"
+                      Lines="/* Generated from pdf-capacity.json. Do not edit. */%0AglobalThis.OtoPdfCapacityData = $(OtoCapacityJson)"
+                      Overwrite="true" WriteOnlyWhenDifferent="true" Encoding="UTF-8" />
+  </Target>
+</Project>

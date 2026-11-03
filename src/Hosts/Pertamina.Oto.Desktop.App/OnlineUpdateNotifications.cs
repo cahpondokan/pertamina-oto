@@ -21,6 +21,28 @@ internal sealed partial class MainWindow
     private string? offeredOnlineVersion;
     private DateTimeOffset lastOnlineAttempt;
     private TextBlock? onlineUpdateStatus;
+    private string? onlineUpdateStatusText;
+#if DEBUG
+    private HttpClient? notificationFixtureClient;
+    private string? notificationFixtureBuild;
+#endif
+    private static bool IsOnlineAudit => Environment.GetCommandLineArgs().Any(a => a.StartsWith("--audit", StringComparison.Ordinal) || a.StartsWith("--self-test", StringComparison.Ordinal));
+    private string NotificationBuild =>
+#if DEBUG
+        notificationFixtureBuild ??
+#endif
+        RunningBuildLabel();
+    private bool CanCheckOnlineNotifications => !PortableProfile.IsPortable && ReleaseInfo.ValidVersion(NotificationBuild) &&
+#if DEBUG
+        (notificationFixtureClient is not null || !IsOnlineAudit);
+#else
+        !IsOnlineAudit;
+#endif
+    private void SetOnlineUpdateStatus(string text)
+    {
+        onlineUpdateStatusText = text;
+        if (onlineUpdateStatus is not null) onlineUpdateStatus.Text = text;
+    }
     private static string OnlinePreferencePath => Environment.GetCommandLineArgs().Contains("--audit-online-update", StringComparer.Ordinal)
         ? Path.Combine(AppContext.BaseDirectory, "online-update-audit", "isolated-preference.json")
         : Path.Combine(PortableProfile.DataRoot, "online-updates.json");
@@ -50,7 +72,7 @@ internal sealed partial class MainWindow
             if (onlineUpdatesStarted) return;
             onlineUpdatesStarted = true;
             // Native audit and development startup never contact the public endpoint.
-            if (PortableProfile.IsPortable || !ReleaseInfo.ValidVersion(RunningBuildLabel()) || Environment.GetCommandLineArgs().Any(a => a.StartsWith("--audit", StringComparison.Ordinal) || a.StartsWith("--self-test", StringComparison.Ordinal))) return;
+            if (!CanCheckOnlineNotifications) return;
             NetworkInformation.NetworkStatusChanged += OnlineNetworkChanged;
             onlineUpdateTimer.Tick += async (_, _) => await CheckOnlineUpdateAsync(false);
             onlineUpdateTimer.Start();
@@ -76,28 +98,34 @@ internal sealed partial class MainWindow
 
     private async Task CheckOnlineUpdateAsync(bool manual)
     {
-        if ((!manual && PortableProfile.IsPortable) || checkingOnlineUpdate || onlineUpdateLifetime.IsCancellationRequested || (!manual && (!onlineUpdatesEnabled || DateTimeOffset.UtcNow - lastOnlineAttempt < TimeSpan.FromSeconds(30)))) return;
-        if (!manual && NetworkInformation.GetInternetConnectionProfile()?.GetNetworkConnectivityLevel() != NetworkConnectivityLevel.InternetAccess) return;
+        if (!CanCheckOnlineNotifications || checkingUpdate || checkingOnlineUpdate || onlineUpdateLifetime.IsCancellationRequested || (!manual && (!onlineUpdatesEnabled || DateTimeOffset.UtcNow - lastOnlineAttempt < TimeSpan.FromSeconds(30)))) return;
+        // Reachability is determined by the bounded HTTPS request. Windows' connectivity
+        // classification may be stale or disabled even while this endpoint is reachable.
         checkingOnlineUpdate = true; lastOnlineAttempt = DateTimeOffset.UtcNow;
-        if (manual && onlineUpdateStatus is not null) onlineUpdateStatus.Text = "Memeriksa informasi versi di oto.ayani.id…";
+        SetOnlineUpdateStatus("Memeriksa informasi versi di oto.ayani.id…");
         try
         {
-            var release = (await OnlineReleaseClient.FetchBaselineAsync(OnlineHttp, onlineUpdateLifetime.Token))?.ToReleaseInfo();
-            if (onlineUpdateLifetime.IsCancellationRequested || (!manual && !onlineUpdatesEnabled)) return;
-            var running = RunningBuildLabel();
+            var client = OnlineHttp;
+#if DEBUG
+            client = notificationFixtureClient ?? client;
+#endif
+            var release = (await OnlineReleaseClient.FetchBaselineAsync(client, onlineUpdateLifetime.Token))?.ToReleaseInfo();
+            if (onlineUpdateLifetime.IsCancellationRequested || !onlineUpdatesEnabled) return;
+            if (checkingUpdate) return; // The explicit check now owns visible update feedback.
+            var running = NotificationBuild;
             if (release is not null && release.IsNewerThan(running))
             {
                 if (manual || dismissedOnlineVersion != release.Version) ShowOnlineRelease(release);
-                if (onlineUpdateStatus is not null) onlineUpdateStatus.Text = OnlineProductDescription(release) + " Pilih Update untuk mengunduh dan memasang atas pilihan Anda.";
+                SetOnlineUpdateStatus(OnlineProductDescription(release) + " Pilih Update untuk mengunduh dan memasang atas pilihan Anda.");
             }
-            else if (onlineUpdateStatus is not null) onlineUpdateStatus.Text = release is null
+            else SetOnlineUpdateStatus(release is null
                 ? "Belum ada rilis yang diterbitkan di portal."
-                : ReleaseInfo.ValidVersion(running) ? "Tidak ada versi online yang lebih baru dari aplikasi ini." : "Portal dapat dijangkau. Perbandingan otomatis aktif pada build yang sudah dipasang.";
+                : "Tidak ada versi online yang lebih baru dari aplikasi ini.");
         }
         catch (Exception error) when (error is HttpRequestException or IOException or InvalidDataException or JsonException or OperationCanceledException)
         {
-            if (manual && !onlineUpdateLifetime.IsCancellationRequested && onlineUpdateStatus is not null)
-                onlineUpdateStatus.Text = "Portal update belum dapat dijangkau atau belum siap. Anda tetap dapat menggunakan fitur PDF lokal.";
+            if (!onlineUpdateLifetime.IsCancellationRequested && onlineUpdatesEnabled && !checkingUpdate)
+                SetOnlineUpdateStatus("Portal update belum dapat dijangkau atau belum siap. Anda tetap dapat menggunakan fitur PDF lokal.");
         }
         finally { checkingOnlineUpdate = false; }
     }
@@ -130,16 +158,28 @@ internal sealed partial class MainWindow
             row("\uE774", "Unduhan portable", "Tidak ada pemeriksaan online otomatis. Buka website hanya atas pilihan Anda.", ActionButton("Buka unduhan", async () => await OpenOnlineDownloadsAsync()));
             return;
         }
-        var enabled = new ToggleSwitch { IsOn = onlineUpdatesEnabled, OnContent = "Aktif", OffContent = "Nonaktif" };
+        var supported = CanCheckOnlineNotifications;
+        var enabled = new ToggleSwitch { IsOn = onlineUpdatesEnabled, IsEnabled = supported,
+            OnContent = supported ? "Aktif" : "Belum tersedia", OffContent = "Nonaktif" };
         Microsoft.UI.Xaml.Automation.AutomationProperties.SetName(enabled, "Notifikasi update saat OTO berjalan");
-        enabled.Toggled += (_, _) => { onlineUpdatesEnabled = enabled.IsOn; if (!enabled.IsOn) onlineUpdateBanner.IsOpen = false; SaveOnlinePreference(); };
-        row("\uE774", "Notifikasi update online", "Saat OTO terbuka, periksa versi di oto.ayani.id setiap 30 menit dan ketika koneksi tersedia. Dokumen tidak dikirim.", enabled);
+        enabled.Toggled += async (_, _) =>
+        {
+            onlineUpdatesEnabled = enabled.IsOn;
+            if (!enabled.IsOn) { onlineUpdateBanner.IsOpen = false; SetOnlineUpdateStatus("Notifikasi otomatis nonaktif. Periksa update tetap dapat digunakan."); }
+            SaveOnlinePreference();
+            if (enabled.IsOn && supported) await CheckOnlineUpdateAsync(true);
+        };
+        row("\uE774", "Notifikasi update online", supported
+            ? "Periksa saat diaktifkan, saat OTO terbuka, setiap 30 menit dan ketika koneksi tersedia. Dokumen tidak dikirim."
+            : "Pemeriksaan otomatis tidak berjalan pada salinan pengujian ini. Gunakan aplikasi terpasang dari shortcut PERTAMINA OTO.", enabled);
         var actions = new ResponsiveWrapPanel { Spacing = 8 };
         actions.Children.Add(ActionButton("Update", async () => await CheckManualOnlineUpdateAsync()));
         actions.Children.Add(ActionButton("Update lokal", async () => await CheckPreparedLocalUpdateAsync()));
         actions.Children.Add(ActionButton("Buka unduhan", async () => await OpenOnlineDownloadsAsync()));
         content.Children.Add(actions);
-        onlineUpdateStatus = Copy("Pemeriksaan online tidak menghalangi pemrosesan PDF saat offline. Update tidak dipasang otomatis.", 12);
+        onlineUpdateStatus = Copy(onlineUpdateStatusText ?? (supported
+            ? "Pemeriksaan online tidak menghalangi pemrosesan PDF saat offline. Update tidak dipasang otomatis."
+            : "Update online memerlukan aplikasi terpasang. Jalankan shortcut PERTAMINA OTO."), 12);
         Microsoft.UI.Xaml.Automation.AutomationProperties.SetLiveSetting(onlineUpdateStatus, Microsoft.UI.Xaml.Automation.Peers.AutomationLiveSetting.Polite);
         content.Children.Add(onlineUpdateStatus);
     }

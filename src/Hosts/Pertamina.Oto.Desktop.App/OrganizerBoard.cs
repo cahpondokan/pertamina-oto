@@ -40,6 +40,7 @@ internal sealed partial class MainWindow
         internal readonly Border Frame = new() { Background = Brush(255, 255, 255), BorderThickness = new Thickness(2), CornerRadius = new CornerRadius(8), Padding = new Thickness(12) };
         internal readonly Image Picture = new() { Width = 154, Height = 194, Stretch = Stretch.Uniform, RenderTransformOrigin = new Point(.5, .5) };
         internal readonly TextBlock Number = new() { HorizontalAlignment = HorizontalAlignment.Center, FontSize = 12 };
+        internal readonly TextBlock Origin = new() { HorizontalAlignment = HorizontalAlignment.Center, FontSize = 13, FontWeight = Microsoft.UI.Text.FontWeights.SemiBold };
         internal readonly StackPanel Actions = new() { Orientation = Orientation.Horizontal, Spacing = 3, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Top, Opacity = 0, IsHitTestVisible = false };
         internal readonly RotateTransform Angle = new();
         internal readonly TranslateTransform Position = new();
@@ -97,7 +98,10 @@ internal sealed partial class MainWindow
             card.Page = page;
             if (card.Angle.Angle != page.Rotation) card.Angle.Angle = page.Rotation;
             UpdateOrganizerNumber(card, i);
-            card.Frame.BorderBrush = organizerSources.Count > 1 ? OrganizerColor(page.Source) : Brush(222, 227, 235);
+            card.Frame.BorderBrush = OrganizerColor(page.Source);
+            var accent = OrganizerColor(page.Source).Color;
+            card.Frame.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255,
+                (byte)(240 + accent.R / 17), (byte)(240 + accent.G / 17), (byte)(240 + accent.B / 17)));
             var sourceName = page.Source < 0 ? "Halaman kosong A4" : Path.GetFileName(organizerSources[page.Source]);
             ToolTipService.SetToolTip(card.Root, sourceName);
         }
@@ -109,19 +113,23 @@ internal sealed partial class MainWindow
     {
         var card = new OrganizerCard(page);
         card.Root.RenderTransform = card.Position; card.Picture.RenderTransform = card.Angle;
-        var content = new Grid(); content.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); content.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        var content = new Grid { RowSpacing = 6 };
+        content.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        content.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+        content.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        content.Children.Add(card.Origin);
         var sheet = new Grid();
-        if (page.Source < 0) sheet.Children.Add(new Border { Width = 130, Height = 184, Background = Brush(255, 255, 255), BorderBrush = Brush(224, 227, 234), BorderThickness = new Thickness(1), RenderTransform = card.Angle, RenderTransformOrigin = new Point(.5, .5) });
-        sheet.Children.Add(card.Picture); content.Children.Add(sheet); Grid.SetRow(card.Number, 1); content.Children.Add(card.Number);
-        foreach (var operation in new[] { "rotate", "remove", "preview" })
+        if (page.Source < 0) sheet.Children.Add(new Viewbox { Stretch = Stretch.Uniform, Child = new Border { Width = 130, Height = 184, Background = Brush(255, 255, 255), BorderBrush = Brush(224, 227, 234), BorderThickness = new Thickness(1), RenderTransform = card.Angle, RenderTransformOrigin = new Point(.5, .5) } });
+        sheet.Children.Add(card.Picture); Grid.SetRow(sheet, 1); content.Children.Add(sheet); Grid.SetRow(card.Number, 2); content.Children.Add(card.Number);
+        foreach (var operation in new[] { "preview", "rotate", "remove" })
         {
-            var button = new Button { Content = operation switch { "rotate" => "↻", "remove" => "×", _ => "⤢" }, Width = 32, Height = 32, Padding = new Thickness(0), FontSize = 18, Background = Brush(255, 255, 255) };
-            var label = operation switch { "rotate" => "Putar 90°", "remove" => "Hapus halaman dari hasil", _ => "Perbesar halaman" };
+            var button = new Button { Content = new FontIcon { Glyph = operation switch { "rotate" => "\uE7AD", "remove" => "\uE711", _ => "\uE721" }, FontSize = 16 }, Width = 32, Height = 32, Padding = new Thickness(0), CornerRadius = new CornerRadius(16), Background = Brush(255, 255, 255) };
+            var label = operation switch { "rotate" => "Putar 90°", "remove" => "Keluarkan halaman dari hasil", _ => "Pratinjau halaman" };
             AutomationProperties.SetName(button, label); ToolTipService.SetToolTip(button, label);
             button.Click += async (_, _) => { if (operation == "preview") await PreviewOrganizerCardAsync(card); else ActOnOrganizerCard(card.Page.Id, operation); };
             card.Actions.Children.Add(button);
         }
-        content.Children.Add(card.Actions); card.Frame.Child = content; card.Root.Content = card.Frame;
+        Grid.SetRow(card.Actions, 1); content.Children.Add(card.Actions); card.Frame.Child = content; card.Root.Content = card.Frame;
         card.Root.PointerEntered += (_, _) => { card.Hover = true; RevealOrganizerActions(card); };
         card.Root.PointerExited += (_, _) => { card.Hover = false; RevealOrganizerActions(card); };
         card.Root.GotFocus += (_, _) => RevealOrganizerActions(card);
@@ -158,6 +166,7 @@ internal sealed partial class MainWindow
         }
         var visible = organizerDrag is null && (card.Hover || focused);
         card.Actions.Opacity = visible ? 1 : 0; card.Actions.IsHitTestVisible = visible;
+        RefreshOrganizerGapVisibility();
     }
 
     private async Task SetOrganizerThumbnailAsync(OrganizerCard card)
@@ -209,7 +218,7 @@ internal sealed partial class MainWindow
         {
             object content = card.Page.Source < 0 ? new Border { Width = 280, Height = 396, Background = Brush(255, 255, 255), BorderBrush = Brush(200, 207, 217), BorderThickness = new Thickness(1) }
                 : PreviewPanel(organizerSources[card.Page.Source], (uint)card.Page.Page, card.Page.Rotation);
-            await new ContentDialog { XamlRoot = root.XamlRoot, Title = "Halaman " + card.Number.Text, Content = content, CloseButtonText = "Tutup" }.ShowAsync();
+            await new ContentDialog { XamlRoot = root.XamlRoot, Title = OrganizerOrigin(card.Page) + " · " + card.Number.Text, Content = content, CloseButtonText = "Tutup" }.ShowAsync();
         }
         catch (Exception) { status.Text = "Preview tidak tersedia."; }
         finally { messageOpen = false; }
@@ -228,44 +237,64 @@ internal sealed partial class MainWindow
         while (organizerGaps.Count < pageLayout.Count + 1)
         {
             var gap = new Grid { Width = 28, Height = OrganizerCardHeight, Background = Brush(247, 248, 252) };
-            var button = new Button { Content = "+", Width = 26, Height = 34, Padding = new Thickness(0), FontSize = 22, VerticalAlignment = VerticalAlignment.Center, Opacity = 0 };
-            var hovering = false;
+            var button = new Button { Content = new FontIcon { Glyph = "\uE8A5", FontSize = 16 }, Width = 26, Height = 34, Padding = new Thickness(0), CornerRadius = new CornerRadius(13), VerticalAlignment = VerticalAlignment.Center, Opacity = 0 };
+            button.Content = new Grid { Children = { (FontIcon)button.Content, new TextBlock { Text = "+", FontSize = 13, FontWeight = Microsoft.UI.Text.FontWeights.Bold, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Bottom, Foreground = Brush(0, 103, 255) } } };
+            ToolTipService.SetToolTip(button, "Sisip halaman kosong");
+            gap.Tag = false;
             button.Click += (_, _) => InsertOrganizerBlank(organizerGaps.IndexOf(gap));
-            gap.PointerEntered += (_, _) => { hovering = true; button.Opacity = 1; };
-            gap.PointerExited += (_, _) => { hovering = false; if (button.FocusState != FocusState.Keyboard) button.Opacity = 0; };
-            button.GotFocus += (_, _) => button.Opacity = 1; button.LostFocus += (_, _) => button.Opacity = hovering ? 1 : 0;
+            gap.PointerEntered += (_, _) => { gap.Tag = true; RefreshOrganizerGapVisibility(); };
+            gap.PointerExited += (_, _) => { gap.Tag = false; RefreshOrganizerGapVisibility(); };
+            button.GotFocus += (_, _) => RefreshOrganizerGapVisibility(); button.LostFocus += (_, _) => DispatcherQueue.TryEnqueue(RefreshOrganizerGapVisibility);
             gap.Children.Add(button); organizerGaps.Add(gap); organizerBoard.Children.Add(gap);
         }
         for (var i = 0; i < organizerGaps.Count; i++)
         {
             ((Button)organizerGaps[i].Children[0]).TabIndex = i * 5;
-            AutomationProperties.SetName((Button)organizerGaps[i].Children[0], i == 0 ? "Sisip halaman kosong di awal" : i == pageLayout.Count ? "Sisip halaman kosong di akhir" : $"Sisip halaman kosong sebelum halaman {i + 1}");
+            AutomationProperties.SetName((Button)organizerGaps[i].Children[0], i == 0 ? "Sisip halaman kosong di awal" : i == pageLayout.Count ? "Sisip halaman kosong di akhir" : $"Sisip halaman kosong sebelum urutan {i + 1}");
+        }
+        RefreshOrganizerGapVisibility();
+    }
+
+    private void RefreshOrganizerGapVisibility()
+    {
+        for (var i = 0; i < organizerGaps.Count; i++)
+        {
+            var gap = organizerGaps[i]; var button = (Button)gap.Children[0];
+            bool Adjacent(int index) => index >= 0 && index < pageLayout.Count && organizerCards.TryGetValue(pageLayout[index].Id, out var card) && card.Actions.Opacity > 0;
+            button.Opacity = organizerDrag is null && (gap.Tag is true || button.FocusState == FocusState.Keyboard || Adjacent(i - 1) || Adjacent(i)) ? 1 : 0;
         }
     }
 
     private void UpdateOrganizerSummary()
     {
         UpdateAutomaticOutputName();
-        layoutStatus.Text = $"{pageLayout.Count} halaman · Seret untuk mengatur urutan · Arahkan ke celah untuk menambah halaman kosong · Ctrl+Z: Undo";
-        if (sourceSummary.Children.Count == 0) sourceSummary.Children.Add(Copy("File sumber", 18));
+        layoutStatus.Text = "Seret kartu untuk mengubah urutan. Klik kanan untuk opsi lainnya.";
+        if (organizerCount is not null) organizerCount.Text = $"{pageLayout.Count} halaman dari {pageLayout.Where(p => p.Source >= 0).Select(p => p.Source).Distinct().Count()} file PDF";
+        if (organizerReady is not null) organizerReady.Text = pageLayout.Count == 0 ? "Tambahkan halaman untuk menyimpan." : folder is null ? "Pilih lokasi penyimpanan." : $"✓  {pageLayout.Count} halaman siap disimpan\nUrutan mengikuti susunan di kiri.";
+        if (organizerUndoButton is not null) organizerUndoButton.IsEnabled = active is null && !importing && layoutUndo.Count > 0;
+        if (organizerRedoButton is not null) organizerRedoButton.IsEnabled = active is null && !importing && layoutRedo.Count > 0;
         while (organizerSourceLabels.Count < organizerSources.Count)
         {
-            var i = organizerSourceLabels.Count; var label = Copy("", 13); organizerSourceLabels.Add(label);
-            var row = new Grid(); row.ColumnDefinitions.Add(new ColumnDefinition()); row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); row.Children.Add(label);
-            var remove = new Button { Content = "Keluarkan dari daftar" }; Grid.SetColumn(remove, 1); row.Children.Add(remove);
+            var i = organizerSourceLabels.Count; var label = Copy("", 13); label.MaxLines = 3; label.TextTrimming = TextTrimming.CharacterEllipsis; organizerSourceLabels.Add(label);
+            var row = new Grid { ColumnSpacing = 8 }; row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); row.ColumnDefinitions.Add(new ColumnDefinition()); row.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); Grid.SetColumn(label, 1); row.Children.Add(label);
+            row.Children.Add(new Border { Width = 34, Height = 40, CornerRadius = new CornerRadius(6), Background = OrganizerColor(i), Child = new TextBlock { Text = OrganizerSourceCode(i), FontWeight = Microsoft.UI.Text.FontWeights.Bold, FontSize = 18, Foreground = Brush(255,255,255), VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Center } });
+            var remove = new Button { Content = "×", Width = 32, Height = 36, Padding = new Thickness(0) }; Grid.SetColumn(remove, 2); row.Children.Add(remove);
             ToolTipService.SetToolTip(remove, "Keluarkan dokumen dari daftar");
             Microsoft.UI.Xaml.Automation.AutomationProperties.SetName(remove, "Keluarkan dari daftar: " + Path.GetFileName(organizerSources[i]));
             remove.Click += (_, _) => ExcludeOrganizerSource(i);
-            sourceSummary.Children.Add(new Border { Child = row, BorderBrush = OrganizerColor(i), BorderThickness = new Thickness(4, 0, 0, 0), Padding = new Thickness(8) });
+            sourceSummary.Children.Add(new Border { Child = row, BorderBrush = OrganizerColor(i), BorderThickness = new Thickness(4, 0, 0, 0), Padding = new Thickness(4) });
         }
         for (var i = 0; i < organizerSourceLabels.Count; i++)
         {
             var count = pageLayout.Count(p => p.Source == i);
-            organizerSourceLabels[i].Text = $"{Path.GetFileName(organizerSources[i])}\n{count} halaman";
+            organizerSourceLabels[i].Text = $"{Path.GetFileName(organizerSources[i])}\n{restartSourcePageCounts.GetValueOrDefault(organizerSources[i], pageLayout.Where(p => p.Source == i).Select(p => p.Page + 1).DefaultIfEmpty().Max())} halaman · {count} di hasil";
+            ToolTipService.SetToolTip(organizerSourceLabels[i], OrganizerSourceCode(i) + " · " + Path.GetFileName(organizerSources[i]));
+            if (organizerSourceLabels[i].Parent is Grid sourceRow) AutomationProperties.SetName(sourceRow.Children.OfType<Button>().Single(), "Keluarkan dari daftar: " + OrganizerSourceCode(i) + " · " + Path.GetFileName(organizerSources[i]));
             if (organizerSourceLabels[i].Parent is Grid row && row.Parent is Border border) border.Visibility = count == 0 ? Visibility.Collapsed : Visibility.Visible;
         }
-        if (!sourceSummary.Children.Contains(organizerBlankSummary)) sourceSummary.Children.Add(organizerBlankSummary);
-        organizerBlankSummary.Text = $"{pageLayout.Count(p => p.Source < 0)} halaman kosong A4 · File asli tetap utuh.";
+        sourceSummary.Children.Remove(organizerBlankSummary); sourceSummary.Children.Add(organizerBlankSummary);
+        organizerBlankSummary.Text = $"{pageLayout.Count(p => p.Source < 0)} halaman kosong A4";
+        organizerBlankSummary.Visibility = Visibility.Collapsed; // Blank pages are explicitly labelled in the grid.
         run.IsEnabled = active is null && !importing && organizerHeld is null && pageLayout.Count > 0 && organizerSources.Count > 0;
     }
 
@@ -281,8 +310,11 @@ internal sealed partial class MainWindow
             if (!organizerCards.TryGetValue(order[i].Id, out var card)) continue;
             card.Root.Width = OrganizerCardWidth * previewScale;
             card.Root.Height = OrganizerCardHeight * previewScale;
-            card.Picture.Width = 154 * previewScale;
-            card.Picture.Height = 194 * previewScale;
+            card.Frame.Padding = new Thickness(previewScale < .8 ? 6 : 12);
+            card.Picture.Width = card.Root.Width - card.Frame.Padding.Left * 2 - 4;
+            card.Picture.Height = Math.Max(30, card.Root.Height - card.Frame.Padding.Top * 2 - 56);
+            card.Origin.FontSize = previewScale < .8 ? 11 : 13;
+            foreach (var action in card.Actions.Children.OfType<Button>()) { action.Width = previewScale < .8 ? 24 : 32; action.Height = previewScale < .8 ? 28 : 32; }
             if (organizerDrag?.MovingId == order[i].Id) continue;
             var slot = OrganizerSlot(i); MoveOrganizerVisual(card, slot, animate);
             if (organizerDrag is null) UpdateOrganizerNumber(card, i);
@@ -303,10 +335,11 @@ internal sealed partial class MainWindow
         card.Root.TabIndex = index * 5 + 1;
         for (var i = 0; i < card.Actions.Children.Count; i++) ((Button)card.Actions.Children[i]).TabIndex = index * 5 + 2 + i;
         var number = (index + 1).ToString(System.Globalization.CultureInfo.InvariantCulture);
-        if (card.Number.Text == number) return;
-        card.Number.Text = number;
+        card.Number.Text = "Urutan " + number;
+        card.Origin.Text = OrganizerOrigin(card.Page);
         var name = card.Page.Source < 0 ? "Halaman kosong A4" : Path.GetFileName(organizerSources[card.Page.Source]);
-        AutomationProperties.SetName(card.Root, $"Halaman {number}, {name}. Seret untuk pindah. Ctrl+panah: pindah, Ctrl+D: duplikat.");
+        var duplicate = card.Page.Source >= 0 && pageLayout.Count(p => p.Source == card.Page.Source && p.Page == card.Page.Page) > 1 ? " Salinan halaman; instance terpisah." : "";
+        AutomationProperties.SetName(card.Root, $"Halaman {number}, {OrganizerOrigin(card.Page)}, {name}.{duplicate} Urutan hasil {number}. Seret untuk pindah. Ctrl+panah: pindah, Ctrl+D: duplikat.");
     }
 
     private static void MoveOrganizerVisual(OrganizerCard card, Point target, bool animate)

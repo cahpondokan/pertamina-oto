@@ -300,30 +300,20 @@ internal sealed partial class MainWindow
         activeToolControls = "organize";
         foreach (var control in new FrameworkElement[] { run, cancel, openResult, outputName, location, status, progress, password })
             if (control.Parent is Panel parent) parent.Children.Remove(control);
-        var toolbar = new ResponsiveWrapPanel { Spacing = 8 };
-        toolbar.Children.Add(HomeButton("Tambah PDF", "\uE710", async () => await PickOrganizerAsync(), true));
-        toolbar.Children.Add(HomeButton("Tempel PDF", "\uE77F", async () => await PasteOrganizerAsync()));
-        toolbar.Children.Add(DocumentCloseButton());
-        toolbar.Children.Add(HomeButton("Undo", "\uE7A7", () => RestoreLayout(false)));
-        toolbar.Children.Add(HomeButton("Redo", "\uE7A6", () => RestoreLayout(true)));
-        body.Children.Add(toolbar);
-        body.Children.Add(layoutStatus);
-        if (organizerZoomHost is not null) DetachOwned(toolWorkspace, organizerZoomHost);
-        if (sourceSummary.Parent is Panel oldSummary) oldSummary.Children.Remove(sourceSummary);
-        // New wrappers avoid sharing a XAML element between two parents.
+        // Keep the owning containers: WinUI Parent can be null after an off-tree
+        // editor was replaced, even though its collection still owns the control.
+        if (organizerCanvas is not null)
+        {
+            organizerCanvas.Children.Remove(layoutStatus);
+            if (organizerZoomHost is not null) organizerCanvas.Children.Remove(organizerZoomHost);
+        }
+        if (organizerSourceViewport is not null) organizerSourceViewport.Content = null;
+        sourceSummary.Children.Clear(); organizerSourceLabels.Clear();
         toolWorkspace.Children.Clear(); toolOptions.Children.Clear();
         ConfigureOrganizerDrop();
-        toolWorkspace.Children.Add(OrganizerZoomHost());
-        toolOptions.Children.Add(sourceSummary);
-        outputName.Text = organizerOutput; toolOptions.Children.Add(outputName); toolOptions.Children.Add(password);
-        toolOptions.Children.Add(HomeButton("PILIH FOLDER HASIL", "\uE8B7", async () => await PickFolderAsync()));
-        toolOptions.Children.Add(BuildOutputLocation()); run.Content = "Simpan PDF baru";
+        outputName.Visibility = Visibility.Visible;
         openResult.Visibility = Visibility.Collapsed; progress.Visibility = Visibility.Collapsed;
-        toolOptions.Children.Add(run); toolOptions.Children.Add(status);
-        if (toolOptions.Parent is Panel oldOptions) oldOptions.Children.Remove(toolOptions);
-        toolWorkspace.Children.Add(toolOptions); body.Children.Add(toolWorkspace);
-        editable.Add(outputName); editable.Add(password); editable.Add(pageGrid);
-        foreach (var button in toolbar.Children.OfType<Button>()) editable.Add(button);
+        BuildOrganizerDesign();
         RefreshPageGrid(); LayoutCards();
         _ = AddOrganizerSourcesAsync();
     }
@@ -373,6 +363,7 @@ internal sealed partial class MainWindow
                 if (organizerCards.TryGetValue(pageLayout[index].Id, out var card)) { card.Page = pageLayout[index]; card.Angle.Angle = card.Page.Rotation; }
         }
         else RefreshPageGrid();
+        UpdateOrganizerSummary();
     }
 
     private void RefreshPageGrid() => RenderOrganizerCards();

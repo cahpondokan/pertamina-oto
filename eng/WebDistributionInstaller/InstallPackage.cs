@@ -3,6 +3,7 @@ using Pertamina.Oto.Desktop.App;
 internal static class InstallPackage
 {
     internal static readonly string[] LauncherFiles = ["PERTAMINA-OTO.exe", "PERTAMINA-OTO.dll", "PERTAMINA-OTO.deps.json", "PERTAMINA-OTO.runtimeconfig.json"];
+    private static readonly string[] UninstallerFiles = ["Uninstall-OTO.exe", "Uninstall-OTO.exe.config"];
 
     internal static void Validate(string package)
     {
@@ -21,11 +22,37 @@ internal static class InstallPackage
         else if (launchers.Length != LauncherFiles.Length || !launchers.Select(e => e.Path).Order().SequenceEqual(LauncherFiles.Order()))
             throw new InvalidDataException("Launcher tidak lengkap.");
         foreach (var entry in launchers) LocalAppUpdate.Verify(LocalAppUpdate.SafePath(package, "launcher/" + entry.Path), entry);
+        ValidateUninstaller(package);
+    }
+
+    internal static bool ValidateUninstaller(string package)
+    {
+        var metadata = LocalAppUpdate.SafePath(package, "uninstall-manifest.json");
+        var exe = LocalAppUpdate.SafePath(package, "uninstall/Uninstall-OTO.exe");
+        var config = LocalAppUpdate.SafePath(package, "uninstall/Uninstall-OTO.exe.config");
+        if (!File.Exists(metadata) && !File.Exists(exe) && !File.Exists(config)) return false; // Legacy package.
+        var entries = LocalAppUpdate.Read<LocalAppUpdate.Entry[]>(metadata);
+        if (entries.Length != 2 || !entries.Select(e => e.Path).Order(StringComparer.Ordinal).SequenceEqual(UninstallerFiles))
+            throw new InvalidDataException("Paket uninstall tidak lengkap.");
+        foreach (var entry in entries) LocalAppUpdate.Verify(LocalAppUpdate.SafePath(package, "uninstall/" + entry.Path), entry);
+        return true;
+    }
+
+    internal static void RegisterUninstall(string package)
+    {
+        if (!ValidateUninstaller(package)) throw new InvalidDataException("Paket uninstall tidak tersedia.");
+        var exe = LocalAppUpdate.SafePath(package, "uninstall/Uninstall-OTO.exe");
+        using var process = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(exe, "--register")
+        { UseShellExecute = false, CreateNoWindow = true, WorkingDirectory = Path.GetDirectoryName(exe)! }) ?? throw new IOException("Pendaftaran uninstall gagal.");
+        process.WaitForExit();
+        if (process.ExitCode != 0) throw new IOException("Pendaftaran uninstall gagal.");
     }
 
     internal static string Install(string package, string destination)
     {
         Validate(package);
+        if (File.Exists(LocalAppUpdate.SafePath(destination, "uninstall-pending.json")))
+            throw new IOException("Uninstall sebelumnya belum selesai. Selesaikan uninstall sebelum memasang ulang OTO.");
         var feed = LocalAppUpdate.SafePath(package, "feed");
         var launchers = LocalAppUpdate.Read<LocalAppUpdate.Entry[]>(LocalAppUpdate.SafePath(package, "launcher-manifest.json"));
         _ = LocalAppUpdate.SafePath(destination, "setup.lock");

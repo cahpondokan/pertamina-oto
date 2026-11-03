@@ -26,12 +26,14 @@ internal sealed partial class MainWindow
         var request = new PdfRequest("organize", usedSources.Select(i => organizerSources[i]).ToArray(), target, Password: password.Password,
             Layout: pageLayout.Select(p => new PagePlacement(p.Source < 0 ? p.Source : Array.IndexOf(usedSources, p.Source), p.Page, p.Rotation)).ToArray());
         var editor = body.Children.ToArray();
-        void RestoreEditor() { organizerVisible = true; body.Children.Clear(); foreach (var item in editor) body.Children.Add(item); }
+        void RestoreEditor() { organizerVisible = true; breadcrumb.Text = "Ruang kerja  /  Atur halaman PDF"; body.Children.Clear(); foreach (var item in editor) body.Children.Add(item); }
         using var cancellation = new CancellationTokenSource(); active = cancellation;
         foreach (var item in navigation) item.IsEnabled = false; globalSearch.IsEnabled = false;
         organizerVisible = false; body.Children.Clear();
         var processing = new StackPanel { Spacing = 20, Padding = new Thickness(24) };
+        processing.Children.Add(OrganizerBiblo(96));
         processing.Children.Add(Copy("Menyimpan susunan halaman…", 26));
+        if (organizerCloseSaveInProgress) processing.Children.Add(Copy(Path.GetFileName(target) + " · " + Path.GetDirectoryName(target), 13));
         processing.Children.Add(Copy("Memproses dan memvalidasi PDF secara lokal."));
         processing.Children.Add(new ProgressBar { IsIndeterminate = true });
         var stop = new Button { Content = "BATALKAN" }; stop.Click += (_, _) => cancellation.Cancel(); processing.Children.Add(stop); body.Children.Add(processing);
@@ -40,14 +42,16 @@ internal sealed partial class MainWindow
         catch (Exception) { status.Text = "Proses gagal. File asli tidak diubah."; }
         finally
         {
-            active = null; password.Password = "";
+            active = null;
             foreach (var item in navigation) item.IsEnabled = true; globalSearch.IsEnabled = true;
             RestoreEditor(); RefreshPageGrid();
         }
         if (reply is not { Success: true }) { if (reply is not null) status.Text = reply.Message; return; }
+        password.Password = ""; toolSessionSecrets.Remove("organize");
         organizerOutput = outputName.Text; restartSavedLayout = RestartLayoutState();
-        resultPath = target; status.Text = "PDF hasil tersimpan.";
+        resultPath = target; transitionOrganizerResult = target; status.Text = "PDF hasil tersimpan.";
         history.Insert(0, "Atur halaman — " + name + " — selesai lokal"); completedActivities.Insert(0, (selected, name));
+        if (organizerCloseSaveInProgress) return;
         organizerVisible = false; body.Children.Clear();
         ShowUnifiedResult([target], $"{reply.Pages} halaman · {reply.Bytes / 1024d:N1} KB", () => { RestoreEditor(); RefreshPageGrid(); });
     }

@@ -5,6 +5,13 @@ namespace Pertamina.Oto.Desktop.App;
 
 internal static class Program
 {
+    internal static ReaderActivation? ReaderBridge { get; private set; }
+    internal static bool ReaderInteractiveTest =>
+#if DEBUG
+        Environment.GetEnvironmentVariable("OTO_READER_TEST_MODE") == "1";
+#else
+        false;
+#endif
     [STAThread]
     private static void Main()
     {
@@ -19,6 +26,26 @@ internal static class Program
         }
         AppDomain.CurrentDomain.UnhandledException += (_, e) => LocalDiagnostics.Record("runtime-unhandled", e.ExceptionObject as Exception);
         TaskScheduler.UnobservedTaskException += (_, e) => LocalDiagnostics.Record("task-unobserved", e.Exception);
+        var launchArgs = printArgs.Skip(1).ToArray();
+        var normalLaunch = ReaderActivation.IsNormalLaunch(launchArgs);
+        var lifetimeAudit = false;
+#if DEBUG
+        lifetimeAudit = launchArgs.Length == 3 && launchArgs[0] == "--audit-reader-lifetime";
+#endif
+        // A restarted version still owns normal PDF activations after its handshake.
+        // It must always complete that handshake instead of forwarding the restart command.
+        using var readerActivation = normalLaunch || launchArgs.FirstOrDefault() == "--restart-ready" || lifetimeAudit
+            ? new ReaderActivation(Environment.UserName + "|" + Path.GetFullPath(AppContext.BaseDirectory).ToUpperInvariant() + (lifetimeAudit ? "|lifetime-audit" : "")) : null;
+        if (normalLaunch && readerActivation is { IsPrimary: false })
+        {
+            if (!readerActivation.ForwardAsync(ReaderActivation.LaunchPath(launchArgs)).GetAwaiter().GetResult())
+            {
+                Environment.ExitCode = 1;
+                _ = PortableStartupMessage(IntPtr.Zero, "Jendela OTO belum dapat menerima dokumen. Tunggu sebentar lalu buka PDF kembali. Dokumen yang sudah terbuka tetap aman.", "PERTAMINA OTO", 0x10);
+            }
+            return;
+        }
+        ReaderBridge = readerActivation is { IsPrimary: true } ? readerActivation : null;
         WinRT.ComWrappersSupport.InitializeComWrappers();
         Application.Start(callback =>
         {
@@ -50,6 +77,10 @@ public sealed partial class DesktopApplication : Application
 
     protected override async void OnLaunched(LaunchActivatedEventArgs args)
     {
+#if DEBUG
+        if (Environment.GetEnvironmentVariable("OTO_READER_TEST_MODE") == "1") MainWindow.PrepareOriginalFontAuditStorage();
+        if (Environment.GetCommandLineArgs().Contains("--audit-reader-lifetime", StringComparer.Ordinal)) MainWindow.PrepareOriginalFontAuditStorage();
+#endif
         if (Environment.GetCommandLineArgs().Contains("--self-test-flow"))
         {
             var testWindow = new MainWindow(); testWindow.TestWorkspaceFlow(); Exit(); return;
@@ -87,15 +118,21 @@ public sealed partial class DesktopApplication : Application
             || Environment.GetCommandLineArgs().Contains("--audit-zoom-smoothness", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-zoom", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-reader-ui", StringComparer.Ordinal)
+            || Environment.GetCommandLineArgs().Contains("--audit-reader-tabs", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-font-compatibility", StringComparer.Ordinal)
             || Environment.GetCommandLineArgs().Contains("--audit-live-editor", StringComparer.Ordinal)) MainWindow.PrepareOriginalFontAuditStorage();
 #endif
 #if DEBUG
         var homeAuditArgs = Environment.GetCommandLineArgs();
+        var transitionAuditIndex = Array.FindIndex(homeAuditArgs, a => a is "--audit-feature-transition-dialog" or "--audit-feature-transition-routing" or "--audit-feature-transition-session");
+        if (transitionAuditIndex >= 0 && transitionAuditIndex + 1 < homeAuditArgs.Length)
+            MainWindow.PrepareMergePanelAudit(homeAuditArgs[transitionAuditIndex + 1]);
         var homeAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-centered-home");
         var catalogWidthAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-catalog-content-width");
         var appExitAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-app-exit");
         var organizerTransferAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-organizer-transfer");
+        var organizerDesignAuditIndex = Array.IndexOf(homeAuditArgs, "--audit-organizer-design");
+        if (organizerDesignAuditIndex >= 0 && organizerDesignAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareMergePanelAudit(homeAuditArgs[organizerDesignAuditIndex + 1]);
         if (organizerTransferAuditIndex >= 0 && organizerTransferAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareMergePanelAudit(homeAuditArgs[organizerTransferAuditIndex + 1]);
         if (catalogWidthAuditIndex >= 0 && catalogWidthAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareCenteredAudit(homeAuditArgs[catalogWidthAuditIndex + 1]);
         if (appExitAuditIndex >= 0 && appExitAuditIndex + 1 < homeAuditArgs.Length) MainWindow.PrepareMergePanelAudit(homeAuditArgs[appExitAuditIndex + 1]);
@@ -114,7 +151,34 @@ public sealed partial class DesktopApplication : Application
         window = new MainWindow();
         ((MainWindow)window).PrepareStartupWindow();
         window.Activate();
+        if (Program.ReaderBridge is { } activation)
+        {
+            var queue = window.DispatcherQueue;
+            activation.Start(path =>
+            {
+                // Acknowledge only after the UI queue accepts the request; opening may show a password dialog.
+                var accepted = queue.TryEnqueue(async () =>
+                {
+                    try { await MainWindow.ReceiveReaderActivationAsync(path); }
+                    catch (Exception error) { LocalDiagnostics.Record("reader-activation", error); }
+                });
+                return Task.FromResult(accepted);
+            });
+        }
         var arguments = Environment.GetCommandLineArgs();
+#if DEBUG
+        var lifetimeIndex = Array.IndexOf(arguments, "--audit-reader-lifetime");
+        if (lifetimeIndex >= 0 && lifetimeIndex + 2 < arguments.Length)
+        {
+            try { await ((MainWindow)window).AuditReaderLifetimeAsync(arguments[lifetimeIndex + 1], arguments[lifetimeIndex + 2]); }
+            catch (Exception error)
+            {
+                LocalDiagnostics.Record("reader-lifetime-audit", error);
+                Environment.ExitCode = 1; Exit();
+            }
+            return;
+        }
+#endif
         var restartIndex = Array.IndexOf(arguments, "--restart-ready");
         if (restartIndex >= 0)
         {
@@ -137,8 +201,39 @@ public sealed partial class DesktopApplication : Application
         }
 #if DEBUG
         if (homeAuditIndex >= 0 && homeAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditCenteredHomeAsync(homeAuditArgs[homeAuditIndex + 1]); Exit(); return; }
+        if (transitionAuditIndex >= 0 && transitionAuditIndex + 1 < homeAuditArgs.Length)
+        {
+            var evidence = homeAuditArgs[transitionAuditIndex + 1];
+            try
+            {
+                for (var attempt = 0; attempt < 100 && ((UIElement)window.Content).XamlRoot is null; attempt++) await Task.Delay(50);
+                if (((UIElement)window.Content).XamlRoot is null) throw new InvalidOperationException("Native audit window did not load.");
+                switch (homeAuditArgs[transitionAuditIndex])
+                {
+                    case "--audit-feature-transition-dialog": await ((MainWindow)window).AuditFeatureTransitionDialogAsync(evidence); break;
+                    case "--audit-feature-transition-routing": await ((MainWindow)window).AuditFeatureTransitionRoutingAsync(evidence); break;
+                    default: await ((MainWindow)window).AuditFeatureTransitionSessionAsync(evidence); break;
+                }
+            }
+            catch (Exception error)
+            {
+                LocalDiagnostics.Record("feature-transition-audit", error); Environment.ExitCode = 1;
+                Directory.CreateDirectory(evidence);
+                File.WriteAllText(Path.Combine(evidence, "failure.txt"), error.ToString());
+            }
+            finally { Exit(); }
+            return;
+        }
         if (catalogWidthAuditIndex >= 0 && catalogWidthAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditCatalogContentWidthAsync(homeAuditArgs[catalogWidthAuditIndex + 1]); Exit(); return; }
         if (appExitAuditIndex >= 0 && appExitAuditIndex + 1 < homeAuditArgs.Length) { await ((MainWindow)window).AuditAppExitConfirmationAsync(homeAuditArgs[appExitAuditIndex + 1]); Exit(); return; }
+        if (organizerDesignAuditIndex >= 0 && organizerDesignAuditIndex + 1 < homeAuditArgs.Length)
+        {
+            var interactive = homeAuditArgs.Contains("--interactive-organizer", StringComparer.Ordinal);
+            try { await ((MainWindow)window).AuditOrganizerDesignAsync(homeAuditArgs[organizerDesignAuditIndex + 1], interactive); }
+            catch (Exception error) { LocalDiagnostics.Record("organizer-design-audit", error); Environment.ExitCode = 1; }
+            finally { if (!interactive || Environment.ExitCode != 0) Exit(); }
+            return;
+        }
         if (organizerTransferAuditIndex >= 0 && organizerTransferAuditIndex + 1 < homeAuditArgs.Length)
         {
             try { await ((MainWindow)window).AuditOrganizerTransferAsync(homeAuditArgs[organizerTransferAuditIndex + 1]); }
@@ -186,6 +281,11 @@ public sealed partial class DesktopApplication : Application
         {
             await ((MainWindow)window).AuditReaderUiAsync(); Exit(); return;
         }
+        var readerTabsAuditIndex = Array.IndexOf(arguments, "--audit-reader-tabs");
+        if (readerTabsAuditIndex >= 0 && readerTabsAuditIndex + 1 < arguments.Length)
+        {
+            await ((MainWindow)window).AuditReaderTabsAsync(arguments[readerTabsAuditIndex + 1]); Exit(); return;
+        }
         if (arguments.Contains("--audit-ui-regression", StringComparer.Ordinal))
         { var interactive = arguments.Contains("--interactive", StringComparer.Ordinal); await ((MainWindow)window).AuditUiRegressionAsync(interactive); if (!interactive) Exit(); return; }
         if (arguments.Contains("--audit-responsive-preview", StringComparer.Ordinal))
@@ -203,6 +303,11 @@ public sealed partial class DesktopApplication : Application
             await ((MainWindow)window).AuditEditorScrollAsync(arguments[scrollAuditIndex + 1]); Exit(); return;
         }
         var fontAuditIndex = Array.IndexOf(arguments, "--audit-font-compatibility");
+        var corpusAuditIndex = Array.IndexOf(arguments, "--audit-original-corpus");
+        if (corpusAuditIndex >= 0 && corpusAuditIndex + 1 < arguments.Length && Environment.GetEnvironmentVariable("OTO_READER_TEST_MODE") == "1")
+        {
+            await ((MainWindow)window).AuditOriginalCorpusAsync(arguments[corpusAuditIndex + 1]); Exit(); return;
+        }
         if (fontAuditIndex >= 0 && fontAuditIndex + 1 < arguments.Length)
         {
             await ((MainWindow)window).AuditOriginalFontCompatibilityAsync(arguments[fontAuditIndex + 1]); Exit(); return;
@@ -241,7 +346,7 @@ public sealed partial class DesktopApplication : Application
             Exit(); return;
         }
 #endif
-        ((MainWindow)window).ScheduleReleaseNotesStartup();
+        if (!Program.ReaderInteractiveTest) ((MainWindow)window).ScheduleReleaseNotesStartup();
         var readerIndex = Array.IndexOf(arguments, "--open-reader");
         if (readerIndex >= 0 && readerIndex + 1 < arguments.Length)
         {

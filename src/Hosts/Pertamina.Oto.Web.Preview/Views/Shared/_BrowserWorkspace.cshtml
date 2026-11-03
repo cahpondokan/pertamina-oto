@@ -1,0 +1,6 @@
+@model WorkspaceViewModel
+@if (Model.Id == "merge") {
+ <partial name="_MergeWorkspace" model="Model"/>
+} else {
+ <partial name="_PageWorkspace" model="Model"/>
+}

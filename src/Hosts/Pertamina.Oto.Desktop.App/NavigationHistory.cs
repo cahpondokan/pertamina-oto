@@ -102,6 +102,11 @@ internal sealed partial class MainWindow
     private async Task ConfirmCloseAsync()
     {
         if (messageOpen) return;
+        // Reading, search and raster loading have no unsaved document changes.
+        // Dispose cancels their callbacks; tool/editor drafts keep the existing guard.
+        if (readerTabs is not null && ReaderRouteVisible &&
+            !NonReaderBusy && !Readers.Any(r => r.savingCopy) && RestartPendingWork().Count == 0)
+        { allowClose = true; Close(); return; }
         var focused = FocusManager.GetFocusedElement(root.XamlRoot) as Control;
         var resumeEditing = liveEditor?.PauseForReadPreview();
         try

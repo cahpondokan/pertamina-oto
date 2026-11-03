@@ -1,0 +1,63 @@
+@model IReadOnlyList<ToolDefinition>
+@{
+    var favorites = ViewData["Favorites"] is true;
+    var downloadUrl = ViewData["HomeDownloadUrl"] as string ?? "/unduh";
+    var order = new[] { "merge", "organize", "split", "images-pdf", "numbers", "remove", "extract", "rotate", "watermark", "crop" };
+    var copy = new Dictionary<string, (string Description, string Keywords)> {
+        ["merge"] = ("Satukan beberapa PDF.", "merge satukan gabung menyatukan"),
+        ["organize"] = ("Rapikan urutan halaman.", "organize susun urutan tata"),
+        ["split"] = ("Bagi PDF menjadi bagian.", "split pisah bagi pecah"),
+        ["images-pdf"] = ("Ubah foto menjadi PDF.", "image jpg png foto konversi"),
+        ["numbers"] = ("Beri nomor halaman.", "number nomor penomoran"),
+        ["remove"] = ("Buang halaman pilihan.", "delete remove buang hapus"),
+        ["extract"] = ("Ambil halaman pilihan.", "extract ambil pilih ekstrak"),
+        ["rotate"] = ("Perbaiki arah halaman.", "rotate rotasi putar miring"),
+        ["watermark"] = ("Beri identitas dokumen.", "watermark tanda air cap"),
+        ["crop"] = ("Sesuaikan area tampilan.", "crop potong tepi margin")
+    };
+    var active = Model.Where(t => ToolCatalog.BrowserEnabled(t.Id)).OrderBy(t => Array.IndexOf(order, t.Id)).ToArray();
+    var unavailable = Model.Where(t => !ToolCatalog.BrowserEnabled(t.Id)).ToArray();
+}
+<div class="web-home">
+ <section class="home-welcome" aria-labelledby="home-title">
+  <div><h1 id="home-title">@(favorites ? "Alat favorit Anda." : "PDF beres, pekerjaan lancar.")</h1><p>@active.Length alat gratis. Dokumen tetap di perangkat Anda.</p></div>
+  <div class="home-biblo" aria-hidden="true"><img src="/assets/031-atur-ulang-halaman-pdf.png" width="64" height="64" alt=""/></div>
+ </section>
+ <section class="catalog home-catalog" data-home-catalog data-favorites-only="@(favorites ? "true" : "false")" aria-labelledby="tools-heading">
+  <div class="home-find">
+   <label class="search"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="tool-search" type="search" placeholder="Mau mengerjakan apa? Cari gabung, putar, gambar…" aria-label="Cari alat PDF" autocomplete="off"/><kbd aria-hidden="true">/</kbd></label>
+   <div class="home-privacy"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><strong>Tanpa upload</strong><small>File tetap di perangkat Anda</small></span></div>
+  </div>
+  <div class="home-catalog-head"><div class="home-catalog-title"><h2 id="tools-heading">@(favorites ? "Alat favorit Anda" : "Siap digunakan")</h2><span class="count-pill" id="result-count">@active.Length alat</span></div>
+   <div class="category-tabs" role="group" aria-label="Kategori alat">
+    @foreach (var category in new[] { "Semua", "Atur PDF", "Edit PDF", "Konversi" }) {
+     <button type="button" class="category-tab @(category == "Semua" ? "selected" : "")" data-category="@category" aria-pressed="@(category == "Semua" ? "true" : "false")">@category @if(category != "Semua") {<small>@active.Count(t => t.Category == category)</small>}</button>
+    }
+   </div>
+  </div>
+  <div class="tool-grid home-active">
+   @foreach (var tool in active) {
+    var text = copy.TryGetValue(tool.Id, out var value) ? value : (Description: tool.Description, Keywords: tool.Id);
+    <article class="tool-card @(tool.Id == "merge" ? "featured" : "")" data-id="@tool.Id" data-category="@tool.Category" data-search="@tool.Title @tool.Description @text.Description @text.Keywords">
+     <a class="tool-card-content" href="/alat/@tool.Id" data-tip="@text.Description"><img src="/assets/@tool.Icon" alt="" width="46" height="46"/><div class="home-tool-copy"><h3>@tool.Title</h3><p>@text.Description</p></div></a>
+     <button type="button" class="favorite-button" data-favorite="@tool.Id" aria-label="Tambahkan @tool.Title ke favorit" aria-pressed="false"><svg aria-hidden="true"><use href="#i-star"/></svg></button>
+    </article>
+   }
+  </div>
+  <p id="result-announcement" class="home-sr-only" role="status" aria-live="polite"></p>
+  <div id="no-results" class="no-results" hidden><h3>Belum ada alat aktif yang cocok.</h3><p>Coba kata lain, pilih Semua, atau tandai alat dengan bintang.</p><button type="button" class="button" id="reset-search">Reset pencarian</button></div>
+  <details class="home-upcoming" id="unavailable-tools">
+   <summary><span>Belum tersedia di web <span class="count-pill" id="unavailable-count">@unavailable.Length alat</span></span><span class="home-list-label">Lihat daftar <span aria-hidden="true">⌄</span></span></summary>
+   <div class="home-unavailable-list">
+    @foreach (var tool in unavailable) {
+     <article class="tool-card planned" data-id="@tool.Id" data-category="@tool.Category" data-search="@tool.Title @tool.Description @tool.Id">
+      <button type="button" class="home-unavailable-tool" data-planned="@tool.Title"><h3>@tool.Title</h3><span>Belum tersedia di web</span></button>
+      <button type="button" class="favorite-button" data-favorite="@tool.Id" aria-label="Tambahkan @tool.Title ke favorit" aria-pressed="false"><svg aria-hidden="true"><use href="#i-star"/></svg></button>
+     </article>
+    }
+   </div>
+  </details>
+ </section>
+ <div class="home-footer" id="unduh"><span>Versi pengembangan · Batas sesuai alat</span><a href="@downloadUrl">OTO untuk Windows →</a></div>
+ <details class="home-limits"><summary>Privasi dan batas pemrosesan</summary><p>Situs memerlukan koneksi untuk dimuat. Dokumen diproses di perangkat, memakai memori dan penyimpanan sementara lokal browser. Dokumen tidak diunggah atau disimpan di server. Unduh hasil sebelum menutup halaman. Gabungkan PDF: @PdfCapacity.For("merge").Summary melalui penyimpanan sementara lokal browser. Atur halaman: @PdfCapacity.For("organize").Limit. Pisahkan PDF: @PdfCapacity.For("split").Limit. Alat satu PDF lainnya: @PdfCapacity.For("extract").Limit. Gambar ke PDF: @PdfCapacity.For("images-pdf").Limit. @PdfCapacity.UnitNote</p><p><a href="/vendor/pdf-lib-1.17.1/NOTICE.txt" target="_blank" rel="noopener">Lisensi pdf-lib</a>@if(ViewData["HomeDownloadUrl"] is null){<span> · </span><a href="/vendor/pdfjs-6.4.299/LICENSE" target="_blank" rel="noopener">Lisensi PDF.js</a>}</p></details>
+</div>

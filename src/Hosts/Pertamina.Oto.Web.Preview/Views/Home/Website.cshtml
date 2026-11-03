@@ -1,0 +1,4 @@
+@model IReadOnlyList<ToolDefinition>
+@{ ViewData["Title"] = ViewData["Favorites"] is true ? "Favorit" : "Semua alat"; ViewData["Nav"] = ViewData["Favorites"] is true ? "favorites" : "tools"; }
+@{ ViewData["HomeDownloadUrl"] = "https://oto.ayani.id/unduh"; }
+<partial name="_WebHome" model="Model" />

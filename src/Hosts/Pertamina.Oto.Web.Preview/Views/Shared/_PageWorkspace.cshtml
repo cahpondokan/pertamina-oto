@@ -1,0 +1,39 @@
+@model WorkspaceViewModel
+@{
+ var profile = Model.Browser ?? throw new InvalidOperationException("Browser profile required.");
+ var capacity = PdfCapacity.For(Model.Id); var ui = PdfToolPresentation.For(Model); var split = Model.Id == "split";
+ var images = profile.InputKind == "images"; var inputLabel = images ? "gambar" : "PDF";
+ var pagesTitle = images ? "Susunan gambar" : profile.Reorder ? "Susunan halaman" : "Halaman sumber";
+}
+<div class="merge-workspace page-workspace @(Model.Id)-workspace" data-browser-tool="@Model.Id" data-tool-profile="@profile.ToJson()" data-workspace-layout="shared" data-state="empty" data-card-size="normal">
+ <partial name="_PdfWorkspaceHeading" model='new PdfHeadingViewModel(Model.Title, ui.Description, Model.Icon, capacity)'/>
+ <input id="pdf-files" type="file" accept="@(images ? ".jpg,.jpeg,.png,image/jpeg,image/png" : ".pdf,application/pdf")" multiple="@profile.Multiple" hidden/>
+ @if (split) { <input id="pdf-new-files" type="file" accept=".pdf,application/pdf" hidden/> }
+ <partial name="_PdfDropZone" model='new PdfDropViewModel("pdf-empty", "pdf-empty-pick", ui.EmptyTitle, ui.Description, "Pilih " + inputLabel, capacity.Limit, Model.Icon, inputLabel)'/>
+ <div id="pdf-editor" class="merge-editor" hidden>
+  <section id="pdf-documents" class="merge-documents" aria-label="@pagesTitle">
+   <div id="pdf-loaded-header" class="merge-toolbar" hidden><div><h2 id="document-heading">@pagesTitle</h2><small id="pdf-summary"></small></div><div class="merge-toolbar-actions"><button id="pdf-add" class="button primary" data-tip="Tambah file dari perangkat · Ctrl + O">＋ Tambah @inputLabel</button></div></div>
+   <div id="pdf-editor-toolbar" class="merge-sort" hidden><label>Ukuran kartu <select id="pdf-zoom"><option value="compact">Kecil</option><option value="normal" selected>Sedang</option><option value="large">Besar</option></select></label><button id="pdf-reset-order" class="button" data-tip="Pulihkan urutan sumber dan rotasi awal">Reset susunan</button><button id="pdf-close" class="button" disabled>Kosongkan</button><button id="pdf-show-result" class="button" hidden>Lihat hasil</button></div>
+   <div id="pdf-loaded" class="workspace-pages" hidden><p id="pdf-card-hint" class="workspace-hint"></p><div id="pdf-page-list" class="pdf-page-list" tabindex="0" aria-label="Halaman, dapat digulir"></div></div>
+  </section>
+  <section id="pdf-output-preview" class="merge-output-preview" hidden aria-label="Pratinjau hasil"><div id="pdf-output-cover"></div><p>Periksa PDF hasil sebelum menyimpan.</p></section>
+  <aside class="merge-panel" aria-label="Pengaturan, proses dan hasil">
+   <section id="pdf-output-panel" class="merge-flow" hidden>
+    <div class="merge-flow-scroll" id="pdf-settings-home"><div class="merge-settings-content">
+     <h2>@(split ? "Bagian PDF" : "Pengaturan hasil")</h2><p id="pdf-readiness" class="merge-summary" role="status"></p>
+     <partial name="_PdfToolSettings" model="Model"/>
+     <label for="pdf-output-name">@(split ? "Nama dasar file hasil" : "Nama file hasil")</label><input id="pdf-output-name" value="dokumen_@(Model.Id).pdf" maxlength="110" autocomplete="off"/>
+     <details class="merge-advanced"><summary>File sumber dan catatan</summary><section id="pdf-sources-panel" hidden><h3>File sumber <span id="pdf-source-count">0</span></h3><div id="pdf-source-list"></div></section><p>@(split ? "Hasil diberi nomor _01, _02, dan seterusnya. Simpan semua sebagai ZIP atau pilih satu bagian untuk disimpan sebagai PDF." : "Pengaturan diterapkan pada PDF hasil. File sumber tetap utuh.")</p><div id="pdf-compatibility" role="status" hidden></div></details>
+    </div></div>
+    <div class="merge-primary"><button id="pdf-settings-open" class="merge-mobile-settings" aria-haspopup="dialog"><strong id="pdf-mobile-summary"></strong><small>Pengaturan hasil ›</small></button><button id="pdf-run" class="button primary" disabled>@(Model.Id == "organize" ? "Buat PDF baru" : Model.Title) →</button></div><small class="merge-trust">✓ Pemrosesan lokal · Tanpa upload</small>
+   </section>
+   <partial name="_PdfProcessPanel" model='new PdfFlowViewModel("pdf", ui.Action, split)'/>
+   @if (!split) { <partial name="_PdfResultPanel" model='new PdfFlowViewModel("pdf", ui.Action, split)'/> }
+  </aside>
+ </div>
+ @if (split) { <partial name="_PdfResultPanel" model='new PdfFlowViewModel("pdf", ui.Action, split)'/> }
+ <p id="pdf-feedback" class="merge-status" role="status" aria-live="polite" tabindex="-1">Pilih @inputLabel untuk memulai.</p>
+ <details class="merge-support"><summary>Batas dukungan dan privasi</summary><partial name="_PdfToolSupport" model="Model"/></details>
+ <dialog id="pdf-settings" class="app-dialog" aria-labelledby="pdf-settings-title"><h2 id="pdf-settings-title">Pengaturan @Model.Title</h2><div id="pdf-settings-body"></div><button id="pdf-settings-close" class="button primary">Selesai mengatur</button></dialog>
+ <dialog id="pdf-confirm-dialog" class="app-dialog" aria-labelledby="pdf-confirm-title"><h2 id="pdf-confirm-title">Kosongkan ruang kerja?</h2><p>Susunan dan hasil sementara akan dilepas. Pastikan PDF sudah tersimpan. File asli tetap utuh.</p><div class="dialog-actions"><button id="pdf-stay" class="button">Kembali</button><button id="pdf-confirm" class="button primary">Lanjutkan</button></div></dialog>
+</div>

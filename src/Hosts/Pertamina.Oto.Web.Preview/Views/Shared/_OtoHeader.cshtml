@@ -1,0 +1,6 @@
+@{ var currentNav = ViewData["Nav"] as string; }
+ <header class="topbar oto-header">
+  <div class="brand"><a href="/" aria-label="PERTAMINA OTO, beranda" data-tip="Kembali ke semua alat"><img src="/assets/oto.png" width="30" height="30" alt=""/><span><span class="oto-brand-prefix">PERTAMINA </span><strong>OTO</strong></span></a></div>
+  <nav class="primary-nav" aria-label="Navigasi utama"><a href="/" class="primary-nav-link" aria-current="@(currentNav == "tools" ? "page" : null)" data-tip="Lihat semua alat OTO"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>Semua alat</span></a><a href="/favorit" class="primary-nav-link" aria-current="@(currentNav == "favorites" ? "page" : null)" aria-label="Alat favorit" data-tip="Lihat alat favorit Anda"><svg aria-hidden="true"><use href="#i-star"/></svg><span class="oto-favorite-label">Favorit</span><span id="favorites-count" class="nav-count"></span></a></nav>
+  <div class="topbar-actions"><button class="icon-button" id="oto-help" aria-label="Mode bantuan" aria-pressed="false" data-tip="Aktifkan bantuan, lalu ketuk kontrol">?</button><button class="icon-button" id="theme-toggle" aria-label="Gunakan tema gelap"><svg aria-hidden="true"><use href="#i-moon"/></svg></button></div>
+ </header>

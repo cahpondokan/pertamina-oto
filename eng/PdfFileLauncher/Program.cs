@@ -20,6 +20,9 @@ try
     stage = "launch";
     using var child = Process.Start(command);
     if (child is null) throw new InvalidOperationException();
+    // Explorer started this helper. Pass its foreground permission through the
+    // short-lived app process to the existing reader's same-user pipe receiver.
+    _ = NativeMessage.AllowSetForegroundWindow((uint)child.Id);
     return 0;
 }
 catch (Exception error)
@@ -31,6 +34,11 @@ catch (Exception error)
 
 internal static class NativeMessage
 {
+    [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+    [DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    internal static extern bool AllowSetForegroundWindow(uint processId);
+
     [DllImport("user32.dll", EntryPoint = "MessageBoxW", CharSet = CharSet.Unicode, ExactSpelling = true)]
     internal static extern int Show(IntPtr parent, string message, string title, uint type);
 }

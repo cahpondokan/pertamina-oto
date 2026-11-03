@@ -28,6 +28,8 @@ internal sealed partial class MainWindow
     private static SolidColorBrush OrganizerColor(int source)
     {
         if (source < 0) return Brush(100, 116, 139);
+        if (source == 0) return Brush(204, 78, 92);
+        if (source == 1) return Brush(0, 137, 157);
         // Golden-angle hue spacing, plus explicit source labels: color is never the only cue.
         var hue = source * 137.508 % 360 / 60;
         var x = .62 * (1 - Math.Abs(hue % 2 - 1));

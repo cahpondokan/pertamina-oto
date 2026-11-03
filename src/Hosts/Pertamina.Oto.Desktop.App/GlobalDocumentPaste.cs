@@ -29,6 +29,7 @@ internal sealed partial class MainWindow
         try
         {
             if (messageOpen) return;
+            if (organizerVisible && IsTextPasteTarget(FocusManager.GetFocusedElement(root.XamlRoot) as DependencyObject)) return;
             var containsFiles = Clipboard.GetContent().Contains(StandardDataFormats.StorageItems);
             // Preserve established file routing and ordinary native text paste.
             if (!containsFiles && IsTextPasteTarget(FocusManager.GetFocusedElement(root.XamlRoot) as DependencyObject)) return;

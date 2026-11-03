@@ -11,6 +11,7 @@ internal sealed partial class MainWindow
     private readonly HashSet<string> removedToolInputs = [];
     private string? activeToolControls;
     private bool mergeCloseSaveInProgress;
+    private bool organizerCloseSaveInProgress;
     private sealed record SessionSecret(string Password, string NewPassword);
     // Session memory only; deliberately never part of serialized drafts/history/evidence.
     private readonly Dictionary<string, SessionSecret> toolSessionSecrets = [];
@@ -47,13 +48,13 @@ internal sealed partial class MainWindow
         string? closedSavedMergePath = null;
         try
         {
-            var pending = tool.Id == "organize" ? RestartLayoutChanged() :
+            var pending = tool.Id == "organize" ? RestartLayoutChanged() || password.Password.Length > 0 :
                 !closedToolSessions.Contains(tool.Id) && (RestartToolChanged(tool.Id, CurrentToolDraft()) ||
                 (tool.Id == "split" ? splitPassword.Password.Length > 0 : password.Password.Length > 0 || newPassword.Password.Length > 0));
             if (pending)
             {
                 ContentDialogResult answer;
-                if (tool.Id == "merge") answer = await ShowMergeCloseConfirmationAsync();
+                if (tool.Id is "merge" or "organize") answer = await ShowMergeCloseConfirmationAsync(tool.Id == "organize");
                 else
                 {
                 var dialog = new ContentDialog { XamlRoot = root.XamlRoot, Title = "Tutup dokumen?",
@@ -67,6 +68,7 @@ internal sealed partial class MainWindow
                 {
                     var previousResult = resultPath;
                     mergeCloseSaveInProgress = tool.Id == "merge";
+                    organizerCloseSaveInProgress = tool.Id == "organize";
                     switch (tool.Id)
                     {
                         case "organize": await ExecuteOrganizerAsync(); break;
@@ -80,7 +82,7 @@ internal sealed partial class MainWindow
                         restartSavedTools.ContainsKey(tool.Id) && !RestartToolChanged(tool.Id, CurrentToolDraft());
                     if (RestartBusy || !saved || resultPath is null || resultPath == previousResult || !File.Exists(resultPath))
                     { status.Text = "Dokumen tetap terbuka. Hasil belum berhasil disimpan."; return; }
-                    if (tool.Id == "merge") closedSavedMergePath = resultPath;
+                    if (tool.Id is "merge" or "organize") closedSavedMergePath = resultPath;
                 }
             }
             if (RestartBusy || selected?.Id != tool.Id) return;
@@ -103,18 +105,19 @@ internal sealed partial class MainWindow
             {
                 pageLayout.Clear(); organizerSources.Clear(); layoutUndo.Clear(); layoutRedo.Clear(); chosenPages.Clear();
                 restartSavedLayout = null; restartSourcePageCounts.Clear();
-                sourceSummary.Children.Clear(); organizerSourceLabels.Clear();
+                sourceSummary.Children.Clear(); organizerSourceLabels.Clear(); organizerThumbnails.Clear();
+                RenderOrganizerCards();
                 organizerOutput = "hasil-organize.pdf";
             }
             ShowEmptyTool(tool);
-            if (closedSavedMergePath is not null) ShowMergeClosedSavedNotice(closedSavedMergePath);
+            if (closedSavedMergePath is not null) ShowMergeClosedSavedNotice(closedSavedMergePath, tool.Id == "organize");
         }
         catch (Exception error)
         {
             LocalDiagnostics.Record("close-document", error);
             status.Text = "Dokumen belum dapat ditutup. Coba kembali. File di komputer tidak dihapus.";
         }
-        finally { mergeCloseSaveInProgress = false; messageOpen = false; }
+        finally { mergeCloseSaveInProgress = false; organizerCloseSaveInProgress = false; messageOpen = false; }
     }
 
     private void RemoveToolInput(string input)

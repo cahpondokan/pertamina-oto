@@ -1,0 +1,119 @@
+{
+  "highConfidenceSecretsFound": 0,
+  "reviewedSyntheticFindings": [
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/CrashStabilityAudit.cs",
+      "line": 78,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/CrashStabilityAudit.cs",
+      "line": 90,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/CrashStabilityAudit.cs",
+      "line": 100,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/FeatureTransitionRoutingAudit.cs",
+      "line": 141,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/FeatureTransitionSessionAudit.cs",
+      "line": 74,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/FeatureTransitionSessionAudit.cs",
+      "line": 128,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/OrganizerDesignAudit.cs",
+      "line": 271,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/PrintAudit.cs",
+      "line": 103,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/RestartWorkAudit.cs",
+      "line": 90,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/RestartWorkAudit.cs",
+      "line": 94,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Hosts/Pertamina.Oto.Desktop.App/RestartWorkAudit.cs",
+      "line": 160,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Workers/Pertamina.Oto.LocalPdf.Worker/ReaderSearchTests.cs",
+      "line": 132,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Workers/Pertamina.Oto.LocalPdf.Worker/ReaderSearchTests.cs",
+      "line": 132,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Workers/Pertamina.Oto.LocalPdf.Worker/WorkerTests.cs",
+      "line": 76,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "src/Workers/Pertamina.Oto.LocalPdf.Worker/WorkerTests.cs",
+      "line": 81,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "tests/Functional/Pertamina.Oto.LocalPdf.SmokeTests/Program.cs",
+      "line": 47,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    },
+    {
+      "rule": "quoted-credential-review",
+      "path": "tests/Functional/Pertamina.Oto.LocalPdf.SmokeTests/Program.cs",
+      "line": 50,
+      "disposition": "Test-only synthetic PDF password, reviewed in audit/test code; not an account credential."
+    }
+  ],
+  "excludedGeneratedFiles": [
+    "docs/development/app-exit-result-baseline-20261013/MergeCloseButton.cs.before",
+    "docs/development/app-exit-result-baseline-20261013/MergeResultPanel.cs.before",
+    "eng/hosting/monitor/__pycache__/deploy_monitor.cpython-314.pyc",
+    "eng/hosting/monitor/__pycache__/set_admin.cpython-314.pyc",
+    "eng/hosting/monitor/__pycache__/test_monitor.cpython-314.pyc",
+    "eng/hosting/powershell/__pycache__/update_existing.cpython-312.pyc",
+    "eng/hosting/powershell/__pycache__/update_existing.cpython-314.pyc",
+    "eng/hosting/web-only/__pycache__/deploy_web.cpython-314.pyc",
+    "eng/hosting/web-only/__pycache__/diagnostics_report.cpython-314.pyc",
+    "eng/hosting/web-only/__pycache__/test_deploy_web.cpython-314.pyc"
+  ]
+}

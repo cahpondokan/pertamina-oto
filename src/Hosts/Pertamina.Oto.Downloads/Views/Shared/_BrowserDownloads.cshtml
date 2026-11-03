@@ -1,0 +1,23 @@
+@using Pertamina.Oto.Downloads
+@using Pertamina.Oto.Downloads.Pages
+@{
+ var baseline = Context.RequestServices.GetRequiredService<BaselineCatalog>();
+ var distribution = baseline.Current();
+ var release = baseline.Present ? distribution?.ToReleaseInfo() : Context.RequestServices.GetRequiredService<ReleaseCatalog>().Current();
+}
+<section id="unduh" class="website-download panel" aria-labelledby="download-heading">
+ <div class="download-intro"><span class="eyebrow">OTO UNTUK WINDOWS</span><h2 id="download-heading">Mulai dari aplikasi desktop.</h2><p>Dokumen diproses lokal di perangkat Anda.<br/>Dukungan fitur bergantung pada alat dan jenis dokumen.</p>
+ @if(release is not null){<span class="count-pill">@release.ProductVersion · Pengembangan</span><small>Build @release.Version</small>}
+ </div>
+ <div class="download-options">
+ @if(distribution is not null) {
+  <div class="download-option"><h3>Installer online</h3><p>File awal <strong>@IndexModel.FormatSize(distribution.OnlineInstaller.Size)</strong>. Mengunduh paket lengkap saat pemasangan.</p><a class="button primary full" data-download href="/downloads/@distribution.OnlineInstaller.FileName">↓ Unduh untuk Windows</a><small>Memerlukan internet · Unduhan lanjutan @IndexModel.FormatSize(distribution.UpdatePayload.Size)</small></div>
+  <div class="download-option"><h3>Installer offline</h3><p>Paket lengkap <strong>@IndexModel.FormatSize(distribution.OfflineInstaller.Size)</strong>. Unduh sekali untuk pemasangan tanpa internet.</p><a class="button full" data-download href="/downloads/@distribution.OfflineInstaller.FileName">↓ Unduh installer offline</a><small>Runtime privat sudah disertakan.</small></div>
+ } else if(release is not null) {
+  <div class="download-option"><h3>Installer Windows</h3><p>Paket lengkap @IndexModel.FormatSize(release.DownloadSize).</p><a class="button primary full" data-download href="@release.DownloadPath">↓ Unduh untuk Windows</a></div>
+ } else {
+  <div class="download-option"><h3>Unduhan belum tersedia</h3><p>Paket sedang disiapkan atau belum lolos validasi. Alat PDF web tetap dapat digunakan.</p></div>
+ }
+ </div>
+ <p class="download-disclosure"><strong>Versi pengembangan.</strong> Installer belum ditandatangani. Unduhan tidak memasang aplikasi secara otomatis. <a href="/panduan" target="_blank" rel="noopener noreferrer">Baca panduan ↗</a> · <a href="/unduh">Rincian paket dan SHA-256</a></p>
+</section>

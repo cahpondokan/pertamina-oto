@@ -135,6 +135,9 @@ namespace Oto.Setup
                 check((await SetupFlow.RunAsync(shortcut, quiet, CancellationToken.None)).ShortcutWarning, "shortcut warning distinguished from failed install");
                 var appFailure = new FakeOperations { Present = true, AppExitCode = 1 };
                 await RejectAsync(() => SetupFlow.RunAsync(appFailure, quiet, CancellationToken.None), results, "app installation failure not reported as success");
+                var registrationFailure = new FakeOperations { Present = true, AppExitCode = 3 };
+                try { await SetupFlow.RunAsync(registrationFailure, quiet, CancellationToken.None); throw new Exception("Uninstall registration failure was ignored."); }
+                catch (InvalidOperationException error) { check(error.Message.Contains("pendaftaran uninstall"), "uninstall registration failure explains that OTO is installed and registration needs retry"); }
                 var cancelled = new FakeOperations(); await RejectAsync(() => SetupFlow.RunAsync(cancelled, quiet, new CancellationToken(true)), results, "cancellation prevents prerequisite and app execution");
                 check(cancelled.RuntimeInstalls == 0 && cancelled.AppInstalls == 0, "cancelled flow has no installer execution");
                 SetupOperations.VerifyPayload(); results.Add("PASS actual embedded OTO payload hash verified");

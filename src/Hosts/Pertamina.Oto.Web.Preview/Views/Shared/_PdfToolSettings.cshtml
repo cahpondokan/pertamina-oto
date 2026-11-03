@@ -1,0 +1,56 @@
+@model WorkspaceViewModel
+@{ var images = Model.Browser!.InputKind == "images"; }
+   @if (Model.Id == "split") {
+    <div class="split-tabs" role="tablist" aria-label="Cara memisahkan">
+     <button id="pdf-split-tab-ranges" type="button" role="tab" aria-selected="true" aria-controls="pdf-split-range-panel" data-tip="Pisah dengan rentang">▯▯ Rentang</button>
+     <button id="pdf-split-tab-pages" type="button" role="tab" aria-selected="false" aria-controls="pdf-split-page-panel" data-tip="Ekstrak halaman">▯ Halaman</button>
+    </div>
+    <section id="pdf-split-range-panel" class="split-mode-panel" role="tabpanel" aria-labelledby="pdf-split-tab-ranges">
+     <div class="split-subtabs" aria-label="Mode rentang"><button id="pdf-split-custom" type="button" aria-pressed="true">Kustom</button><button id="pdf-split-fixed" type="button" aria-pressed="false">Tetap</button></div>
+     <div id="pdf-split-custom-panel"><span class="split-field-title">Tentukan rentang halaman</span><div id="pdf-split-range-rows"><div class="split-range-row" data-range-row="0"><label>Dari halaman<input id="pdf-split-start-0" data-start type="number" min="1" value="1" inputmode="numeric"/></label><label>Sampai halaman<input id="pdf-split-end-0" data-end type="number" min="1" value="1" inputmode="numeric"/></label><button type="button" class="split-remove-range" aria-label="Hapus rentang 1" disabled>×</button></div></div><button id="pdf-split-add-range" type="button" class="split-add-range">＋ Tambah rentang</button><small>Rentang boleh memilih sebagian halaman; halaman yang sama tidak boleh dipakai dua kali.</small>
+      <label class="merge-check"><input id="pdf-split-combine-ranges" type="checkbox"/> Gabungkan semua rentang menjadi satu PDF</label></div>
+     <div id="pdf-split-fixed-panel" hidden><label for="pdf-split-pages-per-file">Halaman per file</label><div class="split-stepper"><button id="pdf-split-less" type="button" aria-label="Kurangi halaman per file">−</button><input id="pdf-split-pages-per-file" type="number" min="1" value="2" inputmode="numeric"/><button id="pdf-split-more" type="button" aria-label="Tambah halaman per file">＋</button></div><small>Halaman sisa tetap disertakan.</small><p id="pdf-split-fixed-preview" class="split-info" role="status"></p></div>
+    </section>
+    <section id="pdf-split-page-panel" class="split-mode-panel" role="tabpanel" aria-labelledby="pdf-split-tab-pages" hidden>
+     <div class="split-subtabs"><button id="pdf-split-extract-all" type="button" aria-pressed="true">Ekstrak semua halaman</button><button id="pdf-split-select-pages" type="button" aria-pressed="false">Pilih halaman</button></div>
+     <div id="pdf-split-all-help" class="split-info" role="status">Semua halaman dipilih. Satu halaman menjadi satu file PDF.</div>
+     <div id="pdf-split-select-panel" hidden><label for="pdf-split-selected-pages">Halaman yang akan diekstrak</label><input id="pdf-split-selected-pages" type="text" maxlength="1000" placeholder="1, 3–5" autocomplete="off"/><small id="pdf-split-selection-help">Pisahkan dengan koma. Contoh: 1, 3–5.</small><div class="split-selection-actions"><button id="pdf-split-select-all" type="button">Pilih semua</button><span>·</span><button id="pdf-split-clear-selection" type="button">Kosongkan pilihan</button></div><label class="merge-check"><input id="pdf-split-combine-selected" type="checkbox"/> Gabungkan halaman terpilih menjadi satu PDF</label></div>
+    </section>
+    <div id="pdf-split-summary" class="split-info" role="status" aria-live="polite"></div>
+   }
+   @if (Model.Id is "extract" or "remove" or "rotate") {
+    <label id="pdf-ranges-label" for="pdf-ranges">@(Model.Id == "split" ? "Bagian PDF" : Model.Id == "remove" ? "Halaman yang dihapus" : Model.Id == "rotate" ? "Halaman yang diputar" : "Halaman yang diambil")</label>
+    <input id="pdf-ranges" type="text" maxlength="1000" placeholder="1, 3-5" aria-describedby="pdf-range-help" autocomplete="off"/>
+    <small id="pdf-range-help">Nomor halaman sumber. Contoh: 1, 3-5. Tidak boleh berulang.</small>
+   }
+   @if (Model.Id == "rotate") {<label for="pdf-angle">Putar searah jarum jam</label><select id="pdf-angle"><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select>}
+   @if (Model.Id is "numbers" or "watermark" or "crop") {
+    <label for="pdf-ranges">Terapkan pada halaman</label><input id="pdf-ranges" type="text" maxlength="1000" placeholder="Semua halaman" aria-describedby="pdf-range-help" autocomplete="off"/>
+    <small id="pdf-range-help">Kosongkan untuk semua halaman, atau isi misalnya 1, 3-5.</small>
+   }
+   @if (Model.Id == "numbers") {
+    <label for="pdf-position">Posisi nomor</label><select id="pdf-position" data-option="position"><option value="bottom-center">Bawah tengah</option><option value="bottom-left">Bawah kiri</option><option value="bottom-right">Bawah kanan</option><option value="top-center">Atas tengah</option><option value="top-left">Atas kiri</option><option value="top-right">Atas kanan</option></select>
+    <div class="pdf-option-grid"><div><label for="pdf-start">Mulai dari</label><input id="pdf-start" data-option="start" type="number" min="1" max="99999" value="1"/></div><div><label for="pdf-font-size">Ukuran (pt)</label><input id="pdf-font-size" data-option="size" type="number" min="8" max="32" value="12"/></div></div>
+    <details class="pdf-advanced"><summary>Format dan jarak nomor</summary><div><label for="pdf-format">Format</label><select id="pdf-format" data-option="format"><option value="number">1, 2, 3…</option><option value="total">1 / 4, 2 / 4…</option></select>
+    <label for="pdf-margin">Jarak dari tepi (mm)</label><input id="pdf-margin" data-option="margin" type="number" min="4" max="30" step="1" value="12"/></div></details>
+    <small>Nomor ditambahkan pada halaman pilihan sesuai urutan yang Anda tulis. Nomor lama tidak dihapus.</small>
+   }
+   @if (Model.Id == "watermark") {
+    <label for="pdf-text">Teks tanda air</label><input id="pdf-text" data-option="text" type="text" maxlength="80" value="DRAF" autocomplete="off"/>
+    <small>Satu baris huruf Latin, angka, dan tanda baca. Emoji/aksara lain belum didukung.</small>
+    <details class="pdf-advanced"><summary>Tampilan tanda air</summary><div><div class="pdf-option-grid"><div><label for="pdf-font-size">Ukuran (pt)</label><input id="pdf-font-size" data-option="size" type="number" min="12" max="100" value="48"/></div><div><label for="pdf-opacity">Kepekatan (%)</label><input id="pdf-opacity" data-option="opacity" type="number" min="5" max="70" value="18"/></div></div>
+    <label for="pdf-mark-angle">Arah tanda air</label><select id="pdf-mark-angle" data-option="angle" data-numeric="true"><option value="45">Diagonal</option><option value="0">Mendatar</option></select>
+    <label for="pdf-color">Warna</label><select id="pdf-color" data-option="color"><option value="blue">Biru</option><option value="gray">Abu-abu</option><option value="red">Merah</option></select></div></details>
+    <small>Teks dipusatkan dan diperkecil bila perlu. Tanda air menimpa tampilan, bukan perlindungan atau redaksi informasi.</small>
+   }
+   @if (Model.Id == "crop") {
+    <p class="pdf-caution"><strong>Bukan penghapusan informasi.</strong> Potong hanya menyembunyikan area di luar bingkai. Jangan gunakan untuk mengamankan data rahasia.</p>
+    <h3 class="pdf-options-heading">Potong dari tepi tampilan (mm)</h3>
+    <div class="pdf-option-grid">@foreach (var side in new[] { ("top", "Atas"), ("right", "Kanan"), ("bottom", "Bawah"), ("left", "Kiri") }) {<div><label for="pdf-@side.Item1">@side.Item2</label><input id="pdf-@side.Item1" data-option="@side.Item1" type="number" min="0" max="500" step="0.5" value="5"/></div>}</div>
+    <small>Diukur dari area yang saat ini terlihat, mengikuti rotasi halaman. Sisa lebar dan tinggi minimal 10 mm. Belum tersedia bingkai potong visual; periksa PDF hasil unduhan.</small>
+   }
+   @if (images) {
+    <label for="pdf-layout">Ukuran halaman</label><select id="pdf-layout" data-option="layout"><option value="auto">A4 · Orientasi mengikuti gambar</option><option value="portrait">A4 · Potret</option><option value="landscape">A4 · Lanskap</option></select>
+    <label for="pdf-margin">Margin (mm)</label><input id="pdf-margin" data-option="margin" type="number" min="0" max="30" value="10"/>
+    <small>Satu gambar per halaman, proporsi tetap utuh tanpa dipotong. Transparansi menjadi putih. Gambar dikonversi ke JPEG berkualitas tinggi; warna/detail dapat berubah.</small>
+   }

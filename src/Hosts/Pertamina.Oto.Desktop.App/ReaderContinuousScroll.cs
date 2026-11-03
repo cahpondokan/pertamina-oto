@@ -96,11 +96,14 @@ internal sealed partial class MainWindow
 
         private void OnReaderViewChanged(ScrollViewerViewChangedEventArgs e)
         {
+            // Collapsed tabs and native restoration can report zero offsets or
+            // transient zoom. Those notifications must not replace reading state.
+            if (!Visible || suspended) return;
             zoomControls.Sync();
+            if (settingZoom) return;
             zoomRenderTimer.Stop();
             zoomRenderTimer.Tick -= ZoomRenderSettled; zoomRenderTimer.Tick += ZoomRenderSettled; zoomRenderTimer.Start();
             readerZoomIntermediate = e.IsIntermediate;
-            if (settingZoom) return;
             if (Math.Abs(viewport.ZoomFactor - fittedZoom) > Math.Max(.0001, fittedZoom * .005)) fit = false;
             UpdatePageExtent(viewport.ZoomFactor);
             // Retain the valid surface throughout native zoom. Scroll-only motion
@@ -112,6 +115,7 @@ internal sealed partial class MainWindow
         private void ZoomRenderSettled(object? sender, object e)
         {
             zoomRenderTimer.Stop();
+            if (!Visible || suspended || settingZoom) return;
             if (readerZoomIntermediate) { zoomRenderTimer.Start(); return; }
             if (Math.Abs(renderedZoom - viewport.ZoomFactor) < .005) return;
             if (!Rendering.IsCompleted) { zoomRenderTimer.Start(); return; }
@@ -189,6 +193,27 @@ internal sealed partial class MainWindow
                 await DrawThumbnailsAsync(ticket);
             }
             catch (Exception error) { if (ticket == generation) Failure("reader-render", error); }
+        }
+
+        private long RetainedRasterBytes => pageSlots.Sum(slot => RasterBytes(slot.Image)) +
+            thumbnails.Children.OfType<Button>().Select(button => button.Content).OfType<StackPanel>()
+                .SelectMany(panel => panel.Children.OfType<Image>()).Sum(RasterBytes);
+
+        private static long RasterBytes(Image image) => image.Source is BitmapSource bitmap
+            ? (long)bitmap.PixelWidth * bitmap.PixelHeight * 4 : 0;
+
+        private void TrimInactivePageBitmaps()
+        {
+            if (pageSlots.Length == 0) return;
+            var top = savedVertical / savedZoom;
+            var first = PageAt(top);
+            var last = PageAt(top + viewport.ActualHeight / savedZoom);
+            for (var i = 0; i < pageSlots.Length; i++)
+                if (i < first || i > last) { pageSlots[i].Image.Source = null; pageSlots[i].RenderWidth = 0; }
+            retainedRange = (first, last);
+            // Resume explicitly refreshes neighbors. Keep the retained range
+            // identifiable if another tab switch cancels a pending restore.
+            renderedRange = (first, last, pageIndex);
         }
 
         private void ClearPageBitmaps()

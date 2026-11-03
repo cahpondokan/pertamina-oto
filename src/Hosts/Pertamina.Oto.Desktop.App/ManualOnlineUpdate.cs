@@ -29,10 +29,24 @@ internal sealed partial class MainWindow
         OnlineHttp;
     private async Task CheckManualOnlineUpdateAsync()
     {
-        if (checkingUpdate || checkingOnlineUpdate || messageOpen) return;
+        // Background metadata polling must not swallow an explicit user click.
+        if (checkingUpdate) { SetOnlineUpdateStatus("Pemeriksaan atau pemasangan update sedang berjalan."); return; }
+        if (messageOpen) { SetOnlineUpdateStatus("Tutup dialog yang terbuka, lalu periksa update kembali."); return; }
         if (PortableProfile.IsPortable) { await OpenOnlineDownloadsAsync(); return; }
+        if (IsOnlineAudit &&
+#if DEBUG
+            manualUpdateFixtureRoot is null && manualUpdateFixtureClient is null &&
+#endif
+            true)
+        { await MenuMessageAsync("Sesi pengujian", "Update tidak dipasang dari sesi pengujian. Gunakan shortcut PERTAMINA OTO untuk memperbarui aplikasi terpasang."); return; }
+        if (!ReleaseInfo.ValidVersion(ManualUpdateBuild))
+        {
+            SetOnlineUpdateStatus("Update online memerlukan aplikasi terpasang. Jalankan shortcut PERTAMINA OTO.");
+            await MenuMessageAsync("Instalasi diperlukan", "Jalankan versi terpasang dari shortcut PERTAMINA OTO untuk menggunakan update online."); return;
+        }
         if (RestartBusy) { await MenuMessageAsync("Pekerjaan sedang berjalan", "Selesaikan proses dokumen sebelum update."); return; }
         checkingUpdate = true;
+        SetOnlineUpdateStatus("Memeriksa versi di oto.ayani.id…");
         using var cancel = CancellationTokenSource.CreateLinkedTokenSource(onlineUpdateLifetime.Token);
         try
         {
@@ -52,15 +66,16 @@ internal sealed partial class MainWindow
             }
             finally { progress.Hide(); await shown; messageOpen = false; }
             if (cancel.IsCancellationRequested) return;
-            if (!ReleaseInfo.ValidVersion(ManualUpdateBuild)) { await MenuMessageAsync("Instalasi diperlukan", "Jalankan versi terpasang dari shortcut PERTAMINA OTO untuk menggunakan update online."); return; }
             if (release is null || !release.IsNewerThan(LocalAppUpdate.VersionAt(ManualUpdateRoot)))
             {
+                SetOnlineUpdateStatus(release is null ? "Website belum menyediakan rilis untuk aplikasi ini." : "Tidak ada versi online yang lebih baru dari aplikasi terpasang.");
                 var current = LocalAppUpdate.VersionAt(ManualUpdateRoot);
                 if (current != ManualUpdateBuild) await ShowUpdateCompletionAsync(current);
                 else await MenuMessageAsync(release is null ? "Rilis belum tersedia" : "Sudah terbaru", release is null ? "Website belum menyediakan metadata rilis. Status versi terbaru belum dapat dipastikan." : "Versi terbaru yang tersedia sudah terpasang.");
                 return;
             }
             var notes = ReleaseNotes.Online(release);
+            SetOnlineUpdateStatus("Update tersedia. Pilih Unduh dan pasang untuk melanjutkan.");
             var next = new ApplicationVersion.Identity(release.ProductVersion, "Pengembangan", release.Version);
             if (!await ConfirmNotesUpdateAsync("Update tersedia", next, notes, "Unduh dan pasang",
                 ApplicationVersion.UpdateDescription(ApplicationVersion.Running(), next) + "\nUnduhan: " + (release.Size / 1048576d).ToString("N1", System.Globalization.CultureInfo.CurrentCulture) + " MB\nUnduh dan pasang dari oto.ayani.id? Dokumen tidak dikirim. Hash memeriksa integritas; paket pengembangan belum ditandatangani. Versi lama dipertahankan. Simpan draf sebelum membuka versi baru.")) return;
@@ -115,8 +130,8 @@ internal sealed partial class MainWindow
             finally { progress.Hide(); await shown; messageOpen = false; }
             await ShowUpdateCompletionAsync(installed);
         }
-        catch (OperationCanceledException) { if (!onlineUpdateLifetime.IsCancellationRequested) await MenuMessageAsync("Update dibatalkan", "Versi aktif tetap dapat dijalankan. Periksa update kembali saat siap."); }
-        catch (Exception error) { LocalDiagnostics.Record("manual-online-update", error); await MenuMessageAsync("Update belum berhasil", "Koneksi, paket, ruang penyimpanan, atau instalasi belum dapat diverifikasi. Versi aktif tidak diganti sebelum pemeriksaan berhasil. Fitur PDF lokal tetap tersedia."); }
+        catch (OperationCanceledException) { SetOnlineUpdateStatus("Pemeriksaan atau unduhan update dibatalkan."); if (!onlineUpdateLifetime.IsCancellationRequested) await MenuMessageAsync("Update dibatalkan", "Versi aktif tetap dapat dijalankan. Periksa update kembali saat siap."); }
+        catch (Exception error) { SetOnlineUpdateStatus("Update belum berhasil. Periksa koneksi dan coba kembali; fitur PDF lokal tetap tersedia."); LocalDiagnostics.Record("manual-online-update", error); await MenuMessageAsync("Update belum berhasil", "Koneksi, paket, ruang penyimpanan, atau instalasi belum dapat diverifikasi. Versi aktif tidak diganti sebelum pemeriksaan berhasil. Fitur PDF lokal tetap tersedia."); }
         finally { checkingUpdate = false; }
     }
 }

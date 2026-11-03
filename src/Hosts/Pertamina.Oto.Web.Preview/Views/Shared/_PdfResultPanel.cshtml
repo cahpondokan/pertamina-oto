@@ -1,0 +1,42 @@
+@model PdfFlowViewModel
+@if (Model.Multiple) {
+<section id="@(Model.Prefix)-result" class="split-result-screen" hidden aria-labelledby="@(Model.Prefix)-result-title">
+ <nav class="split-result-breadcrumb" aria-label="Jejak navigasi"><span>Semua alat</span><span aria-hidden="true">/</span><span>Pisahkan PDF</span><span aria-hidden="true">/</span><strong>Hasil</strong></nav>
+ <header class="split-result-hero">
+  <div class="split-success-art"><img src="/assets/030-pisahkan-pdf.png" width="76" height="76" alt=""/><span aria-hidden="true">✓</span></div>
+  <h2 id="@(Model.Prefix)-result-title">PDF siap diunduh</h2>
+  <p id="@(Model.Prefix)-result-total" class="workspace-result-total" role="status"></p>
+  <p id="@(Model.Prefix)-result-source" class="split-result-source"></p>
+  <button id="@(Model.Prefix)-save-all" class="button primary workspace-save-all">Unduh semua (ZIP)</button>
+  <p id="@(Model.Prefix)-archive-note" class="workspace-archive-note" role="status">Satu ZIP berisi semua PDF hasil.</p>
+  <div class="split-result-actions"><button id="@(Model.Prefix)-edit-split" class="merge-text-action">← Ubah pilihan halaman</button><span aria-hidden="true">|</span><button id="@(Model.Prefix)-result-new" class="merge-text-action">＋ Proses PDF lain</button></div>
+ </header>
+ <details id="@(Model.Prefix)-result-notes" class="merge-result-notes" hidden><summary id="@(Model.Prefix)-result-notes-summary">Catatan dokumen</summary><ul id="@(Model.Prefix)-result-warning"></ul></details>
+ <section id="@(Model.Prefix)-result-details" class="split-result-section" aria-labelledby="@(Model.Prefix)-result-summary">
+  <header class="split-result-section-heading"><h3 id="@(Model.Prefix)-result-summary">File hasil</h3><p>Pratinjau untuk memeriksa isi dokumen</p></header>
+  <div id="@(Model.Prefix)-result-list" class="split-result-list" aria-label="File hasil"></div>
+ </section>
+ <section class="split-result-section split-result-next" aria-labelledby="@(Model.Prefix)-next-title">
+  <h3 id="@(Model.Prefix)-next-title">Lanjutkan mengolah hasil</h3><p id="@(Model.Prefix)-next-note"></p>
+  <div id="@(Model.Prefix)-next-tools" class="split-next-tools"></div>
+ </section>
+ <p id="@(Model.Prefix)-save-note" class="merge-save-note split-result-status" role="status"></p>
+ <p class="split-result-trust">✓ Diproses di perangkat Anda · File asli tetap utuh</p>
+ <label class="split-result-edit-label" for="@(Model.Prefix)-result-name">Nama file</label><input id="@(Model.Prefix)-result-name" class="workspace-result-name split-result-hidden-name" maxlength="110" autocomplete="off" aria-describedby="@(Model.Prefix)-result-name-error"/><p id="@(Model.Prefix)-result-name-error" class="merge-inline-error" hidden></p>
+ <select id="@(Model.Prefix)-result-select" class="split-result-hidden-name" aria-label="Pilih PDF hasil"></select>
+ <button id="@(Model.Prefix)-save" class="split-result-hidden-name">Simpan sebagai…</button><button id="@(Model.Prefix)-download" class="split-result-hidden-name" hidden>Unduh langsung</button>
+ <button id="@(Model.Prefix)-preview-output" class="split-result-hidden-name">Pratinjau file ini</button>
+ <details id="@(Model.Prefix)-result-details-legacy" hidden><summary>Nama file dan penyimpanan</summary><div class="workspace-result-navigation"><button id="@(Model.Prefix)-result-prev">Sebelumnya</button><button id="@(Model.Prefix)-result-next">Berikutnya</button></div><p id="@(Model.Prefix)-result-info" class="workspace-result-info"></p></details>
+</section>
+} else {
+<section id="@(Model.Prefix)-result" class="merge-flow merge-result-simple" hidden aria-label="Hasil PDF">
+    <div class="merge-flow-scroll">
+     <div class="merge-panel-title"><span class="merge-state-symbol" aria-hidden="true">✓</span><h2>PDF siap disimpan</h2></div>
+     <p id="@(Model.Prefix)-result-info" class="workspace-result-info"></p>
+     <label for="@(Model.Prefix)-result-name">Nama file</label><input id="@(Model.Prefix)-result-name" class="workspace-result-name" maxlength="110" autocomplete="off" aria-describedby="@(Model.Prefix)-result-name-error"/><p id="@(Model.Prefix)-result-name-error" class="merge-inline-error" hidden></p>
+     <details id="@(Model.Prefix)-result-notes" class="merge-result-notes" hidden><summary id="@(Model.Prefix)-result-notes-summary">Catatan dokumen</summary><ul id="@(Model.Prefix)-result-warning"></ul></details>
+    </div>
+    <div class="merge-result-save"><p id="@(Model.Prefix)-save-note" class="merge-save-note" role="status">Belum disimpan ke perangkat.</p><button id="@(Model.Prefix)-save" class="button primary">Simpan PDF</button><button id="@(Model.Prefix)-download" class="merge-text-action" hidden>Unduh langsung</button></div>
+    <div class="merge-result-actions"><button id="@(Model.Prefix)-preview-output" class="merge-text-action">Pratinjau</button><button id="@(Model.Prefix)-new" class="merge-text-action">Mulai baru</button></div>
+   </section>
+}

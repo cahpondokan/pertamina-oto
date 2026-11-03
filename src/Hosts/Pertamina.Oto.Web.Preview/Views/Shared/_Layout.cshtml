@@ -1,0 +1,43 @@
+@{ var catalogOnly = ViewData["CatalogOnly"] is true; }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <title>@ViewData["Title"] · PERTAMINA OTO</title>
+ <meta name="description" content="PERTAMINA OTO Web. Alat PDF lokal di browser, tanpa unggahan dokumen."/>
+ <link rel="icon" href="/assets/oto.png"/>
+ <link rel="stylesheet" href="/css/site.css" asp-append-version="true"/>
+ <script src="/js/theme.js" asp-append-version="true"></script>
+ <partial name="_WebDiagnostics"/>
+ <script src="/js/oto-shell.js" asp-append-version="true" defer></script>
+ <script src="/js/site.js" asp-append-version="true" defer></script>
+ @if(catalogOnly) {
+ <partial name="_PdfWorkspaceAssets"/>
+ }
+ <link rel="stylesheet" href="/css/oto-theme.css" asp-append-version="true"/>
+ <link rel="stylesheet" href="/css/oto-components.css" asp-append-version="true"/>
+ <link rel="stylesheet" href="/css/oto-comfort.css" asp-append-version="true"/>
+ @await RenderSectionAsync("Head", required: false)
+</head>
+<body data-catalog-only="@(catalogOnly ? "true" : "false")">
+ <partial name="_Icons"/>
+ <a class="skip-link" href="#main">Lewati ke konten</a>
+ <partial name="_OtoHeader"/>
+ <main id="main" class="main" tabindex="-1"><div id="oto-screen">@RenderBody()</div><footer class="footer"><a href="/privasi-web">Privasi dan diagnostik</a><span>PERTAMINA OTO <span class="footer-dot">·</span> Office Tools Organizer</span><span>ASP.NET Core MVC <span class="footer-dot">·</span> Pratinjau lokal</span></footer></main>
+ @if(catalogOnly) {
+ <template data-local-page="/" data-page-title="Semua alat"><partial name="~/Views/Home/Website.cshtml" model="ToolCatalog.All" view-data='new ViewDataDictionary(ViewData) { ["Favorites"] = false }' /></template>
+ <template data-local-page="/favorit" data-page-title="Favorit"><partial name="~/Views/Home/Website.cshtml" model="ToolCatalog.All" view-data='new ViewDataDictionary(ViewData) { ["Favorites"] = true }' /></template>
+ @foreach(var item in ToolCatalog.All.Where(item => ToolCatalog.BrowserEnabled(item.Id))) {
+ <template data-local-page="/alat/@item.Id" data-page-title="@item.Title"><partial name="_BrowserWorkspace" model="new WorkspaceViewModel(item.Id, item.Title, item.Description, item.Icon)" /></template>
+ }
+ <dialog id="local-source-dialog" class="app-dialog" aria-labelledby="local-source-title"><h2 id="local-source-title">Pilih dokumen</h2><p>Alat ini memakai satu PDF. Ruang kerja dan dokumen lain tetap tersedia di alat sebelumnya.</p><label for="local-source-choice">Dokumen sumber</label><select id="local-source-choice"></select><div class="dialog-actions"><button class="button" id="local-source-cancel">Batal</button><button class="button primary" id="local-source-use">Gunakan dokumen</button></div></dialog>
+ }
+ <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+ <dialog id="info-dialog" class="app-dialog"><div class="dialog-top"><span class="eyebrow">PERTAMINA OTO WEB</span><button class="icon-button" data-close-dialog aria-label="Tutup dialog"><svg><use href="#i-close"/></svg></button></div><h2 id="info-title">Pratinjau tampilan</h2><p id="info-description"></p><div class="dialog-actions"><button class="button @(catalogOnly ? "" : "primary")" data-close-dialog>Mengerti</button>@if(catalogOnly){<a class="button primary" id="info-download" href="/#unduh">Lihat aplikasi desktop</a>}</div></dialog>
+ <dialog id="leave-dialog" class="app-dialog"><div class="dialog-top"><span class="eyebrow">RUANG KERJA ANDA</span><button class="icon-button" data-close-dialog aria-label="Tutup dialog"><svg><use href="#i-close"/></svg></button></div><h2 id="leave-title">Pindah alat?</h2><p id="leave-message">Daftar dokumen masih ada di ruang kerja.</p><div class="dialog-choice"><svg><use href="#i-file"/></svg><div><strong>Pertahankan daftar dokumen</strong><p>Hanya metadata, bukan isi file. File asli tidak diubah.</p></div></div><div class="dialog-actions"><button class="button" data-close-dialog>Tetap di sini</button><button class="button primary" id="leave-confirm">Lanjutkan</button></div></dialog>
+ <dialog id="close-dialog" class="app-dialog"><div class="dialog-top"><span class="eyebrow">TUTUP DOKUMEN</span><button class="icon-button" data-close-dialog aria-label="Tutup dialog"><svg><use href="#i-close"/></svg></button></div><img class="dialog-biblo" src="/assets/031-atur-ulang-halaman-pdf.png" alt="Biblo"/><h2>Tutup ruang kerja ini?</h2><p>Susunan pratinjau akan dikosongkan. File asli di perangkat Anda tidak dihapus atau diubah.</p><div class="dialog-actions"><button class="button" data-close-dialog>Kembali mengatur</button><button class="button danger" id="close-confirm">Tutup dokumen</button></div></dialog>
+ <dialog id="result-dialog" class="app-dialog result-dialog"><span class="sample-label">SIMULASI TAMPILAN HASIL</span><img id="result-biblo" class="result-biblo" src="/assets/028-gabungkan-pdf.png" alt="Biblo"/><h2>Seperti ini tampilan hasil Anda</h2><p>Ini contoh antarmuka. Belum ada PDF yang diproses atau dibuat.</p><div class="result-file"><svg><use href="#i-file"/></svg><div><strong id="result-name">dokumen_baru.pdf</strong><small>Contoh nama file hasil</small></div></div><button class="button primary full" data-close-dialog>Kembali ke ruang kerja</button><p class="subtle">Unduh hasil tersedia setelah mesin PDF web diintegrasikan.</p></dialog>
+ <noscript><div class="noscript">Aktifkan JavaScript untuk mencoba pencarian dan interaksi pratinjau. Tidak ada file yang diunggah.</div></noscript>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+@inject Oto.WebDiagnostics.DiagnosticsStore Diagnostics
+@if (Diagnostics.Enabled)
+{
+ <meta name="oto-diagnostics" content="/api/diagnostics/events"/>
+ <script src="/js/web-diagnostics.js" asp-append-version="true" defer></script>
+}

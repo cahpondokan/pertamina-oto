@@ -30,8 +30,9 @@ internal sealed partial class MainWindow
             return LocalAppUpdate.InstallRoot;
         }
     }
-    private bool RestartBusy => active is not null || importing || pastingDocument || extractLoading || removeLoading ||
-        organizerHeld is not null || liveEditor?.Working == true || pdfReader?.RestartBusy == true;
+    private bool NonReaderBusy => active is not null || importing || pastingDocument || extractLoading || removeLoading ||
+        organizerHeld is not null || liveEditor?.Working == true;
+    private bool RestartBusy => NonReaderBusy || Readers.Any(r => r.RestartBusy);
     private bool RestartHasSession => RestartPendingWork().Count > 0;
 
     private sealed partial class PdfReaderView
@@ -182,6 +183,8 @@ internal sealed partial class MainWindow
     private async Task RestartForUpdateAsync(string nextVersion)
     {
         if (restartRequested || messageOpen) return;
+        if (readerWindows.Count > 1)
+        { await MenuMessageAsync("Masih ada jendela OTO lain", "Tutup jendela OTO lainnya sebelum memulai ulang untuk update. Tab dan pekerjaan di jendela tersebut tetap terbuka."); return; }
         if (RestartBusy) { await MenuMessageAsync("Pekerjaan sedang berjalan", "Tunggu atau batalkan impor/proses dokumen sebelum memulai ulang. Aplikasi tetap terbuka."); return; }
         var pending = RestartPendingWork();
         if (pending.Count > 0)

@@ -160,12 +160,13 @@ internal sealed partial class MainWindow
         finally { libraryTestPath = null; await File.WriteAllLinesAsync(Path.Combine(output, "audit.txt"), report); }
     }
 
-    private static void WriteHistoryAuditFixture(string path, int width = 595, int height = 842)
+    private static void WriteHistoryAuditFixture(string path, int width = 595, int height = 842, bool editableText = false)
     {
         var objects = new List<string>
         {
             "<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>",
-            "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"
+            editableText ? "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>"
+                : "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"
         };
         for (var page = 1; page <= 3; page++)
         {

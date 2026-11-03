@@ -39,8 +39,43 @@ internal static class OriginalFontBoundaryTests
         Check(Runs(Fixture("custom-widths", change: f => f.Elements["/Widths"] = new PdfArray())).Length == 0, "standard font override is not assigned built-in metrics");
         Check(Runs(Fixture("missing-encoding", change: f => f.Elements.Remove("/Encoding"))).Length == 0, "standard built-in encoding not guessed as WinAnsi");
         Check(Runs(Fixture("encoding-dictionary", change: f => f.Elements["/Encoding"] = new PdfDictionary())).Length == 0, "custom encoding dictionary rejected without reader exception");
-        Check(Runs(Fixture("dependent", tail: "(FOLLOW) Tj ET")).Length == 0, "dependent horizontal text advance rejected");
-        Check(Runs(Fixture("line-follow", tail: "T* (FOLLOW) Tj ET")).Length == 0, "nonterminal line advance remains conservative");
+        var adjacent = Fixture("dependent", tail: "(FOLLOW) Tj ET");
+        var adjacentRuns = Runs(adjacent);
+        Check(adjacentRuns.Length == 2 && adjacentRuns[1].X > adjacentRuns[0].X, "adjacent fragments track original text advance");
+        var multiline = Fixture("line-follow", tail: "16 TL T* (FOLLOW) Tj T* (LAST) Tj ET");
+        var lineRuns = Runs(multiline);
+        Check(lineRuns.Length == 3 && lineRuns[1].X == lineRuns[0].X && lineRuns[1].Y == lineRuns[0].Y + 16 && lineRuns[2].Y == lineRuns[1].Y + 16, "T-star follows leading and original line origin");
+        foreach (var source in new[] { adjacent, multiline })
+        {
+            var before = Runs(source); var run = before[0];
+            foreach (var local in new[] { "", "Arial" })
+            foreach (var text in new[] { "BUDI", "" })
+            {
+                var output = Path.Combine(directory, "position-preserved-" + count + ".pdf");
+                PdfOperations.Execute(new("edit", [source], output, Marks: [new(0, "replace-text", run.X, run.Y, run.Width, run.Height, text, run.Size, SourceId: run.Id, OriginalText: run.Text, LocalFont: local)]));
+                var after = Runs(output);
+                Check(before.Skip(1).All(b => after.Any(a => a.Text == b.Text && Math.Abs(a.X - b.X) < .001 && Math.Abs(a.Y - b.Y) < .001 && a.Font == b.Font)), "shorter/deleted original and local replacements retain following fragments and lines");
+            }
+        }
+        var relative = Runs(Fixture("relative-line", tail: "20 -16 TD (FOLLOW) Tj T* (LAST) Tj ET"));
+        Check(relative.Length == 3 && relative[1].X == relative[0].X + 20 && relative[2].X == relative[1].X && relative[2].Y == relative[1].Y + 16, "TD uses line matrix and establishes subsequent leading");
+        var spaced = Runs(Fixture("word-spaced", tail: "0 -16 Td 3 Tw (BUDI SANTOSO) Tj ET"));
+        Check(spaced.Length == 2 && Math.Abs(spaced[1].Width - spaced[0].Width - 3) < .001, "single-byte space width includes Tw");
+        Check(Runs(Fixture("rotated-text", tail: "1 1 0 1 40 600 Tm (FOLLOW) Tj ET")).Length == 1, "unsupported skew stays excluded after line support");
+        var mixed = Fixture("mixed-adjacent", tail: "/F2 10 Tf (FOLLOW) Tj 14 TL T* (LAST) Tj ET");
+        var mixedSource = Path.Combine(directory, "mixed-font-source.pdf");
+        using (var pdf = PdfReader.Open(mixed, PdfDocumentOpenMode.Modify))
+        {
+            var f2 = new PdfDictionary(pdf); f2.Elements.SetName("/Type", "/Font"); f2.Elements.SetName("/Subtype", "/Type1");
+            f2.Elements.SetName("/BaseFont", "/Times-Bold"); f2.Elements.SetName("/Encoding", "/WinAnsiEncoding");
+            pdf.Pages[0].Resources.Elements.GetDictionary("/Font")!.Elements["/F2"] = f2;
+            pdf.Save(mixedSource);
+        }
+        var mixedRuns = Runs(mixedSource);
+        var mixedRun = mixedRuns[0]; var mixedOutput = Path.Combine(directory, "mixed-local-edited.pdf");
+        PdfOperations.Execute(new("edit", [mixedSource], mixedOutput, Marks: [new(0, "replace-text", mixedRun.X, mixedRun.Y, mixedRun.Width, mixedRun.Height, "BUDI", mixedRun.Size, SourceId: mixedRun.Id, OriginalText: mixedRun.Text, LocalFont: "Arial")]));
+        var mixedAfter = Runs(mixedOutput);
+        Check(mixedRuns.Length == 3 && mixedAfter.Length == 3 && mixedRuns.Skip(1).All(b => mixedAfter.Any(a => a.Text == b.Text && Math.Abs(a.X - b.X) < .001 && Math.Abs(a.Y - b.Y) < .001 && a.Font == b.Font)), "local replacement preserves mixed-font neighbor and original following line when old font has no glyphs left");
         var mapped = Fixture("mapped-simple", change: f =>
         {
             f.Elements.SetName("/Subtype", "/TrueType"); f.Elements.Remove("/Encoding");

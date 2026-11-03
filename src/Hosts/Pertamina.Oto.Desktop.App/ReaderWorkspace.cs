@@ -21,33 +21,82 @@ internal sealed partial class MainWindow
     private void ShowPdfReader(bool autoOpen)
     {
         if (active is not null || importing || messageOpen || liveEditor?.Working == true) return;
+        if (readerTabs is not null && historyPage.Children.Contains(readerSurface))
+        {
+            if (historyPage.Visibility != Visibility.Visible)
+            {
+                BeginScreen("Pembaca PDF", "Baca dokumen lokal");
+                SetHistoryPageVisible(true); selected = null; emptyTool = null;
+            }
+            pdfReader?.RefreshSession(autoOpen);
+            pdfReader?.Resume();
+            return;
+        }
         BeginScreen("Pembaca PDF", "Baca dokumen lokal");
         SetHistoryPageVisible(true); selected = null; emptyTool = null;
         LayoutCards();
         historyPage.Children.Clear(); historyPage.RowDefinitions.Clear();
-        pdfReader ??= new PdfReaderView(this);
-        historyPage.Children.Add(pdfReader.View);
-        pdfReader.RefreshSession(autoOpen);
-        DispatcherQueue.TryEnqueue(() => { pdfReader.Resume(); LayoutCards(); });
+        EnsureReaderTabs();
+        historyPage.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+        Grid.SetRow(readerSurface, 0);
+        historyPage.Children.Add(readerSurface);
+        pdfReader?.RefreshSession(autoOpen);
+        DispatcherQueue.TryEnqueue(() => { pdfReader?.Resume(); LayoutCards(); });
         foreach (var item in navigation)
             item.Background = AutomationProperties.GetName(item) == "Pembaca PDF" ? Brush(23, 104, 212) : Brush(7, 29, 61);
     }
 
     internal async Task OpenPdfReaderAsync(string path, bool processed = false)
     {
-        ShowPdfReader(autoOpen: false);
-        await Task.Yield(); root.UpdateLayout();
-        if (pdfReader is not null) await pdfReader.WaitLoadedAsync();
-        if (pdfReader?.Visible == true) await pdfReader.OpenAsync(path);
-        pdfReader?.SetIdentity(path, processed);
+        await readerOpenGate.WaitAsync();
+        try
+        {
+            if (readerWindowClosed) return;
+            var full = Path.GetFullPath(path);
+            if (FindOpenReader(full) is { } existing)
+            {
+                existing.Window.BringReaderWindowToFront();
+                if (existing.Window.messageOpen || existing.Window.NonReaderBusy || existing.Window.pdfReader?.busy == true) return;
+                existing.Window.ShowPdfReader(false);
+                existing.Window.readerTabs!.SelectedItem = existing.Window.FindReaderTab(existing.Reader);
+                existing.Reader.SetIdentity(full, processed); existing.Reader.Resume(); existing.Reader.FocusReading(); return;
+            }
+            if (messageOpen || NonReaderBusy || pdfReader?.busy == true)
+            {
+                if (pdfReader is not null) pdfReader.notice.Text = "Tunggu pekerjaan aktif selesai, lalu buka PDF kembali. Tab yang sudah terbuka tetap tersedia.";
+                return;
+            }
+            ShowPdfReader(autoOpen: false);
+            var previousReader = pdfReader;
+            var reader = pdfReader is { ReaderSource: null, busy: false } ? pdfReader : AddReaderTab();
+            reader.openingReaderPath = full;
+            var tab = FindReaderTab(reader)!; tab.Header = Path.GetFileName(full);
+            try
+            {
+                await Task.Yield(); root.UpdateLayout(); await reader.WaitLoadedAsync();
+                if (reader.Visible) await reader.OpenAsync(full);
+                reader.SetIdentity(full, processed);
+                if (reader.ReaderSource is null && previousReader?.ReaderSource is not null && previousReader != reader)
+                {
+                    previousReader.notice.Text = reader.notice.Text;
+                    CloseReaderTab(reader);
+                    readerTabs!.SelectedItem = FindReaderTab(previousReader);
+                }
+                else { UpdateReaderTab(reader); reader.FocusReading(); }
+            }
+            finally { reader.openingReaderPath = null; }
+        }
+        catch (Exception error) when (error is ArgumentException or IOException or UnauthorizedAccessException)
+        { LocalDiagnostics.Record("reader-tab-open", error); if (pdfReader is not null) pdfReader.notice.Text = "PDF belum dapat dibuka. Periksa file dan izin akses; file asli tidak diubah."; }
+        finally { readerOpenGate.Release(); }
     }
 
     private sealed partial class PdfReaderView : IDisposable
     {
-        private readonly MainWindow owner;
+        internal MainWindow owner;
         internal Grid View { get; } = new() { Background = Brush(255, 255, 255) };
         private readonly bool previewOnly;
-        internal bool Visible => View.IsLoaded && (previewOnly || owner.historyPage.Visibility == Visibility.Visible);
+        internal bool Visible => !disposed && View.IsLoaded && (previewOnly || (owner.pdfReader == this && owner.historyPage.Visibility == Visibility.Visible));
         internal Action<Image>? PageSelected;
         internal ScrollViewer ReadingViewport => viewport;
         internal Task NavigateAsync(int index) => GoAsync(index);
@@ -55,7 +104,7 @@ internal sealed partial class MainWindow
         internal int ReadingPage => pageIndex;
         private readonly TextBlock title = HistoryText("Pembaca PDF", 18, true);
         private readonly TextBlock metadata = HistoryText("Buka PDF lokal untuk mulai membaca", 12, muted: true);
-        private readonly TextBlock notice = HistoryText("", 12, muted: true);
+        internal readonly TextBlock notice = HistoryText("", 12, muted: true);
         private Image picture = new() { Stretch = Stretch.Uniform };
         private readonly ScrollViewer viewport;
         private readonly Grid workspace = new();
@@ -77,7 +126,7 @@ internal sealed partial class MainWindow
         private PdfDocument? document;
         private FileStream? sourceLock;
         private string? path;
-        private bool busy;
+        internal bool busy;
         private bool fit = true;
         private bool settingZoom;
         private bool bookmarksOnly;
@@ -87,9 +136,9 @@ internal sealed partial class MainWindow
         private int openGeneration;
         internal Task Rendering { get; private set; } = Task.CompletedTask;
 
-        internal PdfReaderView(MainWindow owner, bool previewOnly = false)
+        internal PdfReaderView(MainWindow host, bool previewOnly = false)
         {
-            this.owner = owner; this.previewOnly = previewOnly;
+            owner = host; this.previewOnly = previewOnly;
             print.Visibility = previewOnly ? Visibility.Collapsed : Visibility.Visible;
             AutomationProperties.SetName(print, "Cetak dokumen aktif");
             foreach (var height in new[] { GridLength.Auto, GridLength.Auto, GridLength.Auto, GridLength.Auto, new GridLength(1, GridUnitType.Star), GridLength.Auto, GridLength.Auto })
@@ -120,9 +169,6 @@ internal sealed partial class MainWindow
             var focus = HistoryButton("maximize2", "Mode fokus", true);
             focus.Click += (_, _) => { owner.readerFocus = !owner.readerFocus; focus.Background = owner.readerFocus ? Brush(222, 236, 255) : Brush(255, 255, 255); owner.LayoutCards(); };
             print.Click += async (_, _) => { if (path is not null && !busy) await owner.ShowPrintAsync(path, owner.readerResults.Contains(path) ? "Hasil proses tersimpan" : "Dokumen pembaca", pageIndex); }; actions.Children.Add(focus); actions.Children.Add(open); actions.Children.Add(print); actions.Children.Add(edit); actions.Children.Add(more);
-            var other = new MenuFlyoutItem { Text = "Alat lainnya" };
-            other.Click += (_, _) => { if (path is null || busy) return; if (!owner.homeFiles.Contains(path)) owner.homeFiles.Add(path); owner.chosenFiles.Clear(); owner.chosenFiles.Add(path); owner.ShowCatalog(); };
-            menu.Items.Insert(0, other);
             Grid.SetColumn(actions, 1); header.Children.Add(actions); var layoutHeader = ResponsiveLayout.Header(header, titles, actions, 720, () => View.ActualHeight >= 400); View.Children.Add(header);
             var toolbar = new Grid { Padding = new Thickness(16, 8, 16, 8), ColumnSpacing = 16 };
             toolbar.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); toolbar.ColumnDefinitions.Add(new ColumnDefinition()); toolbar.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
@@ -155,7 +201,8 @@ internal sealed partial class MainWindow
             var thumbnailScroll = new ScrollViewer { Content = thumbnails, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
             Grid.SetRow(thumbnailScroll, 1); rail.Children.Add(thumbnailScroll); workspace.Children.Add(rail);
             var thumbnailOpen = false; rail.Background = Brush(255, 255, 255); Canvas.SetZIndex(rail, 2);
-            void LayoutRail() { var compact = View.ActualWidth < 760; workspace.ColumnDefinitions[0].Width = new GridLength(compact ? 0 : 180); Grid.SetColumnSpan(rail, compact ? 2 : 1); rail.HorizontalAlignment = compact ? HorizontalAlignment.Left : HorizontalAlignment.Stretch; rail.Width = compact ? Math.Min(180, Math.Max(80, View.ActualWidth - 24)) : double.NaN; rail.Visibility = !compact || thumbnailOpen ? Visibility.Visible : Visibility.Collapsed; }
+            void LayoutRail() { var compact = View.ActualWidth < 760; var show = !owner.readerFocus && (previewOnly ? !compact || thumbnailOpen : thumbnailOpen); workspace.ColumnDefinitions[0].Width = new GridLength(!compact && show ? 180 : 0); Grid.SetColumnSpan(rail, compact ? 2 : 1); rail.HorizontalAlignment = compact ? HorizontalAlignment.Left : HorizontalAlignment.Stretch; rail.Width = compact ? Math.Min(180, Math.Max(80, View.ActualWidth - 24)) : double.NaN; rail.Visibility = show ? Visibility.Visible : Visibility.Collapsed; }
+            focus.Click += (_,_) => { LayoutRail(); ReaderToolbarButton(focus,"\uE740"); focus.BorderBrush = Brush(89,165,255); focus.BorderThickness = new Thickness(owner.readerFocus ? 1 : 0); };
             thumbnailsButton.Click += (_, _) => { thumbnailOpen = !thumbnailOpen; LayoutRail(); if (thumbnailOpen) pagesTab.Focus(FocusState.Programmatic); };
             viewport = new ScrollViewer { Content = pageSurface, ZoomMode = ZoomMode.Enabled, MinZoomFactor = .1f, MaxZoomFactor = 5,
                 HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Top,
@@ -189,17 +236,24 @@ internal sealed partial class MainWindow
             notice.Margin = new Thickness(16, 0, 16, 8); AutomationProperties.SetLiveSetting(notice, Microsoft.UI.Xaml.Automation.Peers.AutomationLiveSetting.Polite);
             Grid.SetRow(notice, 6); View.Children.Add(notice);
             BuildLanding(header, toolbar, footer);
-            viewport.SizeChanged += (_, _) => { resizeTimer.Stop(); if (Visible && document is not null) resizeTimer.Start(); };
+            if (!previewOnly) BuildIntegratedReaderToolbar(header, toolbar, footer, actions, tools, search, controlsScroll, controls, focus, thumbnailsButton);
+            viewport.SizeChanged += (_, _) => { resizeTimer.Stop(); if (Visible && !suspended && !settingZoom && document is not null) resizeTimer.Start(); };
             resizeTimer.Tick += (_, _) =>
             {
                 if (settingZoom) return;
                 resizeTimer.Stop();
-                if (!Visible || document is null) return;
+                if (!Visible || suspended || document is null) return;
                 if (fit && Math.Abs(FitFactor() - viewport.ZoomFactor) > .0001) Fit(); else { UpdatePageExtent(viewport.ZoomFactor); RefreshScroll(); }
             };
             viewport.ViewChanged += (_, e) => OnReaderViewChanged(e);
             View.SizeChanged += (_, _) =>
             {
+                if (!previewOnly)
+                {
+                    canvas.Padding = new Thickness(View.ActualWidth < 600 || View.ActualHeight < 450 ? 8 : 24);
+                    LayoutRail(); thumbnailsButton.Visibility = Visibility.Visible;
+                    layoutIntegratedToolbar?.Invoke(); return;
+                }
                 var shortView = View.ActualHeight < 400; header.Padding = new Thickness(shortView ? 8 : 24, shortView ? 6 : 16, shortView ? 8 : 24, shortView ? 6 : 16); title.FontSize = shortView ? 16 : 18; metadata.Visibility = shortView ? Visibility.Collapsed : Visibility.Visible; ToolTipService.SetToolTip(title, title.Text + Environment.NewLine + metadata.Text); layoutHeader();
                 controlsScroll.MaxHeight = View.ActualHeight < 450 ? 90 : 144; canvas.Padding = new Thickness(View.ActualWidth < 600 || View.ActualHeight < 450 ? 8 : 24);
                 safe.Visibility = hint.Visibility = View.ActualWidth < 1080 ? Visibility.Collapsed : Visibility.Visible;
@@ -220,20 +274,25 @@ internal sealed partial class MainWindow
                 if (!View.IsLoaded) Release();
             };
             View.Loaded += (_, _) => Resume();
+            viewport.IsTabStop = true;
+            viewport.AddHandler(UIElement.PointerPressedEvent, new PointerEventHandler((_, _) => FocusReading()), true);
             View.AllowDrop = true;
             View.DragOver += (_, e) => { e.AcceptedOperation = e.DataView.Contains(StandardDataFormats.StorageItems) ? DataPackageOperation.Copy : DataPackageOperation.None; e.Handled = true; };
             View.Drop += async (_, e) => { e.Handled = true; try { if (e.DataView.Contains(StandardDataFormats.StorageItems)) await AcceptAsync(await e.DataView.GetStorageItemsAsync()); } catch (Exception error) { Failure("reader-drop", error); } };
-            View.KeyDown += async (_, e) =>
+            View.AddHandler(UIElement.PreviewKeyDownEvent, new KeyEventHandler(async (_, e) =>
             {
                 if (e.Key == VirtualKey.Escape && thumbnailOpen) { thumbnailOpen = false; LayoutRail(); thumbnailsButton.Focus(FocusState.Programmatic); e.Handled = true; return; }
                 if (e.Key == VirtualKey.Escape && searchPanel.Visibility == Visibility.Visible)
                 { e.Handled = true; ClearSearch(); viewport.Focus(FocusState.Programmatic); return; }
                 if (IsTextPasteTarget(FocusManager.GetFocusedElement(View.XamlRoot) as DependencyObject)) return;
-                if (e.Key is VirtualKey.PageDown or VirtualKey.PageUp && document is not null)
-                { e.Handled = true; await GoAsync(pageIndex + (e.Key == VirtualKey.PageDown ? 1 : -1)); }
+                if (e.Key is VirtualKey.Down or VirtualKey.Up or VirtualKey.PageDown or VirtualKey.PageUp &&
+                    ReaderKeyAllowed(FocusManager.GetFocusedElement(View.XamlRoot) as DependencyObject) &&
+                    !Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread(VirtualKey.Control).HasFlag(Windows.UI.Core.CoreVirtualKeyStates.Down) &&
+                    !Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread(VirtualKey.Menu).HasFlag(Windows.UI.Core.CoreVirtualKeyStates.Down))
+                { e.Handled = true; await NavigateReaderKeyAsync(e.Key is VirtualKey.Down or VirtualKey.PageDown ? 1 : -1); }
                 if (e.Key == VirtualKey.Escape && owner.AppWindow.Presenter.Kind == Microsoft.UI.Windowing.AppWindowPresenterKind.FullScreen)
                 { e.Handled = true; owner.AppWindow.SetPresenter(Microsoft.UI.Windowing.AppWindowPresenterKind.Default); }
-            };
+            }), true);
             if (previewOnly)
             {
                 header.Visibility = toolbar.Visibility = Visibility.Collapsed;
@@ -282,10 +341,10 @@ internal sealed partial class MainWindow
             var ready = document is not null && !busy;
             if (document is null) { count.Text = ""; pageInput.Text = ""; }
             zoomControls?.Sync();
-            sessionPicker.IsEnabled = !busy; print.IsEnabled = ready; ToolTipService.SetToolTip(print, ready ? "Cetak dokumen aktif · Ctrl+P" : "Buka PDF valid dan tunggu pemuatan selesai");
+            sessionPicker.IsEnabled = !busy; print.IsEnabled = ready; ToolTipService.SetToolTip(print, ready ? "Ctrl+P" : "Buka PDF terlebih dahulu");
             edit.IsEnabled = organize.IsEnabled = bookmark.IsEnabled = more.IsEnabled = pageInput.IsEnabled = ready;
             previous.IsEnabled = ready && pageIndex > 0; next.IsEnabled = ready && pageIndex + 1 < document!.PageCount;
-            bookmark.Background = marks.Contains(pageIndex) ? Brush(222, 236, 255) : Brush(255, 255, 255);
+            bookmark.Background = marks.Contains(pageIndex) ? Brush(60,77,99) : Brush(43,49,59);
             ToolTipService.SetToolTip(bookmark, marks.Contains(pageIndex) ? "Hapus penanda halaman (sesi ini)" : "Tandai halaman (sesi ini)");
             empty.Visibility = document is null ? Visibility.Visible : Visibility.Collapsed;
             UpdateLanding();
@@ -299,7 +358,8 @@ internal sealed partial class MainWindow
             {
                 var picker = new FileOpenPicker(); picker.FileTypeFilter.Add(".pdf");
                 WinRT.Interop.InitializeWithWindow.Initialize(picker, WinRT.Interop.WindowNative.GetWindowHandle(owner));
-                var file = await picker.PickSingleFileAsync(); if (file is not null && Visible) await OpenAsync(file.Path);
+                var selectedFiles = await picker.PickMultipleFilesAsync();
+                foreach (var file in selectedFiles) if (!owner.readerWindowClosed) await owner.OpenPdfReaderAsync(file.Path);
             }
             catch (Exception error) { Failure("reader-pick", error); }
         }
@@ -311,13 +371,13 @@ internal sealed partial class MainWindow
         private async Task AcceptAsync(IReadOnlyList<IStorageItem> items)
         {
             if (previewOnly) return;
-            if (items.Count != 1 || items[0] is not StorageFile file || !file.FileType.Equals(".pdf", StringComparison.OrdinalIgnoreCase))
-            { notice.Text = "Pilih satu file PDF untuk dibaca. Gunakan Gabung PDF untuk beberapa dokumen."; return; }
-            await OpenAsync(file.Path);
+            if (items.Count == 0 || items.Count > 32 || items.Any(item => item is not StorageFile file || !file.FileType.Equals(".pdf", StringComparison.OrdinalIgnoreCase)))
+            { notice.Text = "Pilih hingga 32 file PDF. Setiap dokumen dibuka pada tab tersendiri."; return; }
+            foreach (var file in items.Cast<StorageFile>()) await owner.OpenPdfReaderAsync(file.Path);
         }
         internal async Task OpenAsync(string input, string previewPassword = "")
         {
-            if (busy) return;
+            if (busy || disposed) return;
             if (path is not null && Path.GetFullPath(input).Equals(path, StringComparison.OrdinalIgnoreCase)) return;
             CancelSearch(); busy = true; UpdateControls(); var ticket = ++openGeneration; FileStream? candidate = null;
             try
@@ -361,7 +421,7 @@ internal sealed partial class MainWindow
                 Rendering = GoAsync(0); await Rendering;
             }
             catch (Exception error) { Failure("reader-open", error); notice.Text = "PDF tidak dapat dibuka: file mungkin rusak, terkunci kata sandi, atau tidak dapat diakses. Dokumen sebelumnya tetap tersedia."; }
-            finally { candidate?.Dispose(); busy = false; UpdateControls(); if (!previewOnly && path is not null) { SetIdentity(path, owner.readerResults.Contains(path)); RefreshSession(false); } }
+            finally { candidate?.Dispose(); busy = false; UpdateControls(); if (!previewOnly && path is not null) { SetIdentity(path, owner.readerResults.Contains(path)); RefreshSession(false); owner.UpdateReaderTab(this); } }
         }
         private async Task ReadPageInputAsync()
         {
@@ -466,9 +526,6 @@ internal sealed partial class MainWindow
         private async Task UseToolAsync(string id)
         {
             if (path is null || busy) return;
-            if (id == "edit" && owner.liveEditor?.ReaderSource == path) { owner.ShowLiveEditor(); return; }
-            if (!owner.homeFiles.Contains(path)) owner.homeFiles.Add(path);
-            owner.chosenFiles.Clear(); owner.chosenFiles.Add(path);
             await owner.OpenWorkspaceToolAsync(ToolCatalog.All.First(t => t.Id == id));
         }
         private async Task OpenFolderAsync()
@@ -480,7 +537,7 @@ internal sealed partial class MainWindow
         {
             if (path is null || busy) return;
             var original = path;
-            busy = true; UpdateControls();
+            savingCopy = busy = true; UpdateControls();
             try
             {
                 var picker = new FolderPicker(); picker.FileTypeFilter.Add("*");
@@ -490,7 +547,7 @@ internal sealed partial class MainWindow
                 notice.Text = "Salinan tersimpan. File asli tidak ditimpa.";
             }
             catch (Exception error) { Failure("reader-copy", error); }
-            finally { busy = false; UpdateControls(); }
+            finally { savingCopy = busy = false; UpdateControls(); }
         }
         private static async Task<StorageFile> CopyAsync(string original, StorageFolder folder) =>
             await (await StorageFile.GetFileFromPathAsync(original)).CopyAsync(folder, Path.GetFileNameWithoutExtension(original) + "_salinan.pdf", NameCollisionOption.GenerateUniqueName);
@@ -517,27 +574,48 @@ internal sealed partial class MainWindow
             }
             finally { owner.messageOpen = false; }
         }
-        internal void Release() { ClearSearch(); generation++; openGeneration++; settingZoom = false; resizeTimer.Stop(); sourceLock?.Dispose(); sourceLock = null; document = null; path = null; ClearPageBitmaps(); pageSlots = []; pageSurface.Children.Clear(); thumbnails.Children.Clear(); marks.Clear(); UpdateControls(); }
-        internal void Deactivate() { if (!suspended) { savedHorizontal = viewport.HorizontalOffset; savedVertical = viewport.VerticalOffset; savedZoom = viewport.ZoomFactor; } suspended = true; CancelSearch(); generation++; openGeneration++; settingZoom = false; resizeTimer.Stop(); ClearPageBitmaps(); thumbnails.Children.Clear(); }
+        internal void Release() { warmReaders.Remove(this); ClearSearch(); generation++; openGeneration++; settingZoom = false; restoringPosition = false; resizeTimer.Stop(); zoomRenderTimer.Stop(); readerZoomIntermediate = false; sourceLock?.Dispose(); sourceLock = null; document = null; path = null; ClearPageBitmaps(); pageSlots = []; pageSurface.Children.Clear(); thumbnails.Children.Clear(); marks.Clear(); UpdateControls(); if (!previewOnly) owner.UpdateReaderTab(this); }
+        internal void Deactivate()
+        {
+            if (suspended) return;
+            // A rapid switch during restoration must keep its original snapshot,
+            // not capture the intermediate offsets reported by native layout.
+            if (!restoringPosition)
+            { savedHorizontal = viewport.HorizontalOffset; savedVertical = viewport.VerticalOffset; savedZoom = viewport.ZoomFactor; }
+            restoringPosition = false;
+            suspended = true; CancelSearch(); generation++; openGeneration++; settingZoom = false;
+            resizeTimer.Stop(); zoomRenderTimer.Stop(); readerZoomIntermediate = false;
+            if (previewOnly) { ClearPageBitmaps(); thumbnails.Children.Clear(); }
+            else RetainInactiveReader(this);
+        }
         internal void Resume()
         {
-            if (!Visible) return;
+            if (!Visible || restoringPosition) return;
+            warmReaders.Remove(this);
             if (document is null) { suspended = false; return; }
-            if (!suspended) { RefreshScroll(force: true); return; }
-            suspended = false; Rendering = RestoreScrollAsync();
+            if (!suspended) { RefreshScroll(); return; }
+            restoringPosition = true; Rendering = RestoreScrollAsync();
         }
         private async Task RestoreScrollAsync()
         {
-            var ticket = ++generation; settingZoom = true; renderedZoom = savedZoom;
-            View.UpdateLayout(); UpdatePageExtent(savedZoom);
+            var ticket = ++generation; settingZoom = true;
             var settled = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
             void Changed(object? sender, ScrollViewerViewChangedEventArgs e) { if (!e.IsIntermediate) settled.TrySetResult(); }
             viewport.ViewChanged += Changed;
-            try { if (viewport.ChangeView(savedHorizontal, savedVertical, savedZoom, true)) await Task.WhenAny(settled.Task, Task.Delay(250)); }
-            finally { viewport.ViewChanged -= Changed; if (ticket == generation) settingZoom = false; }
+            try
+            {
+                View.UpdateLayout(); UpdatePageExtent(savedZoom);
+                viewport.UpdateLayout(); suspended = false;
+                // A tab kept in the same surface normally needs no native scroll
+                // transition. Restore only when layout/window transfer changed it.
+                if ((Math.Abs(viewport.HorizontalOffset - savedHorizontal) > .5 || Math.Abs(viewport.VerticalOffset - savedVertical) > .5 || Math.Abs(viewport.ZoomFactor - savedZoom) > .0001) &&
+                    viewport.ChangeView(savedHorizontal, savedVertical, savedZoom, true))
+                    await Task.WhenAny(settled.Task, Task.Delay(250));
+            }
+            finally { viewport.ViewChanged -= Changed; if (ticket == generation) { settingZoom = false; restoringPosition = false; } }
             if (ticket != generation || suspended || !Visible) return;
             RefreshScroll(force: true); await Rendering;
         }
-        public void Dispose() => Release();
+        public void Dispose() { if (disposed) return; disposed = true; owner.Activated -= LandingOwnerActivated; Release(); }
     }
 }

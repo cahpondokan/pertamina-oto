@@ -52,12 +52,8 @@ internal sealed partial class MainWindow
             await OpenAsync(single); RefreshSession(false); await settle(); fit = false;
             viewport.ChangeView(null, 0, 1.39f, true); await settle(); searchInput.Text = "Limit"; await SearchAsync(); await settle();
             check(searchHits.Length == 2 && searchStatus.Text.StartsWith("Hasil 1 dari 2 · Halaman 1", StringComparison.Ordinal), "one-page screenshot-equivalent fixture reports first of exactly two occurrences");
-            // Reconstruct the confirmed old row assignment only inside this isolated audit.
-            Grid.SetRow(searchPanel, 2); await settle();
-            var oldSession = sessionPicker.TransformToVisual(View).TransformBounds(new Rect(0, 0, sessionPicker.ActualWidth, sessionPicker.ActualHeight));
-            var oldResults = searchPanel.TransformToVisual(View).TransformBounds(new Rect(0, 0, searchPanel.ActualWidth, searchPanel.ActualHeight));
-            check(oldSession.Top < oldResults.Bottom && oldResults.Top < oldSession.Bottom, "old shared-row placement reproduces actual session/search intersection");
-            await capture("00-search-old-row-overlap-reconstructed"); Grid.SetRow(searchPanel, 3); await settle();
+            check(sessionPicker.Visibility == Visibility.Collapsed && owner.readerTabs?.IsLoaded == true,
+                "document tabs replace the former session picker without overlapping search results");
             await capture("20-search-one-page-two-hits");
             SelectSearchResult(1); await searchNavigation; await settle();
             check(searchStatus.Text.StartsWith("Hasil 2 dari 2 · Halaman 1", StringComparison.Ordinal) && Math.Abs(viewport.ZoomFactor - 1.39) < .005, "one-page second occurrence counter and zoom remain correct");
@@ -73,9 +69,9 @@ internal sealed partial class MainWindow
             Rect Bounds(FrameworkElement element) => element.TransformToVisual(View).TransformBounds(new Rect(0, 0, element.ActualWidth, element.ActualHeight));
             void Layout(string label)
             {
-                var session = Bounds(sessionPicker); var results = Bounds(searchPanel); var reading = Bounds(workspace);
-                check(sessionPicker.Visibility == Visibility.Visible && session.Bottom <= results.Top + .1 && results.Bottom <= reading.Top + .1,
-                    label + " session picker search results and reading viewport do not intersect");
+                var results = Bounds(searchPanel); var reading = Bounds(workspace);
+                check(sessionPicker.Visibility == Visibility.Collapsed && results.Bottom <= reading.Top + .1,
+                    label + " tabbed reader search results and reading viewport do not intersect");
             }
             Layout("desktop");
             var first = searchHits[0].Boxes![0]; var second = searchHits[1].Boxes![0];

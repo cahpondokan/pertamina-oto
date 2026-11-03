@@ -1,0 +1,38 @@
+[Unit]
+Description=OTO private operator monitor (SSH only)
+After=network.target
+
+[Service]
+Type=simple
+User=oto-monitor
+Group=oto-monitor
+SupplementaryGroups=oto-monitor-readers
+WorkingDirectory=/opt/oto-monitor/current
+ExecStart=/opt/oto-monitor/runtime/10.0.12/dotnet /opt/oto-monitor/current/Pertamina.Oto.Monitor.dll
+Environment=DOTNET_ROOT=/opt/oto-monitor/runtime/10.0.12
+Environment=DOTNET_CLI_TELEMETRY_OPTOUT=1
+Environment=DOTNET_NOLOGO=1
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=Monitor__Origin=https://monitor.ayani.id
+Environment=Monitor__Port=5091
+Environment=Monitor__CredentialFile=/etc/oto-monitor/admin.json
+Environment=Monitor__DataDirectory=/var/lib/oto-diagnostics
+Environment=Monitor__KeyDirectory=/var/lib/oto-monitor/keys
+StateDirectory=oto-monitor
+StateDirectoryMode=0700
+ReadOnlyPaths=/var/lib/oto-diagnostics
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_INET AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -14,7 +14,6 @@ internal sealed partial class MainWindow
     }
     private async Task CheckLocalUpdateAsync()
     {
-        if (Environment.GetCommandLineArgs().Any(a => a.StartsWith("--audit", StringComparison.Ordinal))) return;
         await CheckManualOnlineUpdateAsync();
     }
     private async Task CheckPreparedLocalUpdateAsync()

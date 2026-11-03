@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-03",
+  "repository": "cahpondokan/pertamina-oto",
+  "visibility": "private",
+  "branch": "backup/android-web-desktop-20261103",
+  "androidCustomCommit": "697655358a6d2d3736ca0677be63c350a3d6183b",
+  "androidVersion": "1.0.0+17",
+  "webPackage": "oto-web-20261030-8c712f5c62b7",
+  "desktopPackage": "20261026-112441-ede2bdee",
+  "sourceFilesBeforeBackupNotes": 2076,
+  "sourceBytes": 256547809,
+  "checks": {
+    "sourcePatternScan": "no high-confidence credentials found; 17 synthetic test-password matches reviewed",
+    "desktopManifestHashes": "all verified",
+    "archiveCRC": "passed",
+    "androidKnownHashes": "matched",
+    "webOriginalPayloadChecksum": "matched",
+    "workingCheckouts": "unchanged"
+  },
+  "assets": [
+    {
+      "name": "OTO-Desktop-0.3.0-20261026-112441-ede2bdee.zip",
+      "bytes": 265113164,
+      "sha256": "d0f3623e082af734214a046ea537171d5ca63e2a0beb303d4d7bef473e65c10b"
+    },
+    {
+      "name": "OTO-Web-oto-web-20261030-8c712f5c62b7.zip",
+      "bytes": 32022145,
+      "sha256": "f68758cdbbb780143bbb6f33478d579e5f454a6b5de5499f296d6acc4dc00a7c"
+    },
+    {
+      "name": "OTO-Scan-1.0.0.apk",
+      "bytes": 48234949,
+      "sha256": "4788e967315e47dad9b519aa48fa1227028b4519efaee9aaa40c6c082b026d94"
+    },
+    {
+      "name": "OTO-Scan-1.0.0.aab",
+      "bytes": 21956708,
+      "sha256": "ff3d0b4cf546a5892e8460cceb17057bcdf3d15354f0a296f21b20527782cfd1"
+    }
+  ]
+}

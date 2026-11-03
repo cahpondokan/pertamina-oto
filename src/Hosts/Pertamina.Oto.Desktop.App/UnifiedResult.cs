@@ -98,7 +98,7 @@ internal sealed partial class MainWindow
         latestResultCard = new Border { Child = panel, MaxWidth = pdfResult ? 1060 : 700, HorizontalAlignment = HorizontalAlignment.Stretch, Background = Brush(255, 255, 255), BorderBrush = Brush(221, 229, 241), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(14), Margin = new Thickness(0, 24, 0, 0) };
         destination.Children.Add(latestResultCard);
         var footer = Copy("File asli tetap aman · Disimpan di perangkat ini", 12); footer.HorizontalAlignment = HorizontalAlignment.Center; destination.Children.Add(footer);
-        if (fitPdfResult) FitSavedResultViewport(latestResultCard, panel, pdfLayout!, secondary, details, notice, footer, selected?.Id == "merge");
+        if (fitPdfResult) FitSavedResultViewport(latestResultCard, panel, pdfLayout!, secondary, details, notice, footer, selected?.Id == "merge", selected?.Id == "organize");
     }
 
     private void ShowCurrentResult(string[] paths, string detail)

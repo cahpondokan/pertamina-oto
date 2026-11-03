@@ -27,6 +27,15 @@ foreach ($entry in $manifest.Files) {
 }
 $staging = Join-Path $project ('artifacts/web-package-' + [Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $staging -Force | Out-Null
+$uninstallerBuild = Join-Path $project ('artifacts/uninstaller-build-' + [Guid]::NewGuid().ToString('N'))
+& "$PSScriptRoot/Build-Uninstaller.ps1" -Output $uninstallerBuild
+New-Item -ItemType Directory -Path "$staging/uninstall" -Force | Out-Null
+$uninstallerFiles = foreach ($name in @('Uninstall-OTO.exe','Uninstall-OTO.exe.config')) {
+    $file = Get-Item -LiteralPath (Join-Path $uninstallerBuild $name)
+    Copy-Item -LiteralPath $file.FullName -Destination (Join-Path "$staging/uninstall" $name)
+    @{Path=$name;Length=$file.Length;Sha256=(Get-FileHash -LiteralPath $file.FullName).Hash}
+}
+[IO.File]::WriteAllText("$staging/uninstall-manifest.json", ($uninstallerFiles | ConvertTo-Json), [Text.UTF8Encoding]::new($false))
 foreach ($name in @('WebDistributionInstaller', 'LocalLauncher')) {
     $csproj = Join-Path $PSScriptRoot "$name/$name.csproj"
     if ($selfContained) {
@@ -89,6 +98,7 @@ Jika sudah terbaru, aplikasi memberi tahu; internet gagal tidak menghalangi pemr
 Simpan pekerjaan dan buka kembali shortcut bila diminta. Shortcut dan pengaturan tetap digunakan.
 Panduan pemakaian: https://oto.ayani.id/panduan
 Paket tidak mendaftarkan default PDF secara otomatis; gunakan Pengaturan di OTO.
+Uninstall: Pengaturan Windows > Aplikasi > Aplikasi terinstal > PERTAMINA OTO.
 Versi pengembangan belum ditandatangani. Penggunaan produksi memerlukan persetujuan rilis tersendiri.
 Hash memeriksa keutuhan paket, bukan identitas penerbit.
 "@, [Text.UTF8Encoding]::new($false))

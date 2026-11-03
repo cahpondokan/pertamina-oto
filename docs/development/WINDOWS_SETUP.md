@@ -1,5 +1,7 @@
 # OTO Windows EXE installer
 
+**14 October 2026 — uninstall registration:** fixed the missing Windows Installed Apps entry on the user's current 0.3.0 installation, added a tested standalone uninstaller, and integrated helper verification/registration into the full-installer source. 31 uninstaller, 71 distribution + 13 updater, and 65 bootstrapper checks passed. Current build/shortcut/running app unchanged; website packages not republished. See [scope, evidence and limitations](UNINSTALL_REGISTRATION_20261014.md).
+
 1 October 2026. Agent0, scoped development request: one branded EXE opening a graphical wizard, detecting requirements, downloading/installing missing .NET10 x64, then installing OTO. No phase promotion, public activation, signing or automatic installation on this development computer.
 
 ## User flow and design

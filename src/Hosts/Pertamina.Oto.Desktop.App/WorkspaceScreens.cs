@@ -47,7 +47,7 @@ internal sealed partial class MainWindow
             "PDF Security" => Brush(233, 118, 22), _ => Brush(23, 104, 212)
         };
         return new Border { Width = 44, Height = 44, CornerRadius = new CornerRadius(12), Background = Brush(237, 243, 251), HorizontalAlignment = HorizontalAlignment.Left,
-            Child = tool.Id == "merge" ? MergeBiblo(40) : new FontIcon { Glyph = tool.Glyph, FontFamily = new FontFamily("Segoe Fluent Icons"), Foreground = color, FontSize = 24 } };
+            Child = tool.Id == "merge" ? MergeBiblo(40) : tool.Id == "organize" ? OrganizerBiblo(40) : new FontIcon { Glyph = tool.Glyph, FontFamily = new FontFamily("Segoe Fluent Icons"), Foreground = color, FontSize = 24 } };
     }
 
     private void BeginScreen(string title, string description)

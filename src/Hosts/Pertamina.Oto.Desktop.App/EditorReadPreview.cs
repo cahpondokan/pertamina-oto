@@ -12,7 +12,7 @@ internal sealed partial class MainWindow
         private bool readingPreview;
         private bool ReadPreviewFocus()
         {
-            if (readingPreview) return true;
+            if (transitionRetainInput || readingPreview) return true;
             return View.XamlRoot is not null && FocusManager.GetFocusedElement(View.XamlRoot) is Button button
                 && AutomationProperties.GetName(button) is "Baca sumber" or "Lihat hasil" or "Preview hasil" or "Tutup dokumen";
         }

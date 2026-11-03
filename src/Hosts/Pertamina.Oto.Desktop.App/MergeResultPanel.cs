@@ -33,45 +33,52 @@ internal sealed partial class MainWindow
         return row;
     }
 
-    private Border MergeResultFrame()
+    private Border MergeResultFrame(bool organizer = false)
     {
         var content = new StackPanel();
-        var heading = new StackPanel { Spacing = 8, Padding = new Thickness(20), Background = new LinearGradientBrush
+        var heading = new StackPanel { Spacing = organizer ? 0 : 8, Padding = new Thickness(organizer ? 10 : 20), Background = new LinearGradientBrush
         {
             StartPoint = new Windows.Foundation.Point(0, 1), EndPoint = new Windows.Foundation.Point(1, 0),
             GradientStops = { new GradientStop { Color = Windows.UI.Color.FromArgb(255, 0, 72, 199), Offset = 0 },
                 new GradientStop { Color = Windows.UI.Color.FromArgb(255, 0, 113, 224), Offset = .85 },
                 new GradientStop { Color = Windows.UI.Color.FromArgb(255, 18, 182, 233), Offset = 1 } }
         } };
-        var title = MergeFeatureLabel("Hasil gabungan", 40);
+        var title = MergeFeatureLabel(organizer ? "Hasil susunan" : "Hasil gabungan", 40);
+        if (organizer) { title.Children.RemoveAt(0); title.Children.Insert(0, OrganizerBiblo(40)); }
         title.Children.OfType<TextBlock>().Single().FontSize = 18;
         title.Children.OfType<TextBlock>().Single().FontWeight = Microsoft.UI.Text.FontWeights.SemiBold;
         foreach (var element in title.Children.OfType<Control>()) element.Foreground = Brush(255, 255, 255);
         title.Children.OfType<TextBlock>().Single().Foreground = Brush(255, 255, 255);
+        var subtitle = new TextBlock { Text = "Atur nama dan lokasi file hasil.", FontSize = 13,
+            TextWrapping = TextWrapping.Wrap, Foreground = Brush(255, 255, 255) };
+        if (organizer)
+        {
+            var caption = title.Children.OfType<TextBlock>().Single(); title.Children.Remove(caption);
+            title.Children.Add(new StackPanel { Spacing = 2, VerticalAlignment = VerticalAlignment.Center, Children = { caption, subtitle } });
+        }
         heading.Children.Add(title);
-        heading.Children.Add(new TextBlock { Text = "Atur nama dan lokasi file hasil.", FontSize = 13,
-            TextWrapping = TextWrapping.Wrap, Foreground = Brush(255, 255, 255) });
+        if (!organizer) heading.Children.Add(subtitle);
         content.Children.Add(heading);
-        var form = new StackPanel { Padding = new Thickness(20) }; form.Children.Add(toolOptions);
+        var form = new StackPanel { Padding = new Thickness(organizer ? 10 : 20) }; form.Children.Add(toolOptions);
         content.Children.Add(form);
         return new Border { Child = content, CornerRadius = new CornerRadius(14),
             Background = Brush(245, 249, 255), BorderBrush = Brush(172, 207, 252), BorderThickness = new Thickness(1) };
     }
 
-    private StackPanel BuildMergeOutputLocation()
+    private StackPanel BuildMergeOutputLocation(bool compact = false)
     {
-        var panel = new StackPanel { Spacing = 8 };
+        var panel = new StackPanel { Spacing = compact ? 4 : 8 };
         panel.Children.Add(MergeLabel("\uE8B7", "Lokasi penyimpanan"));
         var name = new TextBlock { FontSize = 14, FontWeight = Microsoft.UI.Text.FontWeights.SemiBold,
             TextTrimming = TextTrimming.CharacterEllipsis, MaxLines = 1 };
         var path = new TextBlock { FontSize = 12, TextTrimming = TextTrimming.CharacterEllipsis, MaxLines = 1 };
-        var folderText = new StackPanel { Spacing = 4 }; folderText.Children.Add(name); folderText.Children.Add(path);
+        var folderText = new StackPanel { Spacing = compact ? 0 : 4 }; folderText.Children.Add(name); folderText.Children.Add(path);
         var grid = new Grid { ColumnSpacing = 10 };
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
         grid.Children.Add(new FontIcon { Glyph = "\uE8B7", FontSize = 24, Foreground = Brush(157, 96, 0) });
         Grid.SetColumn(folderText, 1); grid.Children.Add(folderText);
-        var card = new Border { Child = grid, Padding = new Thickness(12), Background = Brush(255, 247, 225),
+        var card = new Border { Child = grid, Padding = new Thickness(compact ? 8 : 12), Background = Brush(255, 247, 225),
             BorderBrush = Brush(245, 209, 133), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(8) };
         void Update()
         {
@@ -85,7 +92,7 @@ internal sealed partial class MainWindow
         card.Unloaded += (_, _) => location.UnregisterPropertyChangedCallback(TextBlock.TextProperty, token);
         Update(); panel.Children.Add(card);
         var choose = ActionButton("Ubah folder", async () => await PickFolderAsync());
-        choose.Content = MergeLabel("\uE8B7", "Ubah folder"); choose.MinHeight = 44;
+        choose.Content = MergeLabel("\uE8B7", "Ubah folder"); choose.MinHeight = compact ? 32 : 44;
         panel.Children.Add(choose);
         return panel;
     }

@@ -1,0 +1,31 @@
+PERTAMINA OTO local browser preview — Third-party notices
+
+pdf-lib 1.17.1 by Andrew Dillon, MIT: LICENSE.md
+Source: https://github.com/Hopding/pdf-lib/tree/v1.17.1
+Official archive SHA512:
+V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==
+Upstream unmodified pdf-lib.js SHA256:
+BB3EE8FF88640CD6F91DA2FEBD8FEFA2D537CAB5F8EF852500C52241B6CF7514
+
+OTO modified pdf-lib.js on 2026-10-16. Changes: cap indirect objects
+at 20,000/context; cap each DecodeStream allocation at 16 MiB and
+cumulative decoded allocations at 64 MiB per disposable worker.
+These guards are not a guarantee against every malformed document or memory limit.
+The accompanying acquire script retrieves the UPSTREAM file into a separate
+evidence folder, not this modified runtime.
+
+Bundled runtime dependencies identified by upstream yarn.lock:
+@pdf-lib/standard-fonts 1.0.0 — MIT, standard-fonts-MIT.txt
+@pdf-lib/upng 1.0.1 — MIT, upng-MIT.txt
+pako 1.0.10 / 1.0.11 — MIT and zlib, pako-MIT.txt; original
+zlib notices and conditions retained in pdf-lib.js (zlib.js headers).
+tslib 1.11.1 — Apache-2.0, tslib-Apache-2.0.txt and tslib-copyright.txt
+pdf.js-derived code — Copyright 2012 Mozilla Foundation, Apache-2.0;
+Flate stream port — Copyright 1996-2003 Glyph & Cog, LLC, Apache-2.0.
+Apache license text: tslib-Apache-2.0.txt.
+base64 implementation — Copyright (c) 2012 Niklas von Hertzen, MIT.
+PDF encoding portions originated from pdfkit, Copyright (c) 2014 Devon Govett, MIT.
+Corresponding original notices are retained in the unminified distribution.
+No fontkit, external font file, paid API, CDN, or upload service is used.
+
+Software is provided without warranty. See the license files for full terms.

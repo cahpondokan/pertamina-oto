@@ -7,7 +7,7 @@ namespace Pertamina.Oto.Desktop.App;
 internal sealed partial class MainWindow
 {
     private void FitSavedResultViewport(Border card, StackPanel original, Grid preview, ResponsiveWrapPanel secondary,
-        StackPanel details, TextBlock notice, TextBlock footer, bool isMergeResult = false)
+        StackPanel details, TextBlock notice, TextBlock footer, bool isMergeResult = false, bool isOrganizerResult = false)
     {
         var heading = new StackPanel { Spacing = 6 };
         var title = original.Children[0]; var subtitle = original.Children[1];
@@ -21,11 +21,12 @@ internal sealed partial class MainWindow
         var success = new Border { Width = 48, Height = 48, CornerRadius = new CornerRadius(24), Background = Brush(0, 139, 94),
             Child = new TextBlock { Text = "✓", FontSize = 28, Foreground = Brush(255, 255, 255), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center } };
         FrameworkElement resultIcon = success;
-        if (isMergeResult)
+        if (isMergeResult || isOrganizerResult)
         {
-            var biblo = MergeBiblo(80);
-            biblo.Name = "SavedMergeBiblo";
-            AutomationProperties.SetName(biblo, "Biblo Gabungkan PDF");
+            var biblo = isOrganizerResult ? OrganizerBiblo(80) : MergeBiblo(80);
+            biblo.Name = isOrganizerResult ? "SavedOrganizerBiblo" : "SavedMergeBiblo";
+            AutomationProperties.SetName(biblo, isOrganizerResult ? "Biblo Atur halaman PDF" : "Biblo Gabungkan PDF");
+            if (isOrganizerResult && subtitle is TextBlock resultSubtitle) resultSubtitle.Text = "Susunan halaman tersimpan sebagai PDF baru.";
             var badge = new Border { Width = 24, Height = 24, CornerRadius = new CornerRadius(12),
                 Background = Brush(0, 139, 94), BorderBrush = Brush(255, 255, 255), BorderThickness = new Thickness(2),
                 HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Bottom,
@@ -68,7 +69,7 @@ internal sealed partial class MainWindow
             var label = AutomationProperties.GetName(command);
             if (label is "Tutup dokumen" or "Detail hasil") command.Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8, Children = {
                 new FontIcon { Glyph = label == "Tutup dokumen" ? "\uE711" : "\uE946", FontSize = 16 }, new TextBlock { Text = label } } };
-            if (isMergeResult && label == "Tutup dokumen") StyleMergeDocumentCloseButton(command);
+            if ((isMergeResult || isOrganizerResult) && label == "Tutup dokumen") StyleMergeDocumentCloseButton(command);
         }
         var header = new Grid { ColumnSpacing = 16, RowSpacing = 12 };
         header.ColumnDefinitions.Add(new() { Width = new GridLength(1, GridUnitType.Star) }); header.ColumnDefinitions.Add(new() { Width = GridLength.Auto });

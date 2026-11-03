@@ -82,9 +82,12 @@ internal sealed partial class MainWindow
             content.HorizontalAlignment = HorizontalAlignment.Center;
             landing.SizeChanged += (_, _) => content.Width = Math.Max(0, Math.Min(1240, landing.ActualWidth - 64));
             Grid.SetRowSpan(landing, 6); View.Children.Add(landing);
-            owner.Activated += (_, e) => { if (e.WindowActivationState != WindowActivationState.Deactivated && landing.IsLoaded && !owner.configuringPdfDefault) RefreshLandingDefault(); };
+            owner.Activated += LandingOwnerActivated;
             landing.Loaded += (_, _) => { RefreshLandingDefault(); RefreshLandingRecent(); };
         }
+
+        private void LandingOwnerActivated(object sender, WindowActivatedEventArgs e)
+        { if (e.WindowActivationState != WindowActivationState.Deactivated && landing?.IsLoaded == true && !owner.configuringPdfDefault) RefreshLandingDefault(); }
 
         private static Border LandingCard(UIElement child, double padding) => new() { Child = child, Padding = new Thickness(padding), CornerRadius = new CornerRadius(10), Background = Brush(255, 255, 255), BorderBrush = Brush(188, 210, 242), BorderThickness = new Thickness(1) };
 
@@ -148,7 +151,7 @@ internal sealed partial class MainWindow
                 foreach (var input in sessions)
                 {
                     var session = HistoryButton("file-text", Path.GetFileName(input), true);
-                    session.Click += async (_, _) => await OpenAsync(input); landingSessions.Children.Add(session);
+                    session.Click += async (_, _) => await owner.OpenPdfReaderAsync(input); landingSessions.Children.Add(session);
                 }
             }
             recentLanding.Children.Clear();
@@ -162,7 +165,7 @@ internal sealed partial class MainWindow
                 var detail = HistoryText(entry.Job.When.ToLocalTime().ToString("dd MMM yyyy, HH:mm", System.Globalization.CultureInfo.CurrentCulture), 12, muted: true); labels.Children.Add(detail); Grid.SetColumn(labels, 1); row.Children.Add(labels);
                 var button = new Button { Content = row, Padding = new Thickness(18, 10, 18, 10), HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Stretch, Background = Brush(255, 255, 255), BorderThickness = new Thickness(0, 0, 0, 1), BorderBrush = Brush(228, 234, 243) };
                 AutomationProperties.SetName(button, "Buka kembali " + Path.GetFileName(entry.Path));
-                button.Click += async (_, _) => { if (!File.Exists(entry.Path)) { notice.Text = "File sudah dipindah atau tidak ditemukan. Pilih PDF dari lokasi barunya."; return; } await OpenAsync(entry.Path); };
+                button.Click += async (_, _) => { if (!File.Exists(entry.Path)) { notice.Text = "File sudah dipindah atau tidak ditemukan. Pilih PDF dari lokasi barunya."; return; } await owner.OpenPdfReaderAsync(entry.Path); };
                 image.Loaded += async (_, _) =>
                 {
                     if (!File.Exists(entry.Path)) { detail.Text += " · File tidak ditemukan"; return; }

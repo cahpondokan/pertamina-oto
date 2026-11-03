@@ -1,0 +1,91 @@
+﻿/* Generated from pdf-capacity.json. Do not edit. */
+globalThis.OtoPdfCapacityData = {
+  "version": 1,
+  "bounded": {
+    "fileBytes": 10485760,
+    "totalBytes": 31457280,
+    "files": 10,
+    "pages": 200,
+    "outputs": 20,
+    "outputBytes": 41943040,
+    "timeout": 30000
+  },
+  "merge": {
+    "files": 500,
+    "totalBytes": 4000000000,
+    "chunk": 1048576,
+    "metadataBytes": 16777216,
+    "objects": 20000,
+    "inputObjects": 40000,
+    "outputStructureVisits": 160000,
+    "timeout": 1800000
+  },
+  "images": {
+    "pixels": 8000000,
+    "totalPixels": 16000000,
+    "dimension": 6000
+  },
+  "profiles": {
+    "merge": {
+      "budget": "merge",
+      "kind": "pdf",
+      "multiple": true,
+      "minimum": 2
+    },
+    "organize": {
+      "budget": "local",
+      "kind": "pdf",
+      "multiple": true,
+      "minimum": 1
+    },
+    "single": {
+      "budget": "local",
+      "kind": "pdf",
+      "multiple": false,
+      "minimum": 1
+    },
+    "images": {
+      "budget": "local",
+      "kind": "images",
+      "multiple": true,
+      "minimum": 1
+    },
+    "split": {
+      "budget": "split",
+      "kind": "pdf",
+      "multiple": false,
+      "minimum": 1
+    }
+  },
+  "tools": {
+    "merge": "merge",
+    "organize": "organize",
+    "split": "split",
+    "remove": "single",
+    "extract": "single",
+    "rotate": "single",
+    "numbers": "single",
+    "watermark": "single",
+    "crop": "single",
+    "images-pdf": "images"
+  },
+  "splitMinimumParts": 2,
+  "split": {
+    "fileBytes": 4000000000,
+    "totalBytes": 4000000000,
+    "files": 1,
+    "pages": 200,
+    "outputs": 200,
+    "outputBytes": 4000000000,
+    "timeout": 1800000
+  },
+  "local": {
+    "fileBytes": 4000000000,
+    "totalBytes": 4000000000,
+    "files": 10,
+    "pages": 200,
+    "outputs": 1,
+    "outputBytes": 4000000000,
+    "timeout": 1800000
+  }
+}

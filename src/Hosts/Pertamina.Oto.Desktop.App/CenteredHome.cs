@@ -43,32 +43,13 @@ internal sealed partial class MainWindow
         "unlock" => ("Buka kunci PDF", "Dengan kata sandi pemilik"),
         "protect" => ("Kunci PDF", "Tambahkan kata sandi"), _ => (CatalogName(t), t.Description)
     };
-    private Grid BuildCenteredShell()
+    private Grid BuildCenteredShell() => BuildIntegratedWindowHeader();
+    private MenuFlyout BuildIntegratedAppMenu()
     {
-        var shell = new Grid { Background = Brush(255, 255, 255) };
-        shell.RowDefinitions.Add(new() { Height = GridLength.Auto });
-        shell.RowDefinitions.Add(new() { Height = GridLength.Auto });
-        var brand = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 9, Padding = new Thickness(16, 8, 16, 8), Background = Brush(7, 29, 61) };
-        brand.Children.Add(new Microsoft.UI.Xaml.Controls.Image { Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(new Uri(Path.Combine(AppContext.BaseDirectory, "Assets", "oto.png"))), Width = 29, Height = 29 });
-        brand.Children.Add(new TextBlock { Text = "PERTAMINA OTO", FontSize = 13, FontWeight = Microsoft.UI.Text.FontWeights.SemiBold, Foreground = Brush(255,255,255), VerticalAlignment = VerticalAlignment.Center });
-        shell.Children.Add(brand);
-        var nav = new Grid { Padding = new Thickness(12, 0, 12, 0), BorderBrush = Brush(220,227,236), BorderThickness = new Thickness(0,0,0,1) };
-        nav.ColumnDefinitions.Add(new()); nav.ColumnDefinitions.Add(new() { Width = GridLength.Auto });
-        var left = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 5 };
-        backButton = NavigationButton("\uE72B", "Kembali · Alt+←", () => Travel(-1));
-        forwardButton = NavigationButton("\uE72A", "Maju · Alt+→", () => Travel(1));
-        left.Children.Add(backButton); left.Children.Add(forwardButton);
-        var home = new Button { Content = IconLabel("\uE80F", "Beranda"), MinHeight = 49, Padding = new Thickness(13,11,13,11), Background = Brush(255,255,255), Foreground = Brush(7,103,220), BorderThickness = new Thickness(0,0,0,3), BorderBrush = Brush(7,103,220) };
-        centeredHomeNavigation = home;
-        home.Click += (_,_) => ShowHome(); left.Children.Add(home);
-        AddNavigationShortcut(left, Windows.System.VirtualKey.Left, () => Travel(-1));
-        AddNavigationShortcut(left, Windows.System.VirtualKey.Right, () => Travel(1));
-        nav.Children.Add(left);
-        var actions = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 5, VerticalAlignment = VerticalAlignment.Center };
-        var recent = HistoryButton("history", "Riwayat", true); recent.Click += (_,_) => { if (active is null && !importing && !messageOpen) ShowHistory(); }; actions.Children.Add(recent);
-        var menu = new Button { Content = IconLabel("\uE700", "Menu"), BorderThickness = new Thickness(0), Background = Brush(255,255,255), MinHeight = 40 };
         var flyout = new MenuFlyout();
         void Item(string name, Action open) => flyout.Items.Add(MenuCommand(name, () => { open(); return Task.CompletedTask; }));
+        Item("Kembali", () => Travel(-1)); Item("Maju", () => Travel(1));
+        Item("Riwayat", () => { if (active is null && !importing && !messageOpen) ShowHistory(); });
         Item("Dokumen sesi", () => { CaptureWorkspaceContext(); BuildDocumentHome(); }); Item("Pengaturan", ShowSettings); Item("Bantuan", ShowHelp); Item("Assistant", ShowAssistant); Item("Administrasi", ShowAdmin);
         // Keep existing file/edit/zoom commands and accelerators in a compact submenu.
         var commands = BuildDesktopMenu();
@@ -79,10 +60,7 @@ internal sealed partial class MainWindow
             foreach (var item in source.Items.ToArray()) { source.Items.Remove(item); sub.Items.Add(item); }
             flyout.Items.Add(sub);
         }
-        // BuildDesktopMenu creates its own back references; use the visible controls.
-        backButton = (Button)left.Children[0]; forwardButton = (Button)left.Children[1];
-        menu.Flyout = flyout; actions.Children.Add(menu); Grid.SetColumn(actions,1); nav.Children.Add(actions);
-        ResponsiveLayout.Header(nav,left,actions,530); Grid.SetRow(nav,1); shell.Children.Add(nav); return shell;
+        return flyout;
     }
     private async Task OpenCenteredReaderAsync()
     {
@@ -186,6 +164,7 @@ internal sealed partial class MainWindow
     private static FrameworkElement CenteredIcon(string id)
     {
         if (id == "merge") return MergeBiblo(48);
+        if (id == "organize") return OrganizerBiblo(48);
         var path = id switch
         {
             "merge" => "M8,3 L17,3 L21,7 L21,20 L8,20 Z M17,3 L17,7 L21,7 M5,7 L3,7 L3,23 L16,23 L16,22",

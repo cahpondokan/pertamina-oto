@@ -67,6 +67,14 @@ internal sealed partial class MainWindow
             temp = LibraryPath + "." + Guid.NewGuid().ToString("N") + ".tmp";
             File.WriteAllText(temp, JsonSerializer.Serialize(new SavedLibrary(1, favorites.ToArray(), savedJobs.Take(200).ToArray())));
             File.Move(temp, LibraryPath, true); temp = null; libraryNotice = "";
+            // Windows share one UI thread. Broadcast the committed snapshot so a
+            // later save from another window cannot restore stale history/favorites.
+            foreach (var window in readerWindows.Where(w => w != this))
+            {
+                window.savedJobs.Clear(); window.savedJobs.AddRange(savedJobs);
+                window.favorites.Clear(); window.favorites.UnionWith(favorites);
+                window.libraryUnreadable = false; window.libraryNotice = "";
+            }
         }
         catch (Exception error) { libraryNotice = "Perubahan belum tersimpan di perangkat. Periksa ruang dan izin penyimpanan."; LocalDiagnostics.Record("library-save", error); }
         finally { if (temp is not null) { try { File.Delete(temp); } catch (Exception) { } } }

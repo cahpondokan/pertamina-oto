@@ -48,7 +48,7 @@ internal sealed partial class MainWindow
             var label = new Grid { ColumnSpacing = 10 };
             label.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(28) });
             label.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-            label.Children.Add(tool.Id == "merge" ? MergeBiblo(28) : new FontIcon { Glyph = tool.Glyph, FontSize = 22,
+            label.Children.Add(tool.Id == "merge" ? MergeBiblo(28) : tool.Id == "organize" ? OrganizerBiblo(28) : new FontIcon { Glyph = tool.Glyph, FontSize = 22,
                 FontFamily = new FontFamily("Segoe Fluent Icons"), Foreground = tool.Available ? color : Brush(103, 116, 135) });
             var text = new TextBlock { Text = CatalogName(tool), FontSize = 14, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
             Grid.SetColumn(text, 1); label.Children.Add(text);

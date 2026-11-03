@@ -1,5 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup>
   <ItemGroup><Compile Include="../../Distribution/ReleaseInfo.cs" Link="ReleaseInfo.cs" /><Compile Include="../../Distribution/DistributionRelease.cs" Link="DistributionRelease.cs" /></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../Pertamina.Oto.Web.Preview/WebDiagnostics.cs" Link="Browser/WebDiagnostics.cs" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_WebDiagnostics.cshtml" Link="Views/Shared/_WebDiagnostics.cshtml" />
+    <Compile Include="../Pertamina.Oto.Web.Preview/Models/PdfCapacity.cs" Link="Browser/PdfCapacity.cs" />
+    <Compile Include="../Pertamina.Oto.Web.Preview/Models/PdfWorkspacePresentation.cs" Link="Browser/PdfWorkspacePresentation.cs" />
+    <Compile Include="../Pertamina.Oto.Web.Preview/Models/ToolCatalog.cs" Link="Browser/ToolCatalog.cs" />
+    <Compile Include="../Pertamina.Oto.Web.Preview/MergeCloudPolicy.cs" Link="Browser/MergeCloudPolicy.cs" />
+    <Content Include="../Pertamina.Oto.Web.Preview/wwwroot/**/*" Link="wwwroot/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/_ViewImports.cshtml" Link="Views/_ViewImports.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/_ViewStart.cshtml" Link="Views/_ViewStart.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_WebHome.cshtml" Link="Views/Shared/_WebHome.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfWorkspaceAssets.cshtml" Link="Views/Shared/_PdfWorkspaceAssets.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_OtoHeader.cshtml" Link="Views/Shared/_OtoHeader.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_Icons.cshtml" Link="Views/Shared/_Icons.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_BrowserWorkspace.cshtml" Link="Views/Shared/_BrowserWorkspace.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfProcessPanel.cshtml" Link="Views/Shared/_PdfProcessPanel.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfResultPanel.cshtml" Link="Views/Shared/_PdfResultPanel.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfWorkspaceHeading.cshtml" Link="Views/Shared/_PdfWorkspaceHeading.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfDropZone.cshtml" Link="Views/Shared/_PdfDropZone.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PageWorkspace.cshtml" Link="Views/Shared/_PageWorkspace.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_OrganizeWorkspace.cshtml" Link="Views/Shared/_OrganizeWorkspace.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_MergeWorkspace.cshtml" Link="Views/Shared/_MergeWorkspace.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Home/BrowserWorkspace.cshtml" Link="Views/Home/BrowserWorkspace.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfToolSettings.cshtml" Link="Views/Shared/_PdfToolSettings.cshtml" />
+    <Content Include="../Pertamina.Oto.Web.Preview/Views/Shared/_PdfToolSupport.cshtml" Link="Views/Shared/_PdfToolSupport.cshtml" />
+  </ItemGroup>
+  <Import Project="../Pertamina.Oto.Web.Preview/BuildPdfCapacity.targets" />
 </Project>
 

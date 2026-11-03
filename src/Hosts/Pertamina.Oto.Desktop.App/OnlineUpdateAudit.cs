@@ -66,6 +66,7 @@ internal sealed partial class MainWindow
             manualUpdateFixtureRoot = Path.Combine(output, "fixture-install"); Directory.CreateDirectory(manualUpdateFixtureRoot);
             manualUpdateFixtureBuild = "20261001-180000-aaaaaaaa";
             File.WriteAllText(Path.Combine(manualUpdateFixtureRoot, "current.json"), System.Text.Json.JsonSerializer.Serialize(new LocalAppUpdate.Release(manualUpdateFixtureBuild, new string('a',64))));
+            await AuditOnlineFeedbackAsync(Check);
             async Task Scenario(ReleaseInfo? fixture, string expected)
             {
                 using var client = new System.Net.Http.HttpClient(new OnlineAuditHandler((_, _) => Task.FromResult(new System.Net.Http.HttpResponseMessage(fixture is null ? System.Net.HttpStatusCode.NoContent : System.Net.HttpStatusCode.OK) { Content = new System.Net.Http.StringContent(System.Text.Json.JsonSerializer.Serialize(fixture, System.Text.Json.JsonSerializerOptions.Web), System.Text.Encoding.UTF8, "application/json") })));

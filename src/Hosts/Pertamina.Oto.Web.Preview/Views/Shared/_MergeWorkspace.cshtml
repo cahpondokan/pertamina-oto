@@ -1,0 +1,30 @@
+@model WorkspaceViewModel
+@{ var capacity = PdfCapacity.For(Model.Id); }
+<div class="merge-workspace" data-browser-tool="merge" data-tool-profile="@Model.Browser!.ToJson()" data-state="empty">
+ <partial name="_PdfWorkspaceHeading" model='new PdfHeadingViewModel(Model.Title, "Susun dokumen Anda. Satukan dalam satu PDF.", Model.Icon, capacity)'/>
+ <input id="merge-files" type="file" accept=".pdf,application/pdf" multiple hidden/>
+ <partial name="_PdfDropZone" model='new PdfDropViewModel("merge-empty", "merge-pick", "Semua PDF, jadi satu dokumen", "Susun berkas Anda dalam satu tempat.", "Pilih beberapa PDF", capacity.Limit, Model.Icon)'/>
+ <div id="merge-editor" class="merge-editor" hidden>
+  <section class="merge-documents" aria-label="Urutan dokumen">
+   <div class="merge-toolbar"><div><h2>Dokumen <span id="merge-count">0</span></h2><small>Seret untuk mengatur urutan, atau gunakan tombol panah.</small></div><div class="merge-toolbar-actions"><div class="merge-view" role="group" aria-label="Tampilan dokumen"><button id="merge-cards" aria-pressed="true">Kartu</button><button id="merge-rows" aria-pressed="false">Daftar</button></div><button id="merge-add" class="button primary">＋ Tambah PDF</button></div></div>
+   <div class="merge-sort"><label>Urutkan <select id="merge-sort"><option value="manual">Susunan Anda</option><option value="asc">Nama A–Z</option><option value="desc">Nama Z–A</option><option value="original">Urutan awal</option></select></label><button id="merge-clear" class="button">Kosongkan</button></div>
+   <div id="merge-list" class="merge-list" tabindex="0" aria-label="Daftar PDF, dapat digulir"></div>
+  </section>
+  <section id="merge-output-preview" class="merge-output-preview" hidden aria-label="Pratinjau hasil"><div id="merge-output-cover"></div><p>Periksa PDF hasil sebelum menyimpan.</p></section>
+  <aside class="merge-panel" aria-label="Pengaturan, proses dan hasil">
+   <section id="merge-setup" class="merge-flow">
+    <div class="merge-flow-scroll" id="merge-settings-home"><div class="merge-settings-content"><h2>Hasil gabungan</h2><p id="merge-summary" class="merge-summary"></p><label for="merge-name">Nama file hasil</label><input id="merge-name" value="dokumen_gabungan.pdf" maxlength="110" autocomplete="off"/>
+     <details class="merge-advanced"><summary>Pengaturan lanjutan</summary><label class="merge-check"><input id="merge-bookmarks" type="checkbox"/> Buat bookmark dari nama file</label><label for="merge-blank">Halaman kosong setelah setiap dokumen</label><select id="merge-blank"><option value="none">Tidak disisipkan</option><option value="odd">Jika jumlah halaman pilihan ganjil</option><option value="always">Selalu sisipkan satu halaman</option></select><p>Rentang dan rotasi kartu diterapkan pada hasil. Bookmark sumber tidak dipertahankan.</p></details>
+    </div></div>
+    <div class="merge-primary"><button id="merge-settings-open" class="merge-mobile-settings" aria-haspopup="dialog"><strong id="merge-mobile-summary"></strong><small>Nama hasil &amp; pengaturan ›</small></button><button id="merge-run" class="button primary" disabled>Gabungkan PDF →</button></div><small class="merge-trust">✓ Pemrosesan lokal · Tanpa upload</small>
+   </section>
+   <partial name="_PdfProcessPanel" model='new PdfFlowViewModel("merge", "Gabungkan")'/>
+   <section id="merge-failure" class="merge-flow" hidden aria-label="Proses terhenti"><div class="merge-flow-scroll"><span class="merge-state-symbol merge-error-symbol" aria-hidden="true">!</span><h2>Proses belum selesai</h2><p id="merge-failure-message"></p><p>Pilihan dan pengaturan tetap tersedia.</p></div><button id="merge-retry" class="button primary">Coba lagi</button><button id="merge-failure-back" class="button">Kembali ke dokumen</button></section>
+   <partial name="_PdfResultPanel" model='new PdfFlowViewModel("merge", "Gabungkan")'/>
+  </aside>
+ </div>
+ <p id="merge-status" class="merge-status" role="status" aria-live="polite" tabindex="-1">Pilih PDF untuk memulai.</p>
+ <dialog id="merge-settings" class="app-dialog" aria-labelledby="merge-settings-title"><h2 id="merge-settings-title">Pengaturan gabungan</h2><div id="merge-settings-body"></div><button id="merge-settings-close" class="button primary">Selesai mengatur</button></dialog>
+ <details class="merge-support"><summary>Batas dukungan dan privasi</summary><p>@capacity.Support @PdfCapacity.UnitNote</p><p>PDF bertanda tangan digital dan formulir diterima serta disiapkan otomatis. Tampilan tanda tangan dan isian dibawa ke hasil noninteraktif; file asli tetap utuh. PDF berpassword meminta kata sandi bila diperlukan. Untuk struktur khusus lainnya, salinan tampilan ditawarkan sesuai kemampuan render. Penyiapan PDF khusus dibatasi 128 MiB dan 200 halaman per file. Dokumen rusak atau yang tidak dapat dirender lengkap tetap dapat gagal. Anotasi, tautan aman dan tag yang didukung dipertahankan. Hasil bukan jaminan PDF/A atau PDF/UA; periksa sebelum digunakan.</p><p>Hasil sementara disimpan hanya di penyimpanan browser pada perangkat (OPFS), lalu dihapus setelah berhasil ditulis melalui dialog Simpan atau setelah konfirmasi Mulai baru. Unduhan biasa belum membuktikan file tersimpan; hasil tetap tersedia. Pindah alat mengosongkan pilihan Merge; hasil belum tersimpan memerlukan konfirmasi. Tab yang tertutup tak terduga dibersihkan saat Merge dibuka kembali. Browser mengatur jadwal pelepasan RAM.</p></details>
+ <dialog id="merge-confirm" class="app-dialog"><h2 id="merge-confirm-title">Selesaikan pekerjaan?</h2><p id="merge-confirm-message"></p><div class="dialog-actions"><button id="merge-stay" class="button">Kembali</button><button id="merge-confirm-yes" class="button primary">Lanjutkan</button></div></dialog>
+</div>

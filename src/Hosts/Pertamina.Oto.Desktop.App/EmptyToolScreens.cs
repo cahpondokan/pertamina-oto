@@ -34,7 +34,7 @@ internal sealed partial class MainWindow
         activeToolControls = null;
         selected = tool; emptyTool = tool;
         if (tool.Id == "edit" && liveEditor?.HasDocument == true) { ShowLiveEditor(); return; }
-        if (tool.Id == "merge") { ShowMergeEmptyCard(); return; }
+        if (tool.Id is "merge" or "organize") { ShowMergeEmptyCard(tool.Id == "organize"); return; }
 
         var (title, pickerLabel, hint) = EmptyToolLabels(tool.Id);
         if (body.Children[0] is TextBlock heading) heading.Text = title;
@@ -72,15 +72,18 @@ internal sealed partial class MainWindow
 
     private bool MergeEmptyActive => emptyTool?.Id == "merge" && emptyPanel?.IsLoaded == true && body.Children.Contains(emptyPanel);
 
-    private void ShowMergeEmptyCard()
+    private bool PdfEmptyActive => emptyTool?.Id is "merge" or "organize" && emptyPanel?.IsLoaded == true && body.Children.Contains(emptyPanel);
+
+    private void ShowMergeEmptyCard(bool organizer = false)
     {
+        if (organizer) breadcrumb.Text = "Ruang kerja  /  Atur halaman PDF";
         body.Children.Clear();
         var content = new StackPanel { Spacing = 16, MaxWidth = 480, HorizontalAlignment = HorizontalAlignment.Stretch };
-        var mascot = MergeBiblo(120); content.Children.Add(mascot);
-        var mergeTitle = new TextBlock { Text = "Gabungkan PDF", FontSize = 32, Foreground = Brush(9, 35, 87),
+        var mascot = organizer ? OrganizerBiblo(120) : MergeBiblo(120); content.Children.Add(mascot);
+        var mergeTitle = new TextBlock { Text = organizer ? "Atur halaman PDF" : "Gabungkan PDF", FontSize = 32, Foreground = Brush(9, 35, 87),
             FontWeight = Microsoft.UI.Text.FontWeights.Bold, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center };
         content.Children.Add(mergeTitle);
-        var subtitle = Copy("Pilih minimal 2 PDF untuk digabungkan.", 18); subtitle.TextAlignment = TextAlignment.Center;
+        var subtitle = Copy(organizer ? "Pilih PDF untuk menyusun halaman." : "Pilih minimal 2 PDF untuk digabungkan.", 18); subtitle.TextAlignment = TextAlignment.Center;
         subtitle.Foreground = Brush(69, 89, 130); content.Children.Add(subtitle);
         var actions = new StackPanel { Spacing = 12, Margin = new Thickness(0, 8, 0, 0), HorizontalAlignment = HorizontalAlignment.Stretch };
         var pick = HomeButton("Pilih PDF", "\uE8B7", async () => await PickEmptyToolAsync(), true);
@@ -126,7 +129,7 @@ internal sealed partial class MainWindow
             Padding = new Thickness(24), Margin = new Thickness(0, 4, 0, 0), CornerRadius = new CornerRadius(22),
             Background = Brush(255, 255, 255), BorderBrush = Brush(201, 218, 255), BorderThickness = new Thickness(1) };
         emptyPanel.Loaded += MergeEmptyLoaded;
-        emptyPanel.Loaded += (_, _) => { if (MergeEmptyActive) { standardPageScroll?.ChangeView(null, 0, null, true); pick.Focus(FocusState.Programmatic); } };
+        emptyPanel.Loaded += (_, _) => { if (PdfEmptyActive) { standardPageScroll?.ChangeView(null, 0, null, true); pick.Focus(FocusState.Programmatic); } };
         emptyPanel.Unloaded += MergeEmptyUnloaded;
         emptyPanel.Unloaded += (_, _) => notice.UnregisterPropertyChangedCallback(TextBlock.TextProperty, noticeCallback);
         var resultPanel = emptyPanel;
@@ -161,7 +164,7 @@ internal sealed partial class MainWindow
     private void MergeEmptyLoaded(object sender, RoutedEventArgs e)
     {
         DetachMergeEmptyDrop();
-        if (!MergeEmptyActive || standardPageScroll is null) return;
+        if (!PdfEmptyActive || standardPageScroll is null) return;
         mergeEmptyDropSurface = standardPageScroll;
         mergeEmptyPreviousAllowDrop = standardPageScroll.AllowDrop;
         mergeEmptyPreviousBackground = standardPageScroll.Background;
@@ -192,7 +195,7 @@ internal sealed partial class MainWindow
 
     private void MergeEmptyDragOver(object sender, DragEventArgs e)
     {
-        if (!MergeEmptyActive) return;
+        if (!PdfEmptyActive) return;
         e.AcceptedOperation = e.DataView.Contains(StandardDataFormats.StorageItems) ? DataPackageOperation.Copy : DataPackageOperation.None;
         SetMergeEmptyDragHighlight(e.AcceptedOperation == DataPackageOperation.Copy);
         e.Handled = true;
@@ -202,7 +205,7 @@ internal sealed partial class MainWindow
 
     private void SetMergeEmptyDragHighlight(bool highlighted)
     {
-        if (emptyTool?.Id != "merge" || emptyPanel is null || mergeEmptyDropHint is null) return;
+        if (emptyTool?.Id is not ("merge" or "organize") || emptyPanel is null || mergeEmptyDropHint is null) return;
         emptyPanel.Background = highlighted ? Brush(233, 242, 255) : Brush(255, 255, 255);
         emptyPanel.BorderBrush = highlighted ? Brush(0, 103, 255) : Brush(201, 218, 255);
         mergeEmptyDropHint.Text = highlighted ? "Lepaskan untuk menambahkan PDF" : "atau seret PDF ke area ini";
@@ -210,12 +213,12 @@ internal sealed partial class MainWindow
 
     private async void MergeEmptyDrop(object sender, DragEventArgs e)
     {
-        if (!MergeEmptyActive || !e.DataView.Contains(StandardDataFormats.StorageItems)) return;
+        if (!PdfEmptyActive || !e.DataView.Contains(StandardDataFormats.StorageItems)) return;
         e.Handled = true;
         SetMergeEmptyDragHighlight(false);
         var panel = emptyPanel; var deferral = e.GetDeferral();
-        try { var items = await e.DataView.GetStorageItemsAsync(); if (MergeEmptyActive && ReferenceEquals(panel, emptyPanel)) await AcceptEmptyInputsAsync(items); }
-        catch (Exception) { if (MergeEmptyActive && ReferenceEquals(panel, emptyPanel) && emptyNotice is not null) emptyNotice.Text = "File tidak dapat dibaca."; }
+        try { var items = await e.DataView.GetStorageItemsAsync(); if (PdfEmptyActive && ReferenceEquals(panel, emptyPanel)) await AcceptEmptyInputsAsync(items); }
+        catch (Exception) { if (PdfEmptyActive && ReferenceEquals(panel, emptyPanel) && emptyNotice is not null) emptyNotice.Text = "File tidak dapat dibaca."; }
         finally { deferral.Complete(); }
     }
 
@@ -310,7 +313,7 @@ internal sealed partial class MainWindow
     private async Task PickEmptyToolAsync()
     {
         if (emptyTool is not { Available: true } || active is not null || importing) return;
-        var mergePicker = MergeEmptyActive;
+        var mergePicker = PdfEmptyActive;
         if (mergePicker && (pickingMergeEmptyInput || messageOpen)) return;
         if (mergePicker) pickingMergeEmptyInput = true;
         var panel = emptyPanel;

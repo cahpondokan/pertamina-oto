@@ -1,0 +1,8 @@
+@model PdfDropViewModel
+<section id="@Model.Id" class="merge-drop" aria-label="Pilih @Model.InputLabel">
+ <img class="workspace-feature-icon" src="/assets/@Model.Icon" width="160" height="160" alt=""/>
+ <h2>@Model.Title</h2><p>@Model.Description</p>
+ <button id="@Model.PickId" class="button primary">@Model.Button</button>
+ <p>atau seret @Model.InputLabel ke sini · Ctrl + O</p><small>@Model.Limit</small>
+ <span class="merge-trust">✓ Tanpa upload &nbsp; · &nbsp; File asli tetap utuh</span>
+</section>

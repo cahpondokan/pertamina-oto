@@ -51,8 +51,9 @@ internal sealed partial class MainWindow : Window
     private readonly TextBlock sidebarStatus = new() { Text = "LOCAL • OFFLINE\nVersi pengembangan", TextWrapping = TextWrapping.Wrap,
         Foreground = Brush(169, 202, 231), Margin = new Thickness(8, 28, 0, 0), FontSize = 12 };
 
-    internal MainWindow()
+    internal MainWindow(bool detachedReader = false)
     {
+        detachedReaderWindow = detachedReader;
         Title = "PERTAMINA OTO — Desktop Offline · Development";
         try { AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets", "oto.ico")); }
         catch (Exception) { /* Missing icon must not prevent startup. */ }
@@ -76,7 +77,7 @@ internal sealed partial class MainWindow : Window
         desktopShell.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
         desktopShell.Children.Add(BuildCenteredShell());
         Grid.SetRow(root, 1); desktopShell.Children.Add(root);
-        InitializeOnlineUpdates(desktopShell);
+        if (!detachedReaderWindow && !Program.ReaderInteractiveTest) InitializeOnlineUpdates(desktopShell);
         Content = desktopShell;
         AddWorkspaceShortcuts();
         fileList.ItemsSource = files;
@@ -93,7 +94,7 @@ internal sealed partial class MainWindow : Window
             try { await Launcher.LaunchFileAsync(await StorageFile.GetFileFromPathAsync(resultPath)); }
             catch (Exception) { status.Text = "Tidak dapat membuka viewer. File hasil tetap tersimpan di folder pilihan Anda."; }
         };
-        Closed += (_, _) => { active?.Cancel(); liveEditor?.ReleaseFiles(); pdfReader?.Dispose(); };
+        Closed += (_, _) => { active?.Cancel(); liveEditor?.ReleaseFiles(); DisposeReaderWindow(); };
         AppWindow.Closing += (_, e) =>
         {
             if (allowClose) return;
@@ -110,6 +111,7 @@ internal sealed partial class MainWindow : Window
         };
         root.SizeChanged += (_, _) => LayoutCards();
         ShowHome();
+        RegisterReaderWindow();
     }
 
     private Button Nav(string glyph, string label, Action click)
@@ -139,8 +141,16 @@ internal sealed partial class MainWindow : Window
         if (centeredHomeNavigation is not null)
         {
             var home = title == "Mau mengerjakan apa hari ini?";
-            centeredHomeNavigation.BorderThickness = new Thickness(0,0,0,home ? 3 : 0);
-            centeredHomeNavigation.Foreground = home ? Brush(7,103,220) : Brush(21,43,73);
+            centeredHomeNavigation.Background = home ? Brush(52,65,83) : Brush(29,33,40);
+            centeredHomeNavigation.Foreground = Brush(239,243,249);
+            if (home && readerTabs is not null)
+            {
+                // Beranda is now the selected destination. Keep the reader alive,
+                // but clear tab selection so a native click can select it again.
+                changingReaderTabs = true;
+                try { readerTabs.SelectedItem = null; }
+                finally { changingReaderTabs = false; }
+            }
         }
         breadcrumb.Text = "Ruang kerja  /  " + title;
         body.Children.Add(new TextBlock { Text = title, FontSize = 30, FontWeight = Microsoft.UI.Text.FontWeights.SemiBold, TextWrapping = TextWrapping.Wrap });
@@ -212,7 +222,7 @@ internal sealed partial class MainWindow : Window
         body.Padding = new Thickness(centeredGrid.IsLoaded ? (root.ActualWidth <= 800 ? 18 : 28) : (compact ? 16 : 32));
         toolWorkspace.ColumnDefinitions.Clear(); toolWorkspace.RowDefinitions.Clear();
         toolWorkspace.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
-        toolWorkspace.ColumnDefinitions.Add(new ColumnDefinition { Width = stackTools ? new GridLength(0) : new GridLength(320) });
+        toolWorkspace.ColumnDefinitions.Add(new ColumnDefinition { Width = stackTools ? new GridLength(0) : new GridLength(organizerVisible ? Math.Clamp(contentWidth * .28, 320, 440) : 320) });
         toolWorkspace.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
         toolWorkspace.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
         for (var i = 0; i < toolWorkspace.Children.Count; i++)

@@ -20,16 +20,23 @@ internal sealed partial class MainWindow
         internal required Button Discard;
         internal required Button Return;
         internal ContentDialogResult Result;
+#if DEBUG
+        internal Func<VirtualKey, bool>? OrganizerKeyDown;
+        internal Func<VirtualKey, bool>? OrganizerKeyUp;
+#endif
     }
+#if DEBUG
+    private Action<MergeCloseDialogView>? auditOrganizerCloseOpened;
+#endif
 
-    private async Task<ContentDialogResult> ShowMergeCloseConfirmationAsync()
+    private async Task<ContentDialogResult> ShowMergeCloseConfirmationAsync(bool organizer = false)
     {
-        var view = BuildMergeCloseConfirmation();
+        var view = BuildMergeCloseConfirmation(organizer);
         await view.Dialog.ShowAsync();
         return view.Result;
     }
 
-    private MergeCloseDialogView BuildMergeCloseConfirmation()
+    private MergeCloseDialogView BuildMergeCloseConfirmation(bool organizer = false)
     {
         var highContrast = new AccessibilitySettings().HighContrast;
         var system = new UISettings();
@@ -53,10 +60,10 @@ internal sealed partial class MainWindow
         header.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
         var words = new StackPanel { Spacing = 10 };
         words.Children.Add(Text("Tutup dokumen?", 28, true));
-        words.Children.Add(Text("Hasil gabungan belum disimpan.", 19, true));
+        words.Children.Add(Text(organizer ? "Susunan halaman belum disimpan." : "Hasil gabungan belum disimpan.", 19, true));
         words.Children.Add(Text("Proses dan simpan hasil sebelum menutup, atau tutup tanpa menyimpan.", 15));
         header.Children.Add(words);
-        var biblo = MergeBiblo(88); biblo.VerticalAlignment = VerticalAlignment.Top;
+        var biblo = organizer ? OrganizerBiblo(88) : MergeBiblo(88); biblo.VerticalAlignment = VerticalAlignment.Top;
         AutomationProperties.SetAccessibilityView(biblo, AccessibilityView.Raw);
         Grid.SetColumn(biblo, 1); header.Children.Add(biblo); content.Children.Add(header);
 
@@ -77,7 +84,7 @@ internal sealed partial class MainWindow
             AutomationProperties.SetName(button, label); AutomationProperties.SetHelpText(button, detail);
             return button;
         }
-        var save = Option("MergeCloseSave", "Proses dan simpan", "Gabungkan PDF, lalu simpan hasilnya.", "\uE74E", blue,
+        var save = Option("MergeCloseSave", "Proses dan simpan", organizer ? "Simpan susunan sebagai PDF baru." : "Gabungkan PDF, lalu simpan hasilnya.", "\uE74E", blue,
             highContrast ? background : Brush(234, 244, 255));
         var discard = Option("MergeCloseDiscard", "Tutup tanpa menyimpan", "Tutup dokumen tanpa menyimpan perubahan.", "\uE8BB", red,
             highContrast ? background : Brush(255, 238, 241));
@@ -109,19 +116,51 @@ internal sealed partial class MainWindow
         dialog.Content = scroll;
         var view = new MergeCloseDialogView { Dialog = dialog, Save = save, Discard = discard, Return = back };
         var closing = false;
+        var heldReturnKeys = new HashSet<VirtualKey>();
+        var returnRequested = false;
         void Finish(ContentDialogResult result)
         {
             if (closing) return;
+            if (organizer && heldReturnKeys.Count > 0) { returnRequested = true; return; }
             closing = true; view.Result = result; dialog.Hide();
         }
         save.Click += (_, _) => Finish(ContentDialogResult.Primary);
         discard.Click += (_, _) => Finish(ContentDialogResult.Secondary);
         back.Click += (_, _) => Finish(ContentDialogResult.None);
         // Enter remains safe even after keyboard navigation; Space explicitly activates a focused option.
-        dialog.PreviewKeyDown += (_, e) =>
+        if (!organizer) dialog.PreviewKeyDown += (_, e) =>
         {
             if (e.Key is VirtualKey.Enter or VirtualKey.Escape) { e.Handled = true; Finish(ContentDialogResult.None); }
         };
+        else
+        {
+            bool HandleOrganizerKeyDown(VirtualKey key)
+            {
+                if (key is not (VirtualKey.Enter or VirtualKey.Escape)) return false;
+                heldReturnKeys.Add(key); returnRequested = true;
+                return true;
+            }
+            bool HandleOrganizerKeyUp(VirtualKey key)
+            {
+                if (key is not (VirtualKey.Enter or VirtualKey.Escape)) return false;
+                heldReturnKeys.Remove(key);
+                if (returnRequested && heldReturnKeys.Count == 0)
+                    DispatcherQueue.TryEnqueue(() => { if (heldReturnKeys.Count == 0) Finish(ContentDialogResult.None); });
+                return true;
+            }
+            dialog.AddHandler(UIElement.PreviewKeyDownEvent, new KeyEventHandler((_, e) =>
+            {
+                if (HandleOrganizerKeyDown(e.Key)) e.Handled = true;
+            }), true);
+            dialog.AddHandler(UIElement.PreviewKeyUpEvent, new KeyEventHandler((_, e) =>
+            {
+                if (HandleOrganizerKeyUp(e.Key)) e.Handled = true;
+            }), true);
+#if DEBUG
+            view.OrganizerKeyDown = HandleOrganizerKeyDown;
+            view.OrganizerKeyUp = HandleOrganizerKeyUp;
+#endif
+        }
         void Bound()
         {
             content.MaxWidth = Math.Max(80, Math.Min(720, root.ActualWidth - 96));
@@ -133,8 +172,20 @@ internal sealed partial class MainWindow
         }
         void Resize(object sender, SizeChangedEventArgs e) => Bound();
         Bound();
-        dialog.Opened += (_, _) => { root.SizeChanged += Resize; Bound(); back.Focus(FocusState.Programmatic); };
-        dialog.Closed += (_, _) => root.SizeChanged -= Resize;
+        dialog.Opened += (_, _) =>
+        {
+            root.SizeChanged += Resize; Bound(); back.Focus(FocusState.Programmatic);
+#if DEBUG
+            if (organizer) auditOrganizerCloseOpened?.Invoke(view);
+#endif
+        };
+        dialog.Closed += (_, _) =>
+        {
+            root.SizeChanged -= Resize;
+#if DEBUG
+            view.OrganizerKeyDown = null; view.OrganizerKeyUp = null;
+#endif
+        };
         return view;
     }
 }

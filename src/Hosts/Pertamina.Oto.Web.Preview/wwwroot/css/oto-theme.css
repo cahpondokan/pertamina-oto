@@ -1,0 +1,74 @@
+/* OTO COLOR RESOURCE — edit the LIGHT / DARK values here, never per page. */
+:root {
+  /* LIGHT: slate-tinted surfaces keep the white parts of Biblo distinguishable. */
+  --oto-bg: #dfe6ee;
+  --oto-surface: #e5ebf2;
+  --oto-soft: #d3dfec;
+  --oto-icon-bed: #c5d2e1;
+  --oto-text: #20354d;
+  --oto-muted: #4b6077;
+  --oto-border: #a9b9cb;
+  --oto-edge: #eef3f8;
+  --oto-accent: #075dc4;
+  --oto-primary: #075dc4;
+  --oto-primary-hover: #064d9f;
+  --oto-on-primary: #ffffff;
+  --oto-success: #166552;
+  --oto-success-soft: #c9e2da;
+  --oto-warning: #775200;
+  --oto-warning-soft: #f2e3b9;
+  --oto-danger: #a52d27;
+  --oto-danger-button: #a52d27;
+  --oto-danger-soft: #f0d5d2;
+  --oto-shadow: #aebed0;
+  --oto-highlight: #f4f7fb;
+  --oto-shadow-ink: #142a43;
+  --oto-tooltip-bg: #20354d;
+  --oto-tooltip-text: #ffffff;
+  --oto-backdrop: #122237a8;
+  --oto-paper: #ffffff;
+  --oto-paper-ink: #20354d;
+}
+:root[data-theme=dark] {
+  /* DARK uses the exact same roles; the pages do not define another palette. */
+  --oto-bg: #223044;
+  --oto-surface: #26374c;
+  --oto-soft: #30465f;
+  --oto-icon-bed: #3c526c;
+  --oto-text: #edf3fa;
+  --oto-muted: #b7c8db;
+  --oto-border: #617894;
+  --oto-edge: #3c526b;
+  --oto-accent: #a8ceff;
+  --oto-primary: #0860c3;
+  --oto-primary-hover: #0756ae;
+  --oto-success: #92dbc5;
+  --oto-success-soft: #254d46;
+  --oto-warning: #f5d78b;
+  --oto-warning-soft: #514525;
+  --oto-danger: #ffbbb2;
+  --oto-danger-button: #ad352e;
+  --oto-danger-soft: #553638;
+  --oto-shadow: #142033;
+  --oto-highlight: #354b65;
+  --oto-shadow-ink: #0c1727;
+  --oto-tooltip-bg: #e5edf7;
+  --oto-tooltip-text: #20354d;
+}
+/* Derived effects and compatibility names. All depend on the palette above. */
+:root, :root[data-theme=dark] {
+  --bg:var(--oto-bg);--page:var(--oto-bg);--hero:var(--oto-soft);
+  --surface:var(--oto-surface);--panel:var(--oto-surface);--paper-surface:var(--oto-surface);
+  --text:var(--oto-text);--ink:var(--oto-text);--muted:var(--oto-muted);--sub:var(--oto-muted);
+  --line:var(--oto-border);--edge:var(--oto-edge);--soft:var(--oto-soft);--wash:var(--oto-soft);
+  --blue:var(--oto-accent);--green:var(--oto-success);
+  --raised:5px 5px 13px var(--oto-shadow),-5px -5px 13px var(--oto-highlight);
+  --small:3px 3px 7px color-mix(in srgb,var(--oto-shadow) 85%,transparent),-3px -3px 7px var(--oto-highlight);
+  --inset:inset 3px 3px 6px color-mix(in srgb,var(--oto-shadow) 85%,transparent),inset -3px -3px 6px var(--oto-highlight);
+  color:var(--oto-text);background:var(--oto-bg);color-scheme:light;min-height:100dvh;
+}
+:root[data-theme=dark]{color-scheme:dark}
+html{background:var(--oto-bg)}
+html[data-theme=dark]{color-scheme:dark}
+
+:root,:root[data-theme=dark]{--navy:var(--oto-text);--blue-dark:var(--oto-primary-hover);--surface-soft:var(--oto-soft);--blue-soft:var(--oto-soft);--green-soft:var(--oto-success-soft);--amber:var(--oto-warning);--amber-soft:var(--oto-warning-soft);--danger:var(--oto-danger);--paper-surface:var(--oto-surface);--shadow:var(--small)}

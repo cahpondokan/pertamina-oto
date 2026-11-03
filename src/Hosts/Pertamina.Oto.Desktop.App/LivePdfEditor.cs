@@ -210,8 +210,8 @@ internal sealed partial class MainWindow
                 catch (Exception) { notice.Text = "Dokumen belum dapat dibuka dari seret dan lepas."; }
                 finally { deferral.Complete(); }
             };
-            View.Unloaded += (_, _) => { EndInlineText(); CancelGesture(); };
-            View.Loaded += (_, _) => { if (originalInlineDraft is { } draft) ShowOriginalInline(draft); else Refresh(); };
+            View.Unloaded += (_, _) => { if (!transitionRetainInput) { EndInlineText(); CancelGesture(); } };
+            View.Loaded += (_, _) => { if (originalInlineDraft is { } draft && inlineText is null) ShowOriginalInline(draft); else Refresh(); };
             BuildProperties(); Refresh();
         }
 

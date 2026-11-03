@@ -29,65 +29,146 @@ internal sealed partial class MainWindow
             DetachOwned(toolWorkspace, control); DetachOwned(toolOptions, control);
         }
         DetachOwned(toolWorkspace, toolOptions);
+        restoreOrganizerPresentation?.Invoke(); restoreOrganizerPresentation = null;
     }
     private void CaptureWorkspaceContext()
     {
-        if (selected is null || !toolWorkspace.IsLoaded) return;
-        var current = organizerVisible
-            ? pageLayout.Where(p => p.Source >= 0).Select(p => organizerSources[p.Source]).Distinct(StringComparer.OrdinalIgnoreCase).ToArray()
-            : files.ToArray();
-        foreach (var path in current) if (!homeFiles.Contains(path, StringComparer.OrdinalIgnoreCase)) homeFiles.Add(path);
-        chosenFiles.Clear(); chosenFiles.UnionWith(current);
+        // The session lane owns source identity, including the live editor and retained
+        // context after leaving a tool. Detached controls/selected are not an origin.
+        var origin = CaptureFeatureTransitionOrigin();
+        if (!toolWorkspace.IsLoaded && liveEditor?.Visible != true && pdfReader?.Visible != true) return;
+        foreach (var path in origin.Files)
+            if (!homeFiles.Contains(path, StringComparer.OrdinalIgnoreCase)) homeFiles.Add(path);
+        chosenFiles.Clear(); chosenFiles.UnionWith(origin.Files);
     }
 
     private async Task OpenWorkspaceToolAsync(ToolCard tool)
     {
-        if (active is not null || importing || messageOpen) return;
+        if (featureTransitionRoutingActive)
+        {
+            // The owner presents one refusal after its current modal releases. Opening
+            // a second ContentDialog while the first one is active is not supported.
+            featureTransitionOverlapNotice = true;
+            return;
+        }
+        featureTransitionRoutingActive = true;
+        var originalHome = homeFiles.ToArray();
+        var originalChosen = chosenFiles.ToArray();
+        var opened = false;
+        var restoreSelections = false;
+        var leases = new List<FileStream>();
+        Func<Task>? resumeEditorInput = null;
         try
         {
-            CaptureWorkspaceContext(); SaveToolDraft();
-            if (!tool.Available) { ShowEmptyTool(tool); return; }
-            var inputs = homeFiles.Where(chosenFiles.Contains).ToArray();
-            var images = tool.Id == "images";
-            bool Compatible(string p) => images ? new[] { ".jpg", ".jpeg", ".png" }.Contains(Path.GetExtension(p).ToLowerInvariant()) : Path.GetExtension(p).Equals(tool.Id == "word-pdf" ? ".docx" : ".pdf", StringComparison.OrdinalIgnoreCase);
-            if (inputs.Any(p => !Compatible(p)))
+            if (FeatureTransitionBusy || messageOpen)
             {
-                await MenuMessageAsync("Jenis dokumen tidak sesuai", images ? "Pilih JPG atau PNG di Beranda untuk alat ini. Dokumen Anda tetap tersedia." : "Pilih dokumen PDF di Beranda untuk alat ini. Dokumen Anda tetap tersedia.");
+                await RefuseFeatureTransitionRoutingAsync(tool);
                 return;
             }
-            if (inputs.Length > 1 && tool.Id is not ("merge" or "images" or "organize"))
+            resumeEditorInput = liveEditor?.HoldFeatureTransitionInput();
+            var origin = CaptureFeatureTransitionOrigin();
+            SaveToolDraft();
+            if (!tool.Available)
             {
-                var choice = new ComboBox { ItemsSource = inputs.Select(Path.GetFileName).ToArray(), SelectedIndex = 0, HorizontalAlignment = HorizontalAlignment.Stretch };
-                var content = new StackPanel { Spacing = 12 }; content.Children.Add(Copy("Alat ini memakai satu PDF. Pilih dokumen; file lain tetap tersedia di Beranda.")); content.Children.Add(choice);
-                messageOpen = true;
-                try
+                ShowEmptyTool(tool); opened = true;
+                return;
+            }
+            var inputs = await ResolveFeatureTransitionOriginAsync(tool, origin);
+            if (!await FeatureTransitionRoutingMayContinueAsync(tool) || inputs is null) return;
+            // Resolution may deliberately return to the source for save/review. It
+            // returns null in that case; a non-null list is the user's transfer intent.
+            var routeScreen = screenIndex;
+            if (inputs.Length > FeatureTransitionMaximumFiles)
+            {
+                await ChooseTransitionActionAsync(tool, "Terlalu banyak dokumen",
+                    "Pilih maksimal 50 dokumen pada sumber, lalu buka fitur kembali. Tidak ada dokumen yang dipilih atau dibuang otomatis.",
+                    [new("return", "Kembali ke sumber", "Perbaiki pilihan dokumen sebelum melanjutkan.")]);
+                return;
+            }
+            if (inputs.Length > 0)
+            {
+                var inspections = await InspectFeatureTransitionInputsAsync(tool, inputs);
+                if (!await FeatureTransitionRoutingMayContinueAsync(tool) || !FeatureTransitionRoutingContextCurrent(routeScreen, originalHome, originalChosen)) return;
+                var multiple = FeatureTransitionAllowsMultiple(tool);
+                if (FeatureTransitionNeedsSelection(inspections))
                 {
-                    var dialog = new ContentDialog { XamlRoot = root.XamlRoot, Title = "Pilih dokumen", Content = content, PrimaryButtonText = "Gunakan dokumen", CloseButtonText = "Batal", DefaultButton = ContentDialogButton.Close };
-                    if (await dialog.ShowAsync() != ContentDialogResult.Primary) return;
-                    inputs = [inputs[choice.SelectedIndex]];
+                    var documents = inspections.Select((item, index) =>
+                    {
+                        var sourceIndex = origin.ToolId == "organize" ? organizerSources.FindIndex(p => string.Equals(p, item.Path, StringComparison.OrdinalIgnoreCase)) : -1;
+                        if (sourceIndex < 0) sourceIndex = index;
+                        return new TransitionDocument(item.Path, FeatureTransitionFileName(item.Path),
+                            FeatureTransitionDocumentIdentity(origin, item.Path) + " · " + item.Detail,
+                            OrganizerSourceCode(sourceIndex), sourceIndex, item.Problem);
+                    }).ToArray();
+                    var chosen = await ChooseTransitionDocumentsAsync(tool, documents,
+                        FeatureTransitionSourceContext(origin, inputs), FeatureTransitionSelectionNotice(tool, inspections, origin), multiple);
+                    if (!await FeatureTransitionRoutingMayContinueAsync(tool) || chosen is null || !FeatureTransitionRoutingContextCurrent(routeScreen, originalHome, originalChosen)) return;
+                    if (!TryResolveFeatureTransitionSelection(documents, chosen, multiple, out inputs))
+                    {
+                        await ChooseTransitionActionAsync(tool, "Pilihan dokumen belum valid",
+                            "Pilih dokumen yang tersedia sesuai kapasitas fitur. Pilihan sumber tetap tersimpan.",
+                            [new("return", "Kembali", "Tinjau pilihan dokumen lalu coba lagi.")]);
+                        return;
+                    }
                 }
-                finally { messageOpen = false; }
+                // Hold read-only leases through destination decisions/open. A file
+                // cannot be replaced between readiness validation and draft reset.
+                var verified = await InspectFeatureTransitionInputsAsync(tool, inputs, leases);
+                if (!await FeatureTransitionRoutingMayContinueAsync(tool) || !FeatureTransitionRoutingContextCurrent(routeScreen, originalHome, originalChosen)) return;
+                var problem = FeatureTransitionSelectionProblem(verified);
+                if (problem is not null)
+                {
+                    await ShowFeatureTransitionRoutingFailureAsync(tool, verified, problem);
+                    return;
+                }
             }
-            if (tool.Id == "organize") { ShowOrganizer(); return; }
-            if (tool.Id == "edit")
-            {
-                if (inputs.Length == 1) await OpenEditorDocumentAsync(inputs[0]);
-                else ShowLiveEditor();
-                return;
-            }
-            openingEmptyInput = inputs.Length > 0;
+            if (!FeatureTransitionRoutingContextCurrent(routeScreen, originalHome, originalChosen)) return;
+            restoreSelections = true;
+            var prepared = await PrepareFeatureTransitionDestinationAsync(tool, inputs);
+            if (!await FeatureTransitionRoutingMayContinueAsync(tool) || !prepared) return;
+            await OpenFeatureTransitionDestinationAsync(tool, inputs);
+            opened = true;
+        }
+        catch (Exception error)
+        {
+            LocalDiagnostics.Record("feature-transition-routing", error);
             try
             {
-                ShowTool(tool);
-                if (inputs.Length > 0 && !files.SequenceEqual(inputs, StringComparer.OrdinalIgnoreCase))
-                {
-                    files.Clear(); foreach (var path in inputs) files.Add(path);
-                }
-                if (inputs.Length > 0) status.Text = $"{inputs.Length} dokumen dipakai. File asli tidak berubah.";
+                await ChooseTransitionActionAsync(tool, "Fitur belum dapat dibuka",
+                    "Perpindahan belum selesai. Periksa dokumen dan coba lagi. File sumber tidak diubah.",
+                    [new("return", "Kembali", "Kembali ke dokumen dan draf yang tersimpan dalam sesi.")]);
             }
-            finally { openingEmptyInput = false; }
+            catch (Exception noticeError)
+            {
+                LocalDiagnostics.Record("feature-transition-failure-dialog", noticeError);
+                status.Text = "Perpindahan fitur belum selesai. Dokumen sumber tidak diubah; coba kembali.";
+            }
         }
-        catch (Exception error) { LocalDiagnostics.Record("open-workspace-tool", error); await MenuMessageAsync("Alat belum dapat dibuka", "Dokumen di komputer tetap aman. Coba buka kembali dari Beranda."); }
+        finally
+        {
+            foreach (var lease in leases) lease.Dispose();
+            // Metadata and choice collection never modify these lists. Roll back only
+            // the session commit boundary; don't erase a new selection/paste made
+            // while an earlier metadata read was pending or a busy process completed.
+            if (!opened && restoreSelections)
+            {
+                homeFiles.Clear(); homeFiles.AddRange(originalHome);
+                chosenFiles.Clear(); chosenFiles.UnionWith(originalChosen);
+            }
+            try
+            {
+                if (featureTransitionOverlapNotice)
+                {
+                    featureTransitionOverlapNotice = false;
+                    await RefuseFeatureTransitionRoutingAsync(tool);
+                }
+            }
+            finally
+            {
+                try { if (resumeEditorInput is not null) await resumeEditorInput(); }
+                finally { featureTransitionOverlapNotice = false; featureTransitionRoutingActive = false; }
+            }
+        }
     }
 }
 

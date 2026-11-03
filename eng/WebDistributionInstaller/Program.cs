@@ -9,6 +9,8 @@ try
     {
         // Called only after the visible bootstrapper's user-initiated install flow.
         InstallPackage.Install(AppContext.BaseDirectory, LocalAppUpdate.InstallRoot);
+        try { InstallPackage.RegisterUninstall(AppContext.BaseDirectory); }
+        catch (Exception) { return 3; }
         try { CreateShortcut(); return 0; }
         catch (Exception) { return 2; }
     }
@@ -21,6 +23,8 @@ try
     Console.Write("Pasang untuk pengguna Windows ini? Ketik PASANG lalu Enter: ");
     if (!string.Equals(Console.ReadLine()?.Trim(), "PASANG", StringComparison.OrdinalIgnoreCase)) return 0;
     InstallPackage.Install(package, LocalAppUpdate.InstallRoot);
+    try { InstallPackage.RegisterUninstall(package); }
+    catch (Exception) { Console.WriteLine("OTO terpasang, tetapi pendaftaran uninstall gagal. Jalankan ulang installer untuk memperbaikinya."); Console.ReadLine(); return 3; }
     try { CreateShortcut(); }
     catch (Exception) { Console.WriteLine("Shortcut belum dapat dibuat. Buka PERTAMINA-OTO.exe di %LOCALAPPDATA%/Programs/PertaminaOTO."); }
     Console.WriteLine("Pemasangan selesai. Tutup OTO setelah menyimpan pekerjaan, lalu buka kembali shortcut PERTAMINA OTO.");
